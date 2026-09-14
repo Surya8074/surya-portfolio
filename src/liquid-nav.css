@@ -1,81 +1,103 @@
-/* Hover-only iOS-style liquid navigation. The section observer can still track the page, but it does not visually lock a tab open. */
-.floating-nav button.active{width:52px;flex-basis:52px;background:transparent;color:#3a3a3a;box-shadow:none;}
-.floating-nav button.active .floating-nav-label{opacity:0;max-width:0;transform:translateX(-8px);}
-.floating-nav button.active .floating-nav-icon{transform:none;}
+/* Hover-only liquid navigation: stable icon positions, organic glass droplet, no white oval. */
+
+.floating-nav{
+  align-items:center;
+  gap:4px;
+  padding:8px 12px;
+}
+
+.floating-nav button.active{
+  width:52px;
+  flex:0 0 52px;
+  background:transparent;
+  color:#3a3a3a;
+  box-shadow:none;
+}
+
+.floating-nav button.active .floating-nav-label{
+  opacity:0;
+  max-width:0;
+  transform:translateX(-8px);
+}
+
+.floating-nav button.active .floating-nav-icon{
+  transform:none;
+}
 
 .floating-nav button{
   position:relative;
   isolation:isolate;
-  overflow:hidden;
-  will-change:transform,width;
+  overflow:visible;
+  width:52px;
+  flex:0 0 52px;
+  height:52px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  z-index:1;
+  will-change:transform;
   transition:
-    width .46s cubic-bezier(.22,1,.36,1),
-    flex-basis .46s cubic-bezier(.22,1,.36,1),
     transform .42s cubic-bezier(.22,1,.36,1),
-    color .28s ease,
-    box-shadow .42s cubic-bezier(.22,1,.36,1);
+    color .28s ease;
 }
 
-/* The expanding droplet */
+/* Organic liquid-glass body. It expands behind the button without moving the other icons. */
 .floating-nav button::before{
   content:"";
   position:absolute;
   z-index:-2;
-  width:44px;
-  height:44px;
   left:50%;
   top:50%;
-  border-radius:58% 42% 48% 52% / 44% 54% 46% 56%;
-  background:
-    radial-gradient(circle at 30% 24%,rgba(255,255,255,.98) 0 8%,rgba(255,255,255,.72) 24%,rgba(255,255,255,.18) 62%,transparent 76%),
-    linear-gradient(145deg,rgba(255,255,255,.98),rgba(235,235,235,.72));
+  width:52px;
+  height:44px;
+  border-radius:48% 52% 46% 54% / 54% 44% 56% 46%;
+  background:rgba(242,242,242,.62);
+  border:1px solid rgba(255,255,255,.72);
   box-shadow:
-    inset 1px 1px 2px rgba(255,255,255,.95),
-    inset -2px -3px 5px rgba(0,0,0,.08),
-    0 7px 18px rgba(0,0,0,.12);
+    inset 0 1px 1px rgba(255,255,255,.82),
+    inset 0 -1px 2px rgba(0,0,0,.06),
+    0 8px 20px rgba(0,0,0,.10);
+  backdrop-filter:blur(14px) saturate(1.15);
+  -webkit-backdrop-filter:blur(14px) saturate(1.15);
   opacity:0;
-  transform:translate(-50%,-50%) scale(.35,.48) rotate(-12deg);
-  filter:blur(1.2px);
+  transform:translate(-50%,-50%) scale(.55,.72);
   transition:
     opacity .18s ease,
-    transform .62s cubic-bezier(.16,1.2,.3,1),
-    border-radius .7s cubic-bezier(.22,1,.36,1);
+    transform .58s cubic-bezier(.16,1.2,.3,1),
+    width .58s cubic-bezier(.22,1,.36,1),
+    border-radius .68s cubic-bezier(.22,1,.36,1);
 }
 
-/* Soft lens/highlight that appears only under the pointer */
+/* Small specular glint — deliberately subtle instead of a bright white oval. */
 .floating-nav button::after{
   content:"";
   position:absolute;
   z-index:-1;
-  width:70px;
-  height:30px;
-  left:14px;
-  top:3px;
-  border-radius:50%;
-  background:radial-gradient(ellipse,rgba(255,255,255,.82),transparent 68%);
-  opacity:0;
-  transform:translateY(-8px) scale(.55);
+  left:13px;
+  top:10px;
+  width:22px;
+  height:7px;
+  border-radius:999px;
+  background:rgba(255,255,255,.52);
   filter:blur(4px);
-  transition:opacity .3s ease,transform .55s cubic-bezier(.22,1,.36,1);
+  opacity:0;
+  transform:translateY(4px) scale(.6);
+  transition:opacity .25s ease,transform .5s cubic-bezier(.22,1,.36,1);
   pointer-events:none;
 }
 
 .floating-nav button:hover{
-  width:104px;
-  flex-basis:104px;
-  color:#161616;
-  background:rgba(255,255,255,.08);
-  transform:translateY(-4px) scale(1.015);
-  box-shadow:
-    inset 0 1px 1px rgba(255,255,255,.9),
-    inset 0 -1px 2px rgba(0,0,0,.07),
-    0 8px 20px rgba(0,0,0,.12);
+  color:#171717;
+  z-index:5;
+  transform:translateY(-3px) scale(1.02);
 }
 
 .floating-nav button:hover::before{
   opacity:1;
-  transform:translate(-50%,-50%) scale(1.72,.92) rotate(0deg);
-  border-radius:44% 56% 52% 48% / 54% 46% 58% 42%;
+  width:122px;
+  transform:translate(-50%,-50%) scale(1,1);
+  border-radius:40% 60% 52% 48% / 50% 44% 56% 50%;
 }
 
 .floating-nav button:hover::after{
@@ -84,15 +106,19 @@
 }
 
 .floating-nav button:hover .floating-nav-icon{
-  transform:translateX(1px) scale(1.08) rotate(-3deg);
+  transform:translateX(-1px) scale(1.06) rotate(-2deg);
   transition:transform .5s cubic-bezier(.16,1.2,.3,1);
 }
 
 .floating-nav button:hover .floating-nav-label{
-  opacity:1;
+  position:absolute;
+  left:40px;
+  top:50%;
   max-width:72px;
-  transform:translateX(0);
-  transition:max-width .48s cubic-bezier(.22,1,.36,1),opacity .22s ease .04s,transform .48s cubic-bezier(.22,1,.36,1);
+  opacity:1;
+  transform:translateY(-50%);
+  white-space:nowrap;
+  transition:max-width .42s cubic-bezier(.22,1,.36,1),opacity .2s ease .04s;
 }
 
 .floating-nav button:active{
@@ -100,11 +126,17 @@
 }
 
 @media(max-width:1023px){
-  .floating-nav button.active{width:48px;flex-basis:48px;}
-  .floating-nav button:hover{width:94px;flex-basis:94px;}
-  .floating-nav button:hover .floating-nav-label{max-width:64px;}
+  .floating-nav button.active,
+  .floating-nav button{
+    width:48px;
+    flex-basis:48px;
+  }
+
+  .floating-nav button:hover::before{width:108px;}
+  .floating-nav button:hover .floating-nav-label{left:37px;max-width:64px;}
 }
 
 @media(prefers-reduced-motion:reduce){
-  .floating-nav button::before,.floating-nav button::after{transition:none;}
+  .floating-nav button::before,
+  .floating-nav button::after{transition:none;}
 }
