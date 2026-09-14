@@ -5,6 +5,8 @@ import { ArrowUp, FileText, Github, House, Linkedin, UserRound, WandSparkles } f
 import './styles.css';
 import './reference-home.css';
 
+const portraitUrl = `${import.meta.env.BASE_URL}surya-portrait.svg`;
+
 const navItems = [
   { id: 'home', label: 'Home', icon: House },
   { id: 'art', label: 'Art', icon: WandSparkles },
@@ -50,7 +52,7 @@ function App() {
         <div className="reference-home-viewport">
           <div className="reference-home-stage">
             <div className="reference-portrait" aria-label="Portrait of Surya Kiran">
-              <img className="reference-portrait-image" src="/surya-portrait.svg" alt="Surya Kiran" />
+              <img className="reference-portrait-image" src={portraitUrl} alt="Surya Kiran" />
             </div>
 
             <div className="reference-fade" />
