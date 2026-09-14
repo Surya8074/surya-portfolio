@@ -5,7 +5,7 @@ import { ArrowUp, FileText, Github, House, Linkedin, UserRound, WandSparkles } f
 import './styles.css';
 import './reference-home.css';
 
-const portraitUrl = `${import.meta.env.BASE_URL}surya-portrait.svg`;
+const portraitUrl = '/surya-portfolio/surya-portrait.svg';
 
 const navItems = [
   { id: 'home', label: 'Home', icon: House },
@@ -54,15 +54,12 @@ function App() {
             <div className="reference-portrait" aria-label="Portrait of Surya Kiran">
               <img className="reference-portrait-image" src={portraitUrl} alt="Surya Kiran" />
             </div>
-
             <div className="reference-fade" />
-
             <div className="reference-head-animation" aria-hidden="true">
               <svg viewBox="0 0 260 130" className="head-animation-svg">
                 <text className="head-animation-text" x="18" y="88">ART</text>
               </svg>
             </div>
-
             <div className="reference-hero-copy">
               <h1>
                 <span>Designing how products earn trust,</span>
@@ -76,18 +73,9 @@ function App() {
 
       <section id="work" className="reference-work-section">
         <h2>Selected Work</h2>
-        <article>
-          <div><p>AI · Product Design</p><h3>AI SaaS Experience</h3></div>
-          <div className="work-placeholder work-one">Your project image</div>
-        </article>
-        <article>
-          <div><p>EdTech · Product Design</p><h3>Learning Platform</h3></div>
-          <div className="work-placeholder work-two">Your project image</div>
-        </article>
-        <article>
-          <div><p>Product · Web</p><h3>Comski</h3></div>
-          <div className="work-placeholder work-three">Your project image</div>
-        </article>
+        <article><div><p>AI · Product Design</p><h3>AI SaaS Experience</h3></div><div className="work-placeholder work-one">Your project image</div></article>
+        <article><div><p>EdTech · Product Design</p><h3>Learning Platform</h3></div><div className="work-placeholder work-two">Your project image</div></article>
+        <article><div><p>Product · Web</p><h3>Comski</h3></div><div className="work-placeholder work-three">Your project image</div></article>
       </section>
 
       <section className="other-reference">
