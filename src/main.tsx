@@ -1,22 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import Lenis from '@studio-freight/lenis';
-import { ArrowUp, FileText, Github, House, Linkedin, UserRound, WandSparkles } from 'lucide-react';
+import { ArrowUp, FileText, Github, Linkedin } from 'lucide-react';
+import { VscAccount, VscArchive, VscHome, VscSettingsGear } from 'react-icons/vsc';
+import Dock from './Dock';
 import './styles.css';
 import './reference-home.css';
 
 const portraitUrl = '/surya-portfolio/surya-portrait.svg';
 
-const navItems = [
-  { id: 'home', label: 'Home', icon: House },
-  { id: 'art', label: 'Art', icon: WandSparkles },
-  { id: 'about', label: 'About Me', icon: UserRound },
-  { id: 'resume', label: 'Resume', icon: FileText },
-];
-
 function App() {
-  const [activeSection, setActiveSection] = useState('home');
-
   useEffect(() => {
     const lenis = new Lenis({ duration: 1.15, smoothWheel: true, touchMultiplier: 1.05 });
     let raf = 0;
@@ -26,34 +19,23 @@ function App() {
     };
     raf = requestAnimationFrame(render);
 
-    const sections = navItems
-      .map(({ id }) => document.getElementById(id))
-      .filter(Boolean) as HTMLElement[];
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible?.target.id) setActiveSection(visible.target.id);
-      },
-      { rootMargin: '-20% 0px -55% 0px', threshold: [0.05, 0.2, 0.5, 0.8] }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-
     return () => {
       cancelAnimationFrame(raf);
       lenis.destroy();
-      observer.disconnect();
     };
   }, []);
 
   const go = (id: string) => {
     const target = document.querySelector(id);
     if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    setActiveSection(id.replace('#', ''));
   };
+
+  const items = [
+    { icon: <VscHome size={18} />, label: 'Home', onClick: () => go('#home') },
+    { icon: <VscArchive size={18} />, label: 'Archive', onClick: () => go('#work') },
+    { icon: <VscAccount size={18} />, label: 'Profile', onClick: () => go('#about') },
+    { icon: <VscSettingsGear size={18} />, label: 'Settings', onClick: () => go('#resume') },
+  ];
 
   return (
     <main>
@@ -123,23 +105,10 @@ function App() {
         <strong>Surya Kiran © 2026</strong>
       </footer>
 
-      <nav className="floating-nav" aria-label="Primary navigation">
-        {navItems.map(({ id, label, icon: Icon }) => {
-          const active = activeSection === id;
-          return (
-            <button
-              key={id}
-              className={active ? 'active' : ''}
-              onClick={() => go(`#${id}`)}
-              title={label}
-              aria-current={active ? 'page' : undefined}
-            >
-              <Icon className="floating-nav-icon" size={20} strokeWidth={1.7} />
-              <span className="floating-nav-label">{label}</span>
-            </button>
-          );
-        })}
-      </nav>
+      <div className="portfolio-dock">
+        <Dock items={items} panelHeight={70} baseItemSize={50} magnification={70} />
+      </div>
+
       <button className="to-top" onClick={() => go('#home')} aria-label="Back to top"><ArrowUp size={19}/></button>
     </main>
   );
