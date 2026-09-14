@@ -4,7 +4,6 @@ import Lenis from '@studio-freight/lenis';
 import { ArrowUp, FileText, Github, House, Linkedin, UserRound, WandSparkles } from 'lucide-react';
 import './styles.css';
 import './reference-home.css';
-import './liquid-nav.css';
 
 const portraitUrl = '/surya-portfolio/surya-portrait.svg';
 
