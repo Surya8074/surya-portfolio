@@ -49,19 +49,15 @@ function App() {
       <section id="home" className="reference-home">
         <div className="reference-home-viewport">
           <div className="reference-home-stage">
-            <div className="reference-portrait" aria-label="Portrait placeholder">
-              <div className="portrait-light" />
-              <div className="portrait-head" />
-              <div className="portrait-neck" />
-              <div className="portrait-body" />
+            <div className="reference-portrait" aria-label="Portrait of Surya Kiran">
+              <img className="reference-portrait-image" src="/surya-portrait.svg" alt="Surya Kiran" />
             </div>
 
             <div className="reference-fade" />
 
             <div className="reference-head-animation" aria-hidden="true">
-              <svg viewBox="0 0 420 220" className="head-animation-svg">
-                <path className="head-line line-one" d="M38 126 C72 50 105 171 145 91 S216 62 249 128 S317 180 347 83 S389 63 405 109" />
-                <path className="head-line line-two" d="M48 150 C85 101 112 180 151 122 S218 94 257 151 S319 174 366 113 S397 101 411 127" />
+              <svg viewBox="0 0 260 130" className="head-animation-svg">
+                <text className="head-animation-text" x="18" y="88">ART</text>
               </svg>
             </div>
 
