@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import Lenis from '@studio-freight/lenis';
 import { ArrowUp, FileText, Github, House, Linkedin, UserRound, WandSparkles } from 'lucide-react';
@@ -15,6 +15,8 @@ const navItems = [
 ];
 
 function App() {
+  const [activeSection, setActiveSection] = useState('home');
+
   useEffect(() => {
     const lenis = new Lenis({ duration: 1.15, smoothWheel: true, touchMultiplier: 1.05 });
     let raf = 0;
@@ -23,13 +25,35 @@ function App() {
       raf = requestAnimationFrame(render);
     };
     raf = requestAnimationFrame(render);
+
+    const sections = navItems
+      .map(({ id }) => document.getElementById(id))
+      .filter(Boolean) as HTMLElement[];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible?.target.id) setActiveSection(visible.target.id);
+      },
+      { rootMargin: '-20% 0px -55% 0px', threshold: [0.05, 0.2, 0.5, 0.8] }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
     return () => {
       cancelAnimationFrame(raf);
       lenis.destroy();
+      observer.disconnect();
     };
   }, []);
 
-  const go = (id: string) => document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
+  const go = (id: string) => {
+    const target = document.querySelector(id);
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setActiveSection(id.replace('#', ''));
+  };
 
   return (
     <main>
@@ -100,9 +124,21 @@ function App() {
       </footer>
 
       <nav className="floating-nav" aria-label="Primary navigation">
-        {navItems.map(({ id, label, icon: Icon }) => (
-          <button key={id} onClick={() => go(`#${id}`)} title={label}><Icon size={20} strokeWidth={1.7}/></button>
-        ))}
+        {navItems.map(({ id, label, icon: Icon }) => {
+          const active = activeSection === id;
+          return (
+            <button
+              key={id}
+              className={active ? 'active' : ''}
+              onClick={() => go(`#${id}`)}
+              title={label}
+              aria-current={active ? 'page' : undefined}
+            >
+              <Icon className="floating-nav-icon" size={20} strokeWidth={1.7} />
+              <span className="floating-nav-label">{label}</span>
+            </button>
+          );
+        })}
       </nav>
       <button className="to-top" onClick={() => go('#home')} aria-label="Back to top"><ArrowUp size={19}/></button>
     </main>
