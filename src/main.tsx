@@ -47,53 +47,32 @@ function GenesisCard() {
 
 function App() {
   useEffect(() => {
-    const lenis = new Lenis({ smoothWheel: true });
-    let frame = 0;
-    const raf = (time: number) => {
-      lenis.raf(time);
-      frame = requestAnimationFrame(raf);
-    };
-    frame = requestAnimationFrame(raf);
-    return () => {
-      cancelAnimationFrame(frame);
-      lenis.destroy();
-    };
+    const lenis = new Lenis({ duration: 1.15, smoothWheel: true, touchMultiplier: 1.05 });
+    let raf = 0;
+    const render = (time: number) => { lenis.raf(time); raf = requestAnimationFrame(render); };
+    raf = requestAnimationFrame(render);
+    return () => { cancelAnimationFrame(raf); lenis.destroy(); };
   }, []);
 
+  const go = (id: string) => { const target = document.querySelector(id); if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' }); };
+  const items = [
+    { icon: <VscHome size={18} />, label: 'Home', onClick: () => go('#home') },
+    { icon: <VscArchive size={18} />, label: 'Archive', onClick: () => go('#work') },
+    { icon: <VscAccount size={18} />, label: 'Profile', onClick: () => go('#about') },
+    { icon: <VscSettingsGear size={18} />, label: 'Settings', onClick: () => go('#resume') },
+  ];
+
   return (
-    <div className="reference-page">
-      <header className="reference-nav">
-        <a className="reference-brand" href="#top"><span>Surya Kiran</span><small>India</small></a>
-        <nav><a href="#work">Art</a><a href="#about">About Me</a><a href="/surya-portfolio/resume/">Resume</a></nav>
-      </header>
-
-      <main id="top">
-        <section className="reference-hero">
-          <div className="reference-hero-copy">
-            <p className="reference-kicker">Product Designer · AI · SaaS</p>
-            <h1>I design digital products that feel <em>simple</em>, useful and human.</h1>
-            <p className="reference-hero-body">Product designer focused on thoughtful UX, AI-powered products and polished digital experiences.</p>
-            <div className="reference-hero-actions"><a href="#work">View my work <span>↗</span></a><a href="#about">More about me</a></div>
-          </div>
-          <div className="reference-hero-art">
-            <div className="hero-art-glow hero-art-glow-a" /><div className="hero-art-glow hero-art-glow-b" />
-            <div className="hero-art-card"><img src={portraitUrl} alt="Surya Kiran portrait" /><span className="hero-art-label">Selected work · 2026</span></div>
-          </div>
-        </section>
-
-        <section id="work" className="reference-work-section">
-          <div className="work-intro"><p>SELECTED WORK</p><h2>A few products and experiences I've shaped.</h2></div>
-          <GenesisCard />
-          <div className="secondary-work-card"><div><p>02 / 04</p><h3>More work coming together.</h3></div><div className="work-placeholder"><span>CASE STUDY</span></div></div>
-        </section>
-
-        <section id="about" className="reference-about"><p>ABOUT ME</p><h2>Curious about people, systems and the details that make products click.</h2></section>
-      </main>
-
-      <Dock items={[{ icon: <VscHome />, label: 'Home', onClick: () => window.location.hash = 'top' }, { icon: <VscArchive />, label: 'Work', onClick: () => window.location.hash = 'work' }, { icon: <VscAccount />, label: 'About', onClick: () => window.location.hash = 'about' }, { icon: <VscSettingsGear />, label: 'Resume', onClick: () => window.location.href = '/surya-portfolio/resume/' }]} panelHeight={70} baseItemSize={50} magnification={70} />
-      <button className="back-to-top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Back to top"><ArrowUp size={17} /></button>
-    </div>
+    <main>
+      <header className="reference-nav"><div className="reference-nav-inner"><button className="reference-brand" onClick={() => go('#home')}><strong>Surya Kiran</strong><span className="reference-brand-divider" /><span>India</span></button><nav><button onClick={() => go('#art')}>Art</button><button onClick={() => go('#about')}>About Me</button><button onClick={() => go('#resume')}>Resume</button></nav></div></header>
+      <section id="home" className="reference-home"><div className="reference-home-viewport"><div className="reference-home-stage"><div className="reference-portrait" aria-label="Portrait of Surya Kiran"><img className="reference-portrait-image" src={portraitUrl} alt="Surya Kiran" /></div><div className="reference-fade" /><div className="reference-head-animation" aria-hidden="true"><svg viewBox="0 0 260 130" className="head-animation-svg"><text className="head-animation-text" x="18" y="88">ART</text></svg></div><div className="reference-hero-copy"><h1><span>Designing how products earn trust,</span><span>across <em>visual, product &amp; growth.</em></span></h1><button className="reference-work" onClick={() => go('#work')}>See my work</button></div></div></div></section>
+      <section id="work" className="reference-work-section"><div className="work-intro"><p>SELECTED WORK</p><h2>Building useful, intelligent products.</h2></div><GenesisCard /><article className="secondary-work-card"><div><p>EdTech · Product Design</p><h3>Learning Platform</h3></div><div className="work-placeholder work-two">Your project image</div></article><article className="secondary-work-card"><div><p>Product · Web</p><h3>Comski</h3></div><div className="work-placeholder work-three">Your project image</div></article></section>
+      <section className="other-reference"><h2>Other Projects</h2><div className="other-reference-grid"><article><h3>AI product explorations</h3><p>AI-assisted workflows, interaction and product design experiments.</p><div className="tags"><span>AI-Assisted</span><span>Spatial UX</span><span>Product Design</span></div></article><article><h3>Web &amp; product experiments</h3><p>Small digital products exploring interaction, systems and prototyping.</p><div className="tags"><span>Web Design</span><span>Interaction Design</span><span>UX Design</span></div></article></div></section>
+      <section id="about" className="simple-section"><h2>About Me</h2><p>Hi, I am Surya — a product designer working across AI, SaaS and education.</p></section><section id="art" className="simple-section"><h2>Art + Explorations</h2><p>AI, fun, visual experiments and things I make outside product work.</p></section><section id="resume" className="simple-section"><h2>Resume</h2><p>Product design · UX/UI · AI SaaS · EdTech · Prototyping</p></section>
+      <footer className="reference-footer"><h2>Every pixel here was a decision.</h2><p>Every word, a choice. Thanks for seeing it.</p><div className="footer-icons"><Linkedin/><FileText/><Github/></div><div className="footer-line" /><div className="footer-mark">≈≈≈</div><strong>Surya Kiran © 2026</strong></footer>
+      <div className="portfolio-dock"><Dock items={items} panelHeight={70} baseItemSize={50} magnification={70} /></div><button className="to-top" onClick={() => go('#home')} aria-label="Back to top"><ArrowUp size={19}/></button>
+    </main>
   );
 }
 
-createRoot(document.getElementById('root')!).render(<App />);
+createRoot(document.getElementById('root')!).render(<React.StrictMode><App /></React.StrictMode>);
