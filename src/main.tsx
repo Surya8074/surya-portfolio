@@ -1,13 +1,64 @@
 import React, { useEffect } from 'react';
-import { createRoot } from 'react-dom/client';
-import Lenis from '@studio-freight/lenis';
 import { ArrowUp, FileText, Github, Linkedin } from 'lucide-react';
+import Lenis from '@studio-freight/lenis';
 import { VscAccount, VscArchive, VscHome, VscSettingsGear } from 'react-icons/vsc';
 import Dock from './Dock';
 import './styles.css';
 import './reference-home.css';
 
 const portraitUrl = '/surya-portfolio/surya-portrait.svg';
+const genesisPath = '/surya-portfolio/work/genesis/';
+
+function GenesisCard() {
+  return (
+    <a className="genesis-project-card" href={genesisPath} aria-label="Open Genesis case study">
+      <div className="genesis-project-glow genesis-project-glow-one" />
+      <div className="genesis-project-glow genesis-project-glow-two" />
+      <div className="genesis-project-card-inner">
+        <div className="genesis-project-topline">
+          <div className="genesis-project-title-wrap">
+            <div className="genesis-project-icon" aria-hidden="true">
+              <span />
+            </div>
+            <div>
+              <strong>Genesis</strong>
+              <p>AI-powered test automation</p>
+            </div>
+          </div>
+          <span className="genesis-project-arrow" aria-hidden="true">↗</span>
+        </div>
+
+        <div className="genesis-mini-window">
+          <div className="genesis-mini-sidebar">
+            <span className="mini-logo">✦ GENESIS</span>
+            <span className="mini-active">Dashboard</span>
+            <span>Projects</span>
+            <span>Test Execution</span>
+            <span>Reports</span>
+          </div>
+          <div className="genesis-mini-content">
+            <div className="mini-heading-row"><b>Welcome back</b><i /></div>
+            <div className="mini-kpis">
+              <span><small>ACTIVE PROJECTS</small><b>12</b></span>
+              <span><small>TEST RUNS</small><b>48</b></span>
+              <span><small>PASS RATE</small><b>92%</b></span>
+              <span><small>ISSUES</small><b>3</b></span>
+            </div>
+            <div className="mini-chart-row">
+              <div className="mini-chart"><small>Test execution trend</small><svg viewBox="0 0 300 78" preserveAspectRatio="none"><path d="M0 59 C30 50 43 62 65 44 S106 20 132 38 S172 59 197 34 S236 24 258 41 S283 48 300 26" /></svg></div>
+              <div className="mini-donut"><div className="donut-ring" /><small>Test results</small></div>
+            </div>
+          </div>
+        </div>
+
+        <div className="genesis-project-bottom">
+          <div className="genesis-project-tags"><span>UX/UI</span><span>AI</span><span>SaaS</span><span>Enterprise</span></div>
+          <span className="genesis-view">View case study <b>→</b></span>
+        </div>
+      </div>
+    </a>
+  );
+}
 
 function App() {
   useEffect(() => {
@@ -18,11 +69,7 @@ function App() {
       raf = requestAnimationFrame(render);
     };
     raf = requestAnimationFrame(render);
-
-    return () => {
-      cancelAnimationFrame(raf);
-      lenis.destroy();
-    };
+    return () => { cancelAnimationFrame(raf); lenis.destroy(); };
   }, []);
 
   const go = (id: string) => {
@@ -41,74 +88,35 @@ function App() {
     <main>
       <header className="reference-nav">
         <div className="reference-nav-inner">
-          <button className="reference-brand" onClick={() => go('#home')}>
-            <strong>Surya Kiran</strong>
-            <span className="reference-brand-divider" />
-            <span>India</span>
-          </button>
-          <nav>
-            <button onClick={() => go('#art')}>Art</button>
-            <button onClick={() => go('#about')}>About Me</button>
-            <button onClick={() => go('#resume')}>Resume</button>
-          </nav>
+          <button className="reference-brand" onClick={() => go('#home')}><strong>Surya Kiran</strong><span className="reference-brand-divider" /><span>India</span></button>
+          <nav><button onClick={() => go('#art')}>Art</button><button onClick={() => go('#about')}>About Me</button><button onClick={() => go('#resume')}>Resume</button></nav>
         </div>
       </header>
 
       <section id="home" className="reference-home">
         <div className="reference-home-viewport">
           <div className="reference-home-stage">
-            <div className="reference-portrait" aria-label="Portrait of Surya Kiran">
-              <img className="reference-portrait-image" src={portraitUrl} alt="Surya Kiran" />
-            </div>
+            <div className="reference-portrait" aria-label="Portrait of Surya Kiran"><img className="reference-portrait-image" src={portraitUrl} alt="Surya Kiran" /></div>
             <div className="reference-fade" />
-            <div className="reference-head-animation" aria-hidden="true">
-              <svg viewBox="0 0 260 130" className="head-animation-svg">
-                <text className="head-animation-text" x="18" y="88">ART</text>
-              </svg>
-            </div>
-            <div className="reference-hero-copy">
-              <h1>
-                <span>Designing how products earn trust,</span>
-                <span>across <em>visual, product &amp; growth.</em></span>
-              </h1>
-              <button className="reference-work" onClick={() => go('#work')}>See my work</button>
-            </div>
+            <div className="reference-head-animation" aria-hidden="true"><svg viewBox="0 0 260 130" className="head-animation-svg"><text className="head-animation-text" x="18" y="88">ART</text></svg></div>
+            <div className="reference-hero-copy"><h1><span>Designing how products earn trust,</span><span>across <em>visual, product &amp; growth.</em></span></h1><button className="reference-work" onClick={() => go('#work')}>See my work</button></div>
           </div>
         </div>
       </section>
 
       <section id="work" className="reference-work-section">
-        <h2>Selected Work</h2>
-        <article><div><p>AI · Product Design</p><h3>AI SaaS Experience</h3></div><div className="work-placeholder work-one">Your project image</div></article>
-        <article><div><p>EdTech · Product Design</p><h3>Learning Platform</h3></div><div className="work-placeholder work-two">Your project image</div></article>
-        <article><div><p>Product · Web</p><h3>Comski</h3></div><div className="work-placeholder work-three">Your project image</div></article>
+        <div className="work-intro"><p>SELECTED WORK</p><h2>Building useful, intelligent products.</h2></div>
+        <GenesisCard />
+        <article className="secondary-work-card"><div><p>EdTech · Product Design</p><h3>Learning Platform</h3></div><div className="work-placeholder work-two">Your project image</div></article>
+        <article className="secondary-work-card"><div><p>Product · Web</p><h3>Comski</h3></div><div className="work-placeholder work-three">Your project image</div></article>
       </section>
 
-      <section className="other-reference">
-        <h2>Other Projects</h2>
-        <div className="other-reference-grid">
-          <article><h3>AI product explorations</h3><p>AI-assisted workflows, interaction and product design experiments.</p><div className="tags"><span>AI-Assisted</span><span>Spatial UX</span><span>Product Design</span></div></article>
-          <article><h3>Web &amp; product experiments</h3><p>Small digital products exploring interaction, systems and prototyping.</p><div className="tags"><span>Web Design</span><span>Interaction Design</span><span>UX Design</span></div></article>
-        </div>
-      </section>
-
+      <section className="other-reference"><h2>Other Projects</h2><div className="other-reference-grid"><article><h3>AI product explorations</h3><p>AI-assisted workflows, interaction and product design experiments.</p><div className="tags"><span>AI-Assisted</span><span>Spatial UX</span><span>Product Design</span></div></article><article><h3>Web &amp; product experiments</h3><p>Small digital products exploring interaction, systems and prototyping.</p><div className="tags"><span>Web Design</span><span>Interaction Design</span><span>UX Design</span></div></article></div></section>
       <section id="about" className="simple-section"><h2>About Me</h2><p>Hi, I am Surya — a product designer working across AI, SaaS and education.</p></section>
       <section id="art" className="simple-section"><h2>Art + Explorations</h2><p>AI, fun, visual experiments and things I make outside product work.</p></section>
       <section id="resume" className="simple-section"><h2>Resume</h2><p>Product design · UX/UI · AI SaaS · EdTech · Prototyping</p></section>
-
-      <footer className="reference-footer">
-        <h2>Every pixel here was a decision.</h2>
-        <p>Every word, a choice. Thanks for seeing it.</p>
-        <div className="footer-icons"><Linkedin/><FileText/><Github/></div>
-        <div className="footer-line" />
-        <div className="footer-mark">≈≈≈</div>
-        <strong>Surya Kiran © 2026</strong>
-      </footer>
-
-      <div className="portfolio-dock">
-        <Dock items={items} panelHeight={70} baseItemSize={50} magnification={70} />
-      </div>
-
+      <footer className="reference-footer"><h2>Every pixel here was a decision.</h2><p>Every word, a choice. Thanks for seeing it.</p><div className="footer-icons"><Linkedin/><FileText/><Github/></div><div className="footer-line" /><div className="footer-mark">≈≈≈</div><strong>Surya Kiran © 2026</strong></footer>
+      <div className="portfolio-dock"><Dock items={items} panelHeight={70} baseItemSize={50} magnification={70} /></div>
       <button className="to-top" onClick={() => go('#home')} aria-label="Back to top"><ArrowUp size={19}/></button>
     </main>
   );
