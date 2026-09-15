@@ -2,18 +2,18 @@ import React, { useEffect, useState } from 'react';
 import './genesis-timeline.css';
 
 const items = [
-  ['overview', 'Overview'],
-  ['problem', 'The problem'],
-  ['question', 'Design question'],
-  ['workflow', 'Core idea'],
-  ['step-01', 'Project details'],
-  ['step-02', 'Input artifacts'],
-  ['step-03', 'Test data'],
-  ['step-04', 'AI configuration'],
-  ['step-05', 'Review & validate'],
-  ['insight', 'After setup'],
-  ['states', 'Trust & states'],
-  ['principles', 'Design principles'],
+  ['overview', '00:00'],
+  ['problem', '00:15'],
+  ['question', '00:30'],
+  ['workflow', '00:45'],
+  ['step-01', '01:00'],
+  ['step-02', '01:15'],
+  ['step-03', '01:30'],
+  ['step-04', '01:45'],
+  ['step-05', '02:00'],
+  ['insight', '02:15'],
+  ['states', '02:30'],
+  ['principles', '02:45'],
 ] as const;
 
 export default function GenesisTimeline({ children }: { children: React.ReactNode }) {
@@ -52,13 +52,12 @@ export default function GenesisTimeline({ children }: { children: React.ReactNod
 
   return (
     <div className="genesis-timeline-shell">
-      <aside className="genesis-timeline" aria-label="Case study sections">
-        <div className="genesis-timeline-title">CASE STUDY</div>
+      <aside className="genesis-timeline" aria-label="Case study timeline">
         <nav>
-          {items.map(([id, label], index) => (
-            <button key={id} className={active === id ? 'is-active' : ''} onClick={() => jump(id)} aria-current={active === id ? 'location' : undefined}>
+          {items.map(([id, timestamp]) => (
+            <button key={id} className={active === id ? 'is-active' : ''} onClick={() => jump(id)} aria-label={`Jump to ${id}`} aria-current={active === id ? 'location' : undefined}>
+              <span className="timeline-time">{timestamp}</span>
               <span className="timeline-dot"><i /></span>
-              <span className="timeline-label"><b>{String(index + 1).padStart(2, '0')}</b>{label}</span>
             </button>
           ))}
         </nav>
