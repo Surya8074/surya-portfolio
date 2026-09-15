@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { createRoot } from 'react-dom/client';
 import { ArrowUp, FileText, Github, Linkedin } from 'lucide-react';
 import Lenis from '@studio-freight/lenis';
 import { VscAccount, VscArchive, VscHome, VscSettingsGear } from 'react-icons/vsc';
