@@ -20,39 +20,28 @@ export default function GenesisTimeline({ children }: { children: React.ReactNod
   const [active, setActive] = useState('overview');
 
   useEffect(() => {
-    const map: Record<string, string> = {
-      overview: '.genesis-snapshot',
-      problem: '.problem-section',
-      question: '.question-section',
-      workflow: '.workflow-section',
-      'step-01': '.chapter-section:nth-of-type(1)',
-      'step-02': '.chapter-section:nth-of-type(2)',
-      'step-03': '.chapter-section:nth-of-type(3)',
-      'step-04': '.chapter-section:nth-of-type(4)',
-      'step-05': '.chapter-section:nth-of-type(5)',
-      insight: '.insight-section',
-      states: '.states-section',
-      principles: '.decisions-section',
-    };
-
     const root = document.querySelector('.genesis-case-study');
     if (!root) return;
-
-    const targets = Object.entries(map).map(([id, selector]) => {
+    const selectors: Record<string, string> = {
+      overview: '.genesis-snapshot', problem: '.problem-section', question: '.question-section', workflow: '.workflow-section',
+      insight: '.insight-section', states: '.states-section', principles: '.decisions-section',
+    };
+    const targets: [string, HTMLElement][] = [];
+    Object.entries(selectors).forEach(([id, selector]) => {
       const element = root.querySelector(selector) as HTMLElement | null;
-      if (element) element.id = `genesis-${id}`;
-      return [id, element] as const;
-    }).filter(([, element]) => element);
-
+      if (element) { element.id = `genesis-${id}`; targets.push([id, element]); }
+    });
+    const chapters = Array.from(root.querySelectorAll('.chapter-section')) as HTMLElement[];
+    chapters.slice(0, 5).forEach((element, index) => {
+      const id = `step-0${index + 1}`;
+      element.id = `genesis-${id}`;
+      targets.push([id, element]);
+    });
     const observer = new IntersectionObserver((entries) => {
       const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-      if (visible[0]) {
-        const id = visible[0].target.id.replace('genesis-', '');
-        setActive(id);
-      }
+      if (visible[0]) setActive(visible[0].target.id.replace('genesis-', ''));
     }, { rootMargin: '-18% 0px -62% 0px', threshold: [0.05, 0.2, 0.5] });
-
-    targets.forEach(([, element]) => observer.observe(element!));
+    targets.forEach(([, element]) => observer.observe(element));
     return () => observer.disconnect();
   }, []);
 
