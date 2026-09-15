@@ -1,9 +1,9 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import GenesisHero from './GenesisHero';
+import GenesisCaseStudy from './GenesisCaseStudy';
 
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <GenesisHero />
+    <GenesisCaseStudy />
   </React.StrictMode>,
 );
