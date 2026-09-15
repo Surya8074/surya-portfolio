@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { createRoot } from 'react-dom/client';
+import React, { useEffect, createRoot } from 'react';
 import { ArrowUp, FileText, Github, Linkedin } from 'lucide-react';
 import Lenis from '@studio-freight/lenis';
 import { VscAccount, VscArchive, VscHome, VscSettingsGear } from 'react-icons/vsc';
@@ -17,19 +16,29 @@ function GenesisCard() {
       <div className="genesis-project-glow genesis-project-glow-one" />
       <div className="genesis-project-glow genesis-project-glow-two" />
       <div className="genesis-project-card-inner">
-        <div className="genesis-project-topline">
-          <div className="genesis-project-title-wrap"><div className="genesis-project-icon" aria-hidden="true"><span /></div><div><strong>Genesis</strong><p>AI-powered test automation</p></div></div>
-          <span className="genesis-project-arrow" aria-hidden="true">↗</span>
+        <div className="genesis-project-copy">
+          <div className="genesis-project-index">01 <span>/ 04</span></div>
+          <p className="genesis-project-eyebrow">AI · Product Design</p>
+          <h3>Genesis</h3>
+          <h4>AI-powered test automation platform</h4>
+          <p className="genesis-project-description">Designing an AI-driven testing workflow that helps QA teams move faster while keeping humans in control.</p>
+          <div className="genesis-project-action"><span>View Case Study</span><b>→</b></div>
+          <div className="genesis-project-tags"><span>UX/UI</span><span>AI</span><span>SaaS</span><span>Enterprise Tool</span></div>
         </div>
-        <div className="genesis-mini-window">
-          <div className="genesis-mini-sidebar"><span className="mini-logo">✦ GENESIS</span><span className="mini-active">Dashboard</span><span>Projects</span><span>Test Execution</span><span>Reports</span></div>
-          <div className="genesis-mini-content">
-            <div className="mini-heading-row"><b>Welcome back</b><i /></div>
-            <div className="mini-kpis"><span><small>ACTIVE PROJECTS</small><b>12</b></span><span><small>TEST RUNS</small><b>48</b></span><span><small>PASS RATE</small><b>92%</b></span><span><small>ISSUES</small><b>3</b></span></div>
-            <div className="mini-chart-row"><div className="mini-chart"><small>Test execution trend</small><svg viewBox="0 0 300 78" preserveAspectRatio="none"><path d="M0 59 C30 50 43 62 65 44 S106 20 132 38 S172 59 197 34 S236 24 258 41 S283 48 300 26" /></svg></div><div className="mini-donut"><div className="donut-ring" /><small>Test results</small></div></div>
+        <div className="genesis-project-visual">
+          <div className="genesis-visual-orb genesis-orb-one" />
+          <div className="genesis-visual-orb genesis-orb-two" />
+          <div className="genesis-mini-window">
+            <div className="genesis-window-bar"><span /><span /><span /><em>GENESIS</em><i>⌕</i></div>
+            <div className="genesis-mini-sidebar"><span className="mini-logo">✦ GENESIS</span><span className="mini-active">Dashboard</span><span>Projects</span><span>Test Execution</span><span>Reports</span></div>
+            <div className="genesis-mini-content">
+              <div className="mini-heading-row"><div><b>Welcome back, Alex</b><small>Here's what's happening with your tests.</small></div><strong>+ New Project</strong></div>
+              <div className="mini-kpis"><span><small>Active Projects</small><b>12</b></span><span><small>Test Runs</small><b>48</b></span><span><small>Pass Rate</small><b>92%</b></span><span><small>Critical Issues</small><b>3</b></span></div>
+              <div className="mini-chart-row"><div className="mini-chart"><small>Test Execution Trend</small><svg viewBox="0 0 300 78" preserveAspectRatio="none"><path d="M0 59 C30 50 43 62 65 44 S106 20 132 38 S172 59 197 34 S236 24 258 41 S283 48 300 26" /></svg></div><div className="mini-donut"><div className="donut-ring" /><small>Test Results</small></div></div>
+              <div className="mini-bottom-row"><div><small>Recent Test Runs</small><span>E-commerce Platform <b>Completed</b></span><span>Mobile App <b>Running</b></span></div><div><small>Environments</small><span>Production <b>Healthy</b></span><span>Staging <b>Healthy</b></span></div></div>
+            </div>
           </div>
         </div>
-        <div className="genesis-project-bottom"><div className="genesis-project-tags"><span>UX/UI</span><span>AI</span><span>SaaS</span><span>Enterprise</span></div><span className="genesis-view">View case study <b>→</b></span></div>
       </div>
     </a>
   );
