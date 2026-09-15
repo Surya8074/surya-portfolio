@@ -3,7 +3,7 @@ import './genesis-hero.css';
 
 const metadata = [
   ['Role', 'Product Designer'],
-  ['Timeline', 'Aug 2025 — Jan 2026'],
+  ['Timeline', '6 months'],
   ['Scope', 'End-to-end UX/UI'],
 ];
 
