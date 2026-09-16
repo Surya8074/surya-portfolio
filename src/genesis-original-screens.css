@@ -1,0 +1,4 @@
+.genesis-original-screen{width:100%;border-radius:24px;overflow:hidden;background:#fff;box-shadow:0 24px 70px rgba(17,19,24,.10);border:1px solid rgba(17,19,24,.08)}
+.genesis-original-screen img{display:block;width:100%;height:auto;max-width:100%}
+.genesis-original-pair{display:grid;grid-template-columns:1fr;gap:28px}
+@media (min-width:900px){.genesis-original-pair{grid-template-columns:1fr 1fr;align-items:start}}
