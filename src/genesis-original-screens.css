@@ -2,3 +2,11 @@
 .genesis-original-screen img{display:block;width:100%;height:auto;max-width:100%}
 .genesis-original-pair{display:grid;grid-template-columns:1fr;gap:28px}
 @media (min-width:900px){.genesis-original-pair{grid-template-columns:1fr 1fr;align-items:start}}
+
+/* Replace V4 placeholder panels with the real Genesis source screens. */
+.chapter-section:nth-of-type(7) .genesis-original-screen{padding:0!important;aspect-ratio:16/9;background:url('/surya-portfolio/genesis/Input-Artifacts.webp') center/cover no-repeat}
+.chapter-section:nth-of-type(7) .genesis-original-screen>div,.chapter-section:nth-of-type(8) .genesis-original-screen>div,.chapter-section:nth-of-type(9) .genesis-original-screen>div,.chapter-section:nth-of-type(10) .genesis-original-screen>div,.insight-section .genesis-original-pair .genesis-original-screen>div{display:none!important}
+.chapter-section:nth-of-type(8) .genesis-original-screen{padding:0!important;aspect-ratio:16/9;background:url('/surya-portfolio/genesis/Test-Data-Setup.webp') center/cover no-repeat}
+.chapter-section:nth-of-type(9) .genesis-original-screen{padding:0!important;aspect-ratio:16/9;background:url('/surya-portfolio/genesis/AI-Configuration.webp') center/cover no-repeat}
+.chapter-section:nth-of-type(10) .genesis-original-screen{padding:0!important;aspect-ratio:16/9;background:url('/surya-portfolio/genesis/Review-Validate.webp') center/cover no-repeat}
+.insight-section .genesis-original-pair .genesis-original-screen{padding:0!important;aspect-ratio:16/9;background:url('/surya-portfolio/genesis/Reports.webp') center/cover no-repeat}
