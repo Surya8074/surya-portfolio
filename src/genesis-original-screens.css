@@ -1,16 +1,9 @@
-.genesis-original-screen{width:100%;border-radius:24px;overflow:hidden;background:#fff;box-shadow:0 24px 70px rgba(17,19,24,.10);border:1px solid rgba(17,19,24,.08);display:block}
-.genesis-original-screen img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain;object-position:center;image-rendering:auto}
-.genesis-original-pair{display:grid;grid-template-columns:1fr;gap:28px}
-@media (min-width:900px){.genesis-original-pair{grid-template-columns:1fr 1fr;align-items:start}}
-
-/* V4 original screens: show the complete source image, never crop it. */
-.chapter-section:nth-of-type(6) .genesis-original-screen{padding:0!important;aspect-ratio:1920/1240;background:#fff url('/surya-portfolio/genesis/Input-Artifacts.webp') center/100% 100% no-repeat}
-.chapter-section:nth-of-type(6) .genesis-original-screen>div{display:none!important}
-.chapter-section:nth-of-type(7) .genesis-original-screen{padding:0!important;aspect-ratio:1920/1240;background:#fff url('/surya-portfolio/genesis/Test-Data-Setup.webp') center/100% 100% no-repeat}
-.chapter-section:nth-of-type(7) .genesis-original-screen>div{display:none!important}
-.chapter-section:nth-of-type(8) .genesis-original-screen{padding:0!important;aspect-ratio:1920/1240;background:#fff url('/surya-portfolio/genesis/AI-Configuration.webp') center/100% 100% no-repeat}
-.chapter-section:nth-of-type(8) .genesis-original-screen>div{display:none!important}
-.chapter-section:nth-of-type(9) .genesis-original-screen{padding:0!important;aspect-ratio:1920/1240;background:#fff url('/surya-portfolio/genesis/Review-Validate.webp') center/100% 100% no-repeat}
-.chapter-section:nth-of-type(9) .genesis-original-screen>div{display:none!important}
-.insight-section .genesis-original-pair .genesis-original-screen:last-child{padding:0!important;aspect-ratio:1920/1478;background:#fff url('/surya-portfolio/genesis/Reports.webp') center/100% 100% no-repeat}
-.insight-section .genesis-original-pair .genesis-original-screen:last-child>div{display:none!important}
+.genesis-original-screen{width:100%;border-radius:24px;overflow:hidden;background:#fff;box-shadow:0 24px 70px rgba(17,19,24,.10);border:1px solid rgba(17,19,24,.08);display:block;position:relative}
+.genesis-original-screen img{display:block;width:100%;height:100%;max-width:none;object-fit:cover;object-position:top center;image-rendering:auto}
+/* The source UI has a large empty canvas below the active controls. Keep the useful interface prominent inside the editorial card without distorting it. */
+.chapter-section .genesis-original-screen{aspect-ratio:16/9}
+.chapter-section .genesis-original-screen img{height:100%;width:100%;object-fit:cover;object-position:top center}
+.insight-section .genesis-original-pair{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.insight-section .genesis-original-pair .genesis-original-screen{aspect-ratio:16/10}
+.insight-section .genesis-original-pair .genesis-original-screen img{height:100%;width:100%;object-fit:cover;object-position:top center}
+@media (max-width:899px){.insight-section .genesis-original-pair{grid-template-columns:1fr}.chapter-section .genesis-original-screen{aspect-ratio:16/10}}
