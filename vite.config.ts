@@ -9,6 +9,7 @@ export default defineConfig({
       input: {
         main: 'index.html',
         genesis: 'work/genesis/index.html',
+        genesisStyle2: 'work/genesis-style-2/index.html',
       },
     },
   },
