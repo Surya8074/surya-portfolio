@@ -11,6 +11,7 @@ export default defineConfig({
         genesis: 'work/genesis/index.html',
         genesisStyle2: 'work/genesis-style-2/index.html',
         genesisV3: 'work/genesis-v3/index.html',
+        genesisV4: 'work/genesis-v4/index.html',
       },
     },
   },
