@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Check, Eye, GitBranch, Layers3, ShieldCheck, SlidersHorizontal, Sparkles, Users } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import GenesisHero from './GenesisHero';
 import './genesis-case-study.css';
 import './genesis-original-screens.css';
@@ -13,7 +14,16 @@ function Reveal({ children, delay = 0, className = '' }) { return <motion.div cl
 function Section({ number, eyebrow, title, copy, children, className = '' }) { return <section className={`v5-section ${className}`}><div className="v5-heading"><div className="v5-index"><span>{number}</span><i /></div><div><p className="v5-kicker">{eyebrow}</p><h2>{title}</h2>{copy && <p className="v5-copy">{copy}</p>}</div></div>{children}</section>; }
 function Screen({ src, alt, label }) { return <div className="v5-screen"><div className="v5-screen-top"><span /><span /><span /><small>{label}</small></div><img src={src} alt={alt} loading="lazy" decoding="async" width="1920" /></div>; }
 function Context() { return <section className="v5-context"><div className="v5-context-lead"><p className="v5-kicker">THE PROJECT</p><h2>Genesis was not a feature to design. It was a new way to move through testing.</h2><p>I designed the end-to-end experience for an AI-powered test automation product — shaping how teams set context, configure AI, validate generated work, execute tests and understand results.</p></div><div className="v5-meta"><div><span>ROLE</span><strong>Product Designer<br />Sole designer</strong></div><div><span>TEAM</span><strong>PM · Engineers<br />Stakeholders</strong></div><div><span>PRODUCT</span><strong>AI test automation<br />SaaS platform</strong></div><div><span>DESIGN SCOPE</span><strong>End-to-end product<br />experience</strong></div></div></section>; }
-function SystemModel() { const steps = [['01', 'Understand', 'Product context', Layers3], ['02', 'Prepare', 'Inputs + data', GitBranch], ['03', 'Configure', 'AI behaviour', SlidersHorizontal], ['04', 'Validate', 'Human checkpoint', ShieldCheck], ['05', 'Observe', 'Execution + reporting', Eye]]; return <div className="v5-system"><div className="v5-system-line" />{steps.map(([n, title, sub, Icon]) => <motion.article key={n} whileHover={{ y: -7 }} className="v5-system-node"><span>{n}</span><div><Icon size={18} /></div><h3>{title}</h3><p>{sub}</p></motion.article>)}</div>; }
+function SystemModel() {
+  const steps: Array<[string, string, string, LucideIcon]> = [
+    ['01', 'Understand', 'Product context', Layers3],
+    ['02', 'Prepare', 'Inputs + data', GitBranch],
+    ['03', 'Configure', 'AI behaviour', SlidersHorizontal],
+    ['04', 'Validate', 'Human checkpoint', ShieldCheck],
+    ['05', 'Observe', 'Execution + reporting', Eye],
+  ];
+  return <div className="v5-system"><div className="v5-system-line" />{steps.map(([n, title, sub, Icon]) => <motion.article key={n} whileHover={{ y: -7 }} className="v5-system-node"><span>{n}</span><div><Icon size={18} /></div><h3>{title}</h3><p>{sub}</p></motion.article>)}</div>;
+}
 function Tension({ icon: Icon, number, title, copy, detail }) { return <article className="v5-tension"><div className="v5-tension-top"><span>{number}</span><Icon size={18} /></div><h3>{title}</h3><p>{copy}</p><div className="v5-tension-detail"><b>DESIGN RESPONSE</b><span>{detail}</span></div></article>; }
 function Decision({ number, eyebrow, title, copy, src, alt, label, reverse = false, children }) { return <section className={`v5-decision ${reverse ? 'reverse' : ''}`}><div className="v5-decision-copy"><span className="v5-decision-number">{number}</span><p className="v5-kicker">{eyebrow}</p><h2>{title}</h2><p>{copy}</p>{children}</div><Reveal className="v5-decision-visual"><Screen src={src} alt={alt} label={label} /></Reveal></section>; }
 function Tradeoffs() { return <div className="v5-tradeoffs"><div className="v5-tradeoff"><span>01</span><div><b>Automation ↔ control</b><p>More automation only helps if users can see where it came from and intervene when it matters.</p></div></div><div className="v5-tradeoff"><span>02</span><div><b>Configuration ↔ speed</b><p>AI settings need enough visibility to build confidence without turning setup into a technical wall.</p></div></div><div className="v5-tradeoff"><span>03</span><div><b>System depth ↔ clarity</b><p>Genesis contains a complex testing lifecycle, so each screen needs one clear job inside the larger system.</p></div></div></div>; }
