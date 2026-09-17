@@ -44,40 +44,23 @@ export default function GenesisHero() {
             </div>
           </div>
 
-          <div className="genesis-product-stage" aria-label="Genesis product preview">
+          <div className="genesis-product-stage" aria-label="Genesis result screen preview">
             <div className="genesis-stage-shadow" />
-            <div className="genesis-browser">
+            <div className="genesis-browser genesis-result-browser">
               <div className="genesis-browser-bar">
                 <div className="genesis-browser-dots"><i /><i /><i /></div>
-                <span>genesis · dashboard</span>
+                <span>genesis · results</span>
                 <div className="genesis-browser-actions"><b /><b /><b /></div>
               </div>
-              <div className="genesis-dashboard">
-                <aside>
-                  <div className="genesis-brand"><span>G</span><strong>GENESIS</strong></div>
-                  <div className="genesis-nav active"><em>⌂</em> Dashboard</div>
-                  <div className="genesis-nav"><em>◫</em> Test Cycles</div>
-                  <div className="genesis-nav"><em>◌</em> Test Data</div>
-                  <div className="genesis-nav"><em>▱</em> Reports</div>
-                  <div className="genesis-nav"><em>⚙</em> Settings</div>
-                </aside>
-                <div className="genesis-main-ui">
-                  <div className="genesis-ui-heading"><div><small>PROJECT / GENESIS</small><h2>Welcome back, Alex</h2></div><button>+ New Project</button></div>
-                  <div className="genesis-stat-grid">
-                    <div><small>ACTIVE PROJECTS</small><strong>12</strong><span>↗ 8.4%</span></div>
-                    <div><small>TEST CASES</small><strong>248</strong><span>↗ 12.2%</span></div>
-                    <div><small>COVERAGE</small><strong>92%</strong><span>↗ 4.1%</span></div>
-                    <div><small>OPEN ISSUES</small><strong>08</strong><span>↓ 2.3%</span></div>
-                  </div>
-                  <div className="genesis-chart-row">
-                    <div className="genesis-panel genesis-chart"><div className="genesis-panel-title"><strong>Test Execution Trend</strong><span>Last 30 days⌄</span></div><svg viewBox="0 0 620 180" preserveAspectRatio="none" aria-hidden="true"><path d="M0 144 C40 132 52 95 92 111 S145 145 181 105 S224 64 267 90 S314 134 354 92 S410 45 454 74 S501 124 543 83 S581 40 620 54" /></svg></div>
-                    <div className="genesis-panel genesis-donut-panel"><div className="genesis-panel-title"><strong>Test Results</strong><span>Today</span></div><div className="genesis-donut"><span>248<small>tests</small></span></div><div className="genesis-legend"><span><i /> Passed <b>72%</b></span><span><i /> Failed <b>08%</b></span><span><i /> Skipped <b>20%</b></span></div></div>
-                  </div>
-                  <div className="genesis-bottom-row">
-                    <div className="genesis-panel genesis-table"><div className="genesis-panel-title"><strong>Recent Test Runs</strong><span>View all →</span></div><div className="genesis-table-line"><i className="ok"/><span>Regression Suite</span><b>Passed</b></div><div className="genesis-table-line"><i className="warn"/><span>API Validation</span><b>Running</b></div><div className="genesis-table-line"><i className="ok"/><span>Smoke Tests</span><b>Passed</b></div></div>
-                    <div className="genesis-panel genesis-health"><div className="genesis-panel-title"><strong>AI Health</strong></div><div className="genesis-health-value">96<span>%</span></div><div className="genesis-health-bar"><i /></div><small>Model confidence across recent runs</small></div>
-                  </div>
-                </div>
+              <div className="genesis-result-screen">
+                <img
+                  src="/surya-portfolio/genesis/Reports.webp"
+                  alt="Genesis test results and reporting screen"
+                  loading="eager"
+                  decoding="async"
+                  width="1920"
+                  height="1478"
+                />
               </div>
             </div>
             <div className="genesis-floating-card genesis-card-left"><small>AI WORKFLOW</small><strong>Human-in-the-loop</strong><span>Review before execution</span></div>
