@@ -13,6 +13,7 @@ export default defineConfig({
         genesisV3: 'work/genesis-v3/index.html',
         genesisV4: 'work/genesis-v4/index.html',
         genesisV5: 'work/genesis-v5/index.html',
+        genesisV6: 'work/genesis-v6/index.html',
       },
     },
   },
