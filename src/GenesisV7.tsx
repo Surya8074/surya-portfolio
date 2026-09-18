@@ -225,7 +225,7 @@ export default function GenesisV7(){
         </section>
 
         <section id="s08" className="v7-decisions">
-          <div className="v7-decisions-intro"><SectionLabel num="08" label="SCREEN DECISIONS"/><h2>Same product.<br/><em>Different questions.</em></h2><p>The UI is shown as a set of product decisions—not a gallery of finished screens.</p></div>
+          <div className="v7-decisions-intro"><SectionLabel num="08" label="SCREEN DECISIONS"/><h2>Same product.<br/><em>Different questions.</em></h2><p>The real interface becomes the evidence for the product decisions behind Genesis.</p></div>
 
           <div className="v7-decision">
             <div className="v7-decision-copy"><span>01 / ORIENTATION</span><h3>Give two audiences one shared operational picture.</h3><Reason intent="Answer whether the testing pipeline and the platform supporting it are healthy." decision="Separate product KPIs from infrastructure health rather than creating role-specific dashboards." why="QA and DevOps users look for different signals on the same landing surface. Organizing by scan intent reduces filtering." tradeoff="A unified grid is visually simpler, but it makes users filter unrelated signals. The hierarchy spends visual space to reduce that work."/></div>
@@ -233,28 +233,33 @@ export default function GenesisV7(){
           </div>
 
           <div className="v7-decision reverse">
-            <Reveal><Screen src={screens.inputs} label="input artifacts" alt="Genesis Input Artifacts" zoom/></Reveal>
-            <div className="v7-decision-copy"><span>02 / CONTEXT</span><h3>Make the information feeding the AI visible.</h3><Reason intent="Establish the project context that downstream test generation depends on." decision="Treat source artifacts and documentation as first-class workflow objects." why="Users can reason about generated output more confidently when they can see what information established its context." tradeoff="Showing context adds another visible step. That friction is intentional because it makes the AI's starting point inspectable."/></div>
+            <Reveal><Screen src={screens.project} label="project details" alt="Genesis Project Details" zoom/></Reveal>
+            <div className="v7-decision-copy"><span>02 / PROJECT CONTEXT</span><h3>Start with the system being tested—not the AI.</h3><Reason intent="Establish the product boundary before technical configuration begins." decision="Make project identity and purpose the first explicit setup decision." why="A clear project anchor gives every downstream artifact, data and AI decision a stable context." tradeoff="The first step is intentionally simple. Advanced configuration is deferred until the system being tested is understood."/></div>
           </div>
 
           <div className="v7-decision">
-            <div className="v7-decision-copy"><span>03 / AI CONFIGURATION</span><h3>Expose meaningful control without exposing implementation.</h3><Reason intent="Give users control over behavior that materially influences generated tests." decision="Group configuration around user intent instead of raw model or engineering terminology." why="The interface communicates that AI is configurable while keeping the decision surface understandable." tradeoff="A single Generate action would be faster. Configuration remains explicit because some users need to inspect and tune the system."/></div>
+            <div className="v7-decision-copy"><span>03 / INPUT CONTEXT</span><h3>Make the information feeding the AI visible.</h3><Reason intent="Establish the context that downstream test generation depends on." decision="Treat source artifacts and documentation as first-class workflow objects." why="Users can reason about generated output more confidently when they can see what information established its context." tradeoff="Showing context adds another visible step. That friction is intentional because it makes the AI's starting point inspectable."/></div>
+            <Reveal><Screen src={screens.inputs} label="input artifacts" alt="Genesis Input Artifacts" zoom/></Reveal>
+          </div>
+
+          <div className="v7-decision reverse">
+            <Reveal><Screen src={screens.data} label="test data setup" alt="Genesis Test Data Setup" zoom/></Reveal>
+            <div className="v7-decision-copy"><span>04 / TEST CONDITIONS</span><h3>Treat test data as part of the system, not an afterthought.</h3><Reason intent="Prepare the runtime conditions required for meaningful test execution." decision="Keep test-data configuration separate from artifact ingestion, but within the same guided setup." why="Requirements explain what to test; data explains the conditions under which it should be tested." tradeoff="An additional step makes setup longer, but prevents important runtime assumptions from disappearing into implementation."/></div>
+          </div>
+
+          <div className="v7-decision">
+            <div className="v7-decision-copy"><span>05 / AI CONFIGURATION</span><h3>Expose meaningful control without exposing implementation.</h3><Reason intent="Give users control over behavior that materially influences generated tests." decision="Group configuration around user intent instead of raw model or engineering terminology." why="The interface communicates that AI is configurable while keeping the decision surface understandable." tradeoff="A single Generate action would be faster. Configuration remains explicit because some users need to inspect and tune the system."/></div>
             <Reveal><Screen src={screens.ai} label="ai configuration" alt="Genesis AI Configuration" zoom/></Reveal>
           </div>
 
           <div className="v7-review">
-            <div><span>04 / HUMAN CONTROL</span><h2>Review is a workflow state,<br/><em>not a confirmation dialog.</em></h2><p>Genesis draws a boundary between AI-assisted generation and execution. Review & Validate gives users a deliberate place to inspect, correct and confirm before the system progresses.</p><div className="v7-checkpoint"><Check/><div><b>HUMAN CHECKPOINT</b><span>AI output → inspect → validate → execute</span></div></div></div>
+            <div><span>06 / HUMAN CONTROL</span><h2>Review is a workflow state,<br/><em>not a confirmation dialog.</em></h2><p>Genesis draws a boundary between AI-assisted generation and execution. Review & Validate gives users a deliberate place to inspect, correct and confirm before the system progresses.</p><div className="v7-checkpoint"><Check/><div><b>HUMAN CHECKPOINT</b><span>AI output → inspect → validate → execute</span></div></div></div>
             <Reveal><Screen src={screens.review} label="review & validate" alt="Genesis Review and Validate" zoom/></Reveal>
           </div>
 
           <div className="v7-decision reverse">
             <Reveal><Screen src={screens.reports} label="reports" alt="Genesis Reports" zoom/></Reveal>
-            <div className="v7-decision-copy"><span>05 / EVIDENCE</span><h3>Turn execution into release evidence.</h3><Reason intent="Help a QA lead understand not only whether tests passed, but where coverage and risk sit." decision="Place headline metrics above the breakdown so users move from summary to diagnostic detail." why="Pass/fail alone does not explain the shape of remaining risk. Coverage and test-type breakdowns provide the next layer of evidence." tradeoff="More information creates a denser report. The hierarchy keeps the first read simple while preserving depth underneath."/></div>
-          </div>
-
-          <div className="v7-gallery">
-            <Reveal><Screen src={screens.project} label="project details" alt="Genesis Project Details" zoom/></Reveal>
-            <Reveal delay={.08}><Screen src={screens.data} label="test data setup" alt="Genesis Test Data Setup" zoom/></Reveal>
+            <div className="v7-decision-copy"><span>07 / EVIDENCE</span><h3>Turn execution into release evidence.</h3><Reason intent="Help a QA lead understand not only whether tests passed, but where coverage and risk sit." decision="Place headline metrics above the breakdown so users move from summary to diagnostic detail." why="Pass/fail alone does not explain the shape of remaining risk. Coverage and test-type breakdowns provide the next layer of evidence." tradeoff="More information creates a denser report. The hierarchy keeps the first read simple while preserving depth underneath."/></div>
           </div>
         </section>
 
