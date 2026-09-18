@@ -1,13 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './genesis-hero.css';
 
-const metadata = [
-  ['Role', 'Product Designer'],
-  ['Timeline', '6 months'],
-  ['Users', 'QA Engineers · QE Leads · DevOps'],
-  ['Scope', 'End-to-end UX/UI'],
-];
-
 export default function GenesisHero() {
   const [loaded, setLoaded] = useState(false);
 
@@ -26,7 +19,6 @@ export default function GenesisHero() {
           <button className="genesis-back" onClick={() => window.history.back()}>
             <span>←</span> Back to projects
           </button>
-          <span className="genesis-index">01 / 04</span>
         </div>
 
         <div className="genesis-hero-grid">
@@ -37,11 +29,6 @@ export default function GenesisHero() {
             <p className="genesis-description">
               Designing a guided workflow that helps teams configure AI-powered testing while keeping people in control of validation.
             </p>
-            <div className="genesis-hero-meta">
-              {metadata.map(([label, value]) => (
-                <div key={label}><small>{label}</small><strong>{value}</strong></div>
-              ))}
-            </div>
           </div>
 
           <div className="genesis-product-stage" aria-label="Genesis result screen preview">
