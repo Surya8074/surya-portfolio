@@ -1,9 +1,10 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import GenesisCaseStudy from './GenesisCaseStudy';
+import GenesisV7 from './GenesisV7';
+import './genesis-v7.css';
 
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <GenesisCaseStudy />
+    <GenesisV7 />
   </React.StrictMode>,
 );
