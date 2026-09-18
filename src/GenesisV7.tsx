@@ -35,15 +35,22 @@ function Reason({intent,decision,why,tradeoff}:{intent:string;decision:string;wh
 function SectionLabel({num,label}:{num:string;label:string}){
   return <div className="v7-section-label"><span>{num}</span><b>{label}</b></div>;
 }
-function TimelineStamp({time, href}:{time:string;href:string}){
-  return <a className="v7-timestamp" href={href} aria-label={time}><span>{time}</span><i /></a>;
+function ChapterStamp({num,label,href}:{num:string;label:string;href:string}){
+  return <a className="v7-chapter-stamp" href={href} aria-label={label}><span>{num}</span><b>{label}</b><i /></a>;
 }
 
 export default function GenesisV7(){
   const {scrollYProgress}=useScroll();
   const [progress,setProgress]=useState(0);
-  const heroY=useTransform(scrollYProgress,[0,.2],[0,-80]);
+  const [chaptersVisible,setChaptersVisible]=useState(true);
   useEffect(()=>scrollYProgress.on('change',v=>setProgress(v)),[scrollYProgress]);
+  useEffect(()=>{
+    const footer=document.querySelector('.v7-footer');
+    if(!footer) return;
+    const observer=new IntersectionObserver(([entry])=>setChaptersVisible(!entry.isIntersecting),{threshold:.08});
+    observer.observe(footer);
+    return()=>observer.disconnect();
+  },[]);
   return <main className="genesis-v7" id="top">
     <div className="v7-progress"><span style={{transform:`scaleX(${progress})`}}/></div>
     <header className="v7-nav">
@@ -71,17 +78,17 @@ export default function GenesisV7(){
     </section>
 
     <div className="v7-layout">
-      <aside className="v7-chapters" aria-label="Case study timeline">
+      <aside className={`v7-chapters ${chaptersVisible ? '' : 'is-hidden'}`} aria-label="Case study chapters">
         <div className="v7-timestamp-line" aria-hidden="true" />
-        <TimelineStamp time="00:00" href="#s01" />
-        <TimelineStamp time="00:15" href="#s02" />
-        <TimelineStamp time="00:30" href="#s03" />
-        <TimelineStamp time="00:45" href="#s04" />
-        <TimelineStamp time="01:00" href="#s05" />
-        <TimelineStamp time="01:15" href="#s06" />
-        <TimelineStamp time="01:30" href="#s07" />
-        <TimelineStamp time="01:45" href="#s08" />
-        <TimelineStamp time="02:00" href="#s09" />
+        <ChapterStamp num="01" label="PROBLEM" href="#s01" />
+        <ChapterStamp num="02" label="GOALS" href="#s02" />
+        <ChapterStamp num="03" label="USERS" href="#s03" />
+        <ChapterStamp num="04" label="PRINCIPLES" href="#s04" />
+        <ChapterStamp num="05" label="RESEARCH" href="#s05" />
+        <ChapterStamp num="06" label="MARKET" href="#s06" />
+        <ChapterStamp num="07" label="WORKFLOW" href="#s07" />
+        <ChapterStamp num="08" label="DECISIONS" href="#s08" />
+        <ChapterStamp num="09" label="MEASUREMENT" href="#s09" />
       </aside>
 
       <article className="v7-content">
