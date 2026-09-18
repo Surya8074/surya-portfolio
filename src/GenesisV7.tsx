@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import GenesisHero from './GenesisHero';
+import './genesis-hero.css';
 import { ArrowDown, ArrowRight, BarChart3, Check, Eye, GitBranch, LayoutDashboard, ShieldCheck, Sparkles } from 'lucide-react';
 
 const A='/surya-portfolio/genesis/';
@@ -33,10 +35,7 @@ function Reason({intent,decision,why,tradeoff}:{intent:string;decision:string;wh
 function SectionLabel({num,label}:{num:string;label:string}){
   return <div className="v7-section-label"><span>{num}</span><b>{label}</b></div>;
 }
-function Chapter({num,label,active}:{num:string;label:string;active?:boolean}){
-  return <a className={active?'active':''} href={'#s'+num}><span>{num}</span>{label}</a>;
-}
-
+function TimelineStamp({time, href}:{time:string;href:string}){\n  return <a className="v7-timestamp" href={href} aria-label={time}><span>{time}</span><i /></a>;\n}\n
 export default function GenesisV7(){
   const {scrollYProgress}=useScroll();
   const [progress,setProgress]=useState(0);
@@ -50,33 +49,8 @@ export default function GenesisV7(){
       <a href="../../">BACK TO WORK</a>
     </header>
 
-    <section className="v7-hero">
-      <motion.div className="v7-hero-bg" style={{y:heroY}}/>
-      <div className="v7-hero-inner">
-        <div className="v7-kicker"><span>PRODUCT DESIGN CASE STUDY</span><span>AI · ENTERPRISE SAAS · QA</span></div>
-        <div className="v7-hero-main">
-          <Reveal><p className="v7-eyebrow">GENESIS — AI TEST AUTOMATION</p></Reveal>
-          <motion.h1 initial={{opacity:0,y:55}} animate={{opacity:1,y:0}} transition={{duration:1,ease:[.22,1,.36,1]}}>From scattered QA work<br/><em>to a controlled pipeline.</em></motion.h1>
-          <Reveal delay={.15}><p className="v7-hero-lead">I designed Genesis around one product constraint: automation only creates value when the people accountable for release quality can understand, review and trust what the system produces.</p></Reveal>
-        </div>
-        <div className="v7-hero-bottom">
-          <div className="v7-meta"><div><span>ROLE</span><b>Product / UI-UX Designer</b></div><div><span>PRODUCT</span><b>Enterprise QA SaaS</b></div><div><span>PLATFORM</span><b>Web · desktop-first</b></div><div><span>TOOL</span><b>Figma</b></div></div>
-          <a className="v7-scroll" href="#s01">SCROLL TO EXPLORE <ArrowDown size={15}/></a>
-        </div>
-      </div>
-    </section>
-
-    <div className="v7-layout">
-      <aside className="v7-chapters" aria-label="Case study chapters">
-        <div className="v7-chapters-title">CASE STUDY</div>
-        <Chapter num="01" label="Problem" active/>
-        <Chapter num="02" label="Goals"/>
-        <Chapter num="03" label="Users"/>
-        <Chapter num="04" label="Principles"/>
-        <Chapter num="05" label="Workflow"/>
-        <Chapter num="06" label="Decisions"/>
-        <Chapter num="07" label="Measurement"/>
-      </aside>
+    <GenesisHero />\n\n    <div className="v7-layout">
+      <aside className="v7-chapters" aria-label="Case study timeline">\n        <div className="v7-timestamp-line" aria-hidden="true" />\n        <TimelineStamp time="00:00" href="#s01" />\n        <TimelineStamp time="00:15" href="#s02" />\n        <TimelineStamp time="00:30" href="#s03" />\n        <TimelineStamp time="00:45" href="#s04" />\n        <TimelineStamp time="01:00" href="#s05" />\n        <TimelineStamp time="01:15" href="#s06" />\n        <TimelineStamp time="01:30" href="#s07" />\n      </aside>
 
       <article className="v7-content">
         <section id="s01" className="v7-section v7-problem">
