@@ -171,7 +171,7 @@ export default function GenesisV7(){
         </section>
 
         <section id="s07" className="v7-section v7-flow">
-          <SectionLabel num="05" label="THE WORKFLOW"/>
+          <SectionLabel num="07" label="THE WORKFLOW"/>
           <div className="v7-section-title"><h2>From first login<br/><em>to release evidence.</em></h2></div>
           <div className="v7-flow-track">
             {['Access','Orient','Configure','Validate','Run','Report'].map((x,i)=><React.Fragment key={x}><div className={i===3?'active':''}><small>0{i+1}</small><b>{x}</b></div>{i<5&&<i>→</i>}</React.Fragment>)}
@@ -180,7 +180,7 @@ export default function GenesisV7(){
         </section>
 
         <section id="s08" className="v7-decisions">
-          <div className="v7-decisions-intro"><SectionLabel num="06" label="SCREEN DECISIONS"/><h2>Same product.<br/><em>Different questions.</em></h2><p>The UI is shown as a set of product decisions—not a gallery of finished screens.</p></div>
+          <div className="v7-decisions-intro"><SectionLabel num="08" label="SCREEN DECISIONS"/><h2>Same product.<br/><em>Different questions.</em></h2><p>The UI is shown as a set of product decisions—not a gallery of finished screens.</p></div>
 
           <div className="v7-decision">
             <div className="v7-decision-copy"><span>01 / ORIENTATION</span><h3>Give two audiences one shared operational picture.</h3><Reason intent="Answer whether the testing pipeline and the platform supporting it are healthy." decision="Separate product KPIs from infrastructure health rather than creating role-specific dashboards." why="QA and DevOps users look for different signals on the same landing surface. Organizing by scan intent reduces filtering." tradeoff="A unified grid is visually simpler, but it makes users filter unrelated signals. The hierarchy spends visual space to reduce that work."/></div>
@@ -214,7 +214,7 @@ export default function GenesisV7(){
         </section>
 
         <section id="s09" className="v7-section v7-measure">
-          <SectionLabel num="07" label="MEASUREMENT"/>
+          <SectionLabel num="09" label="MEASUREMENT"/>
           <div className="v7-section-title"><h2>Measure the workflow, <em>not vanity metrics.</em></h2></div>
           <div className="v7-measure-grid">
             <article><LayoutDashboard/><span>ACTIVATION</span><h3>Time to first test run</h3><p>Shows whether the setup sequence gets a new project to meaningful execution without unnecessary friction.</p></article>
