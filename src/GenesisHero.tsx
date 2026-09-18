@@ -29,25 +29,35 @@ export default function GenesisHero() {
             <p className="genesis-description">
               Designing a guided workflow that helps teams configure AI-powered testing while keeping people in control of validation.
             </p>
+            <div className="genesis-hero-meta">
+              <span>AI-ASSISTED TESTING</span>
+              <span>HUMAN VALIDATION</span>
+              <span>RELEASE EVIDENCE</span>
+            </div>
           </div>
 
-          <div className="genesis-product-stage" aria-label="Genesis result screen preview">
+          <div className="genesis-product-stage" aria-label="Genesis dashboard presented in a laptop">
             <div className="genesis-stage-shadow" />
-            <div className="genesis-browser genesis-result-browser">
-              <div className="genesis-browser-bar">
-                <div className="genesis-browser-dots"><i /><i /><i /></div>
-                <span>genesis · results</span>
-                <div className="genesis-browser-actions"><b /><b /><b /></div>
+            <div className="genesis-laptop">
+              <div className="genesis-laptop-lid">
+                <div className="genesis-laptop-camera" />
+                <div className="genesis-laptop-screen">
+                  <img
+                    src="/surya-portfolio/genesis/Dashboard.webp"
+                    alt="Genesis Dashboard"
+                    loading="eager"
+                    decoding="async"
+                    width="1920"
+                    height="1478"
+                  />
+                </div>
               </div>
-              <div className="genesis-result-screen">
-                <img
-                  src="/surya-portfolio/genesis/Reports.webp"
-                  alt="Genesis test results and reporting screen"
-                  loading="eager"
-                  decoding="async"
-                  width="1920"
-                  height="1478"
-                />
+              <div className="genesis-laptop-base">
+                <div className="genesis-laptop-deck">
+                  <div className="genesis-keyboard" />
+                  <div className="genesis-trackpad" />
+                </div>
+                <div className="genesis-laptop-front" />
               </div>
             </div>
           </div>
