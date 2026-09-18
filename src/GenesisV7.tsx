@@ -64,6 +64,8 @@ export default function GenesisV7(){
         <TimelineStamp time="01:00" href="#s05" />
         <TimelineStamp time="01:15" href="#s06" />
         <TimelineStamp time="01:30" href="#s07" />
+        <TimelineStamp time="01:45" href="#s08" />
+        <TimelineStamp time="02:00" href="#s09" />
       </aside>
 
       <article className="v7-content">
