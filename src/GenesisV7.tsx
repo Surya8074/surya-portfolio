@@ -54,6 +54,22 @@ export default function GenesisV7(){
 
     <GenesisHero />
 
+    <section className="v7-intro" aria-label="Genesis case study introduction">
+      <div className="v7-intro-inner">
+        <div className="v7-intro-copy">
+          <h2>From scattered QA work <em>to a controlled pipeline.</em></h2>
+          <p>I designed Genesis around one product constraint: automation only creates value when the people accountable for release quality can understand, review and trust what the system produces.</p>
+        </div>
+        <div className="v7-intro-meta">
+          <div><span>ROLE</span><strong>Product / UI-UX Designer</strong></div>
+          <div><span>PRODUCT</span><strong>Enterprise QA SaaS</strong></div>
+          <div><span>PLATFORM</span><strong>Web · desktop-first</strong></div>
+          <div><span>TOOL</span><strong>Figma</strong></div>
+        </div>
+        <a className="v7-intro-scroll" href="#s01"><span>SCROLL TO EXPLORE</span><i>↓</i></a>
+      </div>
+    </section>
+
     <div className="v7-layout">
       <aside className="v7-chapters" aria-label="Case study timeline">
         <div className="v7-timestamp-line" aria-hidden="true" />
