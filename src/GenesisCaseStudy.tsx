@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, ArrowRight, Check, ChevronRight, CircleDot, Eye, FileText, Layers3, ShieldCheck, SlidersHorizontal, Sparkles, UploadCloud } from 'lucide-react';
+import { ArrowDown, ArrowRight, Check, CircleDot, Eye, FileText, Layers3, ShieldCheck, SlidersHorizontal, Sparkles, UploadCloud } from 'lucide-react';
 import GenesisHero from './GenesisHero';
 import './genesis-case-study.css';
 
@@ -10,6 +10,86 @@ const steps = [
   { n: '03', title: 'Test data setup', short: 'Prepare the data', text: 'Connect supporting data and decide whether synthetic data is needed.', icon: SlidersHorizontal },
   { n: '04', title: 'AI configuration', short: 'Set AI behaviour', text: 'Choose the language, model and capabilities used by the workflow.', icon: Sparkles },
   { n: '05', title: 'Review & validate', short: 'Stay in control', text: 'Review the configuration before Genesis starts generating test artifacts.', icon: ShieldCheck },
+];
+
+const screenDecisions = [
+  {
+    number: '03',
+    eyebrow: 'SCREEN 01 · DASHBOARD',
+    title: 'Turn test activity into an operational view.',
+    context: 'After setup, the product has to move from configuration to continuous visibility. QA teams need to understand what is running, how quality is trending and where attention is required.',
+    decision: 'I treated the dashboard as the control surface for the system — prioritising high-level quality signals first, then supporting activity and trend information.',
+    why: 'The hierarchy keeps the first scan focused on status rather than forcing users to interpret raw test output.',
+    outcome: 'The dashboard becomes the bridge between generated testing work and day-to-day QA decisions.',
+    image: '/surya-portfolio/genesis/Dashboard.webp',
+    alt: 'Genesis dashboard showing quality and testing activity',
+  },
+  {
+    number: '04',
+    eyebrow: 'SCREEN 02 · PROJECT DETAILS',
+    title: 'Start with the system being tested — not the AI.',
+    context: 'Genesis needs enough project context before it can reason about tests. Starting with AI settings would expose technical choices before users have defined the problem space.',
+    decision: 'I made project identity and description the first commitment in the workflow, keeping the entry point simple and progressive.',
+    why: 'This establishes a stable mental model: first define the product, then provide the context and controls the AI needs.',
+    outcome: 'The first screen gives the workflow a clear anchor without front-loading technical configuration.',
+    image: '/surya-portfolio/genesis/Project-Details.webp',
+    alt: 'Genesis project details screen',
+  },
+  {
+    number: '05',
+    eyebrow: 'SCREEN 03 · INPUT ARTIFACTS',
+    title: 'Make the AI’s source of truth explicit.',
+    context: 'Test generation depends on the quality of the context supplied to Genesis — requirements, API contracts and source code are different inputs with different roles.',
+    decision: 'I represented each artifact type as an explicit input rather than hiding ingestion behind a generic upload action.',
+    why: 'Users can understand what Genesis is using as context before they move deeper into configuration.',
+    outcome: 'The screen turns an invisible AI dependency — context quality — into a visible product decision.',
+    image: '/surya-portfolio/genesis/Input-Artifacts.webp',
+    alt: 'Genesis input artifacts screen',
+  },
+  {
+    number: '06',
+    eyebrow: 'SCREEN 04 · TEST DATA',
+    title: 'Treat test data as part of the test system.',
+    context: 'Generated scenarios are only useful when the conditions behind them are available. Data connections and synthetic data therefore belong inside the core setup flow.',
+    decision: 'I separated data configuration from artifact ingestion so users can reason about product context and runtime conditions independently.',
+    why: 'The separation reduces conceptual mixing while still keeping both decisions inside the same guided setup.',
+    outcome: 'Test data becomes a first-class configuration layer instead of an implementation detail users discover later.',
+    image: '/surya-portfolio/genesis/Test-Data-Setup.webp',
+    alt: 'Genesis test data setup screen',
+  },
+  {
+    number: '07',
+    eyebrow: 'SCREEN 05 · AI CONFIGURATION',
+    title: 'Expose the controls that change AI behaviour.',
+    context: 'AI configuration is where the system can start to feel like a black box. Language, model and enabled capabilities directly affect what Genesis can produce.',
+    decision: 'I surfaced those controls as explicit configuration choices and grouped related capabilities together.',
+    why: 'Visible configuration gives technical users a model of what the system is going to do instead of asking them to trust an opaque automation layer.',
+    outcome: 'AI becomes a configurable subsystem inside the product rather than a mysterious background process.',
+    image: '/surya-portfolio/genesis/AI-Configuration.webp',
+    alt: 'Genesis AI configuration screen',
+  },
+  {
+    number: '08',
+    eyebrow: 'SCREEN 06 · REVIEW & VALIDATE',
+    title: 'Create a human checkpoint before execution.',
+    context: 'Multiple configuration decisions have accumulated by this point. The user needs a moment to inspect the combined setup before the system acts on it.',
+    decision: 'I consolidated the important choices into a review surface and made project creation the final explicit action.',
+    why: 'Review works as a confidence boundary: users can validate the system configuration before handing control to automation.',
+    outcome: 'The workflow preserves human agency at the exact transition where configuration becomes generated work.',
+    image: '/surya-portfolio/genesis/Review-Validate.webp',
+    alt: 'Genesis review and validate screen',
+  },
+  {
+    number: '09',
+    eyebrow: 'SCREEN 07 · REPORTS',
+    title: 'Turn generated tests into evidence teams can act on.',
+    context: 'The workflow ultimately has to produce more than test execution. Teams need a way to interpret outcomes, spot quality signals and understand what the automation is telling them.',
+    decision: 'I designed reporting as the analytical layer after execution — moving from raw runs toward quality, coverage and actionable signals.',
+    why: 'This closes the product loop: context goes in, tests are generated and executed, then the resulting evidence comes back to the team.',
+    outcome: 'Reports complete the Genesis loop from setup → automation → evidence.',
+    image: '/surya-portfolio/genesis/Reports.webp',
+    alt: 'Genesis reports interface',
+  },
 ];
 
 const decisions = [
@@ -99,49 +179,36 @@ function WorkflowMap() {
   );
 }
 
-function ScreenFrame({ type }: { type: 'project' | 'artifacts' | 'ai' | 'review' | 'reports' }) {
-  if (type === 'project') return (
-    <div className="screen-frame project-screen">
-      <div className="screen-chrome"><span /><span /><span /><small>Create New Project</small></div>
-      <div className="screen-layout"><aside><b>G</b><i /><i /><i /><i /></aside><div className="screen-content"><small>01 / 05 · PROJECT DETAILS</small><h4>Tell Genesis what you are testing.</h4><label>PROJECT NAME<div>Project Genesis</div></label><label>DESCRIPTION<div>AI-assisted testing workspace</div></label><button>Next <ChevronRight size={13} /></button></div></div>
-    </div>
-  );
-  if (type === 'artifacts') return (
-    <div className="screen-frame artifacts-screen">
-      <div className="screen-chrome"><span /><span /><span /><small>Input Artifacts</small></div>
-      <div className="artifact-content"><small>02 / 05 · INPUT ARTIFACTS</small><h4>Bring the context the AI needs.</h4><div className="artifact-grid"><div><FileText size={19} /><b>User Stories</b><span>Requirements & acceptance criteria</span></div><div><CircleDot size={19} /><b>API Contracts</b><span>OpenAPI / Swagger</span></div><div><UploadCloud size={19} /><b>GitHub Repository</b><span>Source code context</span></div></div></div>
-    </div>
-  );
-  if (type === 'ai') return (
-    <div className="screen-frame ai-screen">
-      <div className="screen-chrome"><span /><span /><span /><small>AI Configuration</small></div>
-      <div className="ai-screen-content"><small>04 / 05 · AI CONFIGURATION</small><h4>Make the AI a visible decision.</h4><div className="ai-setting"><span>Programming language</span><b>TypeScript</b><ChevronRight size={14} /></div><div className="ai-setting"><span>LLM model</span><b>GPT model</b><ChevronRight size={14} /></div><div className="ai-capability"><span><Check size={13} /> Test case generation</span><span><Check size={13} /> Code analysis</span><span><Eye size={13} /> Bug detection</span></div></div>
-    </div>
-  );
-  if (type === 'review') return (
-    <div className="screen-frame review-screen">
-      <div className="screen-chrome"><span /><span /><span /><small>Review & Validate</small></div>
-      <div className="review-content"><small>05 / 05 · REVIEW & VALIDATE</small><h4>Give the user the final say.</h4><div className="review-summary"><div><span>Language</span><b>TypeScript</b></div><div><span>LLM model</span><b>GPT model</b></div><div><span>Synthetic data</span><b>Enabled</b></div><div><span>Setup time</span><b>~ 15 min</b></div></div><button>Create Project <ArrowRight size={13} /></button></div>
-    </div>
-  );
+function ScreenDecision({ screen, index }: { screen: typeof screenDecisions[number]; index: number }) {
   return (
-    <div className="screen-frame reports-screen">
-      <div className="screen-chrome"><span /><span /><span /><small>Genesis Dashboard</small></div>
-      <div className="dashboard-content"><small>QUALITY OVERVIEW</small><h4>See what needs attention.</h4><div className="dashboard-kpis"><span><b>12</b>Active projects</span><span><b>47</b>Test cycles</span><span><b>94.2%</b>Pass rate</span><span><b>87.5%</b>Coverage</span></div><div className="dashboard-charts"><div><span>Testing activity</span><svg viewBox="0 0 360 90"><path d="M0 72 C35 60 50 78 86 55 S140 68 168 45 S220 55 250 30 S300 42 360 14" /></svg></div><div className="donut"><i>94%</i></div></div></div>
-    </div>
-  );
-}
-
-function StoryChapter({ number, eyebrow, title, copy, visual, reverse = false }: { number: string; eyebrow: string; title: string; copy: string; visual: React.ReactNode; reverse?: boolean }) {
-  return (
-    <section className={`genesis-case-section chapter-section ${reverse ? 'chapter-reverse' : ''}`}>
-      <div className="chapter-copy">
-        <div className="chapter-number">{number}</div>
-        <p className="genesis-section-kicker">{eyebrow}</p>
-        <h2>{title}</h2>
-        <p>{copy}</p>
+    <section className={`genesis-screen-decision ${index % 2 ? 'screen-decision-reverse' : ''}`}>
+      <div className="screen-decision-header">
+        <div className="screen-decision-index">
+          <span>{screen.number}</span>
+          <i />
+        </div>
+        <div className="screen-decision-title">
+          <p className="genesis-section-kicker">{screen.eyebrow}</p>
+          <h2>{screen.title}</h2>
+        </div>
       </div>
-      <Reveal className="chapter-visual">{visual}</Reveal>
+
+      <div className="screen-decision-context">
+        <div><span>CONTEXT</span><p>{screen.context}</p></div>
+        <div><span>DECISION</span><p>{screen.decision}</p></div>
+      </div>
+
+      <Reveal className="screen-decision-ui">
+        <div className="screen-ui-label"><span>UI · REAL PRODUCT SCREEN</span><b>GENESIS</b></div>
+        <div className="screen-image-wrap">
+          <img src={screen.image} alt={screen.alt} loading={index > 1 ? 'lazy' : 'eager'} />
+        </div>
+      </Reveal>
+
+      <div className="screen-decision-bottom">
+        <div><span>WHY</span><p>{screen.why}</p></div>
+        <div><span>OUTCOME</span><p>{screen.outcome}</p></div>
+      </div>
     </section>
   );
 }
@@ -160,7 +227,6 @@ export default function GenesisCaseStudy() {
   return (
     <main className="genesis-case-study">
       <GenesisHero />
-
       <ProjectSnapshot />
 
       <section className="genesis-case-section problem-section">
@@ -181,28 +247,22 @@ export default function GenesisCaseStudy() {
         <Reveal><WorkflowMap /></Reveal>
       </section>
 
-      <StoryChapter number="03" eyebrow="STEP 01 · PROJECT DETAILS" title="Start with the thing being tested — not the AI." copy="The first step establishes the project context. This gives the user a clear starting point and prevents AI configuration from arriving before the basic problem is defined." visual={<ScreenFrame type="project" />} />
-
-      <StoryChapter number="04" eyebrow="STEP 02 · INPUT ARTIFACTS" title="Give the AI the context it needs." copy="Genesis accepts the product information that shapes testing: user stories, API contracts and source code. The interface makes those inputs explicit so users understand what the system will work from." visual={<ScreenFrame type="artifacts" />} reverse />
-
-      <StoryChapter number="05" eyebrow="STEP 03 · TEST DATA" title="Prepare the conditions the tests will depend on." copy="Test creation is not only about generating scenarios. The workflow also accounts for the data behind those scenarios, including database connections and the option to enable synthetic test data." visual={<div className="test-data-visual"><div className="data-card"><span>03 / 05</span><h3>Test Data Setup</h3><p>Connect the data your test scenarios need.</p><div className="data-row"><b>Database connection</b><small>Configured</small></div><div className="toggle-row"><b>Enable synthetic test data</b><i className="toggle-on" /></div></div><div className="data-orbit"><CircleDot size={18} /></div></div>} />
-
-      <StoryChapter number="06" eyebrow="STEP 04 · AI CONFIGURATION" title="Make the AI understandable before asking it to act." copy="Language, model and capabilities are separated into visible choices. This is where the product communicates that AI is a configurable part of the workflow — not magic happening somewhere behind the interface." visual={<ScreenFrame type="ai" />} reverse />
-
-      <StoryChapter number="07" eyebrow="STEP 05 · REVIEW & VALIDATE" title="Keep the human in control at the moment that matters." copy="Before a project is created, the user gets a consolidated view of the choices made across the workflow. Review becomes a deliberate confidence checkpoint rather than an invisible system action." visual={<ScreenFrame type="review" />} />
-
-      <section className="genesis-case-section insight-section">
-        <SectionHeader number="08" eyebrow="AFTER SETUP" title="The story does not end when the project is created." copy="Once the workspace is configured, Genesis needs to help teams understand activity, quality and areas that need attention. The dashboard and reports turn the generated work into something the team can monitor." />
-        <Reveal><ScreenFrame type="reports" /></Reveal>
+      <section className="genesis-screen-decisions">
+        <div className="screen-decisions-intro">
+          <p className="genesis-section-kicker">PHASE 3 · SCREEN DECISIONS</p>
+          <h2>The screens are where the system becomes tangible.</h2>
+          <p>Rather than walking through the interface as a feature tour, I use each screen to explain one product decision: what the user needs, what the interface exposes, and why that structure matters.</p>
+        </div>
+        {screenDecisions.map((screen, index) => <ScreenDecision key={screen.number} screen={screen} index={index} />)}
       </section>
 
       <section className="genesis-case-section states-section">
-        <SectionHeader number="09" eyebrow="DETAILS THAT BUILD TRUST" title="I designed the states around the same principle: tell the user what is happening." copy="Empty, input, error and success states are small moments, but they shape whether a technical workflow feels predictable. They make the system's response visible instead of leaving users to guess." />
+        <SectionHeader number="10" eyebrow="DETAILS THAT BUILD TRUST" title="I designed the states around the same principle: tell the user what is happening." copy="Empty, input, error and success states are small moments, but they shape whether a technical workflow feels predictable. They make the system's response visible instead of leaving users to guess." />
         <Reveal><StateStrip /></Reveal>
       </section>
 
       <section className="genesis-case-section decisions-section">
-        <SectionHeader number="10" eyebrow="WHAT SHAPED THE DESIGN" title="Four principles kept the experience coherent." copy="These were the recurring design decisions behind the screens — not isolated UI tricks." />
+        <SectionHeader number="11" eyebrow="WHAT SHAPED THE DESIGN" title="Four principles kept the experience coherent." copy="These were the recurring design decisions behind the screens — not isolated UI tricks." />
         <div className="genesis-decision-grid">{decisions.map(([title, text], i) => <Reveal key={title} delay={i * 0.05}><motion.article whileHover={{ y: -6 }}><span>0{i + 1}</span><h3>{title}</h3><p>{text}</p><ArrowRight size={17} /></motion.article></Reveal>)}</div>
       </section>
 
