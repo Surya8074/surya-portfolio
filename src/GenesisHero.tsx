@@ -50,8 +50,6 @@ export default function GenesisHero() {
                 />
               </div>
             </div>
-            <div className="genesis-floating-card genesis-card-left"><small>AI WORKFLOW</small><strong>Human-in-the-loop</strong><span>Review before execution</span></div>
-            <div className="genesis-floating-card genesis-card-right"><small>01 — 05</small><strong>Configure</strong><span>Project → AI → Validate</span></div>
           </div>
         </div>
 
