@@ -65,12 +65,6 @@ export default function GenesisV7(){
   },[]);
   return <main className="genesis-v7" id="top">
     <div className="v7-progress"><span style={{transform:`scaleX(${progress})`}}/></div>
-    <header className="v7-nav">
-      <a href="../../" className="v7-brand">SURYA KIRAN</a>
-      <span>GENESIS / V7</span>
-      <a href="../../">BACK TO WORK</a>
-    </header>
-
     <GenesisHero />
 
     <section className="v7-intro" aria-label="Genesis case study introduction">
