@@ -35,7 +35,10 @@ function Reason({intent,decision,why,tradeoff}:{intent:string;decision:string;wh
 function SectionLabel({num,label}:{num:string;label:string}){
   return <div className="v7-section-label"><span>{num}</span><b>{label}</b></div>;
 }
-function TimelineStamp({time, href}:{time:string;href:string}){\n  return <a className="v7-timestamp" href={href} aria-label={time}><span>{time}</span><i /></a>;\n}\n
+function TimelineStamp({time, href}:{time:string;href:string}){
+  return <a className="v7-timestamp" href={href} aria-label={time}><span>{time}</span><i /></a>;
+}
+
 export default function GenesisV7(){
   const {scrollYProgress}=useScroll();
   const [progress,setProgress]=useState(0);
@@ -49,8 +52,19 @@ export default function GenesisV7(){
       <a href="../../">BACK TO WORK</a>
     </header>
 
-    <GenesisHero />\n\n    <div className="v7-layout">
-      <aside className="v7-chapters" aria-label="Case study timeline">\n        <div className="v7-timestamp-line" aria-hidden="true" />\n        <TimelineStamp time="00:00" href="#s01" />\n        <TimelineStamp time="00:15" href="#s02" />\n        <TimelineStamp time="00:30" href="#s03" />\n        <TimelineStamp time="00:45" href="#s04" />\n        <TimelineStamp time="01:00" href="#s05" />\n        <TimelineStamp time="01:15" href="#s06" />\n        <TimelineStamp time="01:30" href="#s07" />\n      </aside>
+    <GenesisHero />
+
+    <div className="v7-layout">
+      <aside className="v7-chapters" aria-label="Case study timeline">
+        <div className="v7-timestamp-line" aria-hidden="true" />
+        <TimelineStamp time="00:00" href="#s01" />
+        <TimelineStamp time="00:15" href="#s02" />
+        <TimelineStamp time="00:30" href="#s03" />
+        <TimelineStamp time="00:45" href="#s04" />
+        <TimelineStamp time="01:00" href="#s05" />
+        <TimelineStamp time="01:15" href="#s06" />
+        <TimelineStamp time="01:30" href="#s07" />
+      </aside>
 
       <article className="v7-content">
         <section id="s01" className="v7-section v7-problem">
