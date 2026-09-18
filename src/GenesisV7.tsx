@@ -42,14 +42,26 @@ function ChapterStamp({num,label,href}:{num:string;label:string;href:string}){
 export default function GenesisV7(){
   const {scrollYProgress}=useScroll();
   const [progress,setProgress]=useState(0);
-  const [chaptersVisible,setChaptersVisible]=useState(true);
+  const [chaptersVisible,setChaptersVisible]=useState(false);
   useEffect(()=>scrollYProgress.on('change',v=>setProgress(v)),[scrollYProgress]);
   useEffect(()=>{
+    const firstChapter=document.querySelector('#s01');
     const footer=document.querySelector('.v7-footer');
-    if(!footer) return;
-    const observer=new IntersectionObserver(([entry])=>setChaptersVisible(!entry.isIntersecting),{threshold:.08});
-    observer.observe(footer);
-    return()=>observer.disconnect();
+    if(!firstChapter || !footer) return;
+    const updateVisibility=()=>{
+      const firstRect=firstChapter.getBoundingClientRect();
+      const footerRect=footer.getBoundingClientRect();
+      const chapterStarted=firstRect.top <= window.innerHeight * .82;
+      const footerStarted=footerRect.top <= window.innerHeight * .92;
+      setChaptersVisible(chapterStarted && !footerStarted);
+    };
+    updateVisibility();
+    window.addEventListener('scroll',updateVisibility,{passive:true});
+    window.addEventListener('resize',updateVisibility);
+    return()=>{
+      window.removeEventListener('scroll',updateVisibility);
+      window.removeEventListener('resize',updateVisibility);
+    };
   },[]);
   return <main className="genesis-v7" id="top">
     <div className="v7-progress"><span style={{transform:`scaleX(${progress})`}}/></div>
