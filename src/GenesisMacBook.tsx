@@ -163,9 +163,9 @@ export default function GenesisMacBook() {
     let disposed = false;
 
     // Add the display immediately so the 3D laptop renders on the first frame.
-    // The Genesis dashboard texture is applied asynchronously when it arrives.
+    // The Genesis result/report screen is applied asynchronously when it arrives.
     const screenMaterial = new THREE.MeshBasicMaterial({
-      color: 0x111318,
+      color: 0xffffff,
       toneMapped: false,
     });
     const screen = new THREE.Mesh(
