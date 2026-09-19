@@ -88,9 +88,9 @@ export default function GenesisMacBook() {
     if (!mount) return;
 
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(27, 1, 0.1, 160);
-    camera.position.set(31, 18, 46);
-    camera.lookAt(0, 5.8, -1.2);
+    const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 180);
+    camera.position.set(34, 15, 61);
+    camera.lookAt(0, 6.8, -0.8);
 
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
@@ -107,7 +107,7 @@ export default function GenesisMacBook() {
     mount.appendChild(renderer.domElement);
 
     const root = new THREE.Group();
-    root.rotation.set(0.015, -0.16, 0);
+    root.rotation.set(0.01, -0.10, 0);
     scene.add(root);
 
     const body = material(0xbfc2c7, 0.34, 0.58);
@@ -142,7 +142,7 @@ export default function GenesisMacBook() {
     // perfectly registered to the physical screen during 3D rotation.
     const lid = new THREE.Group();
     lid.position.set(0, 1.12, -MAC.depth / 2 + 1.05);
-    lid.rotation.x = -THREE.MathUtils.degToRad(108);
+    lid.rotation.x = -THREE.MathUtils.degToRad(8);
     root.add(lid);
 
     const lidShell = new THREE.Mesh(
@@ -251,8 +251,8 @@ export default function GenesisMacBook() {
 
       if (!reduceMotion) {
         const target = targetRef.current;
-        root.rotation.x += ((0.015 + target.y * -0.018) - root.rotation.x) * 0.07;
-        root.rotation.y += ((-0.16 + target.x * 0.035) - root.rotation.y) * 0.07;
+        root.rotation.x += ((0.01 + target.y * -0.012) - root.rotation.x) * 0.07;
+        root.rotation.y += ((-0.10 + target.x * 0.025) - root.rotation.y) * 0.07;
         root.position.x += (target.x * 0.18 - root.position.x) * 0.07;
         root.position.y += (-target.y * 0.08 - root.position.y) * 0.07;
       }
