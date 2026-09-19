@@ -63,12 +63,17 @@ function GenesisCard() {
         </div>
 
         <div className="genesis-laptop">
-          <div className="genesis-laptop-screen">
-            <img src="/surya-portfolio/genesis/Dashboard.webp" alt="Genesis dashboard" loading="lazy" />
+          <div className="genesis-laptop-lid">
+            <div className="genesis-laptop-display">
+              <img src="/surya-portfolio/genesis/Dashboard.webp" alt="Genesis dashboard" loading="lazy" />
+            </div>
+            <span className="genesis-laptop-camera" />
           </div>
-          <div className="genesis-laptop-base">
-            <div className="genesis-laptop-keyboard" />
-            <div className="genesis-laptop-trackpad" />
+          <div className="genesis-laptop-hinge" />
+          <div className="genesis-laptop-deck">
+            <div className="genesis-laptop-keyboard" aria-hidden="true" />
+            <div className="genesis-laptop-trackpad" aria-hidden="true" />
+            <span className="genesis-laptop-notch" />
           </div>
         </div>
 
