@@ -125,7 +125,7 @@
   width:auto;
   min-height:0;
   pointer-events:auto;
-  transform:translateY(64px);
+  transform:translateY(80px);
 }
 .genesis-3d-laptop canvas{
   display:block;
