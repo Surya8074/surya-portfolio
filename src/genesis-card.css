@@ -110,6 +110,9 @@
   min-width:0;
   overflow:visible;
   isolation:isolate;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 .genesis-project-visual::before,
 .genesis-project-visual::after,
@@ -130,6 +133,7 @@
 }
 
 .genesis-float-screen{
+  display:none;
   position:absolute;
   z-index:6;
   width:182px;
@@ -192,6 +196,7 @@
 }
 
 .genesis-note{
+  display:none;
   position:absolute;
   z-index:7;
   font-family:"Comic Sans MS","Bradley Hand",cursive;
