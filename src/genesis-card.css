@@ -810,3 +810,26 @@
     bottom:10%;
   }
 }
+
+
+/* Genesis hero — align the physical laptop with the left content column */
+.genesis-3d-laptop{
+  inset:7% 4% 8% 7%;
+  min-height:0;
+}
+.genesis-float-input{left:-2%;top:18%}
+.genesis-float-config{right:-2%;top:16%}
+.genesis-float-reports{right:-1%;bottom:14%}
+
+@media (max-width:1050px){
+  .genesis-3d-laptop{
+    inset:5% 2% 7% 2%;
+    min-height:0;
+  }
+}
+@media (max-width:600px){
+  .genesis-3d-laptop{
+    inset:4% -7% 6% -7%;
+    min-height:0;
+  }
+}
