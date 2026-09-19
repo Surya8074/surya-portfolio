@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
 
-const SCREEN_URL = '/surya-portfolio/genesis/Dashboard.webp';
+const SCREEN_URL = '/surya-portfolio/genesis/Reports.webp';
 
 const MAC = {
   width: 31.26,
@@ -88,8 +88,8 @@ export default function GenesisMacBook() {
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 180);
-    camera.position.set(36, 16, 72);
-    camera.lookAt(0, 6.4, -0.6);
+    camera.position.set(38, 17, 78);
+    camera.lookAt(0, 6.3, -0.5);
 
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
