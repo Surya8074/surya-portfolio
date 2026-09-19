@@ -16,7 +16,7 @@ export default function GenesisHero() {
 
       <div className="genesis-hero-shell">
         <div className="genesis-hero-top">
-          <button className="genesis-back" onClick={() => window.history.back()}>
+          <button className="genesis-back" onClick={() => { window.location.href = '/surya-portfolio/'; }}>
             <span>←</span> Back to projects
           </button>
         </div>
