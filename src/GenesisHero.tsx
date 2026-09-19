@@ -16,9 +16,9 @@ export default function GenesisHero() {
 
       <div className="genesis-hero-shell">
         <div className="genesis-hero-top">
-          <button className="genesis-back" onClick={() => window.history.back()}>
-            <span>←</span> Back to projects
-          </button>
+          <a className="genesis-back" href="/surya-portfolio/">
+            <span>←</span> Back to portfolio
+          </a>
         </div>
 
         <div className="genesis-hero-grid">
@@ -27,7 +27,7 @@ export default function GenesisHero() {
             <h1>GENESIS</h1>
             <p className="genesis-subtitle">AI-powered test automation for modern QA teams.</p>
             <p className="genesis-description">
-              Designing a guided workflow that helps teams configure AI-powered testing while keeping people in control of validation.
+              The design problem: accelerate test creation without removing the human judgment that makes a release trustworthy.
             </p>
             <div className="genesis-hero-meta">
               <span>AI-ASSISTED TESTING</span>
