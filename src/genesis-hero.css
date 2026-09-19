@@ -23,8 +23,8 @@
 .is-loaded .genesis-laptop{transform:perspective(1400px) rotateY(-7deg) rotateX(2deg) translateY(0) scale(.96);opacity:1}
 .genesis-laptop-lid{position:relative;padding:12px 12px 13px;border-radius:20px 20px 8px 8px;background:linear-gradient(145deg,#e9e9e8,#bfc1c7 58%,#e8e8e7);box-shadow:0 30px 60px rgba(31,35,49,.19),0 8px 20px rgba(31,35,49,.12);border:1px solid rgba(18,20,25,.17)}
 .genesis-laptop-camera{position:absolute;top:5px;left:50%;width:7px;height:7px;transform:translateX(-50%);border-radius:50%;background:#20242c;z-index:2;box-shadow:0 0 0 2px rgba(255,255,255,.28)}
-.genesis-laptop-screen{position:relative;overflow:hidden;border-radius:9px;background:#fff;line-height:0;aspect-ratio:16/10}
-.genesis-laptop-screen img{display:block;width:100%;height:100%;object-fit:cover;object-position:center top}
+.genesis-laptop-screen{position:relative;overflow:hidden;border-radius:9px;background:#fff;line-height:0;aspect-ratio:16/10;display:flex;align-items:flex-start;justify-content:center}
+.genesis-laptop-screen img{display:block;width:100%;height:100%;object-fit:contain;object-position:center top}
 .genesis-laptop-base{position:relative;height:74px;margin:0 -36px;border-radius:4px 4px 18px 18px;background:linear-gradient(180deg,#d7d8da,#aeb0b6);box-shadow:0 16px 26px rgba(31,35,49,.16);clip-path:polygon(4% 0,96% 0,100% 72%,91% 100%,9% 100%,0 72%)}
 .genesis-laptop-deck{position:absolute;inset:8px 9% 15px;border-radius:5px 5px 12px 12px;background:linear-gradient(180deg,#c8c9cc,#b4b6bb);box-shadow:inset 0 1px 1px rgba(255,255,255,.65)}
 .genesis-keyboard{position:absolute;left:16%;right:16%;top:10px;height:38px;border-radius:4px;background:repeating-linear-gradient(90deg,rgba(35,38,45,.24) 0 7px,transparent 7px 10px),repeating-linear-gradient(180deg,rgba(35,38,45,.18) 0 5px,transparent 5px 8px);opacity:.55}
