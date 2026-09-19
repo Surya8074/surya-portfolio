@@ -137,11 +137,11 @@ export default function GenesisMacBook() {
     root.add(deck);
     addKeyboard(root);
 
-    // The lid owns the display plane. This is what keeps the dashboard
-    // perfectly registered to the physical screen during 3D rotation.
     const lid = new THREE.Group();
     lid.position.set(0, 1.12, -MAC.depth / 2 + 1.05);
-    lid.rotation.x = -THREE.MathUtils.degToRad(8);
+    const OPEN_LID_ROTATION = -THREE.MathUtils.degToRad(8);
+    const CLOSED_LID_ROTATION = -THREE.MathUtils.degToRad(88);
+    lid.rotation.x = OPEN_LID_ROTATION;
     root.add(lid);
 
     const lidShell = new THREE.Mesh(
@@ -162,8 +162,6 @@ export default function GenesisMacBook() {
 
     let disposed = false;
 
-    // Add the display immediately so the 3D laptop renders on the first frame.
-    // The Genesis result/report screen is applied asynchronously when it arrives.
     const screenMaterial = new THREE.MeshBasicMaterial({
       color: 0xffffff,
       toneMapped: false,
@@ -234,11 +232,38 @@ export default function GenesisMacBook() {
 
     resize();
     const observer = new ResizeObserver(resize);
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let lidTarget = OPEN_LID_ROTATION;
+
+    const updateLidTarget = () => {
+      if (reduceMotion) {
+        lidTarget = OPEN_LID_ROTATION;
+        return;
+      }
+
+      const rect = mount.getBoundingClientRect();
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      const enter = viewportHeight * 0.88;
+      const exit = viewportHeight * 0.18;
+      const progress = THREE.MathUtils.clamp(
+        (enter - rect.top) / Math.max(enter - exit, 1),
+        0,
+        1,
+      );
+
+      const eased = progress * progress * (3 - 2 * progress);
+      lidTarget = THREE.MathUtils.lerp(CLOSED_LID_ROTATION, OPEN_LID_ROTATION, eased);
+    };
+
+    const handleScroll = () => updateLidTarget();
+
     observer.observe(mount);
+    updateLidTarget();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', updateLidTarget);
 
     let frame = 0;
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
     const animate = () => {
       frame = requestAnimationFrame(animate);
 
@@ -250,6 +275,9 @@ export default function GenesisMacBook() {
         root.position.y += (-target.y * 0.08 - root.position.y) * 0.07;
       }
 
+      const lidDelta = lidTarget - lid.rotation.x;
+      lid.rotation.x += lidDelta * (reduceMotion ? 1 : 0.09);
+
       renderer.render(scene, camera);
     };
 
@@ -259,6 +287,8 @@ export default function GenesisMacBook() {
       disposed = true;
       cancelAnimationFrame(frame);
       observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', updateLidTarget);
       renderer.dispose();
 
       scene.traverse((object) => {
@@ -295,8 +325,6 @@ export default function GenesisMacBook() {
       onPointerMove={handlePointerMove}
       onPointerLeave={reset}
       aria-hidden="true"
-    >
-
-    </div>
+    />
   );
 }
