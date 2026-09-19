@@ -1,13 +1,85 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
 
-const MODEL_URL = 'https://raw.githubusercontent.com/AnubhavChaturvedi-GitHub/macbook-pro-threejs/main/MacBook%20Pro.glb';
 const SCREEN_URL = '/surya-portfolio/genesis/Dashboard.webp';
+
+const MAC = {
+  width: 31.26,
+  depth: 22.12,
+  baseHeight: 1.12,
+  lidWidth: 30.9,
+  lidHeight: 20.55,
+  lidDepth: 0.62,
+  screenWidth: 29.55,
+  screenHeight: 19.18,
+};
+
+const roundedBox = (w: number, h: number, d: number, r: number, segments = 5) =>
+  new RoundedBoxGeometry(w, h, d, segments, r);
+
+const material = (color: number, roughness: number, metalness: number) =>
+  new THREE.MeshPhysicalMaterial({
+    color,
+    roughness,
+    metalness,
+    clearcoat: 0.12,
+    clearcoatRoughness: 0.4,
+  });
+
+function addKeyboard(root: THREE.Group) {
+  const keyMaterial = new THREE.MeshPhysicalMaterial({
+    color: 0x141519,
+    roughness: 0.72,
+    metalness: 0.02,
+  });
+
+  const rows = [
+    [12, 1.65],
+    [13, 1.7],
+    [13, 1.7],
+    [12, 1.75],
+    [11, 1.8],
+    [10, 1.9],
+  ];
+
+  const keyDepth = 1.55;
+  const rowGap = 0.34;
+  const startZ = -6;
+
+  rows.forEach(([count, keyWidth], row) => {
+    const gap = 0.24;
+    const total = count * keyWidth + (count - 1) * gap;
+    const startX = -total / 2;
+    const z = startZ + row * (keyDepth + rowGap);
+
+    for (let i = 0; i < count; i += 1) {
+      const key = new THREE.Mesh(
+        roundedBox(keyWidth, 0.11, keyDepth, 0.16, 3),
+        keyMaterial,
+      );
+      key.position.set(startX + keyWidth / 2 + i * (keyWidth + gap), 1.27, z);
+      key.castShadow = true;
+      root.add(key);
+    }
+  });
+
+  const trackpad = new THREE.Mesh(
+    roundedBox(12.9, 0.08, 8.1, 0.55, 5),
+    new THREE.MeshPhysicalMaterial({
+      color: 0xc0c3c8,
+      roughness: 0.2,
+      metalness: 0.3,
+      clearcoat: 0.7,
+      clearcoatRoughness: 0.08,
+    }),
+  );
+  trackpad.position.set(0, 1.18, 6.25);
+  root.add(trackpad);
+}
 
 export default function GenesisMacBook() {
   const mountRef = useRef<HTMLDivElement>(null);
-  const sceneRef = useRef<THREE.Group | null>(null);
   const targetRef = useRef({ x: 0, y: 0 });
   const [loading, setLoading] = useState(true);
 
@@ -16,111 +88,199 @@ export default function GenesisMacBook() {
     if (!mount) return;
 
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(31, 1, 0.1, 100);
-    camera.position.set(12.5, 8.2, 22.5);
-    camera.lookAt(0, 3.8, 0);
+    const camera = new THREE.PerspectiveCamera(27, 1, 0.1, 160);
+    camera.position.set(31, 18, 46);
+    camera.lookAt(0, 5.8, -1.2);
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true,
+      alpha: true,
+      powerPreference: 'high-performance',
+    });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.7));
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.08;
+    renderer.toneMappingExposure = 1.12;
     renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     renderer.setClearColor(0xffffff, 0);
     mount.appendChild(renderer.domElement);
 
     const root = new THREE.Group();
-    root.scale.setScalar(0.33);
-    root.rotation.y = -0.12;
+    root.rotation.set(0.015, -0.16, 0);
     scene.add(root);
-    sceneRef.current = root;
 
-    scene.add(new THREE.HemisphereLight(0xffffff, 0x8f9298, 2.3));
-    const key = new THREE.DirectionalLight(0xffffff, 4.2);
-    key.position.set(7, 14, 12);
-    key.castShadow = true;
-    scene.add(key);
-    const fill = new THREE.DirectionalLight(0xdde8ff, 2.0);
-    fill.position.set(-10, 7, 8);
-    scene.add(fill);
-
-    const loader = new GLTFLoader();
-    let cancelled = false;
-    loader.load(MODEL_URL, (gltf) => {
-      if (cancelled) return;
-      const model = gltf.scene;
-      model.traverse((child) => {
-        if (child instanceof THREE.Mesh) {
-          child.castShadow = true;
-          child.receiveShadow = true;
-          const materials = Array.isArray(child.material) ? child.material : [child.material];
-          materials.forEach((material) => {
-            if ('metalness' in material) material.metalness = Math.min(1, Number(material.metalness) || 0.3);
-            if ('roughness' in material) material.roughness = Math.max(0.22, Number(material.roughness) || 0.35);
-          });
-        }
-      });
-      root.add(model);
-
-      const textureLoader = new THREE.TextureLoader();
-      textureLoader.load(SCREEN_URL, (texture) => {
-        texture.colorSpace = THREE.SRGBColorSpace;
-        texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
-        const screenMaterial = new THREE.MeshBasicMaterial({ map: texture, toneMapped: false });
-
-        // The reference model is authored in centimetres. This plane sits just above
-        // the real display surface, following the same open-lid perspective.
-        const screen = new THREE.Mesh(new THREE.PlaneGeometry(30.0, 19.48), screenMaterial);
-        screen.position.set(0, 10.0, -0.12);
-        screen.rotation.x = -0.075;
-        screen.name = 'GenesisScreen';
-        root.add(screen);
-      });
-      setLoading(false);
-    }, undefined, () => {
-      if (!cancelled) setLoading(false);
+    const body = material(0xbfc2c7, 0.34, 0.58);
+    const edge = material(0xd9dce0, 0.24, 0.75);
+    const black = new THREE.MeshPhysicalMaterial({
+      color: 0x090a0d,
+      roughness: 0.2,
+      metalness: 0.1,
+      clearcoat: 0.85,
+      clearcoatRoughness: 0.08,
     });
 
+    const base = new THREE.Mesh(
+      roundedBox(MAC.width, MAC.baseHeight, MAC.depth, 1.05, 6),
+      body,
+    );
+    base.position.y = 0.56;
+    base.castShadow = true;
+    base.receiveShadow = true;
+    root.add(base);
+
+    const deck = new THREE.Mesh(
+      roundedBox(MAC.width - 0.22, 0.20, MAC.depth - 0.22, 0.94, 5),
+      edge,
+    );
+    deck.position.y = 1.10;
+    deck.castShadow = true;
+    root.add(deck);
+    addKeyboard(root);
+
+    // The lid owns the display plane. This is what keeps the dashboard
+    // perfectly registered to the physical screen during 3D rotation.
+    const lid = new THREE.Group();
+    lid.position.set(0, 1.12, -MAC.depth / 2 + 1.05);
+    lid.rotation.x = -THREE.MathUtils.degToRad(108);
+    root.add(lid);
+
+    const lidShell = new THREE.Mesh(
+      roundedBox(MAC.lidWidth, MAC.lidHeight, MAC.lidDepth, 1.05, 6),
+      body,
+    );
+    lidShell.position.y = MAC.lidHeight / 2;
+    lidShell.castShadow = true;
+    lidShell.receiveShadow = true;
+    lid.add(lidShell);
+
+    const bezel = new THREE.Mesh(
+      roundedBox(MAC.lidWidth - 0.34, MAC.lidHeight - 0.34, 0.12, 0.82, 6),
+      black,
+    );
+    bezel.position.set(0, MAC.lidHeight / 2, MAC.lidDepth / 2 + 0.045);
+    lid.add(bezel);
+
+    let disposed = false;
+    const loader = new THREE.TextureLoader();
+
+    loader.load(
+      SCREEN_URL,
+      (texture) => {
+        if (disposed) {
+          texture.dispose();
+          return;
+        }
+
+        texture.colorSpace = THREE.SRGBColorSpace;
+        texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+
+        const screen = new THREE.Mesh(
+          roundedBox(MAC.screenWidth, MAC.screenHeight, 0.045, 0.34, 5),
+          new THREE.MeshBasicMaterial({
+            color: 0xffffff,
+            map: texture,
+            toneMapped: false,
+          }),
+        );
+        screen.position.set(0, MAC.lidHeight / 2 - 0.06, MAC.lidDepth / 2 + 0.125);
+        screen.name = 'GenesisDisplay';
+        lid.add(screen);
+
+        const notch = new THREE.Mesh(
+          roundedBox(3.2, 0.88, 0.07, 0.24, 4),
+          new THREE.MeshBasicMaterial({ color: 0x050609 }),
+        );
+        notch.position.set(0, MAC.lidHeight - 0.52, MAC.lidDepth / 2 + 0.16);
+        lid.add(notch);
+
+        setLoading(false);
+      },
+      undefined,
+      () => {
+        if (!disposed) setLoading(false);
+      },
+    );
+
+    const keyLight = new THREE.DirectionalLight(0xffffff, 4);
+    keyLight.position.set(10, 24, 22);
+    keyLight.castShadow = true;
+    keyLight.shadow.mapSize.set(1024, 1024);
+    keyLight.shadow.camera.near = 1;
+    keyLight.shadow.camera.far = 90;
+    keyLight.shadow.camera.left = -35;
+    keyLight.shadow.camera.right = 35;
+    keyLight.shadow.camera.top = 35;
+    keyLight.shadow.camera.bottom = -35;
+    scene.add(keyLight);
+    scene.add(new THREE.HemisphereLight(0xffffff, 0x89909b, 2.4));
+
+    const rim = new THREE.DirectionalLight(0xe7edff, 1.4);
+    rim.position.set(-22, 12, -20);
+    scene.add(rim);
+
+    const front = new THREE.DirectionalLight(0xffffff, 0.8);
+    front.position.set(12, 8, 28);
+    scene.add(front);
+
+    const floor = new THREE.Mesh(
+      new THREE.PlaneGeometry(90, 90).rotateX(-Math.PI / 2),
+      new THREE.ShadowMaterial({ opacity: 0.12 }),
+    );
+    floor.position.y = -0.12;
+    floor.receiveShadow = true;
+    scene.add(floor);
+
     const resize = () => {
-      const width = mount.clientWidth || 700;
-      const height = mount.clientHeight || 650;
+      const width = mount.clientWidth || 720;
+      const height = mount.clientHeight || 680;
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
       renderer.setSize(width, height, false);
     };
+
     resize();
     const observer = new ResizeObserver(resize);
     observer.observe(mount);
 
     let frame = 0;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     const animate = () => {
       frame = requestAnimationFrame(animate);
-      const target = targetRef.current;
-      root.rotation.x += ((target.y * -0.035) - root.rotation.x) * 0.08;
-      root.rotation.y += ((-0.12 + target.x * 0.055) - root.rotation.y) * 0.08;
-      root.position.x += (target.x * 0.28 - root.position.x) * 0.08;
-      root.position.y += (-target.y * 0.12 - root.position.y) * 0.08;
+
+      if (!reduceMotion) {
+        const target = targetRef.current;
+        root.rotation.x += ((0.015 + target.y * -0.018) - root.rotation.x) * 0.07;
+        root.rotation.y += ((-0.16 + target.x * 0.035) - root.rotation.y) * 0.07;
+        root.position.x += (target.x * 0.18 - root.position.x) * 0.07;
+        root.position.y += (-target.y * 0.08 - root.position.y) * 0.07;
+      }
+
       renderer.render(scene, camera);
     };
+
     animate();
 
     return () => {
-      cancelled = true;
+      disposed = true;
       cancelAnimationFrame(frame);
       observer.disconnect();
       renderer.dispose();
-      mount.removeChild(renderer.domElement);
+
       scene.traverse((object) => {
-        if (object instanceof THREE.Mesh) {
-          object.geometry.dispose();
-          const mats = Array.isArray(object.material) ? object.material : [object.material];
-          mats.forEach((m) => {
-            if (m.map) m.map.dispose();
-            m.dispose();
-          });
-        }
+        if (!(object instanceof THREE.Mesh)) return;
+        object.geometry.dispose();
+        const materials = Array.isArray(object.material) ? object.material : [object.material];
+        materials.forEach((mat) => {
+          if (mat.map) mat.map.dispose();
+          mat.dispose();
+        });
       });
-      sceneRef.current = null;
+
+      if (renderer.domElement.parentNode === mount) {
+        mount.removeChild(renderer.domElement);
+      }
     };
   }, []);
 
@@ -130,11 +290,20 @@ export default function GenesisMacBook() {
     targetRef.current.y = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
   };
 
-  const reset = () => { targetRef.current.x = 0; targetRef.current.y = 0; };
+  const reset = () => {
+    targetRef.current.x = 0;
+    targetRef.current.y = 0;
+  };
 
   return (
-    <div className="genesis-3d-laptop" ref={mountRef} onPointerMove={handlePointerMove} onPointerLeave={reset}>
-      {loading && <div className="genesis-3d-loading">Loading MacBook</div>}
+    <div
+      className="genesis-3d-laptop"
+      ref={mountRef}
+      onPointerMove={handlePointerMove}
+      onPointerLeave={reset}
+      aria-hidden="true"
+    >
+      {loading && <div className="genesis-3d-loading">Loading Genesis</div>}
     </div>
   );
 }
