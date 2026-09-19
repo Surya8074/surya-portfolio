@@ -19,7 +19,7 @@ function Reveal({children,delay=0,className='' }:{children:React.ReactNode;delay
   return <motion.div className={className} initial={{opacity:0,y:32}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:.16}} transition={{duration:.75,delay,ease:[.22,1,.36,1]}}>{children}</motion.div>;
 }
 function MagneticLink({children}:{children:React.ReactNode}){
-  return <a className="v7-link" href="#top">{children}<ArrowRight size={15}/></a>;
+  return <a className="v7-link" href="/surya-portfolio/">{children}<ArrowRight size={15}/></a>;
 }
 function Screen({src,label,alt,zoom=false}:{src:string;label:string;alt:string;zoom?:boolean}){
   return <figure className={'v7-screen '+(zoom?'is-zoom':'')}>
@@ -179,7 +179,7 @@ export default function GenesisV7(){
           <div className="v7-flow-note"><span>THE PRODUCT IDEA</span><p>Every stage reduces ambiguity before the next one introduces more consequence. The interface becomes a sequence of decisions rather than a sequence of screens.</p></div>
         </section>
 
-        <section id="s08" className="v7-decisions">
+        <section id="s06" className="v7-decisions">
           <div className="v7-decisions-intro"><SectionLabel num="06" label="SCREEN DECISIONS"/><h2>Same product.<br/><em>Different questions.</em></h2><p>The real interface becomes the evidence for the product decisions behind Genesis.</p></div>
 
           <div className="v7-decision">
