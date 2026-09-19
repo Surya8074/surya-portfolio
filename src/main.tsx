@@ -13,8 +13,27 @@ const portraitUrl = '/surya-portfolio/surya-portrait.svg';
 const genesisPath = '/surya-portfolio/work/genesis-v7/?v=phase4#s01';
 
 function GenesisCard() {
+  const handlePointerMove = (event: React.PointerEvent<HTMLAnchorElement>) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+    const y = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
+    event.currentTarget.style.setProperty('--mx', x.toFixed(3));
+    event.currentTarget.style.setProperty('--my', y.toFixed(3));
+  };
+
+  const resetPointer = (event: React.PointerEvent<HTMLAnchorElement>) => {
+    event.currentTarget.style.setProperty('--mx', '0');
+    event.currentTarget.style.setProperty('--my', '0');
+  };
+
   return (
-    <a className="genesis-project-card" href={genesisPath} aria-label="Open Genesis case study">
+    <a
+      className="genesis-project-card"
+      href={genesisPath}
+      aria-label="Open Genesis case study"
+      onPointerMove={handlePointerMove}
+      onPointerLeave={resetPointer}
+    >
       <div className="genesis-project-copy">
         <div className="genesis-project-index">01 <span>/ 04</span></div>
         <p className="genesis-project-eyebrow">AI · Product Design</p>
@@ -23,7 +42,39 @@ function GenesisCard() {
         <p className="genesis-project-description">Designing an AI-driven testing workflow that helps QA teams move faster while keeping humans in control.</p>
         <div className="genesis-project-action"><b>→</b><span>View Case Study</span></div>
       </div>
-      <div className="genesis-project-visual"><div className="genesis-visual-orb genesis-orb-one" /><div className="genesis-visual-orb genesis-orb-two" /><div className="genesis-mini-window"><div className="genesis-window-bar"><span /><span /><span /><em>GENESIS</em><i>⌕</i></div><div className="genesis-mini-sidebar"><span className="mini-logo">✦ GENESIS</span><span className="mini-active">Dashboard</span><span>Projects</span><span>Test Execution</span><span>Reports</span></div><div className="genesis-mini-content"><div className="mini-heading-row"><div><b>Welcome back, Alex</b><small>Here's what's happening with your tests.</small></div><strong>+ New Project</strong></div><div className="mini-kpis"><span><small>Active Projects</small><b>12</b></span><span><small>Test Runs</small><b>48</b></span><span><small>Pass Rate</small><b>92%</b></span><span><small>Critical Issues</small><b>3</b></span></div><div className="mini-chart-row"><div className="mini-chart"><small>Test Execution Trend</small><svg viewBox="0 0 300 78" preserveAspectRatio="none"><path d="M0 59 C30 50 43 62 65 44 S106 20 132 38 S172 59 197 34 S236 24 258 41 S283 48 300 26" /></svg></div><div className="mini-donut"><div className="donut-ring" /><small>Test Results</small></div></div><div className="mini-bottom-row"><div><small>Recent Test Runs</small><span>E-commerce Platform <b>Completed</b></span><span>Mobile App <b>Running</b></span></div><div><small>Environments</small><span>Production <b>Healthy</b></span><span>Staging <b>Healthy</b></span></div></div></div></div></div>
+
+      <div className="genesis-project-visual" aria-hidden="true">
+        <div className="genesis-visual-orbit genesis-orbit-one" />
+        <div className="genesis-visual-orbit genesis-orbit-two" />
+
+        <div className="genesis-float-screen genesis-float-input">
+          <span>Input Artifacts</span>
+          <img src="/surya-portfolio/genesis/Input-Artifacts.webp" alt="" />
+        </div>
+
+        <div className="genesis-float-screen genesis-float-config">
+          <span>AI Configuration</span>
+          <img src="/surya-portfolio/genesis/AI-Configuration.webp" alt="" />
+        </div>
+
+        <div className="genesis-float-screen genesis-float-reports">
+          <span>Reports</span>
+          <img src="/surya-portfolio/genesis/Reports.webp" alt="" />
+        </div>
+
+        <div className="genesis-laptop">
+          <div className="genesis-laptop-screen">
+            <img src="/surya-portfolio/genesis/Dashboard.webp" alt="Genesis dashboard" loading="lazy" />
+          </div>
+          <div className="genesis-laptop-base">
+            <div className="genesis-laptop-keyboard" />
+            <div className="genesis-laptop-trackpad" />
+          </div>
+        </div>
+
+        <div className="genesis-note genesis-note-top">Test<br />Smarter <span>↗</span></div>
+        <div className="genesis-note genesis-note-bottom">Build<br />Better <span>↗</span></div>
+      </div>
     </a>
   );
 }
