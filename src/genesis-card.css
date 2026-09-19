@@ -285,3 +285,254 @@
   .genesis-laptop-base{height:22px}
   .genesis-float-screen{width:112px}
 }
+
+
+/* Genesis — photoreal MacBook-style composition */
+.genesis-project-visual{
+  min-height:680px !important;
+  height:680px;
+  overflow:visible !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  isolation:isolate;
+}
+.genesis-project-visual:before{display:none !important}
+.genesis-visual-orbit{display:none !important}
+
+.genesis-project-visual:after{
+  content:"";
+  position:absolute;
+  z-index:0;
+  left:10%;
+  right:7%;
+  bottom:7%;
+  height:23%;
+  border-radius:50%;
+  background:rgba(32,39,53,.16);
+  filter:blur(34px);
+  transform:perspective(600px) rotateX(65deg);
+  pointer-events:none;
+}
+
+.genesis-laptop{
+  position:absolute;
+  z-index:4;
+  left:50%;
+  top:52%;
+  width:min(760px,104%);
+  transform:
+    translate(calc(-50% + var(--mx) * 7px),calc(-50% + var(--my) * 7px))
+    perspective(1500px)
+    rotateX(4deg)
+    rotateY(calc(var(--mx) * -2.5deg))
+    rotateZ(-2deg);
+  transition:transform .45s cubic-bezier(.22,1,.36,1);
+  filter:drop-shadow(0 38px 28px rgba(26,31,41,.22));
+}
+
+.genesis-laptop-lid{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/10;
+  padding:13px;
+  border-radius:25px 25px 7px 7px;
+  background:
+    linear-gradient(145deg,#555a62 0%,#252930 15%,#08090b 55%,#383d45 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.38),
+    inset 0 0 0 2px rgba(0,0,0,.38),
+    0 8px 14px rgba(12,15,21,.3);
+}
+.genesis-laptop-lid:before{
+  content:"";
+  position:absolute;
+  inset:5px;
+  border-radius:20px 20px 5px 5px;
+  border:1px solid rgba(255,255,255,.08);
+  pointer-events:none;
+}
+.genesis-laptop-display{
+  position:relative;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  border-radius:13px 13px 2px 2px;
+  background:#111318;
+}
+.genesis-laptop-display:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(118deg,rgba(255,255,255,.13),transparent 20%,transparent 65%,rgba(255,255,255,.035)),
+    linear-gradient(180deg,rgba(255,255,255,.03),transparent 35%);
+  pointer-events:none;
+}
+.genesis-laptop-display img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+.genesis-laptop-camera{
+  position:absolute;
+  z-index:3;
+  top:6px;
+  left:50%;
+  width:74px;
+  height:7px;
+  transform:translateX(-50%);
+  border-radius:0 0 7px 7px;
+  background:#030405;
+  box-shadow:inset 0 -1px 1px rgba(255,255,255,.08);
+}
+.genesis-laptop-camera:after{
+  content:"";
+  position:absolute;
+  width:3px;
+  height:3px;
+  left:50%;
+  top:2px;
+  transform:translateX(-50%);
+  border-radius:50%;
+  background:#1b222b;
+  box-shadow:0 0 3px rgba(100,150,190,.3);
+}
+
+.genesis-laptop-hinge{
+  position:relative;
+  z-index:2;
+  width:94%;
+  height:8px;
+  margin:-1px auto 0;
+  border-radius:0 0 8px 8px;
+  background:linear-gradient(180deg,#666c74,#aeb3ba 55%,#777d85);
+  box-shadow:0 2px 5px rgba(25,29,36,.25);
+}
+
+.genesis-laptop-deck{
+  position:relative;
+  z-index:1;
+  width:114%;
+  height:55px;
+  margin:-1px 0 0 -7%;
+  clip-path:polygon(4% 0,96% 0,100% 26%,97% 72%,92% 100%,8% 100%,3% 72%,0 26%);
+  border-radius:0 0 20px 20px;
+  background:
+    linear-gradient(180deg,#e1e3e6 0%,#c7cbd0 22%,#a7adb4 62%,#858b93 100%);
+  box-shadow:
+    inset 0 1px 1px rgba(255,255,255,.95),
+    inset 0 -1px 1px rgba(65,70,78,.2),
+    0 11px 17px rgba(27,32,41,.23);
+}
+.genesis-laptop-deck:before{
+  content:"";
+  position:absolute;
+  inset:4px 8% auto;
+  height:1px;
+  background:rgba(255,255,255,.7);
+}
+.genesis-laptop-keyboard{
+  position:absolute;
+  left:17%;
+  right:17%;
+  top:5px;
+  height:25px;
+  border-radius:5px;
+  background:
+    repeating-linear-gradient(90deg,rgba(35,39,45,.9) 0 16px,transparent 16px 19px),
+    repeating-linear-gradient(0deg,rgba(35,39,45,.86) 0 5px,transparent 5px 8px);
+  opacity:.9;
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.08);
+}
+.genesis-laptop-keyboard:after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:5px;
+  border-radius:2px;
+  background:linear-gradient(90deg,transparent 0 8%,rgba(35,39,45,.9) 8% 92%,transparent 92%);
+}
+.genesis-laptop-trackpad{
+  position:absolute;
+  left:39%;
+  bottom:4px;
+  width:22%;
+  height:18px;
+  border:1px solid rgba(77,82,89,.35);
+  border-radius:5px;
+  background:rgba(223,226,230,.18);
+  box-shadow:inset 0 1px 2px rgba(255,255,255,.4);
+}
+.genesis-laptop-notch{
+  position:absolute;
+  left:50%;
+  bottom:-2px;
+  width:62px;
+  height:5px;
+  transform:translateX(-50%);
+  border-radius:0 0 5px 5px;
+  background:#8b9199;
+}
+
+.genesis-float-screen{
+  z-index:5;
+  border-radius:15px;
+  background:rgba(255,255,255,.9);
+  border:1px solid rgba(255,255,255,.98);
+  box-shadow:
+    0 25px 55px rgba(35,43,60,.14),
+    0 4px 12px rgba(35,43,60,.08);
+}
+.genesis-float-input{
+  left:-1%;
+  top:14%;
+  transform:translate(calc(var(--mx) * -14px),calc(var(--my) * -9px)) rotate(-8deg);
+}
+.genesis-float-config{
+  right:-2%;
+  top:7%;
+  transform:translate(calc(var(--mx) * 14px),calc(var(--my) * -11px)) rotate(7deg);
+}
+.genesis-float-reports{
+  right:0%;
+  bottom:8%;
+  transform:translate(calc(var(--mx) * 16px),calc(var(--my) * 10px)) rotate(5deg);
+}
+.genesis-note-top{
+  right:17%;
+  top:2%;
+  transform:rotate(-6deg) translate(calc(var(--mx) * 8px),calc(var(--my) * 6px));
+}
+.genesis-note-bottom{
+  left:8%;
+  bottom:5%;
+  transform:rotate(-8deg) translate(calc(var(--mx) * -8px),calc(var(--my) * -5px));
+}
+.genesis-project-card:hover .genesis-laptop{
+  filter:drop-shadow(0 46px 34px rgba(26,31,41,.26));
+}
+
+@media(max-width:1050px){
+  .genesis-project-visual{height:590px;min-height:590px !important}
+  .genesis-laptop{width:86%}
+  .genesis-float-screen{width:165px}
+}
+@media(max-width:600px){
+  .genesis-project-visual{height:430px;min-height:430px !important}
+  .genesis-laptop{width:94%;top:54%}
+  .genesis-laptop-lid{padding:7px;border-radius:17px 17px 5px 5px}
+  .genesis-laptop-camera{top:3px;width:48px;height:4px}
+  .genesis-laptop-display{border-radius:10px 10px 2px 2px}
+  .genesis-laptop-hinge{height:5px}
+  .genesis-laptop-deck{height:32px}
+  .genesis-laptop-keyboard{top:3px;height:14px}
+  .genesis-laptop-trackpad{height:10px}
+  .genesis-float-screen{width:108px}
+  .genesis-float-screen img{height:64px}
+  .genesis-note{font-size:12px}
+}
