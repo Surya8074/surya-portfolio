@@ -71,13 +71,13 @@ export default function GenesisV7(){
       <div className="v7-intro-inner">
         <div className="v7-intro-copy">
           <h2>From scattered QA work <em>to a controlled pipeline.</em></h2>
-          <p>I designed Genesis around one product constraint: automation only creates value when the people accountable for release quality can understand, review and trust what the system produces.</p>
+          <p>I shaped the product structure, workflow and interface around one constraint: automation only creates value when the people accountable for release quality can understand, review and trust what the system produces.</p>
         </div>
         <div className="v7-intro-meta">
           <div><span>ROLE</span><strong>Product / UI-UX Designer</strong></div>
           <div><span>PRODUCT</span><strong>Enterprise QA SaaS</strong></div>
           <div><span>PLATFORM</span><strong>Web · desktop-first</strong></div>
-          <div><span>TOOL</span><strong>Figma</strong></div>
+          <div><span>MY CONTRIBUTION</span><strong>Architecture · UX · UI</strong></div>
         </div>
         <a className="v7-intro-scroll" href="#s01"><span>SCROLL TO EXPLORE</span><i>↓</i></a>
       </div>
@@ -87,14 +87,12 @@ export default function GenesisV7(){
       <aside className={`v7-chapters ${chaptersVisible ? '' : 'is-hidden'}`} aria-label="Case study chapters">
         <div className="v7-timestamp-line" aria-hidden="true" />
         <ChapterStamp num="01" label="PROBLEM" href="#s01" />
-        <ChapterStamp num="02" label="GOALS" href="#s02" />
-        <ChapterStamp num="03" label="USERS" href="#s03" />
-        <ChapterStamp num="04" label="PRINCIPLES" href="#s04" />
-        <ChapterStamp num="05" label="RESEARCH" href="#s05" />
-        <ChapterStamp num="06" label="MARKET" href="#s06" />
-        <ChapterStamp num="07" label="WORKFLOW" href="#s07" />
-        <ChapterStamp num="08" label="DECISIONS" href="#s08" />
-        <ChapterStamp num="09" label="MEASUREMENT" href="#s09" />
+        <ChapterStamp num="02" label="USERS" href="#s02" />
+        <ChapterStamp num="03" label="PRINCIPLES" href="#s03" />
+        <ChapterStamp num="04" label="RESEARCH" href="#s04" />
+        <ChapterStamp num="05" label="WORKFLOW" href="#s05" />
+        <ChapterStamp num="06" label="DECISIONS" href="#s06" />
+        <ChapterStamp num="07" label="MEASUREMENT" href="#s07" />
       </aside>
 
       <article className="v7-content">
@@ -110,17 +108,7 @@ export default function GenesisV7(){
         </section>
 
         <section id="s02" className="v7-section">
-          <SectionLabel num="02" label="GOALS"/>
-          <div className="v7-section-title"><h2>Two goal sets.<br/><em>One interaction model.</em></h2></div>
-          <div className="v7-cards three">
-            <Reveal><article className="v7-hover-card"><span>USER GOAL</span><h3>Get from codebase to running tests with less setup.</h3><p>Developers need momentum. QA leads need visibility and control over AI-assisted decisions.</p><div className="v7-card-arrow"><ArrowRight/></div></article></Reveal>
-            <Reveal delay={.08}><article className="v7-hover-card"><span>BUSINESS GOAL</span><h3>Make automated coverage part of the release process.</h3><p>Genesis should support repeatable creation, execution and reporting—not a one-off generation moment.</p><div className="v7-card-arrow"><ArrowRight/></div></article></Reveal>
-            <Reveal delay={.16}><article className="v7-hover-card dark"><span>DESIGN TENSION</span><h3>Configurability ↔ simplicity</h3><p>More controls increase confidence for technical users, but every decision adds setup friction. Progressive disclosure became the answer.</p><div className="v7-card-arrow"><ArrowRight/></div></article></Reveal>
-          </div>
-        </section>
-
-        <section id="s03" className="v7-section">
-          <SectionLabel num="03" label="WHO IT'S FOR"/>
+          <SectionLabel num="02" label="WHO IT'S FOR"/>
           <div className="v7-section-title"><h2>Different users.<br/><em>Shared operational picture.</em></h2></div>
           <div className="v7-cards three personas">
             {[
@@ -131,8 +119,8 @@ export default function GenesisV7(){
           </div>
         </section>
 
-        <section id="s04" className="v7-section">
-          <SectionLabel num="04" label="DESIGN PRINCIPLES"/>
+        <section id="s03" className="v7-section">
+          <SectionLabel num="03" label="DESIGN PRINCIPLES"/>
           <div className="v7-section-title"><h2>Four rules kept the system coherent <em>as the workflow expanded.</em></h2></div>
           <div className="v7-principles">
             {[
@@ -144,27 +132,22 @@ export default function GenesisV7(){
           </div>
         </section>
 
-        <section id="s05" className="v7-section v7-research-section">
-          <SectionLabel num="05" label="RESEARCH & VALIDATION"/>
+        <section id="s04" className="v7-section v7-research-section">
+          <SectionLabel num="04" label="RESEARCH & VALIDATION"/>
           <div className="v7-section-title"><h2>Assumptions were treated as <em>hypotheses, not defaults.</em></h2></div>
           <div className="v7-research-intro">
-            <p>The core design risk was trust: whether a QA lead could rely on output they did not author. The research layer therefore focused on pressure-testing where that trust could break and validating interface decisions against alternatives.</p>
+            <p>The core design risk was trust: whether a QA lead could rely on output they did not author. I used competitive teardown and structured critique to pressure-test where that trust could break, then translated the findings into interface hypotheses.</p>
             <div className="v7-research-note"><span>RESEARCH BASIS</span><b>Desk research · competitive teardown · structured design critique</b><small>Before a production build, this should be followed by direct interviews with QA leads and developers.</small></div>
           </div>
 
           <div className="v7-research-block">
             <div className="v7-research-heading"><span>01 / COMPETITIVE TEARDOWN</span><h3>Where does the system explain itself, and where can a human intervene?</h3></div>
             <div className="v7-competitors">
-              <article><div className="v7-comp-top"><b>KATALON</b><span>AI-assisted execution</span></div><p>AI can execute tests and pause for user guidance; results include execution evidence for review.</p><strong>TAKE → Keep human guidance visible at consequential moments.</strong></article>
-              <article><div className="v7-comp-top"><b>TESTIM</b><span>AI + self-healing</span></div><p>Combines natural-language/AI authoring with smart locators and test stability controls.</p><strong>TAKE → Hide implementation complexity, but expose meaningful control.</strong></article>
-              <article><div className="v7-comp-top"><b>MABL</b><span>Agentic lifecycle</span></div><p>Authors, executes, maintains and analyzes tests across a continuous testing workflow.</p><strong>TAKE → Design around the lifecycle, not a single generation moment.</strong></article>
-              <article><div className="v7-comp-top"><b>APPLITOOLS</b><span>Visual AI</span></div><p>Uses Visual AI for validation, with test analysis, orchestration and self-healing capabilities.</p><strong>TAKE → Make evidence inspectable when the system is making judgments.</strong></article>
-              <article><div className="v7-comp-top"><b>TOSCA</b><span>Enterprise model-based</span></div><p>Combines structured test design and execution with newer agentic test automation capabilities.</p><strong>TAKE → Preserve structure and reusable context as automation scales.</strong></article>
-              <article><div className="v7-comp-top"><b>SAUCE LABS AURA</b><span>Release assurance</span></div><p>Connects intent, AI-authored tests, execution and analysis in a closed-loop workflow with human oversight.</p><strong>TAKE → Treat release confidence as the product outcome, not test generation.</strong></article>
+              <article><div className="v7-comp-top"><b>KATALON</b><span>AI-assisted testing</span></div><p>AI can help create and execute testing workflows while keeping human guidance and review visible at consequential moments.</p><strong>TAKE → Keep approval and evidence visible.</strong><a href="https://docs.katalon.com/katalon-platform/execute/manual-executions/create-a-manual-test-run" target="_blank" rel="noreferrer">Source ↗</a></article>
+              <article><div className="v7-comp-top"><b>TESTIM</b><span>AI + stability</span></div><p>AI-powered smart locators make generated or maintained tests more resilient while keeping meaningful controls visible to users.</p><strong>TAKE → Hide implementation complexity, expose meaningful control.</strong><a href="https://www.testim.io/test-automation-tool/" target="_blank" rel="noreferrer">Source ↗</a></article>
+              <article><div className="v7-comp-top"><b>MABL</b><span>Agentic lifecycle</span></div><p>mabl frames testing as a lifecycle spanning creation, execution, failure analysis and maintenance, with shared quality signals.</p><strong>TAKE → Design for the lifecycle, not one generation moment.</strong><a href="https://www.mabl.com/agentic-testing-for-software-development-mabl" target="_blank" rel="noreferrer">Source ↗</a></article>
+              <article><div className="v7-comp-top"><b>SAUCE LABS AURA</b><span>Release assurance</span></div><p>AURA positions testing as a closed loop across intent, authoring, execution and analysis with human oversight.</p><strong>TAKE → Make release confidence the outcome, not generation.</strong><a href="https://saucelabs.com/why-sauce" target="_blank" rel="noreferrer">Source ↗</a></article>
             </div>
-          </div>
-
-          <div className="v7-research-block">
             <div className="v7-research-heading"><span>02 / ASSUMPTION MAPPING</span><h3>Every non-obvious decision started as a statement we could challenge.</h3></div>
             <div className="v7-assumptions">
               <div><span>HYPOTHESIS</span><b>“Users won't trust output they can't trace back to its context.”</b><small>→ Led to visible Input Artifacts and context-first setup.</small></div>
@@ -187,36 +170,8 @@ export default function GenesisV7(){
           <div className="v7-research-closing"><b>WHAT THIS RESEARCH DID — AND DID NOT — PROVE</b><p>This validation layer pressure-tests the design direction; it is not a substitute for formal discovery interviews. The next research input is direct conversation with QA leads and developers before a real production build.</p></div>
         </section>
 
-        <section id="s06" className="v7-section v7-market-section">
-          <SectionLabel num="06" label="MARKET & COMPETITIVE CONTEXT"/>
-          <div className="v7-section-title"><h2>The category is moving from <em>test automation to release assurance.</em></h2></div>
-          <p className="v7-market-lead">A 2026 market scan shows several distinct approaches: AI-assisted low-code automation, agentic test creation and execution, visual validation, and enterprise model-based testing. Genesis is designed around the control point between AI generation and accountable human approval.</p>
-
-          <div className="v7-market-spectrum">
-            <div className="v7-spectrum-axis"><span>MORE HUMAN-AUTHORED</span><i/><span>MORE AI-AUTHORED</span></div>
-            <div className="v7-spectrum-track">
-              <span className="pill p1">TOSCA</span><span className="pill p2">KATALON</span><span className="pill p3">TESTIM</span><span className="pill p4">MABL</span><span className="pill p5">AURA</span>
-              <b className="genesis-marker">GENESIS<br/><small>AI proposes → human validates</small></b>
-            </div>
-            <small className="v7-spectrum-caption">Qualitative positioning based on vendor-described workflows; this is a design-research map, not a benchmark or market-share ranking.</small>
-          </div>
-
-          <div className="v7-market-segments">
-            <article><span>01</span><h3>AI-assisted automation</h3><p>Katalon and Testim combine automation with AI-assisted authoring, execution, or maintenance. Human configuration and existing test assets remain important.</p></article>
-            <article><span>02</span><h3>Agentic testing</h3><p>mabl and Sauce Labs AURA describe broader agentic workflows that can author, run, recover or analyze tests across the lifecycle.</p></article>
-            <article><span>03</span><h3>Visual AI</h3><p>Applitools specializes in visual validation and adds AI-driven analysis, orchestration and maintenance around visual quality.</p></article>
-            <article><span>04</span><h3>Enterprise model-based</h3><p>Tricentis Tosca combines structured test design and execution with newer agentic capabilities for generating and automating test cases.</p></article>
-          </div>
-
-          <div className="v7-gap-card">
-            <span>THE DESIGN GAP</span><h3>Speed without surrendering the point where accountability begins.</h3>
-            <div className="v7-gap-flow"><b>CONTEXT</b><i>→</i><b>AI GENERATES</b><i>→</i><strong>HUMAN VALIDATES</strong><i>→</i><b>EXECUTION</b><i>→</i><b>EVIDENCE</b></div>
-            <p>This is why Review & Validate earns a full workflow step, while AI Configuration is framed around user intent rather than model parameters.</p>
-          </div>
-        </section>
-
-        <section id="s07" className="v7-section v7-flow">
-          <SectionLabel num="07" label="THE WORKFLOW"/>
+        <section id="s05" className="v7-section v7-flow">
+          <SectionLabel num="05" label="THE WORKFLOW"/>
           <div className="v7-section-title"><h2>From first login<br/><em>to release evidence.</em></h2></div>
           <div className="v7-flow-track">
             {['Access','Orient','Configure','Validate','Run','Report'].map((x,i)=><React.Fragment key={x}><div className={i===3?'active':''}><small>0{i+1}</small><b>{x}</b></div>{i<5&&<i>→</i>}</React.Fragment>)}
@@ -225,7 +180,7 @@ export default function GenesisV7(){
         </section>
 
         <section id="s08" className="v7-decisions">
-          <div className="v7-decisions-intro"><SectionLabel num="08" label="SCREEN DECISIONS"/><h2>Same product.<br/><em>Different questions.</em></h2><p>The real interface becomes the evidence for the product decisions behind Genesis.</p></div>
+          <div className="v7-decisions-intro"><SectionLabel num="06" label="SCREEN DECISIONS"/><h2>Same product.<br/><em>Different questions.</em></h2><p>The real interface becomes the evidence for the product decisions behind Genesis.</p></div>
 
           <div className="v7-decision">
             <div className="v7-decision-copy"><span>01 / ORIENTATION</span><h3>Give two audiences one shared operational picture.</h3><Reason intent="Answer whether the testing pipeline and the platform supporting it are healthy." decision="Separate product KPIs from infrastructure health rather than creating role-specific dashboards." why="QA and DevOps users look for different signals on the same landing surface. Organizing by scan intent reduces filtering." tradeoff="A unified grid is visually simpler, but it makes users filter unrelated signals. The hierarchy spends visual space to reduce that work."/></div>
@@ -263,13 +218,13 @@ export default function GenesisV7(){
           </div>
         </section>
 
-        <section id="s09" className="v7-section v7-measure">
-          <SectionLabel num="09" label="MEASUREMENT"/>
-          <div className="v7-section-title"><h2>Measure the workflow, <em>not vanity metrics.</em></h2></div>
+        <section id="s07" className="v7-section v7-measure">
+          <SectionLabel num="07" label="MEASUREMENT"/>
+          <div className="v7-section-title"><h2>Define success before launch, <em>then measure the workflow.</em></h2></div>
           <div className="v7-measure-grid">
-            <article><LayoutDashboard/><span>ACTIVATION</span><h3>Time to first test run</h3><p>Shows whether the setup sequence gets a new project to meaningful execution without unnecessary friction.</p></article>
-            <article><BarChart3/><span>WORKFLOW HEALTH</span><h3>Completion by step</h3><p>Reveals where users leave the workflow instead of collapsing onboarding into one number.</p></article>
-            <article><Eye/><span>ADOPTION GUARDRAIL</span><h3>Reports checked before release</h3><p>Tests whether Genesis becomes part of release readiness rather than a one-time setup tool.</p></article>
+            <article><LayoutDashboard/><span>ACTIVATION</span><h3>Time to first test run</h3><p>Proposed launch metric: track the median time from project connection to a first meaningful run.</p></article>
+            <article><BarChart3/><span>WORKFLOW HEALTH</span><h3>Completion by step</h3><p>Proposed funnel metric: identify the exact step where users pause, abandon or backtrack.</p></article>
+            <article><Eye/><span>ADOPTION GUARDRAIL</span><h3>Reports checked before release</h3><p>Proposed adoption signal: measure how often reports are opened or referenced before release decisions.</p></article>
           </div>
         </section>
       </article>
