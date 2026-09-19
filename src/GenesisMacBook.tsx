@@ -139,7 +139,7 @@ export default function GenesisMacBook() {
 
     const lid = new THREE.Group();
     lid.position.set(0, 1.12, -MAC.depth / 2 + 1.05);
-    const OPEN_LID_ROTATION = THREE.MathUtils.degToRad(8);
+    const OPEN_LID_ROTATION = THREE.MathUtils.degToRad(18);
     const CLOSED_LID_ROTATION = THREE.MathUtils.degToRad(88);
     lid.rotation.x = OPEN_LID_ROTATION;
     root.add(lid);
