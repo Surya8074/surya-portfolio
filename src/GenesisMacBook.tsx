@@ -88,8 +88,8 @@ export default function GenesisMacBook() {
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 180);
-    camera.position.set(40, 17.5, 82);
-    camera.lookAt(0, 6.2, -0.5);
+    camera.position.set(36, 15.5, 72);
+    camera.lookAt(0, 6.6, -0.4);
 
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
@@ -106,7 +106,7 @@ export default function GenesisMacBook() {
     mount.appendChild(renderer.domElement);
 
     const root = new THREE.Group();
-    root.rotation.set(0.01, -0.10, 0);
+    root.rotation.set(0.01, -0.08, 0);
     scene.add(root);
 
     const body = material(0xbfc2c7, 0.34, 0.58);
