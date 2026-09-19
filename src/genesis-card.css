@@ -718,3 +718,95 @@
   .genesis-note-top{right:8%;top:3%}
   .genesis-note-bottom{left:7%;bottom:5%}
 }
+
+
+/* Genesis hero tuning — complete laptop framing and protected navigation space */
+.genesis-project-visual{
+  min-height:680px !important;
+  height:680px !important;
+  overflow:visible !important;
+}
+
+.genesis-3d-laptop{
+  inset:0 -1% 0 -2%;
+  min-height:680px;
+}
+
+.genesis-float-input{
+  left:-1%;
+  top:20%;
+}
+
+.genesis-float-config{
+  right:-1%;
+  top:17%;
+}
+
+.genesis-float-reports{
+  right:0;
+  bottom:13%;
+}
+
+.genesis-note-top{
+  right:16%;
+  top:6%;
+}
+
+.genesis-note-bottom{
+  left:8%;
+  bottom:6%;
+}
+
+@media (max-width:1050px){
+  .genesis-project-visual{
+    height:590px !important;
+    min-height:590px !important;
+  }
+
+  .genesis-3d-laptop{
+    inset:0 -4% 0 -4%;
+    min-height:590px;
+  }
+
+  .genesis-float-input{
+    left:-2%;
+    top:22%;
+  }
+
+  .genesis-float-config{
+    right:-2%;
+    top:19%;
+  }
+
+  .genesis-float-reports{
+    right:0;
+    bottom:12%;
+  }
+}
+
+@media (max-width:600px){
+  .genesis-project-visual{
+    height:430px !important;
+    min-height:430px !important;
+  }
+
+  .genesis-3d-laptop{
+    inset:0 -9% 0 -9%;
+    min-height:430px;
+  }
+
+  .genesis-float-input{
+    left:-3%;
+    top:21%;
+  }
+
+  .genesis-float-config{
+    right:-3%;
+    top:17%;
+  }
+
+  .genesis-float-reports{
+    right:0;
+    bottom:10%;
+  }
+}
