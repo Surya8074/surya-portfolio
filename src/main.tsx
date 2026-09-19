@@ -10,7 +10,7 @@ import './reference-home.css';
 import './genesis-card.css';
 
 const portraitUrl = '/surya-portfolio/surya-portrait.svg';
-const genesisPath = '/surya-portfolio/work/genesis/';
+const genesisPath = '/surya-portfolio/work/genesis-v7/?v=phase4#s01';
 
 function GenesisCard() {
   return (
