@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
 
@@ -81,7 +81,6 @@ function addKeyboard(root: THREE.Group) {
 export default function GenesisMacBook() {
   const mountRef = useRef<HTMLDivElement>(null);
   const targetRef = useRef({ x: 0, y: 0 });
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const mount = mountRef.current;
@@ -89,15 +88,15 @@ export default function GenesisMacBook() {
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 180);
-    camera.position.set(34, 15, 61);
-    camera.lookAt(0, 6.8, -0.8);
+    camera.position.set(36, 16, 72);
+    camera.lookAt(0, 6.4, -0.6);
 
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
       alpha: true,
       powerPreference: 'high-performance',
     });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.7));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.45));
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.12;
@@ -162,45 +161,39 @@ export default function GenesisMacBook() {
     lid.add(bezel);
 
     let disposed = false;
-    const loader = new THREE.TextureLoader();
 
-    loader.load(
-      SCREEN_URL,
-      (texture) => {
-        if (disposed) {
-          texture.dispose();
-          return;
-        }
-
-        texture.colorSpace = THREE.SRGBColorSpace;
-        texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
-
-        const screen = new THREE.Mesh(
-          roundedBox(MAC.screenWidth, MAC.screenHeight, 0.045, 0.34, 5),
-          new THREE.MeshBasicMaterial({
-            color: 0xffffff,
-            map: texture,
-            toneMapped: false,
-          }),
-        );
-        screen.position.set(0, MAC.lidHeight / 2 - 0.06, MAC.lidDepth / 2 + 0.125);
-        screen.name = 'GenesisDisplay';
-        lid.add(screen);
-
-        const notch = new THREE.Mesh(
-          roundedBox(3.2, 0.88, 0.07, 0.24, 4),
-          new THREE.MeshBasicMaterial({ color: 0x050609 }),
-        );
-        notch.position.set(0, MAC.lidHeight - 0.52, MAC.lidDepth / 2 + 0.16);
-        lid.add(notch);
-
-        setLoading(false);
-      },
-      undefined,
-      () => {
-        if (!disposed) setLoading(false);
-      },
+    // Add the display immediately so the 3D laptop renders on the first frame.
+    // The Genesis dashboard texture is applied asynchronously when it arrives.
+    const screenMaterial = new THREE.MeshBasicMaterial({
+      color: 0x111318,
+      toneMapped: false,
+    });
+    const screen = new THREE.Mesh(
+      roundedBox(MAC.screenWidth, MAC.screenHeight, 0.045, 0.34, 5),
+      screenMaterial,
     );
+    screen.position.set(0, MAC.lidHeight / 2 - 0.06, MAC.lidDepth / 2 + 0.125);
+    screen.name = 'GenesisDisplay';
+    lid.add(screen);
+
+    const notch = new THREE.Mesh(
+      roundedBox(3.2, 0.88, 0.07, 0.24, 4),
+      new THREE.MeshBasicMaterial({ color: 0x050609 }),
+    );
+    notch.position.set(0, MAC.lidHeight - 0.52, MAC.lidDepth / 2 + 0.16);
+    lid.add(notch);
+
+    const textureLoader = new THREE.TextureLoader();
+    textureLoader.load(SCREEN_URL, (texture) => {
+      if (disposed) {
+        texture.dispose();
+        return;
+      }
+      texture.colorSpace = THREE.SRGBColorSpace;
+      texture.anisotropy = Math.min(renderer.capabilities.getMaxAnisotropy(), 4);
+      screenMaterial.map = texture;
+      screenMaterial.needsUpdate = true;
+    });
 
     const keyLight = new THREE.DirectionalLight(0xffffff, 4);
     keyLight.position.set(10, 24, 22);
@@ -252,7 +245,7 @@ export default function GenesisMacBook() {
       if (!reduceMotion) {
         const target = targetRef.current;
         root.rotation.x += ((0.01 + target.y * -0.012) - root.rotation.x) * 0.07;
-        root.rotation.y += ((-0.10 + target.x * 0.025) - root.rotation.y) * 0.07;
+        root.rotation.y += ((-0.10 + target.x * 0.022) - root.rotation.y) * 0.07;
         root.position.x += (target.x * 0.18 - root.position.x) * 0.07;
         root.position.y += (-target.y * 0.08 - root.position.y) * 0.07;
       }
@@ -303,7 +296,7 @@ export default function GenesisMacBook() {
       onPointerLeave={reset}
       aria-hidden="true"
     >
-      {loading && <div className="genesis-3d-loading">Loading Genesis</div>}
+
     </div>
   );
 }
