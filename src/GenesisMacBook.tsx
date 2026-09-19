@@ -88,8 +88,8 @@ export default function GenesisMacBook() {
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 180);
-    camera.position.set(38, 17, 78);
-    camera.lookAt(0, 6.3, -0.5);
+    camera.position.set(44, 19, 88);
+    camera.lookAt(0, 6.15, -0.5);
 
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
