@@ -8,6 +8,7 @@ import ResumePage from './ResumePage';
 import './styles.css';
 import './reference-home.css';
 import './genesis-card.css';
+import GenesisMacBook from './GenesisMacBook';
 
 const portraitUrl = '/surya-portfolio/surya-portrait.svg';
 const genesisPath = '/surya-portfolio/work/genesis-v7/?v=phase4#s01';
@@ -62,20 +63,7 @@ function GenesisCard() {
           <img src="/surya-portfolio/genesis/Reports.webp" alt="" />
         </div>
 
-        <div className="genesis-laptop">
-          <div className="genesis-laptop-lid">
-            <div className="genesis-laptop-display">
-              <img src="/surya-portfolio/genesis/Dashboard.webp" alt="Genesis dashboard" loading="lazy" />
-            </div>
-            <span className="genesis-laptop-camera" />
-          </div>
-          <div className="genesis-laptop-hinge" />
-          <div className="genesis-laptop-deck">
-            <div className="genesis-laptop-keyboard" aria-hidden="true" />
-            <div className="genesis-laptop-trackpad" aria-hidden="true" />
-            <span className="genesis-laptop-notch" />
-          </div>
-        </div>
+        <GenesisMacBook />
 
         <div className="genesis-note genesis-note-top">Test<br />Smarter <span>↗</span></div>
         <div className="genesis-note genesis-note-bottom">Build<br />Better <span>↗</span></div>
