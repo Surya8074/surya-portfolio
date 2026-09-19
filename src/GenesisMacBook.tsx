@@ -88,15 +88,15 @@ export default function GenesisMacBook() {
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 180);
-    camera.position.set(44, 19, 88);
-    camera.lookAt(0, 6.15, -0.5);
+    camera.position.set(40, 17.5, 82);
+    camera.lookAt(0, 6.2, -0.5);
 
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
       alpha: true,
       powerPreference: 'high-performance',
     });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.45));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.12;
@@ -190,7 +190,7 @@ export default function GenesisMacBook() {
         return;
       }
       texture.colorSpace = THREE.SRGBColorSpace;
-      texture.anisotropy = Math.min(renderer.capabilities.getMaxAnisotropy(), 4);
+      texture.anisotropy = Math.min(renderer.capabilities.getMaxAnisotropy(), 8);
       screenMaterial.map = texture;
       screenMaterial.needsUpdate = true;
     });
