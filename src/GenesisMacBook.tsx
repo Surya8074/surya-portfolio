@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
 
-const SCREEN_URL = '/surya-portfolio/genesis/Reports.webp';
+const SCREEN_URL = '/surya-portfolio/genesis/Dashboard.webp';
 
 const MAC = {
   width: 31.26,
