@@ -45,11 +45,17 @@ function Reveal({ children, className = '', delay = 0 }: { children: React.React
 function ChapterNav({ active }: { active: string }) {
   return (
     <nav className="v8-chapter-nav" aria-label="Case study chapters">
-      {chapters.map(([id, label]) => (
-        <a key={id} className={active === id ? 'is-active' : ''} href={'#' + id} aria-current={active === id ? 'location' : undefined}>
-          <span>{label.split(' / ')[0]}</span><b>{label.split(' / ')[1] || label}</b>
-        </a>
-      ))}
+      {chapters.map(([id, label]) => {
+        const parts = label.split(' / ');
+        const number = parts.length > 1 ? parts[0] : '';
+        const title = parts.length > 1 ? parts[1] : label;
+        return (
+          <a key={id} className={active === id ? 'is-active' : ''} href={'#' + id} aria-current={active === id ? 'location' : undefined}>
+            <span aria-hidden={number ? undefined : true}>{number || '·'}</span>
+            <b>{title}</b>
+          </a>
+        );
+      })}
     </nav>
   );
 }
