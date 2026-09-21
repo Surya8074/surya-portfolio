@@ -45,7 +45,7 @@ function ChapterNav({ active }: { active: string }) {
   return (
     <nav className="v8-chapter-nav" aria-label="Case study chapters">
       {chapters.map(([id, label]) => (
-        <a key={id} className={active === id ? 'is-active' : ''} href={'#' + id}>
+        <a key={id} className={active === id ? 'is-active' : ''} href={'#' + id} aria-current={active === id ? 'location' : undefined}>
           <span>{label.split(' / ')[0]}</span><b>{label.split(' / ')[1] || label}</b>
         </a>
       ))}
@@ -252,8 +252,8 @@ function ProductWalkthrough() {
     <section id="product" className="v8-section v8-product-section">
       <div className="v8-section-label"><span>07</span><b>PRODUCT WALKTHROUGH</b></div>
       <div className="v8-title-row"><h2>One product.<br /><em>Different questions.</em></h2><p>Explore the actual Genesis interfaces through the question each surface is responsible for answering.</p></div>
-      <div className="v8-product-tabs">{gallery.map((x,i)=><button key={x[0]} className={selected===i?'is-selected':''} onClick={()=>setSelected(i)}>{x[0]}</button>)}</div>
-      <motion.div className="v8-product-view" key={item[0]} initial={{opacity:0,scale:.985}} animate={{opacity:1,scale:1}} transition={{duration:.45}}>
+      <div className="v8-product-tabs" role="tablist" aria-label="Genesis product screens">{gallery.map((x,i)=><button key={x[0]} role="tab" aria-selected={selected===i} className={selected===i?'is-selected':''} onClick={()=>setSelected(i)}>{x[0]}</button>)}</div>
+      <motion.div className="v8-product-view" role="tabpanel" key={item[0]} initial={{opacity:0,scale:.985}} animate={{opacity:1,scale:1}} transition={{duration:.45}}>
         <div className="v8-product-image"><img src={item[1]} alt={'Genesis '+item[0]+' screen'}/></div>
         <div className="v8-product-question"><span>QUESTION</span><h3>{item[2]}</h3><p>{item[3]}</p><div className="v8-product-state"><Check size={15}/> Designed around one clear decision</div></div>
       </motion.div>
@@ -469,7 +469,11 @@ export default function GenesisV8() {
       <ReflectionSection />
 
       <footer className="v8-footer">
-        <div><span>GENESIS / V8 CASE STUDY</span><h2>Designed to make complex product thinking <em>visible.</em></h2></div>
+        <div>
+          <span>GENESIS / V8 CASE STUDY</span>
+          <h2>Designed to make complex product thinking <em>visible.</em></h2>
+          <div className="v8-footer-meta"><b>PRODUCT DESIGN</b><b>AI / QA SAAS</b><b>UX · UI · SYSTEMS</b></div>
+        </div>
         <a href="/surya-portfolio/">Back to portfolio <ArrowRight size={16} /></a>
       </footer>
     </main>
