@@ -148,8 +148,8 @@ function InteractionModel() {
     <section id="interaction" className="v8-section v8-interaction-section">
       <div className="v8-section-label"><span>08</span><b>INTERACTION MODEL / STATE SYSTEM</b></div>
       <div className="v8-title-row">
-        <h2>Good automation needs<br /><em>visible states.</em></h2>
-        <p>For an AI-heavy product, feedback is part of the product model. Users should always know whether the system is waiting, working, blocked, failed or asking for a decision.</p>
+        <h2>Automation stops where<br /><em>human confidence begins.</em></h2>
+        <p>For an AI-heavy product, feedback is part of the product model. Users should never have to infer whether the system is waiting, working, blocked, failed or asking for a decision.</p>
       </div>
       <div className="v8-state-system">
         <div className="v8-state-rail">
@@ -184,8 +184,8 @@ function EngineeringCollab() {
     <section id="engineering" className="v8-section v8-engineering-section">
       <div className="v8-section-label"><span>09</span><b>ENGINEERING / COLLABORATION</b></div>
       <div className="v8-title-row">
-        <h2>Design intent → constraint → <em>build decision.</em></h2>
-        <p>The interface was treated as a system of states and rules, not a collection of static screens. That makes the design easier to implement and easier to extend.</p>
+        <h2>The design system started with states,<br /><em>not pixels.</em></h2>
+        <p>Interaction rules were defined before visual polish: what the system can do, what it can’t do yet, and what the user needs to know at each transition.</p>
       </div>
       <div className="v8-engineering-table">
         <div className="v8-engineering-head"><span>DESIGN INPUT</span><span>CONSTRAINT</span><span>IMPLEMENTATION DIRECTION</span></div>
@@ -225,7 +225,7 @@ function ReflectionSection() {
     <section id="reflection" className="v8-section v8-reflection-section">
       <div className="v8-section-label"><span>11</span><b>REFLECTION</b></div>
       <div className="v8-reflection-grid">
-        <div><span>WHAT I LEARNED</span><h2>AI UX is less about <em>automation.</em> More about confidence.</h2></div>
+        <div><span>WHAT I LEARNED</span><h2>AI UX is less about <em>automation.</em><br />More about confidence.</h2></div>
         <div className="v8-reflection-copy">
           <p>The strongest design move was not adding more intelligence to the interface. It was making the boundary between generated, reviewed and executed work unmistakable.</p>
           <p>That principle can scale beyond Genesis: when automation becomes more capable, the interface needs to become more explicit about intent, state and responsibility.</p>
@@ -397,8 +397,8 @@ export default function GenesisV8() {
           <div className="v8-hero-copy">
             <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .15 }}>AI · TEST AUTOMATION · SAAS</motion.p>
             <motion.h1 initial={{ opacity: 0, y: 28, letterSpacing: '.02em' }} animate={{ opacity: 1, y: 0, letterSpacing: '-.075em' }} transition={{ duration: 1, delay: .25, ease: [0.22,1,.36,1] }}>GENESIS</motion.h1>
-            <motion.h2 initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: .42 }}>AI-powered test automation for modern QA teams.</motion.h2>
-            <motion.p className="v8-hero-description" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .62 }}>I designed a guided workflow that accelerates testing while keeping human validation at the center of consequential decisions.</motion.p>
+            <motion.h2 initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: .42 }}>AI can generate the test.<br /><em>The product still needs to earn your trust.</em></motion.h2>
+            <motion.p className="v8-hero-description" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .62 }}>Designing an AI test automation platform where speed never comes at the cost of confidence.</motion.p>
             <div className="v8-hero-meta"><span>PRODUCT / UI-UX DESIGN</span><span>ENTERPRISE QA SAAS</span><span>WEB · DESKTOP-FIRST</span></div>
           </div>
           <motion.div className="v8-hero-product" style={{ rotateX, rotateY }}>
@@ -411,26 +411,26 @@ export default function GenesisV8() {
       <section id="context" className="v8-section v8-context">
         <div className="v8-section-intro">
           <span>CONTEXT</span>
-          <h2>From scattered QA work <em>to a controlled pipeline.</em></h2>
-          <p>Genesis brings the inputs, AI-assisted decisions and operational evidence into one guided product system.</p>
+          <h2>Genesis wasn't another dashboard.<br /><em>It was a decision system for QA teams.</em></h2>
+          <p>Requirements, configuration, generation, validation and reporting become one guided workflow—so users can move from context to evidence without reconstructing the system state themselves.</p>
         </div>
         <ProductAnatomy />
       </section>
 
       <section id="problem" className="v8-section v8-dark-section">
         <div className="v8-section-label"><span>01</span><b>THE PROBLEM</b></div>
-        <div className="v8-title-row"><h2>The hard part wasn't generating tests. <em>It was making them trustworthy.</em></h2><p>QA teams assemble release confidence across requirements, code, data, execution and reports. The design opportunity was to unify that chain without turning Genesis into an engineering console.</p></div>
+        <div className="v8-title-row"><h2>The problem wasn't generating tests.<br /><em>It was knowing whether they were worth running.</em></h2><p>Release confidence is assembled across requirements, code, data, execution and reports. The design challenge was to unify that chain without turning Genesis into another engineering console.</p></div>
         <FragmentedWorkflow />
       </section>
 
       <section id="goals" className="v8-section">
         <div className="v8-section-label"><span>02</span><b>GOALS & SUCCESS CRITERIA</b></div>
-        <div className="v8-title-row"><h2>Two goal sets.<br /><em>One interaction model.</em></h2><p>Speed for the people creating tests; visibility and control for the people accountable for release quality.</p></div>
+        <div className="v8-title-row"><h2>Speed for the builder.<br /><em>Confidence for the decision-maker.</em></h2><p>The workflow had to create momentum without hiding the signals people need when quality and release decisions carry consequences.</p></div>
         <div className="v8-goals">
           {[
             ['USER GOAL', 'Move from codebase to useful tests with less setup.', 'Developers need momentum while QA leads need confidence in AI-assisted decisions.'],
             ['BUSINESS GOAL', 'Make automated coverage part of the release process.', 'Genesis should support repeatable creation, execution and reporting—not a one-off generation moment.'],
-            ['SUCCESS CRITERIA', 'Make the next decision obvious.', 'Every major surface should answer what happened, what needs attention and what the user can safely do next.'],
+            ['SUCCESS CRITERIA', 'Make the next decision obvious.', 'Every major surface should answer: what happened, what needs attention and what can I safely do next.'],
           ].map(([eyebrow, title, body], i) => (
             <Reveal key={eyebrow} delay={i * .07}><article className="v8-goal-card"><span>{eyebrow}</span><h3>{title}</h3><p>{body}</p><ArrowRight /></article></Reveal>
           ))}
@@ -439,7 +439,7 @@ export default function GenesisV8() {
 
       <section id="users" className="v8-section v8-user-section">
         <div className="v8-section-label"><span>03</span><b>USERS & MENTAL MODELS</b></div>
-        <div className="v8-title-row"><h2>Different users.<br /><em>Shared operational picture.</em></h2><p>The system organizes information around the decisions users need to make—not around a collection of role-specific screens.</p></div>
+        <div className="v8-title-row"><h2>Three users.<br /><em>Three questions. One system.</em></h2><p>Each role enters with a different question, but the product keeps them inside the same operational picture instead of fragmenting the experience by role.</p></div>
         <div className="v8-users">
           {[
             [ShieldCheck, 'QA LEAD', 'What is safe to release?', 'Pass rate, coverage, issues and explicit review states.'],
