@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { ArrowDown, ArrowRight, Check, Circle, GitBranch, ShieldCheck, Sparkles } from 'lucide-react';
 import GenesisMacBook from './GenesisMacBook';
@@ -18,6 +18,13 @@ const chapters = [
   ['goals', '02 / GOALS'],
   ['users', '03 / USERS'],
   ['system', '04 / SYSTEM'],
+  ['exploration', '05 / EXPLORATION'],
+  ['decisions', '06 / DECISIONS'],
+  ['product', '07 / PRODUCT'],
+  ['interaction', '08 / INTERACTION'],
+  ['engineering', '09 / ENGINEERING'],
+  ['outcome', '10 / OUTCOME'],
+  ['reflection', '11 / REFLECTION'],
 ];
 
 function Reveal({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
@@ -89,11 +96,16 @@ function ExplorationLab() {
         <motion.div className="v8-exploration-stage" key={item.id} initial={{opacity:0,y:18}} animate={{opacity:1,y:0}} transition={{duration:.45}}>
           <div className="v8-lowfi-wrap">
             <div className="v8-lowfi-label">WIREFRAME DIRECTION / {item.id}</div>
-            <div className="v8-lowfi">
+            <div className={'v8-lowfi v8-lowfi-' + item.id}>
               <div className="v8-lowfi-top"><i/><i/><i/><span>PROJECT / TEST CYCLE</span></div>
               <div className="v8-lowfi-body">
                 <aside><b/><b/><b/><b/></aside>
-                <div className="v8-lowfi-main"><span/><span/><span/><div className="v8-lowfi-table"><i/><i/><i/><i/><i/><i/></div></div>
+                <div className="v8-lowfi-main">
+                  <div className="v8-lowfi-summary"><i/><i/><i/></div>
+                  <span/><span/><span/>
+                  <div className="v8-lowfi-table"><i/><i/><i/><i/><i/><i/></div>
+                  <div className="v8-lowfi-actions"><i/><i/></div>
+                </div>
               </div>
             </div>
           </div>
@@ -119,10 +131,117 @@ function DecisionMatrix() {
   );
 }
 
+function InteractionModel() {
+  const states = [
+    ['READY', 'Input is complete', 'The next action is available and the system explains what will happen.'],
+    ['RUNNING', 'Work is in progress', 'Progress is visible without pretending the result is already known.'],
+    ['FAILED', 'Action needs attention', 'The error is contextual, recoverable and tied to the affected step.'],
+    ['BLOCKED', 'A dependency is missing', 'The interface explains what is missing and how to resolve it.'],
+    ['EMPTY', 'No result yet', 'Empty states teach the next useful action instead of showing a dead end.'],
+    ['REVIEW', 'Human decision required', 'Generated output stays separate from approved output until someone validates it.'],
+  ];
+
+  const [selected, setSelected] = useState(5);
+  const item = states[selected];
+
+  return (
+    <section id="interaction" className="v8-section v8-interaction-section">
+      <div className="v8-section-label"><span>08</span><b>INTERACTION MODEL / STATE SYSTEM</b></div>
+      <div className="v8-title-row">
+        <h2>Good automation needs<br /><em>visible states.</em></h2>
+        <p>For an AI-heavy product, feedback is part of the product model. Users should always know whether the system is waiting, working, blocked, failed or asking for a decision.</p>
+      </div>
+      <div className="v8-state-system">
+        <div className="v8-state-rail">
+          {states.map(([label], i) => <button key={label} className={selected === i ? 'is-selected' : ''} onClick={() => setSelected(i)} aria-pressed={selected === i}><span>0{i + 1}</span><b>{label}</b></button>)}
+        </div>
+        <motion.div className="v8-state-detail" key={item[0]} initial={{opacity:0, y:12}} animate={{opacity:1, y:0}} transition={{duration:.4}}>
+          <div className="v8-state-visual">
+            <div className="v8-state-window">
+              <div className="v8-state-window-bar"><i/><i/><i/></div>
+              <div className={'v8-state-pill state-' + item[0].toLowerCase()}>{item[0]}</div>
+              <strong>{item[1]}</strong>
+              <span>{item[2]}</span>
+              <div className="v8-state-progress"><i/></div>
+              <button>Continue <ArrowRight size={13}/></button>
+            </div>
+          </div>
+          <div className="v8-state-copy"><span>STATE / {item[0]}</span><h3>{item[1]}</h3><p>{item[2]}</p><div><Check size={14}/> Clear feedback before the next decision</div></div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function EngineeringCollab() {
+  const rows = [
+    ['Design intent', 'Make generated output visibly distinct from approved output.', 'Review state + explicit validation gate'],
+    ['Product constraint', 'AI should accelerate work without creating a false sense of certainty.', 'Progressive trust workflow'],
+    ['Technical constraint', 'States must survive async generation, execution and failure.', 'Shared state vocabulary across screens'],
+    ['Build handoff', 'Translate interaction rules into predictable component behavior.', 'Ready / Running / Failed / Blocked / Empty'],
+  ];
+  return (
+    <section id="engineering" className="v8-section v8-engineering-section">
+      <div className="v8-section-label"><span>09</span><b>ENGINEERING / COLLABORATION</b></div>
+      <div className="v8-title-row">
+        <h2>Design intent → constraint → <em>build decision.</em></h2>
+        <p>The interface was treated as a system of states and rules, not a collection of static screens. That makes the design easier to implement and easier to extend.</p>
+      </div>
+      <div className="v8-engineering-table">
+        <div className="v8-engineering-head"><span>DESIGN INPUT</span><span>CONSTRAINT</span><span>IMPLEMENTATION DIRECTION</span></div>
+        {rows.map(([a,b,d], i) => <Reveal key={a} delay={i*.05}><div className="v8-engineering-row"><b>{a}</b><p>{b}</p><span>{d}</span></div></Reveal>)}
+      </div>
+      <div className="v8-engineering-note"><GitBranch size={17}/><span><b>Collaboration principle:</b> agree on the state model before polishing individual screens.</span></div>
+    </section>
+  );
+}
+
+function OutcomeSection() {
+  const evidence = [
+    ['PRODUCT OUTCOME', 'A guided workflow connects context, generation, validation, execution and reporting instead of treating AI generation as the destination.'],
+    ['UX OUTCOME', 'The hierarchy shifts attention toward status, review and next action—reducing the need to reconstruct system state from multiple surfaces.'],
+    ['DESIGN SYSTEM OUTCOME', 'Shared state, table and feedback patterns create a consistent interaction language across the workflow.'],
+  ];
+  return (
+    <section id="outcome" className="v8-section v8-outcome-section">
+      <div className="v8-section-label"><span>10</span><b>OUTCOME / EVIDENCE</b></div>
+      <div className="v8-title-row">
+        <h2>What changed beyond<br /><em>the pixels?</em></h2>
+        <p>Where measured production data is not available in the case-study source material, the outcome is stated qualitatively rather than inventing a metric.</p>
+      </div>
+      <div className="v8-evidence-grid">
+        {evidence.map(([label, body], i) => <Reveal key={label} delay={i*.06}><article className="v8-evidence-block"><span>{label}</span><p>{body}</p></article></Reveal>)}
+      </div>
+      <div className="v8-measurement">
+        <span>IF I WERE MEASURING THIS IN PRODUCTION</span>
+        <div><b>Time to first useful test</b><b>Review-to-run conversion</b><b>Failure recovery time</b><b>Coverage visibility</b></div>
+      </div>
+    </section>
+  );
+}
+
+function ReflectionSection() {
+  return (
+    <section id="reflection" className="v8-section v8-reflection-section">
+      <div className="v8-section-label"><span>11</span><b>REFLECTION</b></div>
+      <div className="v8-reflection-grid">
+        <div><span>WHAT I LEARNED</span><h2>AI UX is less about <em>automation.</em> More about confidence.</h2></div>
+        <div className="v8-reflection-copy">
+          <p>The strongest design move was not adding more intelligence to the interface. It was making the boundary between generated, reviewed and executed work unmistakable.</p>
+          <p>That principle can scale beyond Genesis: when automation becomes more capable, the interface needs to become more explicit about intent, state and responsibility.</p>
+          <a href="#context">Revisit the system <ArrowRight size={15}/></a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function ProductWalkthrough() {
   const gallery = [
     ['Dashboard', screens.dashboard, 'What needs attention?', 'Status, coverage and active work are surfaced before inventory.'],
+    ['Project Details', A + 'Project-Details.webp', 'What am I working on?', 'Project context anchors the workflow before users enter configuration or execution.'],
     ['Input Artifacts', screens.inputs, 'What context is available?', 'Inputs establish the evidence Genesis can work from.'],
+    ['Test Data Setup', A + 'Test-Data-Setup.webp', 'Is the test ready for realistic data?', 'Data setup makes an important execution dependency visible before generation.'],
     ['AI Configuration', screens.ai, 'How should AI behave?', 'Configuration makes generation intent explicit rather than hidden.'],
     ['Review & Validate', screens.review, 'Is this safe to run?', 'Review becomes a visible human checkpoint before execution.'],
     ['Reports', screens.reports, 'What happened?', 'Execution becomes evidence that can be inspected and shared.'],
@@ -344,9 +463,13 @@ export default function GenesisV8() {
       <ExplorationLab />
       <DecisionMatrix />
       <ProductWalkthrough />
+      <InteractionModel />
+      <EngineeringCollab />
+      <OutcomeSection />
+      <ReflectionSection />
 
       <footer className="v8-footer">
-        <div><span>GENESIS / V8 FOUNDATION</span><h2>Designed to make complex product thinking <em>visible.</em></h2></div>
+        <div><span>GENESIS / V8 CASE STUDY</span><h2>Designed to make complex product thinking <em>visible.</em></h2></div>
         <a href="/surya-portfolio/">Back to portfolio <ArrowRight size={16} /></a>
       </footer>
     </main>
