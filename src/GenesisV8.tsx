@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from 'framer-motion';
 import { ArrowDown, ArrowRight, Check, Circle, GitBranch, ShieldCheck, Sparkles } from 'lucide-react';
 import GenesisMacBook from './GenesisMacBook';
 
@@ -28,13 +28,14 @@ const chapters = [
 ];
 
 function Reveal({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+  const reduceMotion = useReducedMotion();
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: 34 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={reduceMotion ? false : { opacity: 0, y: 34 }}
+      whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.18 }}
-      transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={reduceMotion ? undefined : { duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>
@@ -149,7 +150,7 @@ function InteractionModel() {
       <div className="v8-section-label"><span>08</span><b>INTERACTION MODEL / STATE SYSTEM</b></div>
       <div className="v8-title-row">
         <h2>Automation stops where<br /><em>human confidence begins.</em></h2>
-        <p>For an AI-heavy product, feedback is part of the product model. Users should never have to infer whether the system is waiting, working, blocked, failed or asking for a decision.</p>
+        <p>For an AI-heavy product, feedback is part of the product model. Every state should make the next decision legible.</p>
       </div>
       <div className="v8-state-system">
         <div className="v8-state-rail">
@@ -185,7 +186,7 @@ function EngineeringCollab() {
       <div className="v8-section-label"><span>09</span><b>ENGINEERING / COLLABORATION</b></div>
       <div className="v8-title-row">
         <h2>The design system started with states,<br /><em>not pixels.</em></h2>
-        <p>Interaction rules were defined before visual polish: what the system can do, what it can’t do yet, and what the user needs to know at each transition.</p>
+        <p>Interaction rules came before visual polish: capability, constraint and user feedback at every transition.</p>
       </div>
       <div className="v8-engineering-table">
         <div className="v8-engineering-head"><span>DESIGN INPUT</span><span>CONSTRAINT</span><span>IMPLEMENTATION DIRECTION</span></div>
@@ -207,7 +208,7 @@ function OutcomeSection() {
       <div className="v8-section-label"><span>10</span><b>OUTCOME / EVIDENCE</b></div>
       <div className="v8-title-row">
         <h2>What changed beyond<br /><em>the pixels?</em></h2>
-        <p>Where measured production data is not available in the case-study source material, the outcome is stated qualitatively rather than inventing a metric.</p>
+        <p>Where production data is unavailable, the outcome stays qualitative rather than inventing a metric.</p>
       </div>
       <div className="v8-evidence-grid">
         {evidence.map(([label, body], i) => <Reveal key={label} delay={i*.06}><article className="v8-evidence-block"><span>{label}</span><p>{body}</p></article></Reveal>)}
@@ -252,8 +253,8 @@ function ProductWalkthrough() {
     <section id="product" className="v8-section v8-product-section">
       <div className="v8-section-label"><span>07</span><b>PRODUCT WALKTHROUGH</b></div>
       <div className="v8-title-row"><h2>One product.<br /><em>Different questions.</em></h2><p>Explore the actual Genesis interfaces through the question each surface is responsible for answering.</p></div>
-      <div className="v8-product-tabs" role="tablist" aria-label="Genesis product screens">{gallery.map((x,i)=><button key={x[0]} role="tab" aria-selected={selected===i} className={selected===i?'is-selected':''} onClick={()=>setSelected(i)}>{x[0]}</button>)}</div>
-      <motion.div className="v8-product-view" role="tabpanel" key={item[0]} initial={{opacity:0,scale:.985}} animate={{opacity:1,scale:1}} transition={{duration:.45}}>
+      <div className="v8-product-tabs" role="tablist" aria-label="Genesis product screens">{gallery.map((x,i)=><button id={'genesis-tab-'+i} key={x[0]} role="tab" aria-selected={selected===i} aria-controls="genesis-product-panel" tabIndex={selected===i?0:-1} className={selected===i?'is-selected':''} onClick={()=>setSelected(i)} onKeyDown={e=>{if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();setSelected((i+1)%gallery.length)} if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();setSelected((i-1+gallery.length)%gallery.length)}}}>{x[0]}</button>)}</div>
+      <motion.div id="genesis-product-panel" aria-labelledby={'genesis-tab-'+selected} className="v8-product-view" role="tabpanel" tabIndex={0} key={item[0]} initial={{opacity:0,scale:.985}} animate={{opacity:1,scale:1}} transition={{duration:.45}}>
         <div className="v8-product-image"><img src={item[1]} alt={'Genesis '+item[0]+' screen'}/></div>
         <div className="v8-product-question"><span>QUESTION</span><h3>{item[2]}</h3><p>{item[3]}</p><div className="v8-product-state"><Check size={15}/> Designed around one clear decision</div></div>
       </motion.div>
@@ -377,6 +378,13 @@ export default function GenesisV8() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const activeLink = document.querySelector<HTMLAnchorElement>('.v8-chapter-nav a.is-active');
+    if (activeLink && window.innerWidth <= 1050) {
+      activeLink.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+  }, [active]);
+
   const handlePointer = (event: React.PointerEvent<HTMLDivElement>) => {
     const rect = heroRef.current?.getBoundingClientRect();
     if (!rect) return;
@@ -412,20 +420,20 @@ export default function GenesisV8() {
         <div className="v8-section-intro">
           <span>CONTEXT</span>
           <h2>Genesis wasn't another dashboard.<br /><em>It was a decision system for QA teams.</em></h2>
-          <p>Requirements, configuration, generation, validation and reporting become one guided workflow—so users can move from context to evidence without reconstructing the system state themselves.</p>
+          <p>Requirements, generation, validation and reporting become one guided workflow—from context to evidence without reconstructing system state.</p>
         </div>
         <ProductAnatomy />
       </section>
 
       <section id="problem" className="v8-section v8-dark-section">
         <div className="v8-section-label"><span>01</span><b>THE PROBLEM</b></div>
-        <div className="v8-title-row"><h2>The problem wasn't generating tests.<br /><em>It was knowing whether they were worth running.</em></h2><p>Release confidence is assembled across requirements, code, data, execution and reports. The design challenge was to unify that chain without turning Genesis into another engineering console.</p></div>
+        <div className="v8-title-row"><h2>The problem wasn't generating tests.<br /><em>It was knowing whether they were worth running.</em></h2><p>Release confidence spans requirements, code, data, execution and reports. The challenge was unifying that chain without creating another engineering console.</p></div>
         <FragmentedWorkflow />
       </section>
 
       <section id="goals" className="v8-section">
         <div className="v8-section-label"><span>02</span><b>GOALS & SUCCESS CRITERIA</b></div>
-        <div className="v8-title-row"><h2>Speed for the builder.<br /><em>Confidence for the decision-maker.</em></h2><p>The workflow had to create momentum without hiding the signals people need when quality and release decisions carry consequences.</p></div>
+        <div className="v8-title-row"><h2>Speed for the builder.<br /><em>Confidence for the decision-maker.</em></h2><p>The workflow had to create momentum without hiding the signals behind quality and release decisions.</p></div>
         <div className="v8-goals">
           {[
             ['USER GOAL', 'Move from codebase to useful tests with less setup.', 'Developers need momentum while QA leads need confidence in AI-assisted decisions.'],
@@ -439,7 +447,7 @@ export default function GenesisV8() {
 
       <section id="users" className="v8-section v8-user-section">
         <div className="v8-section-label"><span>03</span><b>USERS & MENTAL MODELS</b></div>
-        <div className="v8-title-row"><h2>Three users.<br /><em>Three questions. One system.</em></h2><p>Each role enters with a different question, but the product keeps them inside the same operational picture instead of fragmenting the experience by role.</p></div>
+        <div className="v8-title-row"><h2>Three users.<br /><em>Three questions. One system.</em></h2><p>Each role enters with a different question, but the product keeps one shared operational picture.</p></div>
         <div className="v8-users">
           {[
             [ShieldCheck, 'QA LEAD', 'What is safe to release?', 'Pass rate, coverage, issues and explicit review states.'],
