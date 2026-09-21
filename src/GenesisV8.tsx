@@ -46,6 +46,102 @@ function ChapterNav({ active }: { active: string }) {
   );
 }
 
+
+
+function DesignTension() {
+  const [trust, setTrust] = useState(52);
+  return (
+    <section className="v8-tension">
+      <div className="v8-tension-copy">
+        <span>DESIGN CHALLENGE</span>
+        <h2>Speed without surrendering <em>trust.</em></h2>
+        <p>AI can compress the work of creating tests. The interface still has to make intent, uncertainty and approval visible.</p>
+      </div>
+      <div className="v8-tension-model">
+        <div className="v8-tension-scale">
+          <div className="v8-tension-side"><Sparkles size={18}/><b>AI acceleration</b><small>Generate faster</small></div>
+          <div className="v8-tension-track"><div style={{ width: trust + '%' }} /><input aria-label="Explore speed and trust balance" type="range" min="20" max="80" value={trust} onChange={e => setTrust(Number(e.target.value))}/></div>
+          <div className="v8-tension-side"><ShieldCheck size={18}/><b>Human confidence</b><small>Validate before execution</small></div>
+        </div>
+        <div className="v8-tension-readout"><strong>{trust < 45 ? 'More automation' : trust > 60 ? 'More validation' : 'Balanced control'}</strong><span>Drag the control to explore the product tension.</span></div>
+      </div>
+    </section>
+  );
+}
+
+const explorations = [
+  { id: '01', title: 'Inventory first', body: 'The first direction exposed everything at once. Useful for completeness, but weak for prioritising the next decision.', tags: ['High density', 'Low prioritisation'], screen: screens.dashboard },
+  { id: '02', title: 'Status first', body: 'The hierarchy moved execution state and attention signals above the full inventory.', tags: ['Clear state', 'Faster scanning'], screen: screens.dashboard },
+  { id: '03', title: 'Decision oriented', body: 'The final direction connected status to action: what happened, what needs review and what can happen next.', tags: ['Actionable', 'Review gate'], screen: screens.review },
+];
+
+function ExplorationLab() {
+  const [selected, setSelected] = useState(2);
+  const item = explorations[selected];
+  return (
+    <section id="exploration" className="v8-section v8-exploration-section">
+      <div className="v8-section-label"><span>05</span><b>EXPLORATION / LOW-FI → HIGH-FI</b></div>
+      <div className="v8-title-row"><h2>Show the thinking.<br /><em>Not just the final screen.</em></h2><p>These frames make the design progression inspectable: each iteration changes the information hierarchy before visual polish enters the picture.</p></div>
+      <div className="v8-exploration">
+        <div className="v8-iteration-rail">
+          {explorations.map((x, i) => <button key={x.id} onClick={() => setSelected(i)} className={selected === i ? 'is-selected' : ''}><span>{x.id}</span><b>{x.title}</b><i>{selected === i ? <Check size={13}/> : <Circle size={9}/>}</i></button>)}
+        </div>
+        <motion.div className="v8-exploration-stage" key={item.id} initial={{opacity:0,y:18}} animate={{opacity:1,y:0}} transition={{duration:.45}}>
+          <div className="v8-lowfi-wrap">
+            <div className="v8-lowfi-label">WIREFRAME DIRECTION / {item.id}</div>
+            <div className="v8-lowfi">
+              <div className="v8-lowfi-top"><i/><i/><i/><span>PROJECT / TEST CYCLE</span></div>
+              <div className="v8-lowfi-body">
+                <aside><b/><b/><b/><b/></aside>
+                <div className="v8-lowfi-main"><span/><span/><span/><div className="v8-lowfi-table"><i/><i/><i/><i/><i/><i/></div></div>
+              </div>
+            </div>
+          </div>
+          <div className="v8-exploration-notes"><span>ITERATION {item.id}</span><h3>{item.title}</h3><p>{item.body}</p><div>{item.tags.map(tag => <b key={tag}>{tag}</b>)}</div></div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function DecisionMatrix() {
+  const decisions = [
+    ['Progressive trust', 'Expose AI output → review → execution as separate states.', 'Prevents generated output from feeling like an approved result.'],
+    ['Status before inventory', 'Surface health, failures and attention before deep lists.', 'Supports scanning and release decisions.'],
+    ['One component system', 'Use the same patterns for state, tables, controls and feedback.', 'Reduces cognitive overhead as the workflow grows.'],
+  ];
+  return (
+    <section id="decisions" className="v8-section v8-decisions-section">
+      <div className="v8-section-label"><span>06</span><b>KEY DECISIONS / TRADE-OFFS</b></div>
+      <div className="v8-title-row"><h2>Every visual choice carries a <em>product consequence.</em></h2><p>The portfolio should show not only what changed, but why the change mattered to the workflow.</p></div>
+      <div className="v8-decision-grid">{decisions.map(([title, decision, consequence], i) => <Reveal key={title} delay={i*.07}><article className="v8-decision-card"><span>0{i+1}</span><h3>{title}</h3><div><b>DECISION</b><p>{decision}</p></div><div><b>CONSEQUENCE</b><p>{consequence}</p></div></article></Reveal>)}</div>
+    </section>
+  );
+}
+
+function ProductWalkthrough() {
+  const gallery = [
+    ['Dashboard', screens.dashboard, 'What needs attention?', 'Status, coverage and active work are surfaced before inventory.'],
+    ['Input Artifacts', screens.inputs, 'What context is available?', 'Inputs establish the evidence Genesis can work from.'],
+    ['AI Configuration', screens.ai, 'How should AI behave?', 'Configuration makes generation intent explicit rather than hidden.'],
+    ['Review & Validate', screens.review, 'Is this safe to run?', 'Review becomes a visible human checkpoint before execution.'],
+    ['Reports', screens.reports, 'What happened?', 'Execution becomes evidence that can be inspected and shared.'],
+  ];
+  const [selected, setSelected] = useState(0);
+  const item = gallery[selected];
+  return (
+    <section id="product" className="v8-section v8-product-section">
+      <div className="v8-section-label"><span>07</span><b>PRODUCT WALKTHROUGH</b></div>
+      <div className="v8-title-row"><h2>One product.<br /><em>Different questions.</em></h2><p>Explore the actual Genesis interfaces through the question each surface is responsible for answering.</p></div>
+      <div className="v8-product-tabs">{gallery.map((x,i)=><button key={x[0]} className={selected===i?'is-selected':''} onClick={()=>setSelected(i)}>{x[0]}</button>)}</div>
+      <motion.div className="v8-product-view" key={item[0]} initial={{opacity:0,scale:.985}} animate={{opacity:1,scale:1}} transition={{duration:.45}}>
+        <div className="v8-product-image"><img src={item[1]} alt={'Genesis '+item[0]+' screen'}/></div>
+        <div className="v8-product-question"><span>QUESTION</span><h3>{item[2]}</h3><p>{item[3]}</p><div className="v8-product-state"><Check size={15}/> Designed around one clear decision</div></div>
+      </motion.div>
+    </section>
+  );
+}
+
 function ProductAnatomy() {
   const nodes = [
     ['INPUTS', 'Repository', 'Requirements', 'Test data'],
@@ -237,11 +333,17 @@ export default function GenesisV8() {
         </div>
       </section>
 
+      <DesignTension />
+
       <section id="system" className="v8-section v8-system-section">
         <div className="v8-section-label"><span>04</span><b>THE SYSTEM / WORKFLOW</b></div>
         <div className="v8-title-row"><h2>One pipeline.<br /><em>Six decision points.</em></h2><p>Explore the workflow. Each stage pairs a real Genesis interface with the product question it is designed to answer.</p></div>
         <WorkflowExplorer />
       </section>
+
+      <ExplorationLab />
+      <DecisionMatrix />
+      <ProductWalkthrough />
 
       <footer className="v8-footer">
         <div><span>GENESIS / V8 FOUNDATION</span><h2>Designed to make complex product thinking <em>visible.</em></h2></div>
