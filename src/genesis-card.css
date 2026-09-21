@@ -125,7 +125,7 @@
   width:auto;
   min-height:0;
   pointer-events:auto;
-  transform:translateY(80px);
+  transform:translateY(80px) scale(.86);
 }
 .genesis-3d-laptop canvas{
   display:block;
@@ -238,7 +238,7 @@
   }
   .genesis-project-copy{max-width:650px}
   .genesis-project-visual{height:590px}
-  .genesis-3d-laptop{inset:0;transform:translateY(24px)}
+  .genesis-3d-laptop{inset:0;transform:translateY(24px) scale(.88)}
   .genesis-float-screen{width:158px}
   .genesis-float-screen img{height:90px}
   .secondary-work-card{width:min(900px,calc(100% - 48px))}
@@ -259,7 +259,7 @@
   .genesis-project-description{font-size:15px}
   .genesis-project-action{margin-top:30px}
   .genesis-project-visual{height:430px}
-  .genesis-3d-laptop{inset:0 -6%;transform:translateY(18px)}
+  .genesis-3d-laptop{inset:0 -6%;transform:translateY(18px) scale(.9)}
   .genesis-float-screen{width:106px;padding:5px;border-radius:10px}
   .genesis-float-screen span{font-size:6px;padding:2px 3px 4px}
   .genesis-float-screen img{height:62px;border-radius:6px}
