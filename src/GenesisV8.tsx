@@ -280,26 +280,20 @@ function ProductAnatomy() {
     {
       number: '01',
       title: 'INPUTS',
-      descriptor: 'CONTEXT',
       items: ['Repository', 'Requirements', 'Test data'],
-      detail: 'Genesis makes the evidence available to the system explicit before generation begins.',
-      statement: 'Evidence enters before intelligence.',
+      detail: 'Source code, requirements and test data enter Genesis as the working context.',
     },
     {
       number: '02',
       title: 'AI LAYER',
-      descriptor: 'INTELLIGENCE',
       items: ['Configure', 'Generate', 'Validate'],
-      detail: 'AI accelerates test creation while configuration and validation keep intent visible before execution.',
-      statement: 'Generation is controlled, not assumed.',
+      detail: 'AI turns that context into tests through a controlled generation sequence.',
     },
     {
       number: '03',
       title: 'OUTPUTS',
-      descriptor: 'EVIDENCE',
       items: ['Tests', 'Execution', 'Reports'],
-      detail: 'Generated work becomes inspectable evidence through execution status and reporting.',
-      statement: 'Execution becomes evidence.',
+      detail: 'Generated work becomes inspectable evidence through execution and reporting.',
     },
   ];
 
@@ -315,7 +309,7 @@ function ProductAnatomy() {
             <React.Fragment key={node.title}>
               <motion.button
                 type="button"
-                className={'v8-context-card ' + (selected === i ? 'is-selected' : '')}
+                className={'v8-context-card ' + (selected === i ? 'is-selected' : '') + (i === 1 ? ' is-ai' : '')}
                 onClick={() => setSelected(i)}
                 onMouseEnter={() => setSelected(i)}
                 aria-pressed={selected === i}
@@ -323,22 +317,31 @@ function ProductAnatomy() {
                 whileTap={reduceMotion ? undefined : { scale: .995 }}
                 transition={{ type: 'spring', stiffness: 260, damping: 24 }}
               >
-                <span className="v8-context-card-label">{node.title}</span>
-                <span className="v8-context-card-items">
-                  {node.items.map(value => <span key={value}>{value}</span>)}
-                </span>
                 <span className="v8-context-card-number">{node.number}</span>
+                <span className="v8-context-card-label">{node.title}</span>
+
+                {i === 1 ? (
+                  <span className="v8-context-card-items v8-context-progress">
+                    {node.items.map((value, index) => (
+                      <React.Fragment key={value}>
+                        <span className={index === 1 ? 'is-core' : ''}>{value}</span>
+                        {index < node.items.length - 1 && <i aria-hidden="true">→</i>}
+                      </React.Fragment>
+                    ))}
+                  </span>
+                ) : (
+                  <span className="v8-context-card-items">
+                    {node.items.map(value => <span key={value}>{value}</span>)}
+                  </span>
+                )}
+
+                <span className="v8-context-card-detail">{node.detail}</span>
               </motion.button>
 
               {i < nodes.length - 1 && (
-                <motion.span
-                  className="v8-context-flow-arrow"
-                  aria-hidden="true"
-                  animate={reduceMotion ? undefined : { opacity: selected === i || selected === i + 1 ? 1 : .45 }}
-                >
+                <span className="v8-context-flow-arrow" aria-hidden="true">
                   <i />
-                  <ArrowRight size={14} />
-                </motion.span>
+                </span>
               )}
             </React.Fragment>
           ))}
@@ -352,21 +355,8 @@ function ProductAnatomy() {
           transition={{ duration: .35, ease: [0.22, 1, 0.36, 1] }}
         >
           <span className="v8-context-editorial-eyebrow">WHY THIS MATTERS</span>
-          <h3>{item.statement}</h3>
-          <p>{item.detail}</p>
-
-          <div className="v8-context-signal" aria-hidden="true">
-            <span className={selected === 0 ? 'is-active' : ''} />
-            <i />
-            <span className={selected === 1 ? 'is-active' : ''} />
-            <i />
-            <span className={selected === 2 ? 'is-active' : ''} />
-          </div>
-          <div className="v8-context-signal-labels" aria-hidden="true">
-            <span>Context</span>
-            <span>Intelligence</span>
-            <span>Evidence</span>
-          </div>
+          <h3>A controlled generation layer.</h3>
+          <p>AI accelerates test creation, while configuration and validation keep intent visible before execution.</p>
 
           <div className="v8-context-contribution">
             <span>MY CONTRIBUTION</span>
@@ -378,16 +368,7 @@ function ProductAnatomy() {
               <b>Product collaboration</b>
             </div>
           </div>
-
-          <a href="#exploration" className="v8-context-explore">
-            <span>↗</span>
-            <span>Explore the design process</span>
-          </a>
         </motion.aside>
-      </div>
-
-      <div className="v8-system-caption">
-        <span>CONTEXT</span><i>→</i><span>INTELLIGENCE</span><i>→</i><span>EVIDENCE</span>
       </div>
     </div>
   );
