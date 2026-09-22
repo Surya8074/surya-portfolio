@@ -278,22 +278,25 @@ function ProductWalkthrough() {
 function ProductAnatomy() {
   const nodes = [
     {
+      number: '01',
       title: 'INPUTS',
+      descriptor: 'CONTEXT',
       items: ['Repository', 'Requirements', 'Test data'],
-      detail: 'Context enters Genesis before any generation begins. The system makes its available evidence explicit.',
-      accent: 'Context before intelligence.',
+      detail: 'Genesis makes the evidence available to the system explicit before generation begins.',
     },
     {
+      number: '02',
       title: 'AI LAYER',
+      descriptor: 'INTELLIGENCE',
       items: ['Configure', 'Generate', 'Validate'],
-      detail: 'AI accelerates test creation, while configuration and validation keep intent visible before execution.',
-      accent: 'A controlled generation layer.',
+      detail: 'AI accelerates test creation while configuration and validation keep intent visible before execution.',
     },
     {
+      number: '03',
       title: 'OUTPUTS',
+      descriptor: 'EVIDENCE',
       items: ['Tests', 'Execution', 'Reports'],
       detail: 'Generated work becomes inspectable evidence through execution status and reporting.',
-      accent: 'Evidence after generation.',
     },
   ];
   const [selected, setSelected] = useState(1);
@@ -302,58 +305,63 @@ function ProductAnatomy() {
 
   return (
     <div className="v8-context-system">
-      <div className="v8-flow-canvas" aria-label="Genesis product anatomy">
-        <div className="v8-flow-line" aria-hidden="true">
-          <span className="v8-flow-line-progress" style={{ opacity: reduceMotion ? 0.45 : 1 }} />
+      <div className="v8-system-flow" aria-label="Genesis system flow">
+        <div className="v8-system-track" aria-hidden="true">
+          <span className="v8-system-track-fill" style={{ opacity: reduceMotion ? .5 : 1 }} />
         </div>
-        <div className="v8-flow-grid">
+
+        <div className="v8-system-stages">
           {nodes.map((node, i) => (
             <React.Fragment key={node.title}>
               <motion.button
                 type="button"
-                className={'v8-flow-node ' + (selected === i ? 'is-selected' : '')}
+                className={'v8-system-stage ' + (selected === i ? 'is-selected' : '')}
                 onClick={() => setSelected(i)}
                 onMouseEnter={() => setSelected(i)}
                 aria-pressed={selected === i}
-                whileHover={reduceMotion ? undefined : { y: -8, rotateX: 2, rotateY: i === 1 ? 0 : i === 0 ? -2 : 2 }}
-                whileTap={reduceMotion ? undefined : { scale: .985 }}
-                transition={{ type: 'spring', stiffness: 280, damping: 22 }}
+                whileHover={reduceMotion ? undefined : { y: -4 }}
+                whileTap={reduceMotion ? undefined : { scale: .995 }}
+                transition={{ type: 'spring', stiffness: 260, damping: 24 }}
               >
-                <span className="v8-flow-index">0{i + 1}</span>
-                <span className="v8-flow-kicker">{node.title}</span>
-                <div className="v8-flow-items">
-                  {node.items.map(value => <b key={value}>{value}</b>)}
-                </div>
-                {i === 1 ? <Sparkles className="v8-flow-symbol" size={18} aria-hidden="true" /> : <Circle className="v8-flow-symbol" size={14} aria-hidden="true" />}
+                <span className="v8-system-number">{node.number}</span>
+                <span className="v8-system-title">{node.title}</span>
+                <span className="v8-system-descriptor">{node.descriptor}</span>
+                <span className="v8-system-items">
+                  {node.items.map((value, index) => (
+                    <span key={value} className={index === 1 && i === 1 ? 'is-core' : ''}>{value}</span>
+                  ))}
+                </span>
               </motion.button>
+
               {i < nodes.length - 1 && (
-                <motion.div
-                  className="v8-flow-connector"
-                  animate={reduceMotion ? undefined : { opacity: selected === i || selected === i + 1 ? 1 : .42 }}
+                <motion.span
+                  className="v8-system-connector"
                   aria-hidden="true"
+                  animate={reduceMotion ? undefined : { opacity: selected === i || selected === i + 1 ? 1 : .38 }}
                 >
-                  <span />
-                  <ArrowRight size={15} />
-                </motion.div>
+                  <i />
+                  <ArrowRight size={13} />
+                </motion.span>
               )}
             </React.Fragment>
           ))}
         </div>
 
         <motion.div
-          className="v8-flow-annotation"
+          className="v8-system-insight"
           key={item.title}
-          initial={reduceMotion ? false : { opacity: 0, y: 10 }}
+          initial={reduceMotion ? false : { opacity: 0, y: 8 }}
           animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-          transition={{ duration: .35 }}
+          transition={{ duration: .3 }}
         >
-          <span>WHY THIS MATTERS</span>
-          <strong>{item.accent}</strong>
+          <span>0{selected + 1} / {item.title}</span>
+          <strong>{item.descriptor === 'CONTEXT' ? 'Evidence enters before intelligence.' : item.descriptor === 'INTELLIGENCE' ? 'Generation is controlled, not assumed.' : 'Execution becomes evidence.'}</strong>
           <p>{item.detail}</p>
-          <div className="v8-flow-contribution">
-            <b>UX</b><b>UI</b><b>Interaction model</b><b>Design system</b><b>Product collaboration</b>
-          </div>
         </motion.div>
+
+        <div className="v8-system-caption">
+          <span>CONTEXT</span><i>→</i><span>INTELLIGENCE</span><i>→</i><span>EVIDENCE</span>
+        </div>
       </div>
     </div>
   );
