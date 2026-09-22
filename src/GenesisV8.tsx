@@ -283,6 +283,7 @@ function ProductAnatomy() {
       descriptor: 'CONTEXT',
       items: ['Repository', 'Requirements', 'Test data'],
       detail: 'Genesis makes the evidence available to the system explicit before generation begins.',
+      statement: 'Evidence enters before intelligence.',
     },
     {
       number: '02',
@@ -290,6 +291,7 @@ function ProductAnatomy() {
       descriptor: 'INTELLIGENCE',
       items: ['Configure', 'Generate', 'Validate'],
       detail: 'AI accelerates test creation while configuration and validation keep intent visible before execution.',
+      statement: 'Generation is controlled, not assumed.',
     },
     {
       number: '03',
@@ -297,25 +299,23 @@ function ProductAnatomy() {
       descriptor: 'EVIDENCE',
       items: ['Tests', 'Execution', 'Reports'],
       detail: 'Generated work becomes inspectable evidence through execution status and reporting.',
+      statement: 'Execution becomes evidence.',
     },
   ];
+
   const [selected, setSelected] = useState(1);
   const item = nodes[selected];
   const reduceMotion = useReducedMotion();
 
   return (
     <div className="v8-context-system">
-      <div className="v8-system-flow" aria-label="Genesis system flow">
-        <div className="v8-system-track" aria-hidden="true">
-          <span className="v8-system-track-fill" style={{ opacity: reduceMotion ? .5 : 1 }} />
-        </div>
-
-        <div className="v8-system-stages">
+      <div className="v8-context-anatomy">
+        <div className="v8-context-flow" aria-label="Genesis system flow">
           {nodes.map((node, i) => (
             <React.Fragment key={node.title}>
               <motion.button
                 type="button"
-                className={'v8-system-stage ' + (selected === i ? 'is-selected' : '')}
+                className={'v8-context-card ' + (selected === i ? 'is-selected' : '')}
                 onClick={() => setSelected(i)}
                 onMouseEnter={() => setSelected(i)}
                 aria-pressed={selected === i}
@@ -323,45 +323,71 @@ function ProductAnatomy() {
                 whileTap={reduceMotion ? undefined : { scale: .995 }}
                 transition={{ type: 'spring', stiffness: 260, damping: 24 }}
               >
-                <span className="v8-system-number">{node.number}</span>
-                <span className="v8-system-title">{node.title}</span>
-                <span className="v8-system-descriptor">{node.descriptor}</span>
-                <span className="v8-system-items">
-                  {node.items.map((value, index) => (
-                    <span key={value} className={index === 1 && i === 1 ? 'is-core' : ''}>{value}</span>
-                  ))}
+                <span className="v8-context-card-label">{node.title}</span>
+                <span className="v8-context-card-items">
+                  {node.items.map(value => <span key={value}>{value}</span>)}
                 </span>
+                <span className="v8-context-card-number">{node.number}</span>
               </motion.button>
 
               {i < nodes.length - 1 && (
                 <motion.span
-                  className="v8-system-connector"
+                  className="v8-context-flow-arrow"
                   aria-hidden="true"
-                  animate={reduceMotion ? undefined : { opacity: selected === i || selected === i + 1 ? 1 : .38 }}
+                  animate={reduceMotion ? undefined : { opacity: selected === i || selected === i + 1 ? 1 : .45 }}
                 >
                   <i />
-                  <ArrowRight size={13} />
+                  <ArrowRight size={14} />
                 </motion.span>
               )}
             </React.Fragment>
           ))}
         </div>
 
-        <motion.div
-          className="v8-system-insight"
+        <motion.aside
+          className="v8-context-editorial"
           key={item.title}
-          initial={reduceMotion ? false : { opacity: 0, y: 8 }}
-          animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-          transition={{ duration: .3 }}
+          initial={reduceMotion ? false : { opacity: 0, x: 12 }}
+          animate={reduceMotion ? undefined : { opacity: 1, x: 0 }}
+          transition={{ duration: .35, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span>0{selected + 1} / {item.title}</span>
-          <strong>{item.descriptor === 'CONTEXT' ? 'Evidence enters before intelligence.' : item.descriptor === 'INTELLIGENCE' ? 'Generation is controlled, not assumed.' : 'Execution becomes evidence.'}</strong>
+          <span className="v8-context-editorial-eyebrow">WHY THIS MATTERS</span>
+          <h3>{item.statement}</h3>
           <p>{item.detail}</p>
-        </motion.div>
 
-        <div className="v8-system-caption">
-          <span>CONTEXT</span><i>→</i><span>INTELLIGENCE</span><i>→</i><span>EVIDENCE</span>
-        </div>
+          <div className="v8-context-signal" aria-hidden="true">
+            <span className={selected === 0 ? 'is-active' : ''} />
+            <i />
+            <span className={selected === 1 ? 'is-active' : ''} />
+            <i />
+            <span className={selected === 2 ? 'is-active' : ''} />
+          </div>
+          <div className="v8-context-signal-labels" aria-hidden="true">
+            <span>Context</span>
+            <span>Intelligence</span>
+            <span>Evidence</span>
+          </div>
+
+          <div className="v8-context-contribution">
+            <span>MY CONTRIBUTION</span>
+            <div>
+              <b>UX</b>
+              <b>UI</b>
+              <b>Interaction model</b>
+              <b>Design system</b>
+              <b>Product collaboration</b>
+            </div>
+          </div>
+
+          <a href="#exploration" className="v8-context-explore">
+            <span>↗</span>
+            <span>Explore the design process</span>
+          </a>
+        </motion.aside>
+      </div>
+
+      <div className="v8-system-caption">
+        <span>CONTEXT</span><i>→</i><span>INTELLIGENCE</span><i>→</i><span>EVIDENCE</span>
       </div>
     </div>
   );
