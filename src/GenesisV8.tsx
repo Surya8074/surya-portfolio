@@ -277,25 +277,72 @@ function ProductWalkthrough() {
 
 function ProductAnatomy() {
   const nodes = [
-    ['INPUTS', 'Repository', 'Requirements', 'Test data'],
-    ['AI LAYER', 'Configure', 'Generate', 'Validate'],
-    ['OUTPUTS', 'Tests', 'Execution', 'Reports'],
+    {
+      title: 'INPUTS',
+      items: ['Repository', 'Requirements', 'Test data'],
+      detail: 'Context enters Genesis before any generation begins. The system makes its available evidence explicit.',
+    },
+    {
+      title: 'AI LAYER',
+      items: ['Configure', 'Generate', 'Validate'],
+      detail: 'AI accelerates test creation, while configuration and validation keep intent visible before execution.',
+    },
+    {
+      title: 'OUTPUTS',
+      items: ['Tests', 'Execution', 'Reports'],
+      detail: 'Generated work becomes inspectable evidence through execution status and reporting.',
+    },
   ];
+  const [selected, setSelected] = useState(1);
+  const item = nodes[selected];
+
   return (
-    <div className="v8-anatomy" aria-label="Genesis product anatomy">
-      {nodes.map(([title, ...items], i) => (
-        <React.Fragment key={title}>
-          <motion.div
-            className="v8-anatomy-group"
-            whileHover={{ y: -5 }}
-            transition={{ type: 'spring', stiffness: 280, damping: 22 }}
-          >
-            <span>{title}</span>
-            {items.map(item => <b key={item}>{item}</b>)}
-          </motion.div>
-          {i < 2 && <div className="v8-anatomy-arrow" aria-hidden="true">→</div>}
-        </React.Fragment>
-      ))}
+    <div className="v8-context-system">
+      <div className="v8-anatomy-shell">
+        <div className="v8-anatomy" aria-label="Genesis product anatomy">
+          {nodes.map((node, i) => (
+            <React.Fragment key={node.title}>
+              <motion.button
+                type="button"
+                className={'v8-anatomy-group ' + (selected === i ? 'is-selected' : '')}
+                onClick={() => setSelected(i)}
+                onMouseEnter={() => setSelected(i)}
+                aria-pressed={selected === i}
+                whileHover={{ y: -5 }}
+                transition={{ type: 'spring', stiffness: 280, damping: 22 }}
+              >
+                <span>{node.title}</span>
+                <div className="v8-anatomy-items">
+                  {node.items.map(value => <b key={value}>{value}</b>)}
+                </div>
+                <i aria-hidden="true">0{i + 1}</i>
+              </motion.button>
+              {i < nodes.length - 1 && (
+                <motion.div className="v8-anatomy-arrow" animate={{ x: selected === i ? 4 : 0 }} aria-hidden="true">→</motion.div>
+              )}
+            </React.Fragment>
+          ))}
+        </div>
+      </div>
+
+      <motion.aside
+        className="v8-context-explanation"
+        key={item.title}
+        initial={{ opacity: 0, x: 18 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: .35 }}
+      >
+        <div className="v8-context-arrow" aria-hidden="true"><ArrowRight size={18} /></div>
+        <div className="v8-context-explanation-copy">
+          <span>WHY THIS MATTERS</span>
+          <h3>{item.title === 'AI LAYER' ? 'A controlled generation layer.' : item.title === 'INPUTS' ? 'Context before intelligence.' : 'Evidence after generation.'}</h3>
+          <p>{item.detail}</p>
+        </div>
+        <div className="v8-context-contribution">
+          <span>MY CONTRIBUTION</span>
+          <div><b>UX</b><b>UI</b><b>Interaction model</b><b>Design system</b><b>Product collaboration</b></div>
+        </div>
+      </motion.aside>
     </div>
   );
 }
@@ -446,14 +493,9 @@ export default function GenesisV8() {
       </section>
 
       <section id="context" className="v8-section v8-context">
-        <div className="v8-section-intro">
+        <div className="v8-context-heading">
           <span>CONTEXT</span>
-          <h2>Genesis wasn't another dashboard.<br /><em>It was a decision system for QA teams.</em></h2>
-          <p>Requirements, generation, validation and reporting become one guided workflow—from context to evidence without reconstructing system state.</p>
-          <div className="v8-contribution">
-            <span>MY CONTRIBUTION</span>
-            <div><b>UX</b><b>UI</b><b>Interaction model</b><b>Design system</b><b>Product collaboration</b></div>
-          </div>
+          <h2>Genesis wasn't<br /><em>another dashboard.</em></h2>
         </div>
         <ProductAnatomy />
       </section>
