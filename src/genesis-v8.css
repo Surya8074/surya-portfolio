@@ -459,3 +459,300 @@ button{cursor:pointer}
   .v8-state-window button{transition:none}
   .v8-tension-flow{scroll-behavior:auto}
 }
+
+
+/* V8 spacing system: shared Auto Layout rhythm + heading utilization */
+.genesis-v8{
+  --v8-space-1:8px;
+  --v8-space-2:16px;
+  --v8-space-3:24px;
+  --v8-space-4:32px;
+  --v8-space-5:40px;
+  --v8-space-6:48px;
+  --v8-space-7:64px;
+  --v8-space-8:80px;
+  --v8-space-section:120px;
+  --v8-content-max:1240px;
+  --v8-reading:440px;
+}
+
+/* One vertical rhythm for every major section */
+.genesis-v8 .v8-section,
+.genesis-v8 .v8-tension{
+  padding-top:var(--v8-space-section);
+  padding-bottom:var(--v8-space-section);
+}
+
+/* Remove legacy one-off section padding that broke the rhythm */
+.genesis-v8 .v8-user-section,
+.genesis-v8 .v8-system-section,
+.genesis-v8 .v8-reflection-section{
+  padding-top:var(--v8-space-section);
+  padding-bottom:var(--v8-space-section);
+}
+
+.genesis-v8 .v8-context{
+  min-height:0;
+  align-items:center;
+  gap:var(--v8-space-8);
+}
+
+.genesis-v8 .v8-section-label{
+  min-height:16px;
+}
+
+.genesis-v8 .v8-section-label + .v8-title-row{
+  margin-top:var(--v8-space-3);
+}
+
+/* Standard title auto-layout: eyebrow → heading → supporting copy → content */
+.genesis-v8 .v8-title-row{
+  grid-template-columns:minmax(0,1.18fr) minmax(280px,.82fr);
+  gap:var(--v8-space-7);
+  margin-top:var(--v8-space-3);
+  margin-bottom:var(--v8-space-7);
+  align-items:end;
+}
+
+.genesis-v8 .v8-title-row h2,
+.genesis-v8 .v8-section-intro h2{
+  max-width:820px;
+  margin:0;
+  font-size:clamp(52px,5.15vw,76px);
+  line-height:.96;
+  letter-spacing:-.06em;
+  text-wrap:balance;
+}
+
+.genesis-v8 .v8-title-row>p,
+.genesis-v8 .v8-section-intro>p{
+  max-width:var(--v8-reading);
+  margin:0;
+  font-size:15px;
+  line-height:1.7;
+}
+
+/* Keep the context stack on the same 8px rhythm */
+.genesis-v8 .v8-section-intro>span{
+  display:block;
+  margin-bottom:var(--v8-space-3);
+}
+
+.genesis-v8 .v8-section-intro .v8-contribution{
+  margin-top:var(--v8-space-5);
+}
+
+/* Cards use predictable internal spacing instead of large empty offsets */
+.genesis-v8 .v8-goal-card,
+.genesis-v8 .v8-user-card,
+.genesis-v8 .v8-decision-card,
+.genesis-v8 .v8-evidence-block{
+  padding:var(--v8-space-5);
+}
+
+.genesis-v8 .v8-goal-card h3{
+  max-width:320px;
+  margin:var(--v8-space-8) 0 var(--v8-space-3);
+}
+
+.genesis-v8 .v8-user-card>svg{
+  margin-bottom:var(--v8-space-5);
+}
+
+.genesis-v8 .v8-user-card h3{
+  margin:var(--v8-space-5) 0 var(--v8-space-2);
+}
+
+.genesis-v8 .v8-decision-card h3{
+  margin:var(--v8-space-8) 0 var(--v8-space-6);
+}
+
+.genesis-v8 .v8-decision-card>div{
+  padding-top:var(--v8-space-3);
+}
+
+.genesis-v8 .v8-exploration-notes h3{
+  margin:var(--v8-space-2) 0 var(--v8-space-3);
+  font-size:clamp(38px,3.2vw,48px);
+  line-height:.96;
+  text-wrap:balance;
+}
+
+.genesis-v8 .v8-product-question h3{
+  margin:var(--v8-space-2) 0 var(--v8-space-3);
+  font-size:clamp(38px,3.4vw,50px);
+  line-height:.96;
+  text-wrap:balance;
+}
+
+.genesis-v8 .v8-state-copy h3{
+  margin:var(--v8-space-2) 0 var(--v8-space-3);
+  font-size:clamp(42px,4vw,56px);
+  line-height:.96;
+  text-wrap:balance;
+}
+
+/* Main visual groups share the same 48px content gap */
+.genesis-v8 .v8-goals,
+.genesis-v8 .v8-users,
+.genesis-v8 .v8-decision-grid,
+.genesis-v8 .v8-evidence-grid{
+  gap:var(--v8-space-4);
+}
+
+.genesis-v8 .v8-workflow,
+.genesis-v8 .v8-exploration,
+.genesis-v8 .v8-state-system{
+  gap:var(--v8-space-7);
+}
+
+.genesis-v8 .v8-product-view,
+.genesis-v8 .v8-state-detail,
+.genesis-v8 .v8-engineering-head,
+.genesis-v8 .v8-engineering-row{
+  gap:var(--v8-space-6);
+}
+
+/* Make wide screens feel intentional instead of leaving unused text space */
+.genesis-v8 .v8-anatomy{
+  gap:var(--v8-space-3);
+}
+
+.genesis-v8 .v8-anatomy-group{
+  padding:var(--v8-space-5);
+}
+
+.genesis-v8 .v8-tension{
+  grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+  gap:var(--v8-space-8);
+}
+
+.genesis-v8 .v8-tension-copy h2{
+  max-width:700px;
+  font-size:clamp(52px,5vw,76px);
+  line-height:.96;
+  text-wrap:balance;
+}
+
+.genesis-v8 .v8-tension-copy p{
+  max-width:var(--v8-reading);
+}
+
+.genesis-v8 .v8-reflection-grid{
+  gap:var(--v8-space-8);
+}
+
+.genesis-v8 .v8-reflection-grid h2{
+  font-size:clamp(52px,5.8vw,82px);
+  line-height:.94;
+  text-wrap:balance;
+}
+
+/* Consistent content-to-content breathing room */
+.genesis-v8 .v8-product-tabs{
+  margin-bottom:var(--v8-space-4);
+}
+
+.genesis-v8 .v8-measurement{
+  margin-top:var(--v8-space-2);
+}
+
+.genesis-v8 .v8-contribution{
+  margin-top:var(--v8-space-5);
+}
+
+@media(max-width:1050px){
+  .genesis-v8 .v8-section,
+  .genesis-v8 .v8-tension,
+  .genesis-v8 .v8-user-section,
+  .genesis-v8 .v8-system-section,
+  .genesis-v8 .v8-reflection-section{
+    padding-top:104px;
+    padding-bottom:104px;
+  }
+
+  .genesis-v8 .v8-title-row{
+    gap:var(--v8-space-5);
+    margin-bottom:var(--v8-space-6);
+  }
+
+  .genesis-v8 .v8-title-row h2,
+  .genesis-v8 .v8-section-intro h2{
+    max-width:900px;
+    font-size:clamp(48px,6.8vw,68px);
+  }
+
+  .genesis-v8 .v8-title-row>p,
+  .genesis-v8 .v8-section-intro>p{
+    max-width:600px;
+  }
+
+  .genesis-v8 .v8-context{
+    gap:var(--v8-space-7);
+  }
+}
+
+@media(max-width:620px){
+  .genesis-v8 .v8-section,
+  .genesis-v8 .v8-tension,
+  .genesis-v8 .v8-user-section,
+  .genesis-v8 .v8-system-section,
+  .genesis-v8 .v8-reflection-section{
+    padding-top:80px;
+    padding-bottom:80px;
+  }
+
+  .genesis-v8 .v8-section-label + .v8-title-row{
+    margin-top:var(--v8-space-2);
+  }
+
+  .genesis-v8 .v8-title-row{
+    gap:var(--v8-space-4);
+    margin-bottom:var(--v8-space-6);
+  }
+
+  .genesis-v8 .v8-title-row h2,
+  .genesis-v8 .v8-section-intro h2{
+    font-size:clamp(42px,11.5vw,54px);
+    line-height:.97;
+    letter-spacing:-.055em;
+  }
+
+  .genesis-v8 .v8-title-row>p,
+  .genesis-v8 .v8-section-intro>p{
+    font-size:14px;
+    line-height:1.65;
+  }
+
+  .genesis-v8 .v8-goals,
+  .genesis-v8 .v8-users,
+  .genesis-v8 .v8-decision-grid,
+  .genesis-v8 .v8-evidence-grid{
+    gap:var(--v8-space-3);
+  }
+
+  .genesis-v8 .v8-workflow,
+  .genesis-v8 .v8-exploration,
+  .genesis-v8 .v8-state-system,
+  .genesis-v8 .v8-reflection-grid{
+    gap:var(--v8-space-6);
+  }
+
+  .genesis-v8 .v8-tension{
+    gap:var(--v8-space-6);
+  }
+
+  .genesis-v8 .v8-goal-card,
+  .genesis-v8 .v8-user-card,
+  .genesis-v8 .v8-decision-card,
+  .genesis-v8 .v8-evidence-block{
+    padding:var(--v8-space-4);
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .genesis-v8 .v8-title-row h2,
+  .genesis-v8 .v8-section-intro h2{
+    text-wrap:wrap;
+  }
+}
