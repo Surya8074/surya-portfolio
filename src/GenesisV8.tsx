@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from 'framer-motion';
-import { ArrowDown, ArrowRight, Check, Circle, GitBranch, ShieldCheck, Sparkles } from 'lucide-react';
+import { ArrowDown, ArrowRight, BarChart3, Check, Circle, Database, FileCheck2, FileText, GitBranch, Github, Play, Settings2, ShieldCheck, Sparkles } from 'lucide-react';
 import GenesisMacBook from './GenesisMacBook';
 
 const A = '/surya-portfolio/genesis/';
@@ -280,19 +280,31 @@ function ProductAnatomy() {
     {
       number: '01',
       title: 'INPUTS',
-      items: ['Repository', 'Requirements', 'Test data'],
+      items: [
+        ['Repository', Github],
+        ['Requirements', FileText],
+        ['Test data', Database],
+      ],
       detail: 'Source code, requirements and test data enter Genesis as the working context.',
     },
     {
       number: '02',
       title: 'AI LAYER',
-      items: ['Configure', 'Generate', 'Validate'],
+      items: [
+        ['Configure', Settings2],
+        ['Generate', Sparkles],
+        ['Validate', ShieldCheck],
+      ],
       detail: 'AI turns that context into tests through a controlled generation sequence.',
     },
     {
       number: '03',
       title: 'OUTPUTS',
-      items: ['Tests', 'Execution', 'Reports'],
+      items: [
+        ['Tests', FileCheck2],
+        ['Execution', Play],
+        ['Reports', BarChart3],
+      ],
       detail: 'Generated work becomes inspectable evidence through execution and reporting.',
     },
   ];
@@ -320,20 +332,17 @@ function ProductAnatomy() {
                 <span className="v8-context-card-number">{node.number}</span>
                 <span className="v8-context-card-label">{node.title}</span>
 
-                {i === 1 ? (
-                  <span className="v8-context-card-items v8-context-progress">
-                    {node.items.map((value, index) => (
-                      <React.Fragment key={value}>
-                        <span className={index === 1 ? 'is-core' : ''}>{value}</span>
-                        {index < node.items.length - 1 && <i aria-hidden="true">→</i>}
-                      </React.Fragment>
-                    ))}
-                  </span>
-                ) : (
-                  <span className="v8-context-card-items">
-                    {node.items.map(value => <span key={value}>{value}</span>)}
-                  </span>
-                )}
+                <span className={'v8-context-card-items ' + (i === 1 ? 'v8-context-progress' : '')}>
+                  {node.items.map(([label, Icon], index) => (
+                    <React.Fragment key={label}>
+                      <span className={index === 1 && i === 1 ? 'is-core' : ''}>
+                        <i className="v8-context-item-icon" aria-hidden="true"><Icon size={19} strokeWidth={1.8} /></i>
+                        <b>{label}</b>
+                      </span>
+                      {i === 1 && index < node.items.length - 1 && <i className="v8-context-step-arrow" aria-hidden="true">→</i>}
+                    </React.Fragment>
+                  ))}
+                </span>
 
                 <span className="v8-context-card-detail">{node.detail}</span>
               </motion.button>
