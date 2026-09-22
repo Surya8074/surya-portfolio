@@ -276,7 +276,7 @@ function ProductWalkthrough() {
 }
 
 function ProductAnatomy() {
-  const nodes = [
+  const nodes: Array<{ number: string; title: string; items: Array<[string, React.ElementType]>; detail: string }> = [
     {
       number: '01',
       title: 'INPUTS',
