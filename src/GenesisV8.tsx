@@ -64,6 +64,7 @@ function ChapterNav({ active }: { active: string }) {
 
 function DesignTension() {
   const [trust, setTrust] = useState(52);
+  const mode = trust < 45 ? ['GENERATE', 'RUN'] : trust > 60 ? ['GENERATE', 'INSPECT', 'VALIDATE', 'RUN'] : ['GENERATE', 'REVIEW', 'RUN'];
   return (
     <section className="v8-tension">
       <div className="v8-tension-copy">
@@ -78,15 +79,16 @@ function DesignTension() {
           <div className="v8-tension-side"><ShieldCheck size={18}/><b>Human confidence</b><small>Validate before execution</small></div>
         </div>
         <div className="v8-tension-readout"><strong>{trust < 45 ? 'More automation' : trust > 60 ? 'More validation' : 'Balanced control'}</strong><span>Drag the control to explore the product tension.</span></div>
+        <div className="v8-tension-flow" aria-live="polite">{mode.map((step, i) => <React.Fragment key={step}><b>{step}</b>{i < mode.length - 1 && <span>→</span>}</React.Fragment>)}</div>
       </div>
     </section>
   );
 }
 
 const explorations = [
-  { id: '01', title: 'Inventory first', body: 'The first direction exposed everything at once. Useful for completeness, but weak for prioritising the next decision.', tags: ['High density', 'Low prioritisation'], screen: screens.dashboard },
+  { id: '01', title: 'Inventory first', body: 'The first direction exposed everything at once. Useful for completeness, but weak for prioritising the next decision.', tags: ['High density', 'Low prioritisation'] },
   { id: '02', title: 'Status first', body: 'The hierarchy moved execution state and attention signals above the full inventory.', tags: ['Clear state', 'Faster scanning'], screen: screens.dashboard },
-  { id: '03', title: 'Decision oriented', body: 'The final direction connected status to action: what happened, what needs review and what can happen next.', tags: ['Actionable', 'Review gate'], screen: screens.review },
+  { id: '03', title: 'Decision oriented', body: 'The final direction connected status to action: what happened, what needs review and what can happen next.', tags: ['Actionable', 'Review gate'] },
 ];
 
 function ExplorationLab() {
@@ -116,7 +118,7 @@ function ExplorationLab() {
               </div>
             </div>
           </div>
-          <div className="v8-exploration-notes"><span>ITERATION {item.id}</span><h3>{item.title}</h3><p>{item.body}</p><div>{item.tags.map(tag => <b key={tag}>{tag}</b>)}</div></div>
+          <div className="v8-exploration-notes"><span>ITERATION {item.id}</span><h3>{item.title}</h3><p>{item.body}</p><div>{item.tags.map(tag => <b key={tag}>{tag}</b>)}</div><dl><div><dt>CHANGED</dt><dd>{item.id === '01' ? 'Inventory density' : item.id === '02' ? 'Status hierarchy' : 'Status → action relationship'}</dd></div><div><dt>TRADE-OFF</dt><dd>{item.id === '01' ? 'Completeness over prioritisation' : item.id === '02' ? 'Less inventory above the fold' : 'More explicit review before execution'}</dd></div></dl></div>
         </motion.div>
       </div>
     </section>
@@ -125,15 +127,15 @@ function ExplorationLab() {
 
 function DecisionMatrix() {
   const decisions = [
-    ['Progressive trust', 'Expose AI output → review → execution as separate states.', 'Prevents generated output from feeling like an approved result.'],
-    ['Status before inventory', 'Surface health, failures and attention before deep lists.', 'Supports scanning and release decisions.'],
-    ['One component system', 'Use the same patterns for state, tables, controls and feedback.', 'Reduces cognitive overhead as the workflow grows.'],
+    ['Progressive trust', 'Expose AI output → review → execution as separate states.', 'Prevents generated output from feeling like an approved result.', 'Let generation flow directly into execution.'],
+    ['Status before inventory', 'Surface health, failures and attention before deep lists.', 'Supports scanning and release decisions.', 'Lead with complete inventory.'],
+    ['One component system', 'Use the same patterns for state, tables, controls and feedback.', 'Reduces cognitive overhead as the workflow grows.', 'Let each surface invent its own controls.'],
   ];
   return (
     <section id="decisions" className="v8-section v8-decisions-section">
       <div className="v8-section-label"><span>06</span><b>KEY DECISIONS / TRADE-OFFS</b></div>
       <div className="v8-title-row"><h2>Every visual choice carries a <em>product consequence.</em></h2><p>The portfolio should show not only what changed, but why the change mattered to the workflow.</p></div>
-      <div className="v8-decision-grid">{decisions.map(([title, decision, consequence], i) => <Reveal key={title} delay={i*.07}><article className="v8-decision-card"><span>0{i+1}</span><h3>{title}</h3><div><b>DECISION</b><p>{decision}</p></div><div><b>CONSEQUENCE</b><p>{consequence}</p></div></article></Reveal>)}</div>
+      <div className="v8-decision-grid">{decisions.map(([title, decision, consequence, alternative], i) => <Reveal key={title} delay={i*.07}><article className="v8-decision-card"><span>0{i+1}</span><h3>{title}</h3><div><b>DECISION</b><p>{decision}</p></div><div><b>ALTERNATIVE REJECTED</b><p>{alternative}</p></div><div><b>CONSEQUENCE</b><p>{consequence}</p></div></article></Reveal>)}</div>
     </section>
   );
 }
@@ -150,6 +152,7 @@ function InteractionModel() {
 
   const [selected, setSelected] = useState(5);
   const item = states[selected];
+  const nextState = selected === 0 ? 1 : selected === 1 ? 5 : selected === 5 ? 0 : 0;
 
   return (
     <section id="interaction" className="v8-section v8-interaction-section">
@@ -170,7 +173,7 @@ function InteractionModel() {
               <strong>{item[1]}</strong>
               <span>{item[2]}</span>
               <div className="v8-state-progress"><i/></div>
-              <button>Continue <ArrowRight size={13}/></button>
+              <button onClick={() => setSelected(nextState)} aria-label={'Move from ' + item[0] + ' to the next state'}>Continue <ArrowRight size={13}/></button>
             </div>
           </div>
           <div className="v8-state-copy"><span>STATE / {item[0]}</span><h3>{item[1]}</h3><p>{item[2]}</p><div><Check size={14}/> Clear feedback before the next decision</div></div>
@@ -255,11 +258,15 @@ function ProductWalkthrough() {
   ];
   const [selected, setSelected] = useState(0);
   const item = gallery[selected];
+  const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
+  useEffect(() => {
+    tabRefs.current[selected]?.focus();
+  }, [selected]);
   return (
     <section id="product" className="v8-section v8-product-section">
       <div className="v8-section-label"><span>07</span><b>PRODUCT WALKTHROUGH</b></div>
       <div className="v8-title-row"><h2>One product.<br /><em>Different questions.</em></h2><p>Explore the actual Genesis interfaces through the question each surface is responsible for answering.</p></div>
-      <div className="v8-product-tabs" role="tablist" aria-label="Genesis product screens">{gallery.map((x,i)=><button id={'genesis-tab-'+i} key={x[0]} role="tab" aria-selected={selected===i} aria-controls="genesis-product-panel" tabIndex={selected===i?0:-1} className={selected===i?'is-selected':''} onClick={()=>setSelected(i)} onKeyDown={e=>{if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();setSelected((i+1)%gallery.length)} if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();setSelected((i-1+gallery.length)%gallery.length)}}}>{x[0]}</button>)}</div>
+      <div className="v8-product-tabs" role="tablist" aria-label="Genesis product screens">{gallery.map((x,i)=><button id={'genesis-tab-'+i} key={x[0]} ref={el => { tabRefs.current[i] = el; }} role="tab" aria-selected={selected===i} aria-controls="genesis-product-panel" tabIndex={selected===i?0:-1} className={selected===i?'is-selected':''} onClick={()=>setSelected(i)} onKeyDown={e=>{if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();setSelected((i+1)%gallery.length)} if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();setSelected((i-1+gallery.length)%gallery.length)}}}>{x[0]}</button>)}</div>
       <motion.div id="genesis-product-panel" aria-labelledby={'genesis-tab-'+selected} className="v8-product-view" role="tabpanel" tabIndex={0} key={item[0]} initial={{opacity:0,scale:.985}} animate={{opacity:1,scale:1}} transition={{duration:.45}}>
         <div className="v8-product-image"><img src={item[1]} alt={'Genesis '+item[0]+' screen'}/></div>
         <div className="v8-product-question"><span>QUESTION</span><h3>{item[2]}</h3><p>{item[3]}</p><div className="v8-product-state"><Check size={15}/> Designed around one clear decision</div></div>
@@ -295,6 +302,7 @@ function ProductAnatomy() {
 
 function FragmentedWorkflow() {
   const [unified, setUnified] = useState(false);
+  const reduceMotion = useReducedMotion();
   const fragments = [
     ['01', 'Requirements', 'context'],
     ['02', 'Configuration', 'setup'],
@@ -318,7 +326,7 @@ function FragmentedWorkflow() {
               ? { x: i * 8, y: 0, rotate: 0, scale: 1 }
               : { x: [i * 16 - 24, i % 2 ? 28 : -18, i * 16 - 24], y: [0, -12, 0], rotate: [i % 2 ? 3 : -3, 0, i % 2 ? 3 : -3] }
             }
-            transition={unified ? { type: 'spring', stiffness: 130, damping: 18 } : { duration: 5 + i * .3, repeat: Infinity, ease: 'easeInOut' }}
+            transition={unified || reduceMotion ? { duration: .25 } : { duration: 5 + i * .3, repeat: Infinity, ease: 'easeInOut' }}
           >
             <span>{n}</span><strong>{title}</strong><small>{detail}</small>
           </motion.div>
@@ -371,17 +379,32 @@ export default function GenesisV8() {
   const heroRef = useRef<HTMLDivElement>(null);
   const pointerX = useMotionValue(0);
   const pointerY = useMotionValue(0);
+  const reduceMotion = useReducedMotion();
   const rotateX = useSpring(useTransform(pointerY, [-1, 1], [2, -2]), { stiffness: 120, damping: 22 });
   const rotateY = useSpring(useTransform(pointerX, [-1, 1], [-2, 2]), { stiffness: 120, damping: 22 });
 
   useEffect(() => {
     const sections = chapters.map(([id]) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
-    const observer = new IntersectionObserver(entries => {
-      const visible = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
-      if (visible) setActive(visible.target.id);
-    }, { rootMargin: '-28% 0px -55% 0px', threshold: [0, .2, .5, .8] });
-    sections.forEach(section => observer.observe(section));
-    return () => observer.disconnect();
+    let frame = 0;
+    const updateActive = () => {
+      frame = 0;
+      const anchor = window.innerHeight * 0.32;
+      let current = sections[0];
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= anchor) current = section;
+        else break;
+      }
+      if (current) setActive(current.id);
+    };
+    updateActive();
+    const onScroll = () => { if (!frame) frame = window.requestAnimationFrame(updateActive); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', updateActive);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', updateActive);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   useEffect(() => {
@@ -415,7 +438,7 @@ export default function GenesisV8() {
             <motion.p className="v8-hero-description" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .62 }}>Designing an AI test automation platform where speed never comes at the cost of confidence.</motion.p>
             <div className="v8-hero-meta"><span>PRODUCT / UI-UX DESIGN</span><span>ENTERPRISE QA SAAS</span><span>WEB · DESKTOP-FIRST</span></div>
           </div>
-          <motion.div className="v8-hero-product" style={{ rotateX, rotateY }}>
+          <motion.div className="v8-hero-product" style={reduceMotion ? undefined : { rotateX, rotateY }}>
             <GenesisMacBook />
           </motion.div>
         </div>
@@ -427,6 +450,10 @@ export default function GenesisV8() {
           <span>CONTEXT</span>
           <h2>Genesis wasn't another dashboard.<br /><em>It was a decision system for QA teams.</em></h2>
           <p>Requirements, generation, validation and reporting become one guided workflow—from context to evidence without reconstructing system state.</p>
+          <div className="v8-contribution">
+            <span>MY CONTRIBUTION</span>
+            <div><b>UX</b><b>UI</b><b>Interaction model</b><b>Design system</b><b>Product collaboration</b></div>
+          </div>
         </div>
         <ProductAnatomy />
       </section>
