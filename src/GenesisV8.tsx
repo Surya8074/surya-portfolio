@@ -495,7 +495,7 @@ export default function GenesisV8() {
       <section id="context" className="v8-section v8-context">
         <div className="v8-context-heading">
           <span>CONTEXT</span>
-          <h2>Genesis wasn't<br /><em>another dashboard.</em></h2>
+          <h2>Genesis wasn't another dashboard.<br /><em>It was a decision system for QA teams.</em></h2>
         </div>
         <ProductAnatomy />
       </section>
