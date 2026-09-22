@@ -281,72 +281,83 @@ function ProductAnatomy() {
       title: 'INPUTS',
       items: ['Repository', 'Requirements', 'Test data'],
       detail: 'Context enters Genesis before any generation begins. The system makes its available evidence explicit.',
+      accent: 'Context before intelligence.',
     },
     {
       title: 'AI LAYER',
       items: ['Configure', 'Generate', 'Validate'],
       detail: 'AI accelerates test creation, while configuration and validation keep intent visible before execution.',
+      accent: 'A controlled generation layer.',
     },
     {
       title: 'OUTPUTS',
       items: ['Tests', 'Execution', 'Reports'],
       detail: 'Generated work becomes inspectable evidence through execution status and reporting.',
+      accent: 'Evidence after generation.',
     },
   ];
   const [selected, setSelected] = useState(1);
   const item = nodes[selected];
+  const reduceMotion = useReducedMotion();
 
   return (
     <div className="v8-context-system">
-      <div className="v8-anatomy-shell">
-        <div className="v8-anatomy" aria-label="Genesis product anatomy">
+      <div className="v8-flow-canvas" aria-label="Genesis product anatomy">
+        <div className="v8-flow-line" aria-hidden="true">
+          <span className="v8-flow-line-progress" style={{ opacity: reduceMotion ? 0.45 : 1 }} />
+        </div>
+        <div className="v8-flow-grid">
           {nodes.map((node, i) => (
             <React.Fragment key={node.title}>
               <motion.button
                 type="button"
-                className={'v8-anatomy-group ' + (selected === i ? 'is-selected' : '')}
+                className={'v8-flow-node ' + (selected === i ? 'is-selected' : '')}
                 onClick={() => setSelected(i)}
                 onMouseEnter={() => setSelected(i)}
                 aria-pressed={selected === i}
-                whileHover={{ y: -5 }}
+                whileHover={reduceMotion ? undefined : { y: -8, rotateX: 2, rotateY: i === 1 ? 0 : i === 0 ? -2 : 2 }}
+                whileTap={reduceMotion ? undefined : { scale: .985 }}
                 transition={{ type: 'spring', stiffness: 280, damping: 22 }}
               >
-                <span>{node.title}</span>
-                <div className="v8-anatomy-items">
+                <span className="v8-flow-index">0{i + 1}</span>
+                <span className="v8-flow-kicker">{node.title}</span>
+                <div className="v8-flow-items">
                   {node.items.map(value => <b key={value}>{value}</b>)}
                 </div>
-                <i aria-hidden="true">0{i + 1}</i>
+                {i === 1 ? <Sparkles className="v8-flow-symbol" size={18} aria-hidden="true" /> : <Circle className="v8-flow-symbol" size={14} aria-hidden="true" />}
               </motion.button>
               {i < nodes.length - 1 && (
-                <motion.div className="v8-anatomy-arrow" animate={{ x: selected === i ? 4 : 0 }} aria-hidden="true">→</motion.div>
+                <motion.div
+                  className="v8-flow-connector"
+                  animate={reduceMotion ? undefined : { opacity: selected === i || selected === i + 1 ? 1 : .42 }}
+                  aria-hidden="true"
+                >
+                  <span />
+                  <ArrowRight size={15} />
+                </motion.div>
               )}
             </React.Fragment>
           ))}
         </div>
-      </div>
 
-      <motion.aside
-        className="v8-context-explanation"
-        key={item.title}
-        initial={{ opacity: 0, x: 18 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: .35 }}
-      >
-        <div className="v8-context-arrow" aria-hidden="true"><ArrowRight size={18} /></div>
-        <div className="v8-context-explanation-copy">
+        <motion.div
+          className="v8-flow-annotation"
+          key={item.title}
+          initial={reduceMotion ? false : { opacity: 0, y: 10 }}
+          animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+          transition={{ duration: .35 }}
+        >
           <span>WHY THIS MATTERS</span>
-          <h3>{item.title === 'AI LAYER' ? 'A controlled generation layer.' : item.title === 'INPUTS' ? 'Context before intelligence.' : 'Evidence after generation.'}</h3>
+          <strong>{item.accent}</strong>
           <p>{item.detail}</p>
-        </div>
-        <div className="v8-context-contribution">
-          <span>MY CONTRIBUTION</span>
-          <div><b>UX</b><b>UI</b><b>Interaction model</b><b>Design system</b><b>Product collaboration</b></div>
-        </div>
-      </motion.aside>
+          <div className="v8-flow-contribution">
+            <b>UX</b><b>UI</b><b>Interaction model</b><b>Design system</b><b>Product collaboration</b>
+          </div>
+        </motion.div>
+      </div>
     </div>
   );
 }
-
 function FragmentedWorkflow() {
   const [unified, setUnified] = useState(false);
   const reduceMotion = useReducedMotion();
