@@ -428,3 +428,34 @@ button{cursor:pointer}
 @media(prefers-reduced-motion:reduce){
   .v8-chapter-nav a b{transition:none}
 }
+
+
+/* V8 finalization: evidence, interaction states and contribution hierarchy */
+.v8-contribution{margin-top:34px;padding-top:18px;border-top:1px solid var(--v8-line)}
+.v8-contribution>span{font:500 9px var(--v8-mono);letter-spacing:.13em;color:#777a83}
+.v8-contribution>div{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}
+.v8-contribution b{padding:7px 9px;border:1px solid var(--v8-line);border-radius:999px;background:#fff;font:500 9px var(--v8-mono);color:#666a73}
+.v8-tension-flow{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:18px;padding-top:16px;border-top:1px solid #dedfd9}
+.v8-tension-flow b{padding:7px 9px;border:1px solid #d1d2cd;border-radius:999px;background:#fff;font:500 9px var(--v8-mono);letter-spacing:.06em}
+.v8-tension-flow span{font-size:11px;color:#999ca3}
+.v8-exploration-notes dl{display:grid;gap:10px;margin:22px 0 0;padding-top:16px;border-top:1px solid var(--v8-line)}
+.v8-exploration-notes dl div{display:grid;grid-template-columns:90px 1fr;gap:10px}
+.v8-exploration-notes dt{font:500 8px var(--v8-mono);letter-spacing:.1em;color:var(--v8-accent)}
+.v8-exploration-notes dd{margin:0;color:#686c75;font-size:11px;line-height:1.5}
+.v8-decision-card>div+div{margin-top:14px}
+.v8-decision-card h3{margin-bottom:34px}
+.v8-state-window button{transition:transform .25s ease,background .25s ease}
+.v8-state-window button:hover{transform:translateX(3px)}
+@media(max-width:1050px){
+  .v8-contribution{margin-top:28px}
+}
+@media(max-width:620px){
+  .v8-contribution b{font-size:8px}
+  .v8-exploration-notes dl div{grid-template-columns:78px 1fr}
+  .v8-tension-flow{gap:6px}
+  .v8-tension-flow b{font-size:8px}
+}
+@media(prefers-reduced-motion:reduce){
+  .v8-state-window button{transition:none}
+  .v8-tension-flow{scroll-behavior:auto}
+}
