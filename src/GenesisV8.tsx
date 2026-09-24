@@ -285,7 +285,7 @@ function ProductAnatomy() {
         ['Requirements', FileText],
         ['Test data', Database],
       ],
-      detail: 'Source code, requirements and test data enter Genesis as the working context.',
+      detail: 'Source code, requirements and test data enter as working context.',
     },
     {
       number: '02',
@@ -295,7 +295,7 @@ function ProductAnatomy() {
         ['Generate', Sparkles],
         ['Validate', ShieldCheck],
       ],
-      detail: 'AI turns that context into tests through a controlled generation sequence.',
+      detail: 'AI turns context into tests through controlled generation.',
     },
     {
       number: '03',
@@ -305,7 +305,7 @@ function ProductAnatomy() {
         ['Execution', Play],
         ['Reports', BarChart3],
       ],
-      detail: 'Generated work becomes inspectable evidence through execution and reporting.',
+      detail: 'Generated tests become inspectable through execution and reporting.',
     },
   ];
 
