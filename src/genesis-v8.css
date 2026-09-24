@@ -1985,3 +1985,80 @@ button{cursor:pointer}
     line-height:1.32;
   }
 }
+
+
+/* Final circle-fit pass: fixed vertical rhythm, no clipping */
+.genesis-v8 .v8-context-card{
+  overflow:visible;
+  padding:30px 24px 24px;
+}
+
+.genesis-v8 .v8-context-card-number{
+  flex:0 0 auto;
+}
+
+.genesis-v8 .v8-context-card-label{
+  flex:0 0 auto;
+  margin-top:6px;
+}
+
+.genesis-v8 .v8-context-card-items{
+  flex:0 0 auto;
+  margin-top:15px;
+}
+
+.genesis-v8 .v8-context-card-detail{
+  flex:0 0 auto;
+  width:100%;
+  max-width:132px;
+  margin:9px auto 0;
+  font-size:9px;
+  line-height:1.28;
+  text-wrap:balance;
+}
+
+.genesis-v8 .v8-context-card.is-ai{
+  padding:31px 24px 24px;
+}
+
+.genesis-v8 .v8-context-card.is-ai .v8-context-card-items{
+  margin-top:14px;
+}
+
+.genesis-v8 .v8-context-card.is-ai .v8-context-card-detail{
+  max-width:142px;
+}
+
+@media(max-width:1050px){
+  .genesis-v8 .v8-context-card{
+    padding:28px 20px 22px;
+  }
+
+  .genesis-v8 .v8-context-card-detail{
+    max-width:124px;
+    font-size:8.7px;
+    line-height:1.28;
+  }
+
+  .genesis-v8 .v8-context-card.is-ai{
+    padding:29px 20px 22px;
+  }
+
+  .genesis-v8 .v8-context-card.is-ai .v8-context-card-detail{
+    max-width:132px;
+  }
+}
+
+@media(max-width:700px){
+  .genesis-v8 .v8-context-card,
+  .genesis-v8 .v8-context-card.is-ai{
+    padding:29px 23px 23px;
+  }
+
+  .genesis-v8 .v8-context-card-detail,
+  .genesis-v8 .v8-context-card.is-ai .v8-context-card-detail{
+    max-width:145px;
+    font-size:9px;
+    line-height:1.3;
+  }
+}
