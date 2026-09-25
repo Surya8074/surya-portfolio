@@ -260,7 +260,8 @@ function ProductWalkthrough() {
   const item = gallery[selected];
   const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
   useEffect(() => {
-    tabRefs.current[selected]?.focus();
+    if (selected === 0) return;
+    tabRefs.current[selected]?.focus({ preventScroll: true });
   }, [selected]);
   return (
     <section id="product" className="v8-section v8-product-section">
