@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowDown, ArrowRight, BarChart3, Check, Circle, Database, FileCheck2, FileText, GitBranch, Github, Play, Settings2, ShieldCheck, Sparkles } from 'lucide-react';
-import GenesisMacBook from './GenesisMacBook';
+import GenesisHero from './GenesisHero';
 
 const A = '/surya-portfolio/genesis/';
 const screens = {
@@ -459,12 +459,7 @@ function WorkflowExplorer() {
 
 export default function GenesisV8() {
   const [active, setActive] = useState('context');
-  const heroRef = useRef<HTMLDivElement>(null);
-  const pointerX = useMotionValue(0);
-  const pointerY = useMotionValue(0);
   const reduceMotion = useReducedMotion();
-  const rotateX = useSpring(useTransform(pointerY, [-1, 1], [2, -2]), { stiffness: 120, damping: 22 });
-  const rotateY = useSpring(useTransform(pointerX, [-1, 1], [-2, 2]), { stiffness: 120, damping: 22 });
 
   useEffect(() => {
     const sections = chapters.map(([id]) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
@@ -497,36 +492,12 @@ export default function GenesisV8() {
     }
   }, [active]);
 
-  const handlePointer = (event: React.PointerEvent<HTMLDivElement>) => {
-    const rect = heroRef.current?.getBoundingClientRect();
-    if (!rect) return;
-    pointerX.set(((event.clientX - rect.left) / rect.width - .5) * 2);
-    pointerY.set(((event.clientY - rect.top) / rect.height - .5) * 2);
-  };
-
-  const resetPointer = () => { pointerX.set(0); pointerY.set(0); };
-
   return (
-    <main className="genesis-v8" onPointerMove={handlePointer} onPointerLeave={resetPointer}>
+    <main className="genesis-v8">
       <div className="v8-progress" />
       <ChapterNav active={active} />
 
-      <section className="v8-hero" ref={heroRef}>
-        <div className="v8-hero-noise" />
-        <div className="v8-hero-grid">
-          <div className="v8-hero-copy">
-            <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .15 }}>AI · TEST AUTOMATION · SAAS</motion.p>
-            <motion.h1 initial={{ opacity: 0, y: 28, letterSpacing: '.02em' }} animate={{ opacity: 1, y: 0, letterSpacing: '-.075em' }} transition={{ duration: 1, delay: .25, ease: [0.22,1,.36,1] }}>GENESIS</motion.h1>
-            <motion.h2 initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: .42 }}>AI can generate the test.<br /><em>The product still needs to earn your trust.</em></motion.h2>
-            <motion.p className="v8-hero-description" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .62 }}>Designing an AI test automation platform where speed never comes at the cost of confidence.</motion.p>
-            <div className="v8-hero-meta"><span>PRODUCT / UI-UX DESIGN</span><span>ENTERPRISE QA SAAS</span><span>WEB · DESKTOP-FIRST</span></div>
-          </div>
-          <motion.div className="v8-hero-product" style={reduceMotion ? undefined : { rotateX, rotateY }}>
-            <GenesisMacBook />
-          </motion.div>
-        </div>
-        <a className="v8-scroll-cue" href="#context"><span>SCROLL TO EXPLORE</span><ArrowDown size={15} /></a>
-      </section>
+      <GenesisHero />
 
       <section id="context" className="v8-section v8-context">
         <div className="v8-context-heading">
