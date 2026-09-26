@@ -12,7 +12,7 @@ import GenesisMacBook from './GenesisMacBook';
 
 const portraitUrl = '/surya-portfolio/surya-portrait.svg';
 const genesisPath = '/surya-portfolio/work/genesis-v7/?v=phase4#s01';
-const comskiPath = '/surya-portfolio/work/comski/';
+const comskiPath = '/surya-portfolio/comski.html';
 
 function GenesisCard() {
   const handlePointerMove = (event: React.PointerEvent<HTMLAnchorElement>) => {
