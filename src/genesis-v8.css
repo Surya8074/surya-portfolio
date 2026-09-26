@@ -3078,3 +3078,212 @@ button{cursor:pointer}
     font-size:clamp(34px,9vw,42px);
   }
 }
+
+
+
+/* V8 space-management pass: tighter editorial density below the hero */
+.genesis-v8 > .v8-section,
+.genesis-v8 > .v8-tension,
+.genesis-v8 > .v8-exploration-section,
+.genesis-v8 > .v8-product-section,
+.genesis-v8 > .v8-interaction-section{
+  padding-top:96px;
+  padding-bottom:96px;
+}
+
+.genesis-v8 .v8-context{
+  min-height:0;
+  padding-top:88px;
+  padding-bottom:88px;
+  gap:56px;
+}
+
+.genesis-v8 .v8-title-row{
+  margin-top:16px;
+  margin-bottom:48px;
+}
+
+.genesis-v8 .v8-section-intro h2,
+.genesis-v8 .v8-title-row h2{
+  margin-top:16px;
+  margin-bottom:16px;
+}
+
+.genesis-v8 .v8-goals,
+.genesis-v8 .v8-users,
+.genesis-v8 .v8-decision-grid{
+  gap:12px;
+}
+
+.genesis-v8 .v8-goal-card,
+.genesis-v8 .v8-user-card,
+.genesis-v8 .v8-decision-card{
+  min-height:0;
+  height:auto;
+  padding:24px;
+}
+
+.genesis-v8 .v8-goal-card h3{
+  margin:34px 0 10px;
+}
+
+.genesis-v8 .v8-user-card>svg{
+  margin-bottom:24px;
+}
+
+.genesis-v8 .v8-user-card h3{
+  margin:24px 0 10px;
+}
+
+.genesis-v8 .v8-decision-card h3{
+  margin:34px 0 24px;
+}
+
+.genesis-v8 .v8-system-section{
+  padding-bottom:112px;
+}
+
+.genesis-v8 .v8-workflow{
+  gap:48px;
+}
+
+.genesis-v8 .v8-workflow-stage{
+  gap:32px;
+}
+
+.genesis-v8 .v8-workflow-copy h3{
+  margin:6px 0 12px;
+}
+
+.genesis-v8 .v8-trust-callout{
+  margin-top:16px;
+}
+
+.genesis-v8 .v8-tension{
+  gap:64px;
+}
+
+.genesis-v8 .v8-tension-model{
+  padding:24px;
+}
+
+.genesis-v8 .v8-exploration{
+  gap:44px;
+}
+
+.genesis-v8 .v8-lowfi-wrap{
+  padding:14px;
+}
+
+.genesis-v8 .v8-exploration-notes h3{
+  margin:10px 0 12px;
+}
+
+.genesis-v8 .v8-exploration-notes>div{
+  margin-top:16px;
+}
+
+.genesis-v8 .v8-product-tabs{
+  margin-bottom:20px;
+}
+
+.genesis-v8 .v8-product-view{
+  gap:40px;
+}
+
+.genesis-v8 .v8-product-question h3{
+  margin:10px 0 12px;
+}
+
+.genesis-v8 .v8-product-state{
+  margin-top:18px;
+}
+
+.genesis-v8 .v8-state-system{
+  gap:44px;
+}
+
+.genesis-v8 .v8-state-detail{
+  gap:36px;
+}
+
+.genesis-v8 .v8-state-visual{
+  padding:24px;
+}
+
+.genesis-v8 .v8-state-window{
+  min-height:260px;
+  padding:20px;
+}
+
+.genesis-v8 .v8-footer{
+  padding-top:88px;
+  padding-bottom:88px;
+}
+
+@media(max-width:1050px){
+  .genesis-v8 > .v8-section,
+  .genesis-v8 > .v8-tension,
+  .genesis-v8 > .v8-exploration-section,
+  .genesis-v8 > .v8-product-section,
+  .genesis-v8 > .v8-interaction-section{
+    padding-top:72px;
+    padding-bottom:72px;
+  }
+
+  .genesis-v8 .v8-context{
+    padding-top:72px;
+    padding-bottom:72px;
+    gap:40px;
+  }
+
+  .genesis-v8 .v8-title-row{
+    margin-bottom:36px;
+  }
+
+  .genesis-v8 .v8-goal-card,
+  .genesis-v8 .v8-user-card,
+  .genesis-v8 .v8-decision-card{
+    padding:20px;
+  }
+
+  .genesis-v8 .v8-system-section{
+    padding-bottom:80px;
+  }
+}
+
+@media(max-width:700px){
+  .genesis-v8 > .v8-section,
+  .genesis-v8 > .v8-tension,
+  .genesis-v8 > .v8-exploration-section,
+  .genesis-v8 > .v8-product-section,
+  .genesis-v8 > .v8-interaction-section{
+    padding-top:56px;
+    padding-bottom:56px;
+  }
+
+  .genesis-v8 .v8-context{
+    padding-top:56px;
+    padding-bottom:56px;
+    gap:32px;
+  }
+
+  .genesis-v8 .v8-title-row{
+    margin-bottom:28px;
+  }
+
+  .genesis-v8 .v8-goal-card,
+  .genesis-v8 .v8-user-card,
+  .genesis-v8 .v8-decision-card{
+    padding:18px;
+  }
+
+  .genesis-v8 .v8-system-section{
+    padding-bottom:64px;
+  }
+
+  .genesis-v8 .v8-footer{
+    padding-top:64px;
+    padding-bottom:64px;
+  }
+}
