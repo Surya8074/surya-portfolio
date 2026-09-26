@@ -2810,3 +2810,9 @@ button{cursor:pointer}
     height:32px;
   }
 }
+
+
+/* V8 uses the established V7 Genesis hero */
+.genesis-v8 > .genesis-hero{
+  width:100%;
+}
