@@ -2663,7 +2663,7 @@ button{cursor:pointer}
 /* Context circles: slightly smaller geometry with protected internal spacing */
 .genesis-v8 .v8-context-flow{
   grid-template-columns:repeat(3,minmax(0,1fr));
-  column-gap:0;
+  column-gap:48px;
   padding:38px 24px;
 }
 
@@ -2730,15 +2730,16 @@ button{cursor:pointer}
 }
 
 .genesis-v8 .v8-context-flow-arrow:nth-child(2){
-  left:30%;
+  left:32%;
 }
 
 .genesis-v8 .v8-context-flow-arrow:nth-child(4){
-  left:63%;
+  left:65%;
 }
 
 @media(max-width:1050px){
   .genesis-v8 .v8-context-flow{
+    column-gap:24px;
     padding:34px 12px;
   }
 
