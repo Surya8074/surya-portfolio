@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowDown, ArrowRight, BarChart3, Check, Circle, Database, FileCheck2, FileText, GitBranch, Github, Play, Settings2, ShieldCheck, Sparkles } from 'lucide-react';
 import GenesisHero from './GenesisHero';
