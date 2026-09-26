@@ -2726,22 +2726,26 @@ button{cursor:pointer}
 }
 
 .genesis-v8 .v8-context-flow-arrow{
-  width:calc((100% - 3 * 292px - 2 * 48px) / 4 + 48px);
+  width:48px;
+  height:1px;
   z-index:2;
+  transform:translate(-50%,-50%);
 }
 
 .genesis-v8 .v8-context-flow-arrow:nth-child(2){
-  left:calc(33.333% - 24px);
+  left:calc(33.333% + 0px);
 }
 
 .genesis-v8 .v8-context-flow-arrow:nth-child(4){
-  left:calc(66.667% - 24px);
+  left:calc(66.667% + 0px);
 }
 
 .genesis-v8 .v8-context-flow-arrow i{
   position:relative;
+  display:block;
   width:100%;
-  background:#c8c9c6;
+  height:1px;
+  background:#c9cac7;
 }
 
 .genesis-v8 .v8-context-flow-arrow i::after{
@@ -2749,10 +2753,10 @@ button{cursor:pointer}
   position:absolute;
   left:50%;
   top:50%;
-  width:7px;
-  height:7px;
+  width:6px;
+  height:6px;
   border-radius:50%;
-  background:#b9bab7;
+  background:#b5b7b3;
   transform:translate(-50%,-50%);
 }
 
