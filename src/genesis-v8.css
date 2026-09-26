@@ -2567,3 +2567,94 @@ button{cursor:pointer}
     margin-top:12px;
   }
 }
+
+
+/* Context circle layout fix: let the three circles use the full flow width */
+.genesis-v8 .v8-context-flow{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  column-gap:0;
+  padding:42px 18px;
+}
+
+.genesis-v8 .v8-context-card{
+  width:min(100%,310px);
+  justify-self:center;
+}
+
+.genesis-v8 .v8-context-card.is-ai{
+  width:min(100%,334px);
+}
+
+.genesis-v8 .v8-context-flow-arrow{
+  position:absolute;
+  z-index:1;
+  top:50%;
+  width:9%;
+  height:1px;
+  transform:translateY(-50%);
+}
+
+.genesis-v8 .v8-context-flow-arrow:nth-child(2){
+  left:29%;
+}
+
+.genesis-v8 .v8-context-flow-arrow:nth-child(4){
+  left:62%;
+}
+
+@media(max-width:1050px){
+  .genesis-v8 .v8-context-flow{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    column-gap:0;
+    padding:38px 10px;
+  }
+
+  .genesis-v8 .v8-context-card{
+    width:min(100%,250px);
+  }
+
+  .genesis-v8 .v8-context-card.is-ai{
+    width:min(100%,272px);
+  }
+
+  .genesis-v8 .v8-context-flow-arrow{
+    width:7%;
+  }
+
+  .genesis-v8 .v8-context-flow-arrow:nth-child(2){
+    left:30%;
+  }
+
+  .genesis-v8 .v8-context-flow-arrow:nth-child(4){
+    left:63%;
+  }
+}
+
+@media(max-width:700px){
+  .genesis-v8 .v8-context-flow{
+    grid-template-columns:1fr;
+    row-gap:0;
+    padding:34px 22px;
+  }
+
+  .genesis-v8 .v8-context-card,
+  .genesis-v8 .v8-context-card.is-ai{
+    width:min(100%,310px);
+  }
+
+  .genesis-v8 .v8-context-flow-arrow{
+    position:relative;
+    left:auto!important;
+    top:auto;
+    width:1px;
+    height:34px;
+    transform:none;
+    justify-self:center;
+  }
+
+  .genesis-v8 .v8-context-flow-arrow i{
+    width:1px;
+    height:100%;
+    background:linear-gradient(180deg,#d3d4d0,#bfc1bd,#d3d4d0);
+  }
+}
