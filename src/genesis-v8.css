@@ -2726,15 +2726,16 @@ button{cursor:pointer}
 }
 
 .genesis-v8 .v8-context-flow-arrow{
-  width:7%;
+  width:6%;
+  z-index:2;
 }
 
 .genesis-v8 .v8-context-flow-arrow:nth-child(2){
-  left:32%;
+  left:32.8%;
 }
 
 .genesis-v8 .v8-context-flow-arrow:nth-child(4){
-  left:65%;
+  left:65.2%;
 }
 
 @media(max-width:1050px){
