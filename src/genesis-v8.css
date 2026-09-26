@@ -3287,3 +3287,79 @@ button{cursor:pointer}
     padding-bottom:64px;
   }
 }
+
+
+/* Context composition pass: remove forced canvas height and let content define the section */
+.genesis-v8 .v8-context{
+  padding-top:64px;
+  padding-bottom:64px;
+}
+
+.genesis-v8 .v8-context-system{
+  width:min(1240px,100%);
+  margin:0 auto;
+  transform:none;
+}
+
+.genesis-v8 .v8-context-anatomy{
+  min-height:0;
+  align-items:stretch;
+}
+
+.genesis-v8 .v8-context-flow{
+  min-height:0;
+  padding:40px 40px;
+}
+
+.genesis-v8 .v8-context-card{
+  min-height:0;
+}
+
+.genesis-v8 .v8-context-editorial{
+  padding:40px 36px;
+  justify-content:center;
+}
+
+.genesis-v8 .v8-context-editorial h3{
+  margin-top:16px;
+  margin-bottom:14px;
+}
+
+.genesis-v8 .v8-context-contribution{
+  margin-top:28px;
+  padding-top:18px;
+}
+
+.genesis-v8 .v8-context-contribution>div{
+  margin-top:10px;
+}
+
+@media(max-width:1050px){
+  .genesis-v8 .v8-context{
+    padding-top:56px;
+    padding-bottom:56px;
+  }
+
+  .genesis-v8 .v8-context-flow{
+    padding:36px 32px;
+  }
+
+  .genesis-v8 .v8-context-editorial{
+    padding:36px 32px;
+  }
+}
+
+@media(max-width:700px){
+  .genesis-v8 .v8-context{
+    padding-top:48px;
+    padding-bottom:48px;
+  }
+
+  .genesis-v8 .v8-context-flow{
+    padding:26px 20px;
+  }
+
+  .genesis-v8 .v8-context-editorial{
+    padding:30px 24px;
+  }
+}
