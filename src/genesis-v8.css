@@ -2840,3 +2840,241 @@ button{cursor:pointer}
 .genesis-v8 > .genesis-hero{
   width:100%;
 }
+
+
+/* V8 compact scale pass: reduce visual component footprint without transform-scaling the page */
+.genesis-v8{
+  --v8-scale:0.7;
+}
+
+.genesis-v8 .v8-section{
+  padding-top:105px;
+  padding-bottom:105px;
+}
+
+.genesis-v8 .v8-context{
+  padding-top:clamp(73px,6.3vw,101px);
+  padding-bottom:clamp(73px,6.3vw,101px);
+}
+
+.genesis-v8 .v8-context-heading{
+  max-width:784px;
+  margin-bottom:var(--v8-space-6);
+}
+
+.genesis-v8 .v8-context-heading h2{
+  max-width:756px;
+  font-size:clamp(41px,4.3vw,66px);
+}
+
+.genesis-v8 .v8-title-row{
+  gap:var(--v8-space-5);
+  margin-bottom:var(--v8-space-5);
+}
+
+.genesis-v8 .v8-title-row h2,
+.genesis-v8 .v8-section-intro h2{
+  max-width:574px;
+  font-size:clamp(36px,3.6vw,53px);
+}
+
+.genesis-v8 .v8-title-row>p,
+.genesis-v8 .v8-section-intro>p{
+  max-width:322px;
+  font-size:13px;
+  line-height:1.65;
+}
+
+.genesis-v8 .v8-section-label{
+  min-height:12px;
+  gap:13px;
+}
+
+.genesis-v8 .v8-section-label b,
+.genesis-v8 .v8-section-label span{
+  font-size:9px;
+}
+
+.genesis-v8 .v8-goal-card,
+.genesis-v8 .v8-user-card,
+.genesis-v8 .v8-decision-card,
+.genesis-v8 .v8-evidence-block{
+  padding:17px;
+}
+
+.genesis-v8 .v8-goal-card h3{
+  max-width:224px;
+  margin:22px 0 8px;
+}
+
+.genesis-v8 .v8-user-card>svg{
+  margin-bottom:17px;
+}
+
+.genesis-v8 .v8-user-card h3{
+  margin:17px 0 7px;
+}
+
+.genesis-v8 .v8-decision-card h3{
+  margin:22px 0 17px;
+}
+
+.genesis-v8 .v8-context-flow{
+  column-gap:34px;
+  padding:27px 17px;
+}
+
+.genesis-v8 .v8-context-card{
+  width:min(100%,204px);
+  padding:22px 18px 18px;
+}
+
+.genesis-v8 .v8-context-card.is-ai{
+  width:min(100%,218px);
+  padding:23px 19px 18px;
+}
+
+.genesis-v8 .v8-context-card-number{
+  font-size:18px;
+}
+
+.genesis-v8 .v8-context-card-label{
+  margin-top:4px;
+}
+
+.genesis-v8 .v8-context-card-items{
+  margin-top:12px;
+  gap:5px;
+}
+
+.genesis-v8 .v8-context-item-icon{
+  width:27px;
+  height:27px;
+}
+
+.genesis-v8 .v8-context-card-items>span{
+  gap:4px;
+}
+
+.genesis-v8 .v8-context-card-items>span>b{
+  font-size:8px;
+}
+
+.genesis-v8 .v8-context-progress{
+  margin-top:11px;
+  gap:4px;
+}
+
+.genesis-v8 .v8-context-card-detail{
+  max-width:105px;
+  margin-top:7px;
+  font-size:8px;
+}
+
+.genesis-v8 .v8-context-card.is-ai .v8-context-card-detail{
+  max-width:111px;
+}
+
+.genesis-v8 .v8-context-flow-arrow{
+  width:34px;
+}
+
+.genesis-v8 .v8-context-flow-arrow i{
+  height:1px;
+}
+
+.genesis-v8 .v8-context-flow-arrow i::after{
+  width:5px;
+  height:5px;
+}
+
+.genesis-v8 .v8-screen-frame{
+  border-radius:13px;
+}
+
+.genesis-v8 .v8-screen-bar{
+  height:21px;
+  padding:0 8px;
+}
+
+.genesis-v8 .v8-screen-bar>span{
+  width:4px;
+  height:4px;
+}
+
+.genesis-v8 .v8-workflow-copy h3{
+  margin:8px 0 10px;
+  font-size:39px;
+}
+
+.genesis-v8 .v8-workflow-copy p{
+  font-size:13px;
+}
+
+.genesis-v8 .v8-trust-callout{
+  margin-top:18px;
+  padding:10px;
+  font-size:10px;
+}
+
+.genesis-v8 .v8-footer{
+  padding-top:84px;
+  padding-bottom:84px;
+}
+
+.genesis-v8 .v8-footer h2{
+  max-width:560px;
+  font-size:clamp(34px,4.2vw,64px);
+}
+
+@media(max-width:1050px){
+  .genesis-v8 .v8-section{
+    padding-top:84px;
+    padding-bottom:84px;
+  }
+
+  .genesis-v8 .v8-context-flow{
+    column-gap:17px;
+  }
+
+  .genesis-v8 .v8-context-card{
+    width:min(100%,168px);
+  }
+
+  .genesis-v8 .v8-context-card.is-ai{
+    width:min(100%,181px);
+  }
+}
+
+@media(max-width:700px){
+  .genesis-v8 .v8-section{
+    padding-top:70px;
+    padding-bottom:70px;
+  }
+
+  .genesis-v8 .v8-context{
+    padding-top:73px;
+    padding-bottom:73px;
+  }
+
+  .genesis-v8 .v8-context-flow{
+    grid-template-columns:1fr;
+    column-gap:0;
+    padding:21px 15px;
+  }
+
+  .genesis-v8 .v8-context-card,
+  .genesis-v8 .v8-context-card.is-ai{
+    width:min(100%,204px);
+  }
+
+  .genesis-v8 .v8-context-flow-arrow{
+    width:1px;
+    height:24px;
+  }
+
+  .genesis-v8 .v8-title-row h2,
+  .genesis-v8 .v8-section-intro h2{
+    font-size:clamp(34px,9vw,42px);
+  }
+}
