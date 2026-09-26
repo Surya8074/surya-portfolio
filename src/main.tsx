@@ -12,6 +12,7 @@ import GenesisMacBook from './GenesisMacBook';
 
 const portraitUrl = '/surya-portfolio/surya-portrait.svg';
 const genesisPath = '/surya-portfolio/work/genesis-v7/?v=phase4#s01';
+const comskiPath = '/surya-portfolio/work/comski/';
 
 function GenesisCard() {
   const handlePointerMove = (event: React.PointerEvent<HTMLAnchorElement>) => {
@@ -72,6 +73,87 @@ function GenesisCard() {
   );
 }
 
+
+function ComskiCard() {
+  const handlePointerMove = (event: React.PointerEvent<HTMLAnchorElement>) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+    const y = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
+    event.currentTarget.style.setProperty('--mx', x.toFixed(3));
+    event.currentTarget.style.setProperty('--my', y.toFixed(3));
+  };
+
+  const resetPointer = (event: React.PointerEvent<HTMLAnchorElement>) => {
+    event.currentTarget.style.setProperty('--mx', '0');
+    event.currentTarget.style.setProperty('--my', '0');
+  };
+
+  return (
+    <a
+      className="comski-project-card"
+      href={comskiPath}
+      aria-label="Open ComSki case study"
+      onPointerMove={handlePointerMove}
+      onPointerLeave={resetPointer}
+    >
+      <div className="comski-project-copy">
+        <div className="comski-project-index">02 <span>/ 04</span></div>
+        <p className="comski-project-eyebrow">AI · EdTech · Product Design</p>
+        <h3>ComSki</h3>
+        <h4>One AI coach. Two very different learners.</h4>
+        <p className="comski-project-description">
+          Designing an adaptive communication-learning system for students and professionals without fragmenting the core product experience.
+        </p>
+        <div className="comski-project-action"><b>→</b><span>View Case Study</span></div>
+      </div>
+
+      <div className="comski-project-visual" aria-hidden="true">
+        <div className="comski-glow comski-glow-a" />
+        <div className="comski-glow comski-glow-b" />
+
+        <div className="comski-dashboard">
+          <div className="comski-sidebar">
+            <strong><span className="comski-mark">⌣</span> ComSki</strong>
+            <span className="active">Home</span>
+            <span>Practice</span>
+            <span>My Journey</span>
+            <span>Feedback</span>
+          </div>
+          <div className="comski-dashboard-main">
+            <small>GOOD MORNING</small>
+            <h5>Continue your journey</h5>
+            <div className="comski-journey-row">
+              <div className="comski-journey-card">
+                <span>Google SDE Journey</span>
+                <i><em /></i>
+                <small>3 / 6 completed</small>
+              </div>
+              <div className="comski-metric"><b>+20%</b><span>Confidence</span><i /></div>
+              <div className="comski-metric purple"><b>+15%</b><span>Body Language</span><i /></div>
+            </div>
+          </div>
+        </div>
+
+        <div className="comski-recording">
+          <div className="comski-recording-top"><span>● 00:45</span><b>Video Practice</b></div>
+          <div className="comski-person"><span>◒</span></div>
+          <div className="comski-wave"><i /><i /><i /><i /><i /><i /><i /><i /><i /></div>
+        </div>
+
+        <div className="comski-feedback">
+          <strong>✦ AI Feedback</strong>
+          <div><span>Content Structure</span><i><em /></i><b>Great flow</b></div>
+          <div><span>Confidence</span><i><em /></i><b>Keep going</b></div>
+          <div><span>Body Language</span><i><em /></i><b>More eye contact</b></div>
+          <div><span>Speech Clarity</span><i><em /></i><b>Slow down slightly</b></div>
+        </div>
+
+        <div className="comski-mascot"><span>⌣</span></div>
+      </div>
+    </a>
+  );
+}
+
 function App() {
   useEffect(() => {
     const lenis = new Lenis({ duration: 1.15, smoothWheel: true, touchMultiplier: 1.05 });
@@ -93,7 +175,7 @@ function App() {
     <main>
       <header className="reference-nav"><div className="reference-nav-inner"><button className="reference-brand" onClick={() => go('#home')}><strong>Surya Kiran</strong><span className="reference-brand-divider" /><span>India</span></button><nav><button onClick={() => go('#art')}>Art</button><button onClick={() => go('#about')}>About Me</button><button onClick={() => go('#resume')}>Resume</button></nav></div></header>
       <section id="home" className="reference-home"><div className="reference-home-viewport"><div className="reference-home-stage"><div className="reference-portrait" aria-label="Portrait of Surya Kiran"><img className="reference-portrait-image" src={portraitUrl} alt="Surya Kiran" /></div><div className="reference-fade" /><div className="reference-head-animation" aria-hidden="true"><svg viewBox="0 0 260 130" className="head-animation-svg"><text className="head-animation-text" x="18" y="88">ART</text></svg></div><div className="reference-hero-copy"><h1><span>Designing how products earn trust,</span><span>across <em>visual, product &amp; growth.</em></span></h1><button className="reference-work" onClick={() => go('#work')}>See my work</button></div></div></div></section>
-      <section id="work" className="reference-work-section"><div className="work-intro"><p>SELECTED WORK</p></div><GenesisCard /><article className="secondary-work-card"><div><p>EdTech · Product Design</p><h3>Learning Platform</h3></div><div className="work-placeholder work-two">Your project image</div></article><article className="secondary-work-card"><div><p>Product · Web</p><h3>Comski</h3></div><div className="work-placeholder work-three">Your project image</div></article></section>
+      <section id="work" className="reference-work-section"><div className="work-intro"><p>SELECTED WORK</p></div><GenesisCard /><ComskiCard /><article className="secondary-work-card"><div><p>Product · Web</p><h3>More work coming next</h3></div><div className="work-placeholder work-two">Next project</div></article></section>
       <section className="other-reference"><h2>Other Projects</h2><div className="other-reference-grid"><article><h3>AI product explorations</h3><p>AI-assisted workflows, interaction and product design experiments.</p><div className="tags"><span>AI-Assisted</span><span>Spatial UX</span><span>Product Design</span></div></article><article><h3>Web &amp; product experiments</h3><p>Small digital products exploring interaction, systems and prototyping.</p><div className="tags"><span>Web Design</span><span>Interaction Design</span><span>UX Design</span></div></article></div></section>
       <section id="about" className="simple-section"><h2>About Me</h2><p>Hi, I am Surya — a product designer working across AI, SaaS and education.</p></section><section id="art" className="simple-section"><h2>Art + Explorations</h2><p>AI, fun, visual experiments and things I make outside product work.</p></section>
       <ResumePage />
