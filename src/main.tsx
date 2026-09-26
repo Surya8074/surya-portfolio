@@ -148,6 +148,9 @@ function ComskiCard() {
           <div><span>Speech Clarity</span><i><em /></i><b>Slow down slightly</b></div>
         </div>
 
+        <div className="comski-role-chip comski-role-student"><span>✦</span><div><b>Student</b><small>Build confidence</small></div></div>
+        <div className="comski-role-chip comski-role-professional"><span>↗</span><div><b>Professional</b><small>Interview prep</small></div></div>
+        <div className="comski-practice-label">Practice in real scenarios <i>↙</i></div>
         <div className="comski-mascot"><span>⌣</span></div>
       </div>
     </a>
