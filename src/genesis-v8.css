@@ -2726,16 +2726,34 @@ button{cursor:pointer}
 }
 
 .genesis-v8 .v8-context-flow-arrow{
-  width:6%;
+  width:calc((100% - 3 * 292px - 2 * 48px) / 4 + 48px);
   z-index:2;
 }
 
 .genesis-v8 .v8-context-flow-arrow:nth-child(2){
-  left:32.8%;
+  left:calc(33.333% - 24px);
 }
 
 .genesis-v8 .v8-context-flow-arrow:nth-child(4){
-  left:65.2%;
+  left:calc(66.667% - 24px);
+}
+
+.genesis-v8 .v8-context-flow-arrow i{
+  position:relative;
+  width:100%;
+  background:#c8c9c6;
+}
+
+.genesis-v8 .v8-context-flow-arrow i::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#b9bab7;
+  transform:translate(-50%,-50%);
 }
 
 @media(max-width:1050px){
