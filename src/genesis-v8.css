@@ -502,7 +502,7 @@ button{cursor:pointer}
 }
 
 .genesis-v8 .v8-section-label + .v8-title-row{
-  margin-top:var(--v8-space-3);
+  margin-top:var(--v8-space-2);
 }
 
 /* Standard title auto-layout: eyebrow → heading → supporting copy → content */
