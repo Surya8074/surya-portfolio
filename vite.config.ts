@@ -17,6 +17,7 @@ export default defineConfig({
         genesisV7: 'work/genesis-v7/index.html',
         genesisV8: 'work/genesis-v8/index.html',
         comski: 'comski.html',
+        cv2: 'cv2.html',
       },
     },
   },
