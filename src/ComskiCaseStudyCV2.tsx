@@ -15,6 +15,16 @@ function ScreenAnatomy({type}:{type:'onboarding'|'reading'|'listening'|'writing'
  }[type];
  return <div className="cs-anatomy"><div className="anatomy-top"><span>{data.kicker}</span><i>{type==='onboarding'?<UserRound size={17}/>:type==='reading'?<BookOpen size={17}/>:type==='listening'?<Headphones size={17}/>:type==='writing'?<PenLine size={17}/>:type==='speaking'?<Mic2 size={17}/>:<Route size={17}/>}</i></div><h3>{data.title}</h3><p>{data.body}</p><div className="anatomy-list">{data.items.map((x,i)=><div key={x}><small>0{i+1}</small><b>{x}</b><span>{i===0?'Core interaction':'State / transition'}</span></div>)}</div></div>
 }
+function ActualScreen({src,alt,label,detail,variant='standard'}:{src:string;alt:string;label:string;detail?:string;variant?:'standard'|'large'|'crop'}){return <figure className={`cv2-screen cv2-screen-${variant}`}><div className="cv2-screen-frame"><img src={src} alt={alt}/></div><figcaption><span>{label}</span>{detail&&<b>{detail}</b>}</figcaption></figure>}
+
+function ScreenFlow(){return <div className="cv2-screen-flow">
+  <ActualScreen src="/surya-portfolio/comski/home.webp" alt="ComSki source product screen" label="01 · HOME" detail="Learner context" />
+  <i><ArrowRight/></i>
+  <ActualScreen src="/surya-portfolio/comski/journey.webp" alt="ComSki source journey screen" label="02 · JOURNEY" detail="Progression" />
+  <i><ArrowRight/></i>
+  <ActualScreen src="/surya-portfolio/comski/practice.webp" alt="ComSki source practice screen" label="03 · PRACTICE" detail="Task interaction" />
+</div>}
+
 export default function ComskiCaseStudyCV2(){
  const [progress,setProgress]=useState(0);
  useEffect(()=>{const fn=()=>{const h=document.documentElement.scrollHeight-innerHeight;setProgress(h?scrollY/h:0)};addEventListener('scroll',fn,{passive:true});fn();return()=>removeEventListener('scroll',fn)},[]);
@@ -36,16 +46,12 @@ export default function ComskiCaseStudyCV2(){
     </CV2TextReveal>
     <a className="cs-scroll" href="#s01"><span>EXPLORE THE CASE STUDY</span><ArrowDown size={15}/></a>
    </div>
-   <CV2ImageReveal className="cs-hero-visual cv2-hero-board">
-    <div className="cv2-board-top"><span>COMSKI / PRODUCT MODEL</span><b>01—04</b></div>
-    <div className="cv2-board-title"><small>THE LEARNER JOURNEY</small><strong>Context → Assessment → Practice → Progress</strong></div>
-    <div className="cv2-board-flow">
-      <div><span>01</span><BookOpen/><b>Reading</b><small>Read aloud</small></div><i>→</i>
-      <div><span>02</span><Headphones/><b>Listening</b><small>Listen + respond</small></div><i>→</i>
-      <div><span>03</span><PenLine/><b>Writing</b><small>Compose</small></div><i>→</i>
-      <div><span>04</span><Mic2/><b>Speaking</b><small>Speak naturally</small></div>
+   <CV2ImageReveal className="cs-hero-visual cv2-hero-product">
+    <div className="cv2-product-window">
+      <div className="cv2-window-bar"><span>COMSKI</span><span>PRODUCT EXPERIENCE / 01</span></div>
+      <img src="/surya-portfolio/comski/home.webp" alt="ComSki learner home product screen"/>
     </div>
-    <div className="cv2-board-foot"><span>PERSONALISED ONBOARDING</span><b>Goal · Time · Confidence · Interests</b></div>
+    <div className="cv2-hero-secondary"><img src="/surya-portfolio/comski/journey.webp" alt="ComSki journey product screen"/><span>Journey / progression</span></div>
    </CV2ImageReveal>
   </header>
 
@@ -73,6 +79,14 @@ export default function ComskiCaseStudyCV2(){
   </section>
   </CV2Reveal>
 
+  <CV2Reveal className="cv2-visual-story-wrap">
+   <section className="cv2-visual-story">
+    <div className="cv2-story-head"><div><span>THE PRODUCT AS EVIDENCE</span><h2>Show the system, not a pile of screenshots.</h2></div><p>These are the actual ComSki screens. Their role here is to explain how the product moves from context to journey to interaction.</p></div>
+    <ScreenFlow/>
+    <div className="cv2-screen-note"><span>READ THE FLOW</span><b>Context → Journey → Practice</b><small>The presentation changes scale instead of forcing every screen into the same mockup. The UI remains untouched.</small></div>
+   </section>
+  </CV2Reveal>
+
   <article className="cs-layout">
    <aside className="cs-chapters"><a href="#s01">01 <b>PRODUCT PREMISE</b></a><a href="#s02">02 <b>PERSONALISATION</b></a><a href="#s03">03 <b>ASSESSMENT MODEL</b></a><a href="#s04">04 <b>FOUR SKILLS</b></a><a href="#s05">05 <b>INTERACTION SYSTEM</b></a><a href="#s06">06 <b>PROGRESSION</b></a><a href="#s07">07 <b>REFLECTION</b></a></aside>
    <div className="cs-content">
@@ -87,7 +101,13 @@ export default function ComskiCaseStudyCV2(){
      <SectionLabel num="02" label="PERSONALISED ONBOARDING"/>
      <h2>Six onboarding moments create a <em>learner context layer.</em></h2>
      <p className="cs-lead">The supplied Figma exports show onboarding as a sequence of contextual questions rather than a generic sign-up form. Each screen asks for a different signal about the person entering ComSki.</p>
-     <ScreenAnatomy type="onboarding"/>
+     <div className="cv2-onboarding-evidence">
+      <div className="cv2-onboarding-copy"><span>SCREEN EVIDENCE</span><h3>Personalisation continues into the product surface.</h3><p>The source screens below are kept intact. They are presented as product evidence rather than recreated UI.</p></div>
+      <div className="cv2-onboarding-screens">
+       <ActualScreen src="/surya-portfolio/comski/home.webp" alt="ComSki source home screen" label="SOURCE SCREEN" detail="Home / learner context" variant="large"/>
+       <ActualScreen src="/surya-portfolio/comski/journey.webp" alt="ComSki source journey screen" label="SOURCE SCREEN" detail="Journey / progression"/>
+      </div>
+     </div>
      <div className="cs-input-grid">
       <article><UserRound/><small>01 · VIBE</small><h3>“Pick the vibe that feels most like you today.”</h3><p>ComSki opens with an expressive, character-led choice. The selected avatar becomes a lightweight way to establish identity and tone before more functional questions begin.</p></article>
       <article><Target/><small>02 · GOAL</small><h3>“What’s your big goal for English & communication skills?”</h3><p>The goal options include interviews, speaking confidence, professional communication, becoming an influencer, expressing ideas more fluently and communicating with AI.</p></article>
@@ -126,6 +146,14 @@ export default function ComskiCaseStudyCV2(){
       <div className="deep-card"><ScreenAnatomy type="reading"/><div><span>01 / READING</span><h3>Reading turns the interface into a guided performance.</h3><p>The passage is the primary visual object. The instruction establishes the expected behaviour — read aloud with natural voice, with emphasis on clarity, flow and expression. The question layer then changes the mode from performance to comprehension.</p><ul><li><b>Task framing:</b> clear instruction before the passage.</li><li><b>Progression:</b> Question 1/5 through Question 5/5.</li><li><b>Completion:</b> “Continue to Listening Assessment” makes the next step explicit.</li></ul></div></div>
       <div className="deep-card reverse"><div><span>02 / LISTENING</span><h3>Listening separates input from response.</h3><p>The learner first receives information through audio. The interface then asks for a quick answer, creating a simple input → comprehension → response loop.</p><ul><li><b>Input:</b> short audio clip.</li><li><b>Context:</b> story, daily situation or informative message.</li><li><b>Navigation:</b> play, answer, skip or continue.</li></ul></div><ScreenAnatomy type="listening"/></div>
       <div className="deep-card"><ScreenAnatomy type="writing"/><div><span>03 / WRITING</span><h3>Writing gives the learner room to construct the answer.</h3><p>Instead of forcing the learner into predefined choices, the writing task creates a scenario and leaves the response surface open. That changes the interaction from recognition to expression.</p><ul><li><b>Prompt:</b> a short question or situation.</li><li><b>Response:</b> learner-generated text.</li><li><b>Feedback opportunity:</b> the written answer becomes an artefact that can be evaluated and revisited.</li></ul></div></div>
+      <div className="cv2-skill-evidence">
+       <div><span>REAL PRODUCT SCREENS</span><h3>One product, multiple interaction modes.</h3><p>Use the source screens to anchor the skill-system story. The visual treatment changes with the role of the evidence.</p></div>
+       <div className="cv2-skill-evidence-grid">
+        <ActualScreen src="/surya-portfolio/comski/practice.webp" alt="ComSki source practice screen" label="PRACTICE" detail="Interaction surface" variant="large"/>
+        <ActualScreen src="/surya-portfolio/comski/feedback.webp" alt="ComSki source feedback screen" label="FEEDBACK" detail="Response state"/>
+        <ActualScreen src="/surya-portfolio/comski/record.webp" alt="ComSki source recording screen" label="RECORD" detail="Voice interaction"/>
+       </div>
+      </div>
       <div className="deep-card reverse"><div><span>04 / SPEAKING</span><h3>Speaking is framed around expression, not perfection.</h3><p>The prompt examples ask the learner to talk about emotions, experiences and places. The copy explicitly says to use a natural voice and not worry about perfection — a small but important interaction decision for a communication product.</p><ul><li><b>Prompt:</b> question or topic.</li><li><b>Context:</b> personal experience and imagined situations.</li><li><b>Behaviour:</b> speak naturally, then progress.</li></ul></div><ScreenAnatomy type="speaking"/></div>
     </section>
 
@@ -148,6 +176,14 @@ export default function ComskiCaseStudyCV2(){
      <h2>The real product architecture appears in the <em>handoffs.</em></h2>
      <p className="cs-lead">The completion screens reveal a deliberate sequence: finishing one skill immediately exposes the next skill assessment. This makes the four modules behave like a journey rather than a library of disconnected tests.</p>
      <div className="cs-journey"><div className="journey-node"><BookOpen/><b>Reading</b><small>Skill check</small></div><i>→</i><div className="journey-node"><Headphones/><b>Listening</b><small>Skill check</small></div><i>→</i><div className="journey-node"><PenLine/><b>Writing</b><small>Skill check</small></div><i>→</i><div className="journey-node"><Mic2/><b>Speaking</b><small>Skill check</small></div></div>
+     <div className="cv2-final-showcase">
+       <div><span>FINAL PRODUCT / SOURCE SCREENS</span><h3>The visual proof should carry the explanation.</h3><p>A final, larger presentation brings the actual product surfaces back together after the reasoning has been explained.</p></div>
+       <div className="cv2-final-grid">
+        <ActualScreen src="/surya-portfolio/comski/journey.webp" alt="ComSki journey source screen" label="JOURNEY" detail="Progression" variant="large"/>
+        <ActualScreen src="/surya-portfolio/comski/practice.webp" alt="ComSki practice source screen" label="PRACTICE" detail="Task interaction"/>
+        <ActualScreen src="/surya-portfolio/comski/feedback.webp" alt="ComSki feedback source screen" label="FEEDBACK" detail="Response state"/>
+       </div>
+     </div>
      <div className="cs-completion"><ScreenAnatomy type="completion"/><div><span>DESIGN PATTERN</span><h3>Celebrate the current state, then remove the question “what now?”</h3><p>The source completion screens use three useful elements together: recognition of completion, a forward path and a retry option. That is a small interaction pattern with a large effect on continuity.</p><div className="completion-points"><b><Check/> Completion is acknowledged</b><b><ArrowRight/> Next skill is surfaced</b><b><Route/> Retry remains available</b></div></div></div>
     </section>
 
