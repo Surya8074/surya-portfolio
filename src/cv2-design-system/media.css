@@ -1,0 +1,14 @@
+/* Flexible product-image presentation. Choose the treatment from the content, not a fixed mockup. */
+.cv2-media-frame{position:relative;width:100%;background:var(--cv2-color-surface);border:1px solid var(--cv2-color-border);overflow:hidden}
+.cv2-media-frame--full{border-radius:var(--cv2-radius-editorial)}
+.cv2-media-frame--product{border-radius:var(--cv2-radius-product);box-shadow:var(--cv2-shadow-product)}
+.cv2-media-frame--browser{border-radius:var(--cv2-radius-product)}
+.cv2-media-frame--browser::before{content:"";display:block;height:30px;border-bottom:1px solid var(--cv2-color-border);background:var(--cv2-color-bg-subtle)}
+.cv2-media-frame--device{max-width:680px;margin-inline:auto;border-radius:18px;box-shadow:var(--cv2-shadow-product)}
+.cv2-media-frame--crop{max-height:620px}
+.cv2-media-frame--crop img{width:100%;height:100%;object-fit:cover;object-position:center}
+.cv2-media-frame img{display:block;width:100%;height:auto}
+.cv2-media-caption{margin-top:10px;color:var(--cv2-color-text-muted);font-size:var(--cv2-type-caption-size);line-height:var(--cv2-type-caption-leading)}
+.cv2-before-after{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--cv2-color-border)}
+.cv2-before-after>*{background:var(--cv2-color-surface);min-width:0}
+@media(max-width:720px){.cv2-before-after{grid-template-columns:1fr}}
