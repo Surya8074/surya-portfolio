@@ -40,22 +40,22 @@ export default function ComskiCaseStudyCV2(){
     <div className="cv2-board-top"><span>COMSKI / PRODUCT MODEL</span><b>01—04</b></div>
     <div className="cv2-board-title"><small>THE LEARNER JOURNEY</small><strong>Context → Assessment → Practice → Progress</strong></div>
     <div className="cv2-board-flow">
-      <div><span>01</span><BookOpen/><b>Reading</b><small>Read aloud</small></div>
-      <i>→</i>
-      <div><span>02</span><Headphones/><b>Listening</b><small>Listen + respond</small></div>
-      <i>→</i>
-      <div><span>03</span><PenLine/><b>Writing</b><small>Compose</small></div>
-      <i>→</i>
+      <div><span>01</span><BookOpen/><b>Reading</b><small>Read aloud</small></div><i>→</i>
+      <div><span>02</span><Headphones/><b>Listening</b><small>Listen + respond</small></div><i>→</i>
+      <div><span>03</span><PenLine/><b>Writing</b><small>Compose</small></div><i>→</i>
       <div><span>04</span><Mic2/><b>Speaking</b><small>Speak naturally</small></div>
     </div>
     <div className="cv2-board-foot"><span>PERSONALISED ONBOARDING</span><b>Goal · Time · Confidence · Interests</b></div>
    </CV2ImageReveal>
   </header>
 
-  <CV2Reveal className="cs-intro">
-  <section className="cs-intro"><div><span>THE PRODUCT</span><h2>Personalisation is not a feature on top of the product. <em>It is the entry point.</em></h2></div><p>The supplied ComSki screens show a deliberate sequence: establish who the learner is, understand what they want from communication, understand how much time they can give, establish confidence and interests, then move into a structured four-skill assessment journey.</p></section>
+  <CV2Reveal className="cs-intro-reveal">
+   <section className="cs-intro"><div><span>THE PRODUCT</span><h2>Personalisation is not a feature on top of the product. <em>It is the entry point.</em></h2></div><p>The supplied ComSki screens show a deliberate sequence: establish who the learner is, understand what they want from communication, understand how much time they can give, establish confidence and interests, then move into a structured four-skill assessment journey.</p></section>
+  </CV2Reveal>
 
-  <section className="cs-snapshot"><div className="cs-snapshot-head"><span>AT A GLANCE</span><p>The strongest product story is the relationship between onboarding, assessment and progression.</p></div><div className="cs-snapshot-grid"><div><small>ENTRY</small><b>Personalised onboarding</b><span>Context before content</span></div><div><small>ASSESSMENT</small><b>4 communication skills</b><span>Reading · Listening · Writing · Speaking</span></div><div><small>STRUCTURE</small><b>5-question skill checks</b><span>Consistent progression and completion states</span></div><div><small>HANDOFF</small><b>One skill leads to the next</b><span>Completion screens make the journey explicit</span></div></div></section>
+  <CV2Reveal className="cs-snapshot-reveal">
+   <section className="cs-snapshot"><div className="cs-snapshot-head"><span>AT A GLANCE</span><p>The strongest product story is the relationship between onboarding, assessment and progression.</p></div><div className="cs-snapshot-grid"><div><small>ENTRY</small><b>Personalised onboarding</b><span>Context before content</span></div><div><small>ASSESSMENT</small><b>4 communication skills</b><span>Reading · Listening · Writing · Speaking</span></div><div><small>STRUCTURE</small><b>5-question skill checks</b><span>Consistent progression and completion states</span></div><div><small>HANDOFF</small><b>One skill leads to the next</b><span>Completion screens make the journey explicit</span></div></div></section>
+  </CV2Reveal>
 
   <CV2Reveal className="cv2-evidence-wrap">
   <section className="cv2-evidence" aria-labelledby="evidence-title">
@@ -75,7 +75,6 @@ export default function ComskiCaseStudyCV2(){
 
   <article className="cs-layout">
    <aside className="cs-chapters"><a href="#s01">01 <b>PRODUCT PREMISE</b></a><a href="#s02">02 <b>PERSONALISATION</b></a><a href="#s03">03 <b>ASSESSMENT MODEL</b></a><a href="#s04">04 <b>FOUR SKILLS</b></a><a href="#s05">05 <b>INTERACTION SYSTEM</b></a><a href="#s06">06 <b>PROGRESSION</b></a><a href="#s07">07 <b>REFLECTION</b></a></aside>
-
    <div className="cs-content">
     <section id="s01" className="cs-section">
      <SectionLabel num="01" label="PRODUCT PREMISE"/>
@@ -161,5 +160,5 @@ export default function ComskiCaseStudyCV2(){
    </div>
   </article>
   <footer className="cs-footer"><span>COMSKI / CASE STUDY</span><h2>Designing the journey from <em>personal context to communication confidence.</em></h2><a href="/surya-portfolio/">Back to portfolio <ArrowRight size={17}/></a></footer>
- </main>
+ </main></CV2PageTransition>
 }
