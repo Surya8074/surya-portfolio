@@ -1,4 +1,5 @@
 import React,{useEffect,useState} from 'react';
+import {CV2PageTransition,CV2TextReveal,CV2ImageReveal,CV2Reveal} from './cv2-design-system/motion-primitives';
 import {ArrowDown,ArrowRight,BookOpen,Check,Clock3,Compass,Headphones,Mic2,PenLine,Play,Route,SlidersHorizontal,Sparkles,Target,UserRound} from 'lucide-react';
 
 function SectionLabel({num,label}:{num:string;label:string}){return <div className="cs-label"><span>{num}</span><b>{label}</b></div>}
@@ -17,7 +18,7 @@ function ScreenAnatomy({type}:{type:'onboarding'|'reading'|'listening'|'writing'
 export default function ComskiCaseStudyCV2(){
  const [progress,setProgress]=useState(0);
  useEffect(()=>{const fn=()=>{const h=document.documentElement.scrollHeight-innerHeight;setProgress(h?scrollY/h:0)};addEventListener('scroll',fn,{passive:true});fn();return()=>removeEventListener('scroll',fn)},[]);
- return <main className="comski-case cv2-case" id="top">
+ return <CV2PageTransition className="cv2-motion-page"><main className="comski-case cv2-case" id="top">
   <div className="cs-progress"><span style={{transform:'scaleX('+progress+')'}}/></div>
   <nav className="cs-nav"><a href="/surya-portfolio/"><b>Surya Kiran</b><span>ComSki / Case Study</span></a><a href="/surya-portfolio/">Back to portfolio ↗</a></nav>
 
@@ -25,17 +26,17 @@ export default function ComskiCaseStudyCV2(){
    <div className="cs-hero-bg"/>
    <div className="cs-hero-inner">
     <div className="cs-kicker"><span>02 / 04</span><span>AI · COMMUNICATION · PRODUCT DESIGN</span></div>
-    <div className="cs-hero-copy">
+    <CV2TextReveal className="cs-hero-copy">
      <p>COMSKI</p>
      <h1>Designing a communication coach that <em>starts with the learner.</em></h1>
      <div className="cs-hero-grid">
       <p>ComSki combines personalised onboarding with four communication skill checks — Reading, Listening, Writing and Speaking — and turns them into one continuous learning journey.</p>
       <div className="cs-meta"><div><small>ROLE</small><b>Product Designer</b></div><div><small>PRODUCT</small><b>AI communication coach</b></div><div><small>CORE EXPERIENCE</small><b>Personalisation + skill assessment</b></div><div><small>TOOLS</small><b>Figma · interaction design</b></div></div>
      </div>
-    </div>
+    </CV2TextReveal>
     <a className="cs-scroll" href="#s01"><span>EXPLORE THE CASE STUDY</span><ArrowDown size={15}/></a>
    </div>
-   <div className="cs-hero-visual cv2-hero-board">
+   <CV2ImageReveal className="cs-hero-visual cv2-hero-board">
     <div className="cv2-board-top"><span>COMSKI / PRODUCT MODEL</span><b>01—04</b></div>
     <div className="cv2-board-title"><small>THE LEARNER JOURNEY</small><strong>Context → Assessment → Practice → Progress</strong></div>
     <div className="cv2-board-flow">
@@ -48,9 +49,10 @@ export default function ComskiCaseStudyCV2(){
       <div><span>04</span><Mic2/><b>Speaking</b><small>Speak naturally</small></div>
     </div>
     <div className="cv2-board-foot"><span>PERSONALISED ONBOARDING</span><b>Goal · Time · Confidence · Interests</b></div>
-   </div>
+   </CV2ImageReveal>
   </header>
 
+  <CV2Reveal className="cs-intro">
   <section className="cs-intro"><div><span>THE PRODUCT</span><h2>Personalisation is not a feature on top of the product. <em>It is the entry point.</em></h2></div><p>The supplied ComSki screens show a deliberate sequence: establish who the learner is, understand what they want from communication, understand how much time they can give, establish confidence and interests, then move into a structured four-skill assessment journey.</p></section>
 
   <section className="cs-snapshot"><div className="cs-snapshot-head"><span>AT A GLANCE</span><p>The strongest product story is the relationship between onboarding, assessment and progression.</p></div><div className="cs-snapshot-grid"><div><small>ENTRY</small><b>Personalised onboarding</b><span>Context before content</span></div><div><small>ASSESSMENT</small><b>4 communication skills</b><span>Reading · Listening · Writing · Speaking</span></div><div><small>STRUCTURE</small><b>5-question skill checks</b><span>Consistent progression and completion states</span></div><div><small>HANDOFF</small><b>One skill leads to the next</b><span>Completion screens make the journey explicit</span></div></div></section>
