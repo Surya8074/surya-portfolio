@@ -35,16 +35,19 @@ export default function ComskiCaseStudyCV2(){
     </div>
     <a className="cs-scroll" href="#s01"><span>EXPLORE THE CASE STUDY</span><ArrowDown size={15}/></a>
    </div>
-   <div className="cs-hero-visual">
-    <div className="cs-hero-orbit o1"/><div className="cs-hero-orbit o2"/>
-    <div className="cs-skill-cluster">
-     <div className="skill-core"><Sparkles size={22}/><b>ComSki</b><span>Personal communication buddy</span></div>
-     <div className="skill-node n-reading"><BookOpen/><b>Reading</b><small>Read it like you mean it</small></div>
-     <div className="skill-node n-listening"><Headphones/><b>Listening</b><small>Listen carefully</small></div>
-     <div className="skill-node n-writing"><PenLine/><b>Writing</b><small>Express your thoughts</small></div>
-     <div className="skill-node n-speaking"><Mic2/><b>Speaking</b><small>Speak freely</small></div>
-     <div className="skill-line l1"/><div className="skill-line l2"/><div className="skill-line l3"/><div className="skill-line l4"/>
+   <div className="cs-hero-visual cv2-hero-board">
+    <div className="cv2-board-top"><span>COMSKI / PRODUCT MODEL</span><b>01—04</b></div>
+    <div className="cv2-board-title"><small>THE LEARNER JOURNEY</small><strong>Context → Assessment → Practice → Progress</strong></div>
+    <div className="cv2-board-flow">
+      <div><span>01</span><BookOpen/><b>Reading</b><small>Read aloud</small></div>
+      <i>→</i>
+      <div><span>02</span><Headphones/><b>Listening</b><small>Listen + respond</small></div>
+      <i>→</i>
+      <div><span>03</span><PenLine/><b>Writing</b><small>Compose</small></div>
+      <i>→</i>
+      <div><span>04</span><Mic2/><b>Speaking</b><small>Speak naturally</small></div>
     </div>
+    <div className="cv2-board-foot"><span>PERSONALISED ONBOARDING</span><b>Goal · Time · Confidence · Interests</b></div>
    </div>
   </header>
 
