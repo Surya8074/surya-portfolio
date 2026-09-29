@@ -87,125 +87,141 @@ export default function ComskiCaseStudyCV2(){
    </section>
   </CV2Reveal>
 
-  <CV2Reveal className="cv2-case-spine">
-   <section className="cv2-spine-section" id="cv2-context"><div className="cv2-spine-head"><SectionLabel num="01" label="CONTEXT"/><div><h2>Personalisation is the product's first interaction.</h2><p>ComSki starts by collecting learner context, then moves into a four-skill communication assessment.</p></div></div><div className="cv2-context-strip"><div><small>ROLE</small><b>Product Designer</b></div><div><small>PRODUCT</small><b>AI communication coach</b></div><div><small>CORE PROBLEM</small><b>Make practice relevant to the learner</b></div><div><small>DESIGN RESPONSE</small><b>Context → assessment → practice → progress</b></div></div></section>
-   <section className="cv2-spine-section" id="cv2-research"><div className="cv2-spine-head"><SectionLabel num="02" label="RESEARCH / EVIDENCE"/><div><h2>Use evidence without inventing research.</h2><p>The current source set contains product screens and onboarding content, but no interview transcripts, participant counts, survey data or research screenshots. This section separates observed product evidence from unsupported research claims.</p></div></div><div className="cv2-evidence-board"><div className="cv2-evidence-column"><span>OBSERVED IN SOURCE</span><b>Six context signals are collected before assessment.</b><ul><li>Vibe / tone</li><li>Communication goal</li><li>Discovery source</li><li>Available daily time</li><li>Confidence level</li><li>Interests / topics</li></ul></div><div className="cv2-evidence-column cv2-evidence-muted"><span>NOT CLAIMED</span><b>No fabricated research numbers.</b><ul><li>No fake participant count</li><li>No invented quotes</li><li>No synthetic survey percentages</li><li>No unsupported outcome metrics</li></ul></div><div className="cv2-evidence-source"><ActualScreen src="/surya-portfolio/comski/home.webp" alt="ComSki source home screen" label="SOURCE EVIDENCE" detail="Learner-facing product surface" variant="large"/></div></div></section>
-   <section className="cv2-spine-section" id="cv2-market"><div className="cv2-spine-head"><SectionLabel num="03" label="MARKET / COMPETITIVE RESEARCH"/><div><h2>Keep the competitive story evidence-led.</h2><p>No competitor research dataset is present in the supplied ComSki source material. Instead of fabricating a comparison matrix, the opportunity is framed from the documented product model.</p></div></div><div className="cv2-opportunity-map"><div className="cv2-axis"><span>PERSONALISED CONTEXT</span><span>GENERIC PRACTICE</span></div><div className="cv2-opportunity-grid"><div><b>01</b><strong>Context before content</strong><small>Documented in onboarding</small></div><div><b>02</b><strong>Four communication modes</strong><small>Reading · Listening · Writing · Speaking</small></div><div><b>03</b><strong>One continuous assessment</strong><small>Shared progression grammar</small></div><div><b>04</b><strong>Visible handoffs</strong><small>Completion points to the next skill</small></div></div><div className="cv2-opportunity-foot"><span>OPPORTUNITY HYPOTHESIS</span><b>Make personal context persist into the learning journey rather than disappear after onboarding.</b></div></div></section>
-   <section className="cv2-spine-section" id="cv2-journey"><div className="cv2-spine-head"><SectionLabel num="04" label="USER JOURNEY"/><div><h2>From “who am I?” to “what do I do next?”</h2><p>This is the product journey visible in the supplied screens — not a fabricated user-research journey.</p></div></div><div className="cv2-journey-map"><div className="cv2-journey-row cv2-journey-header"><span>STAGE</span><span>ACTION</span><span>DESIGN TENSION</span><span>OPPORTUNITY</span></div><div className="cv2-journey-row"><b>01 · Context</b><span>Answer onboarding questions</span><span>Setup can feel like friction</span><strong>Make questions expressive and lightweight</strong></div><div className="cv2-journey-row"><b>02 · Orientation</b><span>Understand the assessment</span><span>Testing can feel judgemental</span><strong>Frame assessment as understanding</strong></div><div className="cv2-journey-row"><b>03 · Skill check</b><span>Read, listen, write or speak</span><span>Modalities change</span><strong>Keep the interaction grammar stable</strong></div><div className="cv2-journey-row"><b>04 · Completion</b><span>Finish / retry</span><span>Stopping creates uncertainty</span><strong>Make the next skill explicit</strong></div><div className="cv2-journey-row"><b>05 · Progression</b><span>Move into the next skill</span><span>Four tests could feel disconnected</span><strong>Connect them as one journey</strong></div></div></section>
-   <section className="cv2-spine-section" id="cv2-architecture"><div className="cv2-spine-head"><SectionLabel num="05" label="PRODUCT ARCHITECTURE"/><div><h2>The interface is only one layer of the system.</h2><p>The architecture below maps the product logic visible in the screens without pretending to describe backend implementation.</p></div></div><div className="cv2-architecture-map"><div className="cv2-arch-band"><small>CONTEXT LAYER</small><b>Vibe · Goal · Time · Confidence · Interests</b></div><div className="cv2-arch-connector">↓</div><div className="cv2-arch-band active"><small>ASSESSMENT ORCHESTRATION</small><b>Prepare → Skill check → Question progression → Completion</b></div><div className="cv2-arch-connector">↓</div><div className="cv2-arch-modules"><div><BookOpen/><b>Reading</b><small>Text → voice → comprehension</small></div><div><Headphones/><b>Listening</b><small>Audio → comprehension</small></div><div><PenLine/><b>Writing</b><small>Prompt → written response</small></div><div><Mic2/><b>Speaking</b><small>Prompt → spoken response</small></div></div><div className="cv2-arch-connector">↓</div><div className="cv2-arch-band"><small>PROGRESSION</small><b>Complete · Retry · Continue to next skill</b></div></div></section>
-   <section className="cv2-spine-section" id="cv2-framing"><div className="cv2-spine-head"><SectionLabel num="06" label="PROBLEM → DECISION"/><div><h2>Turn the evidence into one clear design direction.</h2></div></div><div className="cv2-framing-chain"><div><span>PROBLEM</span><b>Communication practice risks feeling generic.</b></div><i>→</i><div><span>EVIDENCE</span><b>Onboarding captures goal, time, confidence and interests.</b></div><i>→</i><div><span>INSIGHT</span><b>Context can become the learner model.</b></div><i>→</i><div><span>OPPORTUNITY</span><b>Carry context into assessment and progression.</b></div><i>→</i><div><span>DECISION</span><b>Build one continuous personalised journey.</b></div></div></section>
-   <section className="cv2-spine-section" id="cv2-decisions"><div className="cv2-spine-head"><SectionLabel num="07" label="DESIGN DECISIONS"/><div><h2>Show the trade-off, not just the final answer.</h2></div></div><div className="cv2-decision-ledger"><div className="cv2-decision-row"><span>01</span><div><small>DECISION</small><b>Context-first onboarding</b></div><div><small>ALTERNATIVE</small><b>Generic account setup</b></div><div><small>TRADE-OFF</small><b>More setup, but richer learner context</b></div><div><small>WHY</small><b>Personalisation is established before assessment.</b></div></div><div className="cv2-decision-row"><span>02</span><div><small>DECISION</small><b>Shared assessment grammar</b></div><div><small>ALTERNATIVE</small><b>Four independent test patterns</b></div><div><small>TRADE-OFF</small><b>Less novelty, more predictability</b></div><div><small>WHY</small><b>The modality changes without resetting the mental model.</b></div></div><div className="cv2-decision-row"><span>03</span><div><small>DECISION</small><b>Directional completion</b></div><div><small>ALTERNATIVE</small><b>Neutral skill finish</b></div><div><small>TRADE-OFF</small><b>More opinionated navigation</b></div><div><small>WHY</small><b>The next skill becomes part of the journey.</b></div></div></div></section>
-   <section className="cv2-spine-section" id="cv2-exploration"><div className="cv2-spine-head"><SectionLabel num="08" label="EXPLORATION / ITERATION"/><div><h2>Do not manufacture exploration artifacts.</h2><p>The supplied source set currently contains final product screens, not dated wireframes or alternative concepts. CV2 intentionally does not invent them.</p></div></div><div className="cv2-exploration-note"><div><span>AVAILABLE</span><b>Final product surfaces</b><small>Home · Journey · Practice · Feedback · Record</small></div><div><span>MISSING FROM SOURCE SET</span><b>Earlier wireframes / alternatives</b><small>Add the real iterations here if you provide them; the visual structure is ready without fabricating evidence.</small></div><ActualScreen src="/surya-portfolio/comski/practice.webp" alt="ComSki source practice screen" label="CURRENT DIRECTION" detail="Real product screen" variant="large"/></div></section>
-  </CV2Reveal>
-
+  
   <article className="cs-layout">
-   <aside className="cs-chapters"><a href="#cv2-context">01 <b>CONTEXT</b></a><a href="#cv2-research">02 <b>EVIDENCE</b></a><a href="#cv2-market">03 <b>OPPORTUNITY</b></a><a href="#cv2-journey">04 <b>JOURNEY</b></a><a href="#cv2-architecture">05 <b>ARCHITECTURE</b></a><a href="#cv2-framing">06 <b>FRAMING</b></a><a href="#cv2-decisions">07 <b>DECISIONS</b></a><a href="#cv2-exploration">08 <b>EXPLORATION</b></a><a href="#s04">09 <b>INTERACTION</b></a><a href="#s06">10 <b>PROGRESSION</b></a><a href="#s07">11 <b>OUTCOME</b></a></aside>
+   <aside className="cs-chapters">
+    <a href="#context">01 <b>CONTEXT</b></a>
+    <a href="#evidence">02 <b>EVIDENCE</b></a>
+    <a href="#journey">03 <b>JOURNEY</b></a>
+    <a href="#architecture">04 <b>ARCHITECTURE</b></a>
+    <a href="#decisions">05 <b>DECISIONS</b></a>
+    <a href="#interaction">06 <b>INTERACTION</b></a>
+    <a href="#product">07 <b>FINAL PRODUCT</b></a>
+    <a href="#reflection">08 <b>REFLECTION</b></a>
+   </aside>
    <div className="cs-content">
-    <section id="s01" className="cs-section">
-     <SectionLabel num="01" label="PRODUCT PREMISE"/>
-     <h2>The core design problem was not “how do we teach English?” <em>It was how do we make practice feel relevant to one person?</em></h2>
-     <div className="cs-two"><p>ComSki introduces itself as a “personal communication buddy”. That framing matters: the first interaction is not a lesson, score or dashboard. It is a conversation about the learner.</p><p>The screens then move from personal context into a structured assessment. This creates a product narrative where the system first gathers context and then asks the learner to demonstrate communication across multiple modes.</p></div>
-     <div className="cs-principle"><b>DESIGN PRINCIPLE</b><strong>Build the learner model first. <em>Then build the learning journey around it.</em></strong></div>
+
+    <section id="context" className="cs-section">
+     <SectionLabel num="01" label="CONTEXT"/>
+     <h2>Personalisation is not a feature added later. <em>It is ComSki's first interaction.</em></h2>
+     <div className="cv2-context-strip">
+      <div><small>ROLE</small><b>Product Designer</b></div>
+      <div><small>PRODUCT</small><b>AI communication coach</b></div>
+      <div><small>DESIGN FOCUS</small><b>Personalised onboarding + assessment</b></div>
+      <div><small>CORE MODEL</small><b>Context → assessment → practice → progress</b></div>
+     </div>
+     <div className="cs-two" style={{marginTop:48}}>
+      <p>ComSki is designed around four communication skills: <strong>Reading, Listening, Writing and Speaking.</strong> The important product decision is what happens before those skills begin: the learner provides context that can shape the journey.</p>
+      <p>The case study therefore follows one question: <strong>how can personal context become a continuous product experience rather than disappear after onboarding?</strong></p>
+     </div>
     </section>
 
-    <section id="s02" className="cs-section">
-     <SectionLabel num="02" label="PERSONALISED ONBOARDING"/>
-     <h2>Six onboarding moments create a <em>learner context layer.</em></h2>
-     <p className="cs-lead">The supplied Figma exports show onboarding as a sequence of contextual questions rather than a generic sign-up form. Each screen asks for a different signal about the person entering ComSki.</p>
-     <div className="cv2-onboarding-evidence">
-      <div className="cv2-onboarding-copy"><span>SCREEN EVIDENCE</span><h3>Personalisation continues into the product surface.</h3><p>The source screens below are kept intact. They are presented as product evidence rather than recreated UI.</p></div>
-      <div className="cv2-onboarding-screens">
-       <ActualScreen src="/surya-portfolio/comski/home.webp" alt="ComSki source home screen" label="SOURCE SCREEN" detail="Home / learner context" variant="large"/>
-       <ActualScreen src="/surya-portfolio/comski/journey.webp" alt="ComSki source journey screen" label="SOURCE SCREEN" detail="Journey / progression"/>
+    <section id="evidence" className="cs-section">
+     <SectionLabel num="02" label="EVIDENCE"/>
+     <h2>Show the product before explaining the system.</h2>
+     <ScreenFlow/>
+     <div className="cv2-evidence-board" style={{marginTop:56}}>
+      <div className="cv2-evidence-column">
+       <span>OBSERVED IN THE SOURCE SCREENS</span>
+       <b>Onboarding captures learner context before assessment.</b>
+       <ul><li>Vibe / tone</li><li>Communication goal</li><li>Discovery source</li><li>Available daily time</li><li>Confidence</li><li>Interests / topics</li></ul>
       </div>
-     </div>
-     <div className="cs-input-grid">
-      <article><UserRound/><small>01 · VIBE</small><h3>“Pick the vibe that feels most like you today.”</h3><p>ComSki opens with an expressive, character-led choice. The selected avatar becomes a lightweight way to establish identity and tone before more functional questions begin.</p></article>
-      <article><Target/><small>02 · GOAL</small><h3>“What’s your big goal for English & communication skills?”</h3><p>The goal options include interviews, speaking confidence, professional communication, becoming an influencer, expressing ideas more fluently and communicating with AI.</p></article>
-      <article><Compass/><small>03 · DISCOVERY</small><h3>“How did you discover me?”</h3><p>Friend recommendation, social media, college community and self-discovery are represented as explicit acquisition contexts in the source screens.</p></article>
-      <article><Clock3/><small>04 · TIME</small><h3>“How much time can you give me every day?”</h3><p>The learner chooses between 10 minutes, 20 minutes, 1 hour or a flexible routine. The product acknowledges that consistency has to fit the learner’s real schedule.</p></article>
-      <article><SlidersHorizontal/><small>05 · CONFIDENCE</small><h3>“How confident are you in your communication right now?”</h3><p>The source provides Beginner, Intermediate, Advanced and Professional states before the learner selects “Personalise my journey”.</p></article>
-      <article><Sparkles/><small>06 · INTERESTS</small><h3>“What topics or activities do you enjoy exploring?”</h3><p>Technology, travel, gaming, career and skills, music and movies, fitness and other interests are surfaced as content context.</p></article>
-     </div>
-     <div className="cs-anatomy-note"><b>WHY THIS MATTERS</b><span>These inputs create a richer starting state than proficiency alone: the product learns the learner’s <em>goal, availability, confidence, personality and interests</em> before the skill checks begin.</span></div>
-    </section>
-
-    <section id="s03" className="cs-section">
-     <SectionLabel num="03" label="ASSESSMENT MODEL"/>
-     <h2>The assessment is framed as <em>understanding, not judgement.</em></h2>
-     <div className="cs-assessment">
-      <div className="assessment-copy"><span>ASSESSMENT INTRO</span><h3>“This test helps ComSki understand your unique communication style — not to judge you, but to build a personalized roadmap just for you.”</h3><p>The source screens also ask learners to find a calm spot and confirm that their mic and speakers are working. That preparation is part of the experience, because several skill checks depend on listening and spoken interaction.</p></div>
-      <div className="assessment-steps"><div><b>01</b><span>Prepare environment</span><small>Calm spot · mic · speakers</small></div><div><b>02</b><span>Run skill check</span><small>Five questions per skill</small></div><div><b>03</b><span>Complete or retry</span><small>Explicit completion state</small></div><div><b>04</b><span>Continue journey</span><small>Next assessment is surfaced</small></div></div>
-     </div>
-     <div className="cs-five"><span>SHARED ASSESSMENT GRAMMAR</span><div><b>01</b><span>Orientation</span></div><div><b>02</b><span>Task</span></div><div><b>03</b><span>Question progression</span></div><div><b>04</b><span>Completion</span></div><div><b>05</b><span>Next skill</span></div></div>
-    </section>
-
-    <section id="s04" className="cs-section">
-     <SectionLabel num="04" label="FOUR SKILLS"/>
-     <h2>Four different cognitive tasks.<br/><em>One consistent product grammar.</em></h2>
-     <div className="cs-skill-grid">
-      <article className="skill-reading"><BookOpen/><small>01 · READING</small><h3>Read It Like You Mean It</h3><p>The learner reads a passage aloud, then works through comprehension questions. The source copy explicitly asks the learner to focus on clarity, flow and expression.</p><Pill>Voice + comprehension</Pill></article>
-      <article className="skill-listening"><Headphones/><small>02 · LISTENING</small><h3>Listen Carefully</h3><p>A short audio clip can be a story, daily situation or informative message. The learner listens, then answers a quick question about what they heard.</p><Pill>Audio + comprehension</Pill></article>
-      <article className="skill-writing"><PenLine/><small>03 · WRITING</small><h3>Express Your Thoughts Freely</h3><p>A short question or situation creates the writing task. The learner responds in their own words, with the interface keeping the writing surface central.</p><Pill>Written expression</Pill></article>
-      <article className="skill-speaking"><Mic2/><small>04 · SPEAKING</small><h3>Speak Freely, Be Yourself</h3><p>A short question or topic gives the learner something concrete to talk about. The instruction explicitly encourages natural voice rather than perfection.</p><Pill>Spoken expression</Pill></article>
-     </div>
-     <div className="cs-skill-matrix"><div><b>SKILL</b><span>INPUT</span><span>PRIMARY TASK</span><span>OUTPUT</span></div><div><b>Reading</b><span>Text</span><span>Read aloud + answer</span><span>Comprehension / expression</span></div><div><b>Listening</b><span>Audio</span><span>Listen + answer</span><span>Comprehension</span></div><div><b>Writing</b><span>Text / scenario</span><span>Compose response</span><span>Written expression</span></div><div><b>Speaking</b><span>Prompt</span><span>Speak naturally</span><span>Spoken expression</span></div></div>
-    </section>
-
-    <section className="cs-deep">
-      <div className="deep-intro"><span>DEEP DIVE</span><h2>Same shell.<br/><em>Different behaviour.</em></h2><p>The strength of the system is not that every skill looks identical. It is that the learner can recognise the structure while the task changes.</p></div>
-      <div className="deep-card"><ScreenAnatomy type="reading"/><div><span>01 / READING</span><h3>Reading turns the interface into a guided performance.</h3><p>The passage is the primary visual object. The instruction establishes the expected behaviour — read aloud with natural voice, with emphasis on clarity, flow and expression. The question layer then changes the mode from performance to comprehension.</p><ul><li><b>Task framing:</b> clear instruction before the passage.</li><li><b>Progression:</b> Question 1/5 through Question 5/5.</li><li><b>Completion:</b> “Continue to Listening Assessment” makes the next step explicit.</li></ul></div></div>
-      <div className="deep-card reverse"><div><span>02 / LISTENING</span><h3>Listening separates input from response.</h3><p>The learner first receives information through audio. The interface then asks for a quick answer, creating a simple input → comprehension → response loop.</p><ul><li><b>Input:</b> short audio clip.</li><li><b>Context:</b> story, daily situation or informative message.</li><li><b>Navigation:</b> play, answer, skip or continue.</li></ul></div><ScreenAnatomy type="listening"/></div>
-      <div className="deep-card"><ScreenAnatomy type="writing"/><div><span>03 / WRITING</span><h3>Writing gives the learner room to construct the answer.</h3><p>Instead of forcing the learner into predefined choices, the writing task creates a scenario and leaves the response surface open. That changes the interaction from recognition to expression.</p><ul><li><b>Prompt:</b> a short question or situation.</li><li><b>Response:</b> learner-generated text.</li><li><b>Feedback opportunity:</b> the written answer becomes an artefact that can be evaluated and revisited.</li></ul></div></div>
-      <div className="cv2-skill-evidence">
-       <div><span>REAL PRODUCT SCREENS</span><h3>One product, multiple interaction modes.</h3><p>Use the source screens to anchor the skill-system story. The visual treatment changes with the role of the evidence.</p></div>
-       <div className="cv2-skill-evidence-grid">
-        <ActualScreen src="/surya-portfolio/comski/practice.webp" alt="ComSki source practice screen" label="PRACTICE" detail="Interaction surface" variant="large"/>
-        <ActualScreen src="/surya-portfolio/comski/feedback.webp" alt="ComSki source feedback screen" label="FEEDBACK" detail="Response state"/>
-        <ActualScreen src="/surya-portfolio/comski/record.webp" alt="ComSki source recording screen" label="RECORD" detail="Voice interaction"/>
-       </div>
+      <div className="cv2-evidence-column cv2-evidence-muted">
+       <span>EVIDENCE BOUNDARY</span>
+       <b>What is not claimed.</b>
+       <ul><li>No invented participant counts</li><li>No fabricated quotes</li><li>No synthetic survey percentages</li><li>No unsupported business metrics</li></ul>
       </div>
-      <div className="deep-card reverse"><div><span>04 / SPEAKING</span><h3>Speaking is framed around expression, not perfection.</h3><p>The prompt examples ask the learner to talk about emotions, experiences and places. The copy explicitly says to use a natural voice and not worry about perfection — a small but important interaction decision for a communication product.</p><ul><li><b>Prompt:</b> question or topic.</li><li><b>Context:</b> personal experience and imagined situations.</li><li><b>Behaviour:</b> speak naturally, then progress.</li></ul></div><ScreenAnatomy type="speaking"/></div>
-    </section>
-
-    <section id="s05" className="cs-section">
-     <SectionLabel num="05" label="INTERACTION SYSTEM"/>
-     <h2>The system keeps the <em>mental model stable</em> while the communication mode changes.</h2>
-     <div className="cs-system-architecture">
-      <div className="arch-core"><Sparkles/><small>COMSKI CORE</small><h3>Understand → Practice → Respond → Progress</h3><p>Every skill sits inside the same broader journey. The learner does not need to relearn navigation every time the input modality changes.</p></div>
-      <div className="arch-rows"><div><b>ORIENTATION</b><span>What am I about to do?</span></div><div><b>TASK</b><span>What do I need to say, hear, read or write?</span></div><div><b>PROGRESS</b><span>Where am I inside the five-question check?</span></div><div><b>COMPLETION</b><span>What did I finish, and what happens next?</span></div></div>
-     </div>
-     <div className="cs-decision-grid">
-      <article><span>DECISION 01</span><h3>Keep the skill navigation visible.</h3><p>The four test categories remain recognisable across the source screens, helping learners understand where they are in the broader assessment.</p></article>
-      <article><span>DECISION 02</span><h3>Use the same progress language.</h3><p>Question counts such as 1/5 and 5/5 establish a predictable rhythm across skill types.</p></article>
-      <article><span>DECISION 03</span><h3>Make completion directional.</h3><p>Completion states do more than celebrate. They point toward the next assessment and provide a retry path.</p></article>
+      <div className="cv2-evidence-source"><ActualScreen src="/surya-portfolio/comski/journey.webp" alt="ComSki journey screen" label="PRODUCT EVIDENCE" detail="The learner's progression surface" variant="large"/></div>
      </div>
     </section>
 
-    <section id="s06" className="cs-section">
-     <SectionLabel num="06" label="PROGRESSION"/>
-     <h2>The real product architecture appears in the <em>handoffs.</em></h2>
-     <p className="cs-lead">The completion screens reveal a deliberate sequence: finishing one skill immediately exposes the next skill assessment. This makes the four modules behave like a journey rather than a library of disconnected tests.</p>
-     <div className="cs-journey"><div className="journey-node"><BookOpen/><b>Reading</b><small>Skill check</small></div><i>→</i><div className="journey-node"><Headphones/><b>Listening</b><small>Skill check</small></div><i>→</i><div className="journey-node"><PenLine/><b>Writing</b><small>Skill check</small></div><i>→</i><div className="journey-node"><Mic2/><b>Speaking</b><small>Skill check</small></div></div>
-     <div className="cv2-final-showcase">
-       <div><span>FINAL PRODUCT / SOURCE SCREENS</span><h3>The visual proof should carry the explanation.</h3><p>A final, larger presentation brings the actual product surfaces back together after the reasoning has been explained.</p></div>
-       <div className="cv2-final-grid">
-        <ActualScreen src="/surya-portfolio/comski/journey.webp" alt="ComSki journey source screen" label="JOURNEY" detail="Progression" variant="large"/>
-        <ActualScreen src="/surya-portfolio/comski/practice.webp" alt="ComSki practice source screen" label="PRACTICE" detail="Task interaction"/>
-        <ActualScreen src="/surya-portfolio/comski/feedback.webp" alt="ComSki feedback source screen" label="FEEDBACK" detail="Response state"/>
-       </div>
+    <section id="journey" className="cs-section">
+     <SectionLabel num="03" label="USER JOURNEY"/>
+     <h2>From “who am I?” to “what do I do next?”</h2>
+     <p className="cs-lead">This map describes the journey visible in the supplied product screens, not a fabricated research journey.</p>
+     <div className="cv2-journey-map">
+      <div className="cv2-journey-row cv2-journey-header"><span>STAGE</span><span>ACTION</span><span>DESIGN TENSION</span><span>OPPORTUNITY</span></div>
+      <div className="cv2-journey-row"><b>01 · Context</b><span>Answer onboarding questions</span><span>Setup can add friction</span><strong>Make setup expressive and lightweight</strong></div>
+      <div className="cv2-journey-row"><b>02 · Orientation</b><span>Understand the assessment</span><span>Testing can feel judgemental</span><strong>Frame assessment as understanding</strong></div>
+      <div className="cv2-journey-row"><b>03 · Skill check</b><span>Read, listen, write or speak</span><span>Modalities change</span><strong>Keep the interaction grammar stable</strong></div>
+      <div className="cv2-journey-row"><b>04 · Completion</b><span>Finish or retry</span><span>A stopping point creates uncertainty</span><strong>Make the next action explicit</strong></div>
+      <div className="cv2-journey-row"><b>05 · Progression</b><span>Move to the next skill</span><span>Four tests could feel disconnected</span><strong>Connect them as one journey</strong></div>
      </div>
-     <div className="cs-completion"><ScreenAnatomy type="completion"/><div><span>DESIGN PATTERN</span><h3>Celebrate the current state, then remove the question “what now?”</h3><p>The source completion screens use three useful elements together: recognition of completion, a forward path and a retry option. That is a small interaction pattern with a large effect on continuity.</p><div className="completion-points"><b><Check/> Completion is acknowledged</b><b><ArrowRight/> Next skill is surfaced</b><b><Route/> Retry remains available</b></div></div></div>
     </section>
 
-    <section id="s07" className="cs-section">
-     <SectionLabel num="07" label="OUTCOME & REFLECTION"/>
-     <h2>The strongest outcome is a product that makes <em>personalisation visible in the journey.</em></h2>
-     <div className="cs-outcome-grid"><article><Target/><b>PERSONALISATION</b><h3>Context is collected before practice.</h3><p>Goal, confidence, available time, interests and personal tone are established before the assessment experience begins.</p></article><article><Route/><b>STRUCTURE</b><h3>Four modalities share one journey.</h3><p>Reading, Listening, Writing and Speaking are distinct tasks, but the assessment grammar and progression model remain familiar.</p></article><article><Sparkles/><b>CONTINUITY</b><h3>Completion leads somewhere.</h3><p>The handoff from one skill to the next turns isolated exercises into a coherent assessment sequence.</p></article></div>
-     <div className="cs-reflection"><span>DESIGN REFLECTION</span><p>ComSki pushed the work beyond designing individual screens. The more important design problem was connecting the screens into a system: <em>who the learner is → why they are here → what they practise → how each skill progresses → what they do next.</em></p></div>
+    <section id="architecture" className="cs-section">
+     <SectionLabel num="04" label="PRODUCT ARCHITECTURE"/>
+     <h2>The screens are different. <em>The underlying interaction grammar stays familiar.</em></h2>
+     <div className="cv2-architecture-map">
+      <div className="cv2-arch-band"><small>LEARNER CONTEXT</small><b>Vibe · Goal · Time · Confidence · Interests</b></div>
+      <div className="cv2-arch-connector">↓</div>
+      <div className="cv2-arch-band active"><small>ASSESSMENT ORCHESTRATION</small><b>Prepare → Skill check → Question progression → Completion</b></div>
+      <div className="cv2-arch-connector">↓</div>
+      <div className="cv2-arch-modules">
+       <div><BookOpen/><b>Reading</b><small>Read → understand → respond</small></div>
+       <div><Headphones/><b>Listening</b><small>Listen → understand → respond</small></div>
+       <div><PenLine/><b>Writing</b><small>Prompt → compose → submit</small></div>
+       <div><Mic2/><b>Speaking</b><small>Prompt → speak → continue</small></div>
+      </div>
+      <div className="cv2-arch-connector">↓</div>
+      <div className="cv2-arch-band"><small>PROGRESSION</small><b>Complete · Retry · Continue to next skill</b></div>
+     </div>
+    </section>
+
+    <section id="decisions" className="cs-section">
+     <SectionLabel num="05" label="DESIGN DECISIONS"/>
+     <h2>Make the reasoning visible, not just the polished interface.</h2>
+     <div className="cv2-decision-ledger">
+      <div className="cv2-decision-row"><span>01</span><div><small>DECISION</small><b>Context-first onboarding</b></div><div><small>ALTERNATIVE</small><b>Generic account setup</b></div><div><small>TRADE-OFF</small><b>More setup, richer learner context</b></div><div><small>WHY</small><b>Personalisation begins before assessment.</b></div></div>
+      <div className="cv2-decision-row"><span>02</span><div><small>DECISION</small><b>Shared assessment grammar</b></div><div><small>ALTERNATIVE</small><b>Four independent test patterns</b></div><div><small>TRADE-OFF</small><b>Less novelty, more predictability</b></div><div><small>WHY</small><b>Only the modality changes; the mental model remains stable.</b></div></div>
+      <div className="cv2-decision-row"><span>03</span><div><small>DECISION</small><b>Directional completion</b></div><div><small>ALTERNATIVE</small><b>Neutral skill finish</b></div><div><small>TRADE-OFF</small><b>More opinionated navigation</b></div><div><small>WHY</small><b>The next skill becomes part of the experience.</b></div></div>
+     </div>
+    </section>
+
+    <section id="interaction" className="cs-section">
+     <SectionLabel num="06" label="INTERACTION DESIGN"/>
+     <h2>Four skills. One interaction language.</h2>
+     <div className="cs-grid-4">
+      <ScreenAnatomy type="reading"/><ScreenAnatomy type="listening"/><ScreenAnatomy type="writing"/><ScreenAnatomy type="speaking"/>
+     </div>
+     <div className="cv2-framing-chain" style={{marginTop:56}}>
+      <div><span>READING</span><b>Text-led comprehension</b></div><i>→</i>
+      <div><span>LISTENING</span><b>Audio-led comprehension</b></div><i>→</i>
+      <div><span>WRITING</span><b>Prompt-led expression</b></div><i>→</i>
+      <div><span>SPEAKING</span><b>Voice-led expression</b></div>
+     </div>
+    </section>
+
+    <section id="product" className="cs-section">
+     <SectionLabel num="07" label="FINAL PRODUCT"/>
+     <h2>Show the system at different scales.</h2>
+     <ActualScreen src="/surya-portfolio/comski/home.webp" alt="ComSki home screen" label="HOME" detail="Learner context" variant="large"/>
+     <div className="cv2-screen-flow" style={{marginTop:48}}>
+      <ActualScreen src="/surya-portfolio/comski/journey.webp" alt="ComSki journey screen" label="JOURNEY" detail="Progression"/>
+      <i><ArrowRight/></i>
+      <ActualScreen src="/surya-portfolio/comski/practice.webp" alt="ComSki practice screen" label="PRACTICE" detail="Task interaction"/>
+      <i><ArrowRight/></i>
+      <ActualScreen src="/surya-portfolio/comski/feedback.webp" alt="ComSki feedback screen" label="FEEDBACK" detail="Response / assessment"/>
+     </div>
+     <div className="cv2-exploration-note" style={{marginTop:48}}>
+      <div><span>REAL SOURCE</span><b>Final product surfaces</b><small>Home · Journey · Practice · Feedback · Record</small></div>
+      <div><span>NOT FABRICATED</span><b>Missing exploration artifacts</b><small>The supplied source set does not contain dated wireframes or alternative concepts, so they are not invented here.</small></div>
+      <ActualScreen src="/surya-portfolio/comski/record.webp" alt="ComSki record screen" label="RECORD" detail="Real product screen" variant="large"/>
+     </div>
+    </section>
+
+    <section id="reflection" className="cs-section">
+     <SectionLabel num="08" label="OUTCOME / REFLECTION"/>
+     <h2>The design establishes a continuous model: <em>who the learner is → what they practise → how they progress.</em></h2>
+     <div className="cs-grid-3">
+      <article><Target/><b>PERSONALISATION</b><h3>Context enters before assessment.</h3><p>The onboarding model gives the product learner-specific inputs before the four-skill journey begins.</p></article>
+      <article><Route/><b>STRUCTURE</b><h3>Four modalities share one journey.</h3><p>Reading, Listening, Writing and Speaking remain distinct while using a consistent progression model.</p></article>
+      <article><Sparkles/><b>CONTINUITY</b><h3>Completion leads somewhere.</h3><p>The handoffs connect individual skill checks into a coherent sequence.</p></article>
+     </div>
+     <div className="cs-reflection"><span>DESIGN REFLECTION</span><p>The strongest design move is not a single screen. It is the system connecting <em>personal context → assessment → practice → progression</em> without making the learner relearn the interface at every step.</p></div>
     </section>
    </div>
   </article>
-  <footer className="cs-footer"><span>COMSKI / CASE STUDY</span><h2>Designing the journey from <em>personal context to communication confidence.</em></h2><a href="/surya-portfolio/">Back to portfolio <ArrowRight size={17}/></a></footer>
+<footer className="cs-footer"><span>COMSKI / CASE STUDY</span><h2>Designing the journey from <em>personal context to communication confidence.</em></h2><a href="/surya-portfolio/">Back to portfolio <ArrowRight size={17}/></a></footer>
  </main></CV2PageTransition>
 }
