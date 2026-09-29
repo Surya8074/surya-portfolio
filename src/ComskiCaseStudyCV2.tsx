@@ -57,6 +57,22 @@ export default function ComskiCaseStudyCV2(){
 
   <section className="cs-snapshot"><div className="cs-snapshot-head"><span>AT A GLANCE</span><p>The strongest product story is the relationship between onboarding, assessment and progression.</p></div><div className="cs-snapshot-grid"><div><small>ENTRY</small><b>Personalised onboarding</b><span>Context before content</span></div><div><small>ASSESSMENT</small><b>4 communication skills</b><span>Reading · Listening · Writing · Speaking</span></div><div><small>STRUCTURE</small><b>5-question skill checks</b><span>Consistent progression and completion states</span></div><div><small>HANDOFF</small><b>One skill leads to the next</b><span>Completion screens make the journey explicit</span></div></div></section>
 
+  <CV2Reveal className="cv2-evidence-wrap">
+  <section className="cv2-evidence" aria-labelledby="evidence-title">
+   <div className="cv2-evidence-head">
+    <div><span>PRODUCT EVIDENCE</span><h2 id="evidence-title">Show the product before explaining the system.</h2></div>
+    <p>Selected source screens establish the visual language of ComSki: a learner-facing home, journey, practice and feedback experience.</p>
+   </div>
+   <div className="cv2-evidence-grid">
+    <figure className="cv2-evidence-main"><img src="/surya-portfolio/comski/home.webp" alt="ComSki learner home screen" /><figcaption><b>01</b><span>Home · learner context</span></figcaption></figure>
+    <div className="cv2-evidence-side">
+      <figure><img src="/surya-portfolio/comski/journey.webp" alt="ComSki learning journey screen" /><figcaption><b>02</b><span>Journey · progression</span></figcaption></figure>
+      <figure><img src="/surya-portfolio/comski/practice.webp" alt="ComSki practice screen" /><figcaption><b>03</b><span>Practice · task interaction</span></figcaption></figure>
+    </div>
+   </div>
+  </section>
+  </CV2Reveal>
+
   <article className="cs-layout">
    <aside className="cs-chapters"><a href="#s01">01 <b>PRODUCT PREMISE</b></a><a href="#s02">02 <b>PERSONALISATION</b></a><a href="#s03">03 <b>ASSESSMENT MODEL</b></a><a href="#s04">04 <b>FOUR SKILLS</b></a><a href="#s05">05 <b>INTERACTION SYSTEM</b></a><a href="#s06">06 <b>PROGRESSION</b></a><a href="#s07">07 <b>REFLECTION</b></a></aside>
 
