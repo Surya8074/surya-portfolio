@@ -1,0 +1,93 @@
+/* CV2 Design System — foundational tokens only. Visual sections consume these tokens later. */
+:root {
+  --cv2-color-bg: #f7f7f4;
+  --cv2-color-bg-subtle: #f0f1ee;
+  --cv2-color-surface: #ffffff;
+  --cv2-color-surface-raised: #fbfbf9;
+  --cv2-color-text: #15171a;
+  --cv2-color-text-secondary: #5f6469;
+  --cv2-color-text-muted: #858a8f;
+  --cv2-color-border: #d8d9d6;
+  --cv2-color-border-strong: #bfc2bf;
+  --cv2-color-accent: #2169d1;
+  --cv2-color-accent-hover: #1556b4;
+  --cv2-color-accent-soft: #e9f0fb;
+  --cv2-color-highlight: #f2ead6;
+
+  --cv2-font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --cv2-font-mono: "DM Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --cv2-type-display-size: clamp(3.5rem, 6.8vw, 5.875rem);
+  --cv2-type-display-leading: 0.92;
+  --cv2-type-display-tracking: -0.065em;
+  --cv2-type-h1-size: clamp(2.75rem, 5vw, 4.5rem);
+  --cv2-type-h1-leading: 0.96;
+  --cv2-type-h1-tracking: -0.055em;
+  --cv2-type-h2-size: clamp(2.25rem, 4vw, 3.75rem);
+  --cv2-type-h2-leading: 0.98;
+  --cv2-type-h2-tracking: -0.05em;
+  --cv2-type-h3-size: clamp(1.25rem, 2vw, 1.75rem);
+  --cv2-type-h3-leading: 1.08;
+  --cv2-type-body-size: 1rem;
+  --cv2-type-body-leading: 1.7;
+  --cv2-type-small-size: 0.8125rem;
+  --cv2-type-small-leading: 1.55;
+  --cv2-type-label-size: 0.5625rem;
+  --cv2-type-label-leading: 1.2;
+  --cv2-type-label-tracking: 0.12em;
+  --cv2-type-caption-size: 0.6875rem;
+  --cv2-type-caption-leading: 1.45;
+
+  --cv2-space-1: 0.25rem;
+  --cv2-space-2: 0.5rem;
+  --cv2-space-3: 0.75rem;
+  --cv2-space-4: 1rem;
+  --cv2-space-5: 1.5rem;
+  --cv2-space-6: 2rem;
+  --cv2-space-7: 3rem;
+  --cv2-space-8: 4rem;
+  --cv2-space-9: 6rem;
+  --cv2-space-10: 8rem;
+  --cv2-content-max: 1280px;
+  --cv2-readable-max: 680px;
+  --cv2-grid-columns: 12;
+  --cv2-grid-gap: 24px;
+
+  --cv2-radius-editorial: 2px;
+  --cv2-radius-product: 8px;
+  --cv2-radius-interactive: 12px;
+  --cv2-radius-pill: 999px;
+
+  --cv2-shadow-subtle: 0 8px 28px rgba(21, 23, 26, 0.06);
+  --cv2-shadow-product: 0 18px 50px rgba(21, 23, 26, 0.10);
+
+  --cv2-duration-fast: 180ms;
+  --cv2-duration-normal: 420ms;
+  --cv2-duration-slow: 720ms;
+  --cv2-ease-standard: cubic-bezier(0.2, 0.65, 0.3, 1);
+  --cv2-ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --cv2-ease-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --cv2-motion-distance-sm: 10px;
+  --cv2-motion-distance-md: 22px;
+  --cv2-motion-distance-lg: 42px;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --cv2-grid-gap: 16px;
+    --cv2-type-display-size: clamp(2.9rem, 13vw, 4rem);
+    --cv2-type-h1-size: clamp(2.35rem, 10vw, 3.4rem);
+    --cv2-type-h2-size: clamp(2rem, 9vw, 2.9rem);
+    --cv2-space-9: 4.5rem;
+    --cv2-space-10: 6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --cv2-duration-fast: 1ms;
+    --cv2-duration-normal: 1ms;
+    --cv2-duration-slow: 1ms;
+  }
+}
