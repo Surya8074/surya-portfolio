@@ -3,7 +3,9 @@ import { MotionConfig } from 'motion/react';
 import { createRoot } from 'react-dom/client';
 import ComskiCaseStudyCV2 from './ComskiCaseStudyCV2';
 import './cv2-design-system/tokens.css';
+import './cv2-design-system/typography.css';
 import './cv2-design-system/surfaces.css';
+import './cv2-design-system/media.css';
 import './cv2-case-study.css';
 
 createRoot(document.getElementById('root')!).render(
