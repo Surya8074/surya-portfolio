@@ -1,0 +1,10 @@
+/* CV2 type roles. Sections should choose a role instead of inventing local type scales. */
+.cv2-type-display{font-family:var(--cv2-font-sans);font-size:var(--cv2-type-display-size);line-height:var(--cv2-type-display-leading);letter-spacing:var(--cv2-type-display-tracking);font-weight:520}
+.cv2-type-h1{font-family:var(--cv2-font-sans);font-size:var(--cv2-type-h1-size);line-height:var(--cv2-type-h1-leading);letter-spacing:var(--cv2-type-h1-tracking);font-weight:520}
+.cv2-type-h2{font-family:var(--cv2-font-sans);font-size:var(--cv2-type-h2-size);line-height:var(--cv2-type-h2-leading);letter-spacing:var(--cv2-type-h2-tracking);font-weight:520}
+.cv2-type-h3{font-family:var(--cv2-font-sans);font-size:var(--cv2-type-h3-size);line-height:var(--cv2-type-h3-leading);font-weight:520;letter-spacing:-.035em}
+.cv2-type-body{font-family:var(--cv2-font-sans);font-size:var(--cv2-type-body-size);line-height:var(--cv2-type-body-leading);font-weight:400}
+.cv2-type-small{font-family:var(--cv2-font-sans);font-size:var(--cv2-type-small-size);line-height:var(--cv2-type-small-leading)}
+.cv2-type-label{font-family:var(--cv2-font-mono);font-size:var(--cv2-type-label-size);line-height:var(--cv2-type-label-leading);letter-spacing:var(--cv2-type-label-tracking);text-transform:uppercase}
+.cv2-type-meta{font-family:var(--cv2-font-mono);font-size:var(--cv2-type-caption-size);line-height:var(--cv2-type-caption-leading);letter-spacing:.05em}
+.cv2-readable{max-width:var(--cv2-readable-max)}
