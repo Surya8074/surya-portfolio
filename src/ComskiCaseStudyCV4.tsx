@@ -2,7 +2,6 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Lenis from '@studio-freight/lenis';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -109,15 +108,6 @@ function ComskiCaseStudyCV4() {
   const [activeSection, setActiveSection] = useState('01');
   const processRef = useRef<HTMLDivElement | null>(null);
   const trailRef = useRef<SVGSVGElement | null>(null);
-
-  useEffect(() => {
-    if (reduce) return;
-    const lenis = new Lenis({ duration: 1.1, smoothWheel: true });
-    let raf = 0;
-    const tick = (time: number) => { lenis.raf(time); raf = requestAnimationFrame(tick); };
-    raf = requestAnimationFrame(tick);
-    return () => { cancelAnimationFrame(raf); lenis.destroy(); };
-  }, [reduce]);
 
   useEffect(() => {
     const updateProgress = () => {
