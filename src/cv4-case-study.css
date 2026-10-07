@@ -393,3 +393,15 @@ body{
   .cv4-hero::before,.cv4-hero::after,.cv4-hero-frame,.cv4-hero-float.one,.cv4-hero-float.two{animation:none!important}
   .cv4-screen-reasoning>div,.cv4-feature-thumbs button img{transition:none!important}
 }
+
+
+/* CV4.4 — restore native document scrolling.
+   Keep the premium visual system, but never turn the case study into a nested/clipped scroll container. */
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto !important;
+}
+.cv4-page {
+  overflow: visible !important;
+  min-height: 100%;
+}
