@@ -180,6 +180,60 @@ function ComskiCaseStudyCV4() {
     return () => ctx.revert();
   }, [reduce]);
 
+  useEffect(() => {
+    if (reduce) return;
+    const ctx = gsap.context(() => {
+      const bars = document.querySelectorAll<HTMLElement>('.cv4-ai-before-after .score-bar span, .cv4-ai-before-after .guide-bar span');
+      gsap.fromTo(bars, { scaleX: 0 }, {
+        scaleX: 1,
+        transformOrigin: 'left center',
+        duration: 0.9,
+        ease: 'power3.out',
+        stagger: 0.14,
+        scrollTrigger: { trigger: '.cv4-ai-before-after', start: 'top 78%', once: true }
+      });
+
+      const swatches = document.querySelectorAll<HTMLElement>('.cv4-token-sheet .swatches i');
+      gsap.fromTo(swatches, { opacity: 0, y: 12, scale: .82 }, {
+        opacity: 1, y: 0, scale: 1,
+        duration: .45, ease: 'back.out(1.7)', stagger: .06,
+        scrollTrigger: { trigger: '.cv4-token-sheet', start: 'top 78%', once: true }
+      });
+
+      const outcomeCards = document.querySelectorAll<HTMLElement>('.cv4-outcomes article');
+      gsap.fromTo(outcomeCards, { opacity: 0, y: 24 }, {
+        opacity: 1, y: 0, duration: .5, ease: 'power3.out', stagger: .1,
+        scrollTrigger: { trigger: '.cv4-outcomes', start: 'top 78%', once: true }
+      });
+
+      const screen = document.querySelector<HTMLElement>('.cv4-feature-main .cv4-screen-browser');
+      if (screen) {
+        const move = (event: PointerEvent) => {
+          const r = screen.getBoundingClientRect();
+          const x = (event.clientX - r.left) / r.width - .5;
+          const y = (event.clientY - r.top) / r.height - .5;
+          screen.style.setProperty('--screen-rx', `${(-y * 2.2).toFixed(2)}deg`);
+          screen.style.setProperty('--screen-ry', `${(x * 2.2).toFixed(2)}deg`);
+          screen.style.setProperty('--screen-mx', `${(x * 10).toFixed(1)}px`);
+          screen.style.setProperty('--screen-my', `${(y * 10).toFixed(1)}px`);
+        };
+        const reset = () => {
+          screen.style.setProperty('--screen-rx','0deg');
+          screen.style.setProperty('--screen-ry','0deg');
+          screen.style.setProperty('--screen-mx','0px');
+          screen.style.setProperty('--screen-my','0px');
+        };
+        screen.addEventListener('pointermove', move);
+        screen.addEventListener('pointerleave', reset);
+        return () => {
+          screen.removeEventListener('pointermove', move);
+          screen.removeEventListener('pointerleave', reset);
+        };
+      }
+    });
+    return () => ctx.revert();
+  }, [reduce, activeScreen]);
+
   const active = useMemo(() => screenData[activeScreen], [activeScreen]);
 
   return (
