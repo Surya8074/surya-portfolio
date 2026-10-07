@@ -53,3 +53,37 @@
 
 /* React Bits-inspired interaction layer — implemented locally, no paid dependency required */
 .rb-blur-reveal{will-change:transform,opacity,filter}.cv4-hero-title-wrap{display:block}.rb-spotlight{position:relative;border-radius:12px;isolation:isolate;overflow:hidden}.rb-spotlight::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(240px circle at var(--spot-x,50%) var(--spot-y,50%),rgba(59,91,219,.11),transparent 62%);opacity:0;transition:opacity .25s ease}.rb-spotlight:hover::before{opacity:1}.rb-spotlight>*{position:relative;z-index:1}.rb-spotlight article{height:100%;padding:22px 0;border-top:1px solid var(--line)}.rb-tilt{perspective:900px;min-width:0}.rb-tilt>article{transform:rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));transform-style:preserve-3d;transition:transform .18s ease,box-shadow .25s ease}.rb-tilt:hover>article{box-shadow:0 20px 45px rgba(20,40,70,.09)}.rb-glass-panel{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(255,255,255,.88)}.cv4-evidence-flag{margin:16px 0 0;padding:9px 12px;border-left:2px solid #c5cfdd;background:#f7f9fc;color:#707c90;font-size:10px;line-height:1.5}@media(max-width:768px){.rb-spotlight::before{display:none}.rb-tilt>article{transform:none!important}}@media(prefers-reduced-motion:reduce){.rb-blur-reveal{filter:none!important;transform:none!important}.rb-spotlight::before{display:none}.rb-tilt>article{transition:none;transform:none!important}}
+
+/* CV4.2 React Bits-style motion: visible, purposeful, restrained */
+.cv4-feature-main .cv4-screen-browser{
+  --screen-rx:0deg;--screen-ry:0deg;--screen-mx:0px;--screen-my:0px;
+  transform:perspective(1200px) rotateX(var(--screen-rx)) rotateY(var(--screen-ry)) translate3d(var(--screen-mx),var(--screen-my),0);
+  transition:transform .22s cubic-bezier(.16,1,.3,1),box-shadow .35s ease;
+  will-change:transform;
+}
+.cv4-feature-main .cv4-screen-browser:hover{box-shadow:0 30px 80px rgba(20,40,70,.20)}
+.cv4-feature-thumbs button{
+  position:relative;overflow:hidden;
+  transition:transform .22s cubic-bezier(.16,1,.3,1),border-color .2s ease,box-shadow .2s ease;
+}
+.cv4-feature-thumbs button:hover{transform:translateY(-3px) scale(1.015);box-shadow:0 14px 30px rgba(30,55,95,.12)}
+.cv4-feature-thumbs button.active{box-shadow:0 0 0 2px rgba(59,91,219,.14),0 16px 35px rgba(59,91,219,.10)}
+.cv4-feature-thumbs button::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:2px;
+  background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .25s ease;
+}
+.cv4-feature-thumbs button.active::after{transform:scaleX(1)}
+.cv4-ai-before-after .score-bar span,.cv4-ai-before-after .guide-bar span{transform-origin:left center;will-change:transform}
+.cv4-token-sheet .swatches i{cursor:default;transition:transform .2s cubic-bezier(.16,1,.3,1),box-shadow .2s ease}
+.cv4-token-sheet .swatches i:hover{transform:translateY(-5px) scale(1.08);box-shadow:0 12px 22px rgba(30,55,95,.16)}
+.cv4-outcomes article{will-change:transform,opacity}
+.cv4-outcomes article:hover{border-color:#ccd6e7}
+@media(max-width:768px){
+  .cv4-feature-main .cv4-screen-browser{transform:none!important}
+  .cv4-feature-thumbs button:hover{transform:none;box-shadow:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .cv4-feature-main .cv4-screen-browser{transform:none!important;transition:none}
+  .cv4-feature-thumbs button,.cv4-token-sheet .swatches i{transition:none}
+  .cv4-outcomes article{opacity:1!important;transform:none!important}
+}
