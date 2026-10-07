@@ -19,6 +19,7 @@ export default defineConfig({
         comski: 'comski.html',
         cv2: 'cv2.html',
         cv3: 'cv3.html',
+        cv4: 'cv4.html',
       },
     },
   },
