@@ -101,6 +101,72 @@ function TiltCard({ children, className = '' }: { children: React.ReactNode; cla
   return <div ref={ref} onPointerMove={onMove} onPointerLeave={reset} className={`rb-tilt ${className}`}>{children}</div>;
 }
 
+
+function TechText({ text }: { text: string }) {
+  const reduce = useReducedMotion();
+  const [value, setValue] = useState(reduce ? text : '');
+  useEffect(() => {
+    if (reduce) { setValue(text); return; }
+    const chars = '01<>[]{}/*+=#';
+    let frame = 0;
+    let timer = 0;
+    const run = () => {
+      const resolved = Math.min(text.length, Math.floor(frame / 2));
+      const next = text.split('').map((char, i) => {
+        if (i < resolved) return char;
+        if (char === ' ') return ' ';
+        return chars[Math.floor(Math.random() * chars.length)];
+      }).join('');
+      setValue(next);
+      frame += 1;
+      if (resolved < text.length) timer = window.setTimeout(run, 42);
+    };
+    timer = window.setTimeout(run, 120);
+    return () => window.clearTimeout(timer);
+  }, [text, reduce]);
+  return <span className="cv4-tech-text" aria-label={text}>{value || text}</span>;
+}
+
+function GlowCursor() {
+  const ref = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    if (window.matchMedia('(pointer: coarse)').matches) return;
+    const node = ref.current;
+    if (!node) return;
+    let x = -100, y = -100, tx = -100, ty = -100, raf = 0;
+    const move = (e: PointerEvent) => { tx = e.clientX; ty = e.clientY; node.classList.add('is-visible'); };
+    const tick = () => {
+      x += (tx - x) * .16; y += (ty - y) * .16;
+      node.style.transform = 'translate3d(' + (x - 18) + 'px,' + (y - 18) + 'px,0)';
+      raf = requestAnimationFrame(tick);
+    };
+    window.addEventListener('pointermove', move, { passive: true });
+    raf = requestAnimationFrame(tick);
+    return () => { window.removeEventListener('pointermove', move); cancelAnimationFrame(raf); };
+  }, []);
+  return <div ref={ref} className="cv4-glow-cursor" aria-hidden="true"><i /></div>;
+}
+
+function AccordionGallery({ activeScreen, setActiveScreen }: { activeScreen: number; setActiveScreen: (index: number) => void }) {
+  return (
+    <div className="cv4-accordion-gallery" role="tablist" aria-label="ComSki product screens">
+      {screenData.map((screen, i) => (
+        <button
+          key={screen.src}
+          type="button"
+          role="tab"
+          aria-selected={activeScreen === i}
+          className={activeScreen === i ? 'is-active' : ''}
+          onClick={() => setActiveScreen(i)}
+        >
+          <div className="cv4-gallery-media"><img src={BASE + screen.src} alt="" loading="lazy" /></div>
+          <div className="cv4-gallery-label"><span>{String(i + 1).padStart(2,'0')}</span><strong>{screen.label.split(' · ')[1]}</strong><i>↗</i></div>
+        </button>
+      ))}
+    </div>
+  );
+}
+
 function ComskiCaseStudyCV4() {
   const reduce = useReducedMotion();
   const [progress, setProgress] = useState(0);
@@ -227,7 +293,7 @@ function ComskiCaseStudyCV4() {
   const active = useMemo(() => screenData[activeScreen], [activeScreen]);
 
   return (
-    <main className="cv4-page">
+    <main className="cv4-page"><GlowCursor />
       <div className="cv4-mobile-progress" style={{ transform: `scaleX(${progress})` }} />
       <nav className="cv4-nav">
         <div className="cv4-nav-progress"><span style={{ transform: `scaleX(${progress})` }} /></div>
@@ -241,7 +307,7 @@ function ComskiCaseStudyCV4() {
             <motion.div className="cv4-chip-row" initial={reduce ? false : 'hidden'} animate="show" variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}>
               {['AI', 'Communication', 'Product Design'].map((chip) => <motion.span key={chip} variants={reduce ? undefined : { hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.4, ease } } }}>{chip}</motion.span>)}
             </motion.div>
-            <BlurReveal className="cv4-hero-title-wrap"><motion.h1 initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1, duration: 0.45 }}>Breaking the presentation-freeze loop — designing <em>ComSki.</em></motion.h1></BlurReveal>
+            <BlurReveal className="cv4-hero-title-wrap"><motion.h1 initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1, duration: 0.45 }}>Breaking the presentation-freeze loop — designing <em><TechText text="ComSki" />.</em></motion.h1></BlurReveal>
             <motion.p className="cv4-hero-subtitle" initial={reduce ? false : { opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.4, ease }}>
               A communication coach designed around learner context, four communication skills and a continuous practice loop — rather than treating assessment as a one-off test.
             </motion.p>
@@ -453,16 +519,8 @@ function ComskiCaseStudyCV4() {
 
           <Section n="11" title="Features & screens" tone="orange">
             <Reveal><h2>Real product screens, presented as an interaction system rather than a gallery.</h2><p className="cv4-lede">The screen assets below are the actual ComSki exports available in the project. The reasoning layer explains the role each screen plays.</p></Reveal>
-            <div className="cv4-feature-filmstrip">
-              <div className="cv4-feature-main"><Screen {...active} wide /></div>
-              <div className="cv4-feature-thumbs" role="tablist" aria-label="ComSki screens">
-                {screenData.map((screen, i) => (
-                  <button key={screen.src} className={activeScreen === i ? 'active' : ''} onClick={() => setActiveScreen(i)} role="tab" aria-selected={activeScreen === i}>
-                    <img src={BASE + screen.src} alt="" loading="lazy" /><span>{screen.label}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
+            <AccordionGallery activeScreen={activeScreen} setActiveScreen={setActiveScreen} />
+            <div className="cv4-feature-selected"><Screen {...active} wide /></div>
             <AnimatePresence mode="wait">
               <motion.div key={activeScreen} className="cv4-screen-reasoning rb-glass-panel" initial={reduce ? false : { opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={reduce ? undefined : { opacity: 0, height: 0 }} transition={{ duration: 0.35, ease }}>
                 <div><label>USER GOAL</label><strong>{['Understand what ComSki is before committing.', 'Feel that the product is adapting to me.', 'Demonstrate current reading ability without added pressure.', 'Demonstrate listening comprehension with familiar structure.', 'Express an idea in writing inside a predictable frame.', 'Practise spoken delivery and receive directional feedback.'][activeScreen]}</strong></div>
