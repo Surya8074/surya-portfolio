@@ -1,235 +1,502 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Lenis from '@studio-freight/lenis';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const BASE = '/surya-portfolio/comski/';
 
-function Screen({src,alt,label,wide=false}:{src:string;alt:string;label:string;wide?:boolean}) {
-  return <figure className={`cv4-screen ${wide?'wide':''}`}>
-    <div className="cv4-screen-frame">
-      <div className="cv4-screen-top"><span/><span/><span/><b>{label}</b></div>
-      <img src={BASE+src} alt={alt} loading="lazy"/>
-    </div>
-    <figcaption>{label}</figcaption>
-  </figure>;
+type ScreenProps = { src: string; alt: string; label: string; wide?: boolean; accent?: string };
+const screenData: ScreenProps[] = [
+  { src: 'Onboarding Intro.svg', alt: 'ComSki onboarding introduction screen', label: '01 · Onboarding Intro', accent: 'blue' },
+  { src: 'Onboarding 1st Question.svg', alt: 'ComSki first onboarding question', label: '02 · Pick your Vibe', accent: 'pink' },
+  { src: 'Reading.svg', alt: 'ComSki Reading assessment screen', label: '03 · Reading', accent: 'orange' },
+  { src: 'Listening 1.svg', alt: 'ComSki Listening assessment screen', label: '04 · Listening', accent: 'sky' },
+  { src: 'Writing 1.svg', alt: 'ComSki Writing assessment screen', label: '05 · Writing', accent: 'pink' },
+  { src: 'Speaking 1.svg', alt: 'ComSki Speaking assessment screen', label: '06 · Speaking', accent: 'navy' },
+];
+
+const ease = [0.16, 1, 0.3, 1] as const;
+
+function Reveal({ children, className = '', delay = 0, once = true }: { children: React.ReactNode; className?: string; delay?: number; once?: boolean }) {
+  const reduce = useReducedMotion();
+  return (
+    <motion.div
+      className={className}
+      initial={reduce ? false : { opacity: 0, y: 16 }}
+      whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+      viewport={{ once, margin: '-100px' }}
+      transition={reduce ? { duration: 0 } : { duration: 0.5, delay, ease }}
+    >
+      {children}
+    </motion.div>
+  );
 }
-function Number({n}:{n:string}){return <div className="cv4-num">{n}</div>}
-function Section({n,title,children,accent='blue'}:{n:string;title:string;children:React.ReactNode;accent?:string}){
- return <section className={`cv4-section accent-${accent}`} id={`s${n}`}><Number n={n}/><div className="cv4-section-body"><div className="cv4-kicker">{title}</div>{children}</div></section>;
+
+function Stagger({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+  const reduce = useReducedMotion();
+  return (
+    <motion.div
+      className={className}
+      initial={reduce ? false : 'hidden'}
+      whileInView={reduce ? undefined : 'show'}
+      viewport={{ once: true, margin: '-80px' }}
+      variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08, delayChildren: delay } } }}
+    >
+      {React.Children.map(children, (child) => (
+        <motion.div variants={reduce ? undefined : { hidden: { opacity: 0, y: 14 }, show: { opacity: 1, y: 0, transition: { duration: 0.45, ease } } }}>
+          {child}
+        </motion.div>
+      ))}
+    </motion.div>
+  );
 }
-function Tag({children,tone='' }:{children:React.ReactNode;tone?:string}){return <span className={`cv4-tag ${tone}`}>{children}</span>}
-function Decision({title,why,alt,tradeoff}:{title:string;why:string;alt:string;tradeoff:string}){
- return <article className="cv4-decision"><b>{title}</b><p><strong>Why</strong>{why}</p><p><strong>Alternative</strong>{alt}</p><p><strong>Trade-off</strong>{tradeoff}</p></article>
+
+function Section({ n, title, children, tone = 'blue', className = '' }: { n: string; title: string; children: React.ReactNode; tone?: string; className?: string }) {
+  return (
+    <section className={`cv4-section tone-${tone} ${className}`} id={`s${n}`}>
+      <div className="cv4-section-marker" aria-hidden="true"><span>{n}</span></div>
+      <div className="cv4-section-content">
+        <div className="cv4-section-kicker">{title}</div>
+        {children}
+      </div>
+    </section>
+  );
 }
 
-export default function ComskiCaseStudyCV4(){
- const [progress,setProgress]=useState(0);
- useEffect(()=>{const f=()=>{const m=document.documentElement.scrollHeight-innerHeight;setProgress(m>0?scrollY/m:0)};f();addEventListener('scroll',f,{passive:true});return()=>removeEventListener('scroll',f)},[]);
- return <main className="cv4-page">
-  <div className="cv4-progress"><span style={{transform:`scaleX(${progress})`}}/></div>
-  <nav className="cv4-nav">
-   <a className="cv4-brand" href="/surya-portfolio/"><strong>Surya Kiran</strong><span>Product Designer</span></a>
-   <div className="cv4-nav-links"><a href="#s01">Case study</a><a href="#s06">Process</a><a href="#s16">Outcomes</a></div>
-   <a className="cv4-connect" href="mailto:hello@surya.design">Let's Connect</a>
-  </nav>
-
-  <header className="cv4-hero">
-   <div className="cv4-hero-orb orb-a"/><div className="cv4-hero-orb orb-b"/>
-   <div className="cv4-hero-copy">
-    <div className="cv4-index"><span>01</span><b>Case Study — ComSki</b></div>
-    <h1>Breaking the<br/>presentation-freeze<br/>loop — designing <em>ComSki.</em></h1>
-    <p className="cv4-hero-lede">A communication coach designed around learner context, four communication skills and a continuous practice loop — rather than treating assessment as a one-off test.</p>
-    <div className="cv4-meta"><div><small>ROLE</small><b>Product Designer</b></div><div><small>SCOPE</small><b>End-to-end product design</b></div><div><small>TEAM</small><b>Solo ownership</b></div><div><small>TIMELINE</small><b>1 month</b></div></div>
-    <div className="cv4-evidence-note"><b>Evidence boundary</b><span>Project screens and product artefacts are factual. Research findings, outcomes and metrics that were not recorded are presented as hypotheses or proposed validation—not as verified results.</span></div>
-   </div>
-   <div className="cv4-hero-device">
-    <div className="cv4-laptop"><div className="cv4-laptop-screen"><img src={BASE+'Desktop - 1.svg'} alt="ComSki product dashboard"/></div><div className="cv4-laptop-base"/></div>
-    <div className="cv4-callout callout-one">My Journey<small>progression surface</small></div>
-    <div className="cv4-callout callout-two">AI coach<small>practice + feedback</small></div>
-   </div>
-  </header>
-
-  <div className="cv4-toc"><span>THE STORY</span><a href="#s01">Problem</a><a href="#s02">Users</a><a href="#s03">Research</a><a href="#s04">Synthesis</a><a href="#s05">Competition</a><a href="#s06">Process</a><a href="#s10">AI UX</a><a href="#s16">Impact</a></div>
-
-  <div className="cv4-story">
-   <Section n="01" title="Problem framing">
-    <h2>The product had to solve a confidence problem without turning communication practice into another high-pressure test.</h2>
-    <div className="cv4-problem-grid">
-     <article><span>USER PROBLEM</span><h3>Knowing what to say is not the same as being able to deliver it.</h3><p>Students and professionals can enter a presentation, interview or conversation with the content prepared, then freeze when delivery becomes the task.</p></article>
-     <article><span>PRODUCT PROBLEM</span><h3>Four skills can easily become four disconnected exercises.</h3><p>If Reading, Listening, Writing and Speaking behave as separate destinations, context gathered during onboarding has little product value.</p></article>
-     <article><span>OPPORTUNITY</span><h3>Turn context into a continuous learning loop.</h3><p>Use learner intent to shape the starting point, keep assessment consistent, and make every completion state point toward the next useful action.</p></article>
-    </div>
-    <div className="cv4-hmw"><span>HOW MIGHT WE</span><strong>How might we help learners practise communication with less judgement and cognitive friction, while giving the product a reusable system for personalised progression?</strong></div>
-   </Section>
-
-   <Section n="02" title="Users + jobs to be done" accent="pink">
-    <div className="cv4-persona-grid">
-     <article className="cv4-persona"><div className="cv4-avatar student">A</div><div><span>PRIMARY CONTEXT</span><h3>The Avoidant Presenter</h3><p>Student / early-career learner who knows the content but avoids speaking situations where delivery is evaluated.</p><div className="cv4-mini-list"><b>Goal</b><span>Feel prepared enough to speak without freezing.</span><b>Behavior</b><span>Prefers low-pressure repetition and short tasks.</span><b>Success</b><span>Can practise, understand feedback and try again.</span></div></div></article>
-     <article className="cv4-persona"><div className="cv4-avatar pro">P</div><div><span>SECONDARY CONTEXT</span><h3>The Interview-Track Professional</h3><p>Job-seeker or working professional preparing for high-stakes communication where clarity and delivery matter.</p><div className="cv4-mini-list"><b>Goal</b><span>Translate expertise into confident delivery.</span><b>Behavior</b><span>Values targeted practice over generic lessons.</span><b>Success</b><span>Sees a specific gap and knows what to practise next.</span></div></div></article>
-    </div>
-    <div className="cv4-jtbd"><div><span>JOB 01</span><b>When I know what I want to say but hesitate to say it, I want a safe way to practise, so I can build confidence before the real situation.</b></div><div><span>JOB 02</span><b>When I am preparing for a high-stakes conversation, I want targeted feedback, so I can improve delivery rather than relearn my content.</b></div><div><span>JOB 03</span><b>When I finish a practice task, I want to know what comes next, so improvement feels continuous rather than random.</b></div></div>
-    <div className="cv4-implications"><b>DESIGN IMPLICATIONS</b><span>Context should shape the journey.</span><span>Feedback should be specific and non-judgemental.</span><span>Progression should reduce decision-making after every task.</span></div>
-   </Section>
-
-   <Section n="03" title="Research strategy" accent="orange">
-    <div className="cv4-research-intro"><h2>Separate what we know from what we still need to prove.</h2><p>The available project material supports a strong product hypothesis, but it does not contain a verified participant dataset or quantitative study. The research model below therefore combines documented product evidence with secondary research and a clearly labelled validation plan.</p></div>
-    <div className="cv4-research-cards">
-     <article><span>01 · SECONDARY RESEARCH</span><h3>Personalisation is moving closer to the learning loop.</h3><p>Speak's current product supports custom lessons around goals, situations and interests, and its onboarding interests can feed personalised lesson recommendations.</p><small>Source: Speak Help Center, 2025–26</small></article>
-     <article><span>02 · SECONDARY RESEARCH</span><h3>AI coaching works best when feedback is tied to a rubric or goal.</h3><p>Yoodli exposes configurable Coach Bots and rubrics so feedback can be aligned to a learning objective rather than presented as a generic score.</p><small>Source: Yoodli Help Center, 2026</small></article>
-     <article><span>03 · DOMAIN PATTERN</span><h3>Judgement-free practice is a product differentiator.</h3><p>Yoodli positions private, consistent practice and feedback as a way to reinforce skills without replacing human coaching.</p><small>Source: Yoodli product documentation, 2026</small></article>
-    </div>
-    <div className="cv4-research-loop"><div><span>RESEARCH OBJECTIVE</span><b>Understand where communication practice breaks down and what context the system needs to make practice relevant.</b></div><div><span>QUESTIONS</span><b>What triggers avoidance? Which feedback feels actionable? How much onboarding context is worth the effort? What makes a next step obvious?</b></div><div><span>PROPOSED METHODS</span><b>Contextual interviews · workflow walkthroughs · competitive benchmarking · prototype usability tests · post-task confidence rating.</b></div></div>
-    <p className="cv4-source-note">External research is used to strengthen product reasoning; it is not presented as direct research conducted with ComSki customers.</p>
-   </Section>
-
-   <Section n="04" title="Research synthesis" accent="blue">
-    <div className="cv4-synthesis"><div className="raw"><span>OBSERVATIONS</span><b>Users enter with different goals.</b><b>Practice can feel evaluative.</b><b>AI feedback varies by product.</b><b>Learning products increasingly personalise content.</b></div><i>→</i><div><span>THEMES</span><b>Context matters</b><b>Confidence is fragile</b><b>Consistency builds trust</b><b>Next-step clarity reduces friction</b></div><i>→</i><div className="insight"><span>INSIGHTS</span><b>Personalisation should affect the journey, not just the welcome screen.</b><b>Assessment needs a shared grammar across skills.</b><b>AI feedback needs boundaries and recovery paths.</b></div></div>
-    <div className="cv4-opportunities"><span>OPPORTUNITY AREAS</span><Tag>Context-aware onboarding</Tag><Tag tone="pink">Judgement-free assessment</Tag><Tag tone="orange">Skill handoffs</Tag><Tag tone="blue">Explainable feedback</Tag><Tag>Progressive disclosure</Tag></div>
-   </Section>
-
-   <Section n="05" title="Competitive landscape" accent="pink">
-    <p className="cv4-section-lede">The competitive question is not “who has the most features?” It is “where does each product place the learner inside the practice loop?”</p>
-    <div className="cv4-matrix">
-     <div className="matrix-head"><b>Capability</b><b>ELSA</b><b>Yoodli</b><b>Speak</b><b>ComSki direction</b></div>
-     <div><span>Personalisation</span><span>Pronunciation-focused</span><span>Goal / coach customisation</span><span>Goals, interests, custom lessons</span><strong>Context shapes the whole journey</strong></div>
-     <div><span>Core practice</span><span>Speech / pronunciation</span><span>Roleplay / presentation</span><span>Conversation / lessons</span><strong>Four connected skills</strong></div>
-     <div><span>Feedback</span><span>Speech sounds, stress, intonation</span><span>Rubric / coach feedback</span><span>Corrections + tutor guidance</span><strong>Feedback framed as next practice</strong></div>
-     <div><span>Progression</span><span>Skill improvement</span><span>Programs / scenarios</span><span>Learning path</span><strong>Reading → Listening → Writing → Speaking</strong></div>
-     <div><span>Opportunity</span><span>Deep speech analysis</span><span>Deep communication coaching</span><span>Adaptive language learning</span><strong>One shared communication system for different learner contexts</strong></div>
-    </div>
-    <div className="cv4-competitive-callout"><b>COMPETITIVE OPPORTUNITY</b><strong>ComSki can differentiate through the relationship between learner context, multi-skill assessment and explicit progression — not by trying to out-feature specialised competitors.</strong></div>
-   </Section>
-
-   <Section n="06" title="Senior design process" accent="orange">
-    <div className="cv4-process-grid">
-     <article><b>01</b><h3>Understand</h3><p>Context, business intent, learner scenarios, evidence and constraints.</p></article>
-     <article><b>02</b><h3>Frame</h3><p>Problem definition, JTBD, opportunity areas and design principles.</p></article>
-     <article><b>03</b><h3>Explore</h3><p>IA, task flows, journey models and alternative interaction directions.</p></article>
-     <article><b>04</b><h3>Converge</h3><p>Trade-offs across user value, feasibility, clarity and scalability.</p></article>
-     <article><b>05</b><h3>Structure</h3><p>Navigation, states, content hierarchy, edge cases and handoffs.</p></article>
-     <article><b>06</b><h3>Design</h3><p>Wireframes, high-fidelity UI, components and responsive behavior.</p></article>
-     <article><b>07</b><h3>Validate</h3><p>Prototype testing, heuristic review and iteration.</p></article>
-     <article><b>08</b><h3>Deliver</h3><p>Reusable components, interaction specs and implementation-ready states.</p></article>
-    </div>
-    <div className="cv4-principles"><span>DESIGN PRINCIPLES</span><b>Context before content</b><b>Consistency before complexity</b><b>Feedback should lead to action</b><b>AI assists; the learner stays in control</b></div>
-   </Section>
-
-   <Section n="07" title="Exploration + trade-offs" accent="blue">
-    <div className="cv4-directions">
-     <article><span>DIRECTION A</span><h3>Separate products for students and professionals</h3><p>Strong audience specificity, but duplicates the interaction model and increases system complexity.</p><em>Rejected — audience context can vary without splitting the core product.</em></article>
-     <article><span>DIRECTION B</span><h3>One generic assessment engine</h3><p>Highly scalable, but risks making every skill feel mechanically identical and losing the context of communication.</p><em>Rejected — consistency should live in the grammar, not in identical tasks.</em></article>
-     <article className="selected"><span>FINAL DIRECTION</span><h3>One shared system with contextual entry + skill-specific tasks</h3><p>Preserves a reusable interaction model while allowing Reading, Listening, Writing and Speaking to behave according to their medium.</p><em>Selected — strongest balance of personalisation, scalability and cognitive simplicity.</em></article>
-    </div>
-   </Section>
-
-   <Section n="08" title="Information architecture + flow" accent="pink">
-    <div className="cv4-ia">
-     <div className="ia-node primary">COMSKI</div><div className="ia-arrow">↓</div>
-     <div className="ia-row"><div>Onboarding</div><div>Home / Journey</div><div>Practice</div><div>Insights</div></div>
-     <div className="ia-connector">↓</div>
-     <div className="ia-row skills"><div>Reading</div><div>Listening</div><div>Writing</div><div>Speaking</div></div>
-     <div className="ia-connector">↓</div>
-     <div className="ia-row states"><div>Feedback</div><div>Completion</div><div>Retry</div><div>Next skill</div></div>
-    </div>
-    <div className="cv4-flow-copy"><div><span>ENTRY</span><b>Learner completes contextual onboarding.</b></div><div><span>DECISION</span><b>System uses context to establish the appropriate journey.</b></div><div><span>ACTION</span><b>Learner completes a skill-specific task.</b></div><div><span>FEEDBACK</span><b>System explains performance and offers a next action.</b></div><div><span>COMPLETION</span><b>Progression points to the next useful skill or retry.</b></div></div>
-   </Section>
-
-   <Section n="09" title="Onboarding strategy" accent="orange">
-    <div className="cv4-onboarding-grid">
-     <div><h2>Ask only for context that can change the experience.</h2><p>The source screens establish a sequence around vibe, communication goal, discovery source, available time, confidence and interests. The product value is not the questionnaire itself; it is the ability to carry that context into the learning loop.</p></div>
-     <div className="cv4-onboarding-rules"><b>COLLECT</b><span>Goal · confidence · time · interests</span><b>DEFER</b><span>Low-value profile detail that does not affect the first session</span><b>EXPLAIN</b><span>Why the product is asking and how the answer will shape practice</span><b>ALLOW CONTROL</b><span>Skip or edit when the answer is uncertain</span></div>
-    </div>
-    <Screen src="Onboarding Intro.svg" alt="ComSki onboarding introduction" label="Onboarding / first-value moment" wide/>
-   </Section>
-
-   <Section n="10" title="AI UX — trust, feedback and control" accent="blue">
-    <div className="cv4-ai-hero"><div><span>AI INTERACTION MODEL</span><h2>The interface should make AI feel like a coach, not an authority.</h2></div><p>AI feedback is inherently probabilistic. The experience should communicate what was observed, what the system recommends and what the learner can do next—without implying that an AI score is an absolute judgement.</p></div>
-    <div className="cv4-ai-grid">
-     <article><b>01</b><h3>Explain the signal</h3><p>Show the dimension being evaluated and connect it to an observable behavior.</p></article>
-     <article><b>02</b><h3>Keep the learner in control</h3><p>Feedback should be actionable, dismissible and recoverable rather than forcing a single interpretation.</p></article>
-     <article><b>03</b><h3>Make uncertainty legible</h3><p>Where confidence is low or input quality is poor, the system should avoid overclaiming.</p></article>
-     <article><b>04</b><h3>Turn feedback into the next rep</h3><p>The most useful output is not a score; it is a clear next practice action.</p></article>
-    </div>
-   </Section>
-
-   <Section n="11" title="Features & screens" accent="pink">
-    <div className="cv4-screen-intro"><h2>From onboarding to a four-skill practice loop.</h2><p>These are the actual ComSki screens available in the project assets. The presentation explains the interaction model without inventing replacement UI.</p></div>
-    <div className="cv4-screen-grid">
-     <Screen src="Onboarding 1st Question.svg" alt="ComSki onboarding question" label="01 · Pick your Vibe"/>
-     <Screen src="Reading.svg" alt="ComSki reading experience" label="02 · Reading"/>
-     <Screen src="Listening 1.svg" alt="ComSki listening experience" label="03 · Listening"/>
-     <Screen src="Writing 1.svg" alt="ComSki writing experience" label="04 · Writing"/>
-     <Screen src="Speaking 1.svg" alt="ComSki speaking experience" label="05 · Speaking"/>
-     <Screen src="Desktop - 1.svg" alt="ComSki desktop journey" label="06 · Journey / progress"/>
-    </div>
-    <div className="cv4-screen-anatomy"><div><span>USER GOAL</span><b>Complete a focused communication task.</b></div><div><span>DESIGN DECISION</span><b>Keep one primary action visible and reduce competing controls.</b></div><div><span>FEEDBACK</span><b>Make state, completion and next action explicit.</b></div><div><span>EDGE CASE</span><b>Support retry, interruption and incomplete input without losing context.</b></div></div>
-   </Section>
-
-   <Section n="12" title="Interaction model" accent="orange">
-    <div className="cv4-interaction">
-     <div className="interaction-track"><span className="active">Context</span><i>→</i><span>Task</span><i>→</i><span>Input</span><i>→</i><span>AI / System analysis</span><i>→</i><span>Feedback</span><i>→</i><span>Next action</span></div>
-     <div className="interaction-notes"><article><b>System state</b><p>Loading, listening, recording, processing and completion states must be visible.</p></article><article><b>Error recovery</b><p>Permission failures, low-quality input and interruptions should return the learner to a recoverable state.</p></article><article><b>Progression</b><p>Completion should reduce the decision cost of choosing what to do next.</p></article></div>
-    </div>
-   </Section>
-
-   <Section n="13" title="Design system + scalability" accent="blue">
-    <div className="cv4-system-grid">
-     <div className="cv4-system-visual"><span>FOUNDATION</span><div className="token-row"><i/><i/><i/><i/><i/></div><div className="type-sample">Aa <small>Communication that feels human.</small></div><div className="spacing"><b>8</b><b>16</b><b>24</b><b>32</b><b>48</b></div></div>
-     <div className="cv4-system-copy"><h2>Consistency is an interaction tool.</h2><p>A reusable system keeps the four skill experiences recognisable while allowing each medium to have its own interaction pattern.</p><div><b>Tokens</b><span>Color, type, spacing, radius and elevation.</span><b>Components</b><span>Buttons, cards, progress, feedback, navigation and states.</span><b>Responsive</b><span>Fluid layout with deliberate mobile stacking and touch targets.</span><b>Accessibility</b><span>Semantic hierarchy, visible focus, readable contrast and reduced-motion support.</span></div></div>
-    </div>
-   </Section>
-
-   <Section n="14" title="Usability validation" accent="pink">
-    <div className="cv4-validation-banner"><b>VALIDATION STATUS</b><span>Proposed / interview-ready test plan. The source material does not contain a verified participant count or quantitative usability dataset, so no invented results are presented as fact.</span></div>
-    <div className="cv4-validation-grid">
-     <article><span>HYPOTHESIS</span><h3>Contextual onboarding will feel worth the effort if learners understand why questions are being asked.</h3><b>Task</b><p>Complete onboarding and explain what the answers will change.</p></article>
-     <article><span>HYPOTHESIS</span><h3>A shared assessment grammar will make the four skills easier to understand.</h3><b>Task</b><p>Move through two skills and identify where to go next.</p></article>
-     <article><span>HYPOTHESIS</span><h3>Feedback is more useful when paired with a next practice action.</h3><b>Task</b><p>Review feedback and choose the next action without facilitator help.</p></article>
-    </div>
-    <div className="cv4-severity"><span>SEVERITY FRAME</span><Tag tone="red">Critical · blocks completion</Tag><Tag tone="orange">High · creates repeated friction</Tag><Tag>Medium · slows task</Tag><Tag tone="blue">Low · polish / clarity</Tag></div>
-   </Section>
-
-   <Section n="15" title="Accessibility + technical collaboration" accent="orange">
-    <div className="cv4-tech-grid">
-     <article><span>ACCESSIBILITY</span><h3>Make the learning loop operable for more people.</h3><ul><li>Semantic heading hierarchy and labelled controls.</li><li>Visible keyboard focus and focus not obscured by sticky UI.</li><li>Contrast and non-text contrast checked against WCAG 2.2 guidance.</li><li>Motion reduced when the user prefers reduced motion.</li><li>Touch targets and error messages designed for recovery.</li></ul></article>
-     <article><span>ENGINEERING COLLABORATION</span><h3>Design the states, not just the happy path.</h3><ul><li>Reusable components and design tokens.</li><li>Responsive rules for desktop, tablet and mobile.</li><li>Loading / empty / error / permission states.</li><li>API-driven content and AI processing states.</li><li>Interaction specs and design QA against implementation.</li></ul></article>
-    </div>
-    <p className="cv4-access-source">Accessibility reference: W3C WCAG 2.2 guidance on visible focus and focus appearance.</p>
-   </Section>
-
-   <Section n="16" title="Outcomes + impact measurement" accent="blue">
-    <div className="cv4-outcome-grid">
-     <article><span>USER OUTCOME</span><h3>Less ambiguity about what to practise next.</h3><p>Connected skill handoffs and explicit completion states can reduce the decision burden between tasks.</p></article>
-     <article><span>PRODUCT OUTCOME</span><h3>One interaction model can support multiple learner contexts.</h3><p>Contextual entry avoids maintaining separate products while preserving audience-specific intent.</p></article>
-     <article><span>BUSINESS VALUE</span><h3>A stronger activation → practice → retention loop.</h3><p>Future measurement should test whether personalisation increases onboarding completion and meaningful practice.</p></article>
-    </div>
-    <div className="cv4-metrics"><span>IMPACT MEASUREMENT FRAMEWORK</span><div><b>Activation</b><small>Onboarding completion · first practice start</small></div><div><b>Engagement</b><small>Practice frequency · skill completion · retry behavior</small></div><div><b>UX</b><small>Task completion · time-on-task · comprehension · confidence</small></div><div><b>Retention</b><small>7/30-day return · continued practice</small></div><div><b>Business</b><small>Conversion · paid practice adoption · support demand</small></div></div>
-   </Section>
-
-   <Section n="17" title="Role + ownership" accent="pink">
-    <div className="cv4-role"><div><span>MY RESPONSIBILITIES</span><b>Problem framing · UX strategy · information architecture · interaction design · visual design · prototyping · design system thinking · validation planning.</b></div><div><span>MY OWNERSHIP</span><b>I owned the product-design direction and translated the concept into a coherent system rather than presenting isolated screens.</b></div><div><span>IMPLEMENTATION MINDSET</span><b>I designed reusable components, responsive behavior and system states with technical feasibility and handoff in mind.</b></div></div>
-   </Section>
-
-   <Section n="18" title="Learnings + what I would do next" accent="orange">
-    <div className="cv4-learnings">
-     <article><b>01</b><h3>Complexity is not the same as capability.</h3><p>Personalisation only creates value when the additional context changes the experience. Otherwise onboarding becomes a tax.</p></article>
-     <article><b>02</b><h3>AI changes the interaction contract.</h3><p>The interface must communicate system state, uncertainty, user control and recovery—not simply display an AI answer.</p></article>
-     <article><b>03</b><h3>Information architecture is product strategy.</h3><p>The relationship between four skills determines whether ComSki feels like one coach or four disconnected tools.</p></article>
-     <article><b>04</b><h3>Feedback should create the next rep.</h3><p>A score has limited value unless the learner can translate it into a concrete action.</p></article>
-     <article><b>05</b><h3>Consistency should live in the system grammar.</h3><p>Shared patterns make the product scalable while skill-specific interactions preserve the meaning of each medium.</p></article>
-    </div>
-    <div className="cv4-next"><span>WHAT I WOULD DO NEXT</span><b>Run moderated prototype testing with both learner contexts, instrument onboarding and skill progression, validate AI feedback comprehension, and iterate the personalisation model against real retention behavior.</b></div>
-   </Section>
-
-   <section className="cv4-interview" id="interview">
-    <div className="cv4-kicker">INTERVIEW DECISION LEDGER</div><h2>Be able to defend the design, not just present it.</h2>
-    <div className="cv4-decision-grid">
-     <Decision title="Why contextual onboarding?" why="Because learner intent is one of the strongest inputs available before practice begins." alt="Generic profile setup." tradeoff="More onboarding effort; mitigated by progressive disclosure and collecting only actionable context."/>
-     <Decision title="Why four skills in one system?" why="Communication is multi-modal, but the learner should not have to learn four separate products." alt="One generic skill or separate products." tradeoff="Requires a shared interaction grammar plus skill-specific task behavior."/>
-     <Decision title="Why directional completion?" why="A completed task should reduce the next decision rather than create a dead end." alt="Neutral completion state." tradeoff="More opinionated navigation; can be balanced with retry and exploration controls."/>
-     <Decision title="Why AI feedback with boundaries?" why="AI output is probabilistic and should support, not replace, learner judgement." alt="Single authoritative score." tradeoff="Slightly more interface complexity in exchange for trust and recovery."/>
-    </div>
-   </section>
-  </div>
-
-  <footer className="cv4-footer"><span>COMSKI · CASE STUDY / CV4</span><h2>One product.<br/><em>Two learner contexts.</em><br/>One continuous journey.</h2><p>Designed as a system: context → practice → feedback → progression.</p><a href="/surya-portfolio/">Back to portfolio ↗</a></footer>
- </main>
+function Screen({ src, alt, label, wide = false, accent = 'blue' }: ScreenProps) {
+  return (
+    <figure className={`cv4-screen ${wide ? 'wide' : ''} accent-${accent}`}>
+      <div className="cv4-screen-browser">
+        <div className="cv4-browser-bar"><i/><i/><i/><span>{label}</span></div>
+        <img src={BASE + src} alt={alt} loading="lazy" />
+      </div>
+      <figcaption>{label}</figcaption>
+    </figure>
+  );
 }
+
+function Table({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+  return <div className={`cv4-table-wrap ${className}`}><table>{children}</table></div>;
+}
+
+function Pill({ children, tone = '' }: { children: React.ReactNode; tone?: string }) {
+  return <span className={`cv4-pill ${tone}`}>{children}</span>;
+}
+
+function ComskiCaseStudyCV4() {
+  const reduce = useReducedMotion();
+  const [progress, setProgress] = useState(0);
+  const [activeScreen, setActiveScreen] = useState(0);
+  const processRef = useRef<HTMLDivElement | null>(null);
+  const trailRef = useRef<SVGSVGElement | null>(null);
+
+  useEffect(() => {
+    if (reduce) return;
+    const lenis = new Lenis({ duration: 1.1, smoothWheel: true });
+    let raf = 0;
+    const tick = (time: number) => { lenis.raf(time); raf = requestAnimationFrame(tick); };
+    raf = requestAnimationFrame(tick);
+    return () => { cancelAnimationFrame(raf); lenis.destroy(); };
+  }, [reduce]);
+
+  useEffect(() => {
+    const updateProgress = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(max > 0 ? window.scrollY / max : 0);
+    };
+    updateProgress();
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    return () => window.removeEventListener('scroll', updateProgress);
+  }, []);
+
+  useEffect(() => {
+    if (reduce) return;
+    const ctx = gsap.context(() => {
+      const fill = trailRef.current?.querySelector('.cv4-trail-fill');
+      if (fill) {
+        const length = (fill as SVGPathElement).getTotalLength();
+        gsap.set(fill, { strokeDasharray: length, strokeDashoffset: length });
+        gsap.to(fill, {
+          strokeDashoffset: 0,
+          ease: 'none',
+          scrollTrigger: { trigger: '.cv4-story', start: 'top top', end: 'bottom bottom', scrub: 0.5 }
+        });
+      }
+      if (processRef.current) {
+        const stages = processRef.current.querySelectorAll('.process-stage');
+        const arrows = processRef.current.querySelectorAll('.process-arrow');
+        gsap.set(stages, { opacity: 0.18, scale: 0.96 });
+        gsap.set(arrows, { opacity: 0.15 });
+        ScrollTrigger.create({
+          trigger: processRef.current,
+          start: 'top 60%',
+          end: 'bottom 40%',
+          scrub: 1,
+          onUpdate: self => {
+            const p = self.progress;
+            stages.forEach((node, i) => {
+              const threshold = i / stages.length;
+              const local = Math.max(0, Math.min(1, (p - threshold) * stages.length));
+              gsap.set(node, { opacity: 0.18 + local * 0.82, scale: 0.96 + local * 0.04 });
+              if (arrows[i]) gsap.set(arrows[i], { opacity: Math.max(0.15, local) });
+            });
+          }
+        });
+      }
+    });
+    return () => ctx.revert();
+  }, [reduce]);
+
+  const active = useMemo(() => screenData[activeScreen], [activeScreen]);
+
+  return (
+    <main className="cv4-page">
+      <div className="cv4-mobile-progress" style={{ transform: `scaleX(${progress})` }} />
+      <nav className="cv4-nav">
+        <a href="/surya-portfolio/" className="cv4-back">← Back to portfolio</a>
+        <span className="cv4-pagination">02 / 04</span>
+      </nav>
+
+      <header className="cv4-hero">
+        <div className="cv4-hero-inner">
+          <motion.div className="cv4-hero-copy" initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>
+            <motion.div className="cv4-chip-row" initial={reduce ? false : 'hidden'} animate="show" variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}>
+              {['AI', 'Communication', 'Product Design'].map((chip) => <motion.span key={chip} variants={reduce ? undefined : { hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.4, ease } } }}>{chip}</motion.span>)}
+            </motion.div>
+            <motion.h1 initial={reduce ? false : { opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.5, ease }}>
+              Breaking the presentation-freeze loop — designing <em>ComSki.</em>
+            </motion.h1>
+            <motion.p className="cv4-hero-subtitle" initial={reduce ? false : { opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.4, ease }}>
+              A communication coach designed around learner context, four communication skills and a continuous practice loop — rather than treating assessment as a one-off test.
+            </motion.p>
+            <motion.div className="cv4-meta" initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3, duration: 0.3 }}>
+              <div><small>ROLE</small><strong>Product Designer</strong></div>
+              <div><small>SCOPE</small><strong>Research, IA, interaction, UI, validation</strong></div>
+              <div><small>TEAM</small><strong>Single designer</strong></div>
+              <div><small>TIMELINE</small><strong>One month</strong></div>
+            </motion.div>
+          </motion.div>
+          <motion.div className="cv4-hero-visual" initial={reduce ? false : { opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2, duration: 0.6, ease }}>
+            <div className="cv4-hero-frame"><img src={BASE + 'Desktop - 1.svg'} alt="ComSki My Journey dashboard" /></div>
+            <span className="cv4-hero-float one">My Journey <small>goal-specific progression</small></span>
+            <span className="cv4-hero-float two">Four skills <small>shared interaction grammar</small></span>
+          </motion.div>
+        </div>
+      </header>
+
+      <div className="cv4-story-wrap">
+        <svg className="cv4-trail" ref={trailRef} viewBox="0 0 40 1000" preserveAspectRatio="none" aria-hidden="true">
+          <path className="cv4-trail-base" d="M20 0 V1000" />
+          <path className="cv4-trail-fill" d="M20 0 V1000" />
+        </svg>
+
+        <div className="cv4-story">
+          <Section n="01" title="Problem framing">
+            <Reveal><h2>The failure point wasn't instruction. It was the moment practice started to feel like judgement.</h2></Reveal>
+            <Stagger className="cv4-four-blocks">
+              <article><label>User problem</label><h3>People who need to communicate under pressure lack a reliable, private practice loop.</h3><p>Students presenting in class and professionals preparing for interviews can know their content and still freeze when delivery becomes the task.</p></article>
+              <article><label>Business problem</label><h3>Communication coaching is fragmented by modality and audience.</h3><p>Language mechanics, pronunciation and spoken delivery are commonly split across products, while school and professional contexts are rarely unified.</p></article>
+              <article><label>Product opportunity</label><h3>Build one coaching system across Reading, Listening, Writing and Speaking.</h3><p>Keep the interaction model coherent while allowing content and scenarios to adapt to the learner's context.</p></article>
+              <article><label>Design challenge</label><h3>Serve a class debate and a technical interview without making either audience feel generic.</h3><p>The architecture needed shared interaction grammar with divergent content, tone and goal framing.</p></article>
+            </Stagger>
+            <Reveal className="cv4-hmw"><label>HOW MIGHT WE</label><strong>How might we help learners build real communication confidence through consistent, low-pressure practice — without the fear of judgement that stops people practicing?</strong></Reveal>
+          </Section>
+
+          <Section n="02" title="Challenges & design complexity" tone="pink">
+            <Reveal><h2>Senior design work starts by making the constraint set explicit.</h2></Reveal>
+            <Table className="cv4-challenge-table">
+              <thead><tr><th>Challenge</th><th>Why it mattered</th><th>Design implication</th><th>How I approached it</th></tr></thead>
+              <tbody>
+                {[
+                  ['Multiple user types', 'Students need encouragement; professionals need realism and outcome relevance.', 'Shared interaction grammar; divergent content and tone.', 'Kept four-skill progression identical; varied onboarding framing and named goal journeys.'],
+                  ['AI uncertainty', 'A confidence score can be technically correct and still mislead users about what to do.', 'Actionable guidance must lead; scores become secondary.', 'Reworked feedback hierarchy around what to improve next.'],
+                  ['Four modalities', 'Different inputs can make the product feel like four mini-products.', 'One interaction grammar across modalities.', 'Locked prompt → respond → check → completion before designing individual skills.'],
+                  ['Onboarding complexity', 'Personalisation needs context, but every extra question is drop-off risk.', 'Progressive disclosure and reversible answers.', 'Conversational, one-question-at-a-time onboarding with back navigation.'],
+                  ['Trust in AI feedback', 'Users will not engage with feedback they cannot understand or trust.', 'Earn trust before vulnerable input.', 'Explicit judgement-free framing and visible system status.'],
+                  ['Control vs assessment integrity', 'Exiting mid-assessment can compromise incomplete skill data.', 'Bounded control rather than blanket control.', 'Opt-out before start; once started, assessment exit is intentionally constrained.']
+                ].map(row => <tr key={row[0]}>{row.map((cell, i) => i === 0 ? <th key={i}>{cell}</th> : <td key={i}>{cell}</td>)}</tr>)}
+              </tbody>
+            </Table>
+          </Section>
+
+          <Section n="03" title="Research — secondary + user" tone="orange">
+            <Reveal><h2>Research was used to test the product logic, not decorate the case study.</h2><p className="cv4-lede">The project material confirms direct observation, moderated prototype testing and competitor review. Exact participant counts and quantitative results are not recorded, so they are not invented here.</p></Reveal>
+            <div className="cv4-research-tables">
+              <div>
+                <h3>Secondary research</h3>
+                <Table>
+                  <thead><tr><th>Finding</th><th>Evidence / source</th><th>UX implication</th></tr></thead>
+                  <tbody>
+                    <tr><th>AI transparency is a UX problem.</th><td>Nielsen Norman Group — explainable AI and AI feature guidance.</td><td>Show why and what to do next, not only a confidence number.</td></tr>
+                    <tr><th>Human-AI systems should support correction and avoid overstating confidence.</th><td>Microsoft Research — Guidelines for Human-AI Interaction.</td><td>Frame feedback as guidance and make uncertainty recoverable.</td></tr>
+                    <tr><th>AI systems should avoid authoritative overclaiming.</th><td>Google — design principles for AI experiences.</td><td>Keep the learner in the loop rather than presenting verdicts.</td></tr>
+                    <tr><th>Personalised practice can use goals, situations and interests.</th><td>Speak custom lessons / personalised learning documentation.</td><td>Onboarding context should influence content, not remain profile data.</td></tr>
+                    <tr><th>Rubrics and coach configuration can make AI practice goal-specific.</th><td>Yoodli Coach Bot / rubric documentation.</td><td>Feedback should map to a named objective.</td></tr>
+                  </tbody>
+                </Table>
+              </div>
+              <div>
+                <h3>User research structure</h3>
+                <Table>
+                  <thead><tr><th>Research question</th><th>Observation</th><th>Interpretation</th><th>Product implication</th></tr></thead>
+                  <tbody>
+                    <tr><th>What happens after a learner freezes?</th><td>Users avoided rewatching recordings.</td><td>The barrier can be emotional avoidance, not only skill.</td><td>Make review synthesised and guidance-first.</td></tr>
+                    <tr><th>What does useful feedback look like?</th><td>Parent / teacher feedback can be inconsistent.</td><td>Consistency itself has learning value.</td><td>Position AI as a repeatable feedback source.</td></tr>
+                    <tr><th>Where did the prototype break?</th><td>Users lost the thread during processing and fixated on score.</td><td>Status visibility and hierarchy were failure points.</td><td>Surface system status; promote guidance over score.</td></tr>
+                  </tbody>
+                </Table>
+              </div>
+            </div>
+          </Section>
+
+          <Section n="04" title="Personas + JTBD" tone="blue">
+            <div className="cv4-personas">
+              <Reveal className="cv4-persona"><div className="avatar student">A</div><div><label>PROPOSED CONTEXT PERSONA</label><h3>The Avoidant Presenter</h3><p>Middle/high-school learner facing presentations, debates or Model UN.</p><ul><li><b>Goal:</b> practise privately before a graded attempt.</li><li><b>Behavior:</b> avoids rewatching recordings and disengages from criticism.</li><li><b>Success:</b> completes practice and returns for another session.</li></ul><strong>Design implication</strong><p>Feedback should be synthesised and guidance-first rather than requiring raw-footage review.</p></div></Reveal>
+              <Reveal className="cv4-persona"><div className="avatar pro">P</div><div><label>PROPOSED CONTEXT PERSONA</label><h3>The Interview-Track Professional</h3><p>Job-seeker preparing for a named high-stakes outcome such as a technical interview.</p><ul><li><b>Goal:</b> validate and refine delivery.</li><li><b>Behavior:</b> outcome-driven; prefers targeted practice over generic courses.</li><li><b>Success:</b> sees a measurable gap against a goal journey.</li></ul><strong>Design implication</strong><p>Frame progress around a named outcome such as the real “Google SDE Journey” product context.</p></div></Reveal>
+            </div>
+            <Reveal className="cv4-jtbd-block">
+              <label>JOBS TO BE DONE · PROPOSED</label>
+              <ol>
+                <li>When I am assigned to present tomorrow, I want to practise without anyone watching, so I can catch mistakes privately before it is real.</li>
+                <li>When feedback is not specific, I want to know exactly what to fix next, so I do not just feel judged without a path forward.</li>
+                <li>When preparing for a high-stakes interview, I want realistic rehearsal, so I have already felt the pressure once.</li>
+                <li>When I have practised for weeks, I want visible proof I am improving, so I stay motivated.</li>
+                <li>When I face four skills at once, I want the product to tell me where to start, so I am not overwhelmed.</li>
+              </ol>
+              <Table><thead><tr><th>Need type</th><th>What the product requires</th></tr></thead><tbody><tr><th>Functional</th><td>Accurate, modality-specific feedback.</td></tr><tr><th>Emotional</th><td>A judgement-free space, explicitly framed.</td></tr><tr><th>Usability</th><td>A clear next action and minimal setup friction.</td></tr><tr><th>Trust</th><td>Understanding why feedback says what it says and confidence that practice is private.</td></tr></tbody></Table>
+            </Reveal>
+          </Section>
+
+          <Section n="05" title="Competitive research & opportunity" tone="pink">
+            <Reveal><h2>ComSki is not trying to beat specialists at their own modality.</h2></Reveal>
+            <Table className="cv4-competitive">
+              <thead><tr><th>Capability</th><th>Duolingo</th><th>ELSA Speak</th><th>Yoodli</th><th>Orai</th><th>ComSki direction</th></tr></thead>
+              <tbody>
+                <tr><th>Core modality</th><td>Language mechanics</td><td>Pronunciation / accent</td><td>Spoken delivery</td><td>Spoken delivery</td><td>Reading + Listening + Writing + Speaking</td></tr>
+                <tr><th>Primary audience</th><td>Language learners</td><td>English learners</td><td>Working professionals</td><td>Public speakers</td><td>Students + professionals</td></tr>
+                <tr><th>AI feedback</th><td>Correctness</td><td>Pronunciation accuracy</td><td>Pacing, filler, confidence</td><td>Filler, pace, energy, clarity</td><td>Modality-specific + unified progression</td></tr>
+                <tr><th>Judgement-free framing</th><td>Gamified</td><td>Not explicit</td><td>Explicit</td><td>Not explicit</td><td>Explicit in-product copy</td></tr>
+                <tr><th>Progress tracking</th><td>Streaks / XP</td><td>Score-based</td><td>Dashboard / benchmarks</td><td>Scorecards / history</td><td>Sessions, goal journey and skill progression</td></tr>
+                <tr><th>Onboarding personalisation</th><td>Placement</td><td>Accent / goal</td><td>Audience / practice</td><td>Minimal</td><td>Vibe, goal, time, confidence, interests</td></tr>
+                <tr><th>School-context design</th><td>No</td><td>No</td><td>No</td><td>No</td><td>Debate, Model UN and in-class scenarios</td></tr>
+              </tbody>
+            </Table>
+            <Reveal className="cv4-opportunity"><label>COMPETITIVE OPPORTUNITY</label><strong>One coherent system spanning four communication modalities and both K-12 and professional contexts — a structural position rather than a feature-parity race.</strong></Reveal>
+          </Section>
+
+          <Section n="06" title="Research synthesis" tone="orange">
+            <Reveal><h2>Raw observation → theme → insight → design opportunity.</h2></Reveal>
+            <div className="cv4-synthesis-flow">
+              <article><label>RAW OBSERVATION</label><b>Users avoid rewatching recordings.</b><b>Processing can feel like a black box.</b><b>Users fixate on numeric scores.</b><b>Four skills risk scope overload.</b></article>
+              <i>→</i>
+              <article><label>THEME</label><b>Low confidence / trust</b><b>Lack of system status</b><b>Misplaced information hierarchy</b><b>Onboarding / scope complexity</b></article>
+              <i>→</i>
+              <article><label>INSIGHT</label><b>The barrier is emotional cost, not only skill.</b><b>Visibility is part of trust.</b><b>Correct AI output can still fail the product goal.</b><b>Shared grammar reduces felt complexity.</b></article>
+              <i>→</i>
+              <article className="final"><label>DESIGN OPPORTUNITY</label><b>Guidance-first review</b><b>Explicit processing state</b><b>Score secondary to action</b><b>One interaction pattern across four skills</b></article>
+            </div>
+          </Section>
+
+          <Section n="07" title="Current → future journey" tone="blue">
+            <Reveal><h2>Move the learner from an avoidance loop into a visible practice loop.</h2></Reveal>
+            <div className="cv4-journey current">
+              <div className="journey-label">CURRENT STATE</div>
+              {[
+                ['1', 'Assigned to speak', 'Prepares alone', 'No objective practice signal', 'Anxious'],
+                ['2', 'Performs live', 'Freezes / underperforms', 'No chance to course-correct', 'Exposed'],
+                ['3', 'After performing', 'Avoids rewatching', 'Review confronts the failure directly', 'Ashamed / avoidant'],
+                ['4', 'Seeks feedback', 'Gets inconsistent input', 'No reliable signal on what to fix', 'Confused']
+              ].map(x => <article key={x[0]}><b>{x[0]}</b><h3>{x[1]}</h3><span>Action</span><p>{x[2]}</p><span>Friction</span><p>{x[3]}</p><span>Emotion</span><p>{x[4]}</p></article>)}
+            </div>
+            <div className="cv4-journey future">
+              <div className="journey-label">FUTURE STATE · COMSKI</div>
+              {['Record', 'AI Analysis', 'Feedback', 'Progress'].map((x, i) => <article key={x}><b>0{i + 1}</b><strong>{x}</strong><span>{['Practice a low-stakes rep', 'System status stays visible', 'Guidance leads; score is secondary', 'Progress compounds over time'][i]}</span></article>)}
+            </div>
+          </Section>
+
+          <Section n="08" title="Design process · 9 phases" tone="orange" className="cv4-process-section">
+            <Reveal><h2>Understand → Frame → Explore → Converge → Structure → Design → Validate → Deliver → Measure.</h2></Reveal>
+            <div className="cv4-process-grid" ref={processRef}>
+              {['Understand','Frame','Explore','Converge','Structure','Design','Validate','Deliver','Measure'].map((name, i) => (
+                <React.Fragment key={name}>
+                  <div className="process-stage"><span>0{i + 1}</span><strong>{name}</strong><small>{[
+                    'Context, users, evidence, constraints.',
+                    'Problem, HMW, opportunity.',
+                    'IA, flows, alternatives.',
+                    'Trade-offs and decision criteria.',
+                    'States, edge cases, handoffs.',
+                    'Wireframes → high fidelity.',
+                    'Prototype testing + heuristics.',
+                    'Tokens, components, specs.',
+                    'Metrics and falsifiable hypotheses.'
+                  ][i]}</small></div>
+                  {i < 8 && <div className="process-arrow" aria-hidden="true">→</div>}
+                </React.Fragment>
+              ))}
+            </div>
+          </Section>
+
+          <Section n="09" title="Exploration & design alternatives" tone="blue">
+            <Stagger className="cv4-directions">
+              <article><label>DIRECTION A</label><h3>Two separate products</h3><p><b>Strength:</b> maximum audience specificity.</p><p><b>Weakness:</b> two IAs, two onboarding systems and duplicated components.</p><p><b>Risk:</b> divergent quality and no shared learning.</p><em>Rejected because the underlying job — practice → feedback → improve → progress — is shared.</em></article>
+              <article><label>DIRECTION B</label><h3>Single diagnostic assessment</h3><p><b>Strength:</b> smaller scope.</p><p><b>Weakness:</b> measures the problem but does not solve repeated avoidance.</p><p><b>Risk:</b> accurate diagnosis with no behavior change.</p><em>Rejected because the core opportunity is an ongoing practice relationship.</em></article>
+              <article className="selected"><label>FINAL DIRECTION</label><h3>One shared system + four-skill entry + coached practice loop</h3><p><b>Strength:</b> addresses avoidance while remaining achievable in one design cycle.</p><p><b>Trade-off:</b> shared architecture might underserve one audience.</p><p><b>Mitigation:</b> define a falsifiable post-launch segment comparison.</p><em>Selected because it best matches the identified job for both audiences.</em></article>
+            </Stagger>
+          </Section>
+
+          <Section n="10" title="Information architecture + user flow" tone="pink">
+            <Reveal><h2>Structure the system around roles, then keep the learner path shallow.</h2></Reveal>
+            <div className="cv4-ia-diagram">
+              <div className="ia-top">COMSKI</div><div className="ia-line"/>
+              <div className="ia-role-grid"><div><b>Student</b><span>Onboarding</span><span>Assessment</span><span>Practice</span><span>My Journey</span><span>Results</span></div><div><b>Teacher / Institution</b><span>Assign / recommend</span><span>Cohort progress</span><span>Gap visibility</span></div><div><b>Admin</b><span>Institution config</span><span>User management</span><span>Aggregate reporting</span></div></div>
+            </div>
+            <div className="cv4-user-flow">
+              {[
+                ['Assessment entry', 'Preview all four tests', 'Start now / later'],
+                ['Reading', 'Prompt → respond → 5 questions', 'Previous / Next / Skip'],
+                ['Listening', 'Audio → comprehension', 'Previous / Next / Skip'],
+                ['Writing', 'Compose → structured check', 'Previous / Next / Skip'],
+                ['Speaking', 'Voice response → completion', 'Directional handoff']
+              ].map((x, i) => <article key={x[0]}><span>0{i + 1}</span><b>{x[0]}</b><p>{x[1]}</p><small>{x[2]}</small></article>)}
+            </div>
+            <p className="cv4-note">Confirmed interaction decisions include an opt-out before assessment and no back/close once the assessment begins. Resume-vs-restart after interruption remains an open product decision.</p>
+          </Section>
+
+          <Section n="11" title="Features & screens" tone="orange">
+            <Reveal><h2>Real product screens, presented as an interaction system rather than a gallery.</h2><p className="cv4-lede">The screen assets below are the actual ComSki exports available in the project. The reasoning layer explains the role each screen plays.</p></Reveal>
+            <div className="cv4-feature-filmstrip">
+              <div className="cv4-feature-main"><Screen {...active} wide /></div>
+              <div className="cv4-feature-thumbs" role="tablist" aria-label="ComSki screens">
+                {screenData.map((screen, i) => (
+                  <button key={screen.src} className={activeScreen === i ? 'active' : ''} onClick={() => setActiveScreen(i)} role="tab" aria-selected={activeScreen === i}>
+                    <img src={BASE + screen.src} alt="" loading="lazy" /><span>{screen.label}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+            <AnimatePresence mode="wait">
+              <motion.div key={activeScreen} className="cv4-screen-reasoning" initial={reduce ? false : { opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={reduce ? undefined : { opacity: 0, height: 0 }} transition={{ duration: 0.35, ease }}>
+                <div><label>USER GOAL</label><strong>{['Understand what ComSki is before committing.', 'Feel that the product is adapting to me.', 'Demonstrate current reading ability without added pressure.', 'Demonstrate listening comprehension with familiar structure.', 'Express an idea in writing inside a predictable frame.', 'Practise spoken delivery and receive directional feedback.'][activeScreen]}</strong></div>
+                <div><label>DESIGN DECISION</label><strong>{['Mascot-led introduction establishes the trust baseline.', 'One question per screen reduces perceived effort and supports revision.', 'Shared navigation chrome transfers familiarity across skills.', 'Audio is modality-specific; the interaction frame remains consistent.', 'The task changes, not the assessment grammar.', 'Completion points toward the next useful action.'][activeScreen]}</strong></div>
+                <div><label>PRINCIPLE</label><strong>Recognition over recall · Progressive disclosure · Consistency and standards</strong></div>
+              </motion.div>
+            </AnimatePresence>
+          </Section>
+
+          <Section n="12" title="AI UX / intelligent system design" tone="blue">
+            <Reveal><h2>The AI model is only half the product. The interface decides whether its output is useful.</h2></Reveal>
+            <div className="cv4-ai-principles">
+              <article><span>01</span><h3>Explainability over confidence display</h3><p>Lead with “what to improve next”; use scores as secondary confirmation rather than the main hierarchy.</p><small>NN/g / Microsoft guidance</small></article>
+              <article><span>02</span><h3>System status</h3><p>During AI processing, show what the system is doing so the learner does not experience a black box.</p><small>Human-AI interaction principle</small></article>
+              <article><span>03</span><h3>Human-in-the-loop</h3><p>Pro Tips, completion messaging and judgement-free copy frame AI as a coach rather than a verdict.</p><small>Google / Microsoft guidance</small></article>
+              <article><span>04</span><h3>Bounded automation</h3><p>Assessment integrity can justify constrained exit after commitment, while preserving a clear opt-out beforehand.</p><small>Product-specific trade-off</small></article>
+            </div>
+            <div className="cv4-ai-before-after">
+              <div><label>BEFORE · PROBLEM</label><div className="score-bar"><b>Score</b><span style={{ width: '92%' }}/></div><p>Numeric confidence dominates attention.</p></div>
+              <div className="arrow">→</div>
+              <div><label>AFTER · TARGET HIERARCHY</label><div className="guide-bar"><b>What to improve next</b><span style={{ width: '72%' }}/></div><p>Guidance becomes the primary decision surface.</p></div>
+            </div>
+            <p className="cv4-note">Open AI-UX question: when input quality is poor or confidence is low, the interface should be able to say “we're not sure” rather than presenting a confident-sounding result. This is proposed, not confirmed in the current export.</p>
+          </Section>
+
+          <Section n="13" title="Design system" tone="pink">
+            <Reveal><h2>A system was needed because four skills should feel like one product.</h2></Reveal>
+            <div className="cv4-system">
+              <div className="cv4-token-sheet">
+                <label>COLOR</label>
+                <div className="swatches"><i style={{background:'#3B5BDB'}}/><i style={{background:'#1A1D29'}}/><i style={{background:'#F2A04A'}}/><i style={{background:'#E9A6C8'}}/><i style={{background:'#B9DDFF'}}/><i style={{background:'#17264A'}}/></div>
+                <div className="hexes"><span>#3B5BDB</span><span>#1A1D29</span><span>Orange</span><span>Pink</span><span>Light blue</span><span>Navy</span></div>
+                <label>TYPE SCALE</label><div className="type-scale"><b>Display · 56/64</b><strong>Heading · 43/48</strong><span>Body · 17/28</span><small>Caption · 13/18</small></div>
+                <label>SPACING</label><div className="spacing-scale">{[4,8,12,16,24,32,48,64,96,128].map(x => <i key={x} style={{width: Math.max(8, x * .65)}}><b>{x}</b></i>)}</div>
+              </div>
+              <div className="cv4-system-copy"><label>IMPLEMENTATION BACKBONE</label><h3>One component grammar, parameterised by skill.</h3><div><b>GRID</b><span>12-column desktop · 4-column mobile · 768 / 1024 / 1440 breakpoints.</span></div><div><b>COMPONENTS</b><span>Step tracker, question counter, Pro Tips panel, directional completion.</span></div><div><b>RATIONALE</b><span>Structural familiarity transfers even when content and input modality change.</span></div><div><b>ACCESSIBILITY</b><span>Focus visibility, contrast verification, touch-target review and reduced-motion behavior.</span></div></div>
+            </div>
+          </Section>
+
+          <Section n="14" title="Usability testing & findings" tone="orange">
+            <Reveal><h2>Two concrete failure points changed the product hierarchy.</h2></Reveal>
+            <div className="cv4-test-meta"><div><label>CONFIRMED</label><strong>Small moderated group</strong><span>Interactive Figma prototype · start → record → feedback → next action</span></div><div><label>PROPOSED PROTOCOL</label><strong>Completion · time-on-task · navigation errors · feedback comprehension</strong><span>Exact participant count is not recorded and is intentionally not invented.</span></div></div>
+            <Table className="cv4-findings">
+              <thead><tr><th>Finding</th><th>Severity</th><th>Status</th><th>Design response</th></tr></thead>
+              <tbody>
+                <tr><th>Users lost the thread during AI processing because system status was invisible.</th><td><Pill tone="high">High</Pill></td><td><span className="status fixed">● Fixed</span></td><td>Surface processing status explicitly.</td></tr>
+                <tr><th>Users fixated on score over guidance.</th><td><Pill tone="critical">Critical</Pill></td><td><span className="status fixed">● Fixed</span></td><td>Restructure hierarchy: guidance leads, score is secondary.</td></tr>
+                <tr><th>No visible validation state on free-text / name fields.</th><td><Pill tone="medium">Medium</Pill></td><td><span className="status open">○ Open</span></td><td>Add validation and recovery states.</td></tr>
+                <tr><th>Numeric feedback screen is not confirmed in the current export.</th><td><Pill tone="medium">Medium</Pill></td><td><span className="status open">○ Needs confirmation</span></td><td>Do not claim a specific before/after screen until verified.</td></tr>
+              </tbody>
+            </Table>
+          </Section>
+
+          <Section n="15" title="Accessibility + technical collaboration" tone="blue">
+            <div className="cv4-two-col">
+              <Reveal><h3>Accessibility checklist</h3><ul className="check-list"><li>Contrast of light-blue Listening accent requires explicit verification.</li><li>Keyboard focus and navigation need verification across back/next flows.</li><li>Onboarding avatar targets should meet a 44px minimum for younger users.</li><li>Listening needs a caption / transcript fallback for deaf and hard-of-hearing learners.</li><li>Motion should respect prefers-reduced-motion.</li></ul></Reveal>
+              <Reveal><h3>Technical collaboration</h3><ul className="check-list"><li>Shared interaction grammar reduces the component surface area.</li><li>One parameterised skill-check component can support four modalities.</li><li>Loading, processing, error and empty states are first-class design states.</li><li>Tokens, breakpoints and states are specified for implementation handoff.</li><li>Responsive behavior is defined across desktop and mobile.</li></ul></Reveal>
+            </div>
+          </Section>
+
+          <Section n="16" title="Outcomes + impact measurement" tone="pink">
+            <Reveal><h2>The strongest outcomes are decisions that became more defensible.</h2></Reveal>
+            <div className="cv4-outcomes">
+              <article><span>USER</span><strong>Two concrete confusion points were identified and resolved before scale.</strong><small>Status visibility + score hierarchy.</small></article>
+              <article><span>PRODUCT</span><strong>One reusable interaction grammar spans four structurally different skill checks.</strong><small>Lower component surface area than four bespoke patterns.</small></article>
+              <article><span>DESIGN SYSTEM</span><strong>A token-level specification makes the product implementation-ready.</strong><small>Color · type · spacing · grid · states.</small></article>
+            </div>
+            <Table className="cv4-impact"><thead><tr><th>Metric</th><th>What it validates</th></tr></thead><tbody>
+              <tr><th>Practice-session completion rate</th><td>Whether the Practice → Analysis → Feedback loop works end to end.</td></tr>
+              <tr><th>Student vs professional completion / return rate</th><td>Whether the shared architecture holds across segments.</td></tr>
+              <tr><th>Onboarding completion rate</th><td>Whether personalisation is value-add or drop-off risk.</td></tr>
+              <tr><th>Feedback-to-action rate</th><td>Whether users act on “what to improve next”.</td></tr>
+            </tbody></Table>
+          </Section>
+
+          <Section n="17" title="Business value" tone="orange" className="quiet-section">
+            <Reveal><p className="cv4-business">A product spanning four communication modalities and both education and professional audiences can occupy a positioning gap that specialised competitors do not fully own. The shared-system architecture also creates a cost-efficiency argument: one design system and feedback model can serve multiple markets. For institutional use, the Teacher/Institution layer could reduce manual review load, but that operational benefit remains forward-looking until validated.</p></Reveal>
+          </Section>
+
+          <Section n="18" title="Learnings" tone="blue">
+            <Stagger className="cv4-learnings">
+              {[
+                ['01','Complexity is not the same as capability.','Four skills can share one grammar without flattening their modality-specific depth.'],
+                ['02','AI changes the interaction model.','Correct output and useful AI UX are different problems.'],
+                ['03','Control is a scoped decision.','Assessment integrity can justify bounded control when autonomy is preserved before commitment.'],
+                ['04','IA is a product decision.','The Teacher / Institution layer reflects a scaling constraint, not sitemap decoration.'],
+                ['05','A shared architecture is a hypothesis.','The correct response to risk is a falsifiable post-launch test.'],
+                ['06','Competition is positioning input.','Studying direct competitors sharpened the multi-modal, dual-audience differentiation.'],
+                ['07','Validated findings beat polished screens.','Status visibility and score hierarchy are stronger evidence of design thinking than a single hero mockup.']
+              ].map(([n,h,b]) => <article key={n}><b>{n}</b><h3>{h}</h3><p>{b}</p></article>)}
+            </Stagger>
+          </Section>
+
+          <Section n="19" title="What's next" tone="pink" className="quiet-section">
+            <Reveal><ul className="cv4-next-list"><li>Run the proposed usability protocol with a tracked participant count and formal task metrics.</li><li>Resolve accessibility gaps before launch.</li><li>Confirm and design the real AI Feedback / score screen.</li><li>Define and test a low-confidence AI state.</li><li>Execute segment-comparison measurement after launch.</li><li>Extend onboarding personalisation into ongoing content recommendation.</li></ul></Reveal>
+          </Section>
+
+          <Section n="20" title="My role & contribution" tone="blue" className="quiet-section">
+            <Reveal><div className="cv4-role-grid">
+              <div><label>RESPONSIBILITIES</label><strong>End-to-end product design ownership: research framing, IA, interaction, visual design and usability validation.</strong></div>
+              <div><label>DECISIONS</label><strong>Shared architecture, shared assessment grammar, feedback hierarchy, control trade-off and design-token system.</strong></div>
+              <div><label>DELIVERABLES</label><strong>Figma screen set across onboarding, four skills and dashboard; component/token specification; decision log; heuristic evaluation.</strong></div>
+              <div><label>COLLABORATION</label><strong>Usability testing was run and interpreted solo; the project did not have embedded research, product or engineering partners.</strong></div>
+              <div className="honest"><label>WHAT I DID NOT DO</label><strong>I did not build, ship or launch the product, and I did not run a statistically powered usability study.</strong></div>
+            </div></Reveal>
+          </Section>
+        </div>
+      </div>
+
+      <footer className="cv4-footer">
+        <div className="cv4-footer-inner">
+          <span>COMSKI · CASE STUDY 02 / 04</span>
+          <h2>Designing systems<br/>people can <em>trust.</em></h2>
+          <p>Product design · AI UX · Communication learning</p>
+          <a className="cv4-cta" href="mailto:hello@surya.design">Get in touch →</a>
+          <div className="cv4-footer-nav"><a href="/surya-portfolio/">← Portfolio</a><a href="/surya-portfolio/work/genesis-v8/">Next project →</a></div>
+        </div>
+      </footer>
+    </main>
+  );
+}
+
+export default ComskiCaseStudyCV4;
