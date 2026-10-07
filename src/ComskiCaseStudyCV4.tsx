@@ -241,11 +241,11 @@ function ComskiCaseStudyCV4() {
               <div>
                 <h3>User research structure</h3>
                 <Table>
-                  <thead><tr><th>Research question</th><th>Observation</th><th>Interpretation</th><th>Product implication</th></tr></thead>
+                  <thead><tr><th>Research question</th><th>Evidence available</th><th>Design interpretation</th><th>Validation implication</th></tr></thead>
                   <tbody>
-                    <tr><th>What happens after a learner freezes?</th><td>Users avoided rewatching recordings.</td><td>The barrier can be emotional avoidance, not only skill.</td><td>Make review synthesised and guidance-first.</td></tr>
-                    <tr><th>What does useful feedback look like?</th><td>Parent / teacher feedback can be inconsistent.</td><td>Consistency itself has learning value.</td><td>Position AI as a repeatable feedback source.</td></tr>
-                    <tr><th>Where did the prototype break?</th><td>Users lost the thread during processing and fixated on score.</td><td>Status visibility and hierarchy were failure points.</td><td>Surface system status; promote guidance over score.</td></tr>
+                    <tr><th>What makes practice feel safe enough to repeat?</th><td>The project framing identifies judgement and presentation pressure as core risks; participant-level evidence is not preserved in the source material.</td><td>Treat psychological safety as a product requirement, not a tone-of-voice detail.</td><td>Test whether judgement-free framing increases practice completion and repeat intent.</td></tr>
+                    <tr><th>What makes AI feedback actionable?</th><td>The available case-study material prioritises understandable, next-step feedback over raw scoring.</td><td>Feedback hierarchy should answer “what happened?” and “what should I do next?”</td><td>Measure feedback comprehension and next-action selection in usability testing.</td></tr>
+                    <tr><th>Where can the prototype fail?</th><td>Potential failure modes include processing uncertainty, score fixation and unclear next steps; no participant-level frequency is claimed.</td><td>Design explicit system status, explainability and recovery states before relying on AI output.</td><td>Test loading, uncertain, low-confidence and error states as first-class flows.</td></tr>
                   </tbody>
                 </Table>
               </div>
@@ -254,8 +254,8 @@ function ComskiCaseStudyCV4() {
 
           <Section n="04" title="Personas + JTBD" tone="blue">
             <div className="cv4-personas">
-              <Reveal className="cv4-persona"><div className="avatar student">A</div><div><label>PROPOSED CONTEXT PERSONA</label><h3>The Avoidant Presenter</h3><p>Middle/high-school learner facing presentations, debates or Model UN.</p><ul><li><b>Goal:</b> practise privately before a graded attempt.</li><li><b>Behavior:</b> avoids rewatching recordings and disengages from criticism.</li><li><b>Success:</b> completes practice and returns for another session.</li></ul><strong>Design implication</strong><p>Feedback should be synthesised and guidance-first rather than requiring raw-footage review.</p></div></Reveal>
-              <Reveal className="cv4-persona"><div className="avatar pro">P</div><div><label>PROPOSED CONTEXT PERSONA</label><h3>The Interview-Track Professional</h3><p>Job-seeker preparing for a named high-stakes outcome such as a technical interview.</p><ul><li><b>Goal:</b> validate and refine delivery.</li><li><b>Behavior:</b> outcome-driven; prefers targeted practice over generic courses.</li><li><b>Success:</b> sees a measurable gap against a goal journey.</li></ul><strong>Design implication</strong><p>Frame progress around a named outcome such as the real “Google SDE Journey” product context.</p></div></Reveal>
+              <Reveal className="cv4-persona"><div className="avatar student">A</div><div><label>PROPOSED CONTEXT PERSONA</label><h3>The Avoidant Presenter</h3><p>Middle/high-school learner facing presentations, debates or Model UN.</p><ul><li><b>Goal:</b> practise privately before a graded attempt.</li><li><b>Behavior:</b> may prefer low-pressure, private rehearsal before public performance.</li><li><b>Success:</b> completes a practice loop and can identify a concrete next improvement.</li></ul><strong>Design implication</strong><p>Feedback should be synthesised and guidance-first, with the learner retaining control over when to retry.</p></div></Reveal>
+              <Reveal className="cv4-persona"><div className="avatar pro">P</div><div><label>PROPOSED CONTEXT PERSONA</label><h3>The Interview-Track Professional</h3><p>Job-seeker preparing for a named high-stakes outcome such as a technical interview.</p><ul><li><b>Goal:</b> rehearse communication against a specific outcome.</li><li><b>Behavior:</b> likely to value targeted practice over a generic course sequence.</li><li><b>Success:</b> can see the gap to the chosen goal and a clear next practice action.</li></ul><strong>Design implication</strong><p>Frame progress around a named outcome while keeping the underlying four-skill interaction model consistent.</p></div></Reveal>
             </div>
             <Reveal className="cv4-jtbd-block">
               <label>JOBS TO BE DONE · PROPOSED</label>
