@@ -252,14 +252,14 @@ function ComskiCaseStudyCV5() {
             <motion.div className="cv5-kicker" initial={reduce ? false : { opacity: 0, y: 12 }} animate={reduce ? undefined : { opacity: 1, y: 0 }} transition={{ duration: .4, delay: 0, ease: [0.16, 1, 0.3, 1] }}><span>AI</span><span>EdTech</span><span>Product Design</span></motion.div>
             <p className="cv5-overline">COMSKI · COMMUNICATION COACH</p>
             <motion.h1 initial={reduce ? false : { opacity: 0, y: 18 }} animate={reduce ? undefined : { opacity: 1, y: 0 }} transition={{ duration: .5, delay: .1, ease: [0.16, 1, 0.3, 1] }}>Designing a communication coach that adapts to <em>who you are</em> — not just what you say.</motion.h1>
-            <motion.p className="cv5-hero-lede" initial={reduce ? false : { opacity: 0, y: 16 }} animate={reduce ? undefined : { opacity: 1, y: 0 }} transition={{ duration: .4, delay: .2, ease: [0.16, 1, 0.3, 1] }}>A case study in turning four communication skills into one continuous practice system: personalised onboarding, consistent assessment grammar, explainable AI feedback and a clear next action.</p>
+            <motion.p className="cv5-hero-lede" initial={reduce ? false : { opacity: 0, y: 16 }} animate={reduce ? undefined : { opacity: 1, y: 0 }} transition={{ duration: .4, delay: .2, ease: [0.16, 1, 0.3, 1] }}>A case study in turning four communication skills into one continuous practice system: personalised onboarding, consistent assessment grammar, explainable AI feedback and a clear next action.</motion.p>
             <motion.div className="cv5-meta" initial={reduce ? false : { opacity: 0 }} animate={reduce ? undefined : { opacity: 1 }} transition={{ duration: .3, delay: .3 }}>
               <div><small>ROLE</small><strong>Product Designer</strong></div>
               <div><small>OWNERSHIP</small><strong>Research · IA · UX · UI · Validation</strong></div>
               <div><small>PROJECT</small><strong>AI communication learning</strong></div>
               <div><small>TIMEFRAME</small><strong>1 month</strong></div>
-            </div>
-            <motion.div className="cv5-evidence-note" initial={reduce ? false : { opacity: 0, y: 10 }} animate={reduce ? undefined : { opacity: 1, y: 0 }} transition={{ duration: .4, delay: .4, ease: [0.16, 1, 0.3, 1] }}><b>Evidence boundary</b><span>Design decisions are grounded in the project material and available product screens. Where measured research or business metrics are not preserved, I label the item as proposed rather than inventing results.</span></div>
+            </motion.div>
+            <motion.div className="cv5-evidence-note" initial={reduce ? false : { opacity: 0, y: 10 }} animate={reduce ? undefined : { opacity: 1, y: 0 }} transition={{ duration: .4, delay: .4, ease: [0.16, 1, 0.3, 1] }}><b>Evidence boundary</b><span>Design decisions are grounded in the project material and available product screens. Where measured research or business metrics are not preserved, I label the item as proposed rather than inventing results.</span></motion.div>
           </motion.div>
 
           <motion.div className="cv5-hero-art" initial={reduce ? false : { opacity: 0, x: 35 }} animate={reduce ? undefined : { opacity: 1, x: 0 }} transition={{ duration: .6, delay: .2, ease: [0.16, 1, 0.3, 1] }}>
@@ -270,7 +270,7 @@ function ComskiCaseStudyCV5() {
               <div className="cv5-device-top"><i/><i/><i/><span>My Journey</span></div>
               <img src={BASE + 'Desktop - 1.svg'} alt="ComSki My Journey dashboard" />
             </div>
-          </div>
+          </motion.div>
         </div>
         <div className="cv5-hero-bottom">
           <span>THE SHORT VERSION</span>
