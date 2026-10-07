@@ -1,5 +1,8 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { motion, useReducedMotion } from 'motion/react';
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 const BASE = '/surya-portfolio/comski/';
 
@@ -84,31 +87,89 @@ function Section({ number, eyebrow, title, intro, children, tone = 'white' }: {
 
 function ScreenViewer() {
   const [active, setActive] = useState(0);
-  const screen = useMemo(() => screens[active], [active]);
+  const [openReasoning, setOpenReasoning] = useState(true);
+  const screen = screens[active];
+
+  const reasoning = [
+    ['USER GOAL', 'Understand what the product is asking before committing to practice.'],
+    ['UX PROBLEM', 'A new learner needs context without turning onboarding into a long setup form.'],
+    ['DESIGN DECISION', 'Ask for context progressively, then carry it forward into the journey.'],
+    ['WHY', 'Personalisation only earns its cost when it changes what the learner sees next.'],
+  ];
+
   return (
     <div className="cv5-viewer">
       <div className="cv5-viewer-main">
-        <div className="cv5-browser">
+        <motion.div
+          className="cv5-browser"
+          layout
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: .55, ease: [0.16, 1, 0.3, 1] }}
+        >
           <div className="cv5-browserbar"><i/><i/><i/><span>ComSki · {screen.title}</span></div>
           <img src={BASE + screen.src} alt={screen.alt} />
-        </div>
+        </motion.div>
+
         <div className="cv5-viewer-caption">
           <div><span>SCREEN {String(active + 1).padStart(2, '0')}</span><strong>{screen.title}</strong></div>
           <p>{screen.caption}</p>
         </div>
-      </div>
-      <div className="cv5-filmstrip">
-        {screens.map((item, i) => (
-          <button key={item.src} className={i === active ? 'active' : ''} onClick={() => setActive(i)} aria-label={`Show ${item.title}`}>
-            <img src={BASE + item.src} alt="" />
-            <span>{String(i + 1).padStart(2, '0')} · {item.title}</span>
+
+        <motion.div
+          className="cv5-screen-accordion"
+          layout
+          initial={false}
+          animate={{ opacity: 1 }}
+        >
+          <button
+            className="cv5-screen-accordion-trigger"
+            onClick={() => setOpenReasoning(v => !v)}
+            aria-expanded={openReasoning}
+          >
+            <span>SCREEN REASONING</span>
+            <b>{openReasoning ? '−' : '+'}</b>
           </button>
-        ))}
+          <AnimatePresence initial={false}>
+            {openReasoning && (
+              <motion.div
+                className="cv5-screen-accordion-body"
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: 'auto', opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: .35, ease: [0.16, 1, 0.3, 1] }}
+              >
+                {reasoning.map(([label, value]) => (
+                  <div key={label}><span>{label}</span><p>{value}</p></div>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
+      </div>
+
+      <div className="cv5-filmstrip-wrap">
+        <div className="cv5-filmstrip-label"><span>PRODUCT WALKTHROUGH</span><small>Choose a screen to inspect the design decision.</small></div>
+        <div className="cv5-filmstrip">
+          {screens.map((item, i) => (
+            <motion.button
+              key={item.src}
+              className={i === active ? 'active' : ''}
+              onClick={() => { setActive(i); setOpenReasoning(true); }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: .985 }}
+              aria-label={`Show ${item.title}`}
+            >
+              <img src={BASE + item.src} alt="" />
+              <span>{String(i + 1).padStart(2, '0')} · {item.title}</span>
+            </motion.button>
+          ))}
+        </div>
       </div>
     </div>
   );
 }
-
 function ComskiCaseStudyCV5() {
   const reduce = useReducedMotion();
   const [progress, setProgress] = useState(0);
@@ -120,7 +181,54 @@ function ComskiCaseStudyCV5() {
     };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let ctx: gsap.Context | undefined;
+
+    if (!reduceMotion) {
+      ctx = gsap.context(() => {
+        const trail = document.querySelector('.cv5-trail-fill');
+        if (trail) {
+          gsap.to(trail, {
+            strokeDashoffset: 0,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: '.cv5-story',
+              start: 'top top',
+              end: 'bottom bottom',
+              scrub: .5,
+            },
+          });
+        }
+
+        gsap.utils.toArray<HTMLElement>('.cv5-process-step').forEach((step, index) => {
+          gsap.fromTo(step,
+            { opacity: .18, scale: .96 },
+            {
+              opacity: 1,
+              scale: 1,
+              scrollTrigger: {
+                trigger: '.cv5-process',
+                start: 'top 72%',
+                end: 'bottom 34%',
+                scrub: .7,
+                onUpdate: self => {
+                  const threshold = index / 8;
+                  const local = Math.max(0, Math.min(1, (self.progress - threshold) * 8));
+                  gsap.set(step, { opacity: .18 + local * .82, scale: .96 + local * .04 });
+                },
+              },
+              duration: .4,
+            }
+          );
+        });
+      });
+    }
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      ctx?.revert();
+    };
   }, []);
 
   return (
@@ -167,6 +275,10 @@ function ComskiCaseStudyCV5() {
       </header>
 
       <div className="cv5-story">
+        <svg className="cv5-trail" aria-hidden="true" viewBox="0 0 24 1000" preserveAspectRatio="none">
+          <path className="cv5-trail-base" d="M12 0 V1000" />
+          <path className="cv5-trail-fill" d="M12 0 V1000" pathLength="1" />
+        </svg>
         <Section number="01" eyebrow="Problem / opportunity" title="The product problem was bigger than “make an AI coach.”" intro="ComSki needed to make communication practice feel repeatable, relevant and safe across two very different learner contexts. The design challenge was to create a system that could adapt without fragmenting.">
           <div className="cv5-problem-grid">
             <article><span>USER PROBLEM</span><h3>Practice feels exposed when the feedback loop feels like judgement.</h3><p>The product needs to make rehearsal feel safe enough to repeat, while still giving the learner useful evidence.</p></article>
@@ -288,6 +400,15 @@ function ComskiCaseStudyCV5() {
         </Section>
 
         <Section number="10" eyebrow="Information architecture" title="The architecture makes the product feel like one coach." intro="The key move was separating the stable product structure from the variable learner context.">
+          <div className="cv5-process">
+            {process.map((step, i) => (
+              <div className="cv5-process-step" key={step}>
+                <span>{String(i + 1).padStart(2, '0')}</span>
+                <strong>{step}</strong>
+              </div>
+            ))}
+          </div>
+          <div className="cv5-process-note"><b>PROCESS LOGIC</b><span>The sequence moves from evidence to structure to validation. The visual treatment stays deliberately quiet until the final stages, where decisions become implementation-ready.</span></div>
           <div className="cv5-ia">
             <div className="ia-root">COMSKI<br/><small>communication coach</small></div>
             <div className="ia-connector"/>
