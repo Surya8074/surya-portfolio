@@ -405,3 +405,51 @@ html, body {
   overflow: visible !important;
   min-height: 100%;
 }
+
+
+/* CV4.5 — hard reset scroll behavior.
+   This page must use the browser's root scrolling element. */
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  height: auto !important;
+  max-height: none !important;
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
+}
+
+html {
+  scroll-behavior: auto !important;
+  overscroll-behavior: auto !important;
+}
+
+body {
+  position: static !important;
+}
+
+#root {
+  position: static !important;
+}
+
+.cv4-page,
+.cv4-story-wrap,
+.cv4-story {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.cv4-section {
+  overflow: visible !important;
+}
+
+.cv4-section-nav,
+.cv4-mobile-progress {
+  pointer-events: none;
+}
+
+.cv4-section-nav a {
+  pointer-events: auto;
+}
