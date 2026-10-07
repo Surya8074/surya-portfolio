@@ -90,6 +90,7 @@ function ComskiCaseStudyCV4() {
   const reduce = useReducedMotion();
   const [progress, setProgress] = useState(0);
   const [activeScreen, setActiveScreen] = useState(0);
+  const [activeSection, setActiveSection] = useState('01');
   const processRef = useRef<HTMLDivElement | null>(null);
   const trailRef = useRef<SVGSVGElement | null>(null);
 
@@ -110,6 +111,19 @@ function ComskiCaseStudyCV4() {
     updateProgress();
     window.addEventListener('scroll', updateProgress, { passive: true });
     return () => window.removeEventListener('scroll', updateProgress);
+  }, []);
+
+  useEffect(() => {
+    const sections = Array.from(document.querySelectorAll<HTMLElement>('.cv4-section[id]'));
+    if (!sections.length) return;
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter(entry => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible) setActiveSection(visible.target.id.replace('s', ''));
+    }, { rootMargin: '-20% 0px -65% 0px', threshold: [0, 0.15, 0.35, 0.6] });
+    sections.forEach(section => observer.observe(section));
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -156,6 +170,7 @@ function ComskiCaseStudyCV4() {
     <main className="cv4-page">
       <div className="cv4-mobile-progress" style={{ transform: `scaleX(${progress})` }} />
       <nav className="cv4-nav">
+        <div className="cv4-nav-progress"><span style={{ transform: `scaleX(${progress})` }} /></div>
         <a href="/surya-portfolio/" className="cv4-back">← Back to portfolio</a>
         <span className="cv4-pagination">02 / 04</span>
       </nav>
@@ -186,6 +201,20 @@ function ComskiCaseStudyCV4() {
           </motion.div>
         </div>
       </header>
+
+      <aside className="cv4-section-nav" aria-label="Case study sections">
+        <div className="cv4-section-nav-line" />
+        {[['01','Problem'],['02','Constraints'],['03','Research'],['04','Users'],['05','Competition'],['06','Synthesis'],['07','Journey'],['08','Process'],['09','Exploration'],['10','IA + Flow'],['11','Screens'],['12','AI UX'],['13','System'],['14','Validation'],['15','Build'],['16','Outcomes'],['17','Business'],['18','Learnings'],['19','Next'],['20','Role']].map(([n,label]) => (
+          <a
+            key={n}
+            href={`#s${n}`}
+            className={activeSection === n ? 'active' : ''}
+            aria-label={`${n} ${label}`}
+          >
+            <span>{n}</span><b>{label}</b>
+          </a>
+        ))}
+      </aside>
 
       <div className="cv4-story-wrap">
         <svg className="cv4-trail" ref={trailRef} viewBox="0 0 40 1000" preserveAspectRatio="none" aria-hidden="true">
