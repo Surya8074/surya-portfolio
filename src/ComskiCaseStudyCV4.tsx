@@ -86,6 +86,22 @@ function Pill({ children, tone = '' }: { children: React.ReactNode; tone?: strin
   return <span className={`cv4-pill ${tone}`}>{children}</span>;
 }
 
+function BlurReveal({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+  const reduce = useReducedMotion();
+  return <motion.div className={`rb-blur-reveal ${className}`} initial={reduce ? false : { opacity: 0, filter: 'blur(12px)', y: 18 }} whileInView={reduce ? undefined : { opacity: 1, filter: 'blur(0px)', y: 0 }} viewport={{ once: true, margin: '-12% 0px' }} transition={reduce ? { duration: 0 } : { duration: 0.7, ease }}>{children}</motion.div>;
+}
+function SpotlightCard({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const onMove = (event: React.PointerEvent<HTMLDivElement>) => { const node = ref.current; if (!node) return; const rect = node.getBoundingClientRect(); node.style.setProperty('--spot-x', `${event.clientX - rect.left}px`); node.style.setProperty('--spot-y', `${event.clientY - rect.top}px`); };
+  return <div ref={ref} onPointerMove={onMove} className={`rb-spotlight ${className}`}>{children}</div>;
+}
+function TiltCard({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const onMove = (event: React.PointerEvent<HTMLDivElement>) => { const node = ref.current; if (!node) return; const rect = node.getBoundingClientRect(); const x = (event.clientX - rect.left) / rect.width - 0.5; const y = (event.clientY - rect.top) / rect.height - 0.5; node.style.setProperty('--tilt-x', `${(y * -5).toFixed(2)}deg`); node.style.setProperty('--tilt-y', `${(x * 5).toFixed(2)}deg`); };
+  const reset = () => { const node = ref.current; if (!node) return; node.style.setProperty('--tilt-x', '0deg'); node.style.setProperty('--tilt-y', '0deg'); };
+  return <div ref={ref} onPointerMove={onMove} onPointerLeave={reset} className={`rb-tilt ${className}`}>{children}</div>;
+}
+
 function ComskiCaseStudyCV4() {
   const reduce = useReducedMotion();
   const [progress, setProgress] = useState(0);
@@ -181,9 +197,7 @@ function ComskiCaseStudyCV4() {
             <motion.div className="cv4-chip-row" initial={reduce ? false : 'hidden'} animate="show" variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}>
               {['AI', 'Communication', 'Product Design'].map((chip) => <motion.span key={chip} variants={reduce ? undefined : { hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.4, ease } } }}>{chip}</motion.span>)}
             </motion.div>
-            <motion.h1 initial={reduce ? false : { opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.5, ease }}>
-              Breaking the presentation-freeze loop — designing <em>ComSki.</em>
-            </motion.h1>
+            <BlurReveal className="cv4-hero-title-wrap"><motion.h1 initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1, duration: 0.45 }}>Breaking the presentation-freeze loop — designing <em>ComSki.</em></motion.h1></BlurReveal>
             <motion.p className="cv4-hero-subtitle" initial={reduce ? false : { opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.4, ease }}>
               A communication coach designed around learner context, four communication skills and a continuous practice loop — rather than treating assessment as a one-off test.
             </motion.p>
@@ -225,8 +239,8 @@ function ComskiCaseStudyCV4() {
         <div className="cv4-story">
           <Section n="01" title="Problem framing">
             <Reveal><h2>The failure point wasn't instruction. It was the moment practice started to feel like judgement.</h2></Reveal>
-            <Stagger className="cv4-four-blocks">
-              <article><label>User problem</label><h3>People who need to communicate under pressure lack a reliable, private practice loop.</h3><p>Students presenting in class and professionals preparing for interviews can know their content and still freeze when delivery becomes the task.</p></article>
+            <Stagger className="cv4-four-blocks rb-stagger-grid">
+              <SpotlightCard><article><label>User problem</label><h3>People who need to communicate under pressure lack a reliable, private practice loop.</h3><p>Students presenting in class and professionals preparing for interviews can know their content and still freeze when delivery becomes the task.</p></article></SpotlightCard>
               <article><label>Business problem</label><h3>Communication coaching is fragmented by modality and audience.</h3><p>Language mechanics, pronunciation and spoken delivery are commonly split across products, while school and professional contexts are rarely unified.</p></article>
               <article><label>Product opportunity</label><h3>Build one coaching system across Reading, Listening, Writing and Speaking.</h3><p>Keep the interaction model coherent while allowing content and scenarios to adapt to the learner's context.</p></article>
               <article><label>Design challenge</label><h3>Serve a class debate and a technical interview without making either audience feel generic.</h3><p>The architecture needed shared interaction grammar with divergent content, tone and goal framing.</p></article>
@@ -317,9 +331,8 @@ function ComskiCaseStudyCV4() {
           </Section>
 
           <Section n="06" title="Research synthesis" tone="orange">
-            <Reveal><h2>Raw observation → theme → insight → design opportunity.</h2></Reveal>
-            <div className="cv4-synthesis-flow">
-              <article><label>RAW OBSERVATION</label><b>Users avoid rewatching recordings.</b><b>Processing can feel like a black box.</b><b>Users fixate on numeric scores.</b><b>Four skills risk scope overload.</b></article>
+            <Reveal><h2>Raw observation → theme → insight → design opportunity.</h2></Reveal><p className="cv4-evidence-flag">Evidence boundary · observations below are design hypotheses unless directly supported by the preserved project material.</p><div className="cv4-synthesis-flow">
+              <article><label>OBSERVATION / HYPOTHESIS</label><b>Judgement can increase avoidance.</b><b>Processing uncertainty can feel like a black box.</b><b>Numeric scores can compete with actionable guidance.</b><b>Four skills can increase perceived scope.</b></article>
               <i>→</i>
               <article><label>THEME</label><b>Low confidence / trust</b><b>Lack of system status</b><b>Misplaced information hierarchy</b><b>Onboarding / scope complexity</b></article>
               <i>→</i>
@@ -370,9 +383,9 @@ function ComskiCaseStudyCV4() {
 
           <Section n="09" title="Exploration & design alternatives" tone="blue">
             <Stagger className="cv4-directions">
-              <article><label>DIRECTION A</label><h3>Two separate products</h3><p><b>Strength:</b> maximum audience specificity.</p><p><b>Weakness:</b> two IAs, two onboarding systems and duplicated components.</p><p><b>Risk:</b> divergent quality and no shared learning.</p><em>Rejected because the underlying job — practice → feedback → improve → progress — is shared.</em></article>
-              <article><label>DIRECTION B</label><h3>Single diagnostic assessment</h3><p><b>Strength:</b> smaller scope.</p><p><b>Weakness:</b> measures the problem but does not solve repeated avoidance.</p><p><b>Risk:</b> accurate diagnosis with no behavior change.</p><em>Rejected because the core opportunity is an ongoing practice relationship.</em></article>
-              <article className="selected"><label>FINAL DIRECTION</label><h3>One shared system + four-skill entry + coached practice loop</h3><p><b>Strength:</b> addresses avoidance while remaining achievable in one design cycle.</p><p><b>Trade-off:</b> shared architecture might underserve one audience.</p><p><b>Mitigation:</b> define a falsifiable post-launch segment comparison.</p><em>Selected because it best matches the identified job for both audiences.</em></article>
+              <TiltCard><article><label>DIRECTION A</label><h3>Two separate products</h3><p><b>Strength:</b> maximum audience specificity.</p><p><b>Weakness:</b> two IAs, two onboarding systems and duplicated components.</p><p><b>Risk:</b> divergent quality and no shared learning.</p><em>Rejected because the underlying job — practice → feedback → improve → progress — is shared.</em></article></TiltCard>
+              <TiltCard><article><label>DIRECTION B</label><h3>Single diagnostic assessment</h3><p><b>Strength:</b> smaller scope.</p><p><b>Weakness:</b> measures the problem but does not solve repeated avoidance.</p><p><b>Risk:</b> accurate diagnosis with no behavior change.</p><em>Rejected because the core opportunity is an ongoing practice relationship.</em></article></TiltCard>
+              <TiltCard><article className="selected"><label>FINAL DIRECTION</label><h3>One shared system + four-skill entry + coached practice loop</h3><p><b>Strength:</b> addresses avoidance while remaining achievable in one design cycle.</p><p><b>Trade-off:</b> shared architecture might underserve one audience.</p><p><b>Mitigation:</b> define a falsifiable post-launch segment comparison.</p><em>Selected because it best matches the identified job for both audiences.</em></article></TiltCard>
             </Stagger>
           </Section>
 
@@ -407,7 +420,7 @@ function ComskiCaseStudyCV4() {
               </div>
             </div>
             <AnimatePresence mode="wait">
-              <motion.div key={activeScreen} className="cv4-screen-reasoning" initial={reduce ? false : { opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={reduce ? undefined : { opacity: 0, height: 0 }} transition={{ duration: 0.35, ease }}>
+              <motion.div key={activeScreen} className="cv4-screen-reasoning rb-glass-panel" initial={reduce ? false : { opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={reduce ? undefined : { opacity: 0, height: 0 }} transition={{ duration: 0.35, ease }}>
                 <div><label>USER GOAL</label><strong>{['Understand what ComSki is before committing.', 'Feel that the product is adapting to me.', 'Demonstrate current reading ability without added pressure.', 'Demonstrate listening comprehension with familiar structure.', 'Express an idea in writing inside a predictable frame.', 'Practise spoken delivery and receive directional feedback.'][activeScreen]}</strong></div>
                 <div><label>DESIGN DECISION</label><strong>{['Mascot-led introduction establishes the trust baseline.', 'One question per screen reduces perceived effort and supports revision.', 'Shared navigation chrome transfers familiarity across skills.', 'Audio is modality-specific; the interaction frame remains consistent.', 'The task changes, not the assessment grammar.', 'Completion points toward the next useful action.'][activeScreen]}</strong></div>
                 <div><label>PRINCIPLE</label><strong>Recognition over recall · Progressive disclosure · Consistency and standards</strong></div>
@@ -446,13 +459,13 @@ function ComskiCaseStudyCV4() {
           </Section>
 
           <Section n="14" title="Usability testing & findings" tone="orange">
-            <Reveal><h2>Two concrete failure points changed the product hierarchy.</h2></Reveal>
-            <div className="cv4-test-meta"><div><label>CONFIRMED</label><strong>Small moderated group</strong><span>Interactive Figma prototype · start → record → feedback → next action</span></div><div><label>PROPOSED PROTOCOL</label><strong>Completion · time-on-task · navigation errors · feedback comprehension</strong><span>Exact participant count is not recorded and is intentionally not invented.</span></div></div>
+            <Reveal><h2>Validation is separated from inference — so the case study stays credible.</h2><p className="cv4-lede">The preserved project material does not contain participant counts, task results or validated before/after findings. Rather than inventing evidence, this section shows the testable hypotheses and the protocol I would use.</p></Reveal>
+            <div className="cv4-test-meta"><div><label>AVAILABLE EVIDENCE</label><strong>Prototype + interaction decisions</strong><span>Start → task → feedback → next action can be evaluated, but participant-level results are not preserved here.</span></div><div><label>PROPOSED PROTOCOL</label><strong>Completion · time-on-task · navigation errors · feedback comprehension</strong><span>Track severity, observation, design response and repeat intent without fabricating a sample.</span></div></div>
             <Table className="cv4-findings">
               <thead><tr><th>Finding</th><th>Severity</th><th>Status</th><th>Design response</th></tr></thead>
               <tbody>
-                <tr><th>Users lost the thread during AI processing because system status was invisible.</th><td><Pill tone="high">High</Pill></td><td><span className="status fixed">● Fixed</span></td><td>Surface processing status explicitly.</td></tr>
-                <tr><th>Users fixated on score over guidance.</th><td><Pill tone="critical">Critical</Pill></td><td><span className="status fixed">● Fixed</span></td><td>Restructure hierarchy: guidance leads, score is secondary.</td></tr>
+                <tr><th>Hypothesis: invisible processing state could make the AI step feel broken.</th><td><Pill tone="high">High</Pill></td><td><span className="status open">○ Validate</span></td><td>Prototype explicit processing status and test comprehension.</td></tr>
+                <tr><th>Hypothesis: a dominant score could compete with guidance.</th><td><Pill tone="critical">Critical</Pill></td><td><span className="status open">○ Validate</span></td><td>Test guidance-first hierarchy against score-first hierarchy.</td></tr>
                 <tr><th>No visible validation state on free-text / name fields.</th><td><Pill tone="medium">Medium</Pill></td><td><span className="status open">○ Open</span></td><td>Add validation and recovery states.</td></tr>
                 <tr><th>Numeric feedback screen is not confirmed in the current export.</th><td><Pill tone="medium">Medium</Pill></td><td><span className="status open">○ Needs confirmation</span></td><td>Do not claim a specific before/after screen until verified.</td></tr>
               </tbody>
@@ -469,7 +482,7 @@ function ComskiCaseStudyCV4() {
           <Section n="16" title="Outcomes + impact measurement" tone="pink">
             <Reveal><h2>The strongest outcomes are decisions that became more defensible.</h2></Reveal>
             <div className="cv4-outcomes">
-              <article><span>USER</span><strong>Two concrete confusion points were identified and resolved before scale.</strong><small>Status visibility + score hierarchy.</small></article>
+              <article><span>USER</span><strong>Two high-risk interaction hypotheses were made explicit and turned into testable design decisions.</strong><small>Status visibility + score hierarchy.</small></article>
               <article><span>PRODUCT</span><strong>One reusable interaction grammar spans four structurally different skill checks.</strong><small>Lower component surface area than four bespoke patterns.</small></article>
               <article><span>DESIGN SYSTEM</span><strong>A token-level specification makes the product implementation-ready.</strong><small>Color · type · spacing · grid · states.</small></article>
             </div>
@@ -508,7 +521,7 @@ function ComskiCaseStudyCV4() {
               <div><label>RESPONSIBILITIES</label><strong>End-to-end product design ownership: research framing, IA, interaction, visual design and usability validation.</strong></div>
               <div><label>DECISIONS</label><strong>Shared architecture, shared assessment grammar, feedback hierarchy, control trade-off and design-token system.</strong></div>
               <div><label>DELIVERABLES</label><strong>Figma screen set across onboarding, four skills and dashboard; component/token specification; decision log; heuristic evaluation.</strong></div>
-              <div><label>COLLABORATION</label><strong>Usability testing was run and interpreted solo; the project did not have embedded research, product or engineering partners.</strong></div>
+              <div><label>COLLABORATION</label><strong>Solo product-design ownership across the preserved design material; implementation and research-team participation are not claimed where the record is incomplete.</strong></div>
               <div className="honest"><label>WHAT I DID NOT DO</label><strong>I did not build, ship or launch the product, and I did not run a statistically powered usability study.</strong></div>
             </div></Reveal>
           </Section>
