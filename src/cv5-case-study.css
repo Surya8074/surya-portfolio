@@ -357,7 +357,6 @@ a{color:inherit}
   border-radius:10px;
   box-shadow:0 10px 24px rgba(31,52,94,.04);
 }
-.cv5-process-step:nth-child(5){grid-column:1}
 .cv5-process-step:nth-child(n+6){grid-row:2}
 .cv5-process-step span{font-size:8px;color:var(--cv5-blue);font-weight:900;letter-spacing:.1em}
 .cv5-process-step strong{font-size:11px;margin-top:7px}
