@@ -306,8 +306,6 @@
 .cv6-ag-orb-label small{font:400 8px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;color:rgba(215,220,236,.35)}
 .cv6-ag-scroll{position:absolute;z-index:5;left:clamp(24px,5vw,76px);bottom:34px;font:500 9px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.18em;color:rgba(224,228,244,.38);display:flex;align-items:center;gap:14px}
 .cv6-ag-scroll span{font-size:15px;color:rgba(224,228,244,.7);animation:cv6-ag-bob 1.8s ease-in-out infinite}
-.cv6-ag-hero .cv4-hero-inner,.cv6-ag-hero .cv4-hero-copy,.cv6-ag-hero .cv4-hero-visual{all:unset}
-.cv6-ag-hero .cv4-hero-inner{display:contents}
 .cv6-ag-orbit{position:absolute;border-radius:50%;pointer-events:none;filter:blur(1px);opacity:.12}
 .orbit-a{width:55vw;height:55vw;left:49%;top:8%;border:1px solid rgba(116,140,255,.35);transform:rotate(26deg) scaleY(.28)}
 .orbit-b{width:78vw;height:78vw;left:38%;top:-4%;border:1px solid rgba(230,109,193,.2);transform:rotate(-18deg) scaleY(.19)}
