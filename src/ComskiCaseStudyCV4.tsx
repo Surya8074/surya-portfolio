@@ -7,14 +7,30 @@ gsap.registerPlugin(ScrollTrigger);
 
 const BASE = '/surya-portfolio/comski/';
 
-type ScreenProps = { src: string; alt: string; label: string; wide?: boolean; accent?: string };
+type ScreenProps = {
+  src: string;
+  alt: string;
+  label: string;
+  phase: string;
+  goal: string;
+  decision: string;
+  accent?: string;
+  wide?: boolean;
+};
+
 const screenData: ScreenProps[] = [
-  { src: 'Onboarding Intro.svg', alt: 'ComSki onboarding introduction screen', label: '01 · Onboarding Intro', accent: 'blue' },
-  { src: 'Onboarding 1st Question.svg', alt: 'ComSki first onboarding question', label: '02 · Pick your Vibe', accent: 'pink' },
-  { src: 'Reading.svg', alt: 'ComSki Reading assessment screen', label: '03 · Reading', accent: 'orange' },
-  { src: 'Listening 1.svg', alt: 'ComSki Listening assessment screen', label: '04 · Listening', accent: 'sky' },
-  { src: 'Writing 1.svg', alt: 'ComSki Writing assessment screen', label: '05 · Writing', accent: 'pink' },
-  { src: 'Speaking 1.svg', alt: 'ComSki Speaking assessment screen', label: '06 · Speaking', accent: 'navy' },
+  { src: 'Onboarding Intro.svg', alt: 'ComSki onboarding introduction screen', label: '01 · Introduction', phase: 'ONBOARDING', goal: 'Understand ComSki before committing to the assessment journey.', decision: 'Use a low-pressure introduction to establish context before asking for personalisation.', accent: 'blue' },
+  { src: 'Onboarding 1st Question.svg', alt: 'ComSki first onboarding question', label: '02 · Pick your Vibe', phase: 'ONBOARDING', goal: 'Feel that the experience can adapt to the learner.', decision: 'Ask one personalisation question at a time instead of presenting a long setup form.', accent: 'pink' },
+  { src: 'Onboarding 3rd question.svg', alt: 'ComSki third onboarding question', label: '03 · Daily practice', phase: 'ONBOARDING', goal: 'Set a realistic practice expectation without increasing setup friction.', decision: 'Turn routine and availability into product context rather than another generic preference.', accent: 'sky' },
+  { src: 'Reading.svg', alt: 'ComSki Reading assessment screen', label: '04 · Reading', phase: 'ASSESSMENT', goal: 'Demonstrate reading ability inside a familiar task structure.', decision: 'Keep the assessment grammar stable while changing only the skill-specific task.', accent: 'orange' },
+  { src: 'Reading 1.svg', alt: 'ComSki Reading question state', label: '05 · Reading question', phase: 'ASSESSMENT', goal: 'Move through a focused reading task without unnecessary navigation.', decision: 'Use predictable progression so cognitive effort stays on the communication task.', accent: 'orange' },
+  { src: 'Listening 1.svg', alt: 'ComSki Listening assessment screen', label: '06 · Listening', phase: 'ASSESSMENT', goal: 'Demonstrate listening comprehension with the same interaction rhythm.', decision: 'Change the input modality to audio while preserving familiar controls and progression.', accent: 'sky' },
+  { src: 'Listening 2.svg', alt: 'ComSki Listening question state', label: '07 · Listening response', phase: 'ASSESSMENT', goal: 'Respond to spoken information without learning a new interaction model.', decision: 'Separate modality complexity from interface complexity.', accent: 'sky' },
+  { src: 'Writing 1.svg', alt: 'ComSki Writing assessment screen', label: '08 · Writing', phase: 'ASSESSMENT', goal: 'Express an idea in writing inside a predictable frame.', decision: 'Let the task change while keeping progress, feedback and completion conventions consistent.', accent: 'pink' },
+  { src: 'Writing 2.svg', alt: 'ComSki Writing response state', label: '09 · Writing response', phase: 'ASSESSMENT', goal: 'Review and complete a written response with clear progression.', decision: 'Make the learner action obvious before introducing any AI interpretation.', accent: 'pink' },
+  { src: 'Speaking 1.svg', alt: 'ComSki Speaking assessment screen', label: '10 · Speaking', phase: 'ASSESSMENT', goal: 'Practise spoken delivery without turning the interface into a judgement surface.', decision: 'Frame recording as a practice action first; analysis follows as a separate system state.', accent: 'navy' },
+  { src: 'Speaking 2.svg', alt: 'ComSki Speaking response state', label: '11 · Speaking response', phase: 'FEEDBACK', goal: 'Understand what happened after completing a spoken task.', decision: 'Create a clear handoff from user input to system analysis instead of hiding processing.', accent: 'navy' },
+  { src: 'Desktop - 1.svg', alt: 'ComSki My Journey dashboard', label: '12 · My Journey', phase: 'PROGRESSION', goal: 'See progress as a continuous journey rather than isolated assessment scores.', decision: 'Connect four skills back to one persistent learner model and next action.', accent: 'blue', wide: true },
 ];
 
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -171,18 +187,24 @@ function GlowCursor() {
 
 function AccordionGallery({ activeScreen, setActiveScreen }: { activeScreen: number; setActiveScreen: (index: number) => void }) {
   return (
-    <div className="cv4-accordion-gallery" role="tablist" aria-label="ComSki product screens">
+    <div className="cv4-accordion-gallery" role="tablist" aria-label="ComSki product journey screens">
       {screenData.map((screen, i) => (
         <button
           key={screen.src}
           type="button"
           role="tab"
           aria-selected={activeScreen === i}
+          aria-label={screen.label}
           className={activeScreen === i ? 'is-active' : ''}
           onClick={() => setActiveScreen(i)}
         >
           <div className="cv4-gallery-media"><img src={BASE + screen.src} alt="" loading="lazy" /></div>
-          <div className="cv4-gallery-label"><span>{String(i + 1).padStart(2,'0')}</span><strong>{screen.label.split(' · ')[1]}</strong><i>↗</i></div>
+          <div className="cv4-gallery-label">
+            <span>{String(i + 1).padStart(2,'0')}</span>
+            <strong>{screen.label.split(' · ')[1]}</strong>
+            <small>{screen.phase}</small>
+            <i>↗</i>
+          </div>
         </button>
       ))}
     </div>
@@ -583,14 +605,17 @@ function ComskiCaseStudyCV4() {
           </Section>
 
           <Section n="11" title="Features & screens" tone="orange">
-            <Reveal><h2>Real product screens, presented as an interaction system rather than a gallery.</h2><p className="cv4-lede">The screen assets below are the actual ComSki exports available in the project. The reasoning layer explains the role each screen plays.</p></Reveal>
+            <Reveal><h2>From personalisation to practice to progress — the interface keeps the grammar stable while the task changes.</h2><p className="cv4-lede">These are the original ComSki exports now integrated into the case study. Twelve representative states show the learner journey across onboarding, assessment, feedback and progression without replacing the product with invented UI.</p></Reveal>
             <AccordionGallery activeScreen={activeScreen} setActiveScreen={setActiveScreen} />
-            <div className="cv4-feature-selected"><Screen {...active} wide /></div>
+            <div className="cv4-feature-selected">
+              <div className="cv4-screen-context"><span>{active.phase}</span><b>{String(activeScreen + 1).padStart(2,'0')} / {String(screenData.length).padStart(2,'0')}</b></div>
+              <Screen {...active} wide />
+            </div>
             <AnimatePresence mode="wait">
               <motion.div key={activeScreen} className="cv4-screen-reasoning rb-glass-panel" initial={reduce ? false : { opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={reduce ? undefined : { opacity: 0, height: 0 }} transition={{ duration: 0.35, ease }}>
-                <div><label>USER GOAL</label><strong>{['Understand what ComSki is before committing.', 'Feel that the product is adapting to me.', 'Demonstrate current reading ability without added pressure.', 'Demonstrate listening comprehension with familiar structure.', 'Express an idea in writing inside a predictable frame.', 'Practise spoken delivery and receive directional feedback.'][activeScreen]}</strong></div>
-                <div><label>DESIGN DECISION</label><strong>{['Mascot-led introduction establishes the trust baseline.', 'One question per screen reduces perceived effort and supports revision.', 'Shared navigation chrome transfers familiarity across skills.', 'Audio is modality-specific; the interaction frame remains consistent.', 'The task changes, not the assessment grammar.', 'Completion points toward the next useful action.'][activeScreen]}</strong></div>
-                <div><label>PRINCIPLE</label><strong>Recognition over recall · Progressive disclosure · Consistency and standards</strong></div>
+                <div><label>USER GOAL</label><strong>{active.goal}</strong></div>
+                <div><label>DESIGN DECISION</label><strong>{active.decision}</strong></div>
+                <div><label>SYSTEM ROLE</label><strong>{active.phase} · Recognition over recall · Progressive disclosure · Consistency</strong></div>
               </motion.div>
             </AnimatePresence>
           </Section>
