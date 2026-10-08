@@ -838,3 +838,12 @@ body {
 @media(prefers-reduced-motion:reduce){
   .cv4-hero-frame,.cv4-hero-copy,.cv4-hero-visual,.cv4-section-content h2,.cv4-section-content > .cv4-screen-browser,.cv4-section-content > .cv4-system,.cv4-section-content > .cv4-table-wrap,.cv4-section-content > .cv4-opportunity,.cv4-footer{will-change:auto!important;}
 }
+
+
+/* Phase 4 — product-screen storytelling */
+.cv4-screen-context{display:flex;justify-content:space-between;align-items:center;margin:0 0 10px;padding:0 2px;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#7b8799;font-weight:900}
+.cv4-screen-context b{color:#1a1d29;font-variant-numeric:tabular-nums}
+.cv4-gallery-label{position:relative}
+.cv4-gallery-label small{display:block;margin-top:3px;font-size:6px;letter-spacing:.12em;color:#8a95a6;font-weight:900}
+.cv4-accordion-gallery button.is-active .cv4-gallery-label small{color:var(--blue)}
+@media(max-width:768px){.cv4-gallery-label small{font-size:6px}.cv4-screen-context{font-size:8px}}
