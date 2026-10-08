@@ -847,3 +847,46 @@ body {
 .cv4-gallery-label small{display:block;margin-top:3px;font-size:6px;letter-spacing:.12em;color:#8a95a6;font-weight:900}
 .cv4-accordion-gallery button.is-active .cv4-gallery-label small{color:var(--blue)}
 @media(max-width:768px){.cv4-gallery-label small{font-size:6px}.cv4-screen-context{font-size:8px}}
+
+
+/* Phase 5 — AI UX system visualization */
+.cv4-ai-system{position:relative;margin-top:34px;max-width:920px;margin-left:auto;margin-right:auto;padding:4px 0 6px}
+.cv4-ai-node{position:relative;padding:20px 22px;border:1px solid rgba(205,214,228,.95);border-radius:18px;background:rgba(255,255,255,.72);box-shadow:0 18px 45px rgba(28,48,84,.07);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.cv4-ai-node>span{display:block;font-size:8px;letter-spacing:.13em;text-transform:uppercase;color:#6f7d91;font-weight:900}
+.cv4-ai-node>strong{display:block;font-size:21px;line-height:1.15;letter-spacing:-.025em;margin-top:7px}
+.cv4-ai-node>p{font-size:11px;line-height:1.55;margin:7px 0 0;color:#556277;max-width:720px}
+.cv4-ai-node>i{display:block;font-size:8px;color:#8a96a8;font-style:normal;margin-top:10px;font-weight:800}
+.cv4-ai-node.input{border-color:#cbd9ff;background:linear-gradient(135deg,rgba(239,245,255,.9),rgba(255,255,255,.72))}
+.cv4-ai-node.processing{background:linear-gradient(135deg,rgba(241,248,255,.9),rgba(255,255,255,.72))}
+.cv4-ai-node.guidance{border-color:#b9cbff;background:linear-gradient(135deg,rgba(239,244,255,.92),rgba(255,255,255,.78))}
+.cv4-ai-node.next{border-color:#d7c5e9;background:linear-gradient(135deg,rgba(250,245,255,.92),rgba(255,255,255,.76))}
+.cv4-ai-connector{height:32px;display:flex;align-items:center;justify-content:center;color:#3b5bdb;font-size:18px;font-weight:800}
+.cv4-ai-split{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cv4-ai-split .cv4-ai-node{height:100%;box-sizing:border-box}
+.cv4-ai-node .muted{color:#8792a3;font-size:9px}
+.cv4-ai-pulse{display:flex;gap:5px;margin-top:13px}
+.cv4-ai-pulse i{display:block;width:6px;height:6px;border-radius:50%;background:#3b5bdb;opacity:.25;animation:cv4AiPulse 1.2s ease-in-out infinite}
+.cv4-ai-pulse i:nth-child(2){animation-delay:.16s}.cv4-ai-pulse i:nth-child(3){animation-delay:.32s}
+@keyframes cv4AiPulse{50%{opacity:1;transform:translateY(-2px)}}
+.cv4-ai-guidance-row{display:grid;grid-template-columns:72px 1fr 190px;align-items:center;gap:10px;margin-top:12px}
+.cv4-ai-guidance-row b{font-size:9px}.cv4-ai-guidance-row>span{height:7px;border-radius:99px;background:#e7ecf4;overflow:hidden}
+.cv4-ai-guidance-row>span i{display:block;height:100%;border-radius:99px;background:#3b5bdb}
+.cv4-ai-guidance-row em{font-size:8px;color:#67758b;font-style:normal}
+.cv4-ai-node.guidance small{display:block;margin-top:14px;font-size:8px;color:#78869a;font-weight:800}
+.cv4-ai-node.next button{margin-top:14px;border:1px solid #cdd6e4;background:#fff;border-radius:999px;padding:9px 13px;font-size:9px;font-weight:900;color:#17264a}
+.cv4-ai-state-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.cv4-ai-state-grid article{padding:18px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.62)}
+.cv4-ai-state-grid span{display:inline-flex;padding:5px 7px;border-radius:99px;background:#edf3ff;color:#3b5bdb;font-size:7px;letter-spacing:.1em;font-weight:900}
+.cv4-ai-state-grid article:nth-child(2) span,.cv4-ai-state-grid article:nth-child(3) span{background:#fff3e8;color:#9a5b19}
+.cv4-ai-state-grid strong{display:block;font-size:12px;line-height:1.35;margin-top:9px}
+.cv4-ai-state-grid p{font-size:9px;line-height:1.55;margin:6px 0 0;color:#68758b}
+@media(max-width:768px){
+ .cv4-ai-split,.cv4-ai-state-grid{grid-template-columns:1fr}
+ .cv4-ai-guidance-row{grid-template-columns:64px 1fr}
+ .cv4-ai-guidance-row em{grid-column:2}
+ .cv4-ai-node{padding:17px}
+ .cv4-ai-node>strong{font-size:18px}
+}
+@media(prefers-reduced-motion:reduce){
+ .cv4-ai-pulse i{animation:none;opacity:.6}
+}
