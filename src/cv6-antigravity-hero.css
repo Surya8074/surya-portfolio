@@ -1,0 +1,249 @@
+/* CV6 — Antigravity-inspired hero only.
+   This file intentionally scopes every rule to .cv4-hero so the rest of CV6 stays unchanged. */
+
+.cv4-hero{
+  --hero-ink:#0b0d14;
+  --hero-blue:#4266ff;
+  --hero-purple:#8f6cff;
+  --hero-pink:#d982b8;
+  --hero-orange:#f2a04a;
+  position:relative!important;
+  isolation:isolate;
+  min-height:calc(100svh - 84px)!important;
+  padding:88px 24px 72px!important;
+  overflow:hidden!important;
+  background:#fff!important;
+}
+
+.cv4-hero::before{
+  content:"";
+  position:absolute;
+  inset:-18%;
+  z-index:-3;
+  opacity:.72;
+  background-image:
+    radial-gradient(circle at 7% 18%,rgba(66,102,255,.9) 0 1.4px,transparent 1.8px),
+    radial-gradient(circle at 14% 73%,rgba(143,108,255,.72) 0 1.2px,transparent 1.7px),
+    radial-gradient(circle at 23% 38%,rgba(217,130,184,.75) 0 1.1px,transparent 1.6px),
+    radial-gradient(circle at 31% 82%,rgba(242,160,74,.72) 0 1.2px,transparent 1.7px),
+    radial-gradient(circle at 42% 16%,rgba(66,102,255,.7) 0 1.1px,transparent 1.6px),
+    radial-gradient(circle at 52% 88%,rgba(143,108,255,.65) 0 1.3px,transparent 1.8px),
+    radial-gradient(circle at 63% 23%,rgba(217,130,184,.68) 0 1.2px,transparent 1.7px),
+    radial-gradient(circle at 72% 78%,rgba(242,160,74,.62) 0 1.2px,transparent 1.7px),
+    radial-gradient(circle at 83% 34%,rgba(66,102,255,.8) 0 1.3px,transparent 1.8px),
+    radial-gradient(circle at 94% 68%,rgba(143,108,255,.7) 0 1.2px,transparent 1.7px);
+  background-size:190px 190px,230px 230px,270px 270px,310px 310px,350px 350px,390px 390px,430px 430px,470px 470px,510px 510px,550px 550px;
+  filter:blur(.1px);
+  transform:rotate(-4deg) scale(1.12);
+  animation:cv6AgParticleDrift 18s linear infinite;
+  pointer-events:none;
+}
+
+.cv4-hero::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:52%;
+  width:min(92vw,1180px);
+  height:min(70vw,820px);
+  z-index:-2;
+  transform:translate(-50%,-50%);
+  background:
+    radial-gradient(ellipse at 50% 48%,rgba(255,255,255,.98) 0 22%,rgba(255,255,255,.88) 37%,rgba(255,255,255,0) 72%),
+    radial-gradient(ellipse at 32% 44%,rgba(66,102,255,.12),transparent 52%),
+    radial-gradient(ellipse at 70% 50%,rgba(217,130,184,.10),transparent 50%);
+  filter:blur(2px);
+  pointer-events:none;
+}
+
+.cv4-hero-inner{
+  position:relative!important;
+  z-index:2;
+  width:min(1280px,100%)!important;
+  min-height:calc(100svh - 236px);
+  margin:0 auto!important;
+  padding:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center;
+}
+
+.cv4-hero-inner::before{
+  content:"";
+  position:absolute;
+  inset:-12%;
+  z-index:-1;
+  opacity:.42;
+  background-image:
+    radial-gradient(circle,rgba(66,102,255,.78) 0 1px,transparent 1.5px),
+    radial-gradient(circle,rgba(217,130,184,.62) 0 1px,transparent 1.5px),
+    radial-gradient(circle,rgba(242,160,74,.58) 0 1px,transparent 1.5px);
+  background-size:73px 73px,101px 101px,137px 137px;
+  background-position:0 0,31px 17px,53px 71px;
+  mask-image:radial-gradient(ellipse at center,black 0 34%,transparent 72%);
+  -webkit-mask-image:radial-gradient(ellipse at center,black 0 34%,transparent 72%);
+  animation:cv6AgParticleOrbit 24s linear infinite reverse;
+  pointer-events:none;
+}
+
+.cv4-hero-copy{
+  width:min(1040px,100%)!important;
+  display:flex!important;
+  flex-direction:column;
+  align-items:center;
+  position:relative;
+  z-index:3;
+}
+
+.cv4-chip-row{
+  margin:0 0 30px!important;
+  justify-content:center!important;
+}
+
+.cv4-chip-row span{
+  display:none!important;
+}
+
+.cv4-chip-row::before{
+  content:"COMSKI";
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:32px;
+  padding:7px 14px;
+  border:1px solid rgba(17,24,39,.13);
+  border-radius:999px;
+  background:rgba(255,255,255,.7);
+  color:#202536;
+  box-shadow:0 8px 28px rgba(30,43,75,.06),inset 0 1px rgba(255,255,255,.95);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.18em;
+}
+
+.cv4-hero-title-wrap{
+  width:100%;
+  display:flex;
+  justify-content:center;
+}
+
+.cv4-hero h1{
+  max-width:980px!important;
+  margin:0!important;
+  font-size:clamp(54px,7.2vw,108px)!important;
+  line-height:.94!important;
+  letter-spacing:-.075em!important;
+  font-weight:650!important;
+  color:var(--hero-ink)!important;
+  text-wrap:balance;
+}
+
+.cv4-hero h1 em{
+  color:transparent!important;
+  background:linear-gradient(105deg,#3157e8 4%,#667cf1 30%,#9a72df 58%,#d17fae 78%,#ef9b63 100%);
+  -webkit-background-clip:text!important;
+  background-clip:text!important;
+  text-shadow:none!important;
+}
+
+.cv4-tech-text{
+  font-family:inherit!important;
+  font-weight:650;
+  letter-spacing:-.075em!important;
+  min-width:0!important;
+  text-shadow:none!important;
+}
+
+.cv4-hero-subtitle{
+  max-width:620px!important;
+  margin:30px auto 0!important;
+  color:#687084!important;
+  font-size:15px!important;
+  line-height:1.65!important;
+}
+
+.cv4-meta{
+  display:none!important;
+}
+
+.cv4-hero-visual{
+  display:none!important;
+}
+
+.cv4-hero-copy::after{
+  content:"EXPLORE CASE STUDY  ↓";
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:30px;
+  min-height:42px;
+  padding:0 17px;
+  border:1px solid rgba(17,24,39,.14);
+  border-radius:999px;
+  background:rgba(255,255,255,.72);
+  color:#202536;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.12em;
+  box-shadow:0 10px 32px rgba(27,37,58,.07),inset 0 1px rgba(255,255,255,.95);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  animation:cv6AgButtonFloat 3.8s ease-in-out infinite;
+}
+
+@keyframes cv6AgParticleDrift{
+  0%{transform:rotate(-4deg) scale(1.12) translate3d(0,0,0)}
+  50%{transform:rotate(-1deg) scale(1.16) translate3d(18px,-12px,0)}
+  100%{transform:rotate(-4deg) scale(1.12) translate3d(0,0,0)}
+}
+
+@keyframes cv6AgParticleOrbit{
+  0%{transform:rotate(0deg) scale(1)}
+  50%{transform:rotate(2deg) scale(1.035)}
+  100%{transform:rotate(0deg) scale(1)}
+}
+
+@keyframes cv6AgButtonFloat{
+  50%{transform:translateY(-4px)}
+}
+
+@media(max-width:768px){
+  .cv4-hero{
+    min-height:calc(100svh - 70px)!important;
+    padding:62px 20px 58px!important;
+  }
+
+  .cv4-hero-inner{
+    min-height:calc(100svh - 190px);
+  }
+
+  .cv4-chip-row{
+    margin-bottom:24px!important;
+  }
+
+  .cv4-hero h1{
+    font-size:clamp(44px,12.5vw,68px)!important;
+    line-height:.96!important;
+  }
+
+  .cv4-hero-subtitle{
+    max-width:420px!important;
+    margin-top:24px!important;
+    font-size:14px!important;
+  }
+
+  .cv4-hero-copy::after{
+    margin-top:26px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .cv4-hero::before,
+  .cv4-hero-inner::before,
+  .cv4-hero-copy::after{
+    animation:none!important;
+  }
+}
