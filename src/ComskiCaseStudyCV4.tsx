@@ -312,6 +312,49 @@ function ComskiCaseStudyCV4() {
     return () => ctx.revert();
   }, [reduce, activeScreen]);
 
+  // Premium motion system: keep native scrolling, but choreograph depth from scroll position.
+  useEffect(() => {
+    if (reduce) return;
+    const ctx = gsap.context(() => {
+      const hero = document.querySelector<HTMLElement>('.cv4-hero');
+      const heroVisual = document.querySelector<HTMLElement>('.cv4-hero-visual');
+      const heroCopy = document.querySelector<HTMLElement>('.cv4-hero-copy');
+      const story = document.querySelector<HTMLElement>('.cv4-story');
+      const gallery = document.querySelector<HTMLElement>('.cv4-accordion-gallery');
+      const footer = document.querySelector<HTMLElement>('.cv4-footer');
+
+      if (hero && heroVisual && heroCopy) {
+        gsap.to(heroVisual, { yPercent: -10, rotateZ: -0.35, ease: 'none', scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: 0.8 } });
+        gsap.to(heroCopy, { yPercent: 5, opacity: 0.82, ease: 'none', scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: 0.8 } });
+      }
+
+      gsap.utils.toArray<HTMLElement>('.cv4-section-content').forEach((section) => {
+        const heading = section.querySelector<HTMLElement>('h2');
+        if (!heading) return;
+        gsap.fromTo(heading, { y: 22, opacity: 0.55 }, { y: 0, opacity: 1, ease: 'power3.out', scrollTrigger: { trigger: heading, start: 'top 88%', end: 'top 58%', scrub: 0.65 } });
+      });
+
+      if (story) {
+        gsap.utils.toArray<HTMLElement>('.cv4-section').forEach((section) => {
+          const media = section.querySelector<HTMLElement>('.cv4-screen-browser, .cv4-system, .cv4-table-wrap, .cv4-opportunity');
+          if (!media) return;
+          gsap.fromTo(media, { y: 28, scale: 0.985 }, { y: 0, scale: 1, ease: 'power2.out', scrollTrigger: { trigger: section, start: 'top 82%', end: 'top 35%', scrub: 0.7 } });
+        });
+      }
+
+      if (gallery) {
+        gsap.to(gallery, { xPercent: 0, ease: 'none', scrollTrigger: { trigger: gallery, start: 'top 82%', end: 'bottom 22%', scrub: 0.7 } });
+      }
+
+      if (footer) {
+        gsap.fromTo(footer, { y: 24 }, { y: 0, ease: 'none', scrollTrigger: { trigger: footer, start: 'top bottom', end: 'top 65%', scrub: 0.8 } });
+      }
+
+      ScrollTrigger.refresh();
+    });
+    return () => ctx.revert();
+  }, [reduce]);
+
   const active = useMemo(() => screenData[activeScreen], [activeScreen]);
 
   return (
