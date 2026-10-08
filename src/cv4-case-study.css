@@ -543,7 +543,20 @@ body {
   display:inline-block;
   min-width:5.4ch;
   font-variant-ligatures:none;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
+  letter-spacing:-.035em;
   text-shadow:0 0 28px rgba(59,91,219,.14);
+  cursor:default;
+  transition:filter .2s ease, text-shadow .2s ease;
+}
+.cv4-tech-text.is-running{
+  filter:blur(.15px);
+  text-shadow:0 0 22px rgba(59,91,219,.32);
+}
+.cv4-tech-text:focus-visible{
+  outline:2px solid rgba(59,91,219,.38);
+  outline-offset:6px;
+  border-radius:8px;
 }
 .cv4-hero h1 em{
   background:linear-gradient(110deg,#3154d8,#6f8fe9 48%,#a17ed0 78%,#d083a8);
