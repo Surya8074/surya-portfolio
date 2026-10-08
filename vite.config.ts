@@ -21,6 +21,7 @@ export default defineConfig({
         cv3: 'cv3.html',
         cv4: 'cv4.html',
         cv5: 'cv5.html',
+        cv6: 'cv6.html',
       },
     },
   },
