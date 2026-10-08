@@ -485,7 +485,7 @@ function ComskiCaseStudyCV4() {
   return (
     <main className="cv4-page"><GlowCursor />
       <div className="cv4-mobile-progress" style={{ transform: `scaleX(${progress})` }} />
-      <nav className="cv4-nav">
+      <nav className="cv4-nav cv6-ag-nav">
         <div className="cv4-nav-progress"><span style={{ transform: `scaleX(${progress})` }} /></div>
         <a href="/surya-portfolio/" className="cv4-back">← Back to portfolio</a>
         <span className="cv4-pagination">02 / 04</span>
