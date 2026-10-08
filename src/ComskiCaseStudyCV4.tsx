@@ -621,19 +621,75 @@ function ComskiCaseStudyCV4() {
           </Section>
 
           <Section n="12" title="AI UX / intelligent system design" tone="blue">
-            <Reveal><h2>The AI model is only half the product. The interface decides whether its output is useful.</h2></Reveal>
+            <Reveal>
+              <h2>Design the AI as a visible loop — input, analysis, uncertainty, guidance, next action.</h2>
+              <p className="cv4-lede">The preserved ComSki screens establish the learner journey, but they do not provide a confirmed AI result or low-confidence state. The system below is therefore a proposed interaction model, explicitly separated from the exported UI.</p>
+            </Reveal>
+
+            <div className="cv4-ai-system" aria-label="Proposed ComSki AI interaction model">
+              <div className="cv4-ai-node input">
+                <span>01 · USER INPUT</span>
+                <strong>Practice</strong>
+                <p>Reading, listening, writing or speaking response</p>
+                <i>Captured task + learner context</i>
+              </div>
+              <div className="cv4-ai-connector" aria-hidden="true">↓</div>
+              <div className="cv4-ai-node processing">
+                <span>02 · SYSTEM STATUS</span>
+                <strong>Analysing</strong>
+                <div className="cv4-ai-pulse"><i/><i/><i/></div>
+                <p>Keep processing visible; do not imply certainty while the model is still evaluating.</p>
+              </div>
+              <div className="cv4-ai-connector" aria-hidden="true">↓</div>
+              <div className="cv4-ai-split">
+                <div className="cv4-ai-node confidence">
+                  <span>03 · CONFIDENCE</span>
+                  <strong>Signal quality</strong>
+                  <p>High-quality input → proceed to coaching.</p>
+                  <p className="muted">Low-quality / ambiguous input → ask for a clearer attempt.</p>
+                </div>
+                <div className="cv4-ai-node transparency">
+                  <span>03 · EXPLANATION</span>
+                  <strong>Why this feedback?</strong>
+                  <p>Show the evidence behind a suggestion where the product can support it.</p>
+                  <p className="muted">Never turn an inferred signal into a definitive judgement.</p>
+                </div>
+              </div>
+              <div className="cv4-ai-connector" aria-hidden="true">↓</div>
+              <div className="cv4-ai-node guidance">
+                <span>04 · COACHING OUTPUT</span>
+                <strong>What to improve next</strong>
+                <div className="cv4-ai-guidance-row"><b>Clarity</b><span><i style={{width:'74%'}}/></span><em>Practice one concise answer</em></div>
+                <div className="cv4-ai-guidance-row"><b>Delivery</b><span><i style={{width:'58%'}}/></span><em>Slow the opening sentence</em></div>
+                <small>Proposed hierarchy: actionable guidance first; score secondary.</small>
+              </div>
+              <div className="cv4-ai-connector" aria-hidden="true">↓</div>
+              <div className="cv4-ai-node next">
+                <span>05 · NEXT ACTION</span>
+                <strong>Practice again</strong>
+                <p>Convert feedback into one small, repeatable action and return the learner to the journey.</p>
+                <button type="button" tabIndex={-1}>Start next practice →</button>
+              </div>
+            </div>
+
             <div className="cv4-ai-principles">
-              <article><span>01</span><h3>Explainability over confidence display</h3><p>Lead with “what to improve next”; use scores as secondary confirmation rather than the main hierarchy.</p><small>NN/g / Microsoft guidance</small></article>
-              <article><span>02</span><h3>System status</h3><p>During AI processing, show what the system is doing so the learner does not experience a black box.</p><small>Human-AI interaction principle</small></article>
-              <article><span>03</span><h3>Human-in-the-loop</h3><p>Pro Tips, completion messaging and judgement-free copy frame AI as a coach rather than a verdict.</p><small>Google / Microsoft guidance</small></article>
+              <article><span>01</span><h3>Explainability over confidence display</h3><p>Lead with “what to improve next”; use scores as secondary confirmation rather than the main hierarchy.</p><small>Design principle</small></article>
+              <article><span>02</span><h3>System status</h3><p>During AI processing, show what the system is doing so the learner does not experience a black box.</p><small>Interaction principle</small></article>
+              <article><span>03</span><h3>Human-in-the-loop</h3><p>AI coaches the next action; it does not replace learner agency or present an opaque verdict.</p><small>Control principle</small></article>
               <article><span>04</span><h3>Bounded automation</h3><p>Assessment integrity can justify constrained exit after commitment, while preserving a clear opt-out beforehand.</p><small>Product-specific trade-off</small></article>
             </div>
+
             <div className="cv4-ai-before-after">
               <div><label>BEFORE · PROBLEM</label><div className="score-bar"><b>Score</b><span style={{ width: '92%' }}/></div><p>Numeric confidence dominates attention.</p></div>
               <div className="arrow">→</div>
               <div><label>AFTER · TARGET HIERARCHY</label><div className="guide-bar"><b>What to improve next</b><span style={{ width: '72%' }}/></div><p>Guidance becomes the primary decision surface.</p></div>
             </div>
-            <p className="cv4-note">Open AI-UX question: when input quality is poor or confidence is low, the interface should be able to say “we're not sure” rather than presenting a confident-sounding result. This is proposed, not confirmed in the current export.</p>
+
+            <div className="cv4-ai-state-grid">
+              <article><span>CONFIRMED</span><strong>Original exports define the learner journey.</strong><p>Onboarding, skill tasks and My Journey are real ComSki screens now integrated above.</p></article>
+              <article><span>PROPOSED</span><strong>Low-confidence recovery.</strong><p>“We’re not sure yet. Try a clearer response.” Give the learner a recoverable next step instead of a false-precision score.</p></article>
+              <article><span>PROPOSED</span><strong>AI failure recovery.</strong><p>Explain that analysis could not complete, preserve the learner’s work, and offer retry / continue options.</p></article>
+            </div>
           </Section>
 
           <Section n="13" title="Design system" tone="pink">
