@@ -1,0 +1,278 @@
+/* CV4.8 — final interaction, responsive, accessibility and performance polish */
+.cv4-page{
+  --cv4-ease:cubic-bezier(.16,1,.3,1);
+  --cv4-focus:rgba(59,91,219,.58);
+}
+.cv4-page :focus-visible{
+  outline:3px solid var(--cv4-focus);
+  outline-offset:4px;
+  border-radius:8px;
+}
+.cv4-page button,
+.cv4-page a{ -webkit-tap-highlight-color:transparent; }
+
+.cv4-page img{
+  content-visibility:auto;
+  contain-intrinsic-size:600px 420px;
+}
+.cv4-section{
+  content-visibility:auto;
+  contain-intrinsic-size:900px 720px;
+}
+.cv4-hero,
+.cv4-nav,
+.cv4-footer{ content-visibility:visible; }
+
+.cv4-nav{
+  isolation:isolate;
+}
+.cv4-nav a,
+.cv4-back,
+.cv4-cta,
+.cv4-accordion-gallery button{
+  transition:
+    transform .22s var(--cv4-ease),
+    background-color .22s ease,
+    border-color .22s ease,
+    box-shadow .22s ease,
+    opacity .22s ease;
+}
+.cv4-nav a:hover,
+.cv4-back:hover{ transform:translateY(-1px); }
+.cv4-nav a:active,
+.cv4-back:active,
+.cv4-cta:active{ transform:scale(.985); }
+
+.cv4-accordion-gallery button:hover{
+  transform:translateY(-2px);
+}
+.cv4-accordion-gallery button:active{
+  transform:scale(.995);
+}
+.cv4-accordion-gallery button.is-active .cv4-gallery-label i{
+  transform:rotate(45deg);
+  background:rgba(255,255,255,.24);
+}
+.cv4-gallery-label i{
+  transition:transform .35s var(--cv4-ease),background .2s ease;
+}
+.cv4-screen-browser{
+  contain:paint;
+}
+.cv4-screen-browser img{
+  display:block;
+  max-width:100%;
+  height:auto;
+}
+
+.cv4-ai-node.next button{
+  cursor:pointer;
+  transition:transform .2s var(--cv4-ease),box-shadow .2s ease,border-color .2s ease;
+}
+.cv4-ai-node.next button:hover{
+  transform:translateY(-1px);
+  box-shadow:0 8px 24px rgba(27,42,72,.10);
+}
+.cv4-ai-node.next button:focus-visible{
+  outline:3px solid var(--cv4-focus);
+  outline-offset:3px;
+}
+
+.cv4-mobile-progress{
+  z-index:50;
+}
+.cv4-section-nav{
+  z-index:60;
+}
+
+@media (max-width:1100px){
+  .cv4-hero-inner{
+    grid-template-columns:1fr!important;
+    gap:54px!important;
+  }
+  .cv4-hero-copy{
+    max-width:760px;
+  }
+  .cv4-hero-visual{
+    width:min(900px,100%);
+    margin-inline:auto;
+  }
+  .cv4-section-content{
+    width:min(100% - 48px,1060px)!important;
+  }
+  .cv4-section-marker{
+    display:none;
+  }
+}
+
+@media (max-width:768px){
+  .cv4-nav{
+    width:calc(100% - 20px)!important;
+    padding:0 12px!important;
+    overflow:hidden;
+  }
+  .cv4-nav > *{
+    min-width:0;
+  }
+  .cv4-nav .cv4-back{
+    flex:0 0 auto;
+  }
+  .cv4-nav .cv4-nav-links{
+    overflow-x:auto;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+  }
+  .cv4-nav .cv4-nav-links::-webkit-scrollbar{display:none}
+  .cv4-section-content{
+    width:calc(100% - 40px)!important;
+    margin-inline:auto;
+  }
+  .cv4-section h2{
+    font-size:clamp(32px,9vw,42px)!important;
+  }
+  .cv4-section p,
+  .cv4-lede{
+    font-size:14px!important;
+    line-height:1.72!important;
+  }
+  .cv4-four-blocks,
+  .cv4-personas,
+  .cv4-directions,
+  .cv4-outcomes{
+    grid-template-columns:1fr!important;
+  }
+  .cv4-table-wrap{
+    width:100%;
+    overflow-x:auto!important;
+    overscroll-behavior-x:contain;
+  }
+  .cv4-table-wrap table{
+    min-width:680px;
+  }
+  .cv4-feature-selected{
+    margin-top:16px;
+  }
+  .cv4-screen-context{
+    flex-wrap:wrap;
+    gap:6px 12px;
+  }
+  .cv4-ai-node>p{font-size:11px}
+  .cv4-ai-state-grid article{min-height:0}
+  .cv4-footer{
+    padding-left:20px!important;
+    padding-right:20px!important;
+  }
+}
+
+@media (max-width:480px){
+  .cv4-hero{
+    padding-top:58px!important;
+    padding-bottom:66px!important;
+  }
+  .cv4-hero-inner{
+    width:calc(100% - 28px)!important;
+  }
+  .cv4-hero h1{
+    font-size:clamp(38px,12vw,46px)!important;
+  }
+  .cv4-chip-row{
+    flex-wrap:wrap;
+  }
+  .cv4-meta{
+    grid-template-columns:1fr!important;
+    gap:10px!important;
+  }
+  .cv4-section{
+    padding-top:68px!important;
+    padding-bottom:68px!important;
+  }
+  .cv4-accordion-gallery{
+    min-height:230px;
+    margin-left:-2px;
+    margin-right:-2px;
+  }
+  .cv4-accordion-gallery button{
+    flex-basis:88%!important;
+  }
+  .cv4-gallery-label{
+    left:14px;
+    right:14px;
+    bottom:13px;
+  }
+  .cv4-gallery-label i{
+    width:22px;
+    height:22px;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .cv4-page *,
+  .cv4-page *::before,
+  .cv4-page *::after{
+    scroll-behavior:auto!important;
+    animation-duration:.001ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.001ms!important;
+  }
+  .cv4-accordion-gallery button:hover,
+  .cv4-nav a:hover,
+  .cv4-back:hover,
+  .cv4-cta:hover,
+  .cv4-ai-node.next button:hover{
+    transform:none!important;
+  }
+}
+
+/* Keyboard users should still see the interactive gallery state clearly. */
+.cv4-accordion-gallery button[aria-selected="true"]{
+  box-shadow:0 28px 75px rgba(27,42,72,.13),inset 0 1px rgba(255,255,255,.95);
+}
+
+/* Prevent expensive effects from becoming a mobile tax. */
+@media (max-width:768px){
+  .cv4-page::after{opacity:.10}
+  .cv4-nav,
+  .cv4-four-blocks article,
+  .cv4-personas article,
+  .cv4-directions article,
+  .cv4-outcomes article,
+  .cv4-table-wrap,
+  .cv4-system,
+  .cv4-screen-reasoning{
+    -webkit-backdrop-filter:blur(14px) saturate(120%)!important;
+    backdrop-filter:blur(14px) saturate(120%)!important;
+  }
+}
+
+/* Print / PDF export: make the case study useful outside the interactive page. */
+@media print{
+  .cv4-glow-cursor,
+  .cv4-nav,
+  .cv4-section-nav,
+  .cv4-mobile-progress,
+  .cv4-trail,
+  .cv4-hero-float{display:none!important}
+  .cv4-page{background:#fff!important;color:#111!important}
+  .cv4-section{
+    content-visibility:visible!important;
+    break-inside:avoid;
+    padding:40px 0!important;
+  }
+  .cv4-section-content{max-width:none!important}
+  .cv4-accordion-gallery{
+    display:grid!important;
+    grid-template-columns:repeat(3,1fr)!important;
+    min-height:0!important;
+  }
+  .cv4-accordion-gallery button{
+    min-height:260px;
+    flex:none!important;
+  }
+  .cv4-accordion-gallery button:not(.is-active){display:none}
+  .cv4-screen-browser,
+  .cv4-table-wrap,
+  .cv4-system{
+    box-shadow:none!important;
+    border:1px solid #ddd!important;
+  }
+}
