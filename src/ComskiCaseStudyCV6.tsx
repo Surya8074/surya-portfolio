@@ -211,6 +211,109 @@ function AccordionGallery({ activeScreen, setActiveScreen }: { activeScreen: num
   );
 }
 
+
+function AntigravityField() {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const reduce = useReducedMotion();
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas || reduce) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let raf = 0;
+    let w = 0;
+    let h = 0;
+    let dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const pointer = { x: 0.5, y: 0.48, tx: 0.5, ty: 0.48 };
+    const particles = Array.from({ length: 150 }, (_, i) => ({
+      a: (i / 150) * Math.PI * 2,
+      r: 0.12 + Math.random() * 0.9,
+      s: 0.0007 + Math.random() * 0.0015,
+      z: Math.random(),
+      size: 0.45 + Math.random() * 1.7,
+      phase: Math.random() * Math.PI * 2
+    }));
+
+    const resize = () => {
+      const rect = canvas.getBoundingClientRect();
+      w = Math.max(1, rect.width);
+      h = Math.max(1, rect.height);
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.floor(w * dpr);
+      canvas.height = Math.floor(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+
+    const move = (e: PointerEvent) => {
+      pointer.tx = e.clientX / Math.max(window.innerWidth, 1);
+      pointer.ty = e.clientY / Math.max(window.innerHeight, 1);
+    };
+
+    const draw = (time: number) => {
+      pointer.x += (pointer.tx - pointer.x) * 0.045;
+      pointer.y += (pointer.ty - pointer.y) * 0.045;
+      ctx.clearRect(0, 0, w, h);
+
+      const cx = w * (0.5 + (pointer.x - 0.5) * 0.055);
+      const cy = h * (0.51 + (pointer.y - 0.5) * 0.045);
+      const scale = Math.min(w, h);
+
+      const glow = ctx.createRadialGradient(cx, cy, 0, cx, cy, scale * 0.48);
+      glow.addColorStop(0, 'rgba(82, 121, 255, 0.18)');
+      glow.addColorStop(0.28, 'rgba(101, 74, 255, 0.10)');
+      glow.addColorStop(0.62, 'rgba(236, 70, 190, 0.045)');
+      glow.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      ctx.fillStyle = glow;
+      ctx.fillRect(0, 0, w, h);
+
+      particles.forEach((p) => {
+        const t = time * p.s + p.phase;
+        const orbit = p.r * scale * 0.34;
+        const wobble = Math.sin(t * 1.7 + p.phase) * scale * 0.012;
+        const x = cx + Math.cos(p.a + t) * (orbit + wobble) + (pointer.x - 0.5) * 26 * p.z;
+        const y = cy + Math.sin(p.a + t * 0.82) * (orbit * 0.52 + wobble) + (pointer.y - 0.5) * 18 * p.z;
+        const alpha = 0.12 + p.z * 0.52;
+        ctx.beginPath();
+        ctx.fillStyle = `rgba(220, 226, 255, ${alpha})`;
+        ctx.arc(x, y, p.size * (0.55 + p.z), 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      const pulse = 1 + Math.sin(time * 0.0011) * 0.035;
+      ctx.save();
+      ctx.translate(cx, cy);
+      ctx.scale(pulse, pulse);
+      ctx.rotate(Math.sin(time * 0.00035) * 0.05);
+      const rings = [0.19, 0.29, 0.39];
+      rings.forEach((r, i) => {
+        ctx.beginPath();
+        ctx.ellipse(0, 0, scale * r, scale * r * 0.27, i * 0.52, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(178, 188, 255, ${0.08 - i * 0.018})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      });
+      ctx.restore();
+
+      raf = requestAnimationFrame(draw);
+    };
+
+    resize();
+    window.addEventListener('resize', resize);
+    window.addEventListener('pointermove', move, { passive: true });
+    raf = requestAnimationFrame(draw);
+
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener('resize', resize);
+      window.removeEventListener('pointermove', move);
+    };
+  }, [reduce]);
+
+  return <canvas ref={canvasRef} className="cv6-ag-field" aria-hidden="true" />;
+}
+
 function ComskiCaseStudyCV4() {
   const reduce = useReducedMotion();
   const [progress, setProgress] = useState(0);
@@ -388,29 +491,67 @@ function ComskiCaseStudyCV4() {
         <span className="cv4-pagination">02 / 04</span>
       </nav>
 
-      <header className="cv4-hero">
-        <div className="cv4-hero-inner">
-          <motion.div className="cv4-hero-copy" initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>
-            <motion.div className="cv4-chip-row" initial={reduce ? false : 'hidden'} animate="show" variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}>
-              {['AI', 'Communication', 'Product Design'].map((chip) => <motion.span key={chip} variants={reduce ? undefined : { hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.4, ease } } }}>{chip}</motion.span>)}
-            </motion.div>
-            <BlurReveal className="cv4-hero-title-wrap"><motion.h1 initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1, duration: 0.45 }}>Breaking the presentation-freeze loop — designing <em><TechText text="ComSki" />.</em></motion.h1></BlurReveal>
-            <motion.p className="cv4-hero-subtitle" initial={reduce ? false : { opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.4, ease }}>
-              A communication coach designed around learner context, four communication skills and a continuous practice loop — rather than treating assessment as a one-off test.
+
+      <header className="cv4-hero cv6-ag-hero">
+        <AntigravityField />
+        <div className="cv6-ag-noise" aria-hidden="true" />
+        <div className="cv6-ag-grid" aria-hidden="true" />
+        <div className="cv6-ag-orbit orbit-a" aria-hidden="true" />
+        <div className="cv6-ag-orbit orbit-b" aria-hidden="true" />
+        <div className="cv6-ag-hero-inner">
+          <motion.div
+            className="cv6-ag-copy"
+            initial={reduce ? false : { opacity: 0, y: 22 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease }}
+          >
+            <div className="cv6-ag-eyebrow">
+              <span className="cv6-ag-dot" />
+              COMSKI / PRODUCT DESIGN
+            </div>
+            <BlurReveal className="cv6-ag-title-wrap">
+              <motion.h1 initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.12, duration: 0.65 }}>
+                Designing a communication coach that makes practice feel <em>natural.</em>
+              </motion.h1>
+            </BlurReveal>
+            <motion.p
+              className="cv6-ag-subtitle"
+              initial={reduce ? false : { opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.28, duration: 0.55, ease }}
+            >
+              A product system for Reading, Listening, Writing and Speaking — shaped around learner context, confidence and continuous practice.
             </motion.p>
-            <motion.div className="cv4-meta" initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3, duration: 0.3 }}>
-              <div><small>ROLE</small><strong>Product Designer</strong></div>
-              <div><small>SCOPE</small><strong>Research, IA, interaction, UI, validation</strong></div>
-              <div><small>TEAM</small><strong>Single designer</strong></div>
-              <div><small>TIMELINE</small><strong>One month</strong></div>
+            <motion.div
+              className="cv6-ag-actions"
+              initial={reduce ? false : { opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.42, duration: 0.5, ease }}
+            >
+              <a className="cv6-ag-primary" href="#s01">Explore case study <span>↗</span></a>
+              <span className="cv6-ag-meta">01 / 04&nbsp;&nbsp; · &nbsp;&nbsp;AI COMMUNICATION</span>
             </motion.div>
           </motion.div>
-          <motion.div className="cv4-hero-visual" initial={reduce ? false : { opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2, duration: 0.6, ease }}>
-            <div className="cv4-hero-frame"><img src={BASE + 'Desktop - 1.svg'} alt="ComSki My Journey dashboard" /></div>
-            <span className="cv4-hero-float one">My Journey <small>goal-specific progression</small></span>
-            <span className="cv4-hero-float two">Four skills <small>shared interaction grammar</small></span>
+
+          <motion.div
+            className="cv6-ag-visual"
+            initial={reduce ? false : { opacity: 0, scale: 0.94, y: 26 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ delay: 0.16, duration: 1, ease }}
+          >
+            <div className="cv6-ag-signal">
+              <span className="signal-core" />
+              <span className="signal-ring ring-1" />
+              <span className="signal-ring ring-2" />
+              <span className="signal-ring ring-3" />
+              <span className="signal-trail trail-1" />
+              <span className="signal-trail trail-2" />
+              <span className="signal-trail trail-3" />
+            </div>
+            <div className="cv6-ag-orb-label"><span>COMSKI</span><small>communication intelligence</small></div>
           </motion.div>
         </div>
+        <div className="cv6-ag-scroll">SCROLL TO EXPLORE <span>↓</span></div>
       </header>
 
       <aside className="cv4-section-nav" aria-label="Case study sections">
