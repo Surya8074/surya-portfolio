@@ -104,27 +104,49 @@ function TiltCard({ children, className = '' }: { children: React.ReactNode; cla
 
 function TechText({ text }: { text: string }) {
   const reduce = useReducedMotion();
-  const [value, setValue] = useState(reduce ? text : '');
-  useEffect(() => {
+  const [value, setValue] = useState(text);
+  const [running, setRunning] = useState(false);
+
+  const animate = () => {
     if (reduce) { setValue(text); return; }
+    setRunning(true);
     const chars = '01<>[]{}/*+=#';
     let frame = 0;
     let timer = 0;
-    const run = () => {
-      const resolved = Math.min(text.length, Math.floor(frame / 2));
-      const next = text.split('').map((char, i) => {
-        if (i < resolved) return char;
-        if (char === ' ') return ' ';
-        return chars[Math.floor(Math.random() * chars.length)];
-      }).join('');
-      setValue(next);
+    const tick = () => {
+      const resolved = Math.min(text.length, Math.floor(frame / 3));
+      setValue(text.split('').map((char, i) => {
+        if (i < resolved || char === ' ') return char;
+        return chars[(frame + i * 7) % chars.length];
+      }).join(''));
       frame += 1;
-      if (resolved < text.length) timer = window.setTimeout(run, 42);
+      if (resolved < text.length) {
+        timer = window.setTimeout(tick, 55);
+      } else {
+        setValue(text);
+        setRunning(false);
+      }
     };
-    timer = window.setTimeout(run, 120);
+    tick();
+    return () => window.clearTimeout(timer);
+  };
+
+  useEffect(() => {
+    const timer = window.setTimeout(animate, 260);
     return () => window.clearTimeout(timer);
   }, [text, reduce]);
-  return <span className="cv4-tech-text" aria-label={text}>{value || text}</span>;
+
+  return (
+    <span
+      className={`cv4-tech-text ${running ? 'is-running' : ''}`}
+      aria-label={text}
+      onMouseEnter={animate}
+      onFocus={animate}
+      tabIndex={0}
+    >
+      {value}
+    </span>
+  );
 }
 
 function GlowCursor() {
