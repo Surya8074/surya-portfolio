@@ -1,5 +1,6 @@
 name: Deploy to GitHub Pages
-# Force Pages rebuild after CV4 interaction updates
+# Force Pages rebuild after CV4 and CV6 updates
+# CV6 is intentionally a separate Vite entry and must ship with the same Pages build.
 
 on:
   push:
