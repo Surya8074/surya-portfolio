@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import * as THREE from 'three';
 import BlackGlassReveal from '@crazygl/hero-black-glass-reveal';
+import CV6ParticleBackdrop from './CV6ParticleBackdrop';
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -591,7 +592,7 @@ function ComskiCaseStudyCV4() {
   return (
     <main className="cv4-page"><GlowCursor />
       <div className="cv4-mobile-progress" style={{ transform: `scaleX(${progress})` }} />
-      <header className="cv4-hero cv6-ag-hero cv6-comski-device-hero">
+      <header className="cv4-hero cv6-ag-hero cv6-comski-device-hero">\n        <CV6ParticleBackdrop />
         <div className="cv6-original-black-glass-stage" aria-hidden="true">
           <BlackGlassReveal
             contentType="custom"
