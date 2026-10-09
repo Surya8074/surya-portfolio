@@ -260,41 +260,25 @@ function AntigravityField() {
       const cy = h * (0.51 + (pointer.y - 0.5) * 0.045);
       const scale = Math.min(w, h);
 
-      const glow = ctx.createRadialGradient(cx, cy, 0, cx, cy, scale * 0.48);
-      glow.addColorStop(0, 'rgba(82, 121, 255, 0.18)');
-      glow.addColorStop(0.28, 'rgba(101, 74, 255, 0.10)');
-      glow.addColorStop(0.62, 'rgba(236, 70, 190, 0.045)');
-      glow.addColorStop(1, 'rgba(0, 0, 0, 0)');
-      ctx.fillStyle = glow;
-      ctx.fillRect(0, 0, w, h);
-
       particles.forEach((p) => {
         const t = time * p.s + p.phase;
         const orbit = p.r * scale * 0.34;
         const wobble = Math.sin(t * 1.7 + p.phase) * scale * 0.012;
         const x = cx + Math.cos(p.a + t) * (orbit + wobble) + (pointer.x - 0.5) * 26 * p.z;
         const y = cy + Math.sin(p.a + t * 0.82) * (orbit * 0.52 + wobble) + (pointer.y - 0.5) * 18 * p.z;
-        const alpha = 0.12 + p.z * 0.52;
+        const alpha = 0.12 + p.z * 0.24;
+        const colors = [
+          `rgba(66, 133, 244, ${alpha})`,
+          `rgba(52, 168, 83, ${alpha * 0.72})`,
+          `rgba(251, 188, 5, ${alpha * 0.62})`,
+          `rgba(234, 67, 53, ${alpha * 0.56})`,
+          `rgba(95, 99, 104, ${alpha * 0.65})`
+        ];
         ctx.beginPath();
-        ctx.fillStyle = `rgba(220, 226, 255, ${alpha})`;
-        ctx.arc(x, y, p.size * (0.55 + p.z), 0, Math.PI * 2);
+        ctx.fillStyle = colors[Math.floor(p.z * colors.length) % colors.length];
+        ctx.arc(x, y, p.size * (0.4 + p.z * 0.5), 0, Math.PI * 2);
         ctx.fill();
       });
-
-      const pulse = 1 + Math.sin(time * 0.0011) * 0.035;
-      ctx.save();
-      ctx.translate(cx, cy);
-      ctx.scale(pulse, pulse);
-      ctx.rotate(Math.sin(time * 0.00035) * 0.05);
-      const rings = [0.19, 0.29, 0.39];
-      rings.forEach((r, i) => {
-        ctx.beginPath();
-        ctx.ellipse(0, 0, scale * r, scale * r * 0.27, i * 0.52, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(178, 188, 255, ${0.08 - i * 0.018})`;
-        ctx.lineWidth = 1;
-        ctx.stroke();
-      });
-      ctx.restore();
 
       raf = requestAnimationFrame(draw);
     };
@@ -487,14 +471,9 @@ function ComskiCaseStudyCV4() {
       <div className="cv4-mobile-progress" style={{ transform: `scaleX(${progress})` }} />
       <header className="cv4-hero cv6-ag-hero">
         <AntigravityField />
-        <div className="cv6-ag-noise" aria-hidden="true" />
-        <div className="cv6-ag-grid" aria-hidden="true" />
-        <div className="cv6-ag-orbit orbit-a" aria-hidden="true" />
-        <div className="cv6-ag-orbit orbit-b" aria-hidden="true" />
         <div className="cv6-ag-hero-inner">
           <motion.div className="cv6-ag-copy" initial={reduce ? false : { opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease }}>
             <div className="cv6-ag-brand">COMSKI<span className="cv6-ag-brand-mark">●</span></div>
-            <div className="cv6-ag-eyebrow"><span className="cv6-ag-dot" />AI COMMUNICATION COACH · PRODUCT CASE STUDY</div>
             <BlurReveal className="cv6-ag-title-wrap">
               <motion.h1 initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.12, duration: 0.65 }}>
                 Communication gets better when practice feels <em>natural.</em>
@@ -509,7 +488,6 @@ function ComskiCaseStudyCV4() {
             </motion.div>
           </motion.div>
         </div>
-        <div className="cv6-ag-scroll">SCROLL TO EXPLORE <span>↓</span></div>
       </header>
 
       <aside className="cv4-section-nav" aria-label="Case study sections">
