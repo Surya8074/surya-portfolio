@@ -165,3 +165,48 @@
     font-size: clamp(3rem, 13vw, 4.5rem) !important;
   }
 }
+
+
+/* Final hero correction: keep the blue ComSki wordmark fully above the device. */
+.cv6-comski-device-hero .cv6-comski-device-title {
+  position: relative !important;
+  z-index: 5 !important;
+  flex: 0 0 auto !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: clamp(26px, 4.5vh, 52px) 24px 0 !important;
+  text-align: center !important;
+}
+
+.cv6-comski-device-hero .cv6-comski-device-title h1 {
+  color: #3B5BDB !important;
+  font-size: clamp(3.1rem, 6.4vw, 5.8rem) !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  letter-spacing: -.06em !important;
+  margin: 0 !important;
+  text-shadow: 0 8px 28px rgba(59, 91, 219, .12) !important;
+}
+
+/* Start the original CrazyGL device lower than the title, with a clear gap. */
+.cv6-comski-device-hero .cv6-original-black-glass-stage > * {
+  top: clamp(170px, 22vh, 230px) !important;
+  height: calc(100% - clamp(170px, 22vh, 230px)) !important;
+}
+
+.cv6-comski-device-hero .cv6-original-black-glass-stage crazygl-hero {
+  background: #fff !important;
+}
+
+@media (max-width: 767px) {
+  .cv6-comski-device-hero .cv6-comski-device-title {
+    padding: 34px 18px 0 !important;
+  }
+  .cv6-comski-device-hero .cv6-comski-device-title h1 {
+    font-size: clamp(2.8rem, 12vw, 4rem) !important;
+  }
+  .cv6-comski-device-hero .cv6-original-black-glass-stage > * {
+    top: 145px !important;
+    height: calc(100% - 145px) !important;
+  }
+}
