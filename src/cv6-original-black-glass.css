@@ -295,3 +295,20 @@
     transform: translateY(78px) !important;
   }
 }
+
+
+/* Final spacing fix: separate the wordmark from the device bezel. */
+.cv6-comski-device-hero .cv6-comski-device-title {
+  inset: clamp(72px, 10vh, 104px) 0 auto !important;
+}
+.cv6-comski-device-hero .cv6-original-black-glass-stage crazygl-hero {
+  transform: translateY(clamp(132px, 19vh, 172px)) !important;
+}
+@media (max-width: 767px) {
+  .cv6-comski-device-hero .cv6-comski-device-title {
+    inset: 72px 0 auto !important;
+  }
+  .cv6-comski-device-hero .cv6-original-black-glass-stage crazygl-hero {
+    transform: translateY(120px) !important;
+  }
+}
