@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+import * as THREE from 'three';
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -219,79 +220,165 @@ function AntigravityField() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas || reduce) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
 
+    let renderer: THREE.WebGLRenderer | null = null;
     let raf = 0;
-    let w = 0;
-    let h = 0;
-    let dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const pointer = { x: 0.5, y: 0.48, tx: 0.5, ty: 0.48 };
-    const particles = Array.from({ length: 150 }, (_, i) => ({
-      a: (i / 150) * Math.PI * 2,
-      r: 0.12 + Math.random() * 0.9,
-      s: 0.0007 + Math.random() * 0.0015,
-      z: Math.random(),
-      size: 0.45 + Math.random() * 1.7,
-      phase: Math.random() * Math.PI * 2
-    }));
+    let resizeObserver: ResizeObserver | null = null;
+    let pointerX = 0;
+    let pointerY = 0;
+    let targetPointerX = 0;
+    let targetPointerY = 0;
+    let disposed = false;
+
+    try {
+      renderer = new THREE.WebGLRenderer({
+        canvas, alpha: true, antialias: true, powerPreference: 'low-power',
+        premultipliedAlpha: true,
+      });
+    } catch {
+      return;
+    }
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 80);
+    camera.position.set(0, 0, 12);
+
+    const particleCount = window.matchMedia('(max-width: 767px)').matches ? 1800 : 3600;
+    const positions = new Float32Array(particleCount * 3);
+    const colors = new Float32Array(particleCount * 3);
+    const sizes = new Float32Array(particleCount);
+    const phases = new Float32Array(particleCount);
+    const drift = new Float32Array(particleCount);
+    const palette = [
+      new THREE.Color('#4285f4'), new THREE.Color('#34a853'),
+      new THREE.Color('#fbbc05'), new THREE.Color('#ea4335'),
+      new THREE.Color('#7b8490'),
+    ];
+
+    for (let i = 0; i < particleCount; i += 1) {
+      const i3 = i * 3;
+      positions[i3] = (Math.random() - 0.5) * 15.5;
+      positions[i3 + 1] = (Math.random() - 0.5) * 8.8;
+      positions[i3 + 2] = (Math.random() - 0.5) * 5.5;
+      const color = palette[Math.floor(Math.random() * palette.length)];
+      const saturation = 0.82 + Math.random() * 0.18;
+      colors[i3] = color.r * saturation;
+      colors[i3 + 1] = color.g * saturation;
+      colors[i3 + 2] = color.b * saturation;
+      sizes[i] = 0.7 + Math.random() * 2.1;
+      phases[i] = Math.random() * Math.PI * 2;
+      drift[i] = 0.25 + Math.random() * 0.85;
+    }
+
+    const geometry = new THREE.BufferGeometry();
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    geometry.setAttribute('aColor', new THREE.BufferAttribute(colors, 3));
+    geometry.setAttribute('aSize', new THREE.BufferAttribute(sizes, 1));
+    geometry.setAttribute('aPhase', new THREE.BufferAttribute(phases, 1));
+    geometry.setAttribute('aDrift', new THREE.BufferAttribute(drift, 1));
+
+    const material = new THREE.ShaderMaterial({
+      transparent: true,
+      depthWrite: false,
+      blending: THREE.NormalBlending,
+      uniforms: {
+        uTime: { value: 0 },
+        uPointer: { value: new THREE.Vector2(0, 0) },
+        uPixelRatio: { value: Math.min(window.devicePixelRatio || 1, 1.75) },
+      },
+      vertexShader: `
+        attribute vec3 aColor;
+        attribute float aSize;
+        attribute float aPhase;
+        attribute float aDrift;
+        uniform float uTime;
+        uniform vec2 uPointer;
+        uniform float uPixelRatio;
+        varying vec3 vColor;
+        varying float vAlpha;
+        void main() {
+          vec3 p = position;
+          float t = uTime * aDrift;
+          p.x += sin(t * 0.42 + aPhase + p.y * 0.34) * (0.12 + abs(p.z) * 0.025);
+          p.y += cos(t * 0.31 + aPhase + p.x * 0.22) * 0.11;
+          p.z += sin(t * 0.24 + aPhase) * 0.16;
+          vec2 pointerDelta = p.xy - uPointer * vec2(7.8, 4.6);
+          float pointerDistance = length(pointerDelta);
+          float influence = exp(-pointerDistance * 0.72);
+          p.xy += normalize(pointerDelta + vec2(0.0001)) * influence * 0.22;
+          vec4 mvPosition = modelViewMatrix * vec4(p, 1.0);
+          gl_Position = projectionMatrix * mvPosition;
+          gl_PointSize = aSize * uPixelRatio * (22.0 / max(1.0, -mvPosition.z));
+          vColor = aColor;
+          vAlpha = 0.13 + (0.22 * influence) + (0.13 * (0.5 + 0.5 * sin(t + aPhase)));
+        }
+      `,
+      fragmentShader: `
+        varying vec3 vColor;
+        varying float vAlpha;
+        void main() {
+          vec2 point = gl_PointCoord - vec2(0.5);
+          float distanceFromCenter = length(point);
+          if (distanceFromCenter > 0.5) discard;
+          float softEdge = 1.0 - smoothstep(0.18, 0.5, distanceFromCenter);
+          float core = 1.0 - smoothstep(0.0, 0.22, distanceFromCenter);
+          gl_FragColor = vec4(vColor, (softEdge * 0.58 + core * 0.18) * vAlpha);
+        }
+      `,
+    });
+
+    const particles = new THREE.Points(geometry, material);
+    particles.frustumCulled = false;
+    scene.add(particles);
 
     const resize = () => {
+      if (!renderer) return;
       const rect = canvas.getBoundingClientRect();
-      w = Math.max(1, rect.width);
-      h = Math.max(1, rect.height);
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      canvas.width = Math.floor(w * dpr);
-      canvas.height = Math.floor(h * dpr);
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const width = Math.max(1, rect.width);
+      const height = Math.max(1, rect.height);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
+      renderer.setSize(width, height, false);
+      camera.aspect = width / height;
+      camera.position.z = width < 600 ? 14.5 : 12;
+      camera.updateProjectionMatrix();
+      material.uniforms.uPixelRatio.value = Math.min(window.devicePixelRatio || 1, 1.75);
     };
 
-    const move = (e: PointerEvent) => {
-      pointer.tx = e.clientX / Math.max(window.innerWidth, 1);
-      pointer.ty = e.clientY / Math.max(window.innerHeight, 1);
+    const onPointerMove = (event: PointerEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+      targetPointerX = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+      targetPointerY = -((event.clientY - rect.top) / rect.height - 0.5) * 2;
     };
+    const onPointerLeave = () => { targetPointerX = 0; targetPointerY = 0; };
 
-    const draw = (time: number) => {
-      pointer.x += (pointer.tx - pointer.x) * 0.045;
-      pointer.y += (pointer.ty - pointer.y) * 0.045;
-      ctx.clearRect(0, 0, w, h);
-
-      const cx = w * (0.5 + (pointer.x - 0.5) * 0.055);
-      const cy = h * (0.51 + (pointer.y - 0.5) * 0.045);
-      const scale = Math.min(w, h);
-
-      particles.forEach((p) => {
-        const t = time * p.s + p.phase;
-        const orbit = p.r * scale * 0.34;
-        const wobble = Math.sin(t * 1.7 + p.phase) * scale * 0.012;
-        const x = cx + Math.cos(p.a + t) * (orbit + wobble) + (pointer.x - 0.5) * 26 * p.z;
-        const y = cy + Math.sin(p.a + t * 0.82) * (orbit * 0.52 + wobble) + (pointer.y - 0.5) * 18 * p.z;
-        const alpha = 0.12 + p.z * 0.24;
-        const colors = [
-          `rgba(66, 133, 244, ${alpha})`,
-          `rgba(52, 168, 83, ${alpha * 0.72})`,
-          `rgba(251, 188, 5, ${alpha * 0.62})`,
-          `rgba(234, 67, 53, ${alpha * 0.56})`,
-          `rgba(95, 99, 104, ${alpha * 0.65})`
-        ];
-        ctx.beginPath();
-        ctx.fillStyle = colors[Math.floor(p.z * colors.length) % colors.length];
-        ctx.arc(x, y, p.size * (0.4 + p.z * 0.5), 0, Math.PI * 2);
-        ctx.fill();
-      });
-
-      raf = requestAnimationFrame(draw);
+    const clock = new THREE.Clock();
+    const draw = () => {
+      if (disposed || !renderer) return;
+      pointerX += (targetPointerX - pointerX) * 0.055;
+      pointerY += (targetPointerY - pointerY) * 0.055;
+      material.uniforms.uTime.value = clock.getElapsedTime();
+      material.uniforms.uPointer.value.set(pointerX, pointerY);
+      renderer.render(scene, camera);
+      raf = window.requestAnimationFrame(draw);
     };
 
     resize();
-    window.addEventListener('resize', resize);
-    window.addEventListener('pointermove', move, { passive: true });
-    raf = requestAnimationFrame(draw);
+    resizeObserver = new ResizeObserver(resize);
+    resizeObserver.observe(canvas);
+    window.addEventListener('pointermove', onPointerMove, { passive: true });
+    window.addEventListener('pointerleave', onPointerLeave);
+    raf = window.requestAnimationFrame(draw);
 
     return () => {
-      cancelAnimationFrame(raf);
-      window.removeEventListener('resize', resize);
-      window.removeEventListener('pointermove', move);
+      disposed = true;
+      window.cancelAnimationFrame(raf);
+      resizeObserver?.disconnect();
+      window.removeEventListener('pointermove', onPointerMove);
+      window.removeEventListener('pointerleave', onPointerLeave);
+      geometry.dispose();
+      material.dispose();
+      renderer?.dispose();
     };
   }, [reduce]);
 
