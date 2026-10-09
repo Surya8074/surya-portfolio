@@ -255,7 +255,7 @@ function AntigravityField() {
     // The seeded geometry stays ordered; only gentle waves and cursor forces move it.
     for (let i = 0; i < particleCount; i += 1) {
       const i3 = i * 3;
-      const angle = (Math.random() * Math.PI * 1.92) - Math.PI * 0.96;
+      const angle = ((i / particleCount) * Math.PI * 1.92) - Math.PI * 0.96 + (Math.random() - 0.5) * 0.012;
       const radius = 0.65 + Math.pow(Math.random(), 0.72) * (mobile ? 5.1 : 7.4);
       const lane = Math.round((Math.random() - 0.5) * 22) / 22;
       angles[i] = angle;
@@ -319,13 +319,16 @@ function AntigravityField() {
           p.x += sin(t * 0.24 + aPhase) * (0.025 + aDepth * 0.035);
           p.y += cos(t * 0.21 + aPhase * 0.8) * (0.025 + aDepth * 0.035);
 
-          vec2 pointerTarget = uPointer * vec2(5.4, 3.8);
-          vec2 delta = p.xy - (vec2(2.35, 0.0) + pointerTarget);
+          // Cursor interaction is a gentle local ripple, never a pull/zoom.
+          // The pointer is mapped into the same scene space as the particles.
+          vec2 pointerTarget = vec2(2.35, 0.0) + uPointer * vec2(5.4, 3.8);
+          vec2 delta = p.xy - pointerTarget;
           float distanceToPointer = length(delta);
-          float influence = exp(-distanceToPointer * 0.72);
+          float influence = exp(-distanceToPointer * 1.35);
           vec2 direction = delta / max(distanceToPointer, 0.001);
-          p.xy += direction * influence * 0.16;
-          p.xy += vec2(-direction.y, direction.x) * influence * sin(t * 0.8 + aPhase) * 0.045;
+          float ripple = sin(distanceToPointer * 3.2 - t * 1.35) * influence;
+          p.xy += direction * ripple * 0.035;
+          p.xy += vec2(-direction.y, direction.x) * ripple * 0.022;
 
           vec4 mvPosition = modelViewMatrix * vec4(p, 1.0);
           gl_Position = projectionMatrix * mvPosition;
