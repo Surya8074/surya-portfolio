@@ -1,0 +1,236 @@
+/* CrazyGL Black Glass Product Reveal adaptation for the ComSki CV6 hero.
+   Inspired by https://crazygl.com/hero/black-glass-reveal
+   Original implementation by @ybouane: https://x.com/ybouane
+   Adapted as a CSS-led reveal using the existing ComSki product screen asset. */
+
+/* Replace the previous white particle field with a cinematic product reveal. */
+.cv6-ag-hero {
+  background: #020203 !important;
+  color: #f6f7fb !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+}
+
+.cv6-ag-field {
+  display: none !important;
+}
+
+.cv6-ag-hero-inner {
+  justify-content: flex-start !important;
+  text-align: left !important;
+  padding: clamp(44px, 7vh, 84px) clamp(28px, 7vw, 112px) !important;
+}
+
+.cv6-ag-hero-inner::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  right: clamp(24px, 5vw, 84px);
+  top: 50%;
+  width: min(49vw, 760px);
+  aspect-ratio: 1.58 / 1;
+  transform: translateY(-43%) perspective(1400px) rotateY(-8deg) rotateX(2deg);
+  transform-origin: center;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 22px;
+  background-color: #08090d;
+  background-image:
+    linear-gradient(135deg, rgba(255,255,255,.08), transparent 18%, transparent 78%, rgba(255,255,255,.06)),
+    url("/surya-portfolio/comski/Onboarding%20Intro.svg");
+  background-position: center, center;
+  background-repeat: no-repeat;
+  background-size: cover, 100% 100%;
+  box-shadow:
+    0 44px 100px rgba(0,0,0,.68),
+    0 12px 32px rgba(0,0,0,.8),
+    inset 0 1px 0 rgba(255,255,255,.26),
+    inset 0 0 0 8px #0b0c10,
+    inset 0 0 0 9px rgba(255,255,255,.08);
+  filter: saturate(.92) contrast(1.03);
+  animation: cv6-glass-float 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.cv6-ag-hero-inner::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  right: clamp(24px, 5vw, 84px);
+  top: 50%;
+  width: min(49vw, 760px);
+  aspect-ratio: 1.58 / 1;
+  transform: translateY(-43%) perspective(1400px) rotateY(-8deg) rotateX(2deg);
+  border-radius: 22px;
+  background:
+    linear-gradient(105deg,
+      transparent 0%,
+      rgba(220,222,232,0) 34%,
+      rgba(220,222,232,.05) 41%,
+      rgba(245,247,255,.42) 48%,
+      rgba(255,255,255,.78) 50%,
+      rgba(220,222,232,.2) 53%,
+      rgba(220,222,232,0) 62%,
+      transparent 100%);
+  background-size: 260% 100%;
+  background-position: 135% 0;
+  mix-blend-mode: screen;
+  opacity: .78;
+  animation: cv6-glass-sweep 7s cubic-bezier(.45,0,.25,1) infinite;
+  pointer-events: none;
+}
+
+.cv6-ag-copy {
+  z-index: 3 !important;
+  align-items: flex-start !important;
+  max-width: min(47%, 650px) !important;
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+.cv6-ag-brand {
+  color: #f6f7fb !important;
+  letter-spacing: .12em !important;
+  font-size: 13px !important;
+  margin-bottom: clamp(24px, 4vh, 42px) !important;
+}
+
+.cv6-ag-brand-mark {
+  background: #3b5bdb !important;
+  box-shadow: 5px 0 0 #7890ff, 2.5px 4px 0 #a6b4ff, -2.5px 4px 0 #3b5bdb !important;
+}
+
+.cv6-ag-copy h1 {
+  color: #f6f7fb !important;
+  font-size: clamp(2.9rem, 5.2vw, 5.2rem) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -.055em !important;
+  font-weight: 500 !important;
+  text-wrap: balance;
+  text-shadow: 0 2px 28px rgba(0,0,0,.25);
+}
+
+.cv6-ag-copy h1 em {
+  color: #aebdff !important;
+}
+
+.cv6-ag-subtitle {
+  max-width: 540px !important;
+  margin: 24px 0 0 !important;
+  color: rgba(220,225,240,.76) !important;
+  font-size: clamp(15px, 1.2vw, 18px) !important;
+  line-height: 1.65 !important;
+  text-align: left !important;
+}
+
+.cv6-ag-actions {
+  justify-content: flex-start !important;
+  margin-top: 30px !important;
+}
+
+.cv6-ag-primary {
+  color: #08090d !important;
+  background: #f6f7fb !important;
+  border-color: #f6f7fb !important;
+}
+
+.cv6-ag-primary span {
+  color: #fff !important;
+  background: #3b5bdb !important;
+}
+
+.cv6-ag-primary:hover {
+  background: #dfe5ff !important;
+  border-color: #dfe5ff !important;
+}
+
+.cv6-ag-secondary {
+  color: #f6f7fb !important;
+  background: rgba(255,255,255,.035) !important;
+  border-color: rgba(255,255,255,.22) !important;
+}
+
+.cv6-ag-secondary:hover {
+  background: rgba(255,255,255,.09) !important;
+  border-color: rgba(255,255,255,.38) !important;
+}
+
+@keyframes cv6-glass-sweep {
+  0%, 10% { background-position: 135% 0; opacity: .18; }
+  48% { opacity: .88; }
+  78%, 100% { background-position: -135% 0; opacity: .24; }
+}
+
+@keyframes cv6-glass-float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -8px; }
+}
+
+@media (max-width: 1024px) {
+  .cv6-ag-hero-inner {
+    padding-inline: 36px !important;
+  }
+  .cv6-ag-hero-inner::before,
+  .cv6-ag-hero-inner::after {
+    right: 3vw;
+    width: 48vw;
+  }
+  .cv6-ag-copy {
+    max-width: 48% !important;
+  }
+  .cv6-ag-copy h1 {
+    font-size: clamp(2.6rem, 5.3vw, 4rem) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .cv6-ag-hero {
+    height: auto !important;
+    min-height: 100svh !important;
+  }
+  .cv6-ag-hero-inner {
+    min-height: 100svh !important;
+    padding: 92px 24px 44px !important;
+    align-items: flex-start !important;
+  }
+  .cv6-ag-copy {
+    max-width: 100% !important;
+    padding-bottom: min(66vw, 360px);
+  }
+  .cv6-ag-copy h1 {
+    font-size: clamp(2.5rem, 10vw, 3.5rem) !important;
+  }
+  .cv6-ag-subtitle {
+    margin-top: 20px !important;
+    font-size: 15px !important;
+  }
+  .cv6-ag-hero-inner::before,
+  .cv6-ag-hero-inner::after {
+    top: auto;
+    bottom: 34px;
+    right: 8%;
+    width: 84%;
+    transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+    border-radius: 14px;
+  }
+  .cv6-ag-actions {
+    gap: 9px !important;
+    margin-top: 24px !important;
+  }
+  .cv6-ag-primary,
+  .cv6-ag-secondary {
+    min-height: 44px;
+    padding-inline: 15px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cv6-ag-hero-inner::before,
+  .cv6-ag-hero-inner::after {
+    animation: none !important;
+  }
+  .cv6-ag-hero-inner::after {
+    background-position: 50% 0;
+    opacity: .18;
+  }
+}
