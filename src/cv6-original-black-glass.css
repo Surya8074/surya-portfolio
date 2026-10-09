@@ -278,3 +278,20 @@
     transform: translateY(86px) !important;
   }
 }
+
+
+/* Fix title clipping near the top edge while keeping the mockup slightly higher. */
+.cv6-comski-device-hero .cv6-comski-device-title {
+  inset: clamp(96px, 12vh, 132px) 0 auto !important;
+}
+.cv6-comski-device-hero .cv6-original-black-glass-stage crazygl-hero {
+  transform: translateY(clamp(72px, 12vh, 108px)) !important;
+}
+@media (max-width: 767px) {
+  .cv6-comski-device-hero .cv6-comski-device-title {
+    inset: 88px 0 auto !important;
+  }
+  .cv6-comski-device-hero .cv6-original-black-glass-stage crazygl-hero {
+    transform: translateY(78px) !important;
+  }
+}
