@@ -210,3 +210,54 @@
     height: calc(100% - 145px) !important;
   }
 }
+
+
+/* Screenshot-driven correction: anchor the wordmark high and move the actual
+   CrazyGL custom element down, rather than relying on its internal layout. */
+.cv6-comski-device-hero .cv6-ag-hero-inner {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  min-height: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+  pointer-events: none !important;
+}
+.cv6-comski-device-hero .cv6-comski-device-title {
+  position: absolute !important;
+  inset: clamp(74px, 12vh, 118px) 0 auto !important;
+  width: 100% !important;
+  padding: 0 20px !important;
+  margin: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.cv6-comski-device-hero .cv6-comski-device-title h1 {
+  color: #3B5BDB !important;
+  font-weight: 800 !important;
+  font-size: clamp(3.2rem, 6.2vw, 5.6rem) !important;
+  line-height: 1 !important;
+  letter-spacing: -.06em !important;
+  margin: 0 !important;
+}
+.cv6-comski-device-hero .cv6-original-black-glass-stage > * {
+  top: 0 !important;
+  height: 100% !important;
+}
+.cv6-comski-device-hero .cv6-original-black-glass-stage crazygl-hero {
+  transform: translateY(clamp(105px, 17vh, 155px)) !important;
+  background: #fff !important;
+}
+@media (max-width: 767px) {
+  .cv6-comski-device-hero .cv6-comski-device-title {
+    inset: 74px 0 auto !important;
+  }
+  .cv6-comski-device-hero .cv6-comski-device-title h1 {
+    font-size: clamp(2.8rem, 12vw, 4rem) !important;
+  }
+  .cv6-comski-device-hero .cv6-original-black-glass-stage crazygl-hero {
+    transform: translateY(105px) !important;
+  }
+}
