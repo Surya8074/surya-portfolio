@@ -66,3 +66,19 @@
 .cv6-comski-device-hero .cv6-original-black-glass-stage > * {
   background: transparent !important;
 }
+
+
+/* Final visibility + pointer interaction correction. */
+.cv6-comski-device-hero .cv6-particle-backdrop {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100svh !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.cv6-comski-device-hero .cv6-particle-canvas {
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 1 !important;
+}
