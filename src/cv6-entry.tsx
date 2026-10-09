@@ -6,7 +6,6 @@ import './cv6-final-polish.css';
 import './cv6-final-polish';
 import './cv6-antigravity-hero.css';
 import './cv6-original-black-glass.css';
-import './cv6-section-art-direction.css';
 
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
