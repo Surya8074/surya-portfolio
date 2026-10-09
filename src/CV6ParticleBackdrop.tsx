@@ -54,6 +54,7 @@ export default function CV6ParticleBackdrop() {
       depthWrite: false,
       uniforms: {
         uTime: { value: 0 },
+        uMorph: { value: 0 },
         uPointer: { value: new THREE.Vector2(10, 10) },
         uPixelRatio: { value: renderer.getPixelRatio() },
         uBlue: { value: new THREE.Color('#3B5BDB') },
@@ -63,6 +64,7 @@ export default function CV6ParticleBackdrop() {
         attribute float aPhase;
         attribute float aSize;
         uniform float uTime;
+        uniform float uMorph;
         uniform vec2 uPointer;
         uniform float uPixelRatio;
         varying float vAlpha;
@@ -70,16 +72,18 @@ export default function CV6ParticleBackdrop() {
         void main() {
           vec3 p = position;
           float t = uTime * 0.16;
-          p.x += sin(t + aPhase) * 0.012;
-          p.y += cos(t * 0.8 + aPhase * 1.7) * 0.016;
+          vec3 arranged = vec3(position.x * 0.78, position.y * 0.72 + sin(position.x * 3.0 + aPhase) * 0.055, position.z);
+          p = mix(position, arranged, uMorph);
+          p.x += sin(t + aPhase) * 0.018;
+          p.y += cos(t * 0.8 + aPhase * 1.7) * 0.022;
           vec2 delta = p.xy - uPointer;
           float dist = length(delta);
           float influence = 1.0 - smoothstep(0.0, 0.42, dist);
           if (dist > 0.0001) p.xy += normalize(delta) * influence * 0.20;
           vec4 mv = modelViewMatrix * vec4(p, 1.0);
           gl_Position = projectionMatrix * mv;
-          gl_PointSize = clamp(aSize * uPixelRatio, 0.7, 3.2);
-          vAlpha = (0.25 + 0.55 * (1.0 - smoothstep(-0.3, 0.5, p.z))) * (0.75 + 0.25 * sin(uTime * 0.8 + aPhase));
+          gl_PointSize = clamp(aSize * uPixelRatio * 1.35, 1.0, 3.0);
+          vAlpha = (0.48 + 0.42 * (1.0 - smoothstep(-0.3, 0.5, p.z))) * (0.82 + 0.18 * sin(uTime * 0.8 + aPhase));
           vWarm = step(0.92, fract(aPhase * 0.159));
         }
       `,
@@ -92,7 +96,7 @@ export default function CV6ParticleBackdrop() {
           float d = length(gl_PointCoord - 0.5);
           float alpha = 1.0 - smoothstep(0.16, 0.5, d);
           if (alpha < 0.02) discard;
-          gl_FragColor = vec4(mix(uBlue, uWarm, vWarm), alpha * vAlpha * 0.78);
+          gl_FragColor = vec4(mix(uBlue, uWarm, vWarm), alpha * vAlpha * 0.88);
         }
       `,
     });
@@ -135,7 +139,10 @@ export default function CV6ParticleBackdrop() {
       raf = requestAnimationFrame(animate);
       if (!visible) return;
       pointer.lerp(target, 0.055);
-      material.uniforms.uTime.value = reducedMotion ? 0 : clock.getElapsedTime();
+      const elapsed = clock.getElapsedTime();
+      material.uniforms.uTime.value = reducedMotion ? 0 : elapsed;
+      const cycle = reducedMotion ? 0 : (Math.sin(elapsed * 0.22 - Math.PI / 2) + 1) / 2;
+      material.uniforms.uMorph.value = cycle * cycle * (3 - 2 * cycle);
       material.uniforms.uPointer.value.copy(pointer);
       renderer.render(scene, camera);
     };
