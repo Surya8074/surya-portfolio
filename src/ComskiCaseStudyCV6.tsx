@@ -635,7 +635,6 @@ function ComskiCaseStudyCV4() {
             revealFloor={0.22}
             parallaxStrength={0.42}
             floorReflection={0.08}
-            bgColor="#FFFFFF"
             transparentBackground={true}
           />
         </div>
