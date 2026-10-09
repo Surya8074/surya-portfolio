@@ -636,6 +636,7 @@ function ComskiCaseStudyCV4() {
             parallaxStrength={0.42}
             floorReflection={0.08}
             bgColor="#FFFFFF"
+            transparentBackground={true}
           />
         </div>
         <div className="cv6-ag-hero-inner cv6-comski-device-hero-inner" aria-hidden="true" />
