@@ -499,56 +499,21 @@ function ComskiCaseStudyCV4() {
         <div className="cv6-ag-orbit orbit-a" aria-hidden="true" />
         <div className="cv6-ag-orbit orbit-b" aria-hidden="true" />
         <div className="cv6-ag-hero-inner">
-          <motion.div
-            className="cv6-ag-copy"
-            initial={reduce ? false : { opacity: 0, y: 22 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease }}
-          >
-            <div className="cv6-ag-eyebrow">
-              <span className="cv6-ag-dot" />
-              COMSKI / PRODUCT DESIGN
-            </div>
+          <motion.div className="cv6-ag-copy" initial={reduce ? false : { opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease }}>
+            <div className="cv6-ag-brand">COMSKI<span className="cv6-ag-brand-mark">●</span></div>
+            <div className="cv6-ag-eyebrow"><span className="cv6-ag-dot" />AI COMMUNICATION COACH · PRODUCT CASE STUDY</div>
             <BlurReveal className="cv6-ag-title-wrap">
               <motion.h1 initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.12, duration: 0.65 }}>
-                Designing a communication coach that makes practice feel <em>natural.</em>
+                Communication gets better when practice feels <em>natural.</em>
               </motion.h1>
             </BlurReveal>
-            <motion.p
-              className="cv6-ag-subtitle"
-              initial={reduce ? false : { opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.28, duration: 0.55, ease }}
-            >
-              A product system for Reading, Listening, Writing and Speaking — shaped around learner context, confidence and continuous practice.
+            <motion.p className="cv6-ag-subtitle" initial={reduce ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.28, duration: 0.55, ease }}>
+              A calmer way to build confidence across Reading, Listening, Writing and Speaking — shaped around each learner.
             </motion.p>
-            <motion.div
-              className="cv6-ag-actions"
-              initial={reduce ? false : { opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.42, duration: 0.5, ease }}
-            >
+            <motion.div className="cv6-ag-actions" initial={reduce ? false : { opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.42, duration: 0.5, ease }}>
               <a className="cv6-ag-primary" href="#s01">Explore case study <span>↗</span></a>
-              <span className="cv6-ag-meta">01 / 04&nbsp;&nbsp; · &nbsp;&nbsp;AI COMMUNICATION</span>
+              <a className="cv6-ag-secondary" href="#s03">How it works <span>↓</span></a>
             </motion.div>
-          </motion.div>
-
-          <motion.div
-            className="cv6-ag-visual"
-            initial={reduce ? false : { opacity: 0, scale: 0.94, y: 26 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ delay: 0.16, duration: 1, ease }}
-          >
-            <div className="cv6-ag-signal">
-              <span className="signal-core" />
-              <span className="signal-ring ring-1" />
-              <span className="signal-ring ring-2" />
-              <span className="signal-ring ring-3" />
-              <span className="signal-trail trail-1" />
-              <span className="signal-trail trail-2" />
-              <span className="signal-trail trail-3" />
-            </div>
-            <div className="cv6-ag-orb-label"><span>COMSKI</span><small>communication intelligence</small></div>
           </motion.div>
         </div>
         <div className="cv6-ag-scroll">SCROLL TO EXPLORE <span>↓</span></div>
