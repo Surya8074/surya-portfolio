@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import * as THREE from 'three';
+import BlackGlassReveal from '@crazygl/hero-black-glass-reveal';
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -591,7 +592,26 @@ function ComskiCaseStudyCV4() {
     <main className="cv4-page"><GlowCursor />
       <div className="cv4-mobile-progress" style={{ transform: `scaleX(${progress})` }} />
       <header className="cv4-hero cv6-ag-hero">
-        <AntigravityField />
+        <div className="cv6-original-black-glass-stage" aria-hidden="true">
+          <BlackGlassReveal
+            contentType="custom"
+            content={<span />}
+            screenshot="/surya-portfolio/comski/Onboarding%20Intro.svg"
+            screenshotScale={1.08}
+            screenshotTilt={-7}
+            screenEmissive={0.72}
+            frameColor="#080a12"
+            frameMetalness={0.78}
+            frameRoughness={0.2}
+            sweepPeriod={7}
+            sweepIntensity={1.2}
+            sweepColor="#aebdff"
+            revealFloor={0.22}
+            parallaxStrength={0.42}
+            floorReflection={0.14}
+            bgColor="#020203"
+          />
+        </div>
         <div className="cv6-ag-hero-inner">
           <motion.div className="cv6-ag-copy" initial={reduce ? false : { opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease }}>
             <div className="cv6-ag-brand">COMSKI<span className="cv6-ag-brand-mark">●</span></div>
