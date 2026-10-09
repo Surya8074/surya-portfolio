@@ -591,14 +591,14 @@ function ComskiCaseStudyCV4() {
   return (
     <main className="cv4-page"><GlowCursor />
       <div className="cv4-mobile-progress" style={{ transform: `scaleX(${progress})` }} />
-      <header className="cv4-hero cv6-ag-hero">
+      <header className="cv4-hero cv6-ag-hero cv6-comski-device-hero">
         <div className="cv6-original-black-glass-stage" aria-hidden="true">
           <BlackGlassReveal
             contentType="custom"
-            content={<span />}
-            screenshot="/surya-portfolio/comski/Onboarding%20Intro.svg"
-            screenshotScale={1.08}
-            screenshotTilt={-7}
+            content={<span aria-hidden="true" />}
+            screenshot="/surya-portfolio/comski/Desktop%20-%201.svg"
+            screenshotScale={1.02}
+            screenshotTilt={-4}
             screenEmissive={0.38}
             frameColor="#3B5BDB"
             frameMetalness={0.78}
@@ -612,21 +612,9 @@ function ComskiCaseStudyCV4() {
             bgColor="#FFFFFF"
           />
         </div>
-        <div className="cv6-ag-hero-inner">
-          <motion.div className="cv6-ag-copy" initial={reduce ? false : { opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease }}>
-            <div className="cv6-ag-brand">COMSKI<span className="cv6-ag-brand-mark">●</span></div>
-            <BlurReveal className="cv6-ag-title-wrap">
-              <motion.h1 initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.12, duration: 0.65 }}>
-                Communication gets better when practice feels <em>natural.</em>
-              </motion.h1>
-            </BlurReveal>
-            <motion.p className="cv6-ag-subtitle" initial={reduce ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.28, duration: 0.55, ease }}>
-              A calmer way to build confidence across Reading, Listening, Writing and Speaking — shaped around each learner.
-            </motion.p>
-            <motion.div className="cv6-ag-actions" initial={reduce ? false : { opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.42, duration: 0.5, ease }}>
-              <a className="cv6-ag-primary" href="#s01">Explore case study <span>↗</span></a>
-              <a className="cv6-ag-secondary" href="#s03">How it works <span>↓</span></a>
-            </motion.div>
+        <div className="cv6-ag-hero-inner cv6-comski-device-hero-inner">
+          <motion.div className="cv6-ag-copy cv6-comski-device-title" initial={reduce ? false : { opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease }}>
+            <h1>ComSki</h1>
           </motion.div>
         </div>
       </header>
