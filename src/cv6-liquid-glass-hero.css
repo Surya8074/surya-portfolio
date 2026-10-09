@@ -236,3 +236,74 @@
 @media (prefers-reduced-motion: reduce) {
   .cv6-liquid-hero .cv6-original-black-glass-stage crazygl-hero { transform: translateY(325px) !important; }
 }
+
+/* Layout-first correction based on the latest live screenshot.
+   Give the complete copy stack its own top zone and start the device below it. */
+.cv6-liquid-hero {
+  height: 1000px !important;
+  min-height: 1000px !important;
+  overflow: hidden !important;
+}
+.cv6-liquid-hero .cv6-liquid-copy {
+  top: 28px !important;
+  width: min(780px, 92%) !important;
+  z-index: 8 !important;
+}
+.cv6-liquid-hero .cv6-liquid-copy h1 {
+  font-size: clamp(78px, 8.5vw, 126px) !important;
+  line-height: .94 !important;
+  margin-top: 12px !important;
+}
+.cv6-liquid-hero .cv6-liquid-tagline {
+  margin-top: 14px !important;
+  line-height: 1.24 !important;
+}
+.cv6-liquid-hero .cv6-liquid-description {
+  margin-top: 10px !important;
+  line-height: 1.42 !important;
+}
+.cv6-liquid-hero .cv6-liquid-chips {
+  margin-top: 16px !important;
+  gap: 12px !important;
+}
+.cv6-liquid-hero .cv6-original-black-glass-stage {
+  z-index: 3 !important;
+}
+.cv6-liquid-hero .cv6-original-black-glass-stage crazygl-hero {
+  transform: translateY(255px) !important;
+}
+.cv6-liquid-hero .cv6-liquid-ring-a { top: 72% !important; }
+.cv6-liquid-hero .cv6-liquid-ring-b { top: 74% !important; }
+.cv6-liquid-hero .cv6-liquid-pedestal { top: 91% !important; }
+.cv6-liquid-hero .cv6-sphere-a { top: 29% !important; }
+.cv6-liquid-hero .cv6-sphere-b { top: 61% !important; }
+.cv6-liquid-hero .cv6-feature-left-top { top: 48% !important; }
+.cv6-liquid-hero .cv6-feature-right-top { top: 50% !important; }
+.cv6-liquid-hero .cv6-feature-left-bottom { top: 70% !important; }
+.cv6-liquid-hero .cv6-feature-right-bottom { top: 72% !important; }
+@media (max-width: 1100px) {
+  .cv6-liquid-hero { height: 940px !important; min-height: 940px !important; }
+  .cv6-liquid-hero .cv6-liquid-copy { top: 28px !important; }
+  .cv6-liquid-hero .cv6-liquid-copy h1 { font-size: clamp(76px, 10vw, 108px) !important; }
+  .cv6-liquid-hero .cv6-original-black-glass-stage crazygl-hero { transform: translateY(275px) !important; }
+  .cv6-liquid-hero .cv6-liquid-ring-a { top: 73% !important; }
+  .cv6-liquid-hero .cv6-liquid-ring-b { top: 75% !important; }
+  .cv6-liquid-hero .cv6-liquid-pedestal { top: 91% !important; }
+}
+@media (max-width: 700px) {
+  .cv6-liquid-hero { height: 940px !important; min-height: 940px !important; }
+  .cv6-liquid-hero .cv6-liquid-copy { top: 24px !important; width: 94% !important; }
+  .cv6-liquid-hero .cv6-liquid-copy h1 { font-size: clamp(60px, 16vw, 78px) !important; }
+  .cv6-liquid-hero .cv6-liquid-tagline { max-width: 350px; margin-inline: auto !important; font-size: 16px !important; }
+  .cv6-liquid-hero .cv6-liquid-description { max-width: 340px; }
+  .cv6-liquid-hero .cv6-liquid-chips { max-width: 360px; margin-inline: auto !important; gap: 7px !important; }
+  .cv6-liquid-hero .cv6-liquid-chips span { font-size: 9px; }
+  .cv6-liquid-hero .cv6-original-black-glass-stage crazygl-hero { transform: translateY(340px) !important; }
+  .cv6-liquid-hero .cv6-liquid-ring-a { top: 73% !important; }
+  .cv6-liquid-hero .cv6-liquid-ring-b { top: 75% !important; }
+  .cv6-liquid-hero .cv6-liquid-pedestal { top: 89% !important; }
+  .cv6-liquid-hero .cv6-feature-left-top { top: 57% !important; }
+  .cv6-liquid-hero .cv6-feature-right-top { top: 59% !important; }
+  .cv6-liquid-hero .cv6-feature-left-bottom { top: 77% !important; }
+  .cv6-liquid-hero .cv6-feature-right-bottom { top: 79% !important; }
+}
