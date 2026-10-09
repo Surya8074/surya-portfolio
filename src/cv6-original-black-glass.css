@@ -312,3 +312,19 @@
     transform: translateY(120px) !important;
   }
 }
+
+
+/* Requested final hero tuning: move the device up and use warm off-white. */
+.cv6-comski-device-hero,
+.cv6-comski-device-hero .cv6-original-black-glass-stage,
+.cv6-comski-device-hero .cv6-original-black-glass-stage crazygl-hero {
+  background-color: #FFFEFB !important;
+}
+.cv6-comski-device-hero .cv6-original-black-glass-stage crazygl-hero {
+  transform: translateY(clamp(78px, 12vh, 112px)) !important;
+}
+@media (max-width: 767px) {
+  .cv6-comski-device-hero .cv6-original-black-glass-stage crazygl-hero {
+    transform: translateY(76px) !important;
+  }
+}
