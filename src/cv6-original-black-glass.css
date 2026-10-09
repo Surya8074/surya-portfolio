@@ -1,0 +1,37 @@
+/* Uses the original CrazyGL React/WebGL component; this file only handles layout. */
+.cv6-original-black-glass-stage {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.cv6-original-black-glass-stage > * {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
+
+.cv6-original-black-glass-stage crazygl-hero {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  max-width: none !important;
+  border-radius: 0 !important;
+}
+
+.cv6-original-black-glass-stage crazygl-content {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  .cv6-original-black-glass-stage {
+    opacity: .96;
+  }
+}
