@@ -98,3 +98,70 @@
     scroll-behavior: auto;
   }
 }
+
+
+/* CV6 hero: clean product showcase with ComSki title above the device. */
+.cv6-comski-device-hero {
+  min-height: 100svh !important;
+  height: 100svh !important;
+  position: relative !important;
+  overflow: hidden !important;
+  background: #fff !important;
+}
+.cv6-comski-device-hero .cv6-original-black-glass-stage {
+  inset: 0 !important;
+  background: #fff !important;
+}
+.cv6-comski-device-hero .cv6-original-black-glass-stage > * {
+  top: clamp(68px, 8vh, 108px) !important;
+  height: calc(100% - clamp(68px, 8vh, 108px)) !important;
+}
+.cv6-comski-device-hero .cv6-ag-hero-inner {
+  position: relative !important;
+  z-index: 2 !important;
+  min-height: 100svh !important;
+  height: 100% !important;
+  padding: clamp(26px, 4vh, 48px) 24px 0 !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  pointer-events: none !important;
+}
+.cv6-comski-device-hero .cv6-comski-device-title {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  align-items: center !important;
+  text-align: center !important;
+  pointer-events: none !important;
+}
+.cv6-comski-device-hero .cv6-comski-device-title h1 {
+  margin: 0 !important;
+  color: #111827 !important;
+  font-size: clamp(3.25rem, 7vw, 6.75rem) !important;
+  font-weight: 800 !important;
+  line-height: .98 !important;
+  letter-spacing: -.065em !important;
+  text-shadow: none !important;
+}
+.cv6-comski-device-hero .cv6-comski-device-title h1 em,
+.cv6-comski-device-hero .cv6-ag-brand,
+.cv6-comski-device-hero .cv6-ag-subtitle,
+.cv6-comski-device-hero .cv6-ag-actions {
+  display: none !important;
+}
+.cv6-comski-device-hero .cv6-original-black-glass-stage crazygl-content {
+  display: none !important;
+}
+@media (max-width: 767px) {
+  .cv6-comski-device-hero .cv6-original-black-glass-stage > * {
+    top: 92px !important;
+    height: calc(100% - 92px) !important;
+  }
+  .cv6-comski-device-hero .cv6-ag-hero-inner {
+    padding-top: 34px !important;
+  }
+  .cv6-comski-device-hero .cv6-comski-device-title h1 {
+    font-size: clamp(3rem, 13vw, 4.5rem) !important;
+  }
+}
