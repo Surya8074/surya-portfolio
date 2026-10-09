@@ -596,7 +596,7 @@ function ComskiCaseStudyCV4() {
           <BlackGlassReveal
             contentType="custom"
             content={<span aria-hidden="true" />}
-            screenshot="/surya-portfolio/comski/Desktop%20-%201.svg"
+            screenshot="/surya-portfolio/comski/My%20Journey.svg"
             screenshotScale={1.02}
             screenshotTilt={-4}
             screenEmissive={0.38}
