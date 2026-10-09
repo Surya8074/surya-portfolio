@@ -35,3 +35,66 @@
     opacity: .96;
   }
 }
+
+
+/* White + ComSki royal-blue theme overrides for the original CrazyGL component. */
+.cv6-ag-hero {
+  background: #ffffff !important;
+  color: #111827 !important;
+}
+
+.cv6-ag-hero .cv6-ag-brand,
+.cv6-ag-hero .cv6-ag-copy h1 {
+  color: #111827 !important;
+}
+
+.cv6-ag-hero .cv6-ag-copy h1 em {
+  color: #3b5bdb !important;
+}
+
+.cv6-ag-hero .cv6-ag-subtitle {
+  color: #596273 !important;
+}
+
+.cv6-ag-hero .cv6-ag-brand-mark {
+  background: #3b5bdb !important;
+  box-shadow: 5px 0 0 #7890ff, 2.5px 4px 0 #a6b4ff, -2.5px 4px 0 #3b5bdb !important;
+}
+
+.cv6-ag-hero .cv6-ag-primary {
+  color: #ffffff !important;
+  background: #3b5bdb !important;
+  border-color: #3b5bdb !important;
+}
+
+.cv6-ag-hero .cv6-ag-primary span {
+  color: #3b5bdb !important;
+  background: #ffffff !important;
+}
+
+.cv6-ag-hero .cv6-ag-primary:hover {
+  color: #ffffff !important;
+  background: #2947c7 !important;
+  border-color: #2947c7 !important;
+}
+
+.cv6-ag-hero .cv6-ag-secondary {
+  color: #26324a !important;
+  background: rgba(59, 91, 219, 0.045) !important;
+  border-color: rgba(59, 91, 219, 0.3) !important;
+}
+
+.cv6-ag-hero .cv6-ag-secondary:hover {
+  background: rgba(59, 91, 219, 0.09) !important;
+  border-color: rgba(59, 91, 219, 0.55) !important;
+}
+
+.cv6-original-black-glass-stage {
+  background: #ffffff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cv6-original-black-glass-stage {
+    scroll-behavior: auto;
+  }
+}
