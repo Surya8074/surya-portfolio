@@ -21,3 +21,30 @@
 @media (prefers-reduced-motion: reduce) {
   .cv6-comski-device-hero .cv6-particle-backdrop { opacity: .65; }
 }
+
+
+/* Visibility fix: the device's full-stage surface must not paint over particles. */
+.cv6-comski-device-hero {
+  position: relative !important;
+  isolation: isolate !important;
+  background: #FFFEFB !important;
+}
+.cv6-comski-device-hero .cv6-particle-backdrop {
+  z-index: 0 !important;
+  opacity: 1 !important;
+}
+.cv6-comski-device-hero .cv6-original-black-glass-stage {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  background: transparent !important;
+  pointer-events: none;
+}
+.cv6-comski-device-hero .cv6-original-black-glass-stage crazygl-hero {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+.cv6-comski-device-hero .cv6-ag-hero-inner {
+  position: relative;
+  z-index: 2 !important;
+}
