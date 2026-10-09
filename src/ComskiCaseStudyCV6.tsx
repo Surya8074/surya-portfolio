@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import * as THREE from 'three';
 import BlackGlassReveal from '@crazygl/hero-black-glass-reveal';
 import CV6ParticleBackdrop from './CV6ParticleBackdrop';
+import './cv6-liquid-glass-hero.css';
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -592,7 +593,31 @@ function ComskiCaseStudyCV4() {
   return (
     <main className="cv4-page"><GlowCursor />
       <div className="cv4-mobile-progress" style={{ transform: `scaleX(${progress})` }} />
-      <header className="cv4-hero cv6-ag-hero cv6-comski-device-hero">\n        <CV6ParticleBackdrop />
+      <header className="cv4-hero cv6-ag-hero cv6-comski-device-hero cv6-liquid-hero">
+        <CV6ParticleBackdrop />
+        <div className="cv6-liquid-atmosphere" aria-hidden="true">
+          <div className="cv6-liquid-ring cv6-liquid-ring-a" />
+          <div className="cv6-liquid-ring cv6-liquid-ring-b" />
+          <div className="cv6-liquid-pedestal"><span /><i /></div>
+          <div className="cv6-liquid-sphere cv6-sphere-a" />
+          <div className="cv6-liquid-sphere cv6-sphere-b" />
+          <div className="cv6-liquid-sphere cv6-sphere-c" />
+          <div className="cv6-liquid-sphere cv6-sphere-d" />
+          <div className="cv6-liquid-sphere cv6-sphere-e" />
+        </div>
+        <div className="cv6-liquid-copy">
+          <div className="cv6-liquid-eyebrow"><span className="cv6-wave-icon" aria-hidden="true">⌁</span><span>AI Communication Platform</span><i /></div>
+          <h1>ComSki</h1>
+          <p className="cv6-liquid-tagline">Practice. Get feedback. Communicate better.</p>
+          <p className="cv6-liquid-description">An AI-powered platform to improve communication through<br className="cv6-desktop-break" /> personalized practice, real-time feedback and measurable growth.</p>
+          <div className="cv6-liquid-chips">
+            <span><i>✳</i>AI Feedback</span><span><i>▥</i>Personalized Practice</span><span><i>♙</i>Measurable Growth</span>
+          </div>
+        </div>
+        <div className="cv6-liquid-feature cv6-feature-left-top"><span className="cv6-feature-icon">⌁</span><span>Speak<br/>with confidence</span></div>
+        <div className="cv6-liquid-feature cv6-feature-left-bottom"><span className="cv6-feature-icon">▣</span><span>Practice<br/>real scenarios</span></div>
+        <div className="cv6-liquid-feature cv6-feature-right-top"><span className="cv6-feature-icon">▥</span><span>Track<br/>your progress</span></div>
+        <div className="cv6-liquid-feature cv6-feature-right-bottom"><span className="cv6-feature-icon">♧</span><span>Grow<br/>in every conversation</span></div>
         <div className="cv6-original-black-glass-stage" aria-hidden="true">
           <BlackGlassReveal
             contentType="custom"
@@ -613,11 +638,7 @@ function ComskiCaseStudyCV4() {
             bgColor="#FFFFFF"
           />
         </div>
-        <div className="cv6-ag-hero-inner cv6-comski-device-hero-inner">
-          <motion.div className="cv6-ag-copy cv6-comski-device-title" initial={reduce ? false : { opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease }}>
-            <h1>ComSki</h1>
-          </motion.div>
-        </div>
+        <div className="cv6-ag-hero-inner cv6-comski-device-hero-inner" aria-hidden="true" />
       </header>
 
       <aside className="cv4-section-nav" aria-label="Case study sections">
