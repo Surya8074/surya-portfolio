@@ -261,3 +261,20 @@
     transform: translateY(105px) !important;
   }
 }
+
+
+/* Small upward adjustment requested for the ComSki hero title and device. */
+.cv6-comski-device-hero .cv6-comski-device-title {
+  inset: clamp(58px, 9vh, 94px) 0 auto !important;
+}
+.cv6-comski-device-hero .cv6-original-black-glass-stage crazygl-hero {
+  transform: translateY(clamp(82px, 14vh, 128px)) !important;
+}
+@media (max-width: 767px) {
+  .cv6-comski-device-hero .cv6-comski-device-title {
+    inset: 58px 0 auto !important;
+  }
+  .cv6-comski-device-hero .cv6-original-black-glass-stage crazygl-hero {
+    transform: translateY(86px) !important;
+  }
+}
