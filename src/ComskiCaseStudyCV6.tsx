@@ -243,86 +243,96 @@ function AntigravityField() {
     const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 80);
     camera.position.set(0, 0, 12);
 
-    const particleCount = window.matchMedia('(max-width: 767px)').matches ? 1800 : 3600;
+    const mobile = window.matchMedia('(max-width: 767px)').matches;
+    const particleCount = mobile ? 2100 : 4400;
     const positions = new Float32Array(particleCount * 3);
-    const colors = new Float32Array(particleCount * 3);
     const sizes = new Float32Array(particleCount);
     const phases = new Float32Array(particleCount);
     const drift = new Float32Array(particleCount);
-    const palette = [
-      new THREE.Color('#4285f4'), new THREE.Color('#34a853'),
-      new THREE.Color('#fbbc05'), new THREE.Color('#ea4335'),
-      new THREE.Color('#7b8490'),
-    ];
+    const depth = new Float32Array(particleCount);
 
+    // Keep the exact requested brand blue; variation comes from size,
+    // opacity, depth and soft edges rather than introducing other colours.
+    const brandBlue = new THREE.Color('#3B5BDB');
     for (let i = 0; i < particleCount; i += 1) {
       const i3 = i * 3;
-      positions[i3] = (Math.random() - 0.5) * 15.5;
-      positions[i3 + 1] = (Math.random() - 0.5) * 8.8;
-      positions[i3 + 2] = (Math.random() - 0.5) * 5.5;
-      const color = palette[Math.floor(Math.random() * palette.length)];
-      const saturation = 0.82 + Math.random() * 0.18;
-      colors[i3] = color.r * saturation;
-      colors[i3 + 1] = color.g * saturation;
-      colors[i3 + 2] = color.b * saturation;
-      sizes[i] = 0.7 + Math.random() * 2.1;
+      const angle = Math.random() * Math.PI * 2;
+      const spread = Math.sqrt(Math.random());
+      const wide = 5.8 + Math.random() * 2.3;
+      positions[i3] = Math.cos(angle) * spread * wide;
+      positions[i3 + 1] = Math.sin(angle) * spread * (2.4 + Math.random() * 1.3);
+      positions[i3 + 2] = (Math.random() - 0.5) * 6.5;
+      sizes[i] = 0.55 + Math.pow(Math.random(), 2) * 2.8;
       phases[i] = Math.random() * Math.PI * 2;
-      drift[i] = 0.25 + Math.random() * 0.85;
+      drift[i] = 0.35 + Math.random() * 0.9;
+      depth[i] = Math.random();
     }
 
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    geometry.setAttribute('aColor', new THREE.BufferAttribute(colors, 3));
     geometry.setAttribute('aSize', new THREE.BufferAttribute(sizes, 1));
     geometry.setAttribute('aPhase', new THREE.BufferAttribute(phases, 1));
     geometry.setAttribute('aDrift', new THREE.BufferAttribute(drift, 1));
+    geometry.setAttribute('aDepth', new THREE.BufferAttribute(depth, 1));
 
     const material = new THREE.ShaderMaterial({
       transparent: true,
       depthWrite: false,
-      blending: THREE.NormalBlending,
+      blending: THREE.AdditiveBlending,
       uniforms: {
         uTime: { value: 0 },
         uPointer: { value: new THREE.Vector2(0, 0) },
         uPixelRatio: { value: Math.min(window.devicePixelRatio || 1, 1.75) },
+        uColor: { value: brandBlue },
       },
       vertexShader: `
-        attribute vec3 aColor;
         attribute float aSize;
         attribute float aPhase;
         attribute float aDrift;
+        attribute float aDepth;
         uniform float uTime;
         uniform vec2 uPointer;
         uniform float uPixelRatio;
-        varying vec3 vColor;
         varying float vAlpha;
+
         void main() {
           vec3 p = position;
           float t = uTime * aDrift;
-          p.x += sin(t * 0.42 + aPhase + p.y * 0.34) * (0.12 + abs(p.z) * 0.025);
-          p.y += cos(t * 0.31 + aPhase + p.x * 0.22) * 0.11;
-          p.z += sin(t * 0.24 + aPhase) * 0.16;
+
+          // Layered, organic flow: the field breathes and gently rolls
+          // instead of rotating around a single obvious orbit.
+          float waveA = sin(t * 0.32 + aPhase + p.y * 0.48);
+          float waveB = cos(t * 0.23 + aPhase * 1.31 + p.x * 0.3);
+          p.x += waveA * (0.13 + aDepth * 0.24);
+          p.y += waveB * (0.09 + aDepth * 0.17);
+          p.z += sin(t * 0.2 + aPhase) * 0.22;
+
           vec2 pointerDelta = p.xy - uPointer * vec2(7.8, 4.6);
           float pointerDistance = length(pointerDelta);
-          float influence = exp(-pointerDistance * 0.72);
-          p.xy += normalize(pointerDelta + vec2(0.0001)) * influence * 0.22;
+          float influence = exp(-pointerDistance * 0.48);
+          vec2 safeDirection = pointerDelta / max(pointerDistance, 0.001);
+          p.xy += safeDirection * influence * (0.24 + aDepth * 0.22);
+          p.xy += vec2(-uPointer.y, uPointer.x) * influence * 0.075;
+
           vec4 mvPosition = modelViewMatrix * vec4(p, 1.0);
           gl_Position = projectionMatrix * mvPosition;
-          gl_PointSize = aSize * uPixelRatio * (22.0 / max(1.0, -mvPosition.z));
-          vColor = aColor;
-          vAlpha = 0.13 + (0.22 * influence) + (0.13 * (0.5 + 0.5 * sin(t + aPhase)));
+          gl_PointSize = aSize * uPixelRatio * (24.0 / max(1.0, -mvPosition.z));
+          vAlpha = (0.13 + 0.2 * aDepth + 0.12 * influence)
+            * (0.68 + 0.32 * (0.5 + 0.5 * sin(t + aPhase)));
         }
       `,
       fragmentShader: `
-        varying vec3 vColor;
+        uniform vec3 uColor;
         varying float vAlpha;
         void main() {
           vec2 point = gl_PointCoord - vec2(0.5);
-          float distanceFromCenter = length(point);
-          if (distanceFromCenter > 0.5) discard;
-          float softEdge = 1.0 - smoothstep(0.18, 0.5, distanceFromCenter);
-          float core = 1.0 - smoothstep(0.0, 0.22, distanceFromCenter);
-          gl_FragColor = vec4(vColor, (softEdge * 0.58 + core * 0.18) * vAlpha);
+          float d = length(point);
+          if (d > 0.5) discard;
+          float halo = exp(-d * 11.0) * 0.32;
+          float core = 1.0 - smoothstep(0.04, 0.34, d);
+          float edge = 1.0 - smoothstep(0.22, 0.5, d);
+          float alpha = (edge * 0.48 + core * 0.18 + halo) * vAlpha;
+          gl_FragColor = vec4(uColor, alpha);
         }
       `,
     });
@@ -355,8 +365,8 @@ function AntigravityField() {
     const clock = new THREE.Clock();
     const draw = () => {
       if (disposed || !renderer) return;
-      pointerX += (targetPointerX - pointerX) * 0.055;
-      pointerY += (targetPointerY - pointerY) * 0.055;
+      pointerX += (targetPointerX - pointerX) * 0.045;
+      pointerY += (targetPointerY - pointerY) * 0.045;
       material.uniforms.uTime.value = clock.getElapsedTime();
       material.uniforms.uPointer.value.set(pointerX, pointerY);
       renderer.render(scene, camera);
@@ -384,7 +394,6 @@ function AntigravityField() {
 
   return <canvas ref={canvasRef} className="cv6-ag-field" aria-hidden="true" />;
 }
-
 function ComskiCaseStudyCV4() {
   const reduce = useReducedMotion();
   const [progress, setProgress] = useState(0);
