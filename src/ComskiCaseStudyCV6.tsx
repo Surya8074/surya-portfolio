@@ -599,17 +599,17 @@ function ComskiCaseStudyCV4() {
             screenshot="/surya-portfolio/comski/Onboarding%20Intro.svg"
             screenshotScale={1.08}
             screenshotTilt={-7}
-            screenEmissive={0.72}
-            frameColor="#080a12"
+            screenEmissive={0.38}
+            frameColor="#3B5BDB"
             frameMetalness={0.78}
             frameRoughness={0.2}
             sweepPeriod={7}
-            sweepIntensity={1.2}
-            sweepColor="#aebdff"
+            sweepIntensity={0.9}
+            sweepColor="#7890FF"
             revealFloor={0.22}
             parallaxStrength={0.42}
-            floorReflection={0.14}
-            bgColor="#020203"
+            floorReflection={0.08}
+            bgColor="#FFFFFF"
           />
         </div>
         <div className="cv6-ag-hero-inner">
