@@ -593,7 +593,7 @@ function ComskiCaseStudyCV4() {
   return (
     <main className="cv4-page"><GlowCursor />
       <div className="cv4-mobile-progress" style={{ transform: `scaleX(${progress})` }} />
-      <header className="cv4-hero cv6-ag-hero cv6-comski-device-hero cv6-liquid-hero">
+      <header className="cv4-hero cv6-ag-hero cv6-comski-device-hero cv6-liquid-hero" onPointerMove={(event) => { const rect = event.currentTarget.getBoundingClientRect(); event.currentTarget.style.setProperty("--hero-pointer-x", `${((event.clientX - rect.left) / rect.width - 0.5).toFixed(3)}`); event.currentTarget.style.setProperty("--hero-pointer-y", `${((event.clientY - rect.top) / rect.height - 0.5).toFixed(3)}`); }} onPointerLeave={(event) => { event.currentTarget.style.setProperty("--hero-pointer-x", "0"); event.currentTarget.style.setProperty("--hero-pointer-y", "0"); }}>
         <CV6ParticleBackdrop />
         <div className="cv6-liquid-atmosphere" aria-hidden="true">
           <div className="cv6-liquid-ring cv6-liquid-ring-a" />
