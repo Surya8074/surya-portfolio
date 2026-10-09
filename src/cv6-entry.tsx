@@ -5,7 +5,7 @@ import './cv6-case-study.css';
 import './cv6-final-polish.css';
 import './cv6-final-polish';
 import './cv6-antigravity-hero.css';
-import './cv6-black-glass-reveal.css';
+import './cv6-original-black-glass.css';
 
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
