@@ -317,8 +317,8 @@ function AntigravityField() {
           vec4 mvPosition = modelViewMatrix * vec4(p, 1.0);
           gl_Position = projectionMatrix * mvPosition;
           gl_PointSize = aSize * uPixelRatio * (24.0 / max(1.0, -mvPosition.z));
-          vAlpha = (0.13 + 0.2 * aDepth + 0.12 * influence)
-            * (0.68 + 0.32 * (0.5 + 0.5 * sin(t + aPhase)));
+          vAlpha = (0.3 + 0.35 * aDepth + 0.2 * influence)
+            * (0.72 + 0.28 * (0.5 + 0.5 * sin(t + aPhase)));
         }
       `,
       fragmentShader: `
@@ -328,10 +328,10 @@ function AntigravityField() {
           vec2 point = gl_PointCoord - vec2(0.5);
           float d = length(point);
           if (d > 0.5) discard;
-          float halo = exp(-d * 11.0) * 0.32;
+          float halo = exp(-d * 10.0) * 0.38;
           float core = 1.0 - smoothstep(0.04, 0.34, d);
           float edge = 1.0 - smoothstep(0.22, 0.5, d);
-          float alpha = (edge * 0.48 + core * 0.18 + halo) * vAlpha;
+          float alpha = (edge * 0.68 + core * 0.32 + halo) * vAlpha;
           gl_FragColor = vec4(uColor, alpha);
         }
       `,
