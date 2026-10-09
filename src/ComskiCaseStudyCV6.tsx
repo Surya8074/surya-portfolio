@@ -224,115 +224,135 @@ function AntigravityField() {
     let renderer: THREE.WebGLRenderer | null = null;
     let raf = 0;
     let resizeObserver: ResizeObserver | null = null;
-    let pointerX = 0;
-    let pointerY = 0;
-    let targetPointerX = 0;
-    let targetPointerY = 0;
     let disposed = false;
+    let pointerX = 0, pointerY = 0, targetPointerX = 0, targetPointerY = 0;
+    let lastFrame = 0;
+    let elapsed = 0;
 
     try {
       renderer = new THREE.WebGLRenderer({
-        canvas, alpha: true, antialias: true, powerPreference: 'low-power',
+        canvas, alpha: true, antialias: true, powerPreference: 'high-performance',
         premultipliedAlpha: true,
       });
-    } catch {
-      return;
-    }
+    } catch { return; }
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 80);
     camera.position.set(0, 0, 12);
 
     const mobile = window.matchMedia('(max-width: 767px)').matches;
-    const particleCount = mobile ? 2100 : 4400;
+    const particleCount = mobile ? 1500 : 3600;
     const positions = new Float32Array(particleCount * 3);
     const sizes = new Float32Array(particleCount);
     const phases = new Float32Array(particleCount);
-    const drift = new Float32Array(particleCount);
-    const depth = new Float32Array(particleCount);
+    const speeds = new Float32Array(particleCount);
+    const depths = new Float32Array(particleCount);
+    const angles = new Float32Array(particleCount);
+    const radii = new Float32Array(particleCount);
+    const lanes = new Float32Array(particleCount);
 
-    // Keep the exact requested brand blue; variation comes from size,
-    // opacity, depth and soft edges rather than introducing other colours.
-    const brandBlue = new THREE.Color('#3B5BDB');
+    // A deliberate radial fan, biased to the right so the copy remains legible.
+    // The seeded geometry stays ordered; only gentle waves and cursor forces move it.
     for (let i = 0; i < particleCount; i += 1) {
       const i3 = i * 3;
-      const angle = Math.random() * Math.PI * 2;
-      const spread = Math.sqrt(Math.random());
-      const wide = 5.8 + Math.random() * 2.3;
-      positions[i3] = Math.cos(angle) * spread * wide;
-      positions[i3 + 1] = Math.sin(angle) * spread * (2.4 + Math.random() * 1.3);
-      positions[i3 + 2] = (Math.random() - 0.5) * 6.5;
-      sizes[i] = 0.55 + Math.pow(Math.random(), 2) * 2.8;
+      const angle = (Math.random() * Math.PI * 1.92) - Math.PI * 0.96;
+      const radius = 0.65 + Math.pow(Math.random(), 0.72) * (mobile ? 5.1 : 7.4);
+      const lane = Math.round((Math.random() - 0.5) * 22) / 22;
+      angles[i] = angle;
+      radii[i] = radius;
+      lanes[i] = lane;
+      positions[i3] = 2.35 + Math.cos(angle) * radius;
+      positions[i3 + 1] = Math.sin(angle) * radius * 0.84;
+      positions[i3 + 2] = (Math.random() - 0.5) * 2.5;
+      sizes[i] = 0.65 + Math.pow(Math.random(), 1.8) * 2.15;
       phases[i] = Math.random() * Math.PI * 2;
-      drift[i] = 0.35 + Math.random() * 0.9;
-      depth[i] = Math.random();
+      speeds[i] = 0.35 + Math.random() * 0.45;
+      depths[i] = Math.random();
     }
 
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('aSize', new THREE.BufferAttribute(sizes, 1));
     geometry.setAttribute('aPhase', new THREE.BufferAttribute(phases, 1));
-    geometry.setAttribute('aDrift', new THREE.BufferAttribute(drift, 1));
-    geometry.setAttribute('aDepth', new THREE.BufferAttribute(depth, 1));
+    geometry.setAttribute('aSpeed', new THREE.BufferAttribute(speeds, 1));
+    geometry.setAttribute('aDepth', new THREE.BufferAttribute(depths, 1));
+    geometry.setAttribute('aAngle', new THREE.BufferAttribute(angles, 1));
+    geometry.setAttribute('aRadius', new THREE.BufferAttribute(radii, 1));
+    geometry.setAttribute('aLane', new THREE.BufferAttribute(lanes, 1));
 
     const material = new THREE.ShaderMaterial({
       transparent: true,
       depthWrite: false,
-      blending: THREE.AdditiveBlending,
+      blending: THREE.NormalBlending,
       uniforms: {
         uTime: { value: 0 },
         uPointer: { value: new THREE.Vector2(0, 0) },
-        uPixelRatio: { value: Math.min(window.devicePixelRatio || 1, 1.75) },
-        uColor: { value: brandBlue },
+        uPixelRatio: { value: Math.min(window.devicePixelRatio || 1, 1.5) },
+        uColor: { value: new THREE.Color('#3B5BDB') },
       },
       vertexShader: `
         attribute float aSize;
         attribute float aPhase;
-        attribute float aDrift;
+        attribute float aSpeed;
         attribute float aDepth;
+        attribute float aAngle;
+        attribute float aRadius;
+        attribute float aLane;
         uniform float uTime;
         uniform vec2 uPointer;
         uniform float uPixelRatio;
         varying float vAlpha;
+        varying float vAngle;
+        varying float vDepth;
 
         void main() {
+          float t = uTime;
+          float angle = aAngle + sin(t * 0.16 + aPhase) * 0.018;
+          float radius = aRadius + sin(t * 0.42 + aPhase + aLane) * 0.045;
           vec3 p = position;
-          float t = uTime * aDrift;
+          p.x = 2.35 + cos(angle) * radius;
+          p.y = sin(angle) * radius * 0.84;
+          // Traveling waves create a smooth, shared flow while preserving the radial lanes.
+          float wave = sin(radius * 1.25 - t * 0.72 + aPhase * 0.18);
+          p.x += sin(angle + 0.5) * wave * 0.12;
+          p.y += cos(angle) * wave * 0.12;
+          p.x += sin(t * 0.24 + aPhase) * (0.025 + aDepth * 0.035);
+          p.y += cos(t * 0.21 + aPhase * 0.8) * (0.025 + aDepth * 0.035);
 
-          // Layered, organic flow: the field breathes and gently rolls
-          // instead of rotating around a single obvious orbit.
-          float waveA = sin(t * 0.32 + aPhase + p.y * 0.48);
-          float waveB = cos(t * 0.23 + aPhase * 1.31 + p.x * 0.3);
-          p.x += waveA * (0.13 + aDepth * 0.24);
-          p.y += waveB * (0.09 + aDepth * 0.17);
-          p.z += sin(t * 0.2 + aPhase) * 0.22;
-
-          vec2 pointerDelta = p.xy - uPointer * vec2(7.8, 4.6);
-          float pointerDistance = length(pointerDelta);
-          float influence = exp(-pointerDistance * 0.48);
-          vec2 safeDirection = pointerDelta / max(pointerDistance, 0.001);
-          p.xy += safeDirection * influence * (0.24 + aDepth * 0.22);
-          p.xy += vec2(-uPointer.y, uPointer.x) * influence * 0.075;
+          vec2 pointerTarget = uPointer * vec2(5.4, 3.8);
+          vec2 delta = p.xy - (vec2(2.35, 0.0) + pointerTarget);
+          float distanceToPointer = length(delta);
+          float influence = exp(-distanceToPointer * 0.72);
+          vec2 direction = delta / max(distanceToPointer, 0.001);
+          p.xy += direction * influence * 0.16;
+          p.xy += vec2(-direction.y, direction.x) * influence * sin(t * 0.8 + aPhase) * 0.045;
 
           vec4 mvPosition = modelViewMatrix * vec4(p, 1.0);
           gl_Position = projectionMatrix * mvPosition;
-          gl_PointSize = aSize * uPixelRatio * (24.0 / max(1.0, -mvPosition.z));
-          vAlpha = (0.3 + 0.35 * aDepth + 0.2 * influence)
-            * (0.72 + 0.28 * (0.5 + 0.5 * sin(t + aPhase)));
+          gl_PointSize = aSize * uPixelRatio * (23.0 / max(1.0, -mvPosition.z));
+          vAlpha = (0.18 + 0.5 * aDepth) * (0.78 + 0.22 * (0.5 + 0.5 * sin(t * 0.55 + aPhase)));
+          vAngle = angle;
+          vDepth = aDepth;
         }
       `,
       fragmentShader: `
         uniform vec3 uColor;
         varying float vAlpha;
+        varying float vAngle;
+        varying float vDepth;
         void main() {
-          vec2 point = gl_PointCoord - vec2(0.5);
-          float d = length(point);
-          if (d > 0.5) discard;
-          float halo = exp(-d * 10.0) * 0.38;
-          float core = 1.0 - smoothstep(0.04, 0.34, d);
-          float edge = 1.0 - smoothstep(0.22, 0.5, d);
-          float alpha = (edge * 0.68 + core * 0.32 + halo) * vAlpha;
-          gl_FragColor = vec4(uColor, alpha);
+          vec2 p = gl_PointCoord - vec2(0.5);
+          float c = cos(vAngle);
+          float s = sin(vAngle);
+          vec2 rotated = vec2(c * p.x + s * p.y, -s * p.x + c * p.y);
+          float dash = length(vec2(rotated.x * 0.64, rotated.y * 2.5));
+          if (dash > 0.5) discard;
+          float halo = exp(-dash * 8.0) * 0.28;
+          float core = 1.0 - smoothstep(0.03, 0.34, dash);
+          float edge = 1.0 - smoothstep(0.22, 0.5, dash);
+          float alpha = (edge * 0.48 + core * 0.48 + halo) * vAlpha;
+          vec3 blueLight = mix(uColor, vec3(0.56, 0.62, 1.0), smoothstep(0.18, 0.5, dash) * 0.24);
+          gl_FragColor = vec4(blueLight, alpha);
         }
       `,
     });
@@ -346,12 +366,13 @@ function AntigravityField() {
       const rect = canvas.getBoundingClientRect();
       const width = Math.max(1, rect.width);
       const height = Math.max(1, rect.height);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
+      const pixelRatio = Math.min(window.devicePixelRatio || 1, 1.5);
+      renderer.setPixelRatio(pixelRatio);
       renderer.setSize(width, height, false);
       camera.aspect = width / height;
       camera.position.z = width < 600 ? 14.5 : 12;
       camera.updateProjectionMatrix();
-      material.uniforms.uPixelRatio.value = Math.min(window.devicePixelRatio || 1, 1.75);
+      material.uniforms.uPixelRatio.value = pixelRatio;
     };
 
     const onPointerMove = (event: PointerEvent) => {
@@ -362,12 +383,16 @@ function AntigravityField() {
     };
     const onPointerLeave = () => { targetPointerX = 0; targetPointerY = 0; };
 
-    const clock = new THREE.Clock();
-    const draw = () => {
+    const draw = (now: number) => {
       if (disposed || !renderer) return;
-      pointerX += (targetPointerX - pointerX) * 0.045;
-      pointerY += (targetPointerY - pointerY) * 0.045;
-      material.uniforms.uTime.value = clock.getElapsedTime();
+      const delta = lastFrame ? Math.min((now - lastFrame) / 1000, 0.033) : 0.016;
+      lastFrame = now;
+      elapsed += delta;
+      // Frame-rate-independent easing avoids pointer jitter on fast or slow displays.
+      const smoothing = 1 - Math.exp(-delta * 4.2);
+      pointerX += (targetPointerX - pointerX) * smoothing;
+      pointerY += (targetPointerY - pointerY) * smoothing;
+      material.uniforms.uTime.value = elapsed;
       material.uniforms.uPointer.value.set(pointerX, pointerY);
       renderer.render(scene, camera);
       raf = window.requestAnimationFrame(draw);
