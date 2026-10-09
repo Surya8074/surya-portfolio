@@ -355,3 +355,26 @@
 @media (prefers-reduced-motion: reduce) {
   .cv6-liquid-hero .cv6-original-black-glass-stage crazygl-hero { will-change: auto; }
 }
+
+
+/* Actual layout fix: move the stage wrapper, not the library's internal custom element.
+   The internal selector above does not move the rendered dashboard in the live page. */
+.cv6-liquid-hero .cv6-original-black-glass-stage {
+  transform: translateY(250px) !important;
+  transition: none !important;
+}
+@media (max-width: 1100px) {
+  .cv6-liquid-hero .cv6-original-black-glass-stage {
+    transform: translateY(275px) !important;
+  }
+}
+@media (max-width: 700px) {
+  .cv6-liquid-hero .cv6-original-black-glass-stage {
+    transform: translateY(360px) !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cv6-liquid-hero .cv6-original-black-glass-stage {
+    transform: translateY(250px) !important;
+  }
+}
