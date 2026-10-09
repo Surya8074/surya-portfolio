@@ -378,3 +378,101 @@
     transform: translateY(250px) !important;
   }
 }
+
+
+/* CV6 final composition pass — resolve legacy hero decoration and use one stage transform. */
+.cv6-liquid-hero {
+  min-height: 1024px !important;
+  height: 1024px !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(ellipse 58% 40% at 50% 55%, rgba(206,222,255,.42) 0%, rgba(232,239,255,.18) 55%, transparent 100%),
+    radial-gradient(ellipse 35% 32% at 15% 69%, rgba(222,233,255,.46) 0%, transparent 100%),
+    radial-gradient(ellipse 35% 30% at 86% 72%, rgba(224,234,255,.4) 0%, transparent 100%),
+    #fffefc !important;
+}
+/* The shared CV4 hero's animated pseudo-orbs are legacy decoration, not part of this hero. */
+.cv6-liquid-hero::before,
+.cv6-liquid-hero::after {
+  content: none !important;
+  display: none !important;
+}
+.cv6-liquid-hero .cv6-liquid-copy {
+  top: 28px !important;
+  width: min(780px, calc(100% - 48px)) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  z-index: 30 !important;
+}
+.cv6-liquid-hero .cv6-liquid-description {
+  max-width: 620px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.cv6-liquid-hero .cv6-original-black-glass-stage {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 4 !important;
+  transform: translateY(120px) !important;
+  transition: none !important;
+}
+.cv6-liquid-hero .cv6-original-black-glass-stage crazygl-hero {
+  transform: none !important;
+  will-change: auto !important;
+}
+.cv6-liquid-hero .cv6-liquid-feature {
+  z-index: 10 !important;
+}
+@media (max-width: 1100px) {
+  .cv6-liquid-hero {
+    min-height: 1000px !important;
+    height: 1000px !important;
+  }
+  .cv6-liquid-hero .cv6-original-black-glass-stage {
+    transform: translateY(150px) !important;
+  }
+}
+@media (max-width: 700px) {
+  .cv6-liquid-hero {
+    min-height: 1080px !important;
+    height: 1080px !important;
+  }
+  .cv6-liquid-hero .cv6-liquid-copy {
+    top: 24px !important;
+    width: calc(100% - 28px) !important;
+  }
+  .cv6-liquid-hero .cv6-liquid-copy h1 {
+    font-size: clamp(60px, 16vw, 78px) !important;
+    line-height: .96 !important;
+  }
+  .cv6-liquid-hero .cv6-liquid-tagline {
+    max-width: 360px !important;
+    margin: 14px auto 0 !important;
+    font-size: 16px !important;
+  }
+  .cv6-liquid-hero .cv6-liquid-description {
+    max-width: 340px !important;
+    font-size: 12px !important;
+  }
+  .cv6-liquid-hero .cv6-liquid-chips {
+    max-width: 360px !important;
+    margin: 14px auto 0 !important;
+    gap: 7px !important;
+  }
+  .cv6-liquid-hero .cv6-original-black-glass-stage {
+    transform: translateY(300px) !important;
+  }
+  .cv6-liquid-hero .cv6-feature-left-top { top: 59% !important; }
+  .cv6-liquid-hero .cv6-feature-right-top { top: 59% !important; }
+  .cv6-liquid-hero .cv6-feature-left-bottom { top: 78% !important; }
+  .cv6-liquid-hero .cv6-feature-right-bottom { top: 78% !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cv6-liquid-hero .cv6-original-black-glass-stage {
+    transition: none !important;
+  }
+}
