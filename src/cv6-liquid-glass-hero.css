@@ -111,3 +111,14 @@
  .cv6-liquid-sphere,.cv6-liquid-feature,.cv6-liquid-ring-a,.cv6-liquid-pedestal i { animation:none !important; }
  .cv6-liquid-chips span,.cv6-liquid-feature { transition:none !important; }
 }
+
+/* Pointer-driven depth; separate transform from the ambient translate animation. */
+.cv6-liquid-sphere { transform: translate3d(calc(var(--hero-pointer-x, 0) * -12px), calc(var(--hero-pointer-y, 0) * -10px), 0); transition: transform .55s cubic-bezier(.16,1,.3,1); }
+.cv6-liquid-ring-a { margin-left:calc(var(--hero-pointer-x, 0) * 12px); margin-top:calc(var(--hero-pointer-y, 0) * 7px); }
+.cv6-liquid-ring-b { margin-left:calc(var(--hero-pointer-x, 0) * -9px); margin-top:calc(var(--hero-pointer-y, 0) * -5px); }
+.cv6-liquid-feature { transform: translate3d(calc(var(--hero-pointer-x, 0) * -5px), calc(var(--hero-pointer-y, 0) * -4px), 0); }
+.cv6-liquid-feature:hover { transform: translate3d(calc(var(--hero-pointer-x, 0) * -5px), calc(var(--hero-pointer-y, 0) * -4px - 5px), 0); }
+.cv6-liquid-hero .cv6-original-black-glass-stage { transform: translate3d(calc(var(--hero-pointer-x, 0) * -4px), calc(var(--hero-pointer-y, 0) * -3px), 0); transition:transform .5s cubic-bezier(.16,1,.3,1); }
+@media (prefers-reduced-motion: reduce) {
+ .cv6-liquid-sphere,.cv6-liquid-feature,.cv6-liquid-hero .cv6-original-black-glass-stage { transform:none !important; transition:none !important; }
+}
