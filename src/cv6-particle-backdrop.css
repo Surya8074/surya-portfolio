@@ -48,3 +48,21 @@
   position: relative;
   z-index: 2 !important;
 }
+
+
+/* Keep the fine particle field visible on the warm paper background. */
+.cv6-comski-device-hero .cv6-particle-backdrop {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 0 !important;
+}
+.cv6-comski-device-hero .cv6-particle-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.cv6-comski-device-hero .cv6-original-black-glass-stage,
+.cv6-comski-device-hero .cv6-original-black-glass-stage > * {
+  background: transparent !important;
+}
