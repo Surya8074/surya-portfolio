@@ -122,3 +122,28 @@
 @media (prefers-reduced-motion: reduce) {
  .cv6-liquid-sphere,.cv6-liquid-feature,.cv6-liquid-hero .cv6-original-black-glass-stage { transform:none !important; transition:none !important; }
 }
+
+/* Screenshot QA: force the brand gradient and keep the product bezel below the copy. */
+.cv6-liquid-hero .cv6-liquid-copy h1 {
+  color: #1649f5 !important;
+  background: linear-gradient(180deg,#092cbd 4%,#1649f5 55%,#3985ff 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  position: relative;
+  z-index: 6;
+}
+.cv6-liquid-hero .cv6-liquid-copy {
+  z-index: 8 !important;
+}
+.cv6-liquid-hero .cv6-original-black-glass-stage {
+  z-index: 3 !important;
+}
+.cv6-liquid-hero .cv6-original-black-glass-stage crazygl-hero {
+  transform: translateY(clamp(118px, 18vh, 158px)) !important;
+}
+@media (max-width: 767px) {
+  .cv6-liquid-hero .cv6-original-black-glass-stage crazygl-hero {
+    transform: translateY(112px) !important;
+  }
+}
