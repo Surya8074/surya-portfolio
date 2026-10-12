@@ -626,12 +626,12 @@ function ComskiCaseStudyCV4() {
             screenshot="/surya-portfolio/comski/My%20Journey.svg"
             screenshotScale={1.02}
             screenshotTilt={-4}
-            screenEmissive={0.9}
+            screenEmissive={1.15}
             frameColor="#3B5BDB"
             frameMetalness={0.78}
             frameRoughness={0.2}
             sweepPeriod={7}
-            sweepIntensity={0.38}
+            sweepIntensity={0}
             sweepColor="#7890FF"
             revealFloor={0.08}
             parallaxStrength={0.42}
