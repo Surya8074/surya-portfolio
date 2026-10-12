@@ -349,3 +349,26 @@
     filter: drop-shadow(0 24px 28px rgba(35, 65, 135, .20)) !important;
   }
 }
+
+
+/* Final device polish: reduce the mockup slightly further and let its shadow breathe. */
+.cv6-liquid-hero .cv6-original-black-glass-stage crazygl-hero {
+  transform: translateY(clamp(225px, 29vh, 285px)) scale(.86) !important;
+  transform-origin: top center !important;
+  filter: drop-shadow(0 30px 34px rgba(35, 65, 135, .23)) !important;
+}
+@media (max-width: 1100px) {
+  .cv6-liquid-hero .cv6-original-black-glass-stage crazygl-hero {
+    transform: translateY(285px) scale(.82) !important;
+  }
+}
+@media (max-width: 700px) {
+  .cv6-liquid-hero .cv6-original-black-glass-stage crazygl-hero {
+    transform: translateY(340px) scale(.78) !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cv6-liquid-hero .cv6-original-black-glass-stage crazygl-hero {
+    filter: drop-shadow(0 30px 34px rgba(35, 65, 135, .23)) !important;
+  }
+}
