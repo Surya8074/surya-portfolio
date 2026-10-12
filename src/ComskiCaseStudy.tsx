@@ -186,9 +186,9 @@ export default function ComskiCaseStudy() {
               </div>
             </div>
             <div className="cs-onboarding-sequence">
-              <Screen file="Onboarding 1st Question.svg" alt="ComSki first onboarding question, default state" caption="01 / DEFAULT STATE" />
-              <Screen file="Onboarding 3rd question.svg" alt="ComSki onboarding question with selectable options" caption="02 / CHOICE DESIGN" />
-              <Screen file="Onboarding 3rd question-1.svg" alt="ComSki onboarding question variant" caption="03 / VARIANT" />
+              <Screen file="Onboarding 3rd question-1.svg" alt="Original ComSki onboarding question screen" caption="01 / QUESTION SCREEN" />
+              <Screen file="Onboarding 3rd question-2.svg" alt="Original ComSki onboarding question variant" caption="02 / QUESTION VARIANT" />
+              <Screen file="Onboarding 3rd question-3.svg" alt="Original ComSki onboarding question variant" caption="03 / ADDITIONAL VARIANT" />
             </div>
             <p className="cs-annotation">Design question to confirm: how do the answers influence the learner's next experience, and what trade-offs shaped the length of onboarding?</p>
           </section>
@@ -206,10 +206,10 @@ export default function ComskiCaseStudy() {
                 <p>Reading centers on a passage, Listening on an audio clip, Writing on a prompt and response field, and Speaking on a spoken response to a topic. The content changes with the task while the wider assessment journey remains recognisable.</p>
               </div>
               <div className="cs-skill-showcase">
-                <Screen file="Reading 1.svg" alt="ComSki Reading assessment screen" caption="READING" />
+                <Screen file="Reading-1.svg" alt="ComSki Reading assessment screen" caption="READING" />
                 <Screen file="Listening 1.svg" alt="ComSki Listening assessment screen" caption="LISTENING" />
                 <Screen file="Writing 1.svg" alt="ComSki Writing assessment screen" caption="WRITING" />
-                <Screen file="Speaking 1.svg" alt="ComSki Speaking assessment screen" caption="SPEAKING" />
+                <Screen file="Speaking 2.svg" alt="ComSki Speaking assessment screen" caption="SPEAKING" />
               </div>
             </div>
             <div className="cs-task-rows">
@@ -238,11 +238,6 @@ export default function ComskiCaseStudy() {
                 </div>
               </div>
             </Reveal>
-            <div className="cs-completion-spread">
-              <Screen file="Reading 4.svg" alt="ComSki Reading assessment later state" caption="ASSESSMENT STATE" />
-              <Screen file="Listening 4.svg" alt="ComSki Listening assessment later state" caption="ASSESSMENT STATE" />
-              <Screen file="Writing 4.svg" alt="ComSki Writing assessment later state" caption="ASSESSMENT STATE" />
-            </div>
             <p className="cs-annotation">The exact completion, retry and next-skill labels must be verified against these screens before they are described as implemented behavior.</p>
           </section>
 
