@@ -12,3 +12,4 @@ createRoot(document.getElementById('root')!).render(
     <ComskiCaseStudyCV6 />
   </React.StrictMode>
 );
+import './cv6-hero-continuity.css';
