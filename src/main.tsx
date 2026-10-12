@@ -4,7 +4,6 @@ import { createRoot } from 'react-dom/client';
 import Lenis from '@studio-freight/lenis';
 import { VscAccount, VscArchive, VscHome, VscSettingsGear } from 'react-icons/vsc';
 import Dock from './Dock';
-import ResumePage from './ResumePage';
 import './styles.css';
 import './reference-home.css';
 import './genesis-card.css';
@@ -168,17 +167,16 @@ function App() {
     { icon: <VscHome size={18} />, label: 'Home', onClick: () => go('#home') },
     { icon: <VscArchive size={18} />, label: 'Archive', onClick: () => go('#work') },
     { icon: <VscAccount size={18} />, label: 'Profile', onClick: () => go('#about') },
-    { icon: <VscSettingsGear size={18} />, label: 'Settings', onClick: () => go('#resume') },
+    { icon: <VscSettingsGear size={18} />, label: 'Settings', onClick: () => { window.location.href = '/surya-portfolio/resume.html'; } },
   ];
 
   return (
     <main>
-      <header className="reference-nav"><div className="reference-nav-inner"><button className="reference-brand" onClick={() => go('#home')}><strong>Surya Kiran</strong><span className="reference-brand-divider" /><span>India</span></button><nav><button onClick={() => go('#art')}>Art</button><button onClick={() => go('#about')}>About Me</button><button onClick={() => go('#resume')}>Resume</button></nav></div></header>
+      <header className="reference-nav"><div className="reference-nav-inner"><button className="reference-brand" onClick={() => go('#home')}><strong>Surya Kiran</strong><span className="reference-brand-divider" /><span>India</span></button><nav><button onClick={() => go('#art')}>Art</button><button onClick={() => go('#about')}>About Me</button><button onClick={() => { window.location.href = '/surya-portfolio/resume.html'; }}>Resume</button></nav></div></header>
       <section id="home" className="reference-home"><div className="reference-home-viewport"><div className="reference-home-stage"><div className="reference-portrait" aria-label="Portrait of Surya Kiran"><img className="reference-portrait-image" src={portraitUrl} alt="Surya Kiran" /></div><div className="reference-fade" /><div className="reference-head-animation" aria-hidden="true"><svg viewBox="0 0 260 130" className="head-animation-svg"><text className="head-animation-text" x="18" y="88">ART</text></svg></div><div className="reference-hero-copy"><h1><span>Designing how products earn trust,</span><span>across <em>visual, product &amp; growth.</em></span></h1><button className="reference-work" onClick={() => go('#work')}>See my work</button></div></div></div></section>
       <section id="work" className="reference-work-section"><div className="work-intro"><p>SELECTED WORK</p></div><GenesisCard /><ComskiCard /><article className="secondary-work-card"><div><p>Product · Web</p><h3>More work coming next</h3></div><div className="work-placeholder work-two">Next project</div></article></section>
       <section className="other-reference"><h2>Other Projects</h2><div className="other-reference-grid"><article><h3>AI product explorations</h3><p>AI-assisted workflows, interaction and product design experiments.</p><div className="tags"><span>AI-Assisted</span><span>Spatial UX</span><span>Product Design</span></div></article><article><h3>Web &amp; product experiments</h3><p>Small digital products exploring interaction, systems and prototyping.</p><div className="tags"><span>Web Design</span><span>Interaction Design</span><span>UX Design</span></div></article></div></section>
       <section id="about" className="simple-section"><h2>About Me</h2><p>Hi, I am Surya — a product designer working across AI, SaaS and education.</p></section><section id="art" className="simple-section"><h2>Art + Explorations</h2><p>AI, fun, visual experiments and things I make outside product work.</p></section>
-      <ResumePage />
       <footer className="reference-footer"><h2>Every pixel here was a decision.</h2><p>Every word, a choice. Thanks for seeing it.</p><div className="footer-icons"><Linkedin/><FileText/><Github/></div><div className="footer-line" /><div className="footer-mark">≈≈≈</div><strong>Surya Kiran © 2026</strong></footer>
       <div className="portfolio-dock"><Dock items={items} panelHeight={70} baseItemSize={50} magnification={70} /></div><button className="to-top" onClick={() => go('#home')} aria-label="Back to top"><ArrowUp size={19}/></button>
     </main>
