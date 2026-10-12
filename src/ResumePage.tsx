@@ -55,6 +55,7 @@ export default function ResumePage() {
             <p className="text-[#212121] text-ds-body font-normal leading-[1.4]">California College of Arts, San Francisco - 2026</p>
             <button type="button" aria-expanded={schoolNoteOpen} className="bg-[#fff8d3] rounded-[7px] flex flex-col gap-[4px] p-4 mt-2 w-full text-left cursor-pointer ayushi-school-note" onClick={() => setSchoolNoteOpen(value => !value)}>
               <div className="flex items-center justify-between w-full"><p className="text-[#212121] text-ds-nav-link font-normal italic leading-[1.4]">Back to School, why?</p><Chevron open={schoolNoteOpen} /></div>
+              {schoolNoteOpen && <p className="text-[#666] text-ds-body font-normal leading-[1.4]">I returned to school to deepen my understanding of interaction design and explore how thoughtful design can make emerging technology more human.</p>}
             </button>
           </div>
           <div className="flex flex-col gap-ds-2 ayushi-education-entry"><div className="flex flex-wrap items-center gap-5"><p className="text-[#212121] text-ds-body font-bold leading-[1.4]">MBA in Marketing</p><span className="hidden md:block w-[1px] h-3 bg-[#717171]" /><p className="text-[#717171] text-ds-body font-normal leading-[1.4]">Grade 7.81/10</p></div><p className="text-[#212121] text-ds-body font-normal leading-[1.4]">ICFAI Business School, India - 2017</p></div>
