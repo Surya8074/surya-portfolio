@@ -95,7 +95,7 @@ export default function ComskiCaseStudyEditorial() {
               <p className="cs-overline">COMSKI — PERSONAL COMMUNICATION BUDDY</p>
               <h1>Communication<br />starts with <em>the person.</em></h1>
               <p className="cs-hero-deck">A communication coach that brings personal context and four distinct skill assessments into one connected experience.</p>
-              <a className="cs-text-link" href="#s01">Explore the case study <ArrowDownRight size={17} /></a>
+              <div className="cs-hero-actions"><a className="cs-text-link cs-primary-link" href="#prototype">Try the interactive prototype <ArrowUpRight size={16} /></a><a className="cs-secondary-link" href="#s01">Explore the case study <ArrowDownRight size={16} /></a></div>
             </div>
             <div className="cs-hero-art" aria-label="Original ComSki product screens">
               <div className="cs-art-index">THE LEARNER JOURNEY <span>01 — 04</span></div>
@@ -255,6 +255,29 @@ export default function ComskiCaseStudyEditorial() {
           </section>
         </div>
       </div>
+
+
+      <section className="cs-prototype-section" id="prototype">
+        <div className="cs-prototype-inner">
+          <SectionLabel num="07" label="INTERACTIVE PROTOTYPE" />
+          <Reveal className="cs-prototype-heading">
+            <h2>See how the experience <em>connects.</em></h2>
+            <p>Explore the ComSki design prototype directly. Use the embedded canvas to move through the available interaction flow, or open it in Figma for a larger view.</p>
+          </Reveal>
+          <div className="cs-prototype-frame">
+            <iframe
+              title="Interactive ComSki Figma prototype"
+              src="https://embed.figma.com/proto/yazvP6FAGsww30Hwk1tZ6O/comski-2.0?node-id=0-1&starting-point-node-id=0%3A1&scaling=scale-down&content-scaling=fixed&embed-host=share"
+              allowFullScreen
+              loading="lazy"
+            />
+          </div>
+          <div className="cs-prototype-footer">
+            <span>COMSKI · INTERACTIVE DESIGN EXPLORATION</span>
+            <a href="https://www.figma.com/proto/yazvP6FAGsww30Hwk1tZ6O/comski-2.0?node-id=0-1&starting-point-node-id=0%3A1&scaling=scale-down&content-scaling=fixed" target="_blank" rel="noreferrer">Open prototype in Figma <ArrowUpRight size={15} /></a>
+          </div>
+        </div>
+      </section>
 
       <footer className="cs-footer">
         <div className="cs-footer-inner">
