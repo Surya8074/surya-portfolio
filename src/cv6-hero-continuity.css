@@ -219,3 +219,25 @@
     transition: none !important;
   }
 }
+
+
+/* Final screenshot correction: the device bezel was still touching the feature-chip row.
+   Preserve the full-bleed canvas, but lower the rendered device independently of the copy. */
+.cv6-liquid-hero .cv6-original-black-glass-stage crazygl-hero {
+  transform: translateY(clamp(225px, 29vh, 285px)) !important;
+}
+@media (max-width: 1100px) {
+  .cv6-liquid-hero .cv6-original-black-glass-stage crazygl-hero {
+    transform: translateY(285px) !important;
+  }
+}
+@media (max-width: 700px) {
+  .cv6-liquid-hero .cv6-original-black-glass-stage crazygl-hero {
+    transform: translateY(340px) !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cv6-liquid-hero .cv6-original-black-glass-stage crazygl-hero {
+    transform: translateY(clamp(225px, 29vh, 285px)) !important;
+  }
+}
