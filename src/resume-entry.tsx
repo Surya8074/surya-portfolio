@@ -53,7 +53,12 @@ function ResumeApp() {
       </section>
 
       <ResumePage />
-      <footer className="reference-footer"><strong>Ayushi Sharma © 2026</strong></footer>
+
+      <footer className="reference-footer" role="contentinfo">
+        <div className="reference-footer-inner">
+          <span>Ayushi Sharma © 2026</span>
+        </div>
+      </footer>
     </main>
   );
 }
