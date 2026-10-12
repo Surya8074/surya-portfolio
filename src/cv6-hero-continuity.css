@@ -484,21 +484,3 @@
     transform: translateY(340px) scale(.72) !important;
   }
 }
-
-
-/* Requested final scale pass: reduce the CV6 home-screen/laptop mockup by 30%
-   from its current rendered size while preserving its vertical alignment. */
-.cv6-liquid-hero .cv6-original-black-glass-stage crazygl-hero {
-  transform: translateY(clamp(225px, 29vh, 285px)) scale(.56) !important;
-  transform-origin: top center !important;
-}
-@media (max-width: 1100px) {
-  .cv6-liquid-hero .cv6-original-black-glass-stage crazygl-hero {
-    transform: translateY(285px) scale(.532) !important;
-  }
-}
-@media (max-width: 700px) {
-  .cv6-liquid-hero .cv6-original-black-glass-stage crazygl-hero {
-    transform: translateY(340px) scale(.504) !important;
-  }
-}
