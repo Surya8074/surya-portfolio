@@ -8,6 +8,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'index.html',
+        resume: 'resume.html',
         genesis: 'work/genesis/index.html',
         genesisStyle2: 'work/genesis-style-2/index.html',
         genesisV3: 'work/genesis-v3/index.html',
