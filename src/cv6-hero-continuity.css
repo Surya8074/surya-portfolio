@@ -484,3 +484,31 @@
     transform: translateY(340px) scale(.72) !important;
   }
 }
+
+/* Overall hero compacting pass: reduce the entire hero's vertical footprint by ~30%.
+   Keep the device scale unchanged; reposition the full composition to fit the shorter stage. */
+.cv6-liquid-hero.cv6-ag-hero {
+  min-height: 70svh !important;
+  height: 70svh !important;
+}
+.cv6-liquid-hero .cv6-original-black-glass-stage crazygl-hero {
+  transform: translateY(clamp(158px, 20.3vh, 200px)) scale(.80) !important;
+}
+@media (max-width: 1100px) {
+  .cv6-liquid-hero.cv6-ag-hero {
+    min-height: 686px !important;
+    height: 70svh !important;
+  }
+  .cv6-liquid-hero .cv6-original-black-glass-stage crazygl-hero {
+    transform: translateY(200px) scale(.76) !important;
+  }
+}
+@media (max-width: 700px) {
+  .cv6-liquid-hero.cv6-ag-hero {
+    min-height: 742px !important;
+    height: 70svh !important;
+  }
+  .cv6-liquid-hero .cv6-original-black-glass-stage crazygl-hero {
+    transform: translateY(238px) scale(.72) !important;
+  }
+}
