@@ -241,3 +241,111 @@
     transform: translateY(clamp(225px, 29vh, 285px)) !important;
   }
 }
+
+
+/* CV6 refinement pass — normalized hero rhythm and a slightly smaller device.
+   Keep the live WebGL device and its original screenshot; only adjust its scale,
+   shadow, and the alignment system around it. */
+.cv6-liquid-hero .cv6-liquid-copy {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0 !important;
+  text-align: center !important;
+}
+
+.cv6-liquid-hero .cv6-liquid-eyebrow {
+  align-self: center !important;
+  margin: 0 auto !important;
+}
+
+.cv6-liquid-hero .cv6-liquid-copy h1 {
+  align-self: center !important;
+  margin: 12px 0 0 !important;
+}
+
+.cv6-liquid-hero .cv6-liquid-tagline {
+  max-width: 100% !important;
+  margin: 14px auto 0 !important;
+  text-wrap: balance;
+}
+
+.cv6-liquid-hero .cv6-liquid-description {
+  width: min(650px, 100%) !important;
+  margin: 10px auto 0 !important;
+  text-wrap: pretty;
+}
+
+.cv6-liquid-hero .cv6-liquid-chips {
+  width: 100% !important;
+  max-width: 760px !important;
+  margin: 18px auto 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+}
+
+.cv6-liquid-hero .cv6-liquid-chips span {
+  flex: 0 1 auto !important;
+  white-space: nowrap !important;
+}
+
+.cv6-liquid-hero .cv6-original-black-glass-stage crazygl-hero {
+  transform: translateY(clamp(225px, 29vh, 285px)) scale(.92) !important;
+  transform-origin: top center !important;
+  filter: drop-shadow(0 24px 28px rgba(35, 65, 135, .20)) !important;
+}
+
+.cv6-liquid-hero .cv6-feature-left-top { left: clamp(3%, 8.3vw, 8.3%) !important; }
+.cv6-liquid-hero .cv6-feature-right-top { right: clamp(3%, 7vw, 7%) !important; }
+.cv6-liquid-hero .cv6-feature-left-bottom { left: clamp(4%, 12vw, 12%) !important; }
+.cv6-liquid-hero .cv6-feature-right-bottom { right: clamp(3%, 3.5vw, 3.5%) !important; }
+
+@media (max-width: 1100px) {
+  .cv6-liquid-hero .cv6-liquid-copy {
+    width: min(760px, calc(100% - 40px)) !important;
+  }
+  .cv6-liquid-hero .cv6-liquid-chips {
+    max-width: 700px !important;
+    gap: 10px !important;
+  }
+  .cv6-liquid-hero .cv6-original-black-glass-stage crazygl-hero {
+    transform: translateY(285px) scale(.88) !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .cv6-liquid-hero .cv6-liquid-copy {
+    width: calc(100% - 28px) !important;
+  }
+  .cv6-liquid-hero .cv6-liquid-tagline {
+    max-width: 360px !important;
+    margin-top: 12px !important;
+  }
+  .cv6-liquid-hero .cv6-liquid-description {
+    max-width: 340px !important;
+    margin-top: 9px !important;
+  }
+  .cv6-liquid-hero .cv6-liquid-chips {
+    width: min(100%, 360px) !important;
+    margin-top: 14px !important;
+    gap: 7px !important;
+  }
+  .cv6-liquid-hero .cv6-liquid-chips span {
+    white-space: normal !important;
+    justify-content: center !important;
+    text-align: left !important;
+    min-width: 0 !important;
+  }
+  .cv6-liquid-hero .cv6-original-black-glass-stage crazygl-hero {
+    transform: translateY(340px) scale(.84) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cv6-liquid-hero .cv6-original-black-glass-stage crazygl-hero {
+    filter: drop-shadow(0 24px 28px rgba(35, 65, 135, .20)) !important;
+  }
+}
