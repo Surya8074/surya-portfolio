@@ -97,9 +97,17 @@ function ToolGroupItem({ group }: { group: ToolGroup }) {
       <p className="tw-group-description">{group.description}</p>
       <ul className="tw-tool-list" aria-label={`${group.title} tools`}>
         {group.tools.map((tool) => (
-          <li key={tool} className="tw-tool">
-            <span className="tw-tool-mark" aria-hidden="true">{tool.slice(0, 1)}</span>
-            <span>{tool}</span>
+          <li key={tool.name} className="tw-tool">
+            <span className="tw-tool-logo" aria-hidden="true">
+              <img
+                src={`https://cdn.simpleicons.org/${tool.logo}`}
+                alt=""
+                loading="lazy"
+                onError={(event) => { event.currentTarget.style.display = 'none'; }}
+              />
+              <span className="tw-tool-fallback">{tool.fallback}</span>
+            </span>
+            <span className="tw-tool-name">{tool.name}</span>
           </li>
         ))}
       </ul>
