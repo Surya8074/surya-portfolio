@@ -57,7 +57,7 @@ export default function ComskiCaseStudy(){
     <div className="cs-human-note"><span>COMSKI / THE OPPORTUNITY</span><b>Understand the moment.<br/>Make room for clearer communication.</b></div>
    </div>
    <figure className="cs-human-visual">
-    <img src="/surya-portfolio/comski/communication-moment.jpg" alt="A professional pausing thoughtfully while preparing to speak in a meeting" loading="lazy" decoding="async"/>
+    <img src="/surya-portfolio/comski/communication-moment.svg" alt="A professional pausing thoughtfully while preparing to speak in a meeting" loading="lazy" decoding="async"/>
     <figcaption><span>THE MOMENT BEFORE YOU SPEAK</span><span>COMSKI · HUMAN-CENTRED AI</span></figcaption>
    </figure>
   </section>
