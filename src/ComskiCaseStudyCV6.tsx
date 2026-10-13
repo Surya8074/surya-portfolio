@@ -655,11 +655,11 @@ function ComskiCaseStudyCV4() {
         </div>
         <div className="cv6-snapshot-item">
           <span>Timeline</span>
-          <p>Not specified</p>
+          <p>4 months</p>
         </div>
         <div className="cv6-snapshot-item">
-          <span>Stack</span>
-          <p>Figma</p>
+          <span>Tools</span>
+          <p>Claude<br />Figma<br />Figma MCP<br />ElevenLabs<br />Gemini</p>
         </div>
       </section>
 
