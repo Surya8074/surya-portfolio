@@ -56,3 +56,21 @@
 }
 
 /* Reference-aligned compact panel; deployment refresh trigger. */
+
+
+/* Keep the details panel visually legible on the now-uniform white page. */
+main.cv4-page > section.cv6-project-snapshot {
+  box-sizing: border-box !important;
+  background: #FFFFFF !important;
+  border: 1px solid #ECEEF2 !important;
+  border-radius: 20px !important;
+  box-shadow: 0 8px 28px rgba(20, 28, 45, 0.045) !important;
+  padding: 28px 32px !important;
+  margin: 40px auto 48px !important;
+}
+@media (max-width: 760px) {
+  main.cv4-page > section.cv6-project-snapshot {
+    padding: 22px 20px !important;
+    margin: 32px auto 40px !important;
+  }
+}
