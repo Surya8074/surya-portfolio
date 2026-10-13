@@ -27,3 +27,9 @@
 .resume-tool-tile.premiere .resume-tool-monogram{border:3px solid #9b7af4;border-radius:5px;color:#c8a7ff}
 .resume-tool-tile.davinci .resume-tool-monogram{font-size:23px!important;letter-spacing:-.06em;color:#fff}
 @media(max-width:760px){.resume-tool-art{grid-template-columns:repeat(3,minmax(78px,1fr));gap:14px;max-width:440px}.resume-tool-tile{border-radius:20px}}
+
+/* Match original reference tools image sizing; avoid oversized invented logos */
+.resume-tool-art,.resume-tool-list{display:none!important}
+.ayushi-tools-art{display:block;width:100%;max-width:576px;height:206px}
+.ayushi-tools-art img{display:block;width:100%;height:100%;object-fit:contain;object-position:left center}
+@media(max-width:767px){.ayushi-tools-art{height:auto;min-height:130px;max-width:100%}.ayushi-tools-art img{object-fit:contain;object-position:left center}}
