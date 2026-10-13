@@ -56,3 +56,21 @@
 @media(max-width:720px){
  .cs-hero{min-height:auto}.cs-hero-inner{min-height:auto}.cs-hero-copy{padding-top:50px}.cs-hero h1{font-size:54px}.cs-hero-grid{gap:28px}.cs-hero-visual{position:relative;right:auto;top:auto;width:100%;height:460px;margin-top:20px}.skill-core{right:50%;transform:translateX(50%);top:35%;width:165px}.n-reading{left:0;top:10%}.n-listening{right:0;top:8%}.n-writing{left:0;bottom:8%}.n-speaking{right:0;bottom:5%}.skill-line{display:none}.cs-input-grid,.cs-skill-grid,.cs-decision-grid{grid-template-columns:1fr}.cs-anatomy-note{grid-template-columns:1fr;gap:12px}.cs-five{grid-template-columns:1fr 1fr}.cs-five>span{grid-column:1/-1}.cs-five div:last-child{grid-column:1/-1}.cs-skill-matrix{overflow-x:auto}.cs-skill-matrix>div{min-width:620px}.deep-card,.deep-card.reverse{grid-template-columns:1fr}.deep-card.reverse>div,.deep-card.reverse>.cs-anatomy{order:initial}.cs-journey{grid-template-columns:1fr;gap:8px}.cs-journey>i{transform:rotate(90deg);height:14px}.cs-completion{gap:35px}.cs-assessment-steps{grid-template-columns:1fr}
 }
+
+/* Editorial human-problem opening — follows the reference's text / portrait balance */
+.cs-human-problem{width:min(1218px,calc(100% - 84px));margin:0 auto;padding:110px 0 124px;display:grid;grid-template-columns:minmax(0,1fr) minmax(380px,.88fr);gap:clamp(52px,8vw,112px);align-items:stretch;background:var(--paper)}
+.cs-human-copy{align-self:center;max-width:570px;padding:10px 0}
+.cs-human-eyebrow{margin:0 0 22px!important;font:500 10px 'DM Mono',monospace!important;letter-spacing:.16em!important;color:#7661e8!important}
+.cs-human-copy h2{margin:0 0 27px;font-size:clamp(38px,4.2vw,58px);line-height:1.04;letter-spacing:-.055em;font-weight:550;max-width:570px}
+.cs-human-copy>p:not(.cs-human-eyebrow){font-size:17px;line-height:1.7;color:#272a31;margin:0 0 20px;max-width:560px}
+.cs-human-copy .cs-human-lead{font-size:19px!important;line-height:1.58!important;color:#15171c!important}
+.cs-human-note{margin-top:32px;padding-top:18px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:12px}
+.cs-human-note span{font:500 9px 'DM Mono',monospace;letter-spacing:.13em;color:#8a8d95}
+.cs-human-note b{font-size:15px;line-height:1.55;font-weight:550}
+.cs-human-visual{position:relative;margin:0;min-height:580px;overflow:hidden;border-radius:34px 34px 0 0;background:#d8d7d5}
+.cs-human-visual img{display:block;width:100%;height:100%;min-height:580px;object-fit:cover;object-position:66% center;filter:grayscale(1);animation:cs-human-breathe 12s ease-in-out infinite alternate;transform-origin:center}
+.cs-human-visual figcaption{position:absolute;left:0;right:0;bottom:0;padding:24px 22px 19px;display:flex;justify-content:space-between;gap:12px;color:white;background:linear-gradient(transparent,rgba(10,10,12,.66));font:500 8px 'DM Mono',monospace;letter-spacing:.11em}
+@keyframes cs-human-breathe{from{transform:scale(1)}to{transform:scale(1.035)}}
+@media(prefers-reduced-motion:reduce){.cs-human-visual img{animation:none}}
+@media(max-width:800px){.cs-human-problem{width:calc(100% - 44px);padding:76px 0 82px;grid-template-columns:1fr;gap:34px}.cs-human-copy{max-width:650px}.cs-human-copy h2{font-size:clamp(37px,9vw,52px)}.cs-human-copy>p:not(.cs-human-eyebrow){font-size:16px}.cs-human-copy .cs-human-lead{font-size:18px!important}.cs-human-visual,.cs-human-visual img{min-height:480px}.cs-human-visual{border-radius:24px 24px 0 0}.cs-human-visual figcaption{flex-wrap:wrap}}
+@media(max-width:480px){.cs-human-problem{width:calc(100% - 36px);padding:58px 0 66px}.cs-human-visual,.cs-human-visual img{min-height:390px}.cs-human-visual img{object-position:65% center}.cs-human-visual figcaption{padding:18px 15px;font-size:7px}}
