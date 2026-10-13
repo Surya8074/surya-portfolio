@@ -90,3 +90,13 @@ main.cv4-page > .cv6-reference-intro {
   background: #FFFFFF !important;
   background-image: none !important;
 }
+
+
+/* ComSki brand accents for the opening case-study copy. */
+.cv6-reference-copy h2 {
+  color: #3B5BDB !important;
+}
+.cv6-reference-copy p:last-child strong {
+  color: #3B5BDB !important;
+  font-weight: 600;
+}
