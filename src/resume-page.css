@@ -13,3 +13,17 @@
 .resume-tool-list{display:flex;flex-wrap:wrap;gap:12px;align-content:flex-start;max-width:620px}
 .resume-tool-list span{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px;border:1px solid #e5e5e5;border-radius:12px;background:#fff;color:#333;font-size:14px;line-height:1.2}
 .resume-tool-list span:hover{border-color:#bdbdbd}
+
+/* Preserve the image-led software wall from the reference resume */
+.resume-tool-art{display:grid;grid-template-columns:repeat(4,minmax(92px,128px));gap:24px 22px;align-content:start;width:100%;max-width:600px}
+.resume-tool-tile{width:100%;aspect-ratio:1/1;border-radius:27px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;overflow:hidden;padding:12px;box-sizing:border-box;box-shadow:0 1px 2px #00000008;transition:transform .18s ease,box-shadow .18s ease}
+.resume-tool-tile:hover{transform:translateY(-3px);box-shadow:0 8px 20px #00000012}
+.resume-tool-tile img{width:48%;height:48%;object-fit:contain}
+.resume-tool-tile>span:last-child{font-size:11px;font-weight:600;line-height:1.2;text-align:center}
+.resume-tool-tile.figma{background:#0c0924;color:#fff}.resume-tool-tile.canva{background:#e8fbfc;color:#006f78}
+.resume-tool-tile.premiere{background:#20133f;color:#c8a7ff}.resume-tool-tile.davinci{background:#111;color:#fff}
+.resume-tool-tile.blender{background:#fff0d9;color:#6b3500}
+.resume-tool-monogram{display:grid;place-items:center;width:52%;height:45%;font-size:29px!important;font-weight:800!important;letter-spacing:-.08em}
+.resume-tool-tile.premiere .resume-tool-monogram{border:3px solid #9b7af4;border-radius:5px;color:#c8a7ff}
+.resume-tool-tile.davinci .resume-tool-monogram{font-size:23px!important;letter-spacing:-.06em;color:#fff}
+@media(max-width:760px){.resume-tool-art{grid-template-columns:repeat(3,minmax(78px,1fr));gap:14px;max-width:440px}.resume-tool-tile{border-radius:20px}}
