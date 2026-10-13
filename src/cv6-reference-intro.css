@@ -43,3 +43,20 @@
 .cv4-page { background-color: #FFFFFF !important; }
 .cv4-page > :not(.cv4-hero):not(.cv4-glow-cursor) { background-color: #FFFFFF; }
 .cv6-project-snapshot { background-color: #FFFFFF; }
+
+
+/* CV6 post-hero canvas: pure white, with no inherited grey/gradient surface. */
+.cv4-page {
+  background: #FFFFFF !important;
+  background-image: none !important;
+}
+.cv4-page > :not(.cv4-hero):not(.cv4-glow-cursor):not(.cv4-mobile-progress) {
+  background-color: #FFFFFF !important;
+  background-image: none !important;
+}
+.cv4-page > .cv6-project-snapshot {
+  background: #FFFFFF padding-box, linear-gradient(120deg,#3B5BDB 0%,#7C8FF2 38%,#B7C5FF 66%,#3B5BDB 100%) border-box !important;
+}
+.cv4-page > .cv6-reference-intro {
+  background: #FFFFFF !important;
+}
