@@ -14,7 +14,7 @@ type ToolGroup = {
   number: string;
   title: string;
   description: string;
-  tools: string[];
+  tools: { name: string; logo: string; fallback: string }[];
   icon: React.ReactNode;
 };
 
@@ -23,42 +23,42 @@ const groups: ToolGroup[] = [
     number: '01',
     title: 'Product Design & Prototyping',
     description: 'Interface design, design systems, interaction design, wireframing, and high-fidelity prototyping.',
-    tools: ['Figma', 'FigJam', 'Framer', 'Spline'],
+    tools: [{ name: 'Figma', logo: 'figma', fallback: 'F' }, { name: 'FigJam', logo: 'figma', fallback: 'Fj' }, { name: 'Framer', logo: 'framer', fallback: 'Fr' }, { name: 'Spline', logo: 'spline', fallback: 'S' }],
     icon: <PenTool aria-hidden="true" />,
   },
   {
     number: '02',
     title: 'AI-Assisted Design & Research',
     description: 'Research synthesis, concept exploration, UX writing, product specifications, and design iteration.',
-    tools: ['Claude', 'ChatGPT', 'Perplexity'],
+    tools: [{ name: 'Claude', logo: 'anthropic', fallback: 'Cl' }, { name: 'ChatGPT', logo: 'openai', fallback: 'AI' }, { name: 'Perplexity', logo: 'perplexity', fallback: 'P' }],
     icon: <BrainCircuit aria-hidden="true" />,
   },
   {
     number: '03',
     title: 'Research & Product Strategy',
     description: 'User journeys, problem framing, competitor analysis, product discovery, documentation, and delivery planning.',
-    tools: ['Miro', 'Notion', 'Jira'],
+    tools: [{ name: 'Miro', logo: 'miro', fallback: 'M' }, { name: 'Notion', logo: 'notion', fallback: 'N' }, { name: 'Jira', logo: 'jira', fallback: 'J' }],
     icon: <Compass aria-hidden="true" />,
   },
   {
     number: '04',
     title: 'Frontend & Design Engineering',
     description: 'Interactive prototypes, responsive interfaces, design implementation, and browser-based validation.',
-    tools: ['React', 'HTML', 'CSS', 'JavaScript', 'Vite'],
+    tools: [{ name: 'React', logo: 'react', fallback: 'R' }, { name: 'HTML', logo: 'html5', fallback: 'H' }, { name: 'CSS', logo: 'css3', fallback: 'C' }, { name: 'JavaScript', logo: 'javascript', fallback: 'JS' }, { name: 'Vite', logo: 'vite', fallback: 'V' }],
     icon: <Code2 aria-hidden="true" />,
   },
   {
     number: '05',
     title: 'AI-Powered Development',
     description: 'AI-assisted coding, rapid prototyping, experimentation, and iterative product development.',
-    tools: ['Google Antigravity', 'Claude Code', 'Cursor'],
+    tools: [{ name: 'Google Antigravity', logo: 'google', fallback: 'G' }, { name: 'Claude Code', logo: 'anthropic', fallback: 'CC' }, { name: 'Cursor', logo: 'cursor', fallback: 'Cu' }],
     icon: <Layers3 aria-hidden="true" />,
   },
   {
     number: '06',
     title: 'Motion & Visual Storytelling',
     description: 'Product walkthroughs, motion graphics, interaction demonstrations, and visual communication.',
-    tools: ['Premiere Pro', 'DaVinci Resolve', 'Blender', 'Canva'],
+    tools: [{ name: 'Premiere Pro', logo: 'adobepremierepro', fallback: 'Pr' }, { name: 'DaVinci Resolve', logo: 'blackmagicdesign', fallback: 'D' }, { name: 'Blender', logo: 'blender', fallback: 'B' }, { name: 'Canva', logo: 'canva', fallback: 'Ca' }],
     icon: <Clapperboard aria-hidden="true" />,
   },
 ];
