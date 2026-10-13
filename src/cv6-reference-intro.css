@@ -38,3 +38,8 @@
   .cv6-reference-visual { width: 100%; max-width: 300px; flex: none; align-self: center; }
   .cv6-reference-image { border-radius: 30px; }
 }
+
+/* Keep every section after the CV6 hero on the reference's pure-white canvas. */
+.cv4-page { background-color: #FFFFFF !important; }
+.cv4-page > :not(.cv4-hero):not(.cv4-glow-cursor) { background-color: #FFFFFF; }
+.cv6-project-snapshot { background-color: #FFFFFF; }
