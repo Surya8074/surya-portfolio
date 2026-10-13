@@ -136,8 +136,6 @@ export default function ComskiCaseStudy(){
      <div className="cs-outcome-grid"><article><Target/><b>PERSONALISATION</b><h3>Context is collected before practice.</h3><p>Goal, confidence, available time, interests and personal tone are established before the assessment experience begins.</p></article><article><Route/><b>STRUCTURE</b><h3>Four modalities share one journey.</h3><p>Reading, Listening, Writing and Speaking are distinct tasks, but the assessment grammar and progression model remain familiar.</p></article><article><Sparkles/><b>CONTINUITY</b><h3>Completion leads somewhere.</h3><p>The handoff from one skill to the next turns isolated exercises into a coherent assessment sequence.</p></article></div>
      <div className="cs-reflection"><span>DESIGN REFLECTION</span><p>ComSki pushed the work beyond designing individual screens. The more important design problem was connecting the screens into a system: <em>who the learner is → why they are here → what they practise → how each skill progresses → what they do next.</em></p></div>
     </section>
-   </div>
-  </article>
   <footer className="cs-footer"><span>COMSKI / CASE STUDY</span><h2>Designing the journey from <em>personal context to communication confidence.</em></h2><a href="/surya-portfolio/">Back to portfolio <ArrowRight size={17}/></a></footer>
  </main>
 }
