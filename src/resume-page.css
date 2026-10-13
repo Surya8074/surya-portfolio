@@ -9,3 +9,7 @@
 
 /* Missing utility aliases used by Resume source markup. */
 .ayushi-resume-section .gap-ds-2{gap:8px}.ayushi-resume-section .gap-ds-10{gap:40px}.ayushi-resume-section .text-ds-body{font-size:14px}.ayushi-resume-section .text-ds-nav-link{font-size:14px}.ayushi-resume-section .scroll-mt-\\[100px\\]{scroll-margin-top:100px}.ayushi-resume-section .object-left{object-position:left center}.resume-nav-link{color:inherit;text-decoration:none;font:inherit}.resume-nav-link:hover{opacity:.7}
+
+.resume-tool-list{display:flex;flex-wrap:wrap;gap:12px;align-content:flex-start;max-width:620px}
+.resume-tool-list span{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px;border:1px solid #e5e5e5;border-radius:12px;background:#fff;color:#333;font-size:14px;line-height:1.2}
+.resume-tool-list span:hover{border-color:#bdbdbd}
