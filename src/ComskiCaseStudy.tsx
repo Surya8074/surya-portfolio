@@ -48,20 +48,19 @@ export default function ComskiCaseStudy(){
    </div>
   </header>
 
-  <section className="cs-intro"><div><span>THE PRODUCT</span><h2>Personalisation is not a feature on top of the product. <em>It is the entry point.</em></h2></div><p>The supplied ComSki screens show a deliberate sequence: establish who the learner is, understand what they want from communication, understand how much time they can give, establish confidence and interests, then move into a structured four-skill assessment journey.</p></section>
-
-  <section className="cs-snapshot"><div className="cs-snapshot-head"><span>AT A GLANCE</span><p>The strongest product story is the relationship between onboarding, assessment and progression.</p></div><div className="cs-snapshot-grid"><div><small>ENTRY</small><b>Personalised onboarding</b><span>Context before content</span></div><div><small>ASSESSMENT</small><b>4 communication skills</b><span>Reading · Listening · Writing · Speaking</span></div><div><small>STRUCTURE</small><b>5-question skill checks</b><span>Consistent progression and completion states</span></div><div><small>HANDOFF</small><b>One skill leads to the next</b><span>Completion screens make the journey explicit</span></div></div></section>
-
-  <article className="cs-layout">
-   <aside className="cs-chapters"><a href="#s01">01 <b>PRODUCT PREMISE</b></a><a href="#s02">02 <b>PERSONALISATION</b></a><a href="#s03">03 <b>ASSESSMENT MODEL</b></a><a href="#s04">04 <b>FOUR SKILLS</b></a><a href="#s05">05 <b>INTERACTION SYSTEM</b></a><a href="#s06">06 <b>PROGRESSION</b></a><a href="#s07">07 <b>REFLECTION</b></a></aside>
-
-   <div className="cs-content">
-    <section id="s01" className="cs-section">
-     <SectionLabel num="01" label="PRODUCT PREMISE"/>
-     <h2>The core design problem was not “how do we teach English?” <em>It was how do we make practice feel relevant to one person?</em></h2>
-     <div className="cs-two"><p>ComSki introduces itself as a “personal communication buddy”. That framing matters: the first interaction is not a lesson, score or dashboard. It is a conversation about the learner.</p><p>The screens then move from personal context into a structured assessment. This creates a product narrative where the system first gathers context and then asks the learner to demonstrate communication across multiple modes.</p></div>
-     <div className="cs-principle"><b>DESIGN PRINCIPLE</b><strong>Build the learner model first. <em>Then build the learning journey around it.</em></strong></div>
-    </section>
+  <section className="cs-human-problem" id="s01" aria-labelledby="cs-human-title">
+   <div className="cs-human-copy">
+    <p className="cs-human-eyebrow">THE HUMAN SIDE OF COMMUNICATION</p>
+    <h2 id="cs-human-title">“What if you knew what to say, but struggled to say it?”</h2>
+    <p className="cs-human-lead">Ideas can feel clear in your mind but become difficult to express when the pressure is on.</p>
+    <p>Finding the right words, speaking with confidence, and making yourself understood can be challenging. ComSki explores how AI-powered communication feedback can help people better understand and improve the way they communicate.</p>
+    <div className="cs-human-note"><span>COMSKI / THE OPPORTUNITY</span><b>Understand the moment.<br/>Make room for clearer communication.</b></div>
+   </div>
+   <figure className="cs-human-visual">
+    <img src="/surya-portfolio/comski/communication-moment.jpg" alt="A professional pausing thoughtfully while preparing to speak in a meeting" loading="lazy" decoding="async"/>
+    <figcaption><span>THE MOMENT BEFORE YOU SPEAK</span><span>COMSKI · HUMAN-CENTRED AI</span></figcaption>
+   </figure>
+  </section>
 
     <section id="s02" className="cs-section">
      <SectionLabel num="02" label="PERSONALISED ONBOARDING"/>
