@@ -44,6 +44,7 @@ export default function ResumePage() {
     <div className="w-full max-w-[915px] mx-auto flex flex-col gap-ds-10 ayushi-resume">
       <div id="resume" className="scroll-mt-[100px] flex flex-wrap items-center justify-between gap-4 ayushi-resume-heading">
         <h2 className="text-ds-h3 font-semibold leading-[1.09] tracking-[-0.29px] text-text-primary">Resume</h2>
+        <a className="resume-cta inline-flex items-center" href="/surya-portfolio/Surya_Kiran_Resume.pdf" download="Inagandla_Adhi_Surya_Kiran_Resume.pdf" aria-label="Download Surya Kiran resume as PDF"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 17v4h14v-4"/></svg><span>Download Resume</span></a>
 
       </div>
 
