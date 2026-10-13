@@ -1,0 +1,147 @@
+import React from 'react';
+import {
+  BrainCircuit,
+  Clapperboard,
+  Code2,
+  Compass,
+  Layers3,
+  PenTool,
+  ArrowRight,
+} from 'lucide-react';
+import './tools-workflow.css';
+
+type ToolGroup = {
+  number: string;
+  title: string;
+  description: string;
+  tools: string[];
+  icon: React.ReactNode;
+};
+
+const groups: ToolGroup[] = [
+  {
+    number: '01',
+    title: 'Product Design & Prototyping',
+    description: 'Interface design, design systems, interaction design, wireframing, and high-fidelity prototyping.',
+    tools: ['Figma', 'FigJam', 'Framer', 'Spline'],
+    icon: <PenTool aria-hidden="true" />,
+  },
+  {
+    number: '02',
+    title: 'AI-Assisted Design & Research',
+    description: 'Research synthesis, concept exploration, UX writing, product specifications, and design iteration.',
+    tools: ['Claude', 'ChatGPT', 'Perplexity'],
+    icon: <BrainCircuit aria-hidden="true" />,
+  },
+  {
+    number: '03',
+    title: 'Research & Product Strategy',
+    description: 'User journeys, problem framing, competitor analysis, product discovery, documentation, and delivery planning.',
+    tools: ['Miro', 'Notion', 'Jira'],
+    icon: <Compass aria-hidden="true" />,
+  },
+  {
+    number: '04',
+    title: 'Frontend & Design Engineering',
+    description: 'Interactive prototypes, responsive interfaces, design implementation, and browser-based validation.',
+    tools: ['React', 'HTML', 'CSS', 'JavaScript', 'Vite'],
+    icon: <Code2 aria-hidden="true" />,
+  },
+  {
+    number: '05',
+    title: 'AI-Powered Development',
+    description: 'AI-assisted coding, rapid prototyping, experimentation, and iterative product development.',
+    tools: ['Google Antigravity', 'Claude Code', 'Cursor'],
+    icon: <Layers3 aria-hidden="true" />,
+  },
+  {
+    number: '06',
+    title: 'Motion & Visual Storytelling',
+    description: 'Product walkthroughs, motion graphics, interaction demonstrations, and visual communication.',
+    tools: ['Premiere Pro', 'DaVinci Resolve', 'Blender', 'Canva'],
+    icon: <Clapperboard aria-hidden="true" />,
+  },
+];
+
+const stages = [
+  {
+    number: '01',
+    title: 'Discover',
+    description: 'Understand users, explore problems, and synthesize research.',
+  },
+  {
+    number: '02',
+    title: 'Design',
+    description: 'Map workflows, explore concepts, and prototype in Figma.',
+  },
+  {
+    number: '03',
+    title: 'Build',
+    description: 'Turn selected concepts into working experiences with React and AI-assisted development.',
+  },
+  {
+    number: '04',
+    title: 'Validate & deliver',
+    description: 'Test interactions, refine usability, document specifications, and collaborate on implementation.',
+  },
+];
+
+function ToolGroupItem({ group }: { group: ToolGroup }) {
+  return (
+    <article className="tw-group">
+      <div className="tw-group-top">
+        <span className="tw-group-icon">{group.icon}</span>
+        <span className="tw-group-number">{group.number}</span>
+      </div>
+      <h3>{group.title}</h3>
+      <p className="tw-group-description">{group.description}</p>
+      <ul className="tw-tool-list" aria-label={`${group.title} tools`}>
+        {group.tools.map((tool) => (
+          <li key={tool} className="tw-tool">
+            <span className="tw-tool-mark" aria-hidden="true">{tool.slice(0, 1)}</span>
+            <span>{tool}</span>
+          </li>
+        ))}
+      </ul>
+    </article>
+  );
+}
+
+export default function ToolsWorkflow() {
+  return (
+    <section className="tools-workflow" id="tools-workflow" aria-labelledby="tools-workflow-title">
+      <div className="tw-inner">
+        <header className="tw-heading">
+          <p className="tw-eyebrow">TOOLS &amp; WORKFLOW</p>
+          <h2 id="tools-workflow-title">The tools behind my process</h2>
+          <p className="tw-intro">
+            My toolkit brings together product thinking, AI-assisted exploration, interface design, and hands-on development to turn complex ideas into useful digital experiences.
+          </p>
+        </header>
+
+        <div className="tw-groups">
+          {groups.map((group) => <ToolGroupItem key={group.number} group={group} />)}
+        </div>
+
+        <div className="tw-workflow">
+          <div className="tw-workflow-heading">
+            <p className="tw-eyebrow">HOW I WORK</p>
+            <h3>From problem to product</h3>
+          </div>
+          <ol className="tw-stages">
+            {stages.map((stage, index) => (
+              <li className="tw-stage" key={stage.number}>
+                <div className="tw-stage-top">
+                  <span className="tw-stage-number">{stage.number}</span>
+                  {index < stages.length - 1 && <ArrowRight className="tw-stage-arrow" size={16} aria-hidden="true" />}
+                </div>
+                <h4>{stage.title}</h4>
+                <p>{stage.description}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </section>
+  );
+}
