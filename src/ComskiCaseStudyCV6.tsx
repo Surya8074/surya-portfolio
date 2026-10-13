@@ -643,28 +643,23 @@ function ComskiCaseStudyCV4() {
         <div className="cv6-ag-hero-inner cv6-comski-device-hero-inner" aria-hidden="true" />
       </header>
 
-      {/* CV6 project snapshot — the first editorial panel beneath the cinematic hero. */}
-      <section className="cv6-project-snapshot" aria-label="ComSki project overview">
-        <div className="cv6-snapshot-index">
-          <span className="cv6-snapshot-overline">PROJECT SNAPSHOT</span>
-          <span className="cv6-snapshot-number">01 <i>/</i> 04</span>
+      {/* Compact project metadata panel, matching the supplied reference layout. */}
+      <section className="cv6-project-snapshot" aria-label="ComSki project details">
+        <div className="cv6-snapshot-item">
+          <span>Role</span>
+          <p>Product Designer</p>
         </div>
-        <div className="cv6-snapshot-main">
-          <div className="cv6-snapshot-title">
-            <span className="cv6-snapshot-label">THE PROJECT</span>
-            <h2>Communication practice, designed as one connected journey.</h2>
-            <p>ComSki brings Reading, Listening, Writing and Speaking into a single AI-assisted practice experience, with personalisation and feedback designed around the learner’s next step.</p>
-          </div>
-          <div className="cv6-snapshot-details" aria-label="Project details">
-            <div><span>DISCIPLINE</span><strong>Product design</strong><small>UX strategy · UI · Prototyping</small></div>
-            <div><span>PRODUCT</span><strong>AI communication</strong><small>Four connected skill areas</small></div>
-            <div><span>DESIGN FOCUS</span><strong>Trust in feedback</strong><small>Personalised, low-pressure practice</small></div>
-          </div>
+        <div className="cv6-snapshot-item">
+          <span>Team</span>
+          <p>Solo product-design ownership</p>
         </div>
-        <div className="cv6-snapshot-footer">
-          <span><i aria-hidden="true"></i> PRODUCT EXPERIENCE</span>
-          <span>From onboarding to progress</span>
-          <a href="#s01">Explore the case study <b aria-hidden="true">↘</b></a>
+        <div className="cv6-snapshot-item">
+          <span>Timeline</span>
+          <p>Not specified</p>
+        </div>
+        <div className="cv6-snapshot-item">
+          <span>Stack</span>
+          <p>Figma</p>
         </div>
       </section>
 
