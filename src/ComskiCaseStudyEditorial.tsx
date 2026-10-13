@@ -113,13 +113,34 @@ export default function ComskiCaseStudyEditorial() {
         </div>
       </header>
 
-      <section className="cs-opening" id="s01">
-        <div className="cs-opening-index">01 <span>THE PRODUCT PREMISE</span></div>
-        <Reveal className="cs-opening-content">
-          <h2>Not another lesson library.<br /><em>A more personal starting point.</em></h2>
-          <div className="cs-opening-copy">
-            <p>ComSki introduces itself as a “personal communication buddy”. Instead of opening on a lesson or score, the experience begins by asking about the learner.</p>
-            <p>From there, the product moves into Reading, Listening, Writing and Speaking assessments. The design question is how to connect those different tasks without losing the sense that one learner is moving through one experience.</p>
+      <section className="cs-opening" id="s01" aria-labelledby="cs-introduction-title">
+        <div className="cs-opening-meta" aria-label="Project details">
+          <div><span>ROLE</span><strong>Product Designer</strong></div>
+          <div><span>PRODUCT</span><strong>AI communication coach</strong></div>
+          <div><span>FOCUS</span><strong>Onboarding · assessment · progression</strong></div>
+          <div><span>TOOLS</span><strong>Figma · interaction design</strong></div>
+        </div>
+
+        <div className="cs-introduction">
+          <div className="cs-opening-index">01 <span>INTRODUCTION</span></div>
+          <Reveal className="cs-introduction-copy">
+            <h2 id="cs-introduction-title">A more personal way<br />to build <em>communication skills.</em></h2>
+            <p>ComSki is a personal communication buddy designed around the person learning—not just the lesson they are about to complete.</p>
+            <p>The experience begins with onboarding that gathers context, then connects the learner to Reading, Listening, Writing and Speaking assessments. The design challenge is to make those distinct activities feel like parts of one understandable journey.</p>
+          </Reveal>
+        </div>
+
+        <Reveal className="cs-intro-visual">
+          <div className="cs-intro-visual-top">
+            <span>THE PRODUCT, IN CONTEXT</span>
+            <span>ORIGINAL COMSKI INTERFACE</span>
+          </div>
+          <figure className="cs-intro-screen">
+            <img src={asset('Desktop - 1.svg')} alt="Original ComSki desktop interface screen" loading="lazy" decoding="async" />
+          </figure>
+          <div className="cs-intro-visual-caption">
+            <span>One learner journey</span>
+            <p>Personal context → skill practice → visible progression</p>
           </div>
         </Reveal>
       </section>
