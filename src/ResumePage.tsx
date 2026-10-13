@@ -44,46 +44,43 @@ export default function ResumePage() {
     <div className="w-full max-w-[915px] mx-auto flex flex-col gap-ds-10 ayushi-resume">
       <div id="resume" className="scroll-mt-[100px] flex flex-wrap items-center justify-between gap-4 ayushi-resume-heading">
         <h2 className="text-ds-h3 font-semibold leading-[1.09] tracking-[-0.29px] text-text-primary">Resume</h2>
-        <a href="https://www.helloayushi.com/resume/ayushi-sharma-resume-2026.pdf" download="Resume_Ayushi Sharma_Designer_2026.pdf" target="_blank" rel="noopener noreferrer" className="resume-cta inline-flex items-center gap-ds-2 h-[35px] px-[14px] py-[6.5px] bg-white text-text-primary border border-border-light text-xs font-normal rounded-[21px] hover:opacity-90 transition-opacity"><DownloadIcon />Download Resume</a>
+
       </div>
 
       <div className="flex flex-col md:flex-row gap-8 md:gap-[164px] ayushi-resume-row ayushi-education-row">
         <h2 className="text-text-secondary text-base font-bold w-[112px] shrink-0 ayushi-subheading">Education</h2>
-        <div className="flex flex-col gap-[50px] flex-1 ayushi-resume-entry-list">
+        <div className="flex flex-col gap-[32px] flex-1 ayushi-resume-entry-list">
           <div className="flex flex-col gap-ds-2 ayushi-education-entry">
-            <div className="flex flex-wrap items-center gap-5"><p className="text-[#212121] text-ds-body font-bold leading-[1.4]">MDes in Interaction Design</p><span className="hidden md:block w-[1px] h-3 bg-[#717171]" /><p className="text-[#717171] text-ds-body font-normal leading-[1.4]">Grade 4.15/4.3</p></div>
-            <p className="text-[#212121] text-ds-body font-normal leading-[1.4]">California College of Arts, San Francisco - 2026</p>
-            <button type="button" aria-expanded={schoolNoteOpen} className="bg-[#fff8d3] rounded-[7px] flex flex-col gap-[4px] p-4 mt-2 w-full text-left cursor-pointer ayushi-school-note" onClick={() => setSchoolNoteOpen(value => !value)}>
-              <div className="flex items-center justify-between w-full"><p className="text-[#212121] text-ds-nav-link font-normal italic leading-[1.4]">Back to School, why?</p><Chevron open={schoolNoteOpen} /></div>
-              {schoolNoteOpen && <p className="text-[#666] text-ds-body font-normal leading-[1.4]">I returned to school to deepen my understanding of interaction design and explore how thoughtful design can make emerging technology more human.</p>}
-            </button>
+            <div className="flex flex-wrap items-center gap-5"><p className="text-[#212121] text-ds-body font-bold leading-[1.4]">Sikkim Manipal Institute of Technology</p><span className="hidden md:block w-[1px] h-3 bg-[#717171]" /><p className="text-[#717171] text-ds-body font-normal leading-[1.4]">CGPA 8.9</p></div>
+            <p className="text-[#212121] text-ds-body font-normal leading-[1.4]">Graduated 2023</p>
           </div>
-          <div className="flex flex-col gap-ds-2 ayushi-education-entry"><div className="flex flex-wrap items-center gap-5"><p className="text-[#212121] text-ds-body font-bold leading-[1.4]">MBA in Marketing</p><span className="hidden md:block w-[1px] h-3 bg-[#717171]" /><p className="text-[#717171] text-ds-body font-normal leading-[1.4]">Grade 7.81/10</p></div><p className="text-[#212121] text-ds-body font-normal leading-[1.4]">ICFAI Business School, India - 2017</p></div>
-          <div className="flex flex-col gap-ds-2 ayushi-education-entry"><div className="flex flex-wrap items-center gap-5"><p className="text-[#212121] text-ds-body font-bold leading-[1.4]">Bachelors in Business Administration</p><span className="hidden md:block w-[1px] h-3 bg-[#717171]" /><p className="text-[#717171] text-ds-body font-normal leading-[1.4]">Grade 9.24/10</p></div><p className="text-[#212121] text-ds-body font-normal leading-[1.4]">Galgotias University, India - 2015</p></div>
         </div>
       </div>
 
       <div className="flex flex-col md:flex-row gap-8 md:gap-[52px] ayushi-resume-row ayushi-experience-row">
         <h2 className="text-text-secondary text-base font-bold w-[112px] shrink-0 ayushi-subheading">Experience</h2>
         <div className="flex flex-col gap-[50px] flex-1 ayushi-resume-entry-list">
-          <ExperienceItem logo={resumeImages.paytm} role="Visual Designer (Manager)" dates="July 2021 - Feb 2024" location="Bangalore, India" previews={[{src:resumeImages.paytmPreview,alt:"Visual Designer (Manager) preview 1"}]}>Led a team of 5 designers at Paytm Money, developing modern design systems and visual language while overseeing end-to-end campaign execution across web, app, advertising, email, and social media.</ExperienceItem>
-          <ExperienceItem logo={resumeImages.enterpriseBot} role="Senior Visual Designer @ Enterprise Bot" dates="Mar 2021 - Jun 2021" location="Bangalore, India">As Visual Designer, directed design strategy and end-to-end campaign delivery across digital and traditional channels. Collaborated cross-functionally with stakeholders that enhance brand identity &amp; drive business results.</ExperienceItem>
-          <ExperienceItem logo={resumeImages.artwart} role="Founder & Designer @ Artwart Studios" dates="Jan 2019 - Feb 2021" location="Hyderabad, India" previews={[{src:resumeImages.artwartPreview1,alt:"Founder & Designer @ Artwart Studios preview 1"},{src:resumeImages.artwartPreview2,alt:"Founder & Designer @ Artwart Studios preview 2"}]}>Founded and scaled a results-oriented design agency, delivering solutions for 30+ businesses across 60+ projects while establishing expertise through 7+ publications. Closed during COVID.</ExperienceItem>
-          <ExperienceItem logo={resumeImages.radioMirchi} role="Account Manager @ Radio Mirchi" dates="Mar 2017 - Aug 2018" location="Hyderabad, India">Strategized and executed BTL/ATL campaigns for 150+ clients, producing high-profile concerts (Bryan Adams, Vidya Vox) and managing end-to-end event delivery, and social media for 7+ branded properties, driving engagement and revenue targets.</ExperienceItem>
+          <ExperienceItem logo="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d4ed8'/%3E%3Ctext x='32' y='39' font-family='Arial' font-size='25' font-weight='700' text-anchor='middle' fill='white'%3ET%3C/text%3E%3C/svg%3E" role="Product Designer · Transpoze" dates="Oct 2024 – Present" location="Hyderabad, India">
+            Designed AI-powered SaaS products across test automation, communication intelligence, and laundry management. Translated complex product requirements into intuitive user experiences, designed workflows and interfaces, and helped shape how users interact with AI-driven features.
+            <p className="mt-4"><strong>Genesis</strong> — AI test automation platform for developer workflows.</p>
+            <p><strong>ComSki</strong> — AI-powered communication intelligence product.</p>
+            <p><strong>LaundroMart</strong> — intelligent laundry management solution.</p>
+            <p>Focused on simplifying complex workflows, improving usability, and turning technical capabilities into practical product experiences.</p>
+          </ExperienceItem>
         </div>
       </div>
 
       <div className="flex flex-col md:flex-row gap-8 md:gap-[231px] ayushi-resume-row ayushi-skills-row">
         <h2 className="text-text-secondary text-base font-bold shrink-0 ayushi-subheading">Skills</h2>
         <div className="flex flex-col md:flex-row gap-8 md:gap-[118px] text-text-secondary text-ds-body font-normal leading-[1.4] ayushi-skills-content">
-          <div className="flex flex-col ayushi-skills-column"><p className="whitespace-nowrap">Interaction Design</p><p className="whitespace-nowrap">User Research &amp; Testing</p><p className="whitespace-nowrap">Wireframing &amp; Prototyping</p><p className="whitespace-nowrap">Information Architecture</p><p className="whitespace-nowrap">Systems Thinking</p></div>
-          <div className="flex flex-col ayushi-skills-column"><p className="whitespace-nowrap">Visual Design</p><p className="whitespace-nowrap">Illustration</p><p className="whitespace-nowrap">Visual Communication</p><p className="whitespace-nowrap">Marketing Communications</p><p className="whitespace-nowrap">Video Editing</p></div>
+          <div className="flex flex-col ayushi-skills-column"><p className="whitespace-nowrap">Product Design</p><p className="whitespace-nowrap">UI/UX Design</p><p className="whitespace-nowrap">User Research</p><p className="whitespace-nowrap">Wireframing</p></div>
+          <div className="flex flex-col ayushi-skills-column"><p className="whitespace-nowrap">Prototyping</p><p className="whitespace-nowrap">Design Systems</p><p className="whitespace-nowrap">Interaction Design</p></div>
         </div>
       </div>
 
       <div className="flex flex-col md:flex-row gap-8 md:gap-[231px] ayushi-resume-row ayushi-tools-row">
         <h2 className="text-text-secondary text-base font-bold shrink-0 ayushi-subheading">Tools</h2>
-        <div className="relative w-full md:w-[576px] h-[206px] ayushi-tools-art"><img alt="Design tools" loading="lazy" decoding="async" className="object-contain object-left" src={resumeImages.tools} /></div>
+        <div className="resume-tool-list" aria-label="Tools"><span>Figma</span><span>Canva</span><span>Premiere Pro</span><span>DaVinci Resolve</span><span>Blender</span></div>
       </div>
     </div>
   </section>;
