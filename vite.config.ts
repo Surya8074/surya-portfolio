@@ -24,6 +24,7 @@ export default defineConfig({
         cv4: 'cv4.html',
         cv5: 'cv5.html',
         cv6: 'cv6.html',
+        ancestraSection: 'ancestra-section.html',
       },
     },
   },
