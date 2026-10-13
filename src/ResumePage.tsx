@@ -80,7 +80,13 @@ export default function ResumePage() {
 
       <div className="flex flex-col md:flex-row gap-8 md:gap-[231px] ayushi-resume-row ayushi-tools-row">
         <h2 className="text-text-secondary text-base font-bold shrink-0 ayushi-subheading">Tools</h2>
-        <div className="relative w-full md:w-[576px] h-[206px] ayushi-tools-art"><img alt="Design tools" loading="lazy" decoding="async" className="object-contain object-left" src={resumeImages.tools} /></div>
+        <div className="resume-tools-interactive" aria-label="Design tools">
+          <div className="resume-tool-item" tabIndex={0} aria-label="Figma"><span className="resume-tool-icon figma-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span className="resume-tool-tooltip">Figma</span></div>
+          <div className="resume-tool-item" tabIndex={0} aria-label="Canva"><span className="resume-tool-icon canva-icon" aria-hidden="true">C</span><span className="resume-tool-tooltip">Canva</span></div>
+          <div className="resume-tool-item" tabIndex={0} aria-label="Adobe Premiere Pro"><span className="resume-tool-icon premiere-icon" aria-hidden="true">Pr</span><span className="resume-tool-tooltip">Premiere Pro</span></div>
+          <div className="resume-tool-item" tabIndex={0} aria-label="DaVinci Resolve"><span className="resume-tool-icon davinci-icon" aria-hidden="true"><i></i><i></i><i></i></span><span className="resume-tool-tooltip">DaVinci Resolve</span></div>
+          <div className="resume-tool-item" tabIndex={0} aria-label="Blender"><span className="resume-tool-icon blender-icon" aria-hidden="true">B</span><span className="resume-tool-tooltip">Blender</span></div>
+        </div>
       </div>
     </div>
   </section>;
