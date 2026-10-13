@@ -51,3 +51,5 @@
   .cv6-project-snapshot{width:calc(100% - 28px);padding:22px 18px;column-gap:16px}
   .cv6-snapshot-item>p{font-size:15px}
 }
+
+/* Reference-aligned four-column metadata panel; deployment refresh trigger. */
