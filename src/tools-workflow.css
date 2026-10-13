@@ -40,19 +40,38 @@
 .tw-groups {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  border-top: 1px solid var(--tw-line);
-  border-left: 1px solid var(--tw-line);
+  gap: 16px;
 }
 .tw-group {
+  position: relative;
   min-width: 0;
   padding: 28px 26px 30px;
-  border-right: 1px solid var(--tw-line);
-  border-bottom: 1px solid var(--tw-line);
-  background: transparent;
-  transition: background-color .22s ease;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .92);
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, .82), rgba(248, 249, 252, .58));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .96), 0 5px 18px rgba(27, 35, 52, .045), 0 1px 3px rgba(27, 35, 52, .025);
+  -webkit-backdrop-filter: blur(20px) saturate(1.15);
+  backdrop-filter: blur(20px) saturate(1.15);
+  transition: transform .32s cubic-bezier(.2, .75, .25, 1), box-shadow .32s ease, border-color .32s ease, background .32s ease;
+}
+.tw-group::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255, 255, 255, .65), transparent 58%);
+  pointer-events: none;
+  opacity: .8;
+}
+.tw-group > * {
+  position: relative;
 }
 .tw-group:hover {
-  background-color: rgba(16, 15, 17, .018);
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 1);
+  background: linear-gradient(145deg, rgba(255, 255, 255, .94), rgba(248, 249, 252, .72));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1), 0 12px 28px rgba(27, 35, 52, .075), 0 3px 8px rgba(27, 35, 52, .025);
 }
 .tw-group-top {
   display: flex;
@@ -203,18 +222,28 @@
 .tw-stages {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
   list-style: none;
   margin: 0;
   padding: 0;
-  border-top: 1px solid var(--tw-line);
 }
 .tw-stage {
   min-width: 0;
-  padding: 22px 22px 0 0;
+  padding: 22px 20px 24px;
+  border: 1px solid rgba(255, 255, 255, .92);
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, .8), rgba(248, 249, 252, .56));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .94), 0 4px 14px rgba(27, 35, 52, .035);
+  -webkit-backdrop-filter: blur(18px) saturate(1.1);
+  backdrop-filter: blur(18px) saturate(1.1);
+  transition: transform .3s cubic-bezier(.2, .75, .25, 1), box-shadow .3s ease;
+}
+.tw-stage:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1), 0 9px 22px rgba(27, 35, 52, .065);
 }
 .tw-stage + .tw-stage {
-  padding-left: 22px;
-  border-left: 1px solid var(--tw-line);
+  padding-left: 20px;
 }
 .tw-stage-top {
   display: flex;
@@ -251,9 +280,10 @@
   .tw-group h3 { min-height: auto; }
   .tw-group-description { min-height: 66px; }
   .tw-stages { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .tw-stage { padding-bottom: 25px; }
-  .tw-stage:nth-child(3) { padding-left: 0; border-left: 0; }
-  .tw-stage:nth-child(n + 3) { border-top: 1px solid var(--tw-line); padding-top: 22px; }
+  .tw-stage { padding: 22px 18px 24px; }
+  .tw-stage + .tw-stage,
+  .tw-stage:nth-child(3),
+  .tw-stage:nth-child(n + 3) { border: 1px solid rgba(255, 255, 255, .92); padding-top: 22px; padding-left: 18px; }
 }
 @media (max-width: 600px) {
   .tools-workflow { padding: 70px 0 82px; }
@@ -270,30 +300,19 @@
   .tw-workflow { margin-top: 68px; padding-top: 30px; }
   .tw-workflow-heading { display: block; margin-bottom: 26px; }
   .tw-workflow-heading .tw-eyebrow { margin-bottom: 12px; }
-  .tw-stages { display: block; border-top: 0; border-left: 1px solid var(--tw-line); margin-left: 5px; }
+  .tw-stages { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; margin: 0; }
   .tw-stage,
   .tw-stage + .tw-stage,
   .tw-stage:nth-child(3),
   .tw-stage:nth-child(n + 3) {
     position: relative;
-    padding: 0 0 28px 24px;
-    border: 0;
+    padding: 18px 18px 20px;
+    border: 1px solid rgba(255, 255, 255, .92);
+    border-radius: 18px;
   }
-  .tw-stage:last-child { padding-bottom: 0; }
-  .tw-stage::before {
-    content: '';
-    position: absolute;
-    left: -4px;
-    top: 3px;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--reference-bg, #fffefb);
-    border: 1px solid #9da1a7;
-  }
-  .tw-stage-top { margin-bottom: 9px; }
+  .tw-stage-top { margin-bottom: 12px; }
   .tw-stage-arrow { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .tw-group, .tw-tool { transition: none; }
+  .tw-group, .tw-tool, .tw-stage { transition: none; transform: none; }
 }
