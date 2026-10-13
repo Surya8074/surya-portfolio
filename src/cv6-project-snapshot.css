@@ -2,9 +2,11 @@
 .cv6-project-snapshot{
   position:relative;
   z-index:3;
-  width:min(1232px,calc(100% - 64px));
-  margin:clamp(64px,7vw,96px) auto clamp(72px,8vw,104px);
-  padding:28px 52px;
+  width:min(1232px,calc(100% - 64px)) !important;
+  max-width:1232px;
+  box-sizing:border-box;
+  margin:clamp(64px,7vw,96px) auto clamp(64px,7vw,88px) !important;
+  padding:26px 52px;
   display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));
   column-gap:clamp(24px,4vw,64px);
@@ -29,15 +31,16 @@
 .cv6-snapshot-item>p{
   margin:0;
   color:#171923;
-  font-size:19px;
-  line-height:1.6;
+  font-size:20px;
+  line-height:1.5;
   font-weight:400;
   overflow-wrap:anywhere;
 }
 @media(max-width:760px){
   .cv6-project-snapshot{
-    width:calc(100% - 36px);
-    margin:48px auto 64px;
+    width:calc(100% - 36px) !important;
+    max-width:none;
+    margin:48px auto 64px !important;
     padding:26px 24px;
     grid-template-columns:repeat(2,minmax(0,1fr));
     row-gap:28px;
