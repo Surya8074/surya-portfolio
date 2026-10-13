@@ -80,13 +80,7 @@ export default function ResumePage() {
 
       <div className="flex flex-col md:flex-row gap-8 md:gap-[231px] ayushi-resume-row ayushi-tools-row">
         <h2 className="text-text-secondary text-base font-bold shrink-0 ayushi-subheading">Tools</h2>
-        <div className="resume-tool-art" aria-label="Tools and software">
-          <div className="resume-tool-tile figma"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" loading="lazy" /><span>Figma</span></div>
-          <div className="resume-tool-tile canva"><img src="https://cdn.simpleicons.org/canva/00C4CC" alt="Canva" loading="lazy" /><span>Canva</span></div>
-          <div className="resume-tool-tile premiere"><span className="resume-tool-monogram">Pr</span><span>Premiere Pro</span></div>
-          <div className="resume-tool-tile davinci"><span className="resume-tool-monogram">DaV</span><span>DaVinci Resolve</span></div>
-          <div className="resume-tool-tile blender"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg" alt="Blender" loading="lazy" /><span>Blender</span></div>
-        </div>
+        <div className="relative w-full md:w-[576px] h-[206px] ayushi-tools-art"><img alt="Design tools" loading="lazy" decoding="async" className="object-contain object-left" src={resumeImages.tools} /></div>
       </div>
     </div>
   </section>;
