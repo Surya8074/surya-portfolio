@@ -33,3 +33,24 @@
 .ayushi-tools-art{display:block;width:100%;max-width:576px;height:206px}
 .ayushi-tools-art img{display:block;width:100%;height:100%;object-fit:contain;object-position:left center}
 @media(max-width:767px){.ayushi-tools-art{height:auto;min-height:130px;max-width:100%}.ayushi-tools-art img{object-fit:contain;object-position:left center}}
+
+
+/* Compact tools row with a continuous, soft iOS-style hover/focus tooltip */
+.ayushi-resume-section .ayushi-tools-row{align-items:flex-start}
+.ayushi-resume-section .resume-tools-interactive{display:flex;align-items:center;flex-wrap:wrap;gap:12px;min-height:64px;padding:4px 0 10px;max-width:576px}
+.ayushi-resume-section .resume-tool-item{position:relative;display:flex;align-items:center;justify-content:center;width:48px;height:48px;flex:0 0 48px;border-radius:15px;cursor:default;outline:none;-webkit-tap-highlight-color:transparent}
+.ayushi-resume-section .resume-tool-icon{position:relative;display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:11px;box-shadow:0 1px 2px #0000000a;transition:transform .22s cubic-bezier(.2,.8,.2,1),box-shadow .22s ease}
+.ayushi-resume-section .resume-tool-item:hover .resume-tool-icon,.ayushi-resume-section .resume-tool-item:focus-visible .resume-tool-icon{transform:translateY(2px) scale(.96);box-shadow:0 3px 9px #00000012}
+.ayushi-resume-section .resume-tool-tooltip{position:absolute;z-index:5;left:50%;bottom:calc(100% + 8px);transform:translate(-50%,5px) scale(.96);transform-origin:50% 100%;padding:7px 10px;border:1px solid #ffffffc9;border-radius:10px;background:rgba(255,255,255,.84);box-shadow:0 6px 22px #1a1d2914,0 1px 3px #1a1d290a;backdrop-filter:blur(18px) saturate(1.5);-webkit-backdrop-filter:blur(18px) saturate(1.5);color:#242631;font-size:11px;font-weight:500;line-height:1;white-space:nowrap;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease,transform .24s cubic-bezier(.2,.8,.2,1),visibility .18s ease}
+.ayushi-resume-section .resume-tool-tooltip:after{content:"";position:absolute;left:50%;top:100%;width:7px;height:7px;background:rgba(255,255,255,.84);border-right:1px solid #ffffffc9;border-bottom:1px solid #ffffffc9;transform:translate(-50%,-4px) rotate(45deg)}
+.ayushi-resume-section .resume-tool-item:hover .resume-tool-tooltip,.ayushi-resume-section .resume-tool-item:focus-visible .resume-tool-tooltip{opacity:1;visibility:visible;transform:translate(-50%,0) scale(1)}
+.ayushi-resume-section .figma-icon{background:#f7f5ff;display:grid;grid-template-columns:repeat(2,9px);grid-template-rows:repeat(3,9px);align-content:center;justify-content:center}
+.ayushi-resume-section .figma-icon i{width:9px;height:9px;display:block}.ayushi-resume-section .figma-icon i:nth-child(1){background:#f24e1e;border-radius:5px 0 0 5px}.ayushi-resume-section .figma-icon i:nth-child(2){background:#ff7262;border-radius:0 5px 5px 0}.ayushi-resume-section .figma-icon i:nth-child(3){background:#a259ff;border-radius:5px 0 0 5px}.ayushi-resume-section .figma-icon i:nth-child(4){background:#1abcfe;border-radius:0 5px 5px 0}.ayushi-resume-section .figma-icon i:nth-child(5){background:#0acf83;border-radius:5px 0 5px 5px;grid-column:1}
+.ayushi-resume-section .canva-icon{background:linear-gradient(145deg,#27c8d4,#5c6ee8);color:white;font-family:Georgia,serif;font-style:italic;font-size:26px;font-weight:700}
+.ayushi-resume-section .premiere-icon{background:#21133f;color:#c7a7ff;font-size:15px;font-weight:600;letter-spacing:-.8px;border:1px solid #38245e}
+.ayushi-resume-section .davinci-icon{background:#fff;border:1px solid #ececec;gap:1px;flex-direction:column}
+.ayushi-resume-section .davinci-icon i{display:block;width:21px;height:7px;border-radius:3px 3px 1px 1px}.ayushi-resume-section .davinci-icon i:nth-child(1){background:#e8b52e;transform:translateX(-3px)}.ayushi-resume-section .davinci-icon i:nth-child(2){background:#4aa6d8;transform:translateX(3px)}.ayushi-resume-section .davinci-icon i:nth-child(3){background:#e66b64;transform:translateX(-1px)}
+.ayushi-resume-section .blender-icon{background:#fff4e8;color:#d66a19;font-size:20px;font-weight:800;border:1px solid #f3dfc9}
+@media(hover:none){.ayushi-resume-section .resume-tool-tooltip{display:none}}
+@media(max-width:767px){.ayushi-resume-section .resume-tools-interactive{gap:8px}.ayushi-resume-section .resume-tool-item{width:44px;height:44px;flex-basis:44px}.ayushi-resume-section .resume-tool-icon{width:36px;height:36px}}
+@media(prefers-reduced-motion:reduce){.ayushi-resume-section .resume-tool-icon,.ayushi-resume-section .resume-tool-tooltip{transition:none}}
