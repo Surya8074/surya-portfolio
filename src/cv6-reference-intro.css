@@ -60,3 +60,33 @@
 .cv4-page > .cv6-reference-intro {
   background: #FFFFFF !important;
 }
+
+
+/* Final CV6 canvas correction: all page-level surfaces below the hero must be white. */
+html:has(main.cv4-page),
+body:has(main.cv4-page),
+#root:has(main.cv4-page),
+main.cv4-page {
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  background-image: none !important;
+}
+main.cv4-page::before,
+main.cv4-page::after {
+  background: #FFFFFF !important;
+  background-image: none !important;
+}
+main.cv4-page > section:not(.cv4-hero),
+main.cv4-page > section:not(.cv4-hero)::before,
+main.cv4-page > section:not(.cv4-hero)::after {
+  background-color: #FFFFFF !important;
+  background-image: none !important;
+}
+main.cv4-page > .cv6-project-snapshot {
+  background: #FFFFFF padding-box, linear-gradient(120deg,#3B5BDB 0%,#7C8FF2 38%,#B7C5FF 66%,#3B5BDB 100%) border-box !important;
+  box-shadow: none !important;
+}
+main.cv4-page > .cv6-reference-intro {
+  background: #FFFFFF !important;
+  background-image: none !important;
+}
