@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import BlackGlassReveal from '@crazygl/hero-black-glass-reveal';
 import CV6ParticleBackdrop from './CV6ParticleBackdrop';
 import './cv6-liquid-glass-hero.css';
+import './cv6-project-snapshot.css';
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
