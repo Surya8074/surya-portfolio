@@ -272,3 +272,43 @@ main.cv4-page > .cv6-reference-intro {
   .cv6-problem-card p { font-size: 10px; }
   .cv6-problem-card-caption { font-size: 9px; }
 }
+
+
+/* CV6 correction: bring the Problem section typography back to the scale of the intro above. */
+.cv6-problem-copy {
+  max-width: 480px;
+}
+.cv6-problem-copy h2 {
+  font-size: 37.671px;
+  line-height: 1.11;
+  letter-spacing: -0.3767px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+.cv6-problem-copy p {
+  font-size: 18.836px;
+  line-height: 1.5;
+  letter-spacing: -0.1884px;
+  margin-bottom: 24px;
+}
+@media (max-width: 900px) {
+  .cv6-problem-copy h2 {
+    font-size: clamp(28px, 4vw, 36px);
+  }
+  .cv6-problem-copy p {
+    font-size: 16px;
+    letter-spacing: -0.16px;
+  }
+}
+@media (max-width: 640px) {
+  .cv6-problem-copy h2 {
+    font-size: 28px;
+    line-height: 1.11;
+    letter-spacing: -0.28px;
+  }
+  .cv6-problem-copy p {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.16px;
+  }
+}
