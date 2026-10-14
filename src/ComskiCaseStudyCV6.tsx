@@ -789,6 +789,18 @@ function ComskiCaseStudyCV4() {
         </div>
       </section>
 
+      <section className="cv6-philosophy-section" id="s-philosophy" aria-labelledby="cv6-philosophy-title">
+        <div className="cv6-philosophy-inner">
+          <p className="cv6-philosophy-eyebrow"><span>02</span><span>DESIGN PHILOSOPHY</span></p>
+          <h2 id="cv6-philosophy-title">Design philosophy</h2>
+          <div className="cv6-philosophy-copy">
+            <p>We wanted ComSki to feel like a supportive communication coach—not a tool that judges every mistake. A place where people can practise, reflect, and improve without the pressure of getting everything right the first time.</p>
+            <p>The experience brings speaking, writing, listening, and reading into one coherent journey. Each skill has its own needs, but the interaction should remain familiar, approachable, and easy to follow.</p>
+            <p>This shaped our core principle: <strong>make practice approachable, feedback actionable, and progress clear.</strong></p>
+          </div>
+        </div>
+      </section>
+
       <aside className="cv4-section-nav" aria-label="Case study sections">
         <div className="cv4-section-nav-line" />
         {[['01','Problem'],['02','Constraints'],['03','Research'],['04','Users'],['05','Competition'],['06','Synthesis'],['07','Journey'],['08','Process'],['09','Exploration'],['10','IA + Flow'],['11','Screens'],['12','AI UX'],['13','System'],['14','Validation'],['15','Build'],['16','Outcomes'],['17','Business'],['18','Learnings'],['19','Next'],['20','Role']].map(([n,label]) => (
