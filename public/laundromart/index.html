@@ -161,6 +161,51 @@ body{background:var(--paper)}
 .challenge-section{padding-top:68px}
 @media(max-width:850px){.project-meta{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 28px;margin-top:38px}.intro-section{padding-top:68px}.challenge-section{padding-top:48px}}
 @media(max-width:580px){.project-meta{grid-template-columns:1fr 1fr;gap:18px 16px;padding:22px 20px;margin-top:28px;border-radius:16px}.meta-label{font-size:13px;margin-bottom:6px}.meta-value{font-size:13px;line-height:1.5}.intro-section{padding-top:54px;padding-bottom:22px}.intro-copy h2{font-size:20px;margin-bottom:8px}.intro-copy p{font-size:15px;line-height:1.6}.challenge-section{padding-top:38px}}
+
+/* Section: Where I came in — editorial copy + dark multi-screen visual */
+.contribution-section{padding-top:4px;padding-bottom:30px}
+.contribution-copy{max-width:790px;margin:0 auto 70px;padding-left:0}
+.contribution-copy h2{font:500 22px/1.5 'DM Sans',sans-serif;letter-spacing:-.025em;color:var(--blue);margin:0 0 18px}
+.contribution-copy p{font-size:16px;line-height:1.55;color:#171717;margin:0 0 28px;max-width:790px}
+.contribution-copy p:last-child{margin-bottom:0}
+.contribution-visual{position:relative;isolation:isolate;overflow:hidden;min-height:520px;width:calc(100% + 16px);margin:0 -8px;border-radius:24px;background:#030d32;display:flex;align-items:center;justify-content:center;padding:76px 5.5% 78px}
+.contribution-grid{position:absolute;inset:0;z-index:-2;opacity:.35;background-image:linear-gradient(rgba(95,132,220,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(95,132,220,.16) 1px,transparent 1px);background-size:38px 38px;transform:perspective(600px) rotateX(8deg) scale(1.15);transform-origin:center bottom;mask-image:linear-gradient(to bottom,transparent,black 22%,black 80%,transparent)}
+.contribution-glow{position:absolute;z-index:-1;pointer-events:none;border-radius:50%;filter:blur(45px)}
+.contribution-glow-one{width:42%;height:45%;right:4%;bottom:-12%;background:rgba(26,83,228,.56)}
+.contribution-glow-two{width:30%;height:30%;left:10%;bottom:-14%;background:rgba(102,68,255,.25)}
+.mini-screen{position:absolute;background:#fbfcff;border:1px solid rgba(255,255,255,.7);border-radius:15px;box-shadow:0 22px 70px rgba(0,0,0,.35);color:#22283a;overflow:hidden}
+.mini-overview{position:relative;width:54%;max-width:590px;z-index:3;transform:translateY(2px);padding-bottom:15px}
+.mini-inventory{width:34%;left:6%;top:26%;z-index:2;transform:rotate(-3deg) translateY(10px);opacity:.98}
+.mini-transactions{width:31%;right:5.5%;top:29%;z-index:2;transform:rotate(3deg) translateY(8px);opacity:.98}
+.mini-top{height:38px;padding:0 13px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #eef0f6;background:#fff}
+.mini-brand{font-size:9px;font-weight:700;display:flex;align-items:center;gap:6px;white-space:nowrap}
+.mini-brand i{font-style:normal;background:#4264ed;color:white;border-radius:5px;width:19px;height:19px;display:grid;place-items:center;font-size:10px}
+.mini-dots{color:#8991a5;letter-spacing:2px;font-size:10px}.mini-avatar{width:19px;height:19px;border-radius:50%;display:grid;place-items:center;background:#eeedff;color:#4264ed;font-size:9px;font-weight:700}
+.mini-sidebar{position:absolute;left:0;top:38px;bottom:0;width:26%;display:flex;flex-direction:column;gap:12px;padding:18px 9px;background:#fff;border-right:1px solid #eef0f6;font-size:8px;color:#737b8d}
+.mini-sidebar b{background:#eeedff;color:#4264ed;border-radius:5px;padding:7px 5px;font-weight:600}
+.mini-content{padding:17px 14px 15px;margin-left:26%}
+.mini-content-wide{margin-left:0;padding:18px 20px}
+.mini-content>small{font-size:7px;letter-spacing:.1em;color:#8d94a5}
+.mini-content h3{font-size:14px;line-height:1.25;letter-spacing:-.03em;margin:7px 0 12px;font-weight:700}
+.mini-content-wide h3{font-size:18px;margin:8px 0 3px}
+.mini-subtitle{font-size:8px;color:#838a9a;margin:0 0 14px}
+.mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mini-stats>div{background:#f5f5ff;border:1px solid #ecebff;border-radius:7px;padding:10px}
+.mini-stats small{display:block;color:#777f91;font-size:7px}
+.mini-stats b{display:block;font-size:19px;margin-top:4px;color:#20263a}
+.mini-stats span{display:block;height:3px;width:55%;border-radius:4px;background:linear-gradient(90deg,#4264ed,#a39aff);margin-top:7px}
+.mini-chart{border:1px solid #eceef5;border-radius:8px;margin-top:10px;padding:10px 10px 3px}
+.mini-chart-head{font-size:8px;font-weight:700;display:flex;justify-content:space-between;gap:6px}
+.mini-chart-head span{font-weight:400;color:#8d94a5;font-size:7px}
+.mini-chart svg{display:block;width:100%;height:74px;margin-top:5px}
+.mini-form-label{font-size:8px;font-weight:700;margin:13px 0 7px}
+.mini-input{display:flex;justify-content:space-between;align-items:center;border:1px solid #e5e8f0;border-radius:5px;padding:9px 7px;font-size:7px;color:#8a91a1;margin-bottom:7px}
+.mini-summary{display:flex;justify-content:space-between;border-bottom:1px solid #eef0f5;padding:8px 0;font-size:7px;color:#737b8d}
+.mini-summary b{color:#252b3e}
+.mini-cta{margin-top:12px;border-radius:5px;background:#4264ed;color:#fff;padding:10px;text-align:center;font-size:8px;font-weight:600;display:flex;justify-content:space-between}
+.visual-caption{position:absolute;bottom:23px;left:30px;right:30px;display:flex;justify-content:space-between;gap:12px;color:rgba(235,240,255,.7);font-size:9px;letter-spacing:.09em}
+@media(max-width:760px){.contribution-copy{margin-bottom:42px}.contribution-visual{min-height:390px;padding:55px 4% 62px;border-radius:18px;width:100%;margin:0}.mini-overview{width:66%}.mini-inventory{width:39%;left:1%;top:23%}.mini-transactions{width:36%;right:1%;top:27%}.mini-content-wide{padding:13px}.mini-content h3{font-size:11px}.mini-stats{gap:4px}.mini-stats>div{padding:6px}.mini-stats b{font-size:14px}.mini-chart svg{height:50px}.mini-row{padding:6px 4px;font-size:6px}.mini-sidebar{gap:9px;padding:13px 5px;font-size:7px}.mini-content{padding:12px 7px}.visual-caption{left:16px;right:16px;bottom:16px;font-size:7px}}
+@media(max-width:480px){.contribution-copy h2{font-size:20px}.contribution-copy p{font-size:15px;line-height:1.6;margin-bottom:20px}.contribution-visual{min-height:320px}.mini-overview{width:72%}.mini-inventory{width:43%;left:-4%;top:22%}.mini-transactions{width:40%;right:-3%;top:25%}.mini-top{height:30px;padding:0 7px}.mini-brand{font-size:7px;gap:4px}.mini-brand i{width:14px;height:14px;font-size:8px}.mini-content-wide h3{font-size:13px}.mini-stats small{font-size:6px}.mini-stats b{font-size:12px}.mini-chart-head{font-size:7px}.mini-chart-head span{font-size:6px}.mini-form-label{font-size:7px}.mini-input{padding:6px 4px;font-size:6px}.mini-row-head{font-size:5px}.mini-row i{font-size:5px}.visual-caption{font-size:6px;letter-spacing:.04em}}
 </style></head>
 <body><div class="progress"></div>
 <nav class="nav"><div class="brand"><a class="mark" href="../../" aria-label="Back to portfolio">S</a><a href="../../"><strong>Surya Kiran</strong></a><span class="muted">/ LaundroMart</span></div><div class="navlinks"><a href="#context">Context</a><a href="#system">System</a><a href="#experience">Experience</a><a href="#reflection">Reflection</a></div></nav>
@@ -197,6 +242,34 @@ body{background:var(--paper)}
   <div class="intro-copy reveal">
     <h2>Introduction</h2>
     <p>LaundroMart brings garment records, transaction flows, operator workspaces, facility management, camera setup and reporting into one connected operations experience. The goal was to make a broad set of day-to-day tasks feel like one coherent product, with a clear overview and consistent patterns as users move into the details.</p>
+  </div>
+</section>
+<section class="contribution-section wrap" id="contribution">
+  <div class="contribution-copy reveal">
+    <h2>Where I came in</h2>
+    <p>My work focused on shaping a connected experience across LaundroMart’s operational workflows. The interface needed to make garment information, transactions, operator tasks and facility tools easier to navigate while keeping the product visually consistent.</p>
+    <p>I approached the screens as parts of one system: clear page hierarchy for quick scanning, repeatable patterns for records and forms, and consistent navigation between overview-level information and task-level detail.</p>
+  </div>
+  <div class="contribution-visual reveal" role="img" aria-label="Dark presentation panel showing three LaundroMart interface previews: operations overview, garment inventory, and transaction workspace">
+    <div class="contribution-grid" aria-hidden="true"></div>
+    <div class="contribution-glow contribution-glow-one" aria-hidden="true"></div><div class="contribution-glow contribution-glow-two" aria-hidden="true"></div>
+    <div class="mini-screen mini-inventory">
+      <div class="mini-top"><span class="mini-brand"><i>L</i> LaundroMart</span><span class="mini-dots">•••</span></div>
+      <div class="mini-sidebar"><b>Overview</b><span>Inventory</span><span>Transactions</span><span>Operators</span><span>Facilities</span></div>
+      <div class="mini-content"><small>WORKSPACE / INVENTORY</small><h3>Garment records</h3><div class="mini-search"></div><div class="mini-table"><div class="mini-row mini-row-head"><span>RECORD</span><span>GARMENT</span><span>STATUS</span></div><div class="mini-row"><span>LM–1048</span><span>Formal shirt</span><i>In process</i></div><div class="mini-row"><span>LM–1047</span><span>Trousers</span><i>Received</i></div><div class="mini-row"><span>LM–1046</span><span>Jacket</span><i>Ready</i></div><div class="mini-row"><span>LM–1045</span><span>Cotton shirt</span><i>Received</i></div></div></div>
+    </div>
+    <div class="mini-screen mini-overview">
+      <div class="mini-top"><span class="mini-brand"><i>L</i> LaundroMart</span><span class="mini-avatar">S</span></div>
+      <div class="mini-content mini-content-wide"><small>OPERATIONS / OVERVIEW</small><h3>Dashboard overview</h3><p class="mini-subtitle">A clear view across the operation.</p>
+        <div class="mini-stats"><div><small>Received</small><b>—</b><span></span></div><div><small>Completed</small><b>—</b><span></span></div><div><small>Pending</small><b>—</b><span></span></div></div>
+        <div class="mini-chart"><div class="mini-chart-head">Garment activity <span>Last 7 days⌄</span></div><svg viewBox="0 0 460 105" preserveAspectRatio="none"><path d="M0 82 C30 76 40 44 76 61 S128 90 164 52 S222 66 254 32 S310 61 348 25 S411 49 460 10" fill="none" stroke="#4264ed" stroke-width="3"/><path d="M0 96H460" stroke="#e8eaf1" stroke-width="1"/></svg></div>
+      </div>
+    </div>
+    <div class="mini-screen mini-transactions">
+      <div class="mini-top"><span class="mini-brand"><i>L</i> LaundroMart</span><span class="mini-dots">•••</span></div>
+      <div class="mini-content"><small>WORKSPACE / TRANSACTIONS</small><h3>New transaction</h3><div class="mini-form-label">Transaction details</div><div class="mini-input">Select customer <span>⌄</span></div><div class="mini-input">Add garment <span>+</span></div><div class="mini-form-label">Order summary</div><div class="mini-summary"><span>Garments added</span><b>—</b></div><div class="mini-summary"><span>Total amount</span><b>—</b></div><div class="mini-cta">Save transaction <span>→</span></div></div>
+    </div>
+    <div class="visual-caption"><span>LAUNDROMART / CONNECTED WORKFLOWS</span><span>Interface exploration</span></div>
   </div>
 </section>
 <section class="section wrap challenge-section" id="challenge">
