@@ -682,7 +682,7 @@ function ComskiCaseStudyCV4() {
       <section className="cv6-problem-section" id="s01" aria-labelledby="cv6-problem-title">
         <div className="cv6-problem-inner">
           <div className="cv6-problem-copy">
-            <p className="cv6-stat-kicker">02 — THE HUMAN SIDE OF COMMUNICATION</p><h2 id="cv6-problem-title">What if you knew what to say,<br /><em>but struggled to say it?</em></h2>
+            <h2 id="cv6-problem-title">The problem</h2>
             <p>People use different tools to improve how they communicate. They practise speaking to build confidence, use writing assistants to find the right words, and rely on reading tools to understand information. But these experiences are often disconnected, leaving people without one place to understand and improve how they listen, write, read, and express themselves.</p>
             <p><strong>The result?</strong> People struggle to communicate with confidence in everyday conversations, often without understanding where they need support or how to improve.</p>
             <p><strong>Our core insight:</strong> Better communication starts with understanding yourself. By bringing listening, writing, and reading into one personalized AI-powered experience, ComSki helps people recognize their communication patterns and build confidence one interaction at a time.</p>
