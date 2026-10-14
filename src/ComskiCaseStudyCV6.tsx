@@ -679,6 +679,44 @@ function ComskiCaseStudyCV4() {
         </div>
       </section>
 
+      <section className="cv6-problem-section" id="s01" aria-labelledby="cv6-problem-title">
+        <div className="cv6-problem-inner">
+          <div className="cv6-problem-spacer" aria-hidden="true" />
+          <div className="cv6-problem-copy">
+            <h2 id="cv6-problem-title">The problem</h2>
+            <p>People use different tools to improve how they communicate. They practise speaking to build confidence, use writing assistants to find the right words, and rely on reading tools to understand information. But these experiences are often disconnected, leaving people without one place to understand and improve how they listen, write, read, and express themselves.</p>
+            <p><strong>The result?</strong> People can struggle to communicate with confidence in everyday conversations, often without knowing where they need support or how to improve.</p>
+            <p><strong>Our core insight:</strong> Better communication starts with understanding yourself. By bringing listening, writing, and reading into one personalized AI-powered experience, ComSki helps people reflect on their communication and build confidence one interaction at a time.</p>
+          </div>
+          <div className="cv6-problem-cards" aria-label="ComSki's core communication experience">
+            <article className="cv6-problem-card cv6-problem-card-light">
+              <div className="cv6-problem-card-art cv6-problem-skill-art" aria-hidden="true">
+                <span /><span /><span /><span /><span />
+              </div>
+              <div className="cv6-problem-card-value">03</div>
+              <p>core communication skills</p>
+              <div className="cv6-problem-card-caption">Listening · Writing · Reading</div>
+            </article>
+            <article className="cv6-problem-card cv6-problem-card-blue">
+              <div className="cv6-problem-card-art cv6-problem-orbit-art" aria-hidden="true">
+                <span className="cv6-problem-orbit" /><span className="cv6-problem-orbit-dot" />
+              </div>
+              <div className="cv6-problem-card-value">01</div>
+              <p>connected communication experience</p>
+              <div className="cv6-problem-card-caption">Designed around the individual</div>
+            </article>
+            <article className="cv6-problem-card cv6-problem-card-light">
+              <div className="cv6-problem-card-art cv6-problem-chat-art" aria-hidden="true">
+                <span /><span /><span />
+              </div>
+              <div className="cv6-problem-card-word">ComSki</div>
+              <p>AI-supported communication practice</p>
+              <div className="cv6-problem-card-caption">Listen · Reflect · Improve</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <aside className="cv4-section-nav" aria-label="Case study sections">
         <div className="cv4-section-nav-line" />
         {[['01','Problem'],['02','Constraints'],['03','Research'],['04','Users'],['05','Competition'],['06','Synthesis'],['07','Journey'],['08','Process'],['09','Exploration'],['10','IA + Flow'],['11','Screens'],['12','AI UX'],['13','System'],['14','Validation'],['15','Build'],['16','Outcomes'],['17','Business'],['18','Learnings'],['19','Next'],['20','Role']].map(([n,label]) => (
