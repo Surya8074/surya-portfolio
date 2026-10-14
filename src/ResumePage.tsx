@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SiFigma, SiFramer, SiMiro, SiCursor, SiJira, SiAdobePremierepro, SiDavinciresolve } from 'react-icons/si';
+import { SiFigma, SiFramer, SiMiro, SiCursor, SiJira, SiDavinciresolve } from 'react-icons/si';
 import { VscVscode } from 'react-icons/vsc';
 import './resume-page.css';
 
@@ -90,7 +90,7 @@ export default function ResumePage() {
           <div className="resume-tool-item" tabIndex={0} aria-label="Google Antigravity"><span className="resume-tool-icon brand-image-icon antigravity-brand" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 3 28 25H4L16 3Z" fill="none" stroke="currentColor" strokeWidth="3" strokeLinejoin="round"/><circle cx="16" cy="20" r="3" fill="currentColor"/></svg></span><span className="resume-tool-tooltip">Antigravity</span></div>
           <div className="resume-tool-item" tabIndex={0} aria-label="Cursor"><span className="resume-tool-icon brand-image-icon cursor-brand" aria-hidden="true"><SiCursor /></span><span className="resume-tool-tooltip">Cursor</span></div>
           <div className="resume-tool-item" tabIndex={0} aria-label="Jira"><span className="resume-tool-icon brand-image-icon jira-brand" aria-hidden="true"><SiJira /></span><span className="resume-tool-tooltip">Jira</span></div>
-          <div className="resume-tool-item" tabIndex={0} aria-label="Adobe Premiere Pro"><span className="resume-tool-icon brand-image-icon premiere-brand" aria-hidden="true"><SiAdobePremierepro /></span><span className="resume-tool-tooltip">Premiere Pro</span></div>
+          <div className="resume-tool-item" tabIndex={0} aria-label="Adobe Premiere Pro"><span className="resume-tool-icon brand-image-icon premiere-brand" aria-hidden="true"><svg viewBox="0 0 32 32" role="img" aria-label="Premiere Pro"><rect x="2" y="2" width="28" height="28" rx="5" fill="currentColor"/><path d="M9 23V9h5.1c3.4 0 5.2 1.7 5.2 4.5S17.5 18 14 18h-2v5H9Zm3-7.5h1.8c1.6 0 2.5-.6 2.5-2s-.9-2-2.5-2H12v4Z" fill="#fff"/><path d="M21 23v-9h2.8v1.4c.5-1 1.3-1.6 2.5-1.6v2.7c-1.8-.2-2.5.7-2.5 2.1V23H21Z" fill="#fff"/></svg></span><span className="resume-tool-tooltip">Premiere Pro</span></div>
           <div className="resume-tool-item" tabIndex={0} aria-label="DaVinci Resolve"><span className="resume-tool-icon brand-image-icon davinci-brand" aria-hidden="true"><SiDavinciresolve /></span><span className="resume-tool-tooltip">DaVinci Resolve</span></div>
           <div className="resume-tool-item" tabIndex={0} aria-label="Visual Studio Code"><span className="resume-tool-icon brand-image-icon vscode-brand" aria-hidden="true"><VscVscode /></span><span className="resume-tool-tooltip">VS Code</span></div>
         </div>
