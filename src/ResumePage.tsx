@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { SiFigma, SiFramer, SiMiro, SiCursor, SiJira, SiAdobepremierepro, SiDavinciresolve, SiVisualstudiocode } from 'react-icons/si';
 import './resume-page.css';
 
 const resumeImages = {
@@ -82,15 +83,15 @@ export default function ResumePage() {
       <div className="flex flex-col md:flex-row gap-8 md:gap-[231px] ayushi-resume-row ayushi-tools-row">
         <h2 className="text-text-secondary text-base font-bold shrink-0 ayushi-subheading">Tools</h2>
         <div className="resume-tools-interactive" aria-label="Design and creative tools">
-          <div className="resume-tool-item" tabIndex={0} aria-label="Figma"><span className="resume-tool-icon brand-image-icon figma-brand" aria-hidden="true"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v14/icons/figma.svg" alt="" loading="lazy" /></span><span className="resume-tool-tooltip">Figma</span></div>
-          <div className="resume-tool-item" tabIndex={0} aria-label="Framer"><span className="resume-tool-icon brand-image-icon framer-brand" aria-hidden="true"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v14/icons/framer.svg" alt="" loading="lazy" /></span><span className="resume-tool-tooltip">Framer</span></div>
-          <div className="resume-tool-item" tabIndex={0} aria-label="Miro"><span className="resume-tool-icon brand-image-icon miro-brand" aria-hidden="true"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v14/icons/miro.svg" alt="" loading="lazy" /></span><span className="resume-tool-tooltip">Miro</span></div>
-          <div className="resume-tool-item" tabIndex={0} aria-label="Google Antigravity"><span className="resume-tool-icon brand-image-icon antigravity-brand" aria-hidden="true"><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/google-antigravity.svg" alt="" loading="lazy" /></span><span className="resume-tool-tooltip">Antigravity</span></div>
-          <div className="resume-tool-item" tabIndex={0} aria-label="Cursor"><span className="resume-tool-icon brand-image-icon cursor-brand" aria-hidden="true"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cursor/cursor-original.svg" alt="" loading="lazy" /></span><span className="resume-tool-tooltip">Cursor</span></div>
-          <div className="resume-tool-item" tabIndex={0} aria-label="Jira"><span className="resume-tool-icon brand-image-icon jira-brand" aria-hidden="true"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v14/icons/jira.svg" alt="" loading="lazy" /></span><span className="resume-tool-tooltip">Jira</span></div>
-          <div className="resume-tool-item" tabIndex={0} aria-label="Adobe Premiere Pro"><span className="resume-tool-icon brand-image-icon premiere-brand" aria-hidden="true"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v14/icons/adobepremierepro.svg" alt="" loading="lazy" /></span><span className="resume-tool-tooltip">Premiere Pro</span></div>
-          <div className="resume-tool-item" tabIndex={0} aria-label="DaVinci Resolve"><span className="resume-tool-icon brand-image-icon davinci-brand" aria-hidden="true"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/davinciresolve/davinciresolve-original.svg" alt="" loading="lazy" /></span><span className="resume-tool-tooltip">DaVinci Resolve</span></div>
-          <div className="resume-tool-item" tabIndex={0} aria-label="Visual Studio Code"><span className="resume-tool-icon brand-image-icon vscode-brand" aria-hidden="true"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="" loading="lazy" /></span><span className="resume-tool-tooltip">VS Code</span></div>
+          <div className="resume-tool-item" tabIndex={0} aria-label="Figma"><span className="resume-tool-icon brand-image-icon figma-brand" aria-hidden="true"><SiFigma /></span><span className="resume-tool-tooltip">Figma</span></div>
+          <div className="resume-tool-item" tabIndex={0} aria-label="Framer"><span className="resume-tool-icon brand-image-icon framer-brand" aria-hidden="true"><SiFramer /></span><span className="resume-tool-tooltip">Framer</span></div>
+          <div className="resume-tool-item" tabIndex={0} aria-label="Miro"><span className="resume-tool-icon brand-image-icon miro-brand" aria-hidden="true"><SiMiro /></span><span className="resume-tool-tooltip">Miro</span></div>
+          <div className="resume-tool-item" tabIndex={0} aria-label="Google Antigravity"><span className="resume-tool-icon brand-image-icon antigravity-brand" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 3 28 25H4L16 3Z" fill="none" stroke="currentColor" strokeWidth="3" strokeLinejoin="round"/><circle cx="16" cy="20" r="3" fill="currentColor"/></svg></span><span className="resume-tool-tooltip">Antigravity</span></div>
+          <div className="resume-tool-item" tabIndex={0} aria-label="Cursor"><span className="resume-tool-icon brand-image-icon cursor-brand" aria-hidden="true"><SiCursor /></span><span className="resume-tool-tooltip">Cursor</span></div>
+          <div className="resume-tool-item" tabIndex={0} aria-label="Jira"><span className="resume-tool-icon brand-image-icon jira-brand" aria-hidden="true"><SiJira /></span><span className="resume-tool-tooltip">Jira</span></div>
+          <div className="resume-tool-item" tabIndex={0} aria-label="Adobe Premiere Pro"><span className="resume-tool-icon brand-image-icon premiere-brand" aria-hidden="true"><SiAdobepremierepro /></span><span className="resume-tool-tooltip">Premiere Pro</span></div>
+          <div className="resume-tool-item" tabIndex={0} aria-label="DaVinci Resolve"><span className="resume-tool-icon brand-image-icon davinci-brand" aria-hidden="true"><SiDavinciresolve /></span><span className="resume-tool-tooltip">DaVinci Resolve</span></div>
+          <div className="resume-tool-item" tabIndex={0} aria-label="Visual Studio Code"><span className="resume-tool-icon brand-image-icon vscode-brand" aria-hidden="true"><SiVisualstudiocode /></span><span className="resume-tool-tooltip">VS Code</span></div>
         </div>
       </div>
     </div>
