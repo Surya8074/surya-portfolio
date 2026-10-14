@@ -115,3 +115,11 @@
 .ayushi-resume-section .ayushi-skills-column p{white-space:nowrap}
 @media(max-width:900px){.ayushi-resume-section .ayushi-skills-content{grid-template-columns:repeat(3,minmax(0,max-content));column-gap:24px}}
 @media(max-width:560px){.ayushi-resume-section .ayushi-skills-content{grid-template-columns:repeat(2,minmax(0,max-content));column-gap:20px}}
+
+/* Fix skill grid: five equal columns with wrapping, without overlap. */
+.ayushi-resume-section .ayushi-skills-row{gap:32px}
+.ayushi-resume-section .ayushi-skills-content{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px 22px;flex:1;min-width:0;width:100%;align-items:start}
+.ayushi-resume-section .ayushi-skills-column{display:contents}
+.ayushi-resume-section .ayushi-skills-column p{white-space:normal;min-width:0;overflow-wrap:anywhere;line-height:1.45}
+@media(max-width:900px){.ayushi-resume-section .ayushi-skills-content{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:20px}.ayushi-resume-section .ayushi-skills-row{gap:24px}}
+@media(max-width:560px){.ayushi-resume-section .ayushi-skills-content{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:18px}.ayushi-resume-section .ayushi-skills-row{flex-direction:column;gap:16px}}
