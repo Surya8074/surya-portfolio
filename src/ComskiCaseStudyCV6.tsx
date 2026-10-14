@@ -682,53 +682,18 @@ function ComskiCaseStudyCV4() {
       <section className="cv6-problem-section" id="s01" aria-labelledby="cv6-problem-title">
         <div className="cv6-problem-inner">
           <div className="cv6-problem-copy">
-            <h2 id="cv6-problem-title">The problem</h2>
+            <p className="cv6-stat-kicker">02 — THE HUMAN SIDE OF COMMUNICATION</p><h2 id="cv6-problem-title">What if you knew what to say,<br /><em>but struggled to say it?</em></h2>
             <p>People use different tools to improve how they communicate. They practise speaking to build confidence, use writing assistants to find the right words, and rely on reading tools to understand information. But these experiences are often disconnected, leaving people without one place to understand and improve how they listen, write, read, and express themselves.</p>
             <p><strong>The result?</strong> People struggle to communicate with confidence in everyday conversations, often without understanding where they need support or how to improve.</p>
             <p><strong>Our core insight:</strong> Better communication starts with understanding yourself. By bringing listening, writing, and reading into one personalized AI-powered experience, ComSki helps people recognize their communication patterns and build confidence one interaction at a time.</p>
           </div>
-          <div className="cv6-problem-cards" aria-label="Four communication challenges">
-            <article className="cv6-problem-card cv6-skill-speaking">
-              <div className="cv6-problem-card-copy">
-                <span className="cv6-skill-icon" aria-hidden="true">♩</span>
-                <p className="cv6-problem-card-eyebrow">SPEAKING</p>
-                <h3>Words<br /><em>get stuck</em></h3>
-                <p className="cv6-problem-card-description">Find it hard to express thoughts clearly and speak with confidence.</p>
-                <div className="cv6-skill-bars" aria-hidden="true"><i/><i/><i/><i/><i/><i/></div>
-              </div>
-              <img className="cv6-problem-card-artwork" src="/surya-portfolio/comski/speaking-card-visual.svg" alt="ComSki visual for speaking confidence" loading="eager" decoding="async" />
-            </article>
-            <article className="cv6-problem-card cv6-skill-writing">
-              <div className="cv6-problem-card-copy">
-                <span className="cv6-skill-icon" aria-hidden="true">✎</span>
-                <p className="cv6-problem-card-eyebrow">WRITING</p>
-                <h3>Thoughts<br /><em>feel scattered</em></h3>
-                <p className="cv6-problem-card-description">Struggle to structure ideas and find the right words in writing.</p>
-                <div className="cv6-skill-bars" aria-hidden="true"><i/><i/><i/><i/><i/><i/></div>
-              </div>
-              <img className="cv6-problem-card-artwork" src="/surya-portfolio/comski/writing-card-visual.svg" alt="ComSki visual for writing and structuring ideas" loading="eager" decoding="async" />
-            </article>
-            <article className="cv6-problem-card cv6-skill-listening">
-              <div className="cv6-problem-card-copy">
-                <span className="cv6-skill-icon" aria-hidden="true">♫</span>
-                <p className="cv6-problem-card-eyebrow">LISTENING</p>
-                <h3>Key points<br /><em>get missed</em></h3>
-                <p className="cv6-problem-card-description">Miss important details or lose the thread during conversations.</p>
-                <div className="cv6-skill-bars" aria-hidden="true"><i/><i/><i/><i/><i/><i/></div>
-              </div>
-              <img className="cv6-problem-card-artwork" src="/surya-portfolio/comski/listening-reading-card-visual.svg" alt="ComSki visual for listening comprehension" loading="eager" decoding="async" />
-            </article>
-            <article className="cv6-problem-card cv6-skill-reading">
-              <div className="cv6-problem-card-copy">
-                <span className="cv6-skill-icon" aria-hidden="true">▤</span>
-                <p className="cv6-problem-card-eyebrow">READING</p>
-                <h3>Meaning<br /><em>gets lost</em></h3>
-                <p className="cv6-problem-card-description">Find it difficult to stay focused and retain what you read.</p>
-                <div className="cv6-skill-bars" aria-hidden="true"><i/><i/><i/><i/><i/><i/></div>
-              </div>
-              <img className="cv6-problem-card-artwork" src="/surya-portfolio/comski/listening-reading-card-visual.svg" alt="ComSki visual for reading comprehension" loading="eager" decoding="async" />
-            </article>
+          <div className="cv6-problem-cards" aria-label="The human side of communication statistics">
+            <article className="cv6-problem-card cv6-stat-speaking"><div className="cv6-stat-copy"><p className="cv6-stat-title">Speaking</p><p className="cv6-stat-metric">68<span>%</span></p><p className="cv6-stat-caption">find it hard to express their thoughts clearly.</p></div></article>
+            <article className="cv6-problem-card cv6-stat-writing"><div className="cv6-stat-copy"><p className="cv6-stat-title">Writing</p><p className="cv6-stat-metric">54<span>%</span></p><p className="cv6-stat-caption">struggle to structure their ideas in writing.</p></div></article>
+            <article className="cv6-problem-card cv6-stat-listening"><div className="cv6-stat-copy"><p className="cv6-stat-title">Listening</p><p className="cv6-stat-metric">62<span>%</span></p><p className="cv6-stat-caption">miss key points during conversations.</p></div></article>
+            <article className="cv6-problem-card cv6-stat-reading"><div className="cv6-stat-copy"><p className="cv6-stat-title">Reading</p><p className="cv6-stat-metric">47<span>%</span></p><p className="cv6-stat-caption">find it difficult to stay consistent while reading.</p></div></article>
           </div>
+          <p className="cv6-stat-footnote">*Source links below</p>
         </div>
       </section>
 
