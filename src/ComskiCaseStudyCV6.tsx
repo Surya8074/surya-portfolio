@@ -689,7 +689,7 @@ function ComskiCaseStudyCV4() {
           </div>
           <div className="cv6-problem-cards" aria-label="Three common communication challenges">
             <article className="cv6-problem-card cv6-problem-card-speaking">
-              <img className="cv6-problem-card-artwork" src="./comski/speaking-card-visual.svg" alt="Abstract visual representing a person finding it difficult to speak confidently" loading="eager" decoding="async" />
+              <img className="cv6-problem-card-artwork" src="/surya-portfolio/comski/speaking-card-visual.svg" alt="Abstract visual representing a person finding it difficult to speak confidently" loading="eager" decoding="async" />
               <div className="cv6-problem-card-content">
                 <p className="cv6-problem-card-eyebrow">SPEAKING</p>
                 <h3><span>Words</span><br /><em>get stuck</em></h3>
@@ -698,7 +698,7 @@ function ComskiCaseStudyCV4() {
               </div>
             </article>
             <article className="cv6-problem-card cv6-problem-card-editorial">
-              <img className="cv6-problem-card-artwork" src="./comski/writing-card-visual.svg" alt="Abstract visual representing thoughts that are difficult to organize in writing" loading="eager" decoding="async" />
+              <img className="cv6-problem-card-artwork" src="/surya-portfolio/comski/writing-card-visual.svg" alt="Abstract visual representing thoughts that are difficult to organize in writing" loading="eager" decoding="async" />
               <div className="cv6-problem-card-content">
                 <p className="cv6-problem-card-eyebrow">WRITING</p>
                 <h3><span>Thoughts</span><br /><em>feel scattered</em></h3>
@@ -707,7 +707,7 @@ function ComskiCaseStudyCV4() {
               </div>
             </article>
             <article className="cv6-problem-card cv6-problem-card-editorial">
-              <img className="cv6-problem-card-artwork" src="./comski/listening-reading-card-visual.svg" alt="Abstract visual representing listening and reading comprehension" loading="eager" decoding="async" />
+              <img className="cv6-problem-card-artwork" src="/surya-portfolio/comski/listening-reading-card-visual.svg" alt="Abstract visual representing listening and reading comprehension" loading="eager" decoding="async" />
               <div className="cv6-problem-card-content">
                 <p className="cv6-problem-card-eyebrow">LISTENING &amp; READING</p>
                 <h3><span>Meaning</span><br /><em>gets missed</em></h3>
