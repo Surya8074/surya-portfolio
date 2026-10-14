@@ -108,3 +108,14 @@
 .ayushi-resume-section .vscode-brand{color:#007acc}
 .ayushi-resume-section .antigravity-brand{color:#315de8}
 .ayushi-resume-section .antigravity-brand svg{width:24px;height:24px}
+
+
+/* Resume page intro — portrait frame based on the supplied reference */
+.resume-about-intro{width:min(1120px,100%);margin:0 auto 64px;display:grid;grid-template-columns:minmax(0,495px) minmax(0,1fr);gap:clamp(56px,8vw,128px);align-items:center;padding:0}
+.resume-about-photo-frame{width:100%;height:700px;max-height:74vh;min-height:560px;overflow:hidden;border-radius:34px;background:#f1f0ed}
+.resume-about-photo-frame img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 24%}
+.resume-about-copy{max-width:510px}
+.resume-about-copy h1{margin:0 0 28px;color:#101114;font-size:clamp(34px,3vw,46px);line-height:1.08;letter-spacing:-.055em;font-weight:600}
+.resume-about-copy p{margin:0 0 20px;color:#4f5660;font-size:17px;line-height:1.8;font-weight:300}
+@media(max-width:1023px){.resume-about-intro{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:36px;margin-bottom:56px}.resume-about-photo-frame{height:560px;min-height:0;max-height:none;border-radius:30px}.resume-about-copy p{font-size:15px;line-height:1.7}}
+@media(max-width:680px){.resume-about-intro{grid-template-columns:1fr;gap:30px;margin-bottom:44px}.resume-about-photo-frame{height:min(125vw,560px);min-height:390px;border-radius:28px}.resume-about-photo-frame img{object-position:center 22%}.resume-about-copy h1{font-size:36px;margin-bottom:20px}.resume-about-copy p{font-size:15px;line-height:1.75;margin-bottom:16px}}
