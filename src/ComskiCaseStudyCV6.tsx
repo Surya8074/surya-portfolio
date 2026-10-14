@@ -687,33 +687,46 @@ function ComskiCaseStudyCV4() {
             <p><strong>The result?</strong> People struggle to communicate with confidence in everyday conversations, often without understanding where they need support or how to improve.</p>
             <p><strong>Our core insight:</strong> Better communication starts with understanding yourself. By bringing listening, writing, and reading into one personalized AI-powered experience, ComSki helps people recognize their communication patterns and build confidence one interaction at a time.</p>
           </div>
-          <div className="cv6-problem-cards" aria-label="Three common communication challenges">
-            <article className="cv6-problem-card cv6-problem-card-speaking">
-              <img className="cv6-problem-card-artwork" src="/surya-portfolio/comski/speaking-card-visual.svg" alt="Abstract visual representing a person finding it difficult to speak confidently" loading="eager" decoding="async" />
-              <div className="cv6-problem-card-content">
+          <div className="cv6-problem-cards" aria-label="Four communication challenges">
+            <article className="cv6-problem-card cv6-skill-speaking">
+              <div className="cv6-problem-card-copy">
+                <span className="cv6-skill-icon" aria-hidden="true">♩</span>
                 <p className="cv6-problem-card-eyebrow">SPEAKING</p>
-                <h3><span>Words</span><br /><em>get stuck</em></h3>
-                <span className="cv6-problem-card-rule" aria-hidden="true" />
-                <p className="cv6-problem-card-description">Hard to express thoughts,<br className="cv6-problem-desktop-break" /> lack confidence in conversations.</p>
+                <h3>Words<br /><em>get stuck</em></h3>
+                <p className="cv6-problem-card-description">Find it hard to express thoughts clearly and speak with confidence.</p>
+                <div className="cv6-skill-bars" aria-hidden="true"><i/><i/><i/><i/><i/><i/></div>
               </div>
+              <img className="cv6-problem-card-artwork" src="/surya-portfolio/comski/speaking-card-visual.svg" alt="ComSki visual for speaking confidence" loading="eager" decoding="async" />
             </article>
-            <article className="cv6-problem-card cv6-problem-card-editorial">
-              <img className="cv6-problem-card-artwork" src="/surya-portfolio/comski/writing-card-visual.svg" alt="Abstract visual representing thoughts that are difficult to organize in writing" loading="eager" decoding="async" />
-              <div className="cv6-problem-card-content">
+            <article className="cv6-problem-card cv6-skill-writing">
+              <div className="cv6-problem-card-copy">
+                <span className="cv6-skill-icon" aria-hidden="true">✎</span>
                 <p className="cv6-problem-card-eyebrow">WRITING</p>
-                <h3><span>Thoughts</span><br /><em>feel scattered</em></h3>
-                <span className="cv6-problem-card-rule" aria-hidden="true" />
-                <p className="cv6-problem-card-description">Not sure how to phrase, structure<br className="cv6-problem-desktop-break" /> or organize ideas clearly.</p>
+                <h3>Thoughts<br /><em>feel scattered</em></h3>
+                <p className="cv6-problem-card-description">Struggle to structure ideas and find the right words in writing.</p>
+                <div className="cv6-skill-bars" aria-hidden="true"><i/><i/><i/><i/><i/><i/></div>
               </div>
+              <img className="cv6-problem-card-artwork" src="/surya-portfolio/comski/writing-card-visual.svg" alt="ComSki visual for writing and structuring ideas" loading="eager" decoding="async" />
             </article>
-            <article className="cv6-problem-card cv6-problem-card-editorial">
-              <img className="cv6-problem-card-artwork" src="/surya-portfolio/comski/listening-reading-card-visual.svg" alt="Abstract visual representing listening and reading comprehension" loading="eager" decoding="async" />
-              <div className="cv6-problem-card-content">
-                <p className="cv6-problem-card-eyebrow">LISTENING &amp; READING</p>
-                <h3><span>Meaning</span><br /><em>gets missed</em></h3>
-                <span className="cv6-problem-card-rule" aria-hidden="true" />
-                <p className="cv6-problem-card-description">Hard to stay focused, miss key<br className="cv6-problem-desktop-break" /> points or lose the full context.</p>
+            <article className="cv6-problem-card cv6-skill-listening">
+              <div className="cv6-problem-card-copy">
+                <span className="cv6-skill-icon" aria-hidden="true">♫</span>
+                <p className="cv6-problem-card-eyebrow">LISTENING</p>
+                <h3>Key points<br /><em>get missed</em></h3>
+                <p className="cv6-problem-card-description">Miss important details or lose the thread during conversations.</p>
+                <div className="cv6-skill-bars" aria-hidden="true"><i/><i/><i/><i/><i/><i/></div>
               </div>
+              <img className="cv6-problem-card-artwork" src="/surya-portfolio/comski/listening-reading-card-visual.svg" alt="ComSki visual for listening comprehension" loading="eager" decoding="async" />
+            </article>
+            <article className="cv6-problem-card cv6-skill-reading">
+              <div className="cv6-problem-card-copy">
+                <span className="cv6-skill-icon" aria-hidden="true">▤</span>
+                <p className="cv6-problem-card-eyebrow">READING</p>
+                <h3>Meaning<br /><em>gets lost</em></h3>
+                <p className="cv6-problem-card-description">Find it difficult to stay focused and retain what you read.</p>
+                <div className="cv6-skill-bars" aria-hidden="true"><i/><i/><i/><i/><i/><i/></div>
+              </div>
+              <img className="cv6-problem-card-artwork" src="/surya-portfolio/comski/listening-reading-card-visual.svg" alt="ComSki visual for reading comprehension" loading="eager" decoding="async" />
             </article>
           </div>
         </div>
