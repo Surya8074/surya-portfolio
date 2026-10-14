@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SiFigma, SiFramer, SiMiro, SiCursor, SiJira, SiAdobepremierepro, SiDavinciresolve, SiVisualstudiocode } from 'react-icons/si';
+import { SiFigma, SiFramer, SiMiro, SiCursor, SiJira, SiAdobePremierepro, SiDavinciresolve, SiVisualstudiocode } from 'react-icons/si';
 import './resume-page.css';
 
 const resumeImages = {
