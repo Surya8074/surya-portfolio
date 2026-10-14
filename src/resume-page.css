@@ -95,3 +95,16 @@
 .ayushi-resume-section .antigravity-brand img{width:25px;height:25px;object-fit:contain}
 .ayushi-resume-section .vscode-brand{background:#eef7ff;border-color:#dcecff}
 .ayushi-resume-section .vscode-brand img{width:25px;height:25px}
+
+/* Tool marks are inline vector artwork, so they never depend on remote image hosts. */
+.ayushi-resume-section .resume-tool-icon>svg{display:block;width:24px;height:24px;flex:none;fill:currentColor}
+.ayushi-resume-section .figma-brand{color:#0acf83}
+.ayushi-resume-section .framer-brand{color:#0055ff}
+.ayushi-resume-section .miro-brand{color:#050038}
+.ayushi-resume-section .cursor-brand{color:#111}
+.ayushi-resume-section .jira-brand{color:#0052cc}
+.ayushi-resume-section .premiere-brand{color:#9999ff}
+.ayushi-resume-section .davinci-brand{color:#233a51}
+.ayushi-resume-section .vscode-brand{color:#007acc}
+.ayushi-resume-section .antigravity-brand{color:#315de8}
+.ayushi-resume-section .antigravity-brand svg{width:24px;height:24px}
