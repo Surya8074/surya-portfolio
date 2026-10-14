@@ -697,6 +697,98 @@ function ComskiCaseStudyCV4() {
         </div>
       </section>
 
+      <section className="cv6-research-section" id="s-research" aria-labelledby="cv6-research-title">
+        <div className="cv6-research-shell">
+          <header className="cv6-research-header">
+            <div className="cv6-research-eyebrow"><span>01</span><i aria-hidden="true" /><span>RESEARCH</span></div>
+            <h2 id="cv6-research-title">Understanding people<br /><em>and the opportunity</em></h2>
+            <p>We conducted user research to understand real communication challenges and analyzed the market to identify opportunities for an AI-powered solution like ComSki.</p>
+          </header>
+
+          <div className="cv6-research-panels">
+            <article className="cv6-research-panel cv6-user-research">
+              <div className="cv6-research-panel-hero">
+                <img src="/surya-portfolio/comski/speaking-background.jpg" alt="A person sharing ideas in a group discussion" loading="lazy" />
+                <div className="cv6-research-panel-intro">
+                  <h3>User Research</h3>
+                  <p className="cv6-research-subtitle">Listening to real people, real struggles</p>
+                  <p>We spoke with students, working professionals, and educators to understand how they communicate in real life, where they struggle, and what kind of support they need.</p>
+                </div>
+              </div>
+              <div className="cv6-research-metrics" aria-label="User research metrics">
+                <div><strong>25+</strong><span>User interviews</span></div>
+                <div><strong>3</strong><span>Key user groups</span></div>
+                <div><strong>50+</strong><span>Pain points identified</span></div>
+                <div><strong>8</strong><span>Usability tests</span></div>
+              </div>
+              <div className="cv6-personas-heading"><h4>Key User Personas</h4><span>Illustrative profiles</span></div>
+              <div className="cv6-persona-grid">
+                <article className="cv6-persona-card">
+                  <img src="/surya-portfolio/comski/speaking-background.jpg" alt="" loading="lazy" />
+                  <div className="cv6-persona-copy"><h5>Students</h5><span className="cv6-persona-age">18–24 years</span><p>“I get nervous while speaking in front of others.”</p><div className="cv6-persona-tags"><span>Presentations</span><span>Confidence</span></div></div>
+                </article>
+                <article className="cv6-persona-card">
+                  <img src="/surya-portfolio/comski/writing-background.jpg" alt="" loading="lazy" />
+                  <div className="cv6-persona-copy"><h5>Working Professionals</h5><span className="cv6-persona-age">24–35 years</span><p>“I find it hard to structure my thoughts in meetings.”</p><div className="cv6-persona-tags"><span>Clear communication</span><span>Writing emails</span></div></div>
+                </article>
+                <article className="cv6-persona-card">
+                  <img src="/surya-portfolio/comski/reading-background.jpg" alt="" loading="lazy" />
+                  <div className="cv6-persona-copy"><h5>Educators</h5><span className="cv6-persona-age">28–50 years</span><p>“My students struggle to express their ideas clearly.”</p><div className="cv6-persona-tags"><span>Student engagement</span><span>Feedback tools</span></div></div>
+                </article>
+              </div>
+              <p className="cv6-research-integrity">Draft research metrics, age ranges, and persona quotes are illustrative until verified against original research notes.</p>
+            </article>
+
+            <article className="cv6-research-panel cv6-market-research">
+              <div className="cv6-research-panel-hero">
+                <img src="/surya-portfolio/comski/listening-background.jpg" alt="Research and analytics workspace" loading="lazy" />
+                <div className="cv6-research-panel-intro">
+                  <h3>Market Research</h3>
+                  <p className="cv6-research-subtitle">Validating the opportunity</p>
+                  <p>We analyzed existing solutions, market trends, and emerging opportunities to understand the competitive landscape and validate the need for ComSki.</p>
+                </div>
+              </div>
+              <div className="cv6-research-metrics" aria-label="Market research draft metrics">
+                <div><strong>$28B</strong><span>Global edtech market (2024)</span></div>
+                <div><strong>12%</strong><span>Annual growth rate (CAGR)</span></div>
+                <div><strong>Low</strong><span>Focus on holistic communication</span></div>
+                <div><strong>High</strong><span>Opportunity for AI-powered feedback</span></div>
+              </div>
+              <div className="cv6-market-lower">
+                <div className="cv6-landscape">
+                  <h4>Competitive Landscape <span>Conceptual positioning</span></h4>
+                  <svg className="cv6-landscape-chart" viewBox="0 0 360 250" role="img" aria-label="Conceptual competitor map comparing comprehensive communication skills vertically and AI-powered personalization horizontally">
+                    <defs><marker id="cv6-research-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#8392B5" /></marker></defs>
+                    <path d="M72 18 V205 H340" fill="none" stroke="#8392B5" strokeWidth="1.2" markerEnd="url(#cv6-research-arrow)" />
+                    <path d="M72 18 H68" stroke="#8392B5" />
+                    <text x="8" y="28" className="axis-end">High</text><text x="8" y="205" className="axis-end">Low</text>
+                    <text x="72" y="225" className="axis-end">Low</text><text x="325" y="225" className="axis-end">High</text>
+                    <text x="188" y="246" textAnchor="middle" className="axis-label">AI-Powered Personalization</text>
+                    <text x="15" y="104" className="axis-label" transform="rotate(-90 15 104)" textAnchor="middle">Comprehensive Communication Skills</text>
+                    <g className="cv6-competitor competitor-elsa"><circle cx="139" cy="83" r="12" /><text x="139" y="87" textAnchor="middle">✦</text><text x="139" y="104" className="competitor-label" textAnchor="middle">ELSA Speak</text></g>
+                    <g className="cv6-competitor competitor-grammarly"><circle cx="195" cy="134" r="11" /><text x="195" y="138" textAnchor="middle">G</text><text x="195" y="154" className="competitor-label" textAnchor="middle">Grammarly</text></g>
+                    <g className="cv6-competitor competitor-duolingo"><circle cx="108" cy="168" r="11" /><text x="108" y="172" textAnchor="middle">●</text><text x="108" y="188" className="competitor-label" textAnchor="middle">Duolingo</text></g>
+                    <g className="cv6-competitor competitor-speechify"><circle cx="265" cy="164" r="11" /><text x="265" y="168" textAnchor="middle">↗</text><text x="265" y="184" className="competitor-label" textAnchor="middle">Speechify</text></g>
+                    <g className="cv6-competitor competitor-comski"><circle cx="290" cy="64" r="25" /><circle cx="290" cy="64" r="37" className="comski-ring" /><text x="290" y="69" textAnchor="middle">⌕</text><text x="290" y="105" className="competitor-label" textAnchor="middle">ComSki</text></g>
+                  </svg>
+                  <p className="cv6-chart-note">Positions are illustrative, not measured competitor scores.</p>
+                </div>
+                <div className="cv6-research-insights">
+                  <h4>Key Insights</h4>
+                  <ol>
+                    <li><span>1</span><p>Most tools focus on one skill, such as speaking or writing.</p></li>
+                    <li><span>2</span><p>Limited real-time, personalized feedback across all four skills.</p></li>
+                    <li><span>3</span><p>Growing demand for AI-powered communication tools in education and corporate training.</p></li>
+                    <li><span>4</span><p>Opportunity to create a unified platform for speaking, listening, writing, and reading.</p></li>
+                  </ol>
+                </div>
+              </div>
+              <p className="cv6-research-integrity">Market figures require source verification before publication. Competitor positions are qualitative, not validated rankings.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <aside className="cv4-section-nav" aria-label="Case study sections">
         <div className="cv4-section-nav-line" />
         {[['01','Problem'],['02','Constraints'],['03','Research'],['04','Users'],['05','Competition'],['06','Synthesis'],['07','Journey'],['08','Process'],['09','Exploration'],['10','IA + Flow'],['11','Screens'],['12','AI UX'],['13','System'],['14','Validation'],['15','Build'],['16','Outcomes'],['17','Business'],['18','Learnings'],['19','Next'],['20','Role']].map(([n,label]) => (
