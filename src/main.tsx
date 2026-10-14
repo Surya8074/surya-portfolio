@@ -177,7 +177,22 @@ function App() {
       <section id="home" className="reference-home"><div className="reference-home-viewport"><div className="reference-home-stage"><div className="reference-portrait" aria-label="Portrait of Surya Kiran"><img className="reference-portrait-image" src={portraitUrl} alt="Surya Kiran" /></div><div className="reference-fade" /><div className="reference-head-animation" aria-hidden="true"><svg viewBox="0 0 260 130" className="head-animation-svg"><text className="head-animation-text" x="18" y="88">ART</text></svg></div><div className="reference-hero-copy"><h1><span>Designing how products earn trust,</span><span>across <em>visual, product &amp; growth.</em></span></h1><button className="reference-work" onClick={() => go('#work')}>See my work</button></div></div></div></section>
       <section id="work" className="reference-work-section"><div className="work-intro"><p>SELECTED WORK</p></div><GenesisCard /><ComskiCard /><article className="secondary-work-card"><div><p>Product · Web</p><h3>More work coming next</h3></div><div className="work-placeholder work-two">Next project</div></article></section>
       <section className="other-reference"><h2>Other Projects</h2><div className="other-reference-grid"><article><h3>AI product explorations</h3><p>AI-assisted workflows, interaction and product design experiments.</p><div className="tags"><span>AI-Assisted</span><span>Spatial UX</span><span>Product Design</span></div></article><article><h3>Web &amp; product experiments</h3><p>Small digital products exploring interaction, systems and prototyping.</p><div className="tags"><span>Web Design</span><span>Interaction Design</span><span>UX Design</span></div></article></div></section>
-      <section id="about" className="simple-section"><h2>About Me</h2><p>Hi, I am Surya — a product designer working across AI, SaaS and education.</p></section><section id="art" className="simple-section"><h2>Art + Explorations</h2><p>AI, fun, visual experiments and things I make outside product work.</p></section>
+      <section id="about" className="about-reference-section">
+        <div className="about-reference-layout">
+          <div className="about-reference-photo-wrap">
+            <div className="about-reference-photo">
+              <img src={portraitUrl} alt="Illustrated portrait of Surya Kiran" />
+            </div>
+          </div>
+          <div className="about-reference-copy">
+            <p className="about-reference-eyebrow">A LITTLE ABOUT ME</p>
+            <h2>Hi, I’m Surya.</h2>
+            <p>I’m a product designer working across AI, SaaS, and education — turning complex workflows into clear, useful experiences.</p>
+            <p>I enjoy connecting user needs, product strategy, and visual craft to make digital products feel intuitive and thoughtful.</p>
+            <p>Outside product design, I explore visual ideas, experiment with new tools, and keep learning by making things.</p>
+          </div>
+        </div>
+      </section><section id="art" className="simple-section"><h2>Art + Explorations</h2><p>AI, fun, visual experiments and things I make outside product work.</p></section>
       <ToolsWorkflow />
       <footer className="reference-footer"><h2>Every pixel here was a decision.</h2><p>Every word, a choice. Thanks for seeing it.</p><div className="footer-icons"><Linkedin/><FileText/><Github/></div><div className="footer-line" /><div className="footer-mark">≈≈≈</div><strong>Surya Kiran © 2026</strong></footer>
       <div className="portfolio-dock"><Dock items={items} panelHeight={70} baseItemSize={50} magnification={70} /></div><button className="to-top" onClick={() => go('#home')} aria-label="Back to top"><ArrowUp size={19}/></button>
