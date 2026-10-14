@@ -41,18 +41,6 @@ function ExperienceItem({ logo, role, dates, location, children, previews = [] }
 export default function ResumePage() {
   const [schoolNoteOpen, setSchoolNoteOpen] = useState(false);
   return <section className="w-full max-w-[1440px] mx-auto px-4 md:px-8 ayushi-resume-section">
-    <div className="resume-about-intro">
-      <div className="resume-about-photo-frame">
-        <img src="/surya-portfolio/surya-portrait.svg" alt="Illustrated portrait of Surya Kiran" />
-      </div>
-      <div className="resume-about-copy">
-        <h1>Hi, I’m Surya.</h1>
-        <p>I’m a product designer working across AI, SaaS, and education — turning complex workflows into clear, useful experiences.</p>
-        <p>I enjoy connecting user needs, product strategy, and visual craft to make digital products feel intuitive and thoughtful.</p>
-        <p>Outside product design, I explore visual ideas, experiment with new tools, and keep learning by making things.</p>
-      </div>
-    </div>
-
     <div className="w-full max-w-[915px] mx-auto flex flex-col gap-ds-10 ayushi-resume">
       <div id="resume" className="scroll-mt-[100px] flex flex-wrap items-center justify-between gap-4 ayushi-resume-heading">
         <h2 className="text-ds-h3 font-semibold leading-[1.09] tracking-[-0.29px] text-text-primary">Resume</h2>
