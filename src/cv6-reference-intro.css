@@ -116,7 +116,7 @@ main.cv4-page section.cv6-problem-section .cv6-problem-inner {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 1180px;
+  max-width: 1040px;
   margin: 0 auto;
 }
 main.cv4-page section.cv6-problem-section .cv6-problem-copy {
@@ -146,7 +146,7 @@ main.cv4-page section.cv6-problem-section .cv6-problem-copy strong { color: #1A1
 main.cv4-page section.cv6-problem-section .cv6-problem-cards {
   display: grid;
   width: 100%;
-  max-width: 1125px;
+  max-width: 1000px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
   margin: 0 auto;
@@ -156,9 +156,9 @@ main.cv4-page section.cv6-problem-section .cv6-problem-card {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 540px;
-  min-height: 540px;
-  max-height: 540px;
+  height: 460px;
+  min-height: 460px;
+  max-height: 460px;
   min-width: 0;
   padding: 0;
   overflow: hidden;
@@ -178,10 +178,10 @@ main.cv4-page section.cv6-problem-section .cv6-problem-card-editorial {
 main.cv4-page section.cv6-problem-section .cv6-problem-card-artwork {
   display: block;
   width: 100%;
-  height: 255px;
-  min-height: 255px;
-  max-height: 255px;
-  flex: 0 0 255px;
+  height: 205px;
+  min-height: 205px;
+  max-height: 205px;
+  flex: 0 0 205px;
   object-fit: contain;
   object-position: center;
   padding: 0;
@@ -196,7 +196,7 @@ main.cv4-page section.cv6-problem-section .cv6-problem-card-content {
   width: 100%;
   min-height: 0;
   box-sizing: border-box;
-  padding: 12px 24px 24px;
+  padding: 10px 22px 20px;
 }
 main.cv4-page section.cv6-problem-section .cv6-problem-card-eyebrow {
   margin: 0 0 8px;
@@ -210,7 +210,7 @@ main.cv4-page section.cv6-problem-section .cv6-problem-card-editorial .cv6-probl
 main.cv4-page section.cv6-problem-section .cv6-problem-card-content h3 {
   margin: 0;
   color: inherit;
-  font-size: clamp(28px, 2.25vw, 36px);
+  font-size: clamp(25px, 2vw, 31px);
   line-height: 1.02;
   letter-spacing: -.055em;
   font-weight: 700;
