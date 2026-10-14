@@ -279,6 +279,12 @@ body{background:var(--paper)}
 .contribution-visual img{display:block;width:100%;height:auto;aspect-ratio:8/3;object-fit:cover}
 @media(max-width:760px){.contribution-visual{width:100%;margin:0;border-radius:18px}.contribution-visual img{aspect-ratio:4/3;object-fit:cover;object-position:center}}
 @media(max-width:480px){.contribution-visual img{aspect-ratio:1/1.03;object-fit:cover;object-position:center}}
+
+/* Use the uploaded LaundroMart banner as-is; no mockup padding or cropping */
+.contribution-visual{display:block;position:relative;overflow:hidden;width:calc(100% + 16px);margin:0 -8px;padding:0;border:0;border-radius:24px;background:transparent;box-shadow:none;line-height:0;min-height:0}
+.contribution-visual img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain;object-position:center;border-radius:24px}
+@media(max-width:760px){.contribution-visual{width:100%;margin:0;border-radius:18px}.contribution-visual img{aspect-ratio:auto;object-fit:contain;border-radius:18px}}
+@media(max-width:480px){.contribution-visual img{aspect-ratio:auto;object-fit:contain}}
 </style></head>
 <body><div class="progress"></div>
 <nav class="nav"><div class="brand"><a class="mark" href="../../" aria-label="Back to portfolio">S</a><a href="../../"><strong>Surya Kiran</strong></a><span class="muted">/ LaundroMart</span></div><div class="navlinks"><a href="#context">Context</a><a href="#system">System</a><a href="#experience">Experience</a><a href="#reflection">Reflection</a></div></nav>
@@ -324,7 +330,7 @@ body{background:var(--paper)}
     <p>I approached the screens as parts of one system: clear page hierarchy for quick scanning, repeatable patterns for records and forms, and consistent navigation between overview-level information and task-level detail.</p>
   </div>
   <figure class="contribution-visual reveal">
-    <img src="./problem-banner.svg" alt="Illustration of LaundroMart's problem space: frustrated customers, missing garments, incomplete records and unclear order status." loading="lazy" width="1600" height="600">
+    <img src="./laundromart_problem_banner_animated.gif" alt="LaundroMart problem-space banner showing angry customers, missing clothes, incomplete data and unclear order status." loading="lazy" width="1542" height="469">
   </figure>
 </section>
 <section class="section wrap challenge-section" id="challenge">
