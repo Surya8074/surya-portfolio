@@ -578,3 +578,94 @@ main.cv4-page section.cv6-problem-section .cv6-problem-card-description {
     padding: 22px 28px 32px !important;
   }
 }
+
+
+/* ComSki Problem — compact first-pass correction: reliable artwork rendering and reduced section height. */
+.cv6-problem-section {
+  padding: 0 32px 64px !important;
+}
+.cv6-problem-inner {
+  max-width: 1515px !important;
+}
+.cv6-problem-copy {
+  margin-bottom: 30px !important;
+}
+.cv6-problem-cards {
+  width: 100% !important;
+  max-width: 1515px !important;
+  gap: 33px !important;
+  margin: 0 auto !important;
+}
+.cv6-problem-section .cv6-problem-card {
+  height: 620px !important;
+  min-height: 620px !important;
+  max-height: 620px !important;
+  border-radius: 46px !important;
+}
+.cv6-problem-section .cv6-problem-card-artwork {
+  display: block !important;
+  width: 100% !important;
+  height: 340px !important;
+  min-height: 340px !important;
+  max-height: 340px !important;
+  flex: 0 0 340px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+}
+.cv6-problem-section .cv6-problem-card-content {
+  padding: 18px 32px 28px !important;
+}
+.cv6-problem-section .cv6-problem-card-eyebrow {
+  font-size: 14px !important;
+  margin-bottom: 8px !important;
+}
+.cv6-problem-section .cv6-problem-card-content h3 {
+  font-size: clamp(34px, 2.8vw, 48px) !important;
+  line-height: 1.02 !important;
+}
+.cv6-problem-section .cv6-problem-card-rule {
+  margin: 16px 0 14px !important;
+}
+.cv6-problem-section .cv6-problem-card-description {
+  font-size: 17px !important;
+  line-height: 1.45 !important;
+}
+@media (max-width: 1100px) and (min-width: 761px) {
+  .cv6-problem-section { padding-inline: 24px !important; }
+  .cv6-problem-section .cv6-problem-cards { gap: 20px !important; }
+  .cv6-problem-section .cv6-problem-card {
+    height: 560px !important;
+    min-height: 560px !important;
+    max-height: 560px !important;
+    border-radius: 34px !important;
+  }
+  .cv6-problem-section .cv6-problem-card-artwork {
+    height: 300px !important;
+    min-height: 300px !important;
+    max-height: 300px !important;
+    flex-basis: 300px !important;
+  }
+  .cv6-problem-section .cv6-problem-card-content { padding: 18px 20px 24px !important; }
+  .cv6-problem-section .cv6-problem-card-content h3 { font-size: clamp(30px, 3.2vw, 40px) !important; }
+  .cv6-problem-section .cv6-problem-card-description { font-size: 15px !important; }
+}
+@media (max-width: 760px) {
+  .cv6-problem-section { padding: 0 20px 56px !important; }
+  .cv6-problem-copy { margin-bottom: 28px !important; }
+  .cv6-problem-section .cv6-problem-cards { grid-template-columns: minmax(0, 1fr) !important; max-width: 520px !important; gap: 20px !important; }
+  .cv6-problem-section .cv6-problem-card {
+    height: 620px !important;
+    min-height: 620px !important;
+    max-height: 620px !important;
+    border-radius: 30px !important;
+  }
+  .cv6-problem-section .cv6-problem-card-artwork {
+    height: 340px !important;
+    min-height: 340px !important;
+    max-height: 340px !important;
+    flex-basis: 340px !important;
+  }
+  .cv6-problem-section .cv6-problem-card-content { padding: 20px 26px 28px !important; }
+  .cv6-problem-section .cv6-problem-card-content h3 { font-size: clamp(38px, 8vw, 46px) !important; }
+  .cv6-problem-section .cv6-problem-card-description { font-size: 16px !important; }
+}
