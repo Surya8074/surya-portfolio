@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { SiFigma, SiFramer, SiMiro, SiCursor, SiJira, SiDavinciresolve } from 'react-icons/si';
-import { VscVscode } from 'react-icons/vsc';
 import './resume-page.css';
 
 const resumeImages = {
