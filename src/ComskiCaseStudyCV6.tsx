@@ -674,7 +674,7 @@ function ComskiCaseStudyCV4() {
             <p><strong>My contribution:</strong> Led product design. Designed all onboarding screens and the core listening, writing, and reading experiences.</p>
           </div>
           <div className="cv6-reference-visual">
-            <img className="cv6-reference-image" alt="Surya, product designer" src="/surya-portfolio/surya-portrait.svg" />
+            <img className="cv6-reference-image" alt="Surya, product designer" src="/surya-portfolio/comski-communication-challenge%20(1).webp" />
           </div>
         </div>
       </section>
