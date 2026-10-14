@@ -108,3 +108,10 @@
 .ayushi-resume-section .vscode-brand{color:#007acc}
 .ayushi-resume-section .antigravity-brand{color:#315de8}
 .ayushi-resume-section .antigravity-brand svg{width:24px;height:24px}
+
+/* Skills: five items per row on desktop, responsive on smaller screens. */
+.ayushi-resume-section .ayushi-skills-content{display:grid;grid-template-columns:repeat(5,minmax(0,max-content));column-gap:28px;row-gap:0;align-items:start}
+.ayushi-resume-section .ayushi-skills-column{display:contents}
+.ayushi-resume-section .ayushi-skills-column p{white-space:nowrap}
+@media(max-width:900px){.ayushi-resume-section .ayushi-skills-content{grid-template-columns:repeat(3,minmax(0,max-content));column-gap:24px}}
+@media(max-width:560px){.ayushi-resume-section .ayushi-skills-content{grid-template-columns:repeat(2,minmax(0,max-content));column-gap:20px}}
