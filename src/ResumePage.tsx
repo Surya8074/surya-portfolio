@@ -81,12 +81,15 @@ export default function ResumePage() {
 
       <div className="flex flex-col md:flex-row gap-8 md:gap-[231px] ayushi-resume-row ayushi-tools-row">
         <h2 className="text-text-secondary text-base font-bold shrink-0 ayushi-subheading">Tools</h2>
-        <div className="resume-tools-interactive" aria-label="Design tools">
-          <div className="resume-tool-item" tabIndex={0} aria-label="Figma"><span className="resume-tool-icon figma-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span className="resume-tool-tooltip">Figma</span></div>
-          <div className="resume-tool-item" tabIndex={0} aria-label="Canva"><span className="resume-tool-icon canva-icon" aria-hidden="true">C</span><span className="resume-tool-tooltip">Canva</span></div>
-          <div className="resume-tool-item" tabIndex={0} aria-label="Adobe Premiere Pro"><span className="resume-tool-icon premiere-icon" aria-hidden="true">Pr</span><span className="resume-tool-tooltip">Premiere Pro</span></div>
-          <div className="resume-tool-item" tabIndex={0} aria-label="DaVinci Resolve"><span className="resume-tool-icon davinci-icon" aria-hidden="true"><i></i><i></i><i></i></span><span className="resume-tool-tooltip">DaVinci Resolve</span></div>
-          <div className="resume-tool-item" tabIndex={0} aria-label="Blender"><span className="resume-tool-icon blender-icon" aria-hidden="true">B</span><span className="resume-tool-tooltip">Blender</span></div>
+        <div className="resume-tools-interactive" aria-label="Design and creative tools">
+          <div className="resume-tool-item" tabIndex={0} aria-label="Figma"><span className="resume-tool-icon brand-image-icon figma-brand" aria-hidden="true"><img src="https://cdn.simpleicons.org/figma/F24E1E" alt="" loading="lazy" /></span><span className="resume-tool-tooltip">Figma</span></div>
+          <div className="resume-tool-item" tabIndex={0} aria-label="Framer"><span className="resume-tool-icon brand-image-icon framer-brand" aria-hidden="true"><img src="https://cdn.simpleicons.org/framer/0055FF" alt="" loading="lazy" /></span><span className="resume-tool-tooltip">Framer</span></div>
+          <div className="resume-tool-item" tabIndex={0} aria-label="Miro"><span className="resume-tool-icon brand-image-icon miro-brand" aria-hidden="true"><img src="https://cdn.simpleicons.org/miro/050038" alt="" loading="lazy" /></span><span className="resume-tool-tooltip">Miro</span></div>
+          <div className="resume-tool-item" tabIndex={0} aria-label="Google Antigravity"><span className="resume-tool-icon antigravity-brand" aria-hidden="true"><span>A</span><i></i></span><span className="resume-tool-tooltip">Antigravity</span></div>
+          <div className="resume-tool-item" tabIndex={0} aria-label="Cursor"><span className="resume-tool-icon brand-image-icon cursor-brand" aria-hidden="true"><img src="https://cdn.simpleicons.org/cursor/111111" alt="" loading="lazy" /></span><span className="resume-tool-tooltip">Cursor</span></div>
+          <div className="resume-tool-item" tabIndex={0} aria-label="Jira"><span className="resume-tool-icon brand-image-icon jira-brand" aria-hidden="true"><img src="https://cdn.simpleicons.org/jira/0052CC" alt="" loading="lazy" /></span><span className="resume-tool-tooltip">Jira</span></div>
+          <div className="resume-tool-item" tabIndex={0} aria-label="Adobe Premiere Pro"><span className="resume-tool-icon brand-image-icon premiere-brand" aria-hidden="true"><img src="https://cdn.simpleicons.org/adobepremierepro/9999FF" alt="" loading="lazy" /></span><span className="resume-tool-tooltip">Premiere Pro</span></div>
+          <div className="resume-tool-item" tabIndex={0} aria-label="DaVinci Resolve"><span className="resume-tool-icon brand-image-icon davinci-brand" aria-hidden="true"><img src="https://cdn.simpleicons.org/davinciresolve/233A51" alt="" loading="lazy" /></span><span className="resume-tool-tooltip">DaVinci Resolve</span></div>
         </div>
       </div>
     </div>
