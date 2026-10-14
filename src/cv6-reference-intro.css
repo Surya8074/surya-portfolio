@@ -500,3 +500,64 @@ main.cv4-page .cv6-research-insights li p { margin: 2px 0 0; color: #45516B; fon
     transition: none !important;
   }
 }
+
+
+/* ComSki — editorial design philosophy section, matched to CV6 typography and spacing. */
+main.cv4-page section.cv6-philosophy-section {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: clamp(64px, 8vw, 112px) 0 clamp(72px, 9vw, 120px);
+  background: #fff;
+  color: #101B3A;
+  font-family: "Work Sans", Inter, Arial, sans-serif;
+}
+main.cv4-page .cv6-philosophy-inner {
+  width: min(100% - 64px, 810px);
+  margin-inline: auto;
+}
+main.cv4-page .cv6-philosophy-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 24px;
+  color: #667391;
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 650;
+  letter-spacing: .14em;
+}
+main.cv4-page .cv6-philosophy-eyebrow span:first-child { color: #2F5BFF; letter-spacing: 0; }
+main.cv4-page .cv6-philosophy-eyebrow span:last-child { text-transform: uppercase; }
+main.cv4-page .cv6-philosophy-section h2 {
+  max-width: 760px;
+  margin: 0 0 32px;
+  color: #101B3A;
+  font-size: clamp(38px, 5vw, 56px);
+  line-height: 1.06;
+  font-weight: 750;
+  letter-spacing: -.045em;
+  text-wrap: balance;
+}
+main.cv4-page .cv6-philosophy-copy { max-width: 760px; }
+main.cv4-page .cv6-philosophy-copy p {
+  margin: 0 0 32px;
+  color: #172033;
+  font-size: clamp(18px, 1.65vw, 24px);
+  line-height: 1.62;
+  font-weight: 400;
+  letter-spacing: -.012em;
+  text-wrap: pretty;
+}
+main.cv4-page .cv6-philosophy-copy p:last-child { margin-bottom: 0; }
+main.cv4-page .cv6-philosophy-copy strong { color: #2F5BFF; font-weight: 650; }
+@media (max-width: 640px) {
+  main.cv4-page section.cv6-philosophy-section { padding: 52px 0 64px; }
+  main.cv4-page .cv6-philosophy-inner { width: calc(100% - 40px); }
+  main.cv4-page .cv6-philosophy-eyebrow { margin-bottom: 18px; font-size: 11px; }
+  main.cv4-page .cv6-philosophy-section h2 { margin-bottom: 24px; font-size: clamp(34px, 9vw, 42px); line-height: 1.08; }
+  main.cv4-page .cv6-philosophy-copy p { margin-bottom: 24px; font-size: 18px; line-height: 1.58; }
+}
+@media (prefers-reduced-motion: reduce) {
+  main.cv4-page .cv6-philosophy-section *, main.cv4-page .cv6-philosophy-section *::before, main.cv4-page .cv6-philosophy-section *::after { animation: none !important; transition: none !important; }
+}
