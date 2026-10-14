@@ -681,37 +681,39 @@ function ComskiCaseStudyCV4() {
 
       <section className="cv6-problem-section" id="s01" aria-labelledby="cv6-problem-title">
         <div className="cv6-problem-inner">
-          <div className="cv6-problem-spacer" aria-hidden="true" />
           <div className="cv6-problem-copy">
             <h2 id="cv6-problem-title">The problem</h2>
             <p>People use different tools to improve how they communicate. They practise speaking to build confidence, use writing assistants to find the right words, and rely on reading tools to understand information. But these experiences are often disconnected, leaving people without one place to understand and improve how they listen, write, read, and express themselves.</p>
-            <p><strong>The result?</strong> People can struggle to communicate with confidence in everyday conversations, often without knowing where they need support or how to improve.</p>
-            <p><strong>Our core insight:</strong> Better communication starts with understanding yourself. By bringing listening, writing, and reading into one personalized AI-powered experience, ComSki helps people reflect on their communication and build confidence one interaction at a time.</p>
+            <p><strong>The result?</strong> People struggle to communicate with confidence in everyday conversations, often without understanding where they need support or how to improve.</p>
+            <p><strong>Our core insight:</strong> Better communication starts with understanding yourself. By bringing listening, writing, and reading into one personalized AI-powered experience, ComSki helps people recognize their communication patterns and build confidence one interaction at a time.</p>
           </div>
-          <div className="cv6-problem-cards" aria-label="ComSki's core communication experience">
-            <article className="cv6-problem-card cv6-problem-card-light">
-              <div className="cv6-problem-card-art cv6-problem-skill-art" aria-hidden="true">
-                <span /><span /><span /><span /><span />
+          <div className="cv6-problem-cards" aria-label="Three common communication challenges">
+            <article className="cv6-problem-card cv6-problem-card-speaking">
+              <img className="cv6-problem-card-artwork" src="/surya-portfolio/comski/speaking-card-visual.webp" alt="Abstract visual representing a person finding it difficult to speak confidently" loading="lazy" />
+              <div className="cv6-problem-card-content">
+                <p className="cv6-problem-card-eyebrow">SPEAKING</p>
+                <h3><span>Words</span><br /><em>get stuck</em></h3>
+                <span className="cv6-problem-card-rule" aria-hidden="true" />
+                <p className="cv6-problem-card-description">Hard to express thoughts,<br className="cv6-problem-desktop-break" /> lack confidence in conversations.</p>
               </div>
-              <div className="cv6-problem-card-value">03</div>
-              <p>core communication skills</p>
-              <div className="cv6-problem-card-caption">Listening · Writing · Reading</div>
             </article>
-            <article className="cv6-problem-card cv6-problem-card-blue">
-              <div className="cv6-problem-card-art cv6-problem-orbit-art" aria-hidden="true">
-                <span className="cv6-problem-orbit" /><span className="cv6-problem-orbit-dot" />
+            <article className="cv6-problem-card cv6-problem-card-editorial">
+              <img className="cv6-problem-card-artwork" src="/surya-portfolio/comski/writing-card-visual.webp" alt="Abstract visual representing thoughts that are difficult to organize in writing" loading="lazy" />
+              <div className="cv6-problem-card-content">
+                <p className="cv6-problem-card-eyebrow">WRITING</p>
+                <h3><span>Thoughts</span><br /><em>feel scattered</em></h3>
+                <span className="cv6-problem-card-rule" aria-hidden="true" />
+                <p className="cv6-problem-card-description">Not sure how to phrase, structure<br className="cv6-problem-desktop-break" /> or organize ideas clearly.</p>
               </div>
-              <div className="cv6-problem-card-value">01</div>
-              <p>connected communication experience</p>
-              <div className="cv6-problem-card-caption">Designed around the individual</div>
             </article>
-            <article className="cv6-problem-card cv6-problem-card-light">
-              <div className="cv6-problem-card-art cv6-problem-chat-art" aria-hidden="true">
-                <span /><span /><span />
+            <article className="cv6-problem-card cv6-problem-card-editorial">
+              <img className="cv6-problem-card-artwork" src="/surya-portfolio/comski/listening-reading-card-visual.webp" alt="Abstract visual representing listening and reading comprehension" loading="lazy" />
+              <div className="cv6-problem-card-content">
+                <p className="cv6-problem-card-eyebrow">LISTENING &amp; READING</p>
+                <h3><span>Meaning</span><br /><em>gets missed</em></h3>
+                <span className="cv6-problem-card-rule" aria-hidden="true" />
+                <p className="cv6-problem-card-description">Hard to stay focused, miss key<br className="cv6-problem-desktop-break" /> points or lose the full context.</p>
               </div>
-              <div className="cv6-problem-card-word">ComSki</div>
-              <p>AI-supported communication practice</p>
-              <div className="cv6-problem-card-caption">Listen · Reflect · Improve</div>
             </article>
           </div>
         </div>
