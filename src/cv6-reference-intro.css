@@ -146,19 +146,20 @@ main.cv4-page section.cv6-problem-section .cv6-problem-copy strong { color: #1A1
 main.cv4-page section.cv6-problem-section .cv6-problem-cards {
   display: grid;
   width: 100%;
-  max-width: 1515px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 34px;
+  max-width: 931px;
+  grid-template-columns: repeat(3, minmax(0, 280px));
+  justify-content: space-between;
+  gap: 24px;
   margin: 0 auto;
   align-items: stretch;
 }
 main.cv4-page section.cv6-problem-section .cv6-problem-card {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 730px;
-  min-height: 730px;
-  max-height: 730px;
+  width: 280px;
+  height: 427px;
+  min-height: 427px;
+  max-height: 427px;
   min-width: 0;
   padding: 0;
   overflow: hidden;
@@ -178,10 +179,10 @@ main.cv4-page section.cv6-problem-section .cv6-problem-card-editorial {
 main.cv4-page section.cv6-problem-section .cv6-problem-card-artwork {
   display: block;
   width: 100%;
-  height: 410px;
-  min-height: 410px;
-  max-height: 410px;
-  flex: 0 0 410px;
+  height: 220px;
+  min-height: 220px;
+  max-height: 220px;
+  flex: 0 0 220px;
   object-fit: contain;
   object-position: center;
   padding: 0;
@@ -196,7 +197,7 @@ main.cv4-page section.cv6-problem-section .cv6-problem-card-content {
   width: 100%;
   min-height: 0;
   box-sizing: border-box;
-  padding: 8px 44px 34px;
+  padding: 8px 24px 22px;
 }
 main.cv4-page section.cv6-problem-section .cv6-problem-card-eyebrow {
   margin: 0 0 16px;
@@ -210,7 +211,7 @@ main.cv4-page section.cv6-problem-section .cv6-problem-card-editorial .cv6-probl
 main.cv4-page section.cv6-problem-section .cv6-problem-card-content h3 {
   margin: 0;
   color: inherit;
-  font-size: clamp(36px, 3.2vw, 56px);
+  font-size: clamp(27px, 2vw, 32px);
   line-height: 1.04;
   letter-spacing: -.05em;
   font-weight: 700;
@@ -233,27 +234,23 @@ main.cv4-page section.cv6-problem-section .cv6-problem-card-editorial .cv6-probl
 main.cv4-page section.cv6-problem-section .cv6-problem-card-description {
   margin: 0;
   color: rgba(255,255,255,.9);
-  font-size: 22px;
-  line-height: 1.45;
+  font-size: 16px;
+  line-height: 1.4;
   letter-spacing: -.012em;
   font-weight: 400;
 }
 main.cv4-page section.cv6-problem-section .cv6-problem-card-editorial .cv6-problem-card-description { color: #263B66; }
 
-@media (max-width: 1500px) and (min-width: 1101px) {
-  main.cv4-page section.cv6-problem-section .cv6-problem-cards { gap: 24px; }
-  main.cv4-page section.cv6-problem-section .cv6-problem-card { height: 650px; min-height: 650px; max-height: 650px; border-radius: 42px; }
-  main.cv4-page section.cv6-problem-section .cv6-problem-card-artwork { height: 360px; min-height: 360px; max-height: 360px; flex-basis: 360px; }
-  main.cv4-page section.cv6-problem-section .cv6-problem-card-content { padding: 8px 28px 28px; }
-  main.cv4-page section.cv6-problem-section .cv6-problem-card-eyebrow { font-size: 15px; margin-bottom: 12px; }
-  main.cv4-page section.cv6-problem-section .cv6-problem-card-content h3 { font-size: clamp(32px, 3vw, 46px); }
-  main.cv4-page section.cv6-problem-section .cv6-problem-card-description { font-size: 18px; }
-}
-@media (max-width: 1100px) and (min-width: 701px) {
+@media (max-width: 950px) and (min-width: 701px) {
   main.cv4-page section.cv6-problem-section { padding: 60px 24px 64px; }
   main.cv4-page section.cv6-problem-section .cv6-problem-copy { max-width: 760px; margin-bottom: 42px; }
   main.cv4-page section.cv6-problem-section .cv6-problem-copy p { font-size: 16px; }
-  main.cv4-page section.cv6-problem-section .cv6-problem-cards { gap: 24px; }
+  main.cv4-page section.cv6-problem-section .cv6-problem-cards { grid-template-columns: repeat(2, minmax(0, 280px)); justify-content: center; gap: 24px; }
+  main.cv4-page section.cv6-problem-section .cv6-problem-card { width: 280px; height: 427px; min-height: 427px; max-height: 427px; }
+  main.cv4-page section.cv6-problem-section .cv6-problem-card-artwork { height: 220px; min-height: 220px; max-height: 220px; flex-basis: 220px; }
+  main.cv4-page section.cv6-problem-section .cv6-problem-card-content { padding: 8px 24px 22px; }
+  main.cv4-page section.cv6-problem-section .cv6-problem-card-content h3 { font-size: 30px; }
+  main.cv4-page section.cv6-problem-section .cv6-problem-card-description { font-size: 16px; }
   main.cv4-page section.cv6-problem-section .cv6-problem-card { height: 540px; min-height: 540px; max-height: 540px; border-radius: 30px; }
   main.cv4-page section.cv6-problem-section .cv6-problem-card-artwork { height: 275px; min-height: 275px; max-height: 275px; flex-basis: 275px; }
   main.cv4-page section.cv6-problem-section .cv6-problem-card-content { padding: 10px 18px 22px; }
@@ -267,10 +264,10 @@ main.cv4-page section.cv6-problem-section .cv6-problem-card-editorial .cv6-probl
   main.cv4-page section.cv6-problem-section .cv6-problem-copy { margin-bottom: 28px; }
   main.cv4-page section.cv6-problem-section .cv6-problem-copy h2 { font-size: 32px; margin-bottom: 20px; }
   main.cv4-page section.cv6-problem-section .cv6-problem-copy p { font-size: 16px; line-height: 1.55; margin-bottom: 18px; }
-  main.cv4-page section.cv6-problem-section .cv6-problem-cards { grid-template-columns: minmax(0,1fr); max-width: 420px; gap: 18px; }
-  main.cv4-page section.cv6-problem-section .cv6-problem-card { height: 600px; min-height: 600px; max-height: 600px; border-radius: 30px; }
-  main.cv4-page section.cv6-problem-section .cv6-problem-card-artwork { height: 315px; min-height: 315px; max-height: 315px; flex-basis: 315px; }
-  main.cv4-page section.cv6-problem-section .cv6-problem-card-content { padding: 12px 24px 24px; }
+  main.cv4-page section.cv6-problem-section .cv6-problem-cards { grid-template-columns: minmax(0,280px); max-width: 280px; gap: 18px; justify-content: center; }
+  main.cv4-page section.cv6-problem-section .cv6-problem-card { width: 280px; height: 427px; min-height: 427px; max-height: 427px; border-radius: 30px; }
+  main.cv4-page section.cv6-problem-section .cv6-problem-card-artwork { height: 220px; min-height: 220px; max-height: 220px; flex-basis: 220px; }
+  main.cv4-page section.cv6-problem-section .cv6-problem-card-content { padding: 8px 24px 22px; }
   main.cv4-page section.cv6-problem-section .cv6-problem-card-eyebrow { font-size: 13px; margin-bottom: 10px; }
   main.cv4-page section.cv6-problem-section .cv6-problem-card-content h3 { font-size: 30px; }
   main.cv4-page section.cv6-problem-section .cv6-problem-card-description { font-size: 15px; }
