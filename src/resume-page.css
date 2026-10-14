@@ -80,3 +80,18 @@
 .ayushi-resume-section .antigravity-brand>span{font-size:22px;font-weight:750;letter-spacing:-1.8px;line-height:1}
 .ayushi-resume-section .antigravity-brand>i{position:absolute;width:7px;height:7px;right:7px;top:7px;border-radius:50%;background:#7c5cff;box-shadow:0 0 0 3px #7c5cff20}
 @media(prefers-reduced-motion:reduce){.ayushi-resume-section .resume-tool-item:hover .resume-tool-icon,.ayushi-resume-section .resume-tool-item:focus-visible .resume-tool-icon{transform:none}}
+
+
+/* Brand-specific backgrounds and sizing for recognizable, authentic tool marks. */
+.ayushi-resume-section .figma-brand{background:#fff}
+.ayushi-resume-section .figma-brand img{width:25px;height:25px}
+.ayushi-resume-section .framer-brand{background:#f5f7ff}
+.ayushi-resume-section .framer-brand img{width:23px;height:23px}
+.ayushi-resume-section .miro-brand img{width:24px;height:24px}
+.ayushi-resume-section .cursor-brand img{width:25px;height:25px}
+.ayushi-resume-section .jira-brand img{width:24px;height:24px}
+.ayushi-resume-section .premiere-brand img{width:26px;height:26px}
+.ayushi-resume-section .davinci-brand img{width:27px;height:27px}
+.ayushi-resume-section .antigravity-brand img{width:25px;height:25px;object-fit:contain}
+.ayushi-resume-section .vscode-brand{background:#eef7ff;border-color:#dcecff}
+.ayushi-resume-section .vscode-brand img{width:25px;height:25px}
