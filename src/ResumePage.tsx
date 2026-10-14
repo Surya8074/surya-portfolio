@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { SiFigma, SiFramer, SiMiro, SiCursor, SiJira, SiAdobePremierepro, SiDavinciresolve, SiVisualstudiocode } from 'react-icons/si';
+import { SiFigma, SiFramer, SiMiro, SiCursor, SiJira, SiAdobePremierepro, SiDavinciresolve } from 'react-icons/si';
+import { VscVscode } from 'react-icons/vsc';
 import './resume-page.css';
 
 const resumeImages = {
@@ -91,7 +92,7 @@ export default function ResumePage() {
           <div className="resume-tool-item" tabIndex={0} aria-label="Jira"><span className="resume-tool-icon brand-image-icon jira-brand" aria-hidden="true"><SiJira /></span><span className="resume-tool-tooltip">Jira</span></div>
           <div className="resume-tool-item" tabIndex={0} aria-label="Adobe Premiere Pro"><span className="resume-tool-icon brand-image-icon premiere-brand" aria-hidden="true"><SiAdobepremierepro /></span><span className="resume-tool-tooltip">Premiere Pro</span></div>
           <div className="resume-tool-item" tabIndex={0} aria-label="DaVinci Resolve"><span className="resume-tool-icon brand-image-icon davinci-brand" aria-hidden="true"><SiDavinciresolve /></span><span className="resume-tool-tooltip">DaVinci Resolve</span></div>
-          <div className="resume-tool-item" tabIndex={0} aria-label="Visual Studio Code"><span className="resume-tool-icon brand-image-icon vscode-brand" aria-hidden="true"><SiVisualstudiocode /></span><span className="resume-tool-tooltip">VS Code</span></div>
+          <div className="resume-tool-item" tabIndex={0} aria-label="Visual Studio Code"><span className="resume-tool-icon brand-image-icon vscode-brand" aria-hidden="true"><VscVscode /></span><span className="resume-tool-tooltip">VS Code</span></div>
         </div>
       </div>
     </div>
