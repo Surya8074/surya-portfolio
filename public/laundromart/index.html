@@ -273,6 +273,12 @@ body{background:var(--paper)}
 .contribution-copy h2{margin-left:0}
 .contribution-copy p{max-width:none}
 @media(max-width:760px){.contribution-copy{margin-bottom:42px}}
+
+/* Illustrated problem-space banner directly below “Where I came in” */
+.contribution-visual{position:relative;isolation:isolate;overflow:hidden;width:calc(100% + 16px);margin:0 -8px;border-radius:24px;background:#07102f;box-shadow:0 20px 60px rgba(9,19,57,.12)}
+.contribution-visual img{display:block;width:100%;height:auto;aspect-ratio:8/3;object-fit:cover}
+@media(max-width:760px){.contribution-visual{width:100%;margin:0;border-radius:18px}.contribution-visual img{aspect-ratio:4/3;object-fit:cover;object-position:center}}
+@media(max-width:480px){.contribution-visual img{aspect-ratio:1/1.03;object-fit:cover;object-position:center}}
 </style></head>
 <body><div class="progress"></div>
 <nav class="nav"><div class="brand"><a class="mark" href="../../" aria-label="Back to portfolio">S</a><a href="../../"><strong>Surya Kiran</strong></a><span class="muted">/ LaundroMart</span></div><div class="navlinks"><a href="#context">Context</a><a href="#system">System</a><a href="#experience">Experience</a><a href="#reflection">Reflection</a></div></nav>
@@ -317,27 +323,9 @@ body{background:var(--paper)}
     <p>My work focused on shaping a connected experience across LaundroMart’s operational workflows. The interface needed to make garment information, transactions, operator tasks and facility tools easier to navigate while keeping the product visually consistent.</p>
     <p>I approached the screens as parts of one system: clear page hierarchy for quick scanning, repeatable patterns for records and forms, and consistent navigation between overview-level information and task-level detail.</p>
   </div>
-  <div class="contribution-visual reveal" role="img" aria-label="Dark presentation panel showing three LaundroMart interface previews: operations overview, garment inventory, and transaction workspace">
-    <div class="contribution-grid" aria-hidden="true"></div>
-    <div class="contribution-glow contribution-glow-one" aria-hidden="true"></div><div class="contribution-glow contribution-glow-two" aria-hidden="true"></div>
-    <div class="mini-screen mini-inventory">
-      <div class="mini-top"><span class="mini-brand"><i>L</i> LaundroMart</span><span class="mini-dots">•••</span></div>
-      <div class="mini-sidebar"><b>Overview</b><span>Inventory</span><span>Transactions</span><span>Operators</span><span>Facilities</span></div>
-      <div class="mini-content"><small>WORKSPACE / INVENTORY</small><h3>Garment records</h3><div class="mini-search"></div><div class="mini-table"><div class="mini-row mini-row-head"><span>RECORD</span><span>GARMENT</span><span>STATUS</span></div><div class="mini-row"><span>LM–1048</span><span>Formal shirt</span><i>In process</i></div><div class="mini-row"><span>LM–1047</span><span>Trousers</span><i>Received</i></div><div class="mini-row"><span>LM–1046</span><span>Jacket</span><i>Ready</i></div><div class="mini-row"><span>LM–1045</span><span>Cotton shirt</span><i>Received</i></div></div></div>
-    </div>
-    <div class="mini-screen mini-overview">
-      <div class="mini-top"><span class="mini-brand"><i>L</i> LaundroMart</span><span class="mini-avatar">S</span></div>
-      <div class="mini-content mini-content-wide"><small>OPERATIONS / OVERVIEW</small><h3>Dashboard overview</h3><p class="mini-subtitle">A clear view across the operation.</p>
-        <div class="mini-stats"><div><small>Received</small><b>—</b><span></span></div><div><small>Completed</small><b>—</b><span></span></div><div><small>Pending</small><b>—</b><span></span></div></div>
-        <div class="mini-chart"><div class="mini-chart-head">Garment activity <span>Last 7 days⌄</span></div><svg viewBox="0 0 460 105" preserveAspectRatio="none"><path d="M0 82 C30 76 40 44 76 61 S128 90 164 52 S222 66 254 32 S310 61 348 25 S411 49 460 10" fill="none" stroke="#4264ed" stroke-width="3"/><path d="M0 96H460" stroke="#e8eaf1" stroke-width="1"/></svg></div>
-      </div>
-    </div>
-    <div class="mini-screen mini-transactions">
-      <div class="mini-top"><span class="mini-brand"><i>L</i> LaundroMart</span><span class="mini-dots">•••</span></div>
-      <div class="mini-content"><small>WORKSPACE / TRANSACTIONS</small><h3>New transaction</h3><div class="mini-form-label">Transaction details</div><div class="mini-input">Select customer <span>⌄</span></div><div class="mini-input">Add garment <span>+</span></div><div class="mini-form-label">Order summary</div><div class="mini-summary"><span>Garments added</span><b>—</b></div><div class="mini-summary"><span>Total amount</span><b>—</b></div><div class="mini-cta">Save transaction <span>→</span></div></div>
-    </div>
-    <div class="visual-caption"><span>LAUNDROMART / CONNECTED WORKFLOWS</span><span>Interface exploration</span></div>
-  </div>
+  <figure class="contribution-visual reveal">
+    <img src="./problem-banner.svg" alt="Illustration of LaundroMart's problem space: frustrated customers, missing garments, incomplete records and unclear order status." loading="lazy" width="1600" height="600">
+  </figure>
 </section>
 <section class="section wrap challenge-section" id="challenge">
   <div class="head reveal">
