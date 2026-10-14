@@ -107,7 +107,7 @@ main.cv4-page section.cv6-problem-section .cv6-problem-inner{width:calc(100% - 4
 main.cv4-page section.cv6-problem-section .cv6-problem-copy{width:100%;max-width:920px;margin:0 auto 36px;text-align:left}
 main.cv4-page section.cv6-problem-section .cv6-problem-copy h2{margin:0 0 22px;color:#101B3A;font-size:clamp(32px,3vw,42px);line-height:1.08;font-weight:750;letter-spacing:-.04em;text-align:left}
 main.cv4-page section.cv6-problem-section .cv6-problem-copy p{display:block;margin:18px auto 0;max-width:900px;color:#45516B;font-size:16px;line-height:1.65;text-align:left}
-main.cv4-page section.cv6-problem-section .cv6-problem-copy p strong{color:#101B3A;font-weight:650}
+main.cv4-page section.cv6-problem-section .cv6-problem-copy p strong{color:#2F5BFF;font-weight:650}
 main.cv4-page section.cv6-problem-section .cv6-problem-cards{display:grid;width:70%;max-width:868px;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin:0 auto;align-items:stretch;justify-content:center}
 main.cv4-page section.cv6-problem-section .cv6-problem-card{position:relative;display:flex;flex-direction:column;justify-content:flex-end;width:100%;height:294px;min-height:280px;max-height:301px;min-width:0;padding:18px;overflow:hidden;box-sizing:border-box;border:1px solid #E4EAF5;border-radius:20px;background-color:#fff;background-repeat:no-repeat;background-size:cover;background-position:center 38%;box-shadow:0 7px 20px rgba(17,39,85,.06)}
 main.cv4-page section.cv6-problem-section .cv6-stat-speaking{color:#fff;border-color:#172A4F;background-image:linear-gradient(180deg,rgba(7,22,54,.08) 20%,rgba(5,22,57,.95) 100%),url('/surya-portfolio/comski/speaking-background.jpg');background-position:center 42%}
