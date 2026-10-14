@@ -124,3 +124,61 @@ main.cv4-page section.cv6-problem-section .cv6-stat-footnote{width:70%;max-width
 @media(max-width:1050px) and (min-width:760px){main.cv4-page section.cv6-problem-section .cv6-problem-cards{width:100%;max-width:620px;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}main.cv4-page section.cv6-problem-section .cv6-problem-card{height:294px;min-height:280px;max-height:301px}main.cv4-page section.cv6-problem-section .cv6-stat-footnote{width:100%;max-width:620px}}
 @media(max-width:759px){main.cv4-page section.cv6-problem-section{padding:48px 0 32px}main.cv4-page section.cv6-problem-section .cv6-problem-inner{width:calc(100% - 40px)}main.cv4-page section.cv6-problem-section .cv6-problem-copy{margin-bottom:26px}main.cv4-page section.cv6-problem-section .cv6-problem-cards{width:100%;max-width:340px;grid-template-columns:minmax(0,1fr);gap:16px}main.cv4-page section.cv6-problem-section .cv6-problem-card{height:294px;min-height:280px;max-height:301px;padding:18px;background-position:center 34%}main.cv4-page section.cv6-problem-section .cv6-stat-metric{font-size:45px}main.cv4-page section.cv6-problem-section .cv6-stat-footnote{width:100%;max-width:340px}}
 @media(prefers-reduced-motion:reduce){main.cv4-page section.cv6-problem-section *{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* ComSki CV6 statistic cards — restrained, smooth hover and keyboard feedback. */
+main.cv4-page section.cv6-problem-section .cv6-problem-card {
+  transform: translateY(0) scale(1);
+  transform-origin: center center;
+  transition:
+    transform 420ms cubic-bezier(.22, 1, .36, 1),
+    filter 420ms cubic-bezier(.22, 1, .36, 1),
+    box-shadow 420ms cubic-bezier(.22, 1, .36, 1),
+    border-color 420ms cubic-bezier(.22, 1, .36, 1);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+main.cv4-page section.cv6-problem-section .cv6-stat-copy {
+  transition: filter 420ms cubic-bezier(.22, 1, .36, 1);
+}
+main.cv4-page section.cv6-problem-section .cv6-stat-title,
+main.cv4-page section.cv6-problem-section .cv6-stat-metric,
+main.cv4-page section.cv6-problem-section .cv6-stat-caption {
+  transition:
+    color 380ms cubic-bezier(.22, 1, .36, 1),
+    text-shadow 380ms cubic-bezier(.22, 1, .36, 1);
+}
+@media (hover: hover) and (pointer: fine) {
+  main.cv4-page section.cv6-problem-section .cv6-problem-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    filter: brightness(1.045) contrast(1.025);
+    box-shadow: 0 14px 30px rgba(17,39,85,.13);
+    z-index: 2;
+  }
+  main.cv4-page section.cv6-problem-section .cv6-problem-card:hover .cv6-stat-copy {
+    filter: brightness(1.06);
+  }
+  main.cv4-page section.cv6-problem-section .cv6-problem-card:hover .cv6-stat-title {
+    text-shadow: 0 1px 12px rgba(59,91,219,.12);
+  }
+  main.cv4-page section.cv6-problem-section .cv6-stat-speaking:hover .cv6-stat-title,
+  main.cv4-page section.cv6-problem-section .cv6-stat-speaking:hover .cv6-stat-metric,
+  main.cv4-page section.cv6-problem-section .cv6-stat-speaking:hover .cv6-stat-caption {
+    text-shadow: 0 1px 12px rgba(255,255,255,.18);
+  }
+}
+main.cv4-page section.cv6-problem-section .cv6-problem-card:focus-visible {
+  outline: 3px solid #3B5BDB;
+  outline-offset: 4px;
+}
+@media (prefers-reduced-motion: reduce) {
+  main.cv4-page section.cv6-problem-section .cv6-problem-card,
+  main.cv4-page section.cv6-problem-section .cv6-stat-copy,
+  main.cv4-page section.cv6-problem-section .cv6-stat-title,
+  main.cv4-page section.cv6-problem-section .cv6-stat-metric,
+  main.cv4-page section.cv6-problem-section .cv6-stat-caption {
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
