@@ -884,17 +884,71 @@ function ComskiCaseStudyCV4() {
         </div>
       </section>
 
-          <Section n="13" title="Design system" tone="pink">
-            <Reveal><h2>A system was needed because four skills should feel like one product.</h2></Reveal>
-            <div className="cv4-system">
-              <div className="cv4-token-sheet">
-                <label>COLOR</label>
-                <div className="swatches"><i style={{background:'#3B5BDB'}}/><i style={{background:'#1A1D29'}}/><i style={{background:'#F2A04A'}}/><i style={{background:'#E9A6C8'}}/><i style={{background:'#B9DDFF'}}/><i style={{background:'#17264A'}}/></div>
-                <div className="hexes"><span>#3B5BDB</span><span>#1A1D29</span><span>Orange</span><span>Pink</span><span>Light blue</span><span>Navy</span></div>
-                <label>TYPE SCALE</label><div className="type-scale"><b>Display · 56/64</b><strong>Heading · 43/48</strong><span>Body · 17/28</span><small>Caption · 13/18</small></div>
-                <label>SPACING</label><div className="spacing-scale">{[4,8,12,16,24,32,48,64,96,128].map(x => <i key={x} style={{width: Math.max(8, x * .65)}}><b>{x}</b></i>)}</div>
+          <Section n="13" title="Design system" tone="blue" className="cv6-design-system-section">
+            <div className="cv6-ios-system">
+              <Reveal className="cv6-ios-system-intro">
+                <p className="cv6-ios-eyebrow"><span/> COMSKI DESIGN LANGUAGE</p>
+                <h2>A calm, consistent system.<br/><em>Built for everyday progress.</em></h2>
+                <p className="cv6-ios-system-lede">A light, tactile interface gives four communication skills one recognisable home. Clear hierarchy does the heavy lifting; colour, depth and motion are used only when they help learners understand what to do next.</p>
+              </Reveal>
+
+              <div className="cv6-ios-system-board">
+                <article className="cv6-ios-system-panel cv6-ios-palette-panel">
+                  <div className="cv6-ios-panel-head"><div><span className="cv6-ios-overline">01 / COLOUR</span><h3>Meaning before decoration.</h3></div><span className="cv6-ios-panel-icon">◒</span></div>
+                  <p className="cv6-ios-panel-copy">A restrained base keeps the experience quiet. Blue signals action, while skill accents distinguish content without changing the interaction grammar.</p>
+                  <div className="cv6-ios-swatches">
+                    <div className="cv6-ios-swatch swatch-primary"><span>Action blue</span><b>#3B5BDB</b></div>
+                    <div className="cv6-ios-swatch swatch-ink"><span>Ink</span><b>#1A1D29</b></div>
+                    <div className="cv6-ios-swatch swatch-paper"><span>Warm white</span><b>#FFFEFB</b></div>
+                    <div className="cv6-ios-swatch swatch-listening"><span>Listening</span><b>#B9DDFF</b></div>
+                    <div className="cv6-ios-swatch swatch-writing"><span>Writing</span><b>#E9A6C8</b></div>
+                    <div className="cv6-ios-swatch swatch-speaking"><span>Speaking</span><b>#17264A</b></div>
+                  </div>
+                </article>
+
+                <article className="cv6-ios-system-panel cv6-ios-type-panel">
+                  <div className="cv6-ios-panel-head"><div><span className="cv6-ios-overline">02 / TYPOGRAPHY</span><h3>Readable at a glance.</h3></div><span className="cv6-ios-panel-icon">Aa</span></div>
+                  <div className="cv6-ios-type-specimen">
+                    <span>DISPLAY / 48–64</span>
+                    <strong>Make progress<br/><em>feel possible.</em></strong>
+                    <div className="cv6-ios-type-meta"><span>Semibold · Tight leading</span><span>−4% tracking</span></div>
+                  </div>
+                  <div className="cv6-ios-type-rows">
+                    <div><span>Heading / 28–36</span><b>One skill at a time</b></div>
+                    <div><span>Body / 16–18</span><p>Small, clear steps keep attention on the practice.</p></div>
+                    <div><span>Label / 11–13</span><small>ASSESSMENT · STEP 02 OF 04</small></div>
+                  </div>
+                </article>
+
+                <article className="cv6-ios-system-panel cv6-ios-components-panel">
+                  <div className="cv6-ios-panel-head"><div><span className="cv6-ios-overline">03 / COMPONENTS</span><h3>Familiar patterns, every time.</h3></div><span className="cv6-ios-panel-icon">⌘</span></div>
+                  <p className="cv6-ios-panel-copy">Controls keep the same shape and feedback across reading, listening, writing and speaking.</p>
+                  <div className="cv6-ios-component-preview">
+                    <div className="cv6-ios-preview-top"><span>YOUR PRACTICE</span><span>02 <i>/ 04</i></span></div>
+                    <div className="cv6-ios-progress"><span/></div>
+                    <div className="cv6-ios-preview-question"><span className="cv6-ios-skill-icon">✳</span><div><b>Keep going, at your pace.</b><small>Your next step is ready when you are.</small></div></div>
+                    <div className="cv6-ios-preview-actions"><span>Save for later</span><b>Continue <i>↗</i></b></div>
+                  </div>
+                  <div className="cv6-ios-chip-row"><span>Progress</span><span>Feedback</span><span>Recovery state</span></div>
+                </article>
+
+                <article className="cv6-ios-system-panel cv6-ios-layout-panel">
+                  <div className="cv6-ios-panel-head"><div><span className="cv6-ios-overline">04 / SPACING & LAYOUT</span><h3>Room to think.</h3></div><span className="cv6-ios-panel-icon">↔</span></div>
+                  <p className="cv6-ios-panel-copy">A predictable spacing rhythm and responsive grid give content room without wasting the learner’s attention.</p>
+                  <div className="cv6-ios-layout-demo">
+                    <div className="cv6-ios-layout-bar"><span/><span/><span/><span/><span/><span/><span/><span/><span/><span/><span/><span/></div>
+                    <div className="cv6-ios-layout-content"><div/><div/><div/><div/></div>
+                    <div className="cv6-ios-spacing-scale"><div><i style={{width:'4px'}}/><span>4</span></div><div><i style={{width:'8px'}}/><span>8</span></div><div><i style={{width:'12px'}}/><span>12</span></div><div><i style={{width:'16px'}}/><span>16</span></div><div><i style={{width:'24px'}}/><span>24</span></div><div><i style={{width:'32px'}}/><span>32</span></div><div><i style={{width:'48px'}}/><span>48</span></div></div>
+                  </div>
+                  <div className="cv6-ios-breakpoints"><span>Mobile <b>4 columns</b></span><span>Desktop <b>12 columns</b></span></div>
+                </article>
               </div>
-              <div className="cv4-system-copy"><label>IMPLEMENTATION BACKBONE</label><h3>One component grammar, parameterised by skill.</h3><div><b>GRID</b><span>12-column desktop · 4-column mobile · 768 / 1024 / 1440 breakpoints.</span></div><div><b>COMPONENTS</b><span>Step tracker, question counter, Pro Tips panel, directional completion.</span></div><div><b>RATIONALE</b><span>Structural familiarity transfers even when content and input modality change.</span></div><div><b>ACCESSIBILITY</b><span>Focus visibility, contrast verification, touch-target review and reduced-motion behavior.</span></div></div>
+
+              <div className="cv6-ios-system-footer">
+                <div><span className="cv6-ios-overline">THE SYSTEM RULE</span><h3>One familiar interface.<br/><em>Four distinct ways to practise.</em></h3></div>
+                <p>Shared navigation, progress, spacing and feedback patterns lower the learning cost. Skill-specific content and input controls can change without making ComSki feel like four separate products.</p>
+                <div className="cv6-ios-principle-tags"><span>Consistency</span><span>Progressive disclosure</span><span>Accessible states</span><span>Reduced motion</span></div>
+              </div>
             </div>
           </Section>
 
