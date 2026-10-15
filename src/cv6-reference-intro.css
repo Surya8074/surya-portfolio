@@ -564,7 +564,12 @@ main.cv4-page .cv6-philosophy-copy strong { color: #2F5BFF; font-weight: 650; }
 }
 
 
-/* Five-step ComSki philosophy — refined editorial cards in the brand palette. */
+/* ComSki Design Philosophy — reference-led, editable card UI. */
+main.cv4-page .cv6-philosophy-inner {
+  width: min(1420px, calc(100% - 48px));
+  margin-inline: auto;
+}
+main.cv4-page .cv6-philosophy-copy { max-width: 780px; }
 main.cv4-page .cv6-philosophy-steps {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -576,90 +581,217 @@ main.cv4-page .cv6-philosophy-step {
   position: relative;
   display: flex;
   min-width: 0;
-  min-height: 224px;
+  min-height: 440px;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 20px 17px 18px;
+  align-items: stretch;
+  padding: 24px;
   box-sizing: border-box;
   overflow: hidden;
-  border: 1px solid #E1E8F8;
-  border-radius: 16px;
+  border: 1px solid #E8ECF2;
+  border-radius: 26px;
   background: #FFFFFF;
-  color: #101B3A;
-  box-shadow: 0 4px 14px rgba(24, 48, 100, .035);
+  color: #111827;
+  box-shadow: 0 6px 24px rgba(18, 35, 70, .06);
 }
-main.cv4-page .cv6-philosophy-step::before {
-  position: absolute;
-  inset: 0 0 auto;
-  height: 3px;
-  content: "";
-  background: #3B5BDB;
-  opacity: .9;
-}
-main.cv4-page .cv6-philosophy-step-number {
-  color: #6578B7;
-  font-size: 11px;
-  line-height: 1.3;
-  font-weight: 700;
-  letter-spacing: .08em;
+main.cv4-page .cv6-philosophy-step-top {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 20px;
 }
 main.cv4-page .cv6-philosophy-step-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
-  margin: 15px 0 16px;
-  border: 1px solid #DCE6FF;
-  border-radius: 13px;
-  background: #EEF3FF;
-  color: #2F5BFF;
-  font-size: 25px;
-  line-height: 1;
-  font-weight: 500;
-}
-main.cv4-page .cv6-philosophy-step h3 {
-  margin: 0 0 8px;
-  color: #101B3A;
-  font-size: 18px;
-  line-height: 1.2;
-  font-weight: 700;
-  letter-spacing: -.025em;
-}
-main.cv4-page .cv6-philosophy-step p {
+  flex: 0 0 52px;
+  width: 52px;
+  height: 52px;
   margin: 0;
-  color: #45516B;
-  font-size: 13px;
-  line-height: 1.5;
+  border: 0;
+  border-radius: 16px;
+  background: #F4F7FF;
+  color: #2F5BFF;
+}
+main.cv4-page .cv6-philosophy-step-icon img {
+  display: block;
+  width: 27px;
+  height: 27px;
+  object-fit: contain;
+  filter: none;
+}
+main.cv4-page .cv6-philosophy-progress {
+  position: relative;
+  display: block;
+  height: 4px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 99px;
+  background: #EEF1F6;
+}
+main.cv4-page .cv6-philosophy-progress i {
+  display: block;
+  width: 12px;
+  height: 4px;
+  border-radius: inherit;
+  background: #2F5BFF;
+}
+main.cv4-page .cv6-philosophy-connect .cv6-philosophy-progress i { background: #8B5CF6; }
+main.cv4-page .cv6-philosophy-guide .cv6-philosophy-progress i { background: #E94D9B; }
+main.cv4-page .cv6-philosophy-improve .cv6-philosophy-progress i { background: #21B981; }
+main.cv4-page .cv6-philosophy-step h3 {
+  margin: 0 0 10px;
+  color: #111827;
+  font-size: 23px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -.035em;
+}
+main.cv4-page .cv6-philosophy-step > p {
+  min-height: 66px;
+  margin: 0;
+  color: #667085;
+  font-size: 15px;
+  line-height: 1.45;
   font-weight: 400;
   overflow-wrap: normal;
   word-break: normal;
 }
+main.cv4-page .cv6-philosophy-visual {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  min-height: 190px;
+  margin-top: auto;
+  padding-top: 22px;
+  box-sizing: border-box;
+}
+main.cv4-page .cv6-context-panel,
+main.cv4-page .cv6-profile-visual,
+main.cv4-page .cv6-feedback-visual,
+main.cv4-page .cv6-next-visual {
+  border: 1px solid #EEF1F6;
+  border-radius: 18px;
+  background: linear-gradient(160deg, #FFFFFF, #F8FAFE);
+  box-shadow: 0 5px 18px rgba(26, 46, 87, .055);
+}
+main.cv4-page .cv6-context-panel {
+  padding: 16px 14px;
+  transform: rotate(-2deg);
+}
+main.cv4-page .cv6-context-head { display: flex; align-items: center; gap: 8px; margin-bottom: 18px; }
+main.cv4-page .cv6-avatar-dot { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, #DCE7FF, #A9C0FF); border: 3px solid #fff; box-shadow: 0 0 0 1px #E8ECF2; }
+main.cv4-page .cv6-context-title { color: #344054; font-size: 12px; font-weight: 650; }
+main.cv4-page .cv6-context-more { margin-left: auto; color: #98A2B3; font-size: 12px; letter-spacing: 2px; }
+main.cv4-page .cv6-context-row { display: flex; align-items: center; gap: 10px; margin-top: 12px; }
+main.cv4-page .cv6-mini-icon { display: flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 8px; background: #EEF3FF; color: #2F5BFF; font-size: 17px; }
+main.cv4-page .cv6-context-line { display: block; height: 7px; border-radius: 10px; background: #E8EDF6; }
+main.cv4-page .cv6-context-line.long { width: 82%; }
+main.cv4-page .cv6-context-line.medium { width: 68%; }
+main.cv4-page .cv6-context-line.short { width: 52%; }
+main.cv4-page .cv6-connect-visual { min-height: 202px; padding-top: 0; margin-top: auto; }
+main.cv4-page .cv6-connect-ai {
+  position: absolute;
+  z-index: 2;
+  top: 74px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  transform: translateX(-50%);
+  border: 1px solid #D9E4FF;
+  border-radius: 18px;
+  background: #F4F7FF;
+  color: #101B3A;
+  box-shadow: 0 4px 14px rgba(47,91,255,.08);
+  font-size: 22px;
+  font-weight: 750;
+  letter-spacing: -.04em;
+}
+main.cv4-page .cv6-connect-node {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  width: 78px;
+  min-height: 72px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid #E8ECF2;
+  border-radius: 16px;
+  background: #FFFFFF;
+  color: #667085;
+  box-shadow: 0 4px 14px rgba(18,35,70,.05);
+}
+main.cv4-page .cv6-connect-node img { display: block; width: 24px; height: 24px; color: #2F5BFF; }
+main.cv4-page .cv6-connect-node b { color: #475467; font-size: 10px; line-height: 1.2; font-weight: 600; }
+main.cv4-page .cv6-connect-speaking { top: 0; left: 0; }
+main.cv4-page .cv6-connect-writing { top: 0; right: 0; }
+main.cv4-page .cv6-connect-listening { bottom: 0; left: 0; }
+main.cv4-page .cv6-connect-reading { bottom: 0; right: 0; }
+main.cv4-page .cv6-connect-line { position: absolute; z-index: 0; display: block; height: 1px; background: #DDE6F8; transform-origin: center; }
+main.cv4-page .cv6-connect-line-a { top: 47px; left: 62px; width: calc(50% - 75px); transform: rotate(32deg); }
+main.cv4-page .cv6-connect-line-b { top: 47px; right: 62px; width: calc(50% - 75px); transform: rotate(-32deg); }
+main.cv4-page .cv6-connect-line-c { bottom: 47px; left: 62px; width: calc(50% - 75px); transform: rotate(-32deg); }
+main.cv4-page .cv6-connect-line-d { right: 62px; bottom: 47px; width: calc(50% - 75px); transform: rotate(32deg); }
+main.cv4-page .cv6-profile-visual { padding: 13px; }
+main.cv4-page .cv6-profile-head { display: flex; justify-content: space-between; gap: 6px; margin-bottom: 15px; color: #344054; font-size: 11px; font-weight: 650; }
+main.cv4-page .cv6-profile-head span:last-child { color: #98A2B3; letter-spacing: 2px; }
+main.cv4-page .cv6-profile-radar { position: relative; width: 108px; height: 74px; margin: 0 auto 14px; }
+main.cv4-page .cv6-radar-ring { position: absolute; left: 50%; top: 50%; border: 1px solid #DCE6F8; transform: translate(-50%,-50%) rotate(45deg); }
+main.cv4-page .cv6-radar-ring.ring-one { width: 72px; height: 54px; }
+main.cv4-page .cv6-radar-ring.ring-two { width: 48px; height: 36px; }
+main.cv4-page .cv6-radar-shape { position: absolute; inset: 12px 26px; background: rgba(47,91,255,.15); border: 1px solid #8EA9FF; clip-path: polygon(50% 0, 100% 35%, 76% 100%, 20% 84%, 0 28%); }
+main.cv4-page .cv6-profile-row { display: flex; align-items: center; gap: 8px; margin-top: 10px; color: #667085; font-size: 10px; }
+main.cv4-page .cv6-profile-row > span { width: 62px; flex: 0 0 62px; }
+main.cv4-page .cv6-profile-row > i { display: block; height: 6px; flex: 1; overflow: hidden; border-radius: 99px; background: #E9EEF7; }
+main.cv4-page .cv6-profile-row > i b { display: block; height: 100%; border-radius: inherit; background: #79A8FF; }
+main.cv4-page .cv6-profile-row .bar-one { width: 72%; }
+main.cv4-page .cv6-profile-row .bar-two { width: 55%; }
+main.cv4-page .cv6-profile-row .bar-three { width: 64%; }
+main.cv4-page .cv6-feedback-visual { padding: 14px; background: linear-gradient(160deg, #FFF, #FFFAFD); border-color: #F2EAF1; }
+main.cv4-page .cv6-feedback-head { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; color: #344054; font-size: 11px; line-height: 1.3; }
+main.cv4-page .cv6-feedback-spark { display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 9px; background: #FFF1F7; color: #E94D9B; font-size: 17px; }
+main.cv4-page .cv6-feedback-row { display: flex; align-items: center; gap: 8px; margin-top: 12px; color: #475467; font-size: 11px; line-height: 1.3; }
+main.cv4-page .cv6-feedback-row > span { display: flex; align-items: center; justify-content: center; flex: 0 0 18px; width: 18px; height: 18px; border-radius: 50%; background: #EAF2FF; }
+main.cv4-page .cv6-feedback-row img { display: block; width: 12px; height: 12px; color: #2F5BFF; }
+main.cv4-page .cv6-next-visual { padding: 14px; }
+main.cv4-page .cv6-next-head { display: flex; align-items: center; justify-content: space-between; gap: 6px; padding-bottom: 12px; border-bottom: 1px solid #EEF1F6; color: #344054; font-size: 12px; font-weight: 650; }
+main.cv4-page .cv6-next-head img { display: block; width: 20px; height: 20px; color: #2F5BFF; }
+main.cv4-page .cv6-next-row { display: flex; align-items: center; gap: 9px; margin-top: 14px; color: #475467; font-size: 11px; line-height: 1.25; }
+main.cv4-page .cv6-next-symbol { display: flex; align-items: center; justify-content: center; flex: 0 0 24px; width: 24px; height: 24px; border-radius: 8px; font-size: 13px; font-weight: 700; }
+main.cv4-page .cv6-next-symbol.blue { color: #2F5BFF; background: #EEF3FF; }
+main.cv4-page .cv6-next-symbol.pink { color: #E94D9B; background: #FFF0F7; }
+main.cv4-page .cv6-next-symbol.green { color: #16A36A; background: #E9FBF2; }
 @media (hover: hover) and (pointer: fine) {
   main.cv4-page .cv6-philosophy-step {
-    transition: transform 300ms cubic-bezier(.22, 1, .36, 1), box-shadow 300ms cubic-bezier(.22, 1, .36, 1), border-color 300ms ease, background-color 300ms ease;
+    transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
   }
   main.cv4-page .cv6-philosophy-step:hover {
     transform: translateY(-3px);
-    border-color: #B9C9FF;
-    background: #FBFCFF;
-    box-shadow: 0 10px 24px rgba(47,91,255,.09);
+    border-color: #D6E0F5;
+    box-shadow: 0 9px 28px rgba(18, 35, 70, .085);
   }
 }
-@media (max-width: 1100px) {
-  main.cv4-page .cv6-philosophy-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
-  main.cv4-page .cv6-philosophy-step { min-height: 210px; }
+@media (max-width: 1199px) {
+  main.cv4-page .cv6-philosophy-inner { width: min(100% - 64px, 900px); }
+  main.cv4-page .cv6-philosophy-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  main.cv4-page .cv6-philosophy-step { min-height: 420px; }
+  main.cv4-page .cv6-philosophy-step > p { min-height: 44px; }
 }
-@media (max-width: 640px) {
-  main.cv4-page .cv6-philosophy-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 28px; }
-  main.cv4-page .cv6-philosophy-step { min-height: 202px; padding: 17px 14px 16px; border-radius: 14px; }
-  main.cv4-page .cv6-philosophy-step-icon { width: 38px; height: 38px; margin: 13px 0 14px; font-size: 23px; }
-  main.cv4-page .cv6-philosophy-step h3 { font-size: 16px; }
-  main.cv4-page .cv6-philosophy-step p { font-size: 12px; line-height: 1.48; }
-}
-@media (max-width: 360px) {
-  main.cv4-page .cv6-philosophy-steps { grid-template-columns: minmax(0, 1fr); }
-  main.cv4-page .cv6-philosophy-step { min-height: 0; }
+@media (max-width: 767px) {
+  main.cv4-page .cv6-philosophy-inner { width: calc(100% - 40px); }
+  main.cv4-page section.cv6-philosophy-section { padding: 52px 0 64px; }
+  main.cv4-page .cv6-philosophy-steps { grid-template-columns: minmax(0, 1fr); gap: 16px; margin-top: 28px; }
+  main.cv4-page .cv6-philosophy-step { min-height: 0; padding: 20px; border-radius: 22px; }
+  main.cv4-page .cv6-philosophy-step-top { margin-bottom: 18px; }
+  main.cv4-page .cv6-philosophy-step h3 { font-size: 22px; }
+  main.cv4-page .cv6-philosophy-step > p { min-height: 0; font-size: 15px; }
+  main.cv4-page .cv6-philosophy-visual { width: min(100%, 300px); min-height: 190px; margin-top: 24px; align-self: center; }
+  main.cv4-page .cv6-connect-visual { width: min(100%, 300px); }
 }
 @media (prefers-reduced-motion: reduce) {
   main.cv4-page .cv6-philosophy-step { transition: none !important; }
