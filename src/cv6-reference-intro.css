@@ -566,14 +566,14 @@ main.cv4-page .cv6-philosophy-copy strong { color: #2F5BFF; font-weight: 650; }
 
 /* ComSki Design Philosophy — reference-led, editable card UI. */
 main.cv4-page .cv6-philosophy-inner {
-  width: min(1420px, calc(100% - 48px));
+  width: min(868px, calc(100% - 48px));
   margin-inline: auto;
 }
-main.cv4-page .cv6-philosophy-copy { max-width: 780px; }
+main.cv4-page .cv6-philosophy-copy { max-width: 868px; }
 main.cv4-page .cv6-philosophy-steps {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 16px;
+  gap: 12px;
   width: 100%;
   margin: 32px 0 0;
 }
@@ -581,10 +581,11 @@ main.cv4-page .cv6-philosophy-step {
   position: relative;
   display: flex;
   min-width: 0;
-  min-height: 440px;
+  min-height: 294px;
+  height: 294px;
   flex-direction: column;
   align-items: stretch;
-  padding: 24px;
+  padding: 18px;
   box-sizing: border-box;
   overflow: hidden;
   border: 1px solid #E8ECF2;
@@ -597,15 +598,15 @@ main.cv4-page .cv6-philosophy-step-top {
   display: flex;
   align-items: center;
   gap: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 main.cv4-page .cv6-philosophy-step-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 0 0 52px;
-  width: 52px;
-  height: 52px;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
   margin: 0;
   border: 0;
   border-radius: 16px;
@@ -614,8 +615,8 @@ main.cv4-page .cv6-philosophy-step-icon {
 }
 main.cv4-page .cv6-philosophy-step-icon img {
   display: block;
-  width: 27px;
-  height: 27px;
+  width: 22px;
+  height: 22px;
   object-fit: contain;
   filter: none;
 }
@@ -648,7 +649,7 @@ main.cv4-page .cv6-philosophy-step h3 {
   letter-spacing: -.035em;
 }
 main.cv4-page .cv6-philosophy-step > p {
-  min-height: 66px;
+  min-height: 50px;
   margin: 0;
   color: #667085;
   font-size: 15px;
@@ -661,9 +662,9 @@ main.cv4-page .cv6-philosophy-visual {
   position: relative;
   width: 100%;
   min-width: 0;
-  min-height: 190px;
+  min-height: 120px;
   margin-top: auto;
-  padding-top: 22px;
+  padding-top: 14px;
   box-sizing: border-box;
 }
 main.cv4-page .cv6-context-panel,
@@ -689,17 +690,17 @@ main.cv4-page .cv6-context-line { display: block; height: 7px; border-radius: 10
 main.cv4-page .cv6-context-line.long { width: 82%; }
 main.cv4-page .cv6-context-line.medium { width: 68%; }
 main.cv4-page .cv6-context-line.short { width: 52%; }
-main.cv4-page .cv6-connect-visual { min-height: 202px; padding-top: 0; margin-top: auto; }
+main.cv4-page .cv6-connect-visual { min-height: 150px; padding-top: 0; margin-top: auto; }
 main.cv4-page .cv6-connect-ai {
   position: absolute;
   z-index: 2;
-  top: 74px;
+  top: 54px;
   left: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 58px;
-  height: 58px;
+  width: 48px;
+  height: 48px;
   transform: translateX(-50%);
   border: 1px solid #D9E4FF;
   border-radius: 18px;
@@ -714,8 +715,8 @@ main.cv4-page .cv6-connect-node {
   position: absolute;
   z-index: 2;
   display: flex;
-  width: 78px;
-  min-height: 72px;
+  width: 64px;
+  min-height: 58px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -726,7 +727,7 @@ main.cv4-page .cv6-connect-node {
   color: #667085;
   box-shadow: 0 4px 14px rgba(18,35,70,.05);
 }
-main.cv4-page .cv6-connect-node img { display: block; width: 24px; height: 24px; color: #2F5BFF; }
+main.cv4-page .cv6-connect-node img { display: block; width: 20px; height: 20px; color: #2F5BFF; }
 main.cv4-page .cv6-connect-node b { color: #475467; font-size: 10px; line-height: 1.2; font-weight: 600; }
 main.cv4-page .cv6-connect-speaking { top: 0; left: 0; }
 main.cv4-page .cv6-connect-writing { top: 0; right: 0; }
