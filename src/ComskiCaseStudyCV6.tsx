@@ -833,7 +833,6 @@ function ComskiCaseStudyCV4() {
         </div>
       
           <div className="cv6-philosophy-application">
-            <p className="cv6-philosophy-eyebrow"><span>IN PRACTICE</span><span>DESIGN PSYCHOLOGY</span></p>
             <h2>Turning principles into product decisions.</h2>
             <p className="cv6-philosophy-application-intro">These decisions show how ComSki’s learner-first principles shaped the actual experience.</p>
             <div className="cv6-challenge-cards" aria-label="Four ComSki design challenges">
