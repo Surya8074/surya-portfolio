@@ -425,40 +425,6 @@ function AntigravityField() {
   return <canvas ref={canvasRef} className="cv6-ag-field" aria-hidden="true" />;
 }
 function ComskiCaseStudyCV4() {
-  useEffect(() => {
-    const carousels = document.querySelectorAll<HTMLElement>('.cv6-philosophy-application .cv6-challenge-carousel');
-    const cleanups: Array<() => void> = [];
-
-    carousels.forEach((carousel) => {
-      const track = carousel.querySelector<HTMLElement>('.cv6-challenge-cards');
-      const buttons = Array.from(carousel.querySelectorAll<HTMLButtonElement>('.cv6-challenge-arrow'));
-      if (!track) return;
-
-      const syncButtons = () => {
-        const maxScroll = track.scrollWidth - track.clientWidth;
-        buttons.forEach((button) => {
-          const direction = Number(button.dataset.scrollDirection || 1);
-          button.disabled = direction < 0 ? track.scrollLeft <= 2 : track.scrollLeft >= maxScroll - 2;
-        });
-      };
-      const handleClick = (event: Event) => {
-        const button = event.currentTarget as HTMLButtonElement;
-        const direction = Number(button.dataset.scrollDirection || 1);
-        track.scrollBy({ left: direction * (344 + 18), behavior: 'smooth' });
-      };
-      buttons.forEach((button) => button.addEventListener('click', handleClick));
-      track.addEventListener('scroll', syncButtons, { passive: true });
-      window.addEventListener('resize', syncButtons);
-      syncButtons();
-      cleanups.push(() => {
-        buttons.forEach((button) => button.removeEventListener('click', handleClick));
-        track.removeEventListener('scroll', syncButtons);
-        window.removeEventListener('resize', syncButtons);
-      });
-    });
-
-    return () => cleanups.forEach((cleanup) => cleanup());
-  }, []);
   const reduce = useReducedMotion();
   const [progress, setProgress] = useState(0);
   const [activeScreen, setActiveScreen] = useState(0);
@@ -868,9 +834,7 @@ function ComskiCaseStudyCV4() {
           <div className="cv6-philosophy-application">
             <h2>Turning principles into product decisions.</h2>
             <p className="cv6-philosophy-application-intro">These decisions show how ComSki’s learner-first principles shaped the actual experience.</p>
-            <div className="cv6-challenge-carousel">
-              <button className="cv6-challenge-arrow cv6-challenge-arrow-prev" type="button" aria-label="Scroll cards left" data-scroll-direction="-1">‹</button>
-              <div className="cv6-challenge-cards" aria-label="Four ComSki design challenges">
+            <div className="cv6-challenge-cards" aria-label="Four ComSki design challenges">
             <article className="cv6-challenge-card">
               <div className="cv6-challenge-copy">
                 <p className="cv6-challenge-label">CHALLENGE 01</p>
@@ -915,8 +879,6 @@ function ComskiCaseStudyCV4() {
               </div>
               <span className="cv6-challenge-plus" aria-hidden="true">+</span>
             </article>
-              </div>
-              <button className="cv6-challenge-arrow cv6-challenge-arrow-next" type="button" aria-label="Scroll cards right" data-scroll-direction="1">›</button>
             </div>
           </div>
         </div>
