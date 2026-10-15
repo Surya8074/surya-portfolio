@@ -1144,3 +1144,12 @@ main.cv4-page .cv6-philosophy-application .cv6-challenge-arrow {
     font-size: 22px;
   }
 }
+
+
+/* Final card polish: pure white surfaces and no plus ornaments. */
+main.cv4-page .cv6-philosophy-application .cv6-challenge-card {
+  background: #FFFFFF !important;
+}
+main.cv4-page .cv6-philosophy-application .cv6-challenge-plus {
+  display: none !important;
+}
