@@ -1276,3 +1276,36 @@ main.cv4-page .cv6-philosophy-application .cv6-challenge-card:first-child .cv6-c
     height: auto !important;
   }
 }
+
+/* Uploaded visual for challenge card 02, displayed without cropping. */
+main.cv4-page .cv6-philosophy-application .cv6-challenge-card:nth-child(2) .cv6-challenge-art-journey {
+  position: relative;
+  inset: auto;
+  display: flex;
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  min-height: 0;
+  margin: 16px 14px 14px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #F8FAFF;
+  border-radius: 12px;
+}
+main.cv4-page .cv6-philosophy-application .cv6-challenge-card:nth-child(2) .cv6-challenge-art-journey img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
+  transform: none;
+}
+@media (max-width: 760px) {
+  main.cv4-page .cv6-philosophy-application .cv6-challenge-card:nth-child(2) .cv6-challenge-art-journey {
+    margin: 14px 12px 12px;
+  }
+}
