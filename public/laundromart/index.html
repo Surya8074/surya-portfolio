@@ -587,6 +587,166 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
 #decision-matrix .matrix-decision-story p{font-size:16px;line-height:1.6;color:var(--ink);margin:0 0 14px}
 @media(max-width:650px){#decision-matrix{padding-top:12px;padding-bottom:48px}#decision-matrix .matrix-frame{padding-left:22px;padding-bottom:25px;margin-bottom:22px}#decision-matrix .matrix-chart{border-radius:13px}#decision-matrix .matrix-pill{font-size:8px;padding:6px 7px}#decision-matrix .matrix-label-top{font-size:8px;top:9px}#decision-matrix .matrix-label-left,#decision-matrix .matrix-label-right{font-size:8px;top:calc(50% + 7px)}#decision-matrix .matrix-label-left{left:7px}#decision-matrix .matrix-label-right{right:7px}#decision-matrix .matrix-label-bottom{font-size:8px;bottom:7px}#decision-matrix .matrix-y-axis{font-size:10px}#decision-matrix .matrix-x-axis{font-size:11px}#decision-matrix .p6{max-width:80px}#decision-matrix .matrix-decision-story p{font-size:15px}}
 </style>
+<section class="section wrap design-explorations" id="design-explorations">
+  <div class="explorations-shell">
+    <div class="explorations-heading">
+      <span class="explorations-kicker">DESIGN EXPLORATIONS</span>
+      <h2>Testing how the workflow could come together.</h2>
+      <p>I explored different ways to surface key operational information, keep actions close to their context, and make each workflow feel connected to the wider system.</p>
+    </div>
+    <div class="exploration-grid">
+      <article class="exploration-card">
+        <div class="exploration-meta"><span>01 / Overview</span><span class="exploration-status">Hierarchy</span></div>
+        <div class="exploration-visual dashboard-visual">
+          <div class="mock-sidebar"><b>V</b><i></i><i></i><i></i><i></i></div>
+          <div class="mock-workspace"><div class="mock-topline"><b>Overview</b><span>Today⌄</span></div><div class="mock-kpis"><span><small>Received</small><b>7,265</b></span><span><small>Completed</small><b>3,671</b></span><span><small>Pending</small><b>156</b></span></div><div class="mock-chart"><small>Total clothes</small><svg viewBox="0 0 300 78" role="img" aria-label="Illustrative clothes trend chart"><path d="M0 62 C28 54 34 40 58 47 S95 65 119 38 S155 20 179 31 S220 54 244 21 S278 22 300 8" fill="none" stroke="#6175e8" stroke-width="3" stroke-linecap="round"/><path d="M0 62 C28 54 34 40 58 47 S95 65 119 38 S155 20 179 31 S220 54 244 21 S278 22 300 8 L300 78 L0 78Z" fill="#6175e8" opacity=".1"/></svg></div></div>
+        </div>
+        <span class="exploration-note note-one">Prioritise daily status</span>
+        <h3>Overview at a glance</h3><p>Summary counts lead the page, with trends and supporting activity below.</p>
+      </article>
+      <article class="exploration-card">
+        <div class="exploration-meta"><span>02 / Inventory</span><span class="exploration-status">Scanability</span></div>
+        <div class="exploration-visual table-visual">
+          <div class="mock-window-head"><b>Inventory</b><span>＋ New record</span></div><div class="mock-search">⌕ &nbsp; Search garment or order</div>
+          <div class="mock-table"><div class="mock-table-row header"><span>GARMENT</span><span>STATUS</span><span>UPDATED</span></div><div class="mock-table-row"><span><b>Shirt</b><small>LM-10482</small></span><em>Ready</em><span>Today</span></div><div class="mock-table-row"><span><b>Trousers</b><small>LM-10481</small></span><em class="pending">Washing</em><span>Today</span></div><div class="mock-table-row"><span><b>Jacket</b><small>LM-10480</small></span><em class="review">Received</em><span>Yesterday</span></div><div class="mock-table-row"><span><b>Dress</b><small>LM-10479</small></span><em>Ready</em><span>Yesterday</span></div></div>
+        </div>
+        <span class="exploration-note note-two">Make status easy to compare</span>
+        <h3>Inventory records</h3><p>Consistent rows keep garment identity and progress easy to scan.</p>
+      </article>
+      <article class="exploration-card">
+        <div class="exploration-meta"><span>03 / Transaction</span><span class="exploration-status">Task focus</span></div>
+        <div class="exploration-visual transaction-visual">
+          <div class="mock-modal"><div class="mock-modal-title"><b>New transaction</b><span>×</span></div><small>Customer</small><div class="mock-field">Select customer <span>⌄</span></div><small>Garment details</small><div class="mock-form-row"><div class="mock-field">Garment type <span>⌄</span></div><div class="mock-field">Quantity <b>02</b></div></div><small>Service type</small><div class="mock-service"><span>◉ Wash & fold</span><span>○ Dry clean</span></div><div class="mock-submit">Create transaction</div></div>
+        </div>
+        <span class="exploration-note note-three">Keep the next action clear</span>
+        <h3>Transaction entry</h3><p>A focused form groups related inputs and keeps the primary action visible.</p>
+      </article>
+      <article class="exploration-card">
+        <div class="exploration-meta"><span>04 / Facility</span><span class="exploration-status">Context</span></div>
+        <div class="exploration-visual facility-visual">
+          <div class="mock-window-head"><b>Facilities</b><span>＋ Add facility</span></div><div class="facility-summary"><div class="facility-icon">⌂</div><div><b>Central Laundry</b><small>Vijayawada · Main facility</small></div><span class="facility-live">Active</span></div><div class="facility-details"><div><small>CAMERAS</small><b>04</b></div><div><small>OPERATORS</small><b>12</b></div><div><small>ORDERS TODAY</small><b>186</b></div></div><div class="mock-camera-row"><span class="camera-thumb">◉</span><span><b>Intake camera</b><small>Connected · Last checked just now</small></span><span class="camera-arrow">↗</span></div><div class="mock-camera-row"><span class="camera-thumb">◉</span><span><b>Processing area</b><small>Connected · Last checked 5m ago</small></span><span class="camera-arrow">↗</span></div>
+        </div>
+        <span class="exploration-note note-four">Connect setup to its location</span>
+        <h3>Facility and camera setup</h3><p>Camera actions sit within the facility context instead of feeling like a separate tool.</p>
+      </article>
+      <article class="exploration-card">
+        <div class="exploration-meta"><span>05 / Operators</span><span class="exploration-status">People</span></div>
+        <div class="exploration-visual operators-visual">
+          <div class="mock-window-head"><b>Operator management</b><span>＋ Add operator</span></div><div class="operator-profile"><div class="operator-avatar">NC</div><div><b>Natali Craig</b><small>Facility operator · Active</small></div><span class="operator-menu">•••</span></div><div class="operator-stats"><div><small>Assigned orders</small><b>24</b></div><div><small>Completed today</small><b>18</b></div></div><div class="mock-activity-title">Recent activity</div><div class="activity-line"><span class="activity-dot"></span><span><b>Order marked ready</b><small>Garment LM-10482 · 10:42 AM</small></span></div><div class="activity-line"><span class="activity-dot blue"></span><span><b>New intake recorded</b><small>Garment LM-10491 · 10:18 AM</small></span></div>
+        </div>
+        <span class="exploration-note note-five">Keep team context visible</span>
+        <h3>Operator workspace</h3><p>People, workload and recent actions are grouped to support team-level oversight.</p>
+      </article>
+      <article class="exploration-card">
+        <div class="exploration-meta"><span>06 / Reporting</span><span class="exploration-status">Insight</span></div>
+        <div class="exploration-visual reports-visual">
+          <div class="mock-window-head"><b>Operations report</b><span>This week⌄</span></div><div class="report-metric"><div><small>Garments processed</small><b>2,486</b><em>↑ 12.8%</em></div><div class="report-ring"><span>86%<small>on time</small></span></div></div><div class="report-bars"><div style="height:38%"><small>Mon</small></div><div style="height:62%"><small>Tue</small></div><div style="height:51%"><small>Wed</small></div><div style="height:84%"><small>Thu</small></div><div style="height:70%"><small>Fri</small></div><div style="height:95%"><small>Sat</small></div><div style="height:57%"><small>Sun</small></div></div><div class="report-legend"><span><i></i>Processed garments</span><span><i></i>On-time completion</span></div>
+        </div>
+        <span class="exploration-note note-six">Show trends, not just totals</span>
+        <h3>Operational reporting</h3><p>Trend and completion signals add context to the day-to-day numbers.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<style>
+/* Six annotated LaundroMart design explorations inspired by the supplied reference */
+#design-explorations{padding-top:36px;padding-bottom:82px}
+#design-explorations .explorations-shell{background:#f3f9fc;border-radius:30px;padding:54px 48px 48px}
+#design-explorations .explorations-heading{max-width:650px;margin:0 auto 34px;text-align:center}
+#design-explorations .explorations-kicker{font-size:10px;font-weight:750;letter-spacing:.16em;color:#6675cf}
+#design-explorations .explorations-heading h2{font-size:27px;line-height:1.25;letter-spacing:-.035em;color:#1c2332;margin:12px 0}
+#design-explorations .explorations-heading p{font-size:15px;line-height:1.65;color:#626b7c;margin:0}
+#design-explorations .exploration-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 22px}
+#design-explorations .exploration-card{position:relative;min-width:0;padding-top:18px}
+#design-explorations .exploration-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px;font-size:10px;font-weight:700;color:#4c5566}
+#design-explorations .exploration-status{color:#6e7788;font-size:9px;font-weight:600}
+#design-explorations .exploration-visual{height:190px;position:relative;overflow:hidden;border:1px solid #dce2ea;border-radius:11px;background:#fff;box-shadow:0 7px 18px #1c2a4010;padding:13px;color:#273146;font-size:9px}
+#design-explorations .exploration-card h3{font-size:14px;line-height:1.35;margin:22px 0 6px;color:#22283a;font-weight:700}
+#design-explorations .exploration-card>p{font-size:12px;line-height:1.55;margin:0;color:#626b7c}
+#design-explorations .exploration-note{position:absolute;z-index:3;background:#ffe59a;color:#4d4020;border:1px solid #f6d879;border-radius:7px;padding:6px 9px;font-size:9px;line-height:1.15;box-shadow:0 3px 8px #9d7c2518;white-space:nowrap}
+#design-explorations .note-one{top:45px;right:8px}
+#design-explorations .note-two{top:45px;left:26%}
+#design-explorations .note-three{top:45px;right:6px}
+#design-explorations .note-four{top:45px;left:20%}
+#design-explorations .note-five{top:45px;right:4px}
+#design-explorations .note-six{top:45px;left:27%}
+#design-explorations .mock-sidebar{position:absolute;inset:0 auto 0 0;width:35px;background:#f8f9fd;border-right:1px solid #e8ebf1;display:flex;align-items:center;flex-direction:column;gap:18px;padding-top:13px}
+#design-explorations .mock-sidebar b{display:grid;place-items:center;width:18px;height:18px;border-radius:5px;background:#6575e7;color:#fff;font-size:10px}
+#design-explorations .mock-sidebar i{width:12px;height:12px;border:1px solid #c7cedb;border-radius:4px}
+#design-explorations .mock-workspace{margin-left:36px}
+#design-explorations .mock-topline,#design-explorations .mock-window-head{display:flex;justify-content:space-between;align-items:center;font-size:10px;margin-bottom:10px}
+#design-explorations .mock-topline span,#design-explorations .mock-window-head span{padding:5px 7px;border:1px solid #e7eaf0;border-radius:5px;color:#59657b;font-size:8px}
+#design-explorations .mock-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+#design-explorations .mock-kpis span{display:flex;flex-direction:column;gap:4px;background:#f7f8fc;border:1px solid #edf0f5;border-radius:5px;padding:7px}
+#design-explorations .mock-kpis small,#design-explorations .mock-kpis b{font-size:8px}
+#design-explorations .mock-kpis small{color:#7a8497}
+#design-explorations .mock-kpis b{font-size:12px}
+#design-explorations .mock-chart{margin-top:9px;border:1px solid #edf0f5;border-radius:5px;padding:7px 8px 2px;font-size:8px;color:#69758a}
+#design-explorations .mock-chart svg{display:block;width:100%;height:68px}
+#design-explorations .mock-search{padding:7px 9px;border:1px solid #e6eaf1;border-radius:5px;color:#9299a8;font-size:8px;margin-bottom:9px}
+#design-explorations .mock-table-row{display:grid;grid-template-columns:1.2fr .8fr .7fr;align-items:center;gap:4px;padding:9px 4px;border-bottom:1px solid #eef0f4;font-size:8px}
+#design-explorations .mock-table-row.header{font-size:7px;color:#8b93a2;font-weight:700;background:#f8f9fb;padding:7px 4px}
+#design-explorations .mock-table-row span:first-child{display:flex;flex-direction:column;gap:3px}
+#design-explorations .mock-table-row small{font-size:7px;color:#929aaa}
+#design-explorations .mock-table-row em{justify-self:start;font-style:normal;background:#e4f6eb;color:#248456;border-radius:8px;padding:3px 5px;font-size:7px}
+#design-explorations .mock-table-row em.pending{background:#fff2d6;color:#9b6a08}
+#design-explorations .mock-table-row em.review{background:#e8efff;color:#5269c5}
+#design-explorations .transaction-visual{background:#eef1f7;display:grid;place-items:center}
+#design-explorations .mock-modal{width:92%;background:#fff;border:1px solid #e4e7ee;border-radius:7px;box-shadow:0 4px 14px #26324a12;padding:10px}
+#design-explorations .mock-modal-title{display:flex;justify-content:space-between;font-size:10px;margin-bottom:10px}
+#design-explorations .mock-modal-title span{color:#8790a0}
+#design-explorations .mock-modal>small{display:block;font-size:7px;color:#697489;margin:8px 0 4px}
+#design-explorations .mock-field{display:flex;justify-content:space-between;align-items:center;border:1px solid #e2e6ee;border-radius:4px;padding:6px;color:#7d8696;font-size:8px}
+#design-explorations .mock-form-row{display:grid;grid-template-columns:1fr .65fr;gap:5px}
+#design-explorations .mock-service{display:flex;gap:6px;flex-wrap:wrap;color:#5d6b84;font-size:7px;margin:5px 0}
+#design-explorations .mock-submit{margin-top:9px;background:#586ce0;color:white;border-radius:4px;padding:7px;text-align:center;font-size:8px;font-weight:700}
+#design-explorations .facility-summary{display:flex;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid #edf0f4}
+#design-explorations .facility-icon{width:27px;height:27px;display:grid;place-items:center;border-radius:7px;background:#e9edff;color:#5b6ee0;font-size:15px}
+#design-explorations .facility-summary>div:nth-child(2){display:flex;flex-direction:column;gap:4px}
+#design-explorations .facility-summary b,#design-explorations .operator-profile b{font-size:9px}
+#design-explorations .facility-summary small,#design-explorations .operator-profile small{font-size:7px;color:#7f899a}
+#design-explorations .facility-live{margin-left:auto;background:#e4f6eb;color:#218251;border-radius:8px;padding:4px 6px;font-size:7px}
+#design-explorations .facility-details{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:10px 0}
+#design-explorations .facility-details div{display:flex;flex-direction:column;gap:4px;padding:6px;background:#f8f9fc;border-radius:5px}
+#design-explorations .facility-details small{font-size:6px;color:#8a92a1}
+#design-explorations .facility-details b{font-size:12px}
+#design-explorations .mock-camera-row{display:flex;align-items:center;gap:7px;padding:7px 0;border-top:1px solid #f0f1f5}
+#design-explorations .camera-thumb{display:grid;place-items:center;width:25px;height:22px;border-radius:4px;background:#e7ebf3;color:#6574d5}
+#design-explorations .mock-camera-row>span:nth-child(2){display:flex;flex-direction:column;gap:3px}
+#design-explorations .mock-camera-row b{font-size:8px}
+#design-explorations .mock-camera-row small{font-size:7px;color:#8a92a1}
+#design-explorations .camera-arrow{margin-left:auto;color:#7180d9}
+#design-explorations .operator-profile{display:flex;align-items:center;gap:8px;background:#f8f9fc;border:1px solid #edf0f4;border-radius:6px;padding:10px}
+#design-explorations .operator-avatar{width:28px;height:28px;display:grid;place-items:center;border-radius:50%;background:#dfe5ff;color:#5367cc;font-size:8px;font-weight:700}
+#design-explorations .operator-profile>div:nth-child(2){display:flex;flex-direction:column;gap:4px}
+#design-explorations .operator-menu{margin-left:auto;color:#8b93a3}
+#design-explorations .operator-stats{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:9px}
+#design-explorations .operator-stats div{display:flex;flex-direction:column;gap:4px;background:#fff;border:1px solid #edf0f4;border-radius:5px;padding:8px}
+#design-explorations .operator-stats small,#design-explorations .report-metric small{font-size:7px;color:#818a9b}
+#design-explorations .operator-stats b{font-size:12px}
+#design-explorations .mock-activity-title{font-size:8px;font-weight:700;margin:10px 0 7px}
+#design-explorations .activity-line{display:flex;align-items:flex-start;gap:7px;padding:5px 0}
+#design-explorations .activity-dot{width:6px;height:6px;flex:none;border-radius:50%;background:#48b78a;margin-top:4px}
+#design-explorations .activity-dot.blue{background:#6d7fe4}
+#design-explorations .activity-line span:last-child{display:flex;flex-direction:column;gap:3px}
+#design-explorations .activity-line b{font-size:8px}
+#design-explorations .activity-line small{font-size:7px;color:#8992a1}
+#design-explorations .report-metric{display:flex;align-items:center;justify-content:space-between;padding:8px 5px}
+#design-explorations .report-metric>div:first-child{display:flex;flex-direction:column;gap:5px}
+#design-explorations .report-metric b{font-size:20px;display:block}
+#design-explorations .report-metric em{font-style:normal;color:#2d9b6a;font-size:8px}
+#design-explorations .report-ring{width:58px;height:58px;border-radius:50%;background:conic-gradient(#6878e8 0 86%,#e8ebf4 86%);display:grid;place-items:center}
+#design-explorations .report-ring>span{width:44px;height:44px;border-radius:50%;background:white;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:10px;font-weight:700}
+#design-explorations .report-ring small{font-size:6px;font-weight:500;color:#828a99}
+#design-explorations .report-bars{height:66px;display:flex;align-items:flex-end;gap:7px;border-bottom:1px solid #e8ebf1;padding:0 8px}
+#design-explorations .report-bars div{flex:1;position:relative;min-width:0;background:linear-gradient(180deg,#7886ed,#bbc4fb);border-radius:3px 3px 0 0}
+#design-explorations .report-bars small{position:absolute;top:calc(100% + 4px);left:50%;transform:translateX(-50%);font-size:6px;color:#828a99}
+#design-explorations .report-legend{display:flex;gap:10px;margin-top:14px;color:#7d8696;font-size:6px}
+#design-explorations .report-legend span{display:flex;align-items:center;gap:4px}
+#design-explorations .report-legend i{width:5px;height:5px;border-radius:50%;background:#7886ed}
+@media(max-width:1000px){#design-explorations .explorations-shell{padding:38px 28px}#design-explorations .exploration-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 18px}#design-explorations .exploration-visual{height:200px}}
+@media(max-width:620px){#design-explorations{padding-top:20px;padding-bottom:48px}#design-explorations .explorations-shell{padding:28px 16px;border-radius:20px}#design-explorations .explorations-heading h2{font-size:23px}#design-explorations .explorations-heading p{font-size:14px}#design-explorations .exploration-grid{grid-template-columns:1fr;gap:26px}#design-explorations .exploration-visual{height:220px}#design-explorations .exploration-note{font-size:8px}#design-explorations .exploration-card h3{margin-top:20px}}
+</style>
 <section class="section compact wrap" id="system"><div class="dark"><div class="eyebrow">02 — Product model</div><h2>Connect the physical workflow to the digital record.</h2><p>The product concept connects camera-based garment capture and AI-assisted data with an operational interface for reviewing records, managing staff and overseeing facilities.</p><div class="flow"><div class="step"><small>STEP 01</small><strong>Capture</strong><span>Camera workflows provide visual records of garments in the operation.</span></div><div class="step"><small>STEP 02</small><strong>Organise</strong><span>AI-assisted garment data is structured into records the team can work with.</span></div><div class="step"><small>STEP 03</small><strong>Operate</strong><span>The dashboard brings inventory, staff, facilities and reporting into view.</span></div></div></div></section>
 <section class="section wrap" id="experience"><div class="head"><div class="num">03 — The experience</div><div><h2>A connected system across multiple workflows.</h2><p class="intro">This walkthrough follows the way the platform is organised—from the overview, into garment records, then into the people and infrastructure supporting the work.</p></div></div>
 <div class="feature"><div class="feature-grid"><div><div class="feature-label">01 / Inventory</div><h3>Make garment records easy to scan and act on.</h3></div><div class="feature-copy"><p>Inventory is where operational detail becomes actionable. A clear table structure, status cues and predictable actions help users move between records without losing context.</p><p>The layout prioritises scanning first, then provides a path into more detailed garment and order information.</p></div></div><div class="art"><svg class="screen" viewBox="0 0 1100 560" role="img" aria-label="Illustrative inventory management screen"><rect width="1100" height="560" rx="14" fill="#f8f9fc"/><rect width="175" height="560" fill="#fff"/><text x="24" y="42" font-size="16" font-weight="700" fill="#24283a">LaundroMart</text><g font-size="13" fill="#777e8d"><text x="24" y="100">Overview</text><rect x="12" y="119" width="150" height="38" rx="8" fill="#eeedff"/><text x="24" y="143" fill="#4264ed" font-weight="700">Inventory</text><text x="24" y="190">Transactions</text><text x="24" y="237">Operators</text><text x="24" y="284">Facilities</text><text x="24" y="331">Reports</text></g><text x="205" y="48" font-size="25" font-weight="700" fill="#222638">Inventory</text><text x="205" y="74" font-size="12" fill="#838999">Manage garment records and track order status.</text><rect x="205" y="100" width="650" height="42" rx="8" fill="#fff" stroke="#e2e5ed"/><text x="225" y="126" font-size="12" fill="#969baa">Search garment, order or customer…</text><rect x="870" y="100" width="200" height="42" rx="8" fill="#4264ed"/><text x="970" y="126" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">+ New record</text><rect x="205" y="160" width="865" height="355" rx="10" fill="#fff" stroke="#e2e5ed"/><rect x="205" y="160" width="865" height="45" rx="10" fill="#f4f5f9"/><g font-size="11" fill="#858b9a" font-weight="700"><text x="225" y="187">RECORD ID</text><text x="365" y="187">GARMENT</text><text x="535" y="187">CUSTOMER</text><text x="690" y="187">STATUS</text><text x="865" y="187">UPDATED</text></g><g font-size="12" fill="#33384a"><text x="225" y="237">LM-10482</text><text x="365" y="237">Formal shirt</text><text x="535" y="237">Customer 01</text><text x="865" y="237">Sample date</text><text x="225" y="290">LM-10481</text><text x="365" y="290">Trousers</text><text x="535" y="290">Customer 02</text><text x="865" y="290">Sample date</text><text x="225" y="343">LM-10480</text><text x="365" y="343">Jacket</text><text x="535" y="343">Customer 03</text><text x="865" y="343">Sample date</text><text x="225" y="396">LM-10479</text><text x="365" y="396">Cotton shirt</text><text x="535" y="396">Customer 04</text><text x="865" y="396">Sample date</text><text x="225" y="449">LM-10478</text><text x="365" y="449">Dress</text><text x="535" y="449">Customer 05</text><text x="865" y="449">Sample date</text></g><g font-size="10" font-weight="700"><rect x="680" y="219" width="88" height="25" rx="12" fill="#e5f7ed"/><text x="724" y="235" text-anchor="middle" fill="#23885d">Completed</text><rect x="680" y="272" width="88" height="25" rx="12" fill="#fff3dc"/><text x="724" y="288" text-anchor="middle" fill="#9b6a0d">In progress</text><rect x="680" y="325" width="88" height="25" rx="12" fill="#eeedff"/><text x="724" y="341" text-anchor="middle" fill="#6454cb">Received</text><rect x="680" y="378" width="88" height="25" rx="12" fill="#e5f7ed"/><text x="724" y="394" text-anchor="middle" fill="#23885d">Completed</text><rect x="680" y="431" width="88" height="25" rx="12" fill="#fff3dc"/><text x="724" y="447" text-anchor="middle" fill="#9b6a0d">In progress</text></g><g stroke="#edf0f5"><path d="M205 258H1070M205 311H1070M205 364H1070M205 417H1070M205 470H1070"/></g></svg><div class="caption"><span>Inventory records</span><span>Illustrative interface preview</span></div></div></div>
