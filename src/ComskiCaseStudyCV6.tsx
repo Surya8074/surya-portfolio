@@ -853,7 +853,7 @@ function ComskiCaseStudyCV4() {
                 <p>Speaking, writing, listening and reading needed distinct tasks without feeling like separate products.</p>
               </div>
               <div className="cv6-challenge-art cv6-challenge-art-journey">
-                <img src={BASE + 'Desktop - 1.svg'} alt="ComSki My Journey dashboard connecting the four communication skills" loading="lazy" />
+                <img src={BASE + '2nd%20card.png'} alt="ComSki second challenge card visual showing the unified learning journey" loading="lazy" />
               </div>
               <span className="cv6-challenge-plus" aria-hidden="true">+</span>
             </article>
