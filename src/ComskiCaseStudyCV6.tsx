@@ -798,6 +798,38 @@ function ComskiCaseStudyCV4() {
             <p>The experience brings speaking, writing, listening, and reading into one coherent journey. Each skill has its own needs, but the interaction should remain familiar, approachable, and easy to follow.</p>
             <p>This shaped our core principle: <strong>make practice approachable, feedback actionable, and progress clear.</strong></p>
           </div>
+          <div className="cv6-philosophy-steps" aria-label="ComSki design principles">
+            <article className="cv6-philosophy-step">
+              <span className="cv6-philosophy-step-number">01</span>
+              <span className="cv6-philosophy-step-icon" aria-hidden="true">◎</span>
+              <h3>Understand</h3>
+              <p>Start with each learner’s needs, goals, and communication challenges.</p>
+            </article>
+            <article className="cv6-philosophy-step">
+              <span className="cv6-philosophy-step-number">02</span>
+              <span className="cv6-philosophy-step-icon" aria-hidden="true">◫</span>
+              <h3>Connect</h3>
+              <p>Bring speaking, writing, listening, and reading into one coherent journey.</p>
+            </article>
+            <article className="cv6-philosophy-step">
+              <span className="cv6-philosophy-step-number">03</span>
+              <span className="cv6-philosophy-step-icon" aria-hidden="true">⌕</span>
+              <h3>Identify</h3>
+              <p>Help learners recognise their strengths and where they can improve.</p>
+            </article>
+            <article className="cv6-philosophy-step">
+              <span className="cv6-philosophy-step-number">04</span>
+              <span className="cv6-philosophy-step-icon" aria-hidden="true">↗</span>
+              <h3>Guide</h3>
+              <p>Turn feedback into supportive, specific, and actionable suggestions.</p>
+            </article>
+            <article className="cv6-philosophy-step">
+              <span className="cv6-philosophy-step-number">05</span>
+              <span className="cv6-philosophy-step-icon" aria-hidden="true">→</span>
+              <h3>Improve</h3>
+              <p>Make the next practice step clear so progress can build over time.</p>
+            </article>
+          </div>
         </div>
       </section>
 
