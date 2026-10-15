@@ -830,7 +830,6 @@ function ComskiCaseStudyCV4() {
               <div className="cv6-journey-footer"><span className="cv6-journey-dot" />Progress over perfection</div>
             </article>
           </div>
-        </div>
       
           <div className="cv6-philosophy-application">
             <h2>Turning principles into product decisions.</h2>
@@ -882,7 +881,8 @@ function ComskiCaseStudyCV4() {
             </article>
           </div>
           </div>
-</section>
+        </div>
+      </section>
 
       <aside className="cv4-section-nav" aria-label="Case study sections">
         <div className="cv4-section-nav-line" />
