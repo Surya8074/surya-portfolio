@@ -564,7 +564,7 @@ main.cv4-page .cv6-philosophy-copy strong { color: #2F5BFF; font-weight: 650; }
 }
 
 
-/* ComSki Design Philosophy — reference-led, editable card UI. */
+/* ComSki Design Philosophy — refined iOS-inspired card system. */
 main.cv4-page .cv6-philosophy-inner {
   width: min(868px, calc(100% - 48px));
   margin-inline: auto;
@@ -575,48 +575,48 @@ main.cv4-page .cv6-philosophy-steps {
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
   width: 100%;
-  margin: 32px 0 0;
+  margin: 30px 0 0;
 }
 main.cv4-page .cv6-philosophy-step {
   position: relative;
   display: flex;
   min-width: 0;
-  min-height: 294px;
   height: 294px;
+  min-height: 294px;
   flex-direction: column;
   align-items: stretch;
-  padding: 18px;
+  padding: 16px 14px 14px;
   box-sizing: border-box;
   overflow: hidden;
-  border: 1px solid #E8ECF2;
-  border-radius: 26px;
-  background: #FFFFFF;
-  color: #111827;
-  box-shadow: 0 6px 24px rgba(18, 35, 70, .06);
+  border: 1px solid rgba(116, 139, 190, .16);
+  border-radius: 22px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FBFCFF 100%);
+  color: #101B3A;
+  box-shadow: 0 4px 18px rgba(25, 45, 90, .045), inset 0 1px 0 rgba(255,255,255,.9);
 }
 main.cv4-page .cv6-philosophy-step-top {
   display: flex;
   align-items: center;
-  gap: 18px;
-  margin-bottom: 10px;
+  gap: 10px;
+  margin-bottom: 12px;
 }
 main.cv4-page .cv6-philosophy-step-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 0 0 40px;
-  width: 40px;
-  height: 40px;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
   margin: 0;
-  border: 0;
-  border-radius: 16px;
-  background: #F4F7FF;
+  border: 1px solid rgba(47,91,255,.07);
+  border-radius: 13px;
+  background: linear-gradient(145deg, #F4F7FF, #EAF0FF);
   color: #2F5BFF;
 }
 main.cv4-page .cv6-philosophy-step-icon img {
   display: block;
-  width: 22px;
-  height: 22px;
+  width: 21px;
+  height: 21px;
   object-fit: contain;
   filter: none;
 }
@@ -628,32 +628,32 @@ main.cv4-page .cv6-philosophy-progress {
   flex: 1;
   overflow: hidden;
   border-radius: 99px;
-  background: #EEF1F6;
+  background: #EDF1F8;
 }
 main.cv4-page .cv6-philosophy-progress i {
   display: block;
-  width: 12px;
+  width: 14px;
   height: 4px;
   border-radius: inherit;
-  background: #2F5BFF;
+  background: #3B5BDB;
 }
-main.cv4-page .cv6-philosophy-connect .cv6-philosophy-progress i { background: #8B5CF6; }
-main.cv4-page .cv6-philosophy-guide .cv6-philosophy-progress i { background: #E94D9B; }
-main.cv4-page .cv6-philosophy-improve .cv6-philosophy-progress i { background: #21B981; }
+main.cv4-page .cv6-philosophy-connect .cv6-philosophy-progress i { background: #8B7CF6; }
+main.cv4-page .cv6-philosophy-guide .cv6-philosophy-progress i { background: #E77EB3; }
+main.cv4-page .cv6-philosophy-improve .cv6-philosophy-progress i { background: #53B99A; }
 main.cv4-page .cv6-philosophy-step h3 {
-  margin: 0 0 10px;
-  color: #111827;
-  font-size: 20px;
-  line-height: 1.15;
-  font-weight: 700;
+  margin: 0 0 7px;
+  color: #101B3A;
+  font-size: 19px;
+  line-height: 1.18;
+  font-weight: 680;
   letter-spacing: -.035em;
 }
 main.cv4-page .cv6-philosophy-step > p {
-  min-height: 38px;
+  min-height: 36px;
   margin: 0;
-  color: #667085;
-  font-size: 13px;
-  line-height: 1.38;
+  color: #64708A;
+  font-size: 12.5px;
+  line-height: 1.42;
   font-weight: 400;
   overflow-wrap: normal;
   word-break: normal;
@@ -666,136 +666,106 @@ main.cv4-page .cv6-philosophy-visual {
   min-height: 104px;
   flex: 0 0 104px;
   margin-top: auto;
-  padding-top: 10px;
+  padding-top: 9px;
   box-sizing: border-box;
 }
 main.cv4-page .cv6-context-panel,
 main.cv4-page .cv6-profile-visual,
 main.cv4-page .cv6-feedback-visual,
 main.cv4-page .cv6-next-visual {
-  border: 1px solid #EEF1F6;
-  border-radius: 18px;
-  background: linear-gradient(160deg, #FFFFFF, #F8FAFE);
-  box-shadow: 0 5px 18px rgba(26, 46, 87, .055);
+  border: 1px solid rgba(120, 140, 180, .14);
+  border-radius: 16px;
+  background: linear-gradient(160deg, #FFFFFF, #F8FAFF);
+  box-shadow: 0 3px 12px rgba(26, 46, 87, .04);
 }
-main.cv4-page .cv6-context-panel {
-  padding: 10px 10px;
-  transform: rotate(-2deg);
-}
-main.cv4-page .cv6-context-head { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
-main.cv4-page .cv6-avatar-dot { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, #DCE7FF, #A9C0FF); border: 3px solid #fff; box-shadow: 0 0 0 1px #E8ECF2; }
-main.cv4-page .cv6-context-title { color: #344054; font-size: 12px; font-weight: 650; }
-main.cv4-page .cv6-context-more { margin-left: auto; color: #98A2B3; font-size: 12px; letter-spacing: 2px; }
-main.cv4-page .cv6-context-row { display: flex; align-items: center; gap: 10px; margin-top: 7px; }
-main.cv4-page .cv6-mini-icon { display: flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 8px; background: #EEF3FF; color: #2F5BFF; font-size: 17px; }
-main.cv4-page .cv6-context-line { display: block; height: 7px; border-radius: 10px; background: #E8EDF6; }
+main.cv4-page .cv6-context-panel { padding: 9px 9px; transform: rotate(-1deg); }
+main.cv4-page .cv6-context-head { display: flex; align-items: center; gap: 7px; margin-bottom: 7px; }
+main.cv4-page .cv6-avatar-dot { width: 26px; height: 26px; flex: 0 0 26px; border-radius: 50%; background: linear-gradient(135deg, #DCE7FF, #A9C0FF); border: 3px solid #fff; box-shadow: 0 0 0 1px #E8ECF2; }
+main.cv4-page .cv6-context-title { color: #344054; font-size: 10px; line-height: 1.2; font-weight: 650; }
+main.cv4-page .cv6-context-more { margin-left: auto; color: #98A2B3; font-size: 10px; letter-spacing: 1px; }
+main.cv4-page .cv6-context-row { display: flex; align-items: center; gap: 7px; margin-top: 5px; }
+main.cv4-page .cv6-mini-icon { display: flex; align-items: center; justify-content: center; flex: 0 0 21px; width: 21px; height: 21px; border-radius: 7px; background: #EEF3FF; color: #2F5BFF; font-size: 14px; }
+main.cv4-page .cv6-context-line { display: block; height: 6px; border-radius: 10px; background: #E8EDF6; }
 main.cv4-page .cv6-context-line.long { width: 82%; }
 main.cv4-page .cv6-context-line.medium { width: 68%; }
 main.cv4-page .cv6-context-line.short { width: 52%; }
 main.cv4-page .cv6-connect-visual { height: 104px; min-height: 104px; flex: 0 0 104px; padding-top: 0; margin-top: auto; }
 main.cv4-page .cv6-connect-ai {
-  position: absolute;
-  z-index: 2;
-  top: 38px;
-  left: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  transform: translateX(-50%);
-  border: 1px solid #D9E4FF;
-  border-radius: 18px;
-  background: #F4F7FF;
-  color: #101B3A;
-  box-shadow: 0 4px 14px rgba(47,91,255,.08);
-  font-size: 22px;
-  font-weight: 750;
-  letter-spacing: -.04em;
+  position: absolute; z-index: 2; top: 35px; left: 50%;
+  display: flex; align-items: center; justify-content: center;
+  width: 42px; height: 42px; transform: translateX(-50%);
+  border: 1px solid #DCE6FF; border-radius: 15px;
+  background: rgba(245,248,255,.98); color: #101B3A;
+  box-shadow: 0 3px 12px rgba(47,91,255,.09);
+  font-size: 19px; font-weight: 750; letter-spacing: -.04em;
 }
 main.cv4-page .cv6-connect-node {
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  width: 64px;
-  min-height: 48px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  border: 1px solid #E8ECF2;
-  border-radius: 16px;
-  background: #FFFFFF;
-  color: #667085;
-  box-shadow: 0 4px 14px rgba(18,35,70,.05);
+  position: absolute; z-index: 2; display: flex;
+  width: 58px; min-height: 48px; flex-direction: column;
+  align-items: center; justify-content: center; gap: 3px;
+  border: 1px solid rgba(120,140,180,.15); border-radius: 13px;
+  background: rgba(255,255,255,.98); color: #667085;
+  box-shadow: 0 3px 10px rgba(18,35,70,.035);
 }
-main.cv4-page .cv6-connect-node img { display: block; width: 20px; height: 20px; color: #2F5BFF; }
-main.cv4-page .cv6-connect-node b { color: #475467; font-size: 10px; line-height: 1.2; font-weight: 600; }
+main.cv4-page .cv6-connect-node img { display: block; width: 18px; height: 18px; }
+main.cv4-page .cv6-connect-node b { color: #475467; font-size: 9px; line-height: 1.1; font-weight: 600; }
 main.cv4-page .cv6-connect-speaking { top: 0; left: 0; }
 main.cv4-page .cv6-connect-writing { top: 0; right: 0; }
 main.cv4-page .cv6-connect-listening { bottom: 0; left: 0; }
 main.cv4-page .cv6-connect-reading { bottom: 0; right: 0; }
 main.cv4-page .cv6-connect-line { position: absolute; z-index: 0; display: block; height: 1px; background: #DDE6F8; transform-origin: center; }
-main.cv4-page .cv6-connect-line-a { top: 47px; left: 62px; width: calc(50% - 75px); transform: rotate(32deg); }
-main.cv4-page .cv6-connect-line-b { top: 47px; right: 62px; width: calc(50% - 75px); transform: rotate(-32deg); }
-main.cv4-page .cv6-connect-line-c { bottom: 47px; left: 62px; width: calc(50% - 75px); transform: rotate(-32deg); }
-main.cv4-page .cv6-connect-line-d { right: 62px; bottom: 47px; width: calc(50% - 75px); transform: rotate(32deg); }
-main.cv4-page .cv6-profile-visual { padding: 13px; }
-main.cv4-page .cv6-profile-head { display: flex; justify-content: space-between; gap: 6px; margin-bottom: 15px; color: #344054; font-size: 11px; font-weight: 650; }
-main.cv4-page .cv6-profile-head span:last-child { color: #98A2B3; letter-spacing: 2px; }
-main.cv4-page .cv6-profile-radar { position: relative; width: 108px; height: 74px; margin: 0 auto 14px; }
+main.cv4-page .cv6-connect-line-a { top: 34px; left: 48px; width: calc(50% - 57px); transform: rotate(32deg); }
+main.cv4-page .cv6-connect-line-b { top: 34px; right: 48px; width: calc(50% - 57px); transform: rotate(-32deg); }
+main.cv4-page .cv6-connect-line-c { bottom: 34px; left: 48px; width: calc(50% - 57px); transform: rotate(-32deg); }
+main.cv4-page .cv6-connect-line-d { right: 48px; bottom: 34px; width: calc(50% - 57px); transform: rotate(32deg); }
+main.cv4-page .cv6-profile-visual { padding: 9px; }
+main.cv4-page .cv6-profile-head { display: flex; justify-content: space-between; gap: 4px; margin-bottom: 7px; color: #344054; font-size: 9px; line-height: 1.2; font-weight: 650; }
+main.cv4-page .cv6-profile-head span:last-child { color: #98A2B3; letter-spacing: 1px; }
+main.cv4-page .cv6-profile-radar { position: relative; width: 88px; height: 48px; margin: 0 auto 6px; }
 main.cv4-page .cv6-radar-ring { position: absolute; left: 50%; top: 50%; border: 1px solid #DCE6F8; transform: translate(-50%,-50%) rotate(45deg); }
-main.cv4-page .cv6-radar-ring.ring-one { width: 72px; height: 54px; }
-main.cv4-page .cv6-radar-ring.ring-two { width: 48px; height: 36px; }
-main.cv4-page .cv6-radar-shape { position: absolute; inset: 12px 26px; background: rgba(47,91,255,.15); border: 1px solid #8EA9FF; clip-path: polygon(50% 0, 100% 35%, 76% 100%, 20% 84%, 0 28%); }
-main.cv4-page .cv6-profile-row { display: flex; align-items: center; gap: 8px; margin-top: 10px; color: #667085; font-size: 10px; }
-main.cv4-page .cv6-profile-row > span { width: 62px; flex: 0 0 62px; }
-main.cv4-page .cv6-profile-row > i { display: block; height: 6px; flex: 1; overflow: hidden; border-radius: 99px; background: #E9EEF7; }
+main.cv4-page .cv6-radar-ring.ring-one { width: 58px; height: 42px; }
+main.cv4-page .cv6-radar-ring.ring-two { width: 38px; height: 28px; }
+main.cv4-page .cv6-radar-shape { position: absolute; inset: 8px 22px; background: rgba(47,91,255,.15); border: 1px solid #8EA9FF; clip-path: polygon(50% 0, 100% 35%, 76% 100%, 20% 84%, 0 28%); }
+main.cv4-page .cv6-profile-row { display: flex; align-items: center; gap: 6px; margin-top: 5px; color: #667085; font-size: 8px; }
+main.cv4-page .cv6-profile-row > span { width: 48px; flex: 0 0 48px; }
+main.cv4-page .cv6-profile-row > i { display: block; height: 4px; flex: 1; overflow: hidden; border-radius: 99px; background: #E9EEF7; }
 main.cv4-page .cv6-profile-row > i b { display: block; height: 100%; border-radius: inherit; background: #79A8FF; }
 main.cv4-page .cv6-profile-row .bar-one { width: 72%; }
 main.cv4-page .cv6-profile-row .bar-two { width: 55%; }
 main.cv4-page .cv6-profile-row .bar-three { width: 64%; }
-main.cv4-page .cv6-feedback-visual { padding: 14px; background: linear-gradient(160deg, #FFF, #FFFAFD); border-color: #F2EAF1; }
-main.cv4-page .cv6-feedback-head { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; color: #344054; font-size: 11px; line-height: 1.3; }
-main.cv4-page .cv6-feedback-spark { display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 9px; background: #FFF1F7; color: #E94D9B; font-size: 17px; }
-main.cv4-page .cv6-feedback-row { display: flex; align-items: center; gap: 8px; margin-top: 12px; color: #475467; font-size: 11px; line-height: 1.3; }
-main.cv4-page .cv6-feedback-row > span { display: flex; align-items: center; justify-content: center; flex: 0 0 18px; width: 18px; height: 18px; border-radius: 50%; background: #EAF2FF; }
-main.cv4-page .cv6-feedback-row img { display: block; width: 12px; height: 12px; color: #2F5BFF; }
-main.cv4-page .cv6-next-visual { padding: 14px; }
-main.cv4-page .cv6-next-head { display: flex; align-items: center; justify-content: space-between; gap: 6px; padding-bottom: 12px; border-bottom: 1px solid #EEF1F6; color: #344054; font-size: 12px; font-weight: 650; }
-main.cv4-page .cv6-next-head img { display: block; width: 20px; height: 20px; color: #2F5BFF; }
-main.cv4-page .cv6-next-row { display: flex; align-items: center; gap: 9px; margin-top: 14px; color: #475467; font-size: 11px; line-height: 1.25; }
-main.cv4-page .cv6-next-symbol { display: flex; align-items: center; justify-content: center; flex: 0 0 24px; width: 24px; height: 24px; border-radius: 8px; font-size: 13px; font-weight: 700; }
+main.cv4-page .cv6-feedback-visual { padding: 9px; background: linear-gradient(160deg, #FFF, #FFFAFD); border-color: #F2EAF1; }
+main.cv4-page .cv6-feedback-head { display: flex; align-items: center; gap: 6px; margin-bottom: 7px; color: #344054; font-size: 9px; line-height: 1.2; }
+main.cv4-page .cv6-feedback-spark { display: flex; align-items: center; justify-content: center; flex: 0 0 22px; width: 22px; height: 22px; border-radius: 8px; background: #FFF1F7; color: #E94D9B; font-size: 14px; }
+main.cv4-page .cv6-feedback-row { display: flex; align-items: center; gap: 6px; margin-top: 6px; color: #475467; font-size: 9px; line-height: 1.2; }
+main.cv4-page .cv6-feedback-row > span { display: flex; align-items: center; justify-content: center; flex: 0 0 15px; width: 15px; height: 15px; border-radius: 50%; background: #EAF2FF; }
+main.cv4-page .cv6-feedback-row img { display: block; width: 10px; height: 10px; }
+main.cv4-page .cv6-next-visual { padding: 9px; }
+main.cv4-page .cv6-next-head { display: flex; align-items: center; justify-content: space-between; gap: 4px; padding-bottom: 7px; border-bottom: 1px solid #EEF1F6; color: #344054; font-size: 10px; font-weight: 650; }
+main.cv4-page .cv6-next-head img { display: block; width: 17px; height: 17px; }
+main.cv4-page .cv6-next-row { display: flex; align-items: center; gap: 6px; margin-top: 7px; color: #475467; font-size: 9px; line-height: 1.15; }
+main.cv4-page .cv6-next-symbol { display: flex; align-items: center; justify-content: center; flex: 0 0 19px; width: 19px; height: 19px; border-radius: 7px; font-size: 11px; font-weight: 700; }
 main.cv4-page .cv6-next-symbol.blue { color: #2F5BFF; background: #EEF3FF; }
 main.cv4-page .cv6-next-symbol.pink { color: #E94D9B; background: #FFF0F7; }
 main.cv4-page .cv6-next-symbol.green { color: #16A36A; background: #E9FBF2; }
 @media (hover: hover) and (pointer: fine) {
-  main.cv4-page .cv6-philosophy-step {
-    transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
-  }
-  main.cv4-page .cv6-philosophy-step:hover {
-    transform: translateY(-3px);
-    border-color: #D6E0F5;
-    box-shadow: 0 9px 28px rgba(18, 35, 70, .085);
-  }
+  main.cv4-page .cv6-philosophy-step { transition: transform 320ms cubic-bezier(.22,1,.36,1), box-shadow 320ms cubic-bezier(.22,1,.36,1), border-color 320ms ease; }
+  main.cv4-page .cv6-philosophy-step:hover { transform: translateY(-3px); border-color: #D7E1F5; box-shadow: 0 9px 25px rgba(18,35,70,.075); }
 }
 @media (max-width: 1199px) {
   main.cv4-page .cv6-philosophy-inner { width: min(100% - 64px, 900px); }
   main.cv4-page .cv6-philosophy-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-  main.cv4-page .cv6-philosophy-step { min-height: 294px;
-  height: 294px; }
-  main.cv4-page .cv6-philosophy-step > p { min-height: 38px; }
+  main.cv4-page .cv6-philosophy-step { height: 294px; min-height: 294px; }
+  main.cv4-page .cv6-philosophy-step > p { min-height: 36px; }
 }
 @media (max-width: 767px) {
   main.cv4-page .cv6-philosophy-inner { width: calc(100% - 40px); }
   main.cv4-page section.cv6-philosophy-section { padding: 52px 0 64px; }
-  main.cv4-page .cv6-philosophy-steps { grid-template-columns: minmax(0, 1fr); gap: 16px; margin-top: 28px; }
-  main.cv4-page .cv6-philosophy-step { min-height: 294px; height: 294px; padding: 18px; border-radius: 22px; }
-  main.cv4-page .cv6-philosophy-step-top { margin-bottom: 18px; }
-  main.cv4-page .cv6-philosophy-step h3 { font-size: 20px; }
-  main.cv4-page .cv6-philosophy-step > p { min-height: 38px; font-size: 13px; }
-  main.cv4-page .cv6-philosophy-visual { height: 104px; min-height: 104px; flex-basis: 104px; }
-  main.cv4-page .cv6-philosophy-visual { width: min(100%, 300px); min-height: 190px; margin-top: 24px; align-self: center; }
+  main.cv4-page .cv6-philosophy-steps { grid-template-columns: minmax(0, 1fr); gap: 14px; margin-top: 28px; }
+  main.cv4-page .cv6-philosophy-step { height: 294px; min-height: 294px; padding: 16px; border-radius: 22px; }
+  main.cv4-page .cv6-philosophy-step-top { margin-bottom: 10px; }
+  main.cv4-page .cv6-philosophy-step h3 { font-size: 19px; }
+  main.cv4-page .cv6-philosophy-step > p { min-height: 36px; font-size: 12.5px; }
+  main.cv4-page .cv6-philosophy-visual { width: min(100%, 300px); height: 104px; min-height: 104px; flex-basis: 104px; margin-top: auto; align-self: center; }
   main.cv4-page .cv6-connect-visual { width: min(100%, 300px); }
 }
 @media (prefers-reduced-motion: reduce) {
