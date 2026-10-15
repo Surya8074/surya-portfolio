@@ -285,6 +285,11 @@ body{background:var(--paper)}
 .contribution-visual img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain;object-position:center;border-radius:24px}
 @media(max-width:760px){.contribution-visual{width:100%;margin:0;border-radius:18px}.contribution-visual img{aspect-ratio:auto;object-fit:contain;border-radius:18px}}
 @media(max-width:480px){.contribution-visual img{aspect-ratio:auto;object-fit:contain}}
+
+/* Explicitly load the requested SVG from the deployed Pages root and show it without reveal/lazy-load dependencies */
+.contribution-section figure.contribution-visual{display:block!important;visibility:visible!important;opacity:1!important;position:relative;width:calc(100% + 16px);max-width:none;height:auto;min-height:0;margin:0 -8px;padding:0;overflow:hidden;border:0;border-radius:24px;background:transparent;box-shadow:none;line-height:0;transform:none}
+.contribution-section figure.contribution-visual img{display:block!important;visibility:visible!important;opacity:1!important;width:100%;max-width:none;height:auto;aspect-ratio:8/3;object-fit:contain;object-position:center;border:0;border-radius:24px}
+@media(max-width:760px){.contribution-section figure.contribution-visual{width:100%;margin:0;border-radius:18px}.contribution-section figure.contribution-visual img{aspect-ratio:8/3;object-fit:contain;border-radius:18px}}
 </style></head>
 <body><div class="progress"></div>
 <nav class="nav"><div class="brand"><a class="mark" href="../../" aria-label="Back to portfolio">S</a><a href="../../"><strong>Surya Kiran</strong></a><span class="muted">/ LaundroMart</span></div><div class="navlinks"><a href="#context">Context</a><a href="#system">System</a><a href="#experience">Experience</a><a href="#reflection">Reflection</a></div></nav>
@@ -329,8 +334,8 @@ body{background:var(--paper)}
     <p>My work focused on shaping a connected experience across LaundroMart’s operational workflows. The interface needed to make garment information, transactions, operator tasks and facility tools easier to navigate while keeping the product visually consistent.</p>
     <p>I approached the screens as parts of one system: clear page hierarchy for quick scanning, repeatable patterns for records and forms, and consistent navigation between overview-level information and task-level detail.</p>
   </div>
-  <figure class="contribution-visual reveal">
-    <img src="./problem-banner.svg" alt="Illustration of LaundroMart’s problem space: angry customers, missing clothes, incomplete data and unclear order status." loading="lazy" width="1542" height="469">
+  <figure class="contribution-visual" aria-label="LaundroMart problem-space banner">
+    <img src="/surya-portfolio/laundromart/problem-banner.svg?v=20261015-1" alt="LaundroMart problem-space illustration: angry customers, missing clothes, incomplete records and unclear order status." width="1600" height="600" fetchpriority="high">
   </figure>
 </section>
 <section class="section wrap challenge-section" id="challenge">
