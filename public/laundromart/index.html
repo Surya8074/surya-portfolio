@@ -359,6 +359,37 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
   figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{border-radius:18px!important;clip-path:inset(0 round 18px)!important;-webkit-clip-path:inset(0 round 18px)!important}
 }
 
+
+/* Final fallback: use an explicit rounded frame and clip its contents */
+#problem-banner-frame{
+  display:block!important;
+  position:relative!important;
+  width:94%!important;
+  margin:-58px auto 0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:24px!important;
+  overflow:hidden!important;
+  clip-path: inset(0 round 24px)!important;
+  -webkit-clip-path: inset(0 round 24px)!important;
+  background:var(--paper)!important;
+}
+#problem-banner-frame img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  border:0!important;
+  border-radius:24px!important;
+  clip-path: inset(0 round 24px)!important;
+  -webkit-clip-path: inset(0 round 24px)!important;
+  mask: inset(0 round 24px)!important;
+  -webkit-mask: -webkit-radial-gradient(white,black)!important;
+}
+@media(max-width:760px){
+ #problem-banner-frame{width:98%!important;margin:-32px auto 0!important;border-radius:18px!important;clip-path:inset(0 round 18px)!important;-webkit-clip-path:inset(0 round 18px)!important}
+ #problem-banner-frame img{border-radius:18px!important;clip-path:inset(0 round 18px)!important;-webkit-clip-path:inset(0 round 18px)!important;mask:inset(0 round 18px)!important}
+}
+
 </style></head>
 <body><div class="progress"></div>
 <nav class="nav"><div class="brand"><a class="mark" href="../../" aria-label="Back to portfolio">S</a><a href="../../"><strong>Surya Kiran</strong></a><span class="muted">/ LaundroMart</span></div><div class="navlinks"><a href="#context">Context</a><a href="#system">System</a><a href="#experience">Experience</a><a href="#reflection">Reflection</a></div></nav>
@@ -403,9 +434,9 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
     <p>My work focused on shaping a connected experience across LaundroMart’s operational workflows. The interface needed to make garment information, transactions, operator tasks and facility tools easier to navigate while keeping the product visually consistent.</p>
     <p>I approached the screens as parts of one system: clear page hierarchy for quick scanning, repeatable patterns for records and forms, and consistent navigation between overview-level information and task-level detail.</p>
   </div>
-  <figure class="contribution-visual" aria-label="LaundroMart problem-space banner" style="display:block!important;position:relative;width:94%;max-width:none;height:auto;margin:-58px auto 0;padding:0;border:0;border-radius:24px!important;overflow:hidden!important;isolation:isolate;line-height:0;background:transparent;box-shadow:none;">
+  <figure id="problem-banner-frame" class="contribution-visual" aria-label="LaundroMart problem-space banner" style="display:block!important;position:relative;width:94%;max-width:none;height:auto;margin:-58px auto 0;padding:0;border:0;border-radius:24px!important;overflow:hidden!important;isolation:isolate;line-height:0;background:transparent;box-shadow:none;">
     <div style="display:block;width:100%;height:auto;overflow:hidden;border-radius:24px!important;clip-path:inset(0 round 24px);-webkit-clip-path:inset(0 round 24px);line-height:0;">
-      <img src="/surya-portfolio/laundromart/f40750d1-25de-48ee-93d8-e5c11b6670b2-2026-10-14%20%281%29.gif?v=20261015-8" alt="LaundroMart problem-space illustration: angry customers, missing clothes, incomplete records and unclear order status." width="1600" height="600" fetchpriority="high" style="display:block!important;width:100%!important;height:auto!important;max-width:100%;border:0;border-radius:24px!important;clip-path:inset(0 round 24px)!important;-webkit-clip-path:inset(0 round 24px)!important;overflow:hidden;object-fit:contain;"> 
+      <img src="/surya-portfolio/laundromart/f40750d1-25de-48ee-93d8-e5c11b6670b2-2026-10-14%20%281%29.gif?v=20261015-9" alt="LaundroMart problem-space illustration: angry customers, missing clothes, incomplete records and unclear order status." width="1600" height="600" fetchpriority="high" style="display:block!important;width:100%!important;height:auto!important;max-width:100%;border:0;border-radius:24px!important;clip-path:inset(0 round 24px)!important;-webkit-clip-path:inset(0 round 24px)!important;overflow:hidden;object-fit:contain;"> 
     </div>
   </figure>
 </section>
