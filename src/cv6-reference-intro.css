@@ -564,28 +564,37 @@ main.cv4-page .cv6-philosophy-copy strong { color: #2F5BFF; font-weight: 650; }
 }
 
 
-/* Five-step ComSki philosophy — brand-blue editorial tiles beneath the intro copy. */
+/* Five-step ComSki philosophy — refined editorial cards in the brand palette. */
 main.cv4-page .cv6-philosophy-steps {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 14px;
+  gap: 16px;
   width: 100%;
-  margin: 40px 0 0;
+  margin: 32px 0 0;
 }
 main.cv4-page .cv6-philosophy-step {
   position: relative;
   display: flex;
   min-width: 0;
-  min-height: 228px;
+  min-height: 224px;
   flex-direction: column;
   align-items: flex-start;
-  padding: 20px 16px 18px;
+  padding: 20px 17px 18px;
   box-sizing: border-box;
   overflow: hidden;
-  border: 1px solid #DCE6FF;
+  border: 1px solid #E1E8F8;
   border-radius: 16px;
-  background: linear-gradient(180deg, #F4F7FF 0%, #EAF0FF 100%);
+  background: #FFFFFF;
   color: #101B3A;
+  box-shadow: 0 4px 14px rgba(24, 48, 100, .035);
+}
+main.cv4-page .cv6-philosophy-step::before {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  content: "";
+  background: #3B5BDB;
+  opacity: .9;
 }
 main.cv4-page .cv6-philosophy-step-number {
   color: #6578B7;
@@ -600,11 +609,12 @@ main.cv4-page .cv6-philosophy-step-icon {
   justify-content: center;
   width: 42px;
   height: 42px;
-  margin: 16px 0 18px;
-  border-radius: 12px;
-  background: #3B5BDB;
-  color: #fff;
-  font-size: 27px;
+  margin: 15px 0 16px;
+  border: 1px solid #DCE6FF;
+  border-radius: 13px;
+  background: #EEF3FF;
+  color: #2F5BFF;
+  font-size: 25px;
   line-height: 1;
   font-weight: 500;
 }
@@ -622,28 +632,30 @@ main.cv4-page .cv6-philosophy-step p {
   font-size: 13px;
   line-height: 1.5;
   font-weight: 400;
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 @media (hover: hover) and (pointer: fine) {
   main.cv4-page .cv6-philosophy-step {
-    transition: transform 300ms cubic-bezier(.22, 1, .36, 1), box-shadow 300ms cubic-bezier(.22, 1, .36, 1), border-color 300ms ease;
+    transition: transform 300ms cubic-bezier(.22, 1, .36, 1), box-shadow 300ms cubic-bezier(.22, 1, .36, 1), border-color 300ms ease, background-color 300ms ease;
   }
   main.cv4-page .cv6-philosophy-step:hover {
     transform: translateY(-3px);
     border-color: #B9C9FF;
-    box-shadow: 0 10px 24px rgba(47,91,255,.10);
+    background: #FBFCFF;
+    box-shadow: 0 10px 24px rgba(47,91,255,.09);
   }
 }
 @media (max-width: 1100px) {
-  main.cv4-page .cv6-philosophy-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  main.cv4-page .cv6-philosophy-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
   main.cv4-page .cv6-philosophy-step { min-height: 210px; }
 }
 @media (max-width: 640px) {
-  main.cv4-page .cv6-philosophy-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 28px; }
-  main.cv4-page .cv6-philosophy-step { min-height: 206px; padding: 16px 13px; border-radius: 14px; }
-  main.cv4-page .cv6-philosophy-step-icon { width: 38px; height: 38px; margin: 14px 0 14px; font-size: 24px; }
+  main.cv4-page .cv6-philosophy-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 28px; }
+  main.cv4-page .cv6-philosophy-step { min-height: 202px; padding: 17px 14px 16px; border-radius: 14px; }
+  main.cv4-page .cv6-philosophy-step-icon { width: 38px; height: 38px; margin: 13px 0 14px; font-size: 23px; }
   main.cv4-page .cv6-philosophy-step h3 { font-size: 16px; }
-  main.cv4-page .cv6-philosophy-step p { font-size: 12px; line-height: 1.45; }
+  main.cv4-page .cv6-philosophy-step p { font-size: 12px; line-height: 1.48; }
 }
 @media (max-width: 360px) {
   main.cv4-page .cv6-philosophy-steps { grid-template-columns: minmax(0, 1fr); }
