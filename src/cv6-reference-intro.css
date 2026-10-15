@@ -598,7 +598,7 @@ main.cv4-page .cv6-philosophy-step-top {
   display: flex;
   align-items: center;
   gap: 18px;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 main.cv4-page .cv6-philosophy-step-icon {
   display: flex;
@@ -643,17 +643,17 @@ main.cv4-page .cv6-philosophy-improve .cv6-philosophy-progress i { background: #
 main.cv4-page .cv6-philosophy-step h3 {
   margin: 0 0 10px;
   color: #111827;
-  font-size: 23px;
+  font-size: 20px;
   line-height: 1.15;
   font-weight: 700;
   letter-spacing: -.035em;
 }
 main.cv4-page .cv6-philosophy-step > p {
-  min-height: 50px;
+  min-height: 38px;
   margin: 0;
   color: #667085;
-  font-size: 15px;
-  line-height: 1.45;
+  font-size: 13px;
+  line-height: 1.38;
   font-weight: 400;
   overflow-wrap: normal;
   word-break: normal;
@@ -662,9 +662,11 @@ main.cv4-page .cv6-philosophy-visual {
   position: relative;
   width: 100%;
   min-width: 0;
-  min-height: 120px;
+  height: 104px;
+  min-height: 104px;
+  flex: 0 0 104px;
   margin-top: auto;
-  padding-top: 14px;
+  padding-top: 10px;
   box-sizing: border-box;
 }
 main.cv4-page .cv6-context-panel,
@@ -677,24 +679,24 @@ main.cv4-page .cv6-next-visual {
   box-shadow: 0 5px 18px rgba(26, 46, 87, .055);
 }
 main.cv4-page .cv6-context-panel {
-  padding: 16px 14px;
+  padding: 10px 10px;
   transform: rotate(-2deg);
 }
-main.cv4-page .cv6-context-head { display: flex; align-items: center; gap: 8px; margin-bottom: 18px; }
+main.cv4-page .cv6-context-head { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
 main.cv4-page .cv6-avatar-dot { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, #DCE7FF, #A9C0FF); border: 3px solid #fff; box-shadow: 0 0 0 1px #E8ECF2; }
 main.cv4-page .cv6-context-title { color: #344054; font-size: 12px; font-weight: 650; }
 main.cv4-page .cv6-context-more { margin-left: auto; color: #98A2B3; font-size: 12px; letter-spacing: 2px; }
-main.cv4-page .cv6-context-row { display: flex; align-items: center; gap: 10px; margin-top: 12px; }
+main.cv4-page .cv6-context-row { display: flex; align-items: center; gap: 10px; margin-top: 7px; }
 main.cv4-page .cv6-mini-icon { display: flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 8px; background: #EEF3FF; color: #2F5BFF; font-size: 17px; }
 main.cv4-page .cv6-context-line { display: block; height: 7px; border-radius: 10px; background: #E8EDF6; }
 main.cv4-page .cv6-context-line.long { width: 82%; }
 main.cv4-page .cv6-context-line.medium { width: 68%; }
 main.cv4-page .cv6-context-line.short { width: 52%; }
-main.cv4-page .cv6-connect-visual { min-height: 150px; padding-top: 0; margin-top: auto; }
+main.cv4-page .cv6-connect-visual { height: 104px; min-height: 104px; flex: 0 0 104px; padding-top: 0; margin-top: auto; }
 main.cv4-page .cv6-connect-ai {
   position: absolute;
   z-index: 2;
-  top: 54px;
+  top: 38px;
   left: 50%;
   display: flex;
   align-items: center;
@@ -716,7 +718,7 @@ main.cv4-page .cv6-connect-node {
   z-index: 2;
   display: flex;
   width: 64px;
-  min-height: 58px;
+  min-height: 48px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -780,17 +782,19 @@ main.cv4-page .cv6-next-symbol.green { color: #16A36A; background: #E9FBF2; }
 @media (max-width: 1199px) {
   main.cv4-page .cv6-philosophy-inner { width: min(100% - 64px, 900px); }
   main.cv4-page .cv6-philosophy-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-  main.cv4-page .cv6-philosophy-step { min-height: 420px; }
-  main.cv4-page .cv6-philosophy-step > p { min-height: 44px; }
+  main.cv4-page .cv6-philosophy-step { min-height: 294px;
+  height: 294px; }
+  main.cv4-page .cv6-philosophy-step > p { min-height: 38px; }
 }
 @media (max-width: 767px) {
   main.cv4-page .cv6-philosophy-inner { width: calc(100% - 40px); }
   main.cv4-page section.cv6-philosophy-section { padding: 52px 0 64px; }
   main.cv4-page .cv6-philosophy-steps { grid-template-columns: minmax(0, 1fr); gap: 16px; margin-top: 28px; }
-  main.cv4-page .cv6-philosophy-step { min-height: 0; padding: 20px; border-radius: 22px; }
+  main.cv4-page .cv6-philosophy-step { min-height: 294px; height: 294px; padding: 18px; border-radius: 22px; }
   main.cv4-page .cv6-philosophy-step-top { margin-bottom: 18px; }
-  main.cv4-page .cv6-philosophy-step h3 { font-size: 22px; }
-  main.cv4-page .cv6-philosophy-step > p { min-height: 0; font-size: 15px; }
+  main.cv4-page .cv6-philosophy-step h3 { font-size: 20px; }
+  main.cv4-page .cv6-philosophy-step > p { min-height: 38px; font-size: 13px; }
+  main.cv4-page .cv6-philosophy-visual { height: 104px; min-height: 104px; flex-basis: 104px; }
   main.cv4-page .cv6-philosophy-visual { width: min(100%, 300px); min-height: 190px; margin-top: 24px; align-self: center; }
   main.cv4-page .cv6-connect-visual { width: min(100%, 300px); }
 }
