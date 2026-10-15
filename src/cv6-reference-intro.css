@@ -993,3 +993,66 @@ main.cv4-page .cv6-philosophy-application > h2 {
     line-height: 1.08;
   }
 }
+
+
+/* iOS-style previous/next controls for the Design Psychology card carousel. */
+main.cv4-page .cv6-philosophy-application .cv6-challenge-carousel {
+  position: relative;
+  width: 100%;
+}
+main.cv4-page .cv6-philosophy-application .cv6-challenge-cards {
+  scroll-behavior: smooth;
+  scroll-padding-inline: 2px;
+}
+main.cv4-page .cv6-philosophy-application .cv6-challenge-arrow {
+  position: absolute;
+  z-index: 5;
+  top: -58px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0 0 3px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(229,229,234,.92);
+  color: #626267;
+  font-family: Arial, sans-serif;
+  font-size: 31px;
+  font-weight: 400;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0,0,0,.035);
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease, opacity 180ms ease;
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+main.cv4-page .cv6-philosophy-application .cv6-challenge-arrow-prev { right: 58px; }
+main.cv4-page .cv6-philosophy-application .cv6-challenge-arrow-next { right: 2px; }
+main.cv4-page .cv6-philosophy-application .cv6-challenge-arrow:hover {
+  background: #d1d1d6;
+  color: #1d1d1f;
+  transform: scale(1.04);
+}
+main.cv4-page .cv6-philosophy-application .cv6-challenge-arrow:focus-visible {
+  outline: 3px solid #3B5BDB;
+  outline-offset: 3px;
+}
+main.cv4-page .cv6-philosophy-application .cv6-challenge-arrow:disabled {
+  opacity: .38;
+  cursor: default;
+  transform: none;
+}
+@media (max-width: 640px) {
+  main.cv4-page .cv6-philosophy-application .cv6-challenge-arrow {
+    top: -52px;
+    width: 40px;
+    height: 40px;
+    font-size: 28px;
+  }
+  main.cv4-page .cv6-philosophy-application .cv6-challenge-arrow-prev { right: 50px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  main.cv4-page .cv6-philosophy-application .cv6-challenge-cards { scroll-behavior: auto; }
+  main.cv4-page .cv6-philosophy-application .cv6-challenge-arrow { transition: none; }
+}
