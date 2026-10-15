@@ -469,32 +469,45 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
   </div>
 </section>
 <section class="section wrap challenge-section editorial-section" id="challenge">
-  <div class="editorial-copy">
-    <h2>Understanding the laundry business ecosystem.</h2>
-    <p class="intro">When I started working on LaundroMart, I first needed to understand how a laundry business runs day to day. I explored the operational workflow—from garment intake and order tracking to staff tasks, facilities and delivery—and how each part affects the next.</p>
-    <p>That helped me see the product beyond individual screens. The real challenge was understanding how people, garments and operational information move through one connected business.</p>
+  <div class="research-story">
+    <div class="research-copy">
+      <h2>Understanding the laundry business ecosystem.</h2>
+      <p class="research-lead">Before designing LaundroMart, I needed to understand how a laundry business works beyond the interface. I explored the day-to-day journey—from receiving garments and tracking orders to coordinating staff, facilities and delivery.</p>
+      <p>Understanding the people behind these tasks helped me look at the product from an operational point of view: what information they rely on, where handoffs happen, and what can slow the work down.</p>
 
-    <h3>Learning from the workflow</h3>
-    <p>I focused on the key tasks and information people need to manage laundry operations. I mapped the journey across garment records, transactions, operators and facilities to understand where information needs to be captured, checked and acted on.</p>
-    <p>As I worked through these flows, I kept returning to three questions:</p>
-    <p>What does the team need to see first?</p>
-    <p>Which garment or order details help them make the next decision?</p>
-    <p>Where can missing or unclear information interrupt the workflow?</p>
-    <p>The design direction became clearer: the interface needed to make operational information easier to scan, keep garment and order records accessible, and help users move between tasks without losing context.</p>
+      <h3>Learning from the workflow</h3>
+      <p>I used workflow exploration to identify the information teams need at each stage and how those details connect across the business.</p>
+      <p>Three questions guided my thinking:</p>
+      <ul class="research-questions">
+        <li>What does the team need to know first?</li>
+        <li>Which garment and order details help them take action?</li>
+        <li>Where can unclear information interrupt the workflow?</li>
+      </ul>
+      <p>This helped shape the design direction: make operational information easier to scan, keep garment and order details accessible, and help users move between tasks without losing context.</p>
+    </div>
+    <figure class="research-visual">
+      <div class="research-image-placeholder" role="img" aria-label="Placeholder for a user research conversation photo">
+        <span class="research-placeholder-label">USER RESEARCH</span>
+        <span class="research-placeholder-note">Replace with your interview photo</span>
+      </div>
+    </figure>
   </div>
 </section>
 <style>
-/* Editorial case-study typography and spacing, matching the supplied reference */
+/* Research story: editorial two-column layout inspired by the supplied reference */
 #challenge.editorial-section{padding-top:52px;padding-bottom:72px}
-#challenge .editorial-copy{width:min(100%,790px);max-width:790px;margin:0 auto;padding-left:0;transform:none}
-@media(min-width:761px){#challenge .editorial-copy{margin-left:calc(50% - 299px);margin-right:0;width:min(790px,calc(100% - 24px))}}
-#challenge .editorial-copy .num{font-size:13px;line-height:1.5;letter-spacing:.02em;color:#777e8d;margin-bottom:18px}
-#challenge .editorial-copy h2{font-size:23px;line-height:1.4;font-weight:600;letter-spacing:-.025em;color:#2864d7;margin:0 0 18px}
-#challenge .editorial-copy .intro{font-size:18px;line-height:1.55;color:var(--ink);margin:0 0 30px}
-#challenge .editorial-copy h3{font-size:17px;line-height:1.5;font-weight:650;color:var(--ink);margin:30px 0 16px}
-#challenge .editorial-copy p:not(.intro){font-size:17px;line-height:1.6;letter-spacing:0;color:var(--ink);margin:0 0 18px}
-#challenge .editorial-copy p strong{font-weight:650}
-@media(max-width:760px){#challenge.editorial-section{padding-top:36px;padding-bottom:52px}#challenge .editorial-copy h2{font-size:21px}#challenge .editorial-copy .intro{font-size:16px}#challenge .editorial-copy p:not(.intro){font-size:16px}#challenge .editorial-copy h3{margin-top:26px}}
+#challenge .research-story{width:min(100%,1110px);margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);gap:72px;align-items:center}
+#challenge .research-copy{min-width:0}
+#challenge .research-copy h2{font-size:23px;line-height:1.4;font-weight:600;letter-spacing:-.025em;color:#2864d7;margin:0 0 22px}
+#challenge .research-copy .research-lead,#challenge .research-copy p{font-size:17px;line-height:1.6;letter-spacing:0;color:var(--ink);margin:0 0 20px}
+#challenge .research-copy h3{font-size:17px;line-height:1.5;font-weight:650;color:var(--ink);margin:30px 0 18px}
+#challenge .research-questions{list-style:none;margin:0 0 22px;padding:0}
+#challenge .research-questions li{font-size:17px;line-height:1.6;color:var(--ink);margin:0 0 7px}
+#challenge .research-visual{margin:0;min-width:0}
+#challenge .research-image-placeholder{aspect-ratio:1.05/1;width:100%;border-radius:8px;background:linear-gradient(145deg,#f0eee9,#e4e7eb);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#626875;text-align:center;padding:24px}
+#challenge .research-placeholder-label{font-size:11px;letter-spacing:.14em;font-weight:700}
+#challenge .research-placeholder-note{font-size:14px;line-height:1.5}
+@media(max-width:850px){#challenge.editorial-section{padding-top:38px;padding-bottom:52px}#challenge .research-story{grid-template-columns:1fr;gap:28px}#challenge .research-copy h2{font-size:21px}#challenge .research-copy .research-lead,#challenge .research-copy p,#challenge .research-questions li{font-size:16px}#challenge .research-visual{max-width:520px}}
 </style>
 <section class="section compact wrap" id="system"><div class="dark"><div class="eyebrow">02 — Product model</div><h2>Connect the physical workflow to the digital record.</h2><p>The product concept connects camera-based garment capture and AI-assisted data with an operational interface for reviewing records, managing staff and overseeing facilities.</p><div class="flow"><div class="step"><small>STEP 01</small><strong>Capture</strong><span>Camera workflows provide visual records of garments in the operation.</span></div><div class="step"><small>STEP 02</small><strong>Organise</strong><span>AI-assisted garment data is structured into records the team can work with.</span></div><div class="step"><small>STEP 03</small><strong>Operate</strong><span>The dashboard brings inventory, staff, facilities and reporting into view.</span></div></div></div></section>
 <section class="section wrap" id="experience"><div class="head"><div class="num">03 — The experience</div><div><h2>A connected system across multiple workflows.</h2><p class="intro">This walkthrough follows the way the platform is organised—from the overview, into garment records, then into the people and infrastructure supporting the work.</p></div></div>
