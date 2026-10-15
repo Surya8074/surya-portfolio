@@ -884,6 +884,21 @@ function ComskiCaseStudyCV4() {
         </div>
       </section>
 
+          <Section n="13" title="Design system" tone="pink">
+            <Reveal><h2>A system was needed because four skills should feel like one product.</h2></Reveal>
+            <div className="cv4-system">
+              <div className="cv4-token-sheet">
+                <label>COLOR</label>
+                <div className="swatches"><i style={{background:'#3B5BDB'}}/><i style={{background:'#1A1D29'}}/><i style={{background:'#F2A04A'}}/><i style={{background:'#E9A6C8'}}/><i style={{background:'#B9DDFF'}}/><i style={{background:'#17264A'}}/></div>
+                <div className="hexes"><span>#3B5BDB</span><span>#1A1D29</span><span>Orange</span><span>Pink</span><span>Light blue</span><span>Navy</span></div>
+                <label>TYPE SCALE</label><div className="type-scale"><b>Display · 56/64</b><strong>Heading · 43/48</strong><span>Body · 17/28</span><small>Caption · 13/18</small></div>
+                <label>SPACING</label><div className="spacing-scale">{[4,8,12,16,24,32,48,64,96,128].map(x => <i key={x} style={{width: Math.max(8, x * .65)}}><b>{x}</b></i>)}</div>
+              </div>
+              <div className="cv4-system-copy"><label>IMPLEMENTATION BACKBONE</label><h3>One component grammar, parameterised by skill.</h3><div><b>GRID</b><span>12-column desktop · 4-column mobile · 768 / 1024 / 1440 breakpoints.</span></div><div><b>COMPONENTS</b><span>Step tracker, question counter, Pro Tips panel, directional completion.</span></div><div><b>RATIONALE</b><span>Structural familiarity transfers even when content and input modality change.</span></div><div><b>ACCESSIBILITY</b><span>Focus visibility, contrast verification, touch-target review and reduced-motion behavior.</span></div></div>
+            </div>
+          </Section>
+
+
       <aside className="cv4-section-nav" aria-label="Case study sections">
         <div className="cv4-section-nav-line" />
         {[['01','Problem'],['02','Constraints'],['03','Research'],['04','Users'],['05','Competition'],['06','Synthesis'],['07','Journey'],['08','Process'],['09','Exploration'],['10','IA + Flow'],['11','Screens'],['12','AI UX'],['13','System'],['14','Validation'],['15','Build'],['16','Outcomes'],['17','Business'],['18','Learnings'],['19','Next'],['20','Role']].map(([n,label]) => (
@@ -1146,19 +1161,7 @@ function ComskiCaseStudyCV4() {
             </div>
           </Section>
 
-          <Section n="13" title="Design system" tone="pink">
-            <Reveal><h2>A system was needed because four skills should feel like one product.</h2></Reveal>
-            <div className="cv4-system">
-              <div className="cv4-token-sheet">
-                <label>COLOR</label>
-                <div className="swatches"><i style={{background:'#3B5BDB'}}/><i style={{background:'#1A1D29'}}/><i style={{background:'#F2A04A'}}/><i style={{background:'#E9A6C8'}}/><i style={{background:'#B9DDFF'}}/><i style={{background:'#17264A'}}/></div>
-                <div className="hexes"><span>#3B5BDB</span><span>#1A1D29</span><span>Orange</span><span>Pink</span><span>Light blue</span><span>Navy</span></div>
-                <label>TYPE SCALE</label><div className="type-scale"><b>Display · 56/64</b><strong>Heading · 43/48</strong><span>Body · 17/28</span><small>Caption · 13/18</small></div>
-                <label>SPACING</label><div className="spacing-scale">{[4,8,12,16,24,32,48,64,96,128].map(x => <i key={x} style={{width: Math.max(8, x * .65)}}><b>{x}</b></i>)}</div>
-              </div>
-              <div className="cv4-system-copy"><label>IMPLEMENTATION BACKBONE</label><h3>One component grammar, parameterised by skill.</h3><div><b>GRID</b><span>12-column desktop · 4-column mobile · 768 / 1024 / 1440 breakpoints.</span></div><div><b>COMPONENTS</b><span>Step tracker, question counter, Pro Tips panel, directional completion.</span></div><div><b>RATIONALE</b><span>Structural familiarity transfers even when content and input modality change.</span></div><div><b>ACCESSIBILITY</b><span>Focus visibility, contrast verification, touch-target review and reduced-motion behavior.</span></div></div>
-            </div>
-          </Section>
+
 
           <Section n="14" title="Usability testing & findings" tone="orange">
             <Reveal><h2>Validation is separated from inference — so the case study stays credible.</h2><p className="cv4-lede">The preserved project material does not contain participant counts, task results or validated before/after findings. Rather than inventing evidence, this section shows the testable hypotheses and the protocol I would use.</p></Reveal>
