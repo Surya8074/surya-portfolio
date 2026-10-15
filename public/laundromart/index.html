@@ -492,6 +492,129 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
     <p>The design direction became clearer: the interface needed to make operational information easier to scan, keep garment and order records accessible, and help users move between tasks without losing context.</p>
   </div>
 </section>
+
+<section class="section wrap" id="design-system">
+  <div class="ds-intro">
+    <div class="ds-kicker">THE DESIGN SYSTEM</div>
+    <div class="ds-intro-copy">
+      <h2>A consistent foundation for everyday operations</h2>
+      <p>LaundroMart brings operational tasks and business oversight into one coherent experience. Across the available interface concepts, a restrained palette, clear hierarchy and repeatable patterns help connect garment records, facility management and reporting.</p>
+    </div>
+  </div>
+
+  <div class="ds-story">
+    <div class="ds-story-head">
+      <span class="ds-index">01 / COLOUR & VISUAL IDENTITY</span>
+      <div>
+        <h3>Colour with a clear job to do.</h3>
+        <p>The current case-study interface uses blue for primary actions and active navigation, pale lavender for selected states, and quiet neutrals for the working surface. Status colours are reserved for operational state—not decoration.</p>
+      </div>
+    </div>
+    <div class="ds-palette" aria-label="LaundroMart interface colour palette">
+      <div class="ds-colour ds-blue"><span>Primary</span><strong>#4264ED</strong><small>Actions · Active navigation</small></div>
+      <div class="ds-colour ds-lav"><span>Selection</span><strong>#EEEDFF</strong><small>Selected navigation</small></div>
+      <div class="ds-colour ds-paper"><span>Canvas</span><strong>#FBFAF8</strong><small>Page background</small></div>
+      <div class="ds-colour ds-white"><span>Surface</span><strong>#FFFFFF</strong><small>Tables · Forms</small></div>
+      <div class="ds-colour ds-ink"><span>Ink</span><strong>#17191F</strong><small>Headings · Body</small></div>
+      <div class="ds-colour ds-line"><span>Divider</span><strong>#E8E6E2</strong><small>Rules · Boundaries</small></div>
+    </div>
+    <p class="ds-note">Values above are taken from the case-study stylesheet. Status examples shown later are visual conventions used in the existing interface mockups.</p>
+  </div>
+
+  <div class="ds-story ds-type-story">
+    <div class="ds-story-head">
+      <span class="ds-index">02 / TYPOGRAPHY & HIERARCHY</span>
+      <div>
+        <h3>Make dense information easier to read.</h3>
+        <p>Manrope gives section and screen headings a compact, deliberate voice. DM Sans carries supporting copy and interface labels. Larger headings establish the task; smaller labels help users scan records and controls.</p>
+      </div>
+    </div>
+    <div class="ds-type-specimen">
+      <div class="ds-type-large"><span>DISPLAY / MANROPE</span><strong>Every detail<br>has its place.</strong><small>Section headline · 48 / 52</small></div>
+      <div class="ds-type-detail">
+        <div class="ds-type-row"><span>PAGE TITLE / MANROPE</span><strong>Inventory</strong><small>25 px · 700</small></div>
+        <div class="ds-type-row"><span>BODY / DM SANS</span><p>Manage garment records and track order status.</p><small>12–16 px · regular</small></div>
+        <div class="ds-type-row"><span>FIELD LABEL / DM SANS</span><b>RECORD ID</b><small>11 px · uppercase</small></div>
+        <div class="ds-type-row"><span>KEY VALUE / DM SANS</span><strong>LM-10482</strong><small>12 px · medium</small></div>
+      </div>
+    </div>
+    <p class="ds-note">The typefaces are declared in the page stylesheet. Specimen sizes illustrate the hierarchy visible in the existing case-study UI; they are not presented as a separately documented production token set.</p>
+  </div>
+
+  <div class="ds-story">
+    <div class="ds-story-head">
+      <span class="ds-index">03 / SPACING & STRUCTURE</span>
+      <div>
+        <h3>Use structure to make scanning feel familiar.</h3>
+        <p>Repeated alignment, consistent field spacing and clear separation between table rows make data-heavy screens easier to scan. The examples below describe the layout patterns visible in the existing screen concepts, rather than claiming a formal spacing-token library.</p>
+      </div>
+    </div>
+    <div class="ds-layout-study">
+      <div class="ds-layout-visual">
+        <div class="ds-layout-top"><span>PAGE TITLE</span><i></i></div>
+        <div class="ds-layout-tools"><i></i><b>PRIMARY ACTION</b></div>
+        <div class="ds-layout-table">
+          <div class="ds-layout-th"><span>RECORD</span><span>STATUS</span><span>UPDATED</span></div>
+          <div><span>LM-10482</span><em>Completed</em><span>Today</span></div>
+          <div><span>LM-10481</span><em class="pending">In progress</em><span>Today</span></div>
+          <div><span>LM-10480</span><em class="received">Received</em><span>Yesterday</span></div>
+        </div>
+      </div>
+      <div class="ds-layout-annotations">
+        <div><b>01</b><p><strong>One alignment edge</strong><span>Page title, filters and table content share a common left edge.</span></p></div>
+        <div><b>02</b><p><strong>Actions before data</strong><span>Search and primary actions sit above the record list.</span></p></div>
+        <div><b>03</b><p><strong>Rows create rhythm</strong><span>Subtle dividers separate records without adding visual noise.</span></p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-story">
+    <div class="ds-story-head">
+      <span class="ds-index">04 / COMPONENTS & STATES</span>
+      <div>
+        <h3>Keep controls predictable across tasks.</h3>
+        <p>The interface concepts reuse a small set of recognisable patterns: a filled primary action, bordered search and filter fields, structured tables, and compact status labels. The examples below are drawn from the page’s existing LaundroMart screen mockups.</p>
+      </div>
+    </div>
+    <div class="ds-components">
+      <div class="ds-component-main">
+        <div class="ds-component-top"><span>FORM CONTROLS</span><span>SEARCH · FILTER · ACTION</span></div>
+        <div class="ds-control-line"><label>Search records<input value="Search garment, order or customer…" readonly aria-label="Search records example" /></label><button type="button" tabindex="-1">+ New record</button></div>
+        <div class="ds-control-line ds-filters"><label>DATE RANGE<select aria-label="Date range example" tabindex="-1"><option>Last 30 days</option></select></label><label>FACILITY<select aria-label="Facility example" tabindex="-1"><option>All facilities</option></select></label><label>REPORT TYPE<select aria-label="Report type example" tabindex="-1"><option>Garment activity</option></select></label></div>
+      </div>
+      <div class="ds-component-status">
+        <div class="ds-component-top"><span>STATUS LANGUAGE</span><span>EXAMPLE STATES</span></div>
+        <div class="ds-status-row"><span class="ds-status completed">Completed</span><span>Work recorded as complete</span></div>
+        <div class="ds-status-row"><span class="ds-status inprogress">In progress</span><span>Work still underway</span></div>
+        <div class="ds-status-row"><span class="ds-status received">Received</span><span>Item received into workflow</span></div>
+      </div>
+    </div>
+    <p class="ds-note">These are non-interactive visual examples, not a live component library. Labels and states follow the existing mockup content.</p>
+  </div>
+
+  <div class="ds-story ds-workflows">
+    <div class="ds-story-head">
+      <span class="ds-index">05 / ONE SYSTEM, TWO WORK MODES</span>
+      <div>
+        <h3>Shared visual language. Different levels of detail.</h3>
+        <p>Operators need a focused view of daily order and garment activity. Owners need a wider view across facilities, configuration and reporting. The same typography, table structure, active states and status language can connect both without making their workspaces identical.</p>
+      </div>
+    </div>
+    <div class="ds-role-comparison">
+      <div class="ds-role-view">
+        <div class="ds-role-bar"><span class="ds-dot"></span><strong>Operator workspace</strong><small>DAILY OPERATIONS</small></div>
+        <div class="ds-role-screen"><div class="ds-role-title">Today's work <span>•••</span></div><div class="ds-role-metric"><strong>Order queue</strong><span>Find and update garment records</span></div><div class="ds-role-row"><i></i><span>Garment record</span><b>In progress</b></div><div class="ds-role-row"><i></i><span>Garment record</span><b class="green">Completed</b></div><div class="ds-role-row"><i></i><span>Garment record</span><b>Received</b></div></div>
+        <p>Focused on order activity, garment records and the next operational action.</p>
+      </div>
+      <div class="ds-role-view">
+        <div class="ds-role-bar"><span class="ds-dot owner"></span><strong>Owner workspace</strong><small>BUSINESS OVERSIGHT</small></div>
+        <div class="ds-role-screen"><div class="ds-role-title">Business overview <span>↗</span></div><div class="ds-role-stats"><div><small>FACILITIES</small><strong>Overview</strong></div><div><small>REPORTING</small><strong>Activity</strong></div></div><div class="ds-role-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="ds-role-legend"><span>Inventory</span><span>Operations</span><span>Reports</span></div></div>
+        <p>Wider access to facility configuration, camera setup, records and reporting.</p>
+      </div>
+    </div>
+    <p class="ds-note">The role panels are explanatory compositions based on the documented role split in this case study, not screenshots of additional verified product screens.</p>
+  </div>
+</section>
 <style>
 /* Keep the existing challenge section as its own editorial text section */
 #challenge.editorial-section{padding-top:52px;padding-bottom:48px}
@@ -867,128 +990,7 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
 
 </section>
 
-<section class="section wrap" id="design-system">
-  <div class="ds-intro">
-    <div class="ds-kicker">THE DESIGN SYSTEM</div>
-    <div class="ds-intro-copy">
-      <h2>A consistent foundation for everyday operations</h2>
-      <p>LaundroMart brings operational tasks and business oversight into one coherent experience. Across the available interface concepts, a restrained palette, clear hierarchy and repeatable patterns help connect garment records, facility management and reporting.</p>
-    </div>
-  </div>
 
-  <div class="ds-story">
-    <div class="ds-story-head">
-      <span class="ds-index">01 / COLOUR & VISUAL IDENTITY</span>
-      <div>
-        <h3>Colour with a clear job to do.</h3>
-        <p>The current case-study interface uses blue for primary actions and active navigation, pale lavender for selected states, and quiet neutrals for the working surface. Status colours are reserved for operational state—not decoration.</p>
-      </div>
-    </div>
-    <div class="ds-palette" aria-label="LaundroMart interface colour palette">
-      <div class="ds-colour ds-blue"><span>Primary</span><strong>#4264ED</strong><small>Actions · Active navigation</small></div>
-      <div class="ds-colour ds-lav"><span>Selection</span><strong>#EEEDFF</strong><small>Selected navigation</small></div>
-      <div class="ds-colour ds-paper"><span>Canvas</span><strong>#FBFAF8</strong><small>Page background</small></div>
-      <div class="ds-colour ds-white"><span>Surface</span><strong>#FFFFFF</strong><small>Tables · Forms</small></div>
-      <div class="ds-colour ds-ink"><span>Ink</span><strong>#17191F</strong><small>Headings · Body</small></div>
-      <div class="ds-colour ds-line"><span>Divider</span><strong>#E8E6E2</strong><small>Rules · Boundaries</small></div>
-    </div>
-    <p class="ds-note">Values above are taken from the case-study stylesheet. Status examples shown later are visual conventions used in the existing interface mockups.</p>
-  </div>
-
-  <div class="ds-story ds-type-story">
-    <div class="ds-story-head">
-      <span class="ds-index">02 / TYPOGRAPHY & HIERARCHY</span>
-      <div>
-        <h3>Make dense information easier to read.</h3>
-        <p>Manrope gives section and screen headings a compact, deliberate voice. DM Sans carries supporting copy and interface labels. Larger headings establish the task; smaller labels help users scan records and controls.</p>
-      </div>
-    </div>
-    <div class="ds-type-specimen">
-      <div class="ds-type-large"><span>DISPLAY / MANROPE</span><strong>Every detail<br>has its place.</strong><small>Section headline · 48 / 52</small></div>
-      <div class="ds-type-detail">
-        <div class="ds-type-row"><span>PAGE TITLE / MANROPE</span><strong>Inventory</strong><small>25 px · 700</small></div>
-        <div class="ds-type-row"><span>BODY / DM SANS</span><p>Manage garment records and track order status.</p><small>12–16 px · regular</small></div>
-        <div class="ds-type-row"><span>FIELD LABEL / DM SANS</span><b>RECORD ID</b><small>11 px · uppercase</small></div>
-        <div class="ds-type-row"><span>KEY VALUE / DM SANS</span><strong>LM-10482</strong><small>12 px · medium</small></div>
-      </div>
-    </div>
-    <p class="ds-note">The typefaces are declared in the page stylesheet. Specimen sizes illustrate the hierarchy visible in the existing case-study UI; they are not presented as a separately documented production token set.</p>
-  </div>
-
-  <div class="ds-story">
-    <div class="ds-story-head">
-      <span class="ds-index">03 / SPACING & STRUCTURE</span>
-      <div>
-        <h3>Use structure to make scanning feel familiar.</h3>
-        <p>Repeated alignment, consistent field spacing and clear separation between table rows make data-heavy screens easier to scan. The examples below describe the layout patterns visible in the existing screen concepts, rather than claiming a formal spacing-token library.</p>
-      </div>
-    </div>
-    <div class="ds-layout-study">
-      <div class="ds-layout-visual">
-        <div class="ds-layout-top"><span>PAGE TITLE</span><i></i></div>
-        <div class="ds-layout-tools"><i></i><b>PRIMARY ACTION</b></div>
-        <div class="ds-layout-table">
-          <div class="ds-layout-th"><span>RECORD</span><span>STATUS</span><span>UPDATED</span></div>
-          <div><span>LM-10482</span><em>Completed</em><span>Today</span></div>
-          <div><span>LM-10481</span><em class="pending">In progress</em><span>Today</span></div>
-          <div><span>LM-10480</span><em class="received">Received</em><span>Yesterday</span></div>
-        </div>
-      </div>
-      <div class="ds-layout-annotations">
-        <div><b>01</b><p><strong>One alignment edge</strong><span>Page title, filters and table content share a common left edge.</span></p></div>
-        <div><b>02</b><p><strong>Actions before data</strong><span>Search and primary actions sit above the record list.</span></p></div>
-        <div><b>03</b><p><strong>Rows create rhythm</strong><span>Subtle dividers separate records without adding visual noise.</span></p></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="ds-story">
-    <div class="ds-story-head">
-      <span class="ds-index">04 / COMPONENTS & STATES</span>
-      <div>
-        <h3>Keep controls predictable across tasks.</h3>
-        <p>The interface concepts reuse a small set of recognisable patterns: a filled primary action, bordered search and filter fields, structured tables, and compact status labels. The examples below are drawn from the page’s existing LaundroMart screen mockups.</p>
-      </div>
-    </div>
-    <div class="ds-components">
-      <div class="ds-component-main">
-        <div class="ds-component-top"><span>FORM CONTROLS</span><span>SEARCH · FILTER · ACTION</span></div>
-        <div class="ds-control-line"><label>Search records<input value="Search garment, order or customer…" readonly aria-label="Search records example" /></label><button type="button" tabindex="-1">+ New record</button></div>
-        <div class="ds-control-line ds-filters"><label>DATE RANGE<select aria-label="Date range example" tabindex="-1"><option>Last 30 days</option></select></label><label>FACILITY<select aria-label="Facility example" tabindex="-1"><option>All facilities</option></select></label><label>REPORT TYPE<select aria-label="Report type example" tabindex="-1"><option>Garment activity</option></select></label></div>
-      </div>
-      <div class="ds-component-status">
-        <div class="ds-component-top"><span>STATUS LANGUAGE</span><span>EXAMPLE STATES</span></div>
-        <div class="ds-status-row"><span class="ds-status completed">Completed</span><span>Work recorded as complete</span></div>
-        <div class="ds-status-row"><span class="ds-status inprogress">In progress</span><span>Work still underway</span></div>
-        <div class="ds-status-row"><span class="ds-status received">Received</span><span>Item received into workflow</span></div>
-      </div>
-    </div>
-    <p class="ds-note">These are non-interactive visual examples, not a live component library. Labels and states follow the existing mockup content.</p>
-  </div>
-
-  <div class="ds-story ds-workflows">
-    <div class="ds-story-head">
-      <span class="ds-index">05 / ONE SYSTEM, TWO WORK MODES</span>
-      <div>
-        <h3>Shared visual language. Different levels of detail.</h3>
-        <p>Operators need a focused view of daily order and garment activity. Owners need a wider view across facilities, configuration and reporting. The same typography, table structure, active states and status language can connect both without making their workspaces identical.</p>
-      </div>
-    </div>
-    <div class="ds-role-comparison">
-      <div class="ds-role-view">
-        <div class="ds-role-bar"><span class="ds-dot"></span><strong>Operator workspace</strong><small>DAILY OPERATIONS</small></div>
-        <div class="ds-role-screen"><div class="ds-role-title">Today's work <span>•••</span></div><div class="ds-role-metric"><strong>Order queue</strong><span>Find and update garment records</span></div><div class="ds-role-row"><i></i><span>Garment record</span><b>In progress</b></div><div class="ds-role-row"><i></i><span>Garment record</span><b class="green">Completed</b></div><div class="ds-role-row"><i></i><span>Garment record</span><b>Received</b></div></div>
-        <p>Focused on order activity, garment records and the next operational action.</p>
-      </div>
-      <div class="ds-role-view">
-        <div class="ds-role-bar"><span class="ds-dot owner"></span><strong>Owner workspace</strong><small>BUSINESS OVERSIGHT</small></div>
-        <div class="ds-role-screen"><div class="ds-role-title">Business overview <span>↗</span></div><div class="ds-role-stats"><div><small>FACILITIES</small><strong>Overview</strong></div><div><small>REPORTING</small><strong>Activity</strong></div></div><div class="ds-role-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="ds-role-legend"><span>Inventory</span><span>Operations</span><span>Reports</span></div></div>
-        <p>Wider access to facility configuration, camera setup, records and reporting.</p>
-      </div>
-    </div>
-    <p class="ds-note">The role panels are explanatory compositions based on the documented role split in this case study, not screenshots of additional verified product screens.</p>
-  </div>
-</section>
 <style>
 #design-system{padding-top:72px;padding-bottom:96px}
 #design-system .ds-intro{max-width:980px;margin:0 auto 92px;display:grid;grid-template-columns:190px minmax(0,1fr);gap:56px}
