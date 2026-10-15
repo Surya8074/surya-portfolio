@@ -1153,3 +1153,45 @@ main.cv4-page .cv6-philosophy-application .cv6-challenge-card {
 main.cv4-page .cv6-philosophy-application .cv6-challenge-plus {
   display: none !important;
 }
+
+
+/* Apple-inspired product visual anchored at the bottom of the first card. */
+main.cv4-page .cv6-philosophy-application .cv6-challenge-card:first-child {
+  position: relative;
+  overflow: hidden;
+  background: #FFFFFF !important;
+}
+main.cv4-page .cv6-philosophy-application .cv6-challenge-card:first-child .cv6-challenge-copy {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 0;
+}
+main.cv4-page .cv6-philosophy-application .cv6-challenge-card:first-child .cv6-challenge-art-onboarding {
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 54%;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+main.cv4-page .cv6-philosophy-application .cv6-challenge-card:first-child .cv6-challenge-art-onboarding img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+  object-position: center 42%;
+  transform: none;
+}
+@media (max-width: 480px) {
+  main.cv4-page .cv6-philosophy-application .cv6-challenge-card:first-child .cv6-challenge-art-onboarding {
+    height: 48%;
+  }
+}
