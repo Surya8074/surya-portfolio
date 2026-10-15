@@ -834,7 +834,9 @@ function ComskiCaseStudyCV4() {
           <div className="cv6-philosophy-application">
             <h2>Turning principles into product decisions.</h2>
             <p className="cv6-philosophy-application-intro">These decisions show how ComSki’s learner-first principles shaped the actual experience.</p>
-            <div className="cv6-challenge-cards" aria-label="Four ComSki design challenges">
+            <div className="cv6-challenge-carousel">
+              <button className="cv6-challenge-arrow cv6-challenge-arrow-prev" type="button" aria-label="Scroll cards left" data-scroll-direction="-1">‹</button>
+              <div className="cv6-challenge-cards" aria-label="Four ComSki design challenges">
             <article className="cv6-challenge-card">
               <div className="cv6-challenge-copy">
                 <p className="cv6-challenge-label">CHALLENGE 01</p>
@@ -879,7 +881,9 @@ function ComskiCaseStudyCV4() {
               </div>
               <span className="cv6-challenge-plus" aria-hidden="true">+</span>
             </article>
-          </div>
+              </div>
+              <button className="cv6-challenge-arrow cv6-challenge-arrow-next" type="button" aria-label="Scroll cards right" data-scroll-direction="1">›</button>
+            </div>
           </div>
         </div>
       </section>
