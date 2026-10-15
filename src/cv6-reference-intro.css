@@ -1572,3 +1572,33 @@ main.cv4-page .cv6-ios-principle-tags span { padding:9px 12px;border:1px solid r
 @media (prefers-reduced-motion: reduce) {
   main.cv4-page .cv6-ios-system * { scroll-behavior:auto !important;transition:none !important; }
 }
+
+
+/* Align the ComSki Design System heading with the left-aligned challenge heading above. */
+main.cv4-page .cv6-design-system-section .cv6-ios-system-intro {
+  max-width: 820px;
+  margin: 0 0 clamp(34px, 5vw, 62px);
+  text-align: left;
+}
+
+main.cv4-page .cv6-design-system-section .cv6-ios-system-intro h2 {
+  max-width: 760px;
+  margin: 0 0 20px;
+  text-align: left;
+}
+
+main.cv4-page .cv6-design-system-section .cv6-ios-system-lede {
+  max-width: 680px;
+  margin: 0;
+  text-align: left;
+}
+
+@media (max-width: 520px) {
+  main.cv4-page .cv6-design-system-section .cv6-ios-system-intro {
+    text-align: left;
+  }
+
+  main.cv4-page .cv6-design-system-section .cv6-ios-system-intro h2 {
+    text-align: left;
+  }
+}
