@@ -865,3 +865,108 @@ main.cv4-page .cv6-philosophy-application .cv6-challenge-plus {
     max-height: 220px;
   }
 }
+
+
+/* Exact-size Design Psychology application cards: 344 × 481, kept in one horizontal row. */
+main.cv4-page .cv6-philosophy-application .cv6-challenge-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 344px);
+  grid-auto-flow: column;
+  grid-auto-columns: 344px;
+  gap: 18px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 2px 2px 14px;
+  box-sizing: border-box;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+}
+main.cv4-page .cv6-philosophy-application .cv6-challenge-card {
+  width: 344px;
+  min-width: 344px;
+  max-width: 344px;
+  height: 481px;
+  min-height: 481px;
+  max-height: 481px;
+  box-sizing: border-box;
+  border-radius: 22px;
+  scroll-snap-align: start;
+}
+main.cv4-page .cv6-philosophy-application .cv6-challenge-copy {
+  flex: 0 0 auto;
+  padding: 25px 24px 0;
+}
+main.cv4-page .cv6-philosophy-application .cv6-challenge-label {
+  margin-bottom: 10px;
+  font-size: 11px;
+}
+main.cv4-page .cv6-philosophy-application .cv6-challenge-copy h3 {
+  margin-bottom: 10px;
+  font-size: 27px;
+  line-height: 1.08;
+}
+main.cv4-page .cv6-philosophy-application .cv6-challenge-copy > p:last-child {
+  font-size: 14px;
+  line-height: 1.42;
+}
+main.cv4-page .cv6-philosophy-application .cv6-challenge-art {
+  flex: 1 1 auto;
+  min-height: 0;
+  margin-top: 12px;
+  padding: 0 12px;
+}
+main.cv4-page .cv6-philosophy-application .cv6-challenge-art img {
+  width: 100%;
+  max-height: 100%;
+  height: auto;
+  object-fit: contain;
+}
+main.cv4-page .cv6-philosophy-application .cv6-challenge-art-onboarding img,
+main.cv4-page .cv6-philosophy-application .cv6-challenge-art-feedback img,
+main.cv4-page .cv6-philosophy-application .cv6-challenge-art-reading img {
+  width: 78%;
+  max-height: 100%;
+}
+main.cv4-page .cv6-philosophy-application .cv6-challenge-art-journey img {
+  width: 100%;
+  max-height: 100%;
+}
+main.cv4-page .cv6-philosophy-application .cv6-challenge-plus {
+  right: 14px;
+  bottom: 14px;
+  width: 34px;
+  height: 34px;
+  font-size: 23px;
+}
+@media (max-width: 760px) {
+  main.cv4-page .cv6-philosophy-application .cv6-challenge-cards {
+    grid-template-columns: repeat(4, 344px);
+    grid-auto-columns: 344px;
+    gap: 14px;
+    margin-top: 22px;
+  }
+  main.cv4-page .cv6-philosophy-application .cv6-challenge-card {
+    width: 344px;
+    min-width: 344px;
+    height: 481px;
+    min-height: 481px;
+    max-height: 481px;
+  }
+  main.cv4-page .cv6-philosophy-application .cv6-challenge-copy {
+    padding: 25px 24px 0;
+  }
+  main.cv4-page .cv6-philosophy-application .cv6-challenge-copy h3 {
+    font-size: 27px;
+  }
+  main.cv4-page .cv6-philosophy-application .cv6-challenge-copy > p:last-child {
+    font-size: 14px;
+  }
+  main.cv4-page .cv6-philosophy-application .cv6-challenge-art {
+    min-height: 0;
+    margin-top: 12px;
+    padding: 0 12px;
+  }
+}
