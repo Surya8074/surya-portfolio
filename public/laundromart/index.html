@@ -390,6 +390,14 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
  #problem-banner-frame img{border-radius:18px!important;clip-path:inset(0 round 18px)!important;-webkit-clip-path:inset(0 round 18px)!important;mask:inset(0 round 18px)!important}
 }
 
+
+/* My contributions — clean editorial list inspired by the reference case study */
+.contribution-list{list-style:none;margin:8px 0 0;padding:0;border-top:1px solid var(--line);display:grid;gap:0}
+.contribution-list li{display:grid;grid-template-columns:minmax(190px,.8fr) minmax(0,1.2fr);gap:22px;padding:16px 0;border-bottom:1px solid var(--line);align-items:start}
+.contribution-list li strong{font-size:15px;line-height:1.5;font-weight:600;color:var(--ink)}
+.contribution-list li span{font-size:15px;line-height:1.65;color:#65656d}
+@media(max-width:600px){.contribution-list li{grid-template-columns:1fr;gap:4px;padding:14px 0}.contribution-list li strong,.contribution-list li span{font-size:14px}}
+
 </style></head>
 <body><div class="progress"></div>
 <nav class="nav"><div class="brand"><a class="mark" href="../../" aria-label="Back to portfolio">S</a><a href="../../"><strong>Surya Kiran</strong></a><span class="muted">/ LaundroMart</span></div><div class="navlinks"><a href="#context">Context</a><a href="#system">System</a><a href="#experience">Experience</a><a href="#reflection">Reflection</a></div></nav>
@@ -430,9 +438,15 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
 </section>
 <section class="contribution-section wrap" id="contribution">
   <div class="contribution-copy reveal">
-    <h2>Where I came in</h2>
-    <p>My work focused on shaping a connected experience across LaundroMart’s operational workflows. The interface needed to make garment information, transactions, operator tasks and facility tools easier to navigate while keeping the product visually consistent.</p>
-    <p>I approached the screens as parts of one system: clear page hierarchy for quick scanning, repeatable patterns for records and forms, and consistent navigation between overview-level information and task-level detail.</p>
+    <h2>My contributions</h2>
+    <p>As the sole product designer on LaundroMart, I owned the end-to-end design process—from understanding operational needs to defining user journeys and building a consistent interface system.</p>
+    <ul class="contribution-list">
+      <li><strong>Product research</strong><span>Explored user needs, operational workflows and pain points to frame the core design problems.</span></li>
+      <li><strong>User journeys and information architecture</strong><span>Mapped key tasks and structured the experience so users could move between overviews, records and detailed actions with clarity.</span></li>
+      <li><strong>UX flows and interaction design</strong><span>Designed task flows, navigation patterns, forms and reusable interaction behaviours across the product.</span></li>
+      <li><strong>UI design and design system</strong><span>Established visual foundations, reusable components, typography, spacing and interface patterns to keep screens consistent.</span></li>
+      <li><strong>Prototyping and iteration</strong><span>Created and refined screen concepts to communicate design decisions and validate the end-to-end experience with stakeholders.</span></li>
+    </ul>
   </div>
   <figure id="problem-banner-frame" class="contribution-visual" aria-label="LaundroMart problem-space banner" style="display:block!important;position:relative;width:94%;max-width:none;height:auto;margin:-58px auto 0;padding:0;border:0;border-radius:24px!important;overflow:hidden!important;isolation:isolate;line-height:0;background:transparent;box-shadow:none;">
     <div style="display:block;width:100%;height:auto;overflow:hidden;border-radius:24px!important;clip-path:inset(0 round 24px);-webkit-clip-path:inset(0 round 24px);line-height:0;">
