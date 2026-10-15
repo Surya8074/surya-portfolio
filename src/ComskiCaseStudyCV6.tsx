@@ -867,19 +867,52 @@ function ComskiCaseStudyCV4() {
 
           <Section n="02" title="Challenges & design complexity" tone="pink">
             <Reveal><h2>Senior design work starts by making the constraint set explicit.</h2></Reveal>
-            <Table className="cv4-challenge-table">
-              <thead><tr><th>Challenge</th><th>Why it mattered</th><th>Design implication</th><th>How I approached it</th></tr></thead>
-              <tbody>
-                {[
-                  ['Multiple user types', 'Students need encouragement; professionals need realism and outcome relevance.', 'Shared interaction grammar; divergent content and tone.', 'Kept four-skill progression identical; varied onboarding framing and named goal journeys.'],
-                  ['AI uncertainty', 'A confidence score can be technically correct and still mislead users about what to do.', 'Actionable guidance must lead; scores become secondary.', 'Reworked feedback hierarchy around what to improve next.'],
-                  ['Four modalities', 'Different inputs can make the product feel like four mini-products.', 'One interaction grammar across modalities.', 'Locked prompt → respond → check → completion before designing individual skills.'],
-                  ['Onboarding complexity', 'Personalisation needs context, but every extra question is drop-off risk.', 'Progressive disclosure and reversible answers.', 'Conversational, one-question-at-a-time onboarding with back navigation.'],
-                  ['Trust in AI feedback', 'Users will not engage with feedback they cannot understand or trust.', 'Earn trust before vulnerable input.', 'Explicit judgement-free framing and visible system status.'],
-                  ['Control vs assessment integrity', 'Exiting mid-assessment can compromise incomplete skill data.', 'Bounded control rather than blanket control.', 'Opt-out before start; once started, assessment exit is intentionally constrained.']
-                ].map(row => <tr key={row[0]}>{row.map((cell, i) => i === 0 ? <th key={i}>{cell}</th> : <td key={i}>{cell}</td>)}</tr>)}
-              </tbody>
-            </Table>
+            <div className="cv6-challenge-cards" aria-label="Four ComSki design challenges">
+            <article className="cv6-challenge-card">
+              <div className="cv6-challenge-copy">
+                <p className="cv6-challenge-label">CHALLENGE 01</p>
+                <h3>Personalisation without friction.</h3>
+                <p>Understand each learner’s goals and context without turning onboarding into a long setup form.</p>
+              </div>
+              <div className="cv6-challenge-art cv6-challenge-art-onboarding">
+                <img src={BASE + 'Onboarding 1st Question.svg'} alt="ComSki onboarding question that personalises the learner experience" loading="lazy" />
+              </div>
+              <span className="cv6-challenge-plus" aria-hidden="true">+</span>
+            </article>
+            <article className="cv6-challenge-card">
+              <div className="cv6-challenge-copy">
+                <p className="cv6-challenge-label">CHALLENGE 02</p>
+                <h3>Four skills. One coherent journey.</h3>
+                <p>Speaking, writing, listening and reading needed distinct tasks without feeling like separate products.</p>
+              </div>
+              <div className="cv6-challenge-art cv6-challenge-art-journey">
+                <img src={BASE + 'Desktop - 1.svg'} alt="ComSki My Journey dashboard connecting the four communication skills" loading="lazy" />
+              </div>
+              <span className="cv6-challenge-plus" aria-hidden="true">+</span>
+            </article>
+            <article className="cv6-challenge-card">
+              <div className="cv6-challenge-copy">
+                <p className="cv6-challenge-label">CHALLENGE 03</p>
+                <h3>AI feedback that earns trust.</h3>
+                <p>Feedback had to feel understandable and useful—not like a score that judges every mistake.</p>
+              </div>
+              <div className="cv6-challenge-art cv6-challenge-art-feedback">
+                <img src={BASE + 'Speaking 2.svg'} alt="ComSki speaking practice and response feedback screen" loading="lazy" />
+              </div>
+              <span className="cv6-challenge-plus" aria-hidden="true">+</span>
+            </article>
+            <article className="cv6-challenge-card">
+              <div className="cv6-challenge-copy">
+                <p className="cv6-challenge-label">CHALLENGE 04</p>
+                <h3>Practice without pressure.</h3>
+                <p>Make the experience supportive enough for learners to try, reflect, and try again with confidence.</p>
+              </div>
+              <div className="cv6-challenge-art cv6-challenge-art-reading">
+                <img src={BASE + 'Reading.svg'} alt="ComSki reading assessment interface" loading="lazy" />
+              </div>
+              <span className="cv6-challenge-plus" aria-hidden="true">+</span>
+            </article>
+          </div>
           </Section>
 
           <Section n="03" title="Research — secondary + user" tone="orange">
