@@ -290,6 +290,33 @@ body{background:var(--paper)}
 .contribution-section figure.contribution-visual{display:block!important;visibility:visible!important;opacity:1!important;position:relative;isolation:isolate;width:94%;max-width:none;height:auto;min-height:0;margin:-58px auto 0;padding:0;overflow:hidden!important;border:0;border-radius:24px!important;clip-path:inset(0 round 24px);-webkit-mask-image:-webkit-radial-gradient(white,black);background:transparent;box-shadow:none;line-height:0;transform:none}
 .contribution-section figure.contribution-visual img,.contribution-section figure.contribution-visual video{display:block!important;visibility:visible!important;opacity:1!important;width:100%;max-width:none;height:auto;aspect-ratio:8/3;object-fit:contain;object-position:center;border:0;border-radius:24px!important;clip-path:inset(0 round 24px);-webkit-mask-image:-webkit-radial-gradient(white,black)}
 @media(max-width:760px){.contribution-section figure.contribution-visual{width:98%;margin:-32px auto 0;border-radius:18px!important;clip-path:inset(0 round 18px)}.contribution-section figure.contribution-visual img,.contribution-section figure.contribution-visual video{aspect-ratio:8/3;object-fit:contain;border-radius:18px!important;clip-path:inset(0 round 18px)}}
+
+/* Final fix: clip the animated problem banner to a rounded outer frame */
+.contribution-section figure.contribution-visual{
+  border-radius:24px!important;
+  overflow:hidden!important;
+  clip-path:inset(0 round 24px)!important;
+  -webkit-clip-path:inset(0 round 24px)!important;
+  -webkit-mask-image:none!important;
+  mask-image:none!important;
+  isolation:isolate;
+}
+.contribution-section figure.contribution-visual img,
+.contribution-section figure.contribution-visual video{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  border-radius:24px!important;
+  overflow:hidden!important;
+  clip-path:inset(0 round 24px)!important;
+  -webkit-clip-path:inset(0 round 24px)!important;
+}
+@media(max-width:760px){
+  .contribution-section figure.contribution-visual{border-radius:18px!important;clip-path:inset(0 round 18px)!important;-webkit-clip-path:inset(0 round 18px)!important}
+  .contribution-section figure.contribution-visual img,
+  .contribution-section figure.contribution-visual video{border-radius:18px!important;clip-path:inset(0 round 18px)!important;-webkit-clip-path:inset(0 round 18px)!important}
+}
+
 </style></head>
 <body><div class="progress"></div>
 <nav class="nav"><div class="brand"><a class="mark" href="../../" aria-label="Back to portfolio">S</a><a href="../../"><strong>Surya Kiran</strong></a><span class="muted">/ LaundroMart</span></div><div class="navlinks"><a href="#context">Context</a><a href="#system">System</a><a href="#experience">Experience</a><a href="#reflection">Reflection</a></div></nav>
