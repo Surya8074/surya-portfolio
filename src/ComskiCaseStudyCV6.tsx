@@ -842,7 +842,7 @@ function ComskiCaseStudyCV4() {
                 <p>Understand each learner’s goals and context without turning onboarding into a long setup form.</p>
               </div>
               <div className="cv6-challenge-art cv6-challenge-art-onboarding">
-                <img src={BASE + 'Onboarding 1st Question.svg'} alt="ComSki onboarding question that personalises the learner experience" loading="lazy" />
+                <img src={BASE + 'comski-personalisation-card.webp'} alt="ComSki personalised onboarding screen showing learner goals on a phone" loading="lazy" />
               </div>
               <span className="cv6-challenge-plus" aria-hidden="true">+</span>
             </article>
