@@ -805,7 +805,7 @@ function ComskiCaseStudyCV4() {
                 <span className="cv6-philosophy-progress"><i /></span>
               </div>
               <h3>Understand</h3>
-              <p>Establishes empathy with the learner.</p>
+              <p>Understand learner needs and context.</p>
               <div className="cv6-philosophy-visual cv6-understand-visual" aria-hidden="true">
                 <div className="cv6-context-panel">
                   <div className="cv6-context-head"><span className="cv6-avatar-dot" /><span className="cv6-context-title">Learner context</span><span className="cv6-context-more">•••</span></div>
@@ -821,7 +821,7 @@ function ComskiCaseStudyCV4() {
                 <span className="cv6-philosophy-progress"><i /></span>
               </div>
               <h3>Connect</h3>
-              <p>Explains the product’s four-skill approach.</p>
+              <p>Unites all four communication skills.</p>
               <div className="cv6-philosophy-visual cv6-connect-visual" aria-label="AI connects speaking, writing, listening, and reading">
                 <span className="cv6-connect-line cv6-connect-line-a" />
                 <span className="cv6-connect-line cv6-connect-line-b" />
@@ -840,7 +840,7 @@ function ComskiCaseStudyCV4() {
                 <span className="cv6-philosophy-progress"><i /></span>
               </div>
               <h3>Identify</h3>
-              <p>Communicates the purpose of assessment.</p>
+              <p>Reveal strengths and growth areas.</p>
               <div className="cv6-philosophy-visual cv6-profile-visual" aria-hidden="true">
                 <div className="cv6-profile-head"><span>Communication profile</span><span>•••</span></div>
                 <div className="cv6-profile-radar"><span className="cv6-radar-ring ring-one" /><span className="cv6-radar-ring ring-two" /><span className="cv6-radar-shape" /></div>
@@ -855,7 +855,7 @@ function ComskiCaseStudyCV4() {
                 <span className="cv6-philosophy-progress"><i /></span>
               </div>
               <h3>Guide</h3>
-              <p>Shows how ComSki turns insights into useful feedback.</p>
+              <p>Turn insights into helpful feedback.</p>
               <div className="cv6-philosophy-visual cv6-feedback-visual" aria-hidden="true">
                 <div className="cv6-feedback-head"><span className="cv6-feedback-spark">✦</span><b>Personalized feedback</b></div>
                 <div className="cv6-feedback-row"><span><img src="/surya-portfolio/comski/philosophy-icons/check.svg" alt="" /></span>What went well</div>
@@ -869,7 +869,7 @@ function ComskiCaseStudyCV4() {
                 <span className="cv6-philosophy-progress"><i /></span>
               </div>
               <h3>Improve</h3>
-              <p>Closes the loop with a clear next action.</p>
+              <p>Make the next step clear.</p>
               <div className="cv6-philosophy-visual cv6-next-visual" aria-hidden="true">
                 <div className="cv6-next-head"><span>Next steps</span><img src="/surya-portfolio/comski/philosophy-icons/calendar.svg" alt="" /></div>
                 <div className="cv6-next-row"><span className="cv6-next-symbol blue">✓</span><span>Daily practice</span></div>
