@@ -1214,3 +1214,53 @@ main.cv4-page .cv6-philosophy-application .cv6-challenge-card:first-child {
     linear-gradient(#FFFFFF, #FFFFFF) padding-box,
     linear-gradient(135deg, rgba(59,91,219,.26) 0%, rgba(174,184,207,.42) 48%, rgba(59,91,219,.12) 100%) border-box !important;
 }
+
+
+/* Fix first card: show the entire uploaded onboarding composition without cropping. */
+main.cv4-page .cv6-philosophy-application .cv6-challenge-card:first-child {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  align-self: stretch;
+  overflow: hidden;
+}
+main.cv4-page .cv6-philosophy-application .cv6-challenge-card:first-child .cv6-challenge-copy {
+  position: relative;
+  z-index: 2;
+  flex: 0 0 auto;
+  padding: 22px 22px 0;
+}
+main.cv4-page .cv6-philosophy-application .cv6-challenge-card:first-child .cv6-challenge-art-onboarding {
+  position: relative;
+  inset: auto;
+  display: flex;
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  min-height: 0;
+  margin: 16px 14px 14px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  background: #F8FAFF;
+  border-radius: 12px;
+}
+main.cv4-page .cv6-philosophy-application .cv6-challenge-card:first-child .cv6-challenge-art-onboarding img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
+  transform: none;
+}
+@media (max-width: 760px) {
+  main.cv4-page .cv6-philosophy-application .cv6-challenge-card:first-child .cv6-challenge-copy {
+    padding: 18px 16px 0;
+  }
+  main.cv4-page .cv6-philosophy-application .cv6-challenge-card:first-child .cv6-challenge-art-onboarding {
+    margin: 14px 12px 12px;
+  }
+}
