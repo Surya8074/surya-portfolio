@@ -799,35 +799,83 @@ function ComskiCaseStudyCV4() {
             <p>This shaped our core principle: <strong>make practice approachable, feedback actionable, and progress clear.</strong></p>
           </div>
           <div className="cv6-philosophy-steps" aria-label="ComSki design principles">
-            <article className="cv6-philosophy-step">
-              <span className="cv6-philosophy-step-number">01</span>
-              <span className="cv6-philosophy-step-icon" aria-hidden="true">◎</span>
+            <article className="cv6-philosophy-step cv6-philosophy-understand">
+              <div className="cv6-philosophy-step-top">
+                <span className="cv6-philosophy-step-icon" aria-hidden="true"><img src="/surya-portfolio/comski/philosophy-icons/understand-ear.svg" alt="" /></span>
+                <span className="cv6-philosophy-progress"><i /></span>
+              </div>
               <h3>Understand</h3>
-              <p>Start with each learner’s needs, goals, and communication challenges.</p>
+              <p>Establishes empathy with the learner.</p>
+              <div className="cv6-philosophy-visual cv6-understand-visual" aria-hidden="true">
+                <div className="cv6-context-panel">
+                  <div className="cv6-context-head"><span className="cv6-avatar-dot" /><span className="cv6-context-title">Learner context</span><span className="cv6-context-more">•••</span></div>
+                  <div className="cv6-context-row"><span className="cv6-mini-icon">◎</span><span className="cv6-context-line long" /></div>
+                  <div className="cv6-context-row"><span className="cv6-mini-icon">↗</span><span className="cv6-context-line medium" /></div>
+                  <div className="cv6-context-row"><span className="cv6-mini-icon">◌</span><span className="cv6-context-line short" /></div>
+                </div>
+              </div>
             </article>
-            <article className="cv6-philosophy-step">
-              <span className="cv6-philosophy-step-number">02</span>
-              <span className="cv6-philosophy-step-icon" aria-hidden="true">◫</span>
+            <article className="cv6-philosophy-step cv6-philosophy-connect">
+              <div className="cv6-philosophy-step-top">
+                <span className="cv6-philosophy-step-icon" aria-hidden="true"><img src="/surya-portfolio/comski/philosophy-icons/connect-nodes.svg" alt="" /></span>
+                <span className="cv6-philosophy-progress"><i /></span>
+              </div>
               <h3>Connect</h3>
-              <p>Bring speaking, writing, listening, and reading into one coherent journey.</p>
+              <p>Explains the product’s four-skill approach.</p>
+              <div className="cv6-philosophy-visual cv6-connect-visual" aria-label="AI connects speaking, writing, listening, and reading">
+                <span className="cv6-connect-line cv6-connect-line-a" />
+                <span className="cv6-connect-line cv6-connect-line-b" />
+                <span className="cv6-connect-line cv6-connect-line-c" />
+                <span className="cv6-connect-line cv6-connect-line-d" />
+                <span className="cv6-connect-node cv6-connect-speaking"><img src="/surya-portfolio/comski/philosophy-icons/microphone.svg" alt="" /><b>Speaking</b></span>
+                <span className="cv6-connect-node cv6-connect-writing"><img src="/surya-portfolio/comski/philosophy-icons/pencil.svg" alt="" /><b>Writing</b></span>
+                <span className="cv6-connect-node cv6-connect-listening"><img src="/surya-portfolio/comski/philosophy-icons/headphones.svg" alt="" /><b>Listening</b></span>
+                <span className="cv6-connect-node cv6-connect-reading"><img src="/surya-portfolio/comski/philosophy-icons/book.svg" alt="" /><b>Reading</b></span>
+                <span className="cv6-connect-ai">AI</span>
+              </div>
             </article>
-            <article className="cv6-philosophy-step">
-              <span className="cv6-philosophy-step-number">03</span>
-              <span className="cv6-philosophy-step-icon" aria-hidden="true">⌕</span>
+            <article className="cv6-philosophy-step cv6-philosophy-identify">
+              <div className="cv6-philosophy-step-top">
+                <span className="cv6-philosophy-step-icon" aria-hidden="true"><img src="/surya-portfolio/comski/philosophy-icons/identify-target.svg" alt="" /></span>
+                <span className="cv6-philosophy-progress"><i /></span>
+              </div>
               <h3>Identify</h3>
-              <p>Help learners recognise their strengths and where they can improve.</p>
+              <p>Communicates the purpose of assessment.</p>
+              <div className="cv6-philosophy-visual cv6-profile-visual" aria-hidden="true">
+                <div className="cv6-profile-head"><span>Communication profile</span><span>•••</span></div>
+                <div className="cv6-profile-radar"><span className="cv6-radar-ring ring-one" /><span className="cv6-radar-ring ring-two" /><span className="cv6-radar-shape" /></div>
+                <div className="cv6-profile-row"><span>Clarity</span><i><b className="bar-one" /></i></div>
+                <div className="cv6-profile-row"><span>Structure</span><i><b className="bar-two" /></i></div>
+                <div className="cv6-profile-row"><span>Confidence</span><i><b className="bar-three" /></i></div>
+              </div>
             </article>
-            <article className="cv6-philosophy-step">
-              <span className="cv6-philosophy-step-number">04</span>
-              <span className="cv6-philosophy-step-icon" aria-hidden="true">↗</span>
+            <article className="cv6-philosophy-step cv6-philosophy-guide">
+              <div className="cv6-philosophy-step-top">
+                <span className="cv6-philosophy-step-icon" aria-hidden="true"><img src="/surya-portfolio/comski/philosophy-icons/guide-feedback.svg" alt="" /></span>
+                <span className="cv6-philosophy-progress"><i /></span>
+              </div>
               <h3>Guide</h3>
-              <p>Turn feedback into supportive, specific, and actionable suggestions.</p>
+              <p>Shows how ComSki turns insights into useful feedback.</p>
+              <div className="cv6-philosophy-visual cv6-feedback-visual" aria-hidden="true">
+                <div className="cv6-feedback-head"><span className="cv6-feedback-spark">✦</span><b>Personalized feedback</b></div>
+                <div className="cv6-feedback-row"><span><img src="/surya-portfolio/comski/philosophy-icons/check.svg" alt="" /></span>What went well</div>
+                <div className="cv6-feedback-row"><span><img src="/surya-portfolio/comski/philosophy-icons/check.svg" alt="" /></span>What to improve</div>
+                <div className="cv6-feedback-row"><span><img src="/surya-portfolio/comski/philosophy-icons/check.svg" alt="" /></span>Practical suggestions</div>
+              </div>
             </article>
-            <article className="cv6-philosophy-step">
-              <span className="cv6-philosophy-step-number">05</span>
-              <span className="cv6-philosophy-step-icon" aria-hidden="true">→</span>
+            <article className="cv6-philosophy-step cv6-philosophy-improve">
+              <div className="cv6-philosophy-step-top">
+                <span className="cv6-philosophy-step-icon" aria-hidden="true"><img src="/surya-portfolio/comski/philosophy-icons/improve-arrow.svg" alt="" /></span>
+                <span className="cv6-philosophy-progress"><i /></span>
+              </div>
               <h3>Improve</h3>
-              <p>Make the next practice step clear so progress can build over time.</p>
+              <p>Closes the loop with a clear next action.</p>
+              <div className="cv6-philosophy-visual cv6-next-visual" aria-hidden="true">
+                <div className="cv6-next-head"><span>Next steps</span><img src="/surya-portfolio/comski/philosophy-icons/calendar.svg" alt="" /></div>
+                <div className="cv6-next-row"><span className="cv6-next-symbol blue">✓</span><span>Daily practice</span></div>
+                <div className="cv6-next-row"><span className="cv6-next-symbol pink">◎</span><span>Target exercises</span></div>
+                <div className="cv6-next-row"><span className="cv6-next-symbol green">↗</span><span>Track progress</span></div>
+              </div>
             </article>
           </div>
         </div>
