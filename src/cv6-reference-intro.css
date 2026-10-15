@@ -1195,3 +1195,22 @@ main.cv4-page .cv6-philosophy-application .cv6-challenge-card:first-child .cv6-c
     height: 48%;
   }
 }
+
+
+/* Subtle edge definition so white cards separate from the page background. */
+main.cv4-page .cv6-philosophy-application .cv6-challenge-card {
+  border: 1px solid transparent !important;
+  background:
+    linear-gradient(#FFFFFF, #FFFFFF) padding-box,
+    linear-gradient(135deg, rgba(59,91,219,.26) 0%, rgba(174,184,207,.42) 48%, rgba(59,91,219,.12) 100%) border-box !important;
+  box-shadow: 0 4px 18px rgba(24, 39, 75, .035);
+  transition: box-shadow 220ms ease, border-color 220ms ease, transform 220ms ease;
+}
+main.cv4-page .cv6-philosophy-application .cv6-challenge-card:hover {
+  box-shadow: 0 10px 28px rgba(24, 39, 75, .075);
+}
+main.cv4-page .cv6-philosophy-application .cv6-challenge-card:first-child {
+  background:
+    linear-gradient(#FFFFFF, #FFFFFF) padding-box,
+    linear-gradient(135deg, rgba(59,91,219,.26) 0%, rgba(174,184,207,.42) 48%, rgba(59,91,219,.12) 100%) border-box !important;
+}
