@@ -766,3 +766,31 @@ main.cv4-page .cv6-challenge-plus {
   main.cv4-page .cv6-challenge-card,
   main.cv4-page .cv6-challenge-art img { transition: none !important; }
 }
+
+
+/* Apple-style challenge cards placed directly beneath Design Psychology. */
+main.cv4-page .cv6-philosophy-application {
+  margin-top: clamp(52px, 7vw, 84px);
+  padding-top: clamp(30px, 4vw, 46px);
+  border-top: 1px solid #E8E8ED;
+}
+main.cv4-page .cv6-philosophy-application > .cv6-philosophy-eyebrow {
+  margin-bottom: 18px;
+}
+main.cv4-page .cv6-philosophy-application > h2 {
+  margin-bottom: 14px;
+}
+main.cv4-page .cv6-philosophy-application-intro {
+  max-width: 680px;
+  margin: 0;
+  color: #45516B;
+  font-size: 16px;
+  line-height: 1.6;
+}
+main.cv4-page .cv6-philosophy-application .cv6-challenge-cards {
+  margin-top: 30px;
+}
+@media (max-width: 640px) {
+  main.cv4-page .cv6-philosophy-application { margin-top: 48px; padding-top: 28px; }
+  main.cv4-page .cv6-philosophy-application-intro { font-size: 15px; }
+}
