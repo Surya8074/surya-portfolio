@@ -777,12 +777,21 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
       <span class="role-shared-icon">↔</span>
       <p><strong>One connected operational record</strong><span>Day-to-day activity supports the shared view the business uses to oversee operations.</span></p>
     </div>
+    <div class="role-decision-note">
+      <span class="role-decision-label">DESIGN DECISION</span>
+      <p><strong>Different responsibilities, the right level of access.</strong> Owners can manage facilities, configure cameras, review records and download reports. Operators see only the orders and evidence needed for their daily tasks. This focused, simpler interface reduces distractions and helps staff learn the workflow quickly, with minimal training.</p>
+    </div>
   </div>
 </section>
 <style>
 /* Role architecture section: preserves LaundroMart's editorial typography, blue accents and rounded pale surfaces */
 #role-architecture{padding-top:26px;padding-bottom:72px}
 #role-architecture .role-architecture-shell{background:#f3f9fc;border-radius:30px;padding:48px 44px 34px}
+#role-architecture .role-decision-note{display:grid;grid-template-columns:150px minmax(0,1fr);gap:20px;align-items:start;margin-top:24px;padding:22px 24px;background:rgba(255,255,255,.78);border:1px solid #e2ebf2;border-radius:18px}
+#role-architecture .role-decision-label{font-size:10px;letter-spacing:.14em;font-weight:800;color:#6675cf;padding-top:4px}
+#role-architecture .role-decision-note p{margin:0;color:var(--muted);font-size:14px;line-height:1.75}
+#role-architecture .role-decision-note p strong{color:var(--ink);font-weight:750}
+@media(max-width:640px){#role-architecture .role-decision-note{grid-template-columns:1fr;gap:8px;padding:18px}}
 #role-architecture .role-architecture-intro{max-width:690px;margin:0 auto 34px;text-align:center}
 #role-architecture .role-kicker{font-size:10px;letter-spacing:.16em;font-weight:750;color:#6675cf}
 #role-architecture .role-architecture-intro h2{font-family:'Manrope',sans-serif;font-size:clamp(25px,3vw,34px);line-height:1.2;letter-spacing:-.04em;font-weight:700;color:var(--ink);margin:12px 0 14px}
