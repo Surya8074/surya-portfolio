@@ -570,7 +570,7 @@ main.cv4-page .cv6-philosophy-copy { max-width: 868px; }
 main.cv4-page .cv6-philosophy-steps {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 12px;
+  gap: 22px;
   width: 100%;
   margin: 30px 0 0;
 }
@@ -578,11 +578,11 @@ main.cv4-page .cv6-philosophy-step {
   position: relative;
   display: flex;
   min-width: 0;
-  height: 236px;
-  min-height: 236px;
+  height: 294px;
+  min-height: 294px;
   flex-direction: column;
   align-items: stretch;
-  padding: 16px 14px 14px;
+  padding: 18px;
   box-sizing: border-box;
   overflow: hidden;
   border: 1px solid #E4E9F4;
@@ -591,7 +591,7 @@ main.cv4-page .cv6-philosophy-step {
   color: #101B3A;
   box-shadow: 0 3px 12px rgba(24, 43, 84, .045);
 }
-main.cv4-page .cv6-journey-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 22px; }
+main.cv4-page .cv6-journey-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 28px; }
 main.cv4-page .cv6-journey-index { color: #A0AAC0; font-size: 12px; font-weight: 700; letter-spacing: .06em; font-variant-numeric: tabular-nums; }
 main.cv4-page .cv6-philosophy-step-icon {
   display: flex; align-items: center; justify-content: center;
@@ -622,9 +622,9 @@ main.cv4-page .cv6-philosophy-improve .cv6-journey-dot { background: #5DAE96; }
 }
 @media (max-width: 1199px) {
   main.cv4-page .cv6-philosophy-inner { width: min(100% - 64px, 900px); }
-  main.cv4-page .cv6-philosophy-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-  main.cv4-page .cv6-philosophy-step { height: 220px; min-height: 220px; }
-  main.cv4-page .cv6-journey-head { margin-bottom: 18px; }
+  main.cv4-page .cv6-philosophy-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+  main.cv4-page .cv6-philosophy-step { height: 294px; min-height: 294px; padding: 18px; }
+  main.cv4-page .cv6-journey-head { margin-bottom: 22px; }
 }
 @media (max-width: 767px) {
   main.cv4-page .cv6-philosophy-inner { width: calc(100% - 40px); }
