@@ -116,3 +116,11 @@
 @media(max-width:900px){.ayushi-resume-section .ayushi-skills-content{grid-template-columns:repeat(3,minmax(0,max-content));column-gap:24px}}
 @media(max-width:560px){.ayushi-resume-section .ayushi-skills-content{grid-template-columns:repeat(2,minmax(0,max-content));column-gap:20px}}
 
+
+/* Restore the original two-column skills list with clear spacing. */
+.ayushi-resume-section .ayushi-skills-row{gap:52px}
+.ayushi-resume-section .ayushi-skills-content{display:flex;flex:1;min-width:0;gap:72px;align-items:flex-start}
+.ayushi-resume-section .ayushi-skills-column{display:flex;flex:0 1 auto;flex-direction:column;gap:0;min-width:0}
+.ayushi-resume-section .ayushi-skills-column p{margin:0;line-height:1.6;white-space:normal;overflow-wrap:normal}
+@media(max-width:900px){.ayushi-resume-section .ayushi-skills-content{gap:32px}.ayushi-resume-section .ayushi-skills-row{gap:32px}}
+@media(max-width:560px){.ayushi-resume-section .ayushi-skills-content{flex-direction:column;gap:12px}.ayushi-resume-section .ayushi-skills-row{flex-direction:column;gap:16px}}
