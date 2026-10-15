@@ -392,11 +392,13 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
 
 
 /* My contributions — clean editorial list inspired by the reference case study */
-.contribution-list{list-style:none;margin:8px 0 0;padding:0;border-top:1px solid var(--line);display:grid;gap:0}
-.contribution-list li{display:grid;grid-template-columns:minmax(190px,.8fr) minmax(0,1.2fr);gap:22px;padding:16px 0;border-bottom:1px solid var(--line);align-items:start}
-.contribution-list li strong{font-size:15px;line-height:1.5;font-weight:600;color:var(--ink)}
-.contribution-list li span{font-size:15px;line-height:1.65;color:#65656d}
-@media(max-width:600px){.contribution-list li{grid-template-columns:1fr;gap:4px;padding:14px 0}.contribution-list li strong,.contribution-list li span{font-size:14px}}
+/* My contributions — compact, scannable bullet list */
+.contribution-list{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--line)}
+.contribution-list li{position:relative;display:block;padding:15px 0 15px 22px;border-bottom:1px solid var(--line);font-size:15px;line-height:1.7;color:#65656d}
+.contribution-list li:before{content:"";position:absolute;left:2px;top:25px;width:6px;height:6px;border-radius:50%;background:var(--accent,#3b5bdb)}
+.contribution-list li strong{font-size:15px;line-height:1.6;font-weight:650;color:var(--ink);margin-right:5px}
+.contribution-list li span{font-size:15px;line-height:1.7;color:#65656d}
+@media(max-width:600px){.contribution-list{margin-top:12px}.contribution-list li{padding:13px 0 13px 20px;font-size:14px}.contribution-list li:before{top:22px}.contribution-list li strong,.contribution-list li span{font-size:14px}}
 
 
 /* Give My contributions its own section-level breathing room after the banner */
