@@ -831,42 +831,11 @@ function ComskiCaseStudyCV4() {
             </article>
           </div>
         </div>
-      </section>
-
-      <aside className="cv4-section-nav" aria-label="Case study sections">
-        <div className="cv4-section-nav-line" />
-        {[['01','Problem'],['02','Constraints'],['03','Research'],['04','Users'],['05','Competition'],['06','Synthesis'],['07','Journey'],['08','Process'],['09','Exploration'],['10','IA + Flow'],['11','Screens'],['12','AI UX'],['13','System'],['14','Validation'],['15','Build'],['16','Outcomes'],['17','Business'],['18','Learnings'],['19','Next'],['20','Role']].map(([n,label]) => (
-          <a
-            key={n}
-            href={`#s${n}`}
-            className={activeSection === n ? 'active' : ''}
-            aria-label={`${n} ${label}`}
-          >
-            <span>{n}</span><b>{label}</b>
-          </a>
-        ))}
-      </aside>
-
-      <div className="cv4-story-wrap">
-        <svg className="cv4-trail" ref={trailRef} viewBox="0 0 40 1000" preserveAspectRatio="none" aria-hidden="true">
-          <path className="cv4-trail-base" d="M20 0 V1000" />
-          <path className="cv4-trail-fill" d="M20 0 V1000" />
-        </svg>
-
-        <div className="cv4-story">
-          <Section n="01" title="Problem framing">
-            <Reveal><h2>The failure point wasn't instruction. It was the moment practice started to feel like judgement.</h2></Reveal>
-            <Stagger className="cv4-four-blocks rb-stagger-grid">
-              <SpotlightCard><article><label>User problem</label><h3>People who need to communicate under pressure lack a reliable, private practice loop.</h3><p>Students presenting in class and professionals preparing for interviews can know their content and still freeze when delivery becomes the task.</p></article></SpotlightCard>
-              <article><label>Business problem</label><h3>Communication coaching is fragmented by modality and audience.</h3><p>Language mechanics, pronunciation and spoken delivery are commonly split across products, while school and professional contexts are rarely unified.</p></article>
-              <article><label>Product opportunity</label><h3>Build one coaching system across Reading, Listening, Writing and Speaking.</h3><p>Keep the interaction model coherent while allowing content and scenarios to adapt to the learner's context.</p></article>
-              <article><label>Design challenge</label><h3>Serve a class debate and a technical interview without making either audience feel generic.</h3><p>The architecture needed shared interaction grammar with divergent content, tone and goal framing.</p></article>
-            </Stagger>
-            <Reveal className="cv4-hmw"><label>HOW MIGHT WE</label><strong>How might we help learners build real communication confidence through consistent, low-pressure practice — without the fear of judgement that stops people practicing?</strong></Reveal>
-          </Section>
-
-          <Section n="02" title="Challenges & design complexity" tone="pink">
-            <Reveal><h2>Senior design work starts by making the constraint set explicit.</h2></Reveal>
+      
+          <div className="cv6-philosophy-application">
+            <p className="cv6-philosophy-eyebrow"><span>IN PRACTICE</span><span>DESIGN PSYCHOLOGY</span></p>
+            <h2>Turning principles into product decisions.</h2>
+            <p className="cv6-philosophy-application-intro">These decisions show how ComSki’s learner-first principles shaped the actual experience.</p>
             <div className="cv6-challenge-cards" aria-label="Four ComSki design challenges">
             <article className="cv6-challenge-card">
               <div className="cv6-challenge-copy">
@@ -913,6 +882,39 @@ function ComskiCaseStudyCV4() {
               <span className="cv6-challenge-plus" aria-hidden="true">+</span>
             </article>
           </div>
+          </div>
+</section>
+
+      <aside className="cv4-section-nav" aria-label="Case study sections">
+        <div className="cv4-section-nav-line" />
+        {[['01','Problem'],['02','Constraints'],['03','Research'],['04','Users'],['05','Competition'],['06','Synthesis'],['07','Journey'],['08','Process'],['09','Exploration'],['10','IA + Flow'],['11','Screens'],['12','AI UX'],['13','System'],['14','Validation'],['15','Build'],['16','Outcomes'],['17','Business'],['18','Learnings'],['19','Next'],['20','Role']].map(([n,label]) => (
+          <a
+            key={n}
+            href={`#s${n}`}
+            className={activeSection === n ? 'active' : ''}
+            aria-label={`${n} ${label}`}
+          >
+            <span>{n}</span><b>{label}</b>
+          </a>
+        ))}
+      </aside>
+
+      <div className="cv4-story-wrap">
+        <svg className="cv4-trail" ref={trailRef} viewBox="0 0 40 1000" preserveAspectRatio="none" aria-hidden="true">
+          <path className="cv4-trail-base" d="M20 0 V1000" />
+          <path className="cv4-trail-fill" d="M20 0 V1000" />
+        </svg>
+
+        <div className="cv4-story">
+          <Section n="01" title="Problem framing">
+            <Reveal><h2>The failure point wasn't instruction. It was the moment practice started to feel like judgement.</h2></Reveal>
+            <Stagger className="cv4-four-blocks rb-stagger-grid">
+              <SpotlightCard><article><label>User problem</label><h3>People who need to communicate under pressure lack a reliable, private practice loop.</h3><p>Students presenting in class and professionals preparing for interviews can know their content and still freeze when delivery becomes the task.</p></article></SpotlightCard>
+              <article><label>Business problem</label><h3>Communication coaching is fragmented by modality and audience.</h3><p>Language mechanics, pronunciation and spoken delivery are commonly split across products, while school and professional contexts are rarely unified.</p></article>
+              <article><label>Product opportunity</label><h3>Build one coaching system across Reading, Listening, Writing and Speaking.</h3><p>Keep the interaction model coherent while allowing content and scenarios to adapt to the learner's context.</p></article>
+              <article><label>Design challenge</label><h3>Serve a class debate and a technical interview without making either audience feel generic.</h3><p>The architecture needed shared interaction grammar with divergent content, tone and goal framing.</p></article>
+            </Stagger>
+            <Reveal className="cv4-hmw"><label>HOW MIGHT WE</label><strong>How might we help learners build real communication confidence through consistent, low-pressure practice — without the fear of judgement that stops people practicing?</strong></Reveal>
           </Section>
 
           <Section n="03" title="Research — secondary + user" tone="orange">
