@@ -525,6 +525,68 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
 #research .research-placeholder-note{font-size:14px;line-height:1.5}
 @media(max-width:850px){#research.editorial-section{padding-top:38px;padding-bottom:52px}#research .research-story{grid-template-columns:1fr;gap:28px}#research .research-copy h2{font-size:21px}#research .research-copy .research-lead,#research .research-copy p,#research .research-questions li{font-size:16px}#research .research-visual{max-width:520px}}
 </style>
+<section class="section wrap decision-matrix-section" id="decision-matrix">
+  <div class="decision-matrix-wrap">
+    <div class="matrix-frame" role="img" aria-label="Prioritisation matrix comparing operational importance and how easily laundry workflow information is understood">
+      <div class="matrix-y-axis">Operational importance</div>
+      <div class="matrix-chart">
+        <div class="matrix-quadrant-label matrix-label-top">Critical to daily operations</div>
+        <div class="matrix-quadrant-label matrix-label-left">Clear at a glance</div>
+        <div class="matrix-quadrant-label matrix-label-right">Needs more context</div>
+        <div class="matrix-quadrant-label matrix-label-bottom">Useful supporting information</div>
+        <span class="matrix-pill p1">Order status</span>
+        <span class="matrix-pill p2">Garment ID</span>
+        <span class="matrix-pill p3">Due date</span>
+        <span class="matrix-pill p4">Customer details</span>
+        <span class="matrix-pill p5">Service type</span>
+        <span class="matrix-pill p6">Stain / damage notes</span>
+        <span class="matrix-pill p7">Pickup / delivery</span>
+        <span class="matrix-pill p8">Care instructions</span>
+        <span class="matrix-pill p9">Order history</span>
+        <span class="matrix-pill p10">Internal notes</span>
+      </div>
+      <div class="matrix-x-axis">How easily is the information understood?</div>
+    </div>
+    <div class="matrix-decision-story">
+      <div class="decision-tag"><span aria-hidden="true">↗</span> Design decision</div>
+      <p>I used this prioritisation matrix to decide which details should be immediately visible and which could sit deeper in the workflow. Order status, garment ID and due date needed strong visual hierarchy because they support quick decisions. Details such as care instructions and stain notes needed enough context to avoid ambiguity.</p>
+      <p>This informed the interface direction: make essential order information scannable, keep related garment details together, and use clear status cues to help staff understand what needs attention next.</p>
+    </div>
+  </div>
+</section>
+<style>
+/* LaundroMart information-priority matrix, adapted from the supplied reference */
+#decision-matrix{padding-top:24px;padding-bottom:76px}
+#decision-matrix .decision-matrix-wrap{width:min(100%,920px);margin:0 auto}
+#decision-matrix .matrix-frame{position:relative;width:min(100%,650px);margin:0 auto 30px;padding:0 0 30px 30px}
+#decision-matrix .matrix-chart{position:relative;aspect-ratio:1/0.82;border:2px solid #242424;border-radius:18px;background:#fbfaf6;overflow:hidden}
+#decision-matrix .matrix-chart:before,#decision-matrix .matrix-chart:after{content:"";position:absolute;z-index:0;pointer-events:none}
+#decision-matrix .matrix-chart:before{left:50%;top:8%;bottom:8%;border-left:1px dashed #a6a6a6}
+#decision-matrix .matrix-chart:after{left:2%;right:2%;top:50%;border-top:1px dashed #a6a6a6}
+#decision-matrix .matrix-y-axis{position:absolute;left:0;top:43%;writing-mode:vertical-rl;transform:rotate(180deg);font-size:13px;font-weight:700;color:#222}
+#decision-matrix .matrix-x-axis{text-align:center;font-size:14px;font-weight:700;color:#202020;margin-top:0;padding-top:0}
+#decision-matrix .matrix-quadrant-label{position:absolute;z-index:1;font-size:11px;color:#333;text-decoration:underline;text-underline-offset:3px}
+#decision-matrix .matrix-label-top{top:12px;left:50%;transform:translateX(-50%);font-weight:600;white-space:nowrap}
+#decision-matrix .matrix-label-left{left:12px;top:calc(50% + 10px)}
+#decision-matrix .matrix-label-right{right:12px;top:calc(50% + 10px)}
+#decision-matrix .matrix-label-bottom{left:50%;bottom:10px;transform:translateX(-50%);white-space:nowrap}
+#decision-matrix .matrix-pill{position:absolute;z-index:2;display:inline-flex;align-items:center;justify-content:center;padding:9px 13px;border-radius:999px;background:#f7f4d8;color:#171717;font-size:11px;font-weight:650;line-height:1.2;text-align:center;white-space:nowrap}
+#decision-matrix .p1{left:9%;top:18%}
+#decision-matrix .p2{left:30%;top:29%}
+#decision-matrix .p3{left:10%;top:39%}
+#decision-matrix .p4{left:57%;top:20%}
+#decision-matrix .p5{left:72%;top:33%}
+#decision-matrix .p6{left:57%;top:43%;white-space:normal;max-width:130px}
+#decision-matrix .p7{left:9%;top:62%}
+#decision-matrix .p8{left:30%;top:73%}
+#decision-matrix .p9{left:10%;top:84%}
+#decision-matrix .p10{left:65%;top:72%}
+#decision-matrix .matrix-decision-story{width:min(100%,650px);margin:0 auto}
+#decision-matrix .decision-tag{display:inline-flex;align-items:center;gap:8px;background:#ffe49a;border-radius:9px;padding:9px 13px;font-size:13px;font-weight:700;color:#202020;margin-bottom:15px}
+#decision-matrix .decision-tag span{font-size:17px}
+#decision-matrix .matrix-decision-story p{font-size:16px;line-height:1.6;color:var(--ink);margin:0 0 14px}
+@media(max-width:650px){#decision-matrix{padding-top:12px;padding-bottom:48px}#decision-matrix .matrix-frame{padding-left:22px;padding-bottom:25px;margin-bottom:22px}#decision-matrix .matrix-chart{border-radius:13px}#decision-matrix .matrix-pill{font-size:8px;padding:6px 7px}#decision-matrix .matrix-label-top{font-size:8px;top:9px}#decision-matrix .matrix-label-left,#decision-matrix .matrix-label-right{font-size:8px;top:calc(50% + 7px)}#decision-matrix .matrix-label-left{left:7px}#decision-matrix .matrix-label-right{right:7px}#decision-matrix .matrix-label-bottom{font-size:8px;bottom:7px}#decision-matrix .matrix-y-axis{font-size:10px}#decision-matrix .matrix-x-axis{font-size:11px}#decision-matrix .p6{max-width:80px}#decision-matrix .matrix-decision-story p{font-size:15px}}
+</style>
 <section class="section compact wrap" id="system"><div class="dark"><div class="eyebrow">02 — Product model</div><h2>Connect the physical workflow to the digital record.</h2><p>The product concept connects camera-based garment capture and AI-assisted data with an operational interface for reviewing records, managing staff and overseeing facilities.</p><div class="flow"><div class="step"><small>STEP 01</small><strong>Capture</strong><span>Camera workflows provide visual records of garments in the operation.</span></div><div class="step"><small>STEP 02</small><strong>Organise</strong><span>AI-assisted garment data is structured into records the team can work with.</span></div><div class="step"><small>STEP 03</small><strong>Operate</strong><span>The dashboard brings inventory, staff, facilities and reporting into view.</span></div></div></div></section>
 <section class="section wrap" id="experience"><div class="head"><div class="num">03 — The experience</div><div><h2>A connected system across multiple workflows.</h2><p class="intro">This walkthrough follows the way the platform is organised—from the overview, into garment records, then into the people and infrastructure supporting the work.</p></div></div>
 <div class="feature"><div class="feature-grid"><div><div class="feature-label">01 / Inventory</div><h3>Make garment records easy to scan and act on.</h3></div><div class="feature-copy"><p>Inventory is where operational detail becomes actionable. A clear table structure, status cues and predictable actions help users move between records without losing context.</p><p>The layout prioritises scanning first, then provides a path into more detailed garment and order information.</p></div></div><div class="art"><svg class="screen" viewBox="0 0 1100 560" role="img" aria-label="Illustrative inventory management screen"><rect width="1100" height="560" rx="14" fill="#f8f9fc"/><rect width="175" height="560" fill="#fff"/><text x="24" y="42" font-size="16" font-weight="700" fill="#24283a">LaundroMart</text><g font-size="13" fill="#777e8d"><text x="24" y="100">Overview</text><rect x="12" y="119" width="150" height="38" rx="8" fill="#eeedff"/><text x="24" y="143" fill="#4264ed" font-weight="700">Inventory</text><text x="24" y="190">Transactions</text><text x="24" y="237">Operators</text><text x="24" y="284">Facilities</text><text x="24" y="331">Reports</text></g><text x="205" y="48" font-size="25" font-weight="700" fill="#222638">Inventory</text><text x="205" y="74" font-size="12" fill="#838999">Manage garment records and track order status.</text><rect x="205" y="100" width="650" height="42" rx="8" fill="#fff" stroke="#e2e5ed"/><text x="225" y="126" font-size="12" fill="#969baa">Search garment, order or customer…</text><rect x="870" y="100" width="200" height="42" rx="8" fill="#4264ed"/><text x="970" y="126" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">+ New record</text><rect x="205" y="160" width="865" height="355" rx="10" fill="#fff" stroke="#e2e5ed"/><rect x="205" y="160" width="865" height="45" rx="10" fill="#f4f5f9"/><g font-size="11" fill="#858b9a" font-weight="700"><text x="225" y="187">RECORD ID</text><text x="365" y="187">GARMENT</text><text x="535" y="187">CUSTOMER</text><text x="690" y="187">STATUS</text><text x="865" y="187">UPDATED</text></g><g font-size="12" fill="#33384a"><text x="225" y="237">LM-10482</text><text x="365" y="237">Formal shirt</text><text x="535" y="237">Customer 01</text><text x="865" y="237">Sample date</text><text x="225" y="290">LM-10481</text><text x="365" y="290">Trousers</text><text x="535" y="290">Customer 02</text><text x="865" y="290">Sample date</text><text x="225" y="343">LM-10480</text><text x="365" y="343">Jacket</text><text x="535" y="343">Customer 03</text><text x="865" y="343">Sample date</text><text x="225" y="396">LM-10479</text><text x="365" y="396">Cotton shirt</text><text x="535" y="396">Customer 04</text><text x="865" y="396">Sample date</text><text x="225" y="449">LM-10478</text><text x="365" y="449">Dress</text><text x="535" y="449">Customer 05</text><text x="865" y="449">Sample date</text></g><g font-size="10" font-weight="700"><rect x="680" y="219" width="88" height="25" rx="12" fill="#e5f7ed"/><text x="724" y="235" text-anchor="middle" fill="#23885d">Completed</text><rect x="680" y="272" width="88" height="25" rx="12" fill="#fff3dc"/><text x="724" y="288" text-anchor="middle" fill="#9b6a0d">In progress</text><rect x="680" y="325" width="88" height="25" rx="12" fill="#eeedff"/><text x="724" y="341" text-anchor="middle" fill="#6454cb">Received</text><rect x="680" y="378" width="88" height="25" rx="12" fill="#e5f7ed"/><text x="724" y="394" text-anchor="middle" fill="#23885d">Completed</text><rect x="680" y="431" width="88" height="25" rx="12" fill="#fff3dc"/><text x="724" y="447" text-anchor="middle" fill="#9b6a0d">In progress</text></g><g stroke="#edf0f5"><path d="M205 258H1070M205 311H1070M205 364H1070M205 417H1070M205 470H1070"/></g></svg><div class="caption"><span>Inventory records</span><span>Illustrative interface preview</span></div></div></div>
