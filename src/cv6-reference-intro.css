@@ -662,12 +662,15 @@ main.cv4-page .cv6-philosophy-visual {
   position: relative;
   width: 100%;
   min-width: 0;
-  height: 104px;
-  min-height: 104px;
-  flex: 0 0 104px;
+  height: 96px;
+  min-height: 96px;
+  flex: 0 0 96px;
   margin-top: auto;
-  padding-top: 9px;
+  padding-top: 8px;
   box-sizing: border-box;
+}
+main.cv4-page .cv6-philosophy-step > p {
+  margin-bottom: 6px;
 }
 main.cv4-page .cv6-context-panel,
 main.cv4-page .cv6-profile-visual,
@@ -686,10 +689,10 @@ main.cv4-page .cv6-context-panel {
   overflow: hidden;
 }
 main.cv4-page .cv6-philosophy-understand .cv6-philosophy-visual {
-  height: 96px;
-  min-height: 96px;
-  flex-basis: 96px;
-  padding-top: 8px;
+  height: 92px;
+  min-height: 92px;
+  flex-basis: 92px;
+  padding-top: 6px;
 }
 main.cv4-page .cv6-philosophy-understand .cv6-context-head { margin-bottom: 5px; }
 main.cv4-page .cv6-philosophy-understand .cv6-context-row { margin-top: 4px; }
@@ -703,7 +706,7 @@ main.cv4-page .cv6-context-line { display: block; height: 6px; border-radius: 10
 main.cv4-page .cv6-context-line.long { width: 82%; }
 main.cv4-page .cv6-context-line.medium { width: 68%; }
 main.cv4-page .cv6-context-line.short { width: 52%; }
-main.cv4-page .cv6-connect-visual { height: 104px; min-height: 104px; flex: 0 0 104px; padding-top: 0; margin-top: auto; }
+main.cv4-page .cv6-connect-visual { height: 96px; min-height: 96px; flex: 0 0 96px; padding-top: 0; margin-top: auto; }
 main.cv4-page .cv6-connect-ai {
   position: absolute; z-index: 2; top: 35px; left: 50%;
   display: flex; align-items: center; justify-content: center;
@@ -779,7 +782,7 @@ main.cv4-page .cv6-next-symbol.green { color: #16A36A; background: #E9FBF2; }
   main.cv4-page .cv6-philosophy-step-top { margin-bottom: 10px; }
   main.cv4-page .cv6-philosophy-step h3 { font-size: 19px; }
   main.cv4-page .cv6-philosophy-step > p { min-height: 36px; font-size: 12.5px; }
-  main.cv4-page .cv6-philosophy-visual { width: min(100%, 300px); height: 104px; min-height: 104px; flex-basis: 104px; margin-top: auto; align-self: center; }
+  main.cv4-page .cv6-philosophy-visual { width: min(100%, 300px); height: 96px; min-height: 96px; flex-basis: 96px; margin-top: auto; align-self: center; }
   main.cv4-page .cv6-connect-visual { width: min(100%, 300px); }
 }
 @media (prefers-reduced-motion: reduce) {
