@@ -1758,3 +1758,19 @@ main.cv4-page .cv6-design-system-section .cv6-ios-system-lede {
     font-size: 15px !important;
   }
 }
+
+
+/* Design System section: disable reveal, hover, and motion effects. */
+main.cv4-page .cv6-design-system-section *,
+main.cv4-page .cv6-design-system-section *::before,
+main.cv4-page .cv6-design-system-section *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+main.cv4-page .cv6-design-system-section .cv6-ios-system-panel:hover,
+main.cv4-page .cv6-design-system-section .cv6-ios-system-panel:focus,
+main.cv4-page .cv6-design-system-section .cv6-ios-system-panel:focus-within {
+  transform: none !important;
+  filter: none !important;
+}
