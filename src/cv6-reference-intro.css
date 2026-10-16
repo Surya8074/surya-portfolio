@@ -1673,3 +1673,28 @@ main.cv4-page .cv6-design-system-section .cv6-ios-system-intro h2,
 main.cv4-page .cv6-design-system-section .cv6-ios-system-lede {
   margin-left: 0 !important;
 }
+
+
+/* Correct the Design System container: center the same fixed-width content column as the preceding section. */
+main.cv4-page .cv6-design-system-section .cv4-section-content {
+  box-sizing: border-box !important;
+  width: min(100% - 48px, 760px) !important;
+  max-width: 760px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+main.cv4-page .cv6-design-system-section .cv6-ios-system-intro {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+main.cv4-page .cv6-design-system-section .cv6-ios-system-intro h2,
+main.cv4-page .cv6-design-system-section .cv6-ios-system-lede {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
