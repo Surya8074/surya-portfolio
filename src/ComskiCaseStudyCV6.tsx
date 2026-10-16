@@ -80,7 +80,7 @@ function Section({ n, title, children, tone = 'blue', className = '' }: { n: str
     <section className={`cv4-section tone-${tone} ${className}`} id={`s${n}`}>
       <div className="cv4-section-marker" aria-hidden="true"><span>{n}</span></div>
       <div className="cv4-section-content">
-        <div className="cv4-section-kicker">{title}</div>
+        {title && <div className="cv4-section-kicker">{title}</div>}
         {children}
       </div>
     </section>
@@ -884,7 +884,7 @@ function ComskiCaseStudyCV4() {
         </div>
       </section>
 
-          <Section n="13" title="Design system" tone="blue" className="cv6-design-system-section">
+          <Section n="13" title="" tone="blue" className="cv6-design-system-section">
             <div className="cv6-ios-system">
               <Reveal className="cv6-ios-system-intro">
                 <h2>A calm, consistent system.<br/><em>Built for everyday progress.</em></h2>
