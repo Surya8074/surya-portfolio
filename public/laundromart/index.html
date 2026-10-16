@@ -816,28 +816,36 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
   <article class="workflow-step workflow-operator">
     <div class="workflow-copy">
       <span class="workflow-number">01 — OPERATOR WORKFLOW</span>
-      <h3>Keep daily work focused.</h3>
-      <p>The operator workflow centres on the records staff need to work with throughout the day. Orders and garment details should be easy to locate, review and connect to the task in progress.</p>
-      <p>The interface should make the most relevant information visible first, while keeping supporting details available when an operator needs to look more closely at a record. This keeps the workflow focused on the work at hand rather than the wider management of the business.</p>
+      <h3>Keep the order in context.</h3>
+      <p>When an operator opens an order, the details need to bring the work into focus. The order summary connects the operator and wash dates with clothing counts, status, and the garment evidence associated with that record.</p>
+      <p>Rather than explaining each control in isolation, this view gives the operator a place to review the order and understand the information available before moving into a more specific task.</p>
     </div>
-    <div class="workflow-screen-placeholder workflow-screen-large" role="note" aria-label="Original LaundroMart operator workflow screen to be inserted">
-      <span class="workflow-placeholder-index">OPERATOR WORKFLOW / SCREEN 01</span>
-      <span class="workflow-placeholder-title">Order list or garment records</span>
-      <span class="workflow-placeholder-copy">Replace this area with the original LaundroMart screen. Keep the screenshot large enough to read its table structure, status and primary actions.</span>
+    <figure class="workflow-product-figure">
+      <div class="workflow-image-frame"><div class="workflow-image-placeholder">
+        <span class="workflow-placeholder-index">OPERATOR WORKFLOW / FULL SCREEN</span>
+        <strong>Order details summary</strong>
+        <span>Original screen: summary of the order details when clicked.png</span>
+      </div></div>
+      <figcaption><span>Order details</span><span>Full interface view</span></figcaption>
+    </figure>
+    <div class="workflow-feature-intro">
+      <span class="workflow-detail-label">A CLOSER LOOK</span>
+      <h4>Review, organise and correct the record.</h4>
+      <p>The supporting views show how operators can add a transaction, inspect garment evidence, and change a category when a correction is needed. Together, these screens explain more of the workflow than the dashboard alone.</p>
     </div>
+    <figure class="workflow-product-figure workflow-composite-figure">
+      <div class="workflow-image-frame"><div class="workflow-composite-placeholder">
+        <div class="workflow-composite-tile"><span>01 / TRANSACTION</span><strong>Capture wash details</strong><small>Transaction ID · Wash category · Camera</small></div>
+        <div class="workflow-composite-tile"><span>02 / GARMENT EVIDENCE</span><strong>Review clothing categories</strong><small>Garment groups · Evidence thumbnails</small></div>
+        <div class="workflow-composite-tile"><span>03 / CORRECTION</span><strong>Move misclassified evidence</strong><small>Change category · Confirm action</small></div>
+      </div></div>
+      <figcaption><span>Transaction and evidence controls</span><span>Combined feature view</span></figcaption>
+    </figure>
     <div class="workflow-detail">
-      <div class="workflow-detail-copy">
-        <span class="workflow-detail-label">INFORMATION HIERARCHY</span>
-        <h4>Help staff find the next relevant detail.</h4>
-        <p>Order and garment information should be organised so the key record details can be scanned first, with additional context available for review. The original screens will determine which fields and status indicators deserve emphasis.</p>
-      </div>
-      <div class="workflow-detail-copy">
-        <span class="workflow-detail-label">RECORD CONTEXT</span>
-        <h4>Keep the task connected to its record.</h4>
-        <p>When an operator moves from an order to its garment details, the relationship between those views should remain clear. We can show this interaction using the actual order and record screens rather than relying on a generic diagram.</p>
-      </div>
+      <div class="workflow-detail-copy"><span class="workflow-detail-label">TRANSACTION CAPTURE</span><h4>Keep the wash record specific.</h4><p>The transaction form captures the wash category and camera selection alongside the transaction identifier. These fields help define the context for the record being added.</p></div>
+      <div class="workflow-detail-copy"><span class="workflow-detail-label">EVIDENCE REVIEW</span><h4>Make corrections part of the workflow.</h4><p>The evidence view groups clothing by category, while the change-category dialog provides a way to move selected evidence when it has been assigned incorrectly.</p></div>
     </div>
-    <p class="workflow-asset-note"><strong>Visuals to place here:</strong> the original operator order list, followed by the garment-record detail screen. These will be shown as large product images, not small thumbnails.</p>
+    <p class="workflow-asset-note"><strong>Asset note:</strong> The two image compositions are laid out here, but the uploaded screenshot files still need to be added to the website repository before they can render as final images.</p>
   </article>
 
   <article class="workflow-step workflow-owner">
@@ -1142,6 +1150,26 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
 
 
 
+<style>
+#core-workflow .workflow-product-figure{margin:0 auto 54px;max-width:1120px}
+#core-workflow .workflow-image-frame{width:100%;overflow:hidden;border-radius:16px;background:#fff;border:1px solid var(--line)}
+#core-workflow .workflow-image-placeholder{min-height:460px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:48px;text-align:center;background:linear-gradient(180deg,#fff 0%,#fbfbfa 100%)}
+#core-workflow .workflow-placeholder-index{font-size:11px;letter-spacing:.11em;font-weight:750;color:var(--blue)}
+#core-workflow .workflow-image-placeholder strong{font-family:'Manrope',sans-serif;font-size:clamp(24px,3vw,34px);letter-spacing:-.035em;color:var(--ink)}
+#core-workflow .workflow-image-placeholder>span:last-child{font-size:13px;color:var(--muted)}
+#core-workflow .workflow-product-figure figcaption{display:flex;justify-content:space-between;gap:18px;padding:12px 2px 0;color:var(--muted);font-size:12px;line-height:1.5}
+#core-workflow .workflow-feature-intro{max-width:790px;margin:0 auto 28px}
+#core-workflow .workflow-feature-intro h4{font-family:'Manrope',sans-serif;font-size:clamp(23px,2.5vw,30px);line-height:1.25;letter-spacing:-.03em;margin:0 0 14px;color:var(--ink)}
+#core-workflow .workflow-feature-intro p{font-size:17px;line-height:1.7;margin:0;color:var(--ink)}
+#core-workflow .workflow-composite-placeholder{display:grid;grid-template-columns:1.1fr 1fr;gap:18px;padding:24px;background:#f8f7f4}
+#core-workflow .workflow-composite-tile{min-height:190px;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;gap:10px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px}
+#core-workflow .workflow-composite-tile:first-child{grid-row:span 2}
+#core-workflow .workflow-composite-tile span{font-size:10px;letter-spacing:.1em;font-weight:750;color:var(--blue)}
+#core-workflow .workflow-composite-tile strong{font-family:'Manrope',sans-serif;font-size:clamp(18px,2vw,24px);letter-spacing:-.025em;color:var(--ink)}
+#core-workflow .workflow-composite-tile small{font-size:12px;line-height:1.5;color:var(--muted)}
+#core-workflow .workflow-detail{margin-top:44px}
+@media(max-width:760px){#core-workflow .workflow-image-placeholder{min-height:280px;padding:24px}#core-workflow .workflow-composite-placeholder{grid-template-columns:1fr;padding:12px;gap:12px}#core-workflow .workflow-composite-tile,#core-workflow .workflow-composite-tile:first-child{grid-row:auto;min-height:150px;padding:18px}#core-workflow .workflow-product-figure figcaption{flex-direction:column;gap:4px}#core-workflow .workflow-feature-intro p{font-size:16px}}
+</style>
 </main><footer class="footer wrap"><span>© Surya Kiran · Product Design</span><span><a href="../../">Back to portfolio ↗</a></span></footer>
 <script>
 const bar=document.querySelector('.progress');function progress(){const max=document.documentElement.scrollHeight-innerHeight;bar.style.width=(max>0?scrollY/max*100:0)+'%'}addEventListener('scroll',progress,{passive:true});progress();
