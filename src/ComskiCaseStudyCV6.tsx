@@ -886,10 +886,10 @@ function ComskiCaseStudyCV4() {
 
           <Section n="13" title="" tone="blue" className="cv6-design-system-section">
             <div className="cv6-ios-system">
-              <Reveal className="cv6-ios-system-intro">
+              <div className="cv6-ios-system-intro">
                 <h2>A calm, consistent system. <em>Built for everyday progress.</em></h2>
                 <p className="cv6-ios-system-lede">A light, tactile interface gives four communication skills one recognisable home. Clear hierarchy does the heavy lifting; colour, depth and motion are used only when they help learners understand what to do next.</p>
-              </Reveal>
+              </div>
 
               <div className="cv6-ios-system-board">
                 <article className="cv6-ios-system-panel cv6-ios-palette-panel">
