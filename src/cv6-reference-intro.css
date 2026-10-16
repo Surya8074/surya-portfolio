@@ -1774,3 +1774,20 @@ main.cv4-page .cv6-design-system-section .cv6-ios-system-panel:focus-within {
   transform: none !important;
   filter: none !important;
 }
+
+
+/* Ensure uploaded ComSki challenge illustrations render at a useful size. */
+main.cv4-page .cv6-philosophy-application .cv6-challenge-art-feedback img,
+main.cv4-page .cv6-philosophy-application .cv6-challenge-art-reading img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  max-height: 360px !important;
+  height: auto !important;
+  min-height: 0 !important;
+  object-fit: contain !important;
+  object-position: center bottom !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
