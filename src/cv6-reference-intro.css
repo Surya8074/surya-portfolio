@@ -1698,3 +1698,63 @@ main.cv4-page .cv6-design-system-section .cv6-ios-system-lede {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
+
+
+/* Final alignment and type correction: mirror the preceding section's 920px content column. */
+main.cv4-page .cv6-design-system-section .cv4-section-content {
+  box-sizing: border-box !important;
+  width: calc(100% - 48px) !important;
+  max-width: 920px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+main.cv4-page .cv6-design-system-section .cv6-ios-system-intro {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 0 14px !important;
+  text-align: left !important;
+}
+
+main.cv4-page .cv6-design-system-section .cv6-ios-system-intro h2 {
+  max-width: none !important;
+  margin: 0 0 14px !important;
+  color: #101B3A !important;
+  font-family: "Work Sans", Inter, Arial, sans-serif !important;
+  font-size: clamp(26px, 3vw, 42px) !important;
+  font-weight: 750 !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.04em !important;
+  text-align: left !important;
+}
+
+main.cv4-page .cv6-design-system-section .cv6-ios-system-intro h2 em {
+  color: #101B3A !important;
+  font-style: normal !important;
+}
+
+main.cv4-page .cv6-design-system-section .cv6-ios-system-lede {
+  max-width: 900px !important;
+  margin: 0 !important;
+  color: #45516B !important;
+  font-family: "Work Sans", Inter, Arial, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  letter-spacing: 0 !important;
+  text-align: left !important;
+}
+
+@media (max-width: 640px) {
+  main.cv4-page .cv6-design-system-section .cv4-section-content {
+    width: calc(100% - 40px) !important;
+  }
+  main.cv4-page .cv6-design-system-section .cv6-ios-system-intro h2 {
+    font-size: clamp(25px, 6vw, 32px) !important;
+  }
+  main.cv4-page .cv6-design-system-section .cv6-ios-system-lede {
+    font-size: 15px !important;
+  }
+}
