@@ -1654,3 +1654,22 @@ main.cv4-page .cv6-design-system-section .cv6-ios-system-lede {
   margin: 0 !important;
   text-align: left !important;
 }
+
+
+/* Match the Design System intro to the same content inset as the previous section. */
+main.cv4-page .cv6-design-system-section .cv4-section-content {
+  padding-left: clamp(18px, 2.2vw, 28px) !important;
+  padding-right: clamp(18px, 2.2vw, 28px) !important;
+}
+
+main.cv4-page .cv6-design-system-section .cv6-ios-system-intro {
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+main.cv4-page .cv6-design-system-section .cv6-ios-system-intro h2,
+main.cv4-page .cv6-design-system-section .cv6-ios-system-lede {
+  margin-left: 0 !important;
+}
