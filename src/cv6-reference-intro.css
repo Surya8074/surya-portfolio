@@ -3169,3 +3169,63 @@ section.cv6-information-architecture.cv4-section .cv6-ia-architecture-reference 
     width: calc(100% - 32px) !important;
   }
 }
+
+
+/* Root-cause fix: the section content wrapper was centering/narrowing the entire section,
+   while the reference board uses a full-width section and a separate centered inner grid. */
+section.cv6-information-architecture.cv4-section {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  padding-inline: 0 !important;
+  box-sizing: border-box !important;
+}
+section.cv6-information-architecture.cv4-section > .cv4-section-content {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+section.cv6-information-architecture.cv4-section > .cv4-section-content > .cv6-ia-intro {
+  display: block !important;
+  position: relative !important;
+  inset: auto !important;
+  transform: none !important;
+  width: min(920px, calc(100vw - 64px)) !important;
+  max-width: 920px !important;
+  margin: 0 0 28px max(32px, calc((100vw - 1240px) / 2)) !important;
+  padding: 0 !important;
+  text-align: left !important;
+  box-sizing: border-box !important;
+}
+section.cv6-information-architecture.cv4-section > .cv4-section-content > .cv6-ia-intro h2,
+section.cv6-information-architecture.cv4-section > .cv4-section-content > .cv6-ia-intro p.cv4-lede {
+  display: block !important;
+  width: 100% !important;
+  max-width: 760px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  text-align: left !important;
+  text-indent: 0 !important;
+}
+section.cv6-information-architecture.cv4-section > .cv4-section-content > .cv6-ia-architecture-reference {
+  display: grid !important;
+  width: min(1240px, calc(100% - 64px)) !important;
+  max-width: 1240px !important;
+  margin: 0 auto !important;
+  box-sizing: border-box !important;
+}
+@media (max-width: 760px) {
+  section.cv6-information-architecture.cv4-section > .cv4-section-content > .cv6-ia-intro {
+    width: calc(100vw - 32px) !important;
+    margin-left: 16px !important;
+  }
+  section.cv6-information-architecture.cv4-section > .cv4-section-content > .cv6-ia-architecture-reference {
+    width: calc(100% - 32px) !important;
+  }
+}
