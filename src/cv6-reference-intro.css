@@ -2207,3 +2207,148 @@ main.cv4-page .cv6-ia-decision-table b {
   main.cv4-page .cv6-ia-decision-table p { font-size: 12px; }
   main.cv4-page .cv6-ia-decision-table b { font-size: 12px; }
 }
+
+
+/* Information Architecture — align with the refreshed ComSki iOS design system */
+main.cv4-page .cv6-information-architecture {
+  --ia-blue: #3B5BDB;
+  --ia-ink: #1A1D29;
+  --ia-muted: #687086;
+  --ia-line: rgba(26,29,41,.09);
+  padding: clamp(68px, 8vw, 112px) 0 clamp(76px, 9vw, 120px);
+  background: #FFFEFB !important;
+  color: var(--ia-ink);
+}
+main.cv4-page .cv6-information-architecture .cv4-section-content {
+  width: min(100% - 48px, 1240px);
+  max-width: 1240px;
+}
+main.cv4-page .cv6-information-architecture .cv4-section-kicker {
+  color: #7B8498;
+  letter-spacing: .14em;
+}
+main.cv4-page .cv6-information-architecture .cv6-ia-intro {
+  max-width: 820px;
+  margin: 0 auto clamp(38px, 5vw, 64px);
+  text-align: center;
+}
+main.cv4-page .cv6-information-architecture .cv6-ia-intro h2 {
+  margin: 0 auto 20px;
+  color: var(--ia-ink);
+  font: 650 clamp(36px, 5.4vw, 66px)/1.02 -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", sans-serif;
+  letter-spacing: -.065em;
+}
+main.cv4-page .cv6-information-architecture .cv6-ia-intro .cv4-lede {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #657087;
+  font-size: clamp(15px, 1.5vw, 18px);
+  line-height: 1.75;
+}
+main.cv4-page .cv6-information-architecture .cv6-ia-block { margin-top: clamp(38px, 5vw, 62px); }
+main.cv4-page .cv6-information-architecture .cv6-ia-block-heading {
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  gap: 24px;
+  margin-bottom: 18px;
+}
+main.cv4-page .cv6-information-architecture .cv6-ia-block-heading > span,
+main.cv4-page .cv6-information-architecture .cv6-ia-decision-head {
+  color: #7B8498;
+  font-size: 10px;
+  letter-spacing: .13em;
+}
+main.cv4-page .cv6-information-architecture .cv6-ia-block-heading p { color: #687086; }
+main.cv4-page .cv6-information-architecture .cv6-ia-map {
+  padding: clamp(20px, 3vw, 38px);
+  border: 1px solid rgba(59,91,219,.09);
+  border-radius: 30px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(187,205,255,.28), transparent 54%), linear-gradient(145deg, #F7F8FE, #FFFFFF 68%);
+  box-shadow: 0 18px 48px rgba(27,42,86,.055), inset 0 1px 0 #fff;
+}
+main.cv4-page .cv6-information-architecture .cv6-ia-root {
+  border: 1px solid rgba(59,91,219,.15);
+  border-radius: 18px;
+  background: rgba(255,255,255,.9);
+  box-shadow: 0 8px 24px rgba(59,91,219,.07), inset 0 1px 0 #fff;
+}
+main.cv4-page .cv6-information-architecture .cv6-ia-stem,
+main.cv4-page .cv6-information-architecture .cv6-ia-connector i { background: #C9D3F8; }
+main.cv4-page .cv6-information-architecture .cv6-ia-lane,
+main.cv4-page .cv6-information-architecture .cv6-ia-outcomes article,
+main.cv4-page .cv6-information-architecture .cv6-ia-framework article {
+  border: 1px solid rgba(26,29,41,.08);
+  border-radius: 20px;
+  background: rgba(255,255,255,.88);
+  box-shadow: 0 8px 24px rgba(27,42,86,.035), inset 0 1px 0 #fff;
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+main.cv4-page .cv6-information-architecture .cv6-ia-lane:hover,
+main.cv4-page .cv6-information-architecture .cv6-ia-outcomes article:hover,
+main.cv4-page .cv6-information-architecture .cv6-ia-framework article:hover {
+  transform: translateY(-3px);
+  border-color: rgba(59,91,219,.2);
+  box-shadow: 0 14px 30px rgba(27,42,86,.07), inset 0 1px 0 #fff;
+}
+main.cv4-page .cv6-information-architecture .cv6-ia-lane-index {
+  border-radius: 11px;
+  background: #EEF1FF;
+  color: var(--ia-blue);
+}
+main.cv4-page .cv6-information-architecture .cv6-ia-skill-nodes span {
+  border: 1px solid rgba(59,91,219,.1);
+  border-radius: 13px;
+  background: #F4F6FF;
+  color: #344477;
+}
+main.cv4-page .cv6-information-architecture .cv6-ia-outcomes article:last-child {
+  border-color: rgba(59,91,219,.15);
+  background: linear-gradient(145deg, #F1F4FF, #FFFFFF);
+}
+main.cv4-page .cv6-information-architecture .cv6-ia-journey article {
+  padding: 19px 16px;
+  border: 1px solid rgba(26,29,41,.07);
+  border-top: 2px solid #A8B8FF;
+  border-radius: 17px;
+  background: linear-gradient(155deg, #F7F8FE, #FFFFFF 82%);
+  box-shadow: 0 8px 22px rgba(27,42,86,.035);
+}
+main.cv4-page .cv6-information-architecture .cv6-ia-journey article b { font-size: 14px; }
+main.cv4-page .cv6-information-architecture .cv6-ia-framework article { min-height: 142px; }
+main.cv4-page .cv6-information-architecture .cv6-ia-framework .cv6-ia-speaking { border-top: 3px solid #17264A; }
+main.cv4-page .cv6-information-architecture .cv6-ia-framework .cv6-ia-writing { border-top: 3px solid #E9A6C8; }
+main.cv4-page .cv6-information-architecture .cv6-ia-framework .cv6-ia-listening { border-top: 3px solid #B9DDFF; }
+main.cv4-page .cv6-information-architecture .cv6-ia-framework .cv6-ia-reading { border-top: 3px solid #D8A15D; }
+main.cv4-page .cv6-information-architecture .cv6-ia-shared-pattern {
+  border: 1px solid rgba(59,91,219,.08);
+  border-radius: 17px;
+  background: linear-gradient(145deg, #F0F3FF, #FFFFFF);
+}
+main.cv4-page .cv6-information-architecture .cv6-ia-decision-table {
+  overflow: hidden;
+  border: 1px solid rgba(26,29,41,.08);
+  border-radius: 20px;
+  background: rgba(255,255,255,.8);
+}
+main.cv4-page .cv6-information-architecture .cv6-ia-decision-head { background: #F4F6FC; }
+main.cv4-page .cv6-information-architecture .cv6-ia-decision-head,
+main.cv4-page .cv6-information-architecture .cv6-ia-decision-table > div:not(.cv6-ia-decision-head) {
+  padding: 17px 20px;
+  border-bottom: 1px solid rgba(26,29,41,.07);
+}
+main.cv4-page .cv6-information-architecture .cv6-ia-caption { color: #858CA0; }
+@media (prefers-reduced-motion: reduce) {
+  main.cv4-page .cv6-information-architecture .cv6-ia-lane,
+  main.cv4-page .cv6-information-architecture .cv6-ia-outcomes article,
+  main.cv4-page .cv6-information-architecture .cv6-ia-framework article { transition: none; }
+  main.cv4-page .cv6-information-architecture .cv6-ia-lane:hover,
+  main.cv4-page .cv6-information-architecture .cv6-ia-outcomes article:hover,
+  main.cv4-page .cv6-information-architecture .cv6-ia-framework article:hover { transform: none; }
+}
+@media (max-width: 600px) {
+  main.cv4-page .cv6-information-architecture .cv4-section-content { width: min(100% - 32px, 1240px); }
+  main.cv4-page .cv6-information-architecture .cv6-ia-intro { text-align: left; }
+  main.cv4-page .cv6-information-architecture .cv6-ia-intro h2,
+  main.cv4-page .cv6-information-architecture .cv6-ia-intro .cv4-lede { margin-left: 0; margin-right: 0; }
+  main.cv4-page .cv6-information-architecture .cv6-ia-map { border-radius: 22px; }
+  main.cv4-page .cv6-information-architecture .cv6-ia-journey article { border-radius: 14px; }
+}
