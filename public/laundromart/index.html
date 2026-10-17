@@ -1145,10 +1145,65 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
 <div class="feature"><div class="feature-grid"><div><div class="feature-label">05 / Reporting</div><h3>Turn operational activity into information people can review.</h3></div><div class="feature-copy"><p>Reporting closes the loop by making activity easier to inspect over time. Clear chart hierarchy, labelled metrics and consistent spacing help the data feel approachable instead of overwhelming.</p><p>The goal is not decoration: the visualisation should help a user understand what is happening and where to look next.</p></div></div><div class="art"><svg class="screen" viewBox="0 0 1100 490" role="img" aria-label="Illustrative reports dashboard"><rect width="1100" height="490" rx="14" fill="#f8f9fc"/><rect width="175" height="490" fill="#fff"/><text x="24" y="42" font-size="16" font-weight="700" fill="#24283a">LaundroMart</text><g font-size="13" fill="#777e8d"><text x="24" y="100">Overview</text><text x="24" y="145">Inventory</text><text x="24" y="190">Transactions</text><text x="24" y="237">Operators</text><text x="24" y="284">Facilities</text><rect x="12" y="303" width="150" height="38" rx="8" fill="#eeedff"/><text x="24" y="327" fill="#4264ed" font-weight="700">Reports</text></g><text x="205" y="48" font-size="25" font-weight="700" fill="#222638">Reports</text><text x="205" y="74" font-size="12" fill="#838999">Review garment activity across a selected period.</text><rect x="205" y="100" width="865" height="68" rx="10" fill="#fff" stroke="#e2e5ed"/><g font-size="11" fill="#858b9a"><text x="228" y="126">DATE RANGE</text><text x="450" y="126">FACILITY</text><text x="675" y="126">REPORT TYPE</text></g><g font-size="12" fill="#33384a"><text x="228" y="149">Last 30 days⌄</text><text x="450" y="149">All facilities⌄</text><text x="675" y="149">Garment activity⌄</text></g><rect x="205" y="188" width="420" height="260" rx="10" fill="#fff" stroke="#e2e5ed"/><rect x="645" y="188" width="425" height="260" rx="10" fill="#fff" stroke="#e2e5ed"/><text x="228" y="220" font-size="15" font-weight="700" fill="#222638">Activity over time</text><text x="668" y="220" font-size="15" font-weight="700" fill="#222638">Completion status</text><g stroke="#edf0f5"><path d="M230 260H600M230 305H600M230 350H600M230 395H600"/><path d="M670 260H1045M670 305H1045M670 350H1045M670 395H1045"/></g><path d="M235 388L280 354 325 365 370 312 415 326 460 285 505 299 550 252 595 269" fill="none" stroke="#4264ed" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M235 402L280 390 325 376 370 362 415 350 460 338 505 324 550 315 595 302" fill="none" stroke="#a39aff" stroke-width="3" stroke-linecap="round"/><g font-size="10" fill="#858b9a"><text x="230" y="428">Week 1</text><text x="330" y="428">Week 2</text><text x="430" y="428">Week 3</text><text x="530" y="428">Week 4</text></g><rect x="700" y="264" width="330" height="26" rx="6" fill="#eef0f6"/><rect x="700" y="264" width="245" height="26" rx="6" fill="#4264ed"/><text x="700" y="309" font-size="11" fill="#555c6d">Completed</text><text x="1030" y="309" text-anchor="end" font-size="11" fill="#33384a" font-weight="700">—</text><rect x="700" y="328" width="330" height="26" rx="6" fill="#eef0f6"/><rect x="700" y="328" width="65" height="26" rx="6" fill="#a39aff"/><text x="700" y="373" font-size="11" fill="#555c6d">In progress</text><text x="1030" y="373" text-anchor="end" font-size="11" fill="#33384a" font-weight="700">—</text><rect x="700" y="392" width="330" height="26" rx="6" fill="#eef0f6"/><rect x="700" y="392" width="24" height="26" rx="6" fill="#76c9a0"/><text x="700" y="437" font-size="11" fill="#555c6d">Needs attention</text><text x="1030" y="437" text-anchor="end" font-size="11" fill="#33384a" font-weight="700">—</text></svg><div class="caption"><span>Reporting overview</span><span>Illustrative interface preview</span></div></div></div>
 </section>
 
+<section class="section wrap editorial-decision-section" id="design-decisions">
+  <div class="editorial-decision-intro">
+    <span class="editorial-decision-kicker">06 — DESIGN DECISIONS</span>
+    <div>
+      <h2>Make operational complexity easier to act on.</h2>
+      <p class="editorial-decision-lede">The product supports two kinds of work: operators need to move through garment records with confidence, while owners need a broader view of people, facilities and activity. These decisions connect those needs without treating every screen as the same task.</p>
+    </div>
+  </div>
 
+  <article class="editorial-decision-row">
+    <div class="editorial-decision-index">01 / ACCESS</div>
+    <div class="editorial-decision-copy">
+      <div class="editorial-decision-tag"><span aria-hidden="true">↗</span> Design decision</div>
+      <h3>Separate daily execution from business oversight.</h3>
+      <p>Operator and owner workflows serve different responsibilities. The operator view focuses on orders, transactions and garment evidence; owner-facing workflows extend to staff, facilities, cameras and reporting. Keeping these responsibilities distinct helps each role focus on the information needed for its work.</p>
+    </div>
+  </article>
 
+  <article class="editorial-decision-row">
+    <div class="editorial-decision-index">02 / INFORMATION HIERARCHY</div>
+    <div class="editorial-decision-copy">
+      <div class="editorial-decision-tag"><span aria-hidden="true">↗</span> Design decision</div>
+      <h3>Keep the order as the anchor.</h3>
+      <p>Order details connect wash dates, clothing counts, status and captured garment evidence. Keeping these details in the same context gives operators a clearer point of reference before they create a transaction or review individual garments.</p>
+    </div>
+  </article>
 
+  <article class="editorial-decision-row">
+    <div class="editorial-decision-index">03 / ERROR RECOVERY</div>
+    <div class="editorial-decision-copy">
+      <div class="editorial-decision-tag"><span aria-hidden="true">↗</span> Design decision</div>
+      <h3>Make corrections part of the normal workflow.</h3>
+      <p>Garment evidence is grouped by category, and the change-category interaction provides a way to correct a misclassification. Keeping that correction close to the evidence helps the operator resolve an issue in context rather than losing track of the item being reviewed.</p>
+    </div>
+  </article>
 
+  <article class="editorial-decision-row">
+    <div class="editorial-decision-index">04 / SYSTEM CONSISTENCY</div>
+    <div class="editorial-decision-copy">
+      <div class="editorial-decision-tag"><span aria-hidden="true">↗</span> Design decision</div>
+      <h3>Use predictable patterns across supporting tools.</h3>
+      <p>Transactions, facility settings and reporting support the core garment workflow. Consistent navigation, labels and action placement help these secondary tasks feel connected to the same product rather than separate tools.</p>
+    </div>
+  </article>
+</section>
+
+<style>
+.editorial-decision-section{padding-top:88px;padding-bottom:90px}
+.editorial-decision-intro{display:grid;grid-template-columns:190px minmax(0,1fr);gap:56px;max-width:1080px;margin:0 auto 66px}
+.editorial-decision-kicker{padding-top:9px;color:var(--blue);font-size:11px;letter-spacing:.13em;font-weight:750}
+.editorial-decision-intro h2{max-width:760px;margin:0 0 22px;font:650 clamp(38px,5vw,62px)/1.04 'Manrope',sans-serif;letter-spacing:-.06em;color:var(--ink)}
+.editorial-decision-lede{max-width:700px;margin:0;color:var(--muted);font-size:17px;line-height:1.85}
+.editorial-decision-row{display:grid;grid-template-columns:190px minmax(0,700px);gap:56px;max-width:1080px;margin:0 auto;padding:38px 0 42px;border-top:1px solid var(--line)}
+.editorial-decision-index{padding-top:7px;color:var(--blue);font-size:10px;letter-spacing:.12em;font-weight:750;line-height:1.6}
+.editorial-decision-copy .editorial-decision-tag{display:inline-flex;align-items:center;gap:7px;margin:0 0 18px;padding:7px 10px;border-radius:4px;background:#fff4d6;color:#755b16;font-size:10px;letter-spacing:.04em;font-weight:750}
+.editorial-decision-copy h3{max-width:650px;margin:0 0 15px;font:650 clamp(25px,3vw,36px)/1.15 'Manrope',sans-serif;letter-spacing:-.045em;color:var(--ink)}
+.editorial-decision-copy p{max-width:680px;margin:0;color:var(--muted);font-size:15px;line-height:1.85}
+@media(max-width:760px){.editorial-decision-section{padding-top:56px;padding-bottom:56px}.editorial-decision-intro,.editorial-decision-row{grid-template-columns:1fr;gap:16px}.editorial-decision-intro{margin-bottom:40px}.editorial-decision-intro h2{font-size:clamp(34px,9vw,46px)}.editorial-decision-lede{font-size:16px}.editorial-decision-row{padding:28px 0 32px}.editorial-decision-copy h3{font-size:27px}}
+</style>
 
 <style>
 #core-workflow .workflow-product-figure{margin:0 auto 54px;max-width:1120px}
