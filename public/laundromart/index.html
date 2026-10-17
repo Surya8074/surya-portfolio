@@ -953,43 +953,78 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
     <p class="workflow-asset-note"><strong>Asset note:</strong> The layout and storytelling are in place using image holders. The supplied screenshots will be added after the case-study structure and copy are complete.</p>
   </article>
 
-  <article class="workflow-step workflow-connected">
+  <article class="workflow-step workflow-facility" id="facility-management">
     <div class="workflow-copy">
-      <span class="workflow-number">03 — CONNECTED RECORDS</span>
-      <h3>Bring order activity into context.</h3>
-      <p>Garment records and transaction details provide the operational information behind the wider business view. The design story here should show how a staff member works with a record and how that information is represented elsewhere in the product.</p>
-      <p class="workflow-asset-note"><strong>Screen needed:</strong> Original transaction detail and matching garment or order record.</p>
+      <span class="workflow-number">03 — FACILITY &amp; CAMERA MANAGEMENT</span>
+      <h3>One system. Multiple facilities. Clearer oversight.</h3>
+      <p>When an owner operates more than one laundry facility, the day-to-day setup should not become a collection of disconnected locations. This workflow brings facility records and their camera setup into one place, so the owner can choose a location, understand its configuration and move into surveillance when needed.</p>
+      <div class="workflow-decision-story">
+        <div class="role-decision-tag"><span aria-hidden="true">↗</span> Design decision</div>
+        <p>I organised the workflow around the facility first. Each location acts as the point of entry for its contact information and cameras, helping owners keep the physical setup understandable as the number of facilities grows.</p>
+      </div>
     </div>
-    <div class="workflow-screen-placeholder" role="note" aria-label="Original transaction and garment record screenshots needed">
-      <span class="workflow-placeholder-index">03 / ORIGINAL PRODUCT SCREENS</span>
-      <span class="workflow-placeholder-title">Transactions and garment records</span>
-      <span class="workflow-placeholder-copy">Add the real record and transaction screens here</span>
-    </div>
-  </article>
-
-  <article class="workflow-step workflow-facility">
-    <div class="workflow-copy">
-      <span class="workflow-number">04 — FACILITY &amp; CAMERAS</span>
-      <h3>Manage the operational setup.</h3>
-      <p>Facility and camera settings belong to the owner’s broader management workflow. The relevant screens should make clear how locations and their camera information are organised and where an owner goes to review or manage them.</p>
-      <p class="workflow-asset-note"><strong>Screen needed:</strong> Original facility list/detail and camera configuration screen.</p>
-    </div>
-    <div class="workflow-screen-placeholder" role="note" aria-label="Original facility and camera management screenshots needed">
-      <span class="workflow-placeholder-index">04 / ORIGINAL PRODUCT SCREENS</span>
-      <span class="workflow-placeholder-title">Facilities and cameras</span>
-      <span class="workflow-placeholder-copy">Add the real facility and camera screens here</span>
+    <div class="workflow-facility-details">
+      <div class="workflow-facility-detail">
+        <div class="workflow-copy">
+          <span class="workflow-number">01 / FACILITY OVERVIEW</span>
+          <h3>A central view of every location.</h3>
+          <p>The facility list presents each location as a separate record, with contact details and a visible camera count. Owners can scan the available facilities, search for a location, add a new facility and open a specific record to manage its setup.</p>
+          <div class="workflow-decision-story">
+            <div class="role-decision-tag"><span aria-hidden="true">↗</span> Design decision</div>
+            <p>Facility-level summaries make the list useful for quick comparison: owners can identify the right location before entering its detailed controls.</p>
+          </div>
+        </div>
+        <figure class="workflow-screen-placeholder" role="img" aria-label="Facility overview screenshot placeholder">
+          <span class="workflow-placeholder-index">03.1 / FACILITY OVERVIEW</span>
+          <span class="workflow-placeholder-title">Facility list and location details</span>
+          <span class="workflow-placeholder-copy">Replace with the supplied facility-list screen showing facility cards, contact details, camera counts and Add Facility.</span>
+        </figure>
+      </div>
+      <div class="workflow-facility-detail">
+        <div class="workflow-copy">
+          <span class="workflow-number">02 / CAMERA CONFIGURATION</span>
+          <h3>Keep camera setup tied to its location.</h3>
+          <p>Camera thumbnails and the Add Camera action sit within the facility context. This helps owners see which cameras belong to a location and add a device without losing track of the facility they are managing.</p>
+          <div class="workflow-decision-story">
+            <div class="role-decision-tag"><span aria-hidden="true">↗</span> Design decision</div>
+            <p>Grouping cameras by facility preserves the relationship between a physical location and its surveillance setup, instead of presenting every camera as one undifferentiated list.</p>
+          </div>
+        </div>
+        <figure class="workflow-screen-placeholder" role="img" aria-label="Facility camera configuration screenshot placeholder">
+          <span class="workflow-placeholder-index">03.2 / CAMERA CONFIGURATION</span>
+          <span class="workflow-placeholder-title">Facility cards and camera thumbnails</span>
+          <span class="workflow-placeholder-copy">Replace with the supplied screen showing facility cards, camera previews and Add Camera.</span>
+        </figure>
+      </div>
+      <div class="workflow-facility-detail">
+        <div class="workflow-copy">
+          <span class="workflow-number">03 / SURVEILLANCE ACCESS</span>
+          <h3>Move from camera selection to the live view.</h3>
+          <p>The surveillance screen gives the selected camera the main viewing area, while keeping other camera thumbnails available for switching views. The layout is organised around reviewing a feed, not around decorative dashboard elements.</p>
+          <div class="workflow-decision-story">
+            <div class="role-decision-tag"><span aria-hidden="true">↗</span> Design decision</div>
+            <p>A dominant viewing area and a visible camera selector reduce the distance between choosing a camera and reviewing its feed.</p>
+          </div>
+        </div>
+        <figure class="workflow-screen-placeholder" role="img" aria-label="Surveillance view screenshot placeholder">
+          <span class="workflow-placeholder-index">03.3 / SURVEILLANCE ACCESS</span>
+          <span class="workflow-placeholder-title">Selected camera and surveillance view</span>
+          <span class="workflow-placeholder-copy">Replace with the supplied surveillance screen showing the large viewing area and camera thumbnails.</span>
+        </figure>
+      </div>
+      <p class="workflow-asset-note"><strong>Asset note:</strong> The section structure and UX narrative are complete. Final product screenshots should replace these holders so the case study shows the actual interface rather than invented screens.</p>
     </div>
   </article>
 
   <article class="workflow-step workflow-reporting">
     <div class="workflow-copy">
-      <span class="workflow-number">05 — REPORTING &amp; EVIDENCE</span>
+      <span class="workflow-number">04 — REPORTING &amp; EVIDENCE</span>
       <h3>Review the information behind operations.</h3>
       <p>Reporting and evidence screens should show how operational information is presented for review, and which actions are available to the owner. The final explanation will be grounded in the actual interface rather than assumed outcomes.</p>
       <p class="workflow-asset-note"><strong>Screen needed:</strong> Original report view and evidence screen or detail view.</p>
     </div>
     <div class="workflow-screen-placeholder" role="note" aria-label="Original reporting and evidence screenshots needed">
-      <span class="workflow-placeholder-index">05 / ORIGINAL PRODUCT SCREENS</span>
+      <span class="workflow-placeholder-index">04 / ORIGINAL PRODUCT SCREENS</span>
       <span class="workflow-placeholder-title">Reports and evidence</span>
       <span class="workflow-placeholder-copy">Add the real report and evidence screens here</span>
     </div>
@@ -1232,103 +1267,7 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
 <div class="feature"><div class="feature-grid"><div><div class="feature-label">01 / Inventory</div><h3>Make garment records easy to scan and act on.</h3></div><div class="feature-copy"><p>Inventory is where operational detail becomes actionable. A clear table structure, status cues and predictable actions help users move between records without losing context.</p><p>The layout prioritises scanning first, then provides a path into more detailed garment and order information.</p></div></div><div class="art"><svg class="screen" viewBox="0 0 1100 560" role="img" aria-label="Illustrative inventory management screen"><rect width="1100" height="560" rx="14" fill="#f8f9fc"/><rect width="175" height="560" fill="#fff"/><text x="24" y="42" font-size="16" font-weight="700" fill="#24283a">LaundroMart</text><g font-size="13" fill="#777e8d"><text x="24" y="100">Overview</text><rect x="12" y="119" width="150" height="38" rx="8" fill="#eeedff"/><text x="24" y="143" fill="#4264ed" font-weight="700">Inventory</text><text x="24" y="190">Transactions</text><text x="24" y="237">Operators</text><text x="24" y="284">Facilities</text><text x="24" y="331">Reports</text></g><text x="205" y="48" font-size="25" font-weight="700" fill="#222638">Inventory</text><text x="205" y="74" font-size="12" fill="#838999">Manage garment records and track order status.</text><rect x="205" y="100" width="650" height="42" rx="8" fill="#fff" stroke="#e2e5ed"/><text x="225" y="126" font-size="12" fill="#969baa">Search garment, order or customer…</text><rect x="870" y="100" width="200" height="42" rx="8" fill="#4264ed"/><text x="970" y="126" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">+ New record</text><rect x="205" y="160" width="865" height="355" rx="10" fill="#fff" stroke="#e2e5ed"/><rect x="205" y="160" width="865" height="45" rx="10" fill="#f4f5f9"/><g font-size="11" fill="#858b9a" font-weight="700"><text x="225" y="187">RECORD ID</text><text x="365" y="187">GARMENT</text><text x="535" y="187">CUSTOMER</text><text x="690" y="187">STATUS</text><text x="865" y="187">UPDATED</text></g><g font-size="12" fill="#33384a"><text x="225" y="237">LM-10482</text><text x="365" y="237">Formal shirt</text><text x="535" y="237">Customer 01</text><text x="865" y="237">Sample date</text><text x="225" y="290">LM-10481</text><text x="365" y="290">Trousers</text><text x="535" y="290">Customer 02</text><text x="865" y="290">Sample date</text><text x="225" y="343">LM-10480</text><text x="365" y="343">Jacket</text><text x="535" y="343">Customer 03</text><text x="865" y="343">Sample date</text><text x="225" y="396">LM-10479</text><text x="365" y="396">Cotton shirt</text><text x="535" y="396">Customer 04</text><text x="865" y="396">Sample date</text><text x="225" y="449">LM-10478</text><text x="365" y="449">Dress</text><text x="535" y="449">Customer 05</text><text x="865" y="449">Sample date</text></g><g font-size="10" font-weight="700"><rect x="680" y="219" width="88" height="25" rx="12" fill="#e5f7ed"/><text x="724" y="235" text-anchor="middle" fill="#23885d">Completed</text><rect x="680" y="272" width="88" height="25" rx="12" fill="#fff3dc"/><text x="724" y="288" text-anchor="middle" fill="#9b6a0d">In progress</text><rect x="680" y="325" width="88" height="25" rx="12" fill="#eeedff"/><text x="724" y="341" text-anchor="middle" fill="#6454cb">Received</text><rect x="680" y="378" width="88" height="25" rx="12" fill="#e5f7ed"/><text x="724" y="394" text-anchor="middle" fill="#23885d">Completed</text><rect x="680" y="431" width="88" height="25" rx="12" fill="#fff3dc"/><text x="724" y="447" text-anchor="middle" fill="#9b6a0d">In progress</text></g><g stroke="#edf0f5"><path d="M205 258H1070M205 311H1070M205 364H1070M205 417H1070M205 470H1070"/></g></svg><div class="caption"><span>Inventory records</span><span>Illustrative interface preview</span></div></div></div>
 <div class="feature"><div class="feature-grid"><div><div class="feature-label">02 / Transactions</div><h3>Keep each operational step connected to its record.</h3></div><div class="feature-copy"><p>Transaction flows need to capture the right information without overwhelming the user. The experience groups key fields into a clear sequence and makes the primary action easy to identify.</p><p>Related order information remains legible so users can review the record before moving forward.</p></div></div><div class="visual-pair"><div class="art"><svg class="screen" viewBox="0 0 520 440" role="img" aria-label="Illustrative new transaction form"><rect width="520" height="440" rx="12" fill="#f8f9fc"/><rect x="24" y="22" width="472" height="396" rx="12" fill="#fff" stroke="#e2e5ed"/><text x="48" y="57" font-size="20" font-weight="700" fill="#222638">New transaction</text><text x="48" y="80" font-size="11" fill="#858b9a">Enter order and garment details</text><g font-size="11" fill="#6f7584"><text x="48" y="119">Customer / Order ID</text><text x="48" y="180">Garment type</text><text x="48" y="241">Quantity</text><text x="48" y="302">Notes</text></g><g fill="#fff" stroke="#dfe3eb"><rect x="48" y="129" width="420" height="35" rx="7"/><rect x="48" y="190" width="420" height="35" rx="7"/><rect x="48" y="251" width="420" height="35" rx="7"/><rect x="48" y="312" width="420" height="46" rx="7"/></g><g font-size="11" fill="#9ba0ad"><text x="62" y="151">Search or enter order ID</text><text x="62" y="212">Select garment type</text><text x="62" y="273">1</text><text x="62" y="332">Add a note (optional)</text></g><rect x="334" y="374" width="134" height="30" rx="7" fill="#4264ed"/><text x="401" y="393" font-size="11" text-anchor="middle" fill="#fff" font-weight="700">Save transaction</text></svg><div class="caption"><span>Transaction form</span><span>Form hierarchy</span></div></div><div class="art"><svg class="screen" viewBox="0 0 520 440" role="img" aria-label="Illustrative garment order detail view"><rect width="520" height="440" rx="12" fill="#f8f9fc"/><text x="28" y="44" font-size="11" fill="#858b9a">Inventory / LM-10482</text><text x="28" y="80" font-size="24" font-weight="700" fill="#222638">Garment details</text><rect x="28" y="103" width="464" height="90" rx="10" fill="#fff" stroke="#e2e5ed"/><rect x="46" y="122" width="52" height="52" rx="9" fill="#eeedff"/><path d="M60 135l12-7 12 7 6 18-10 4-3-9v18H65v-18l-3 9-10-4z" fill="#8c8ff2"/><text x="114" y="137" font-size="13" font-weight="700" fill="#222638">Formal shirt</text><text x="114" y="158" font-size="11" fill="#858b9a">Record ID · LM-10482</text><rect x="365" y="130" width="102" height="25" rx="12" fill="#e5f7ed"/><text x="416" y="146" font-size="10" text-anchor="middle" fill="#23885d" font-weight="700">Completed</text><text x="28" y="225" font-size="13" font-weight="700" fill="#222638">Record information</text><g font-size="11" fill="#858b9a"><text x="28" y="256">Customer</text><text x="275" y="256">Received</text><text x="28" y="310">Quantity</text><text x="275" y="310">Last updated</text></g><g font-size="12" fill="#33384a"><text x="28" y="276">Customer 01</text><text x="275" y="276">Today, 09:10</text><text x="28" y="330">1 item</text><text x="275" y="330">Today, 10:42</text></g><path d="M28 290H492M28 344H492" stroke="#e6e8ef"/><rect x="28" y="366" width="464" height="45" rx="8" fill="#fff" stroke="#e2e5ed"/><text x="46" y="393" font-size="11" fill="#666e7e">Activity history</text><text x="470" y="393" font-size="16" text-anchor="end" fill="#4264ed">↗</text></svg><div class="caption"><span>Record detail</span><span>Context and status</span></div></div></div></div>
 <div class="feature"><div class="feature-grid"><div><div class="feature-label">03 / People</div><h3>Support both team-level and individual views.</h3></div><div class="feature-copy"><p>The operator experience includes team management, an individual profile and an operator-facing dashboard. These views serve different levels of attention: finding a person, understanding their details and working within an individual view.</p><p>Consistent navigation and information patterns help users move between team-level oversight and individual context without feeling like they have entered a separate product.</p></div></div><div class="art"><svg class="screen" viewBox="0 0 1100 520" role="img" aria-label="Illustrative operator management dashboard"><rect width="1100" height="520" rx="14" fill="#f8f9fc"/><rect width="175" height="520" fill="#fff"/><text x="24" y="42" font-size="16" font-weight="700" fill="#24283a">LaundroMart</text><g font-size="13" fill="#777e8d"><text x="24" y="100">Overview</text><text x="24" y="145">Inventory</text><rect x="12" y="165" width="150" height="38" rx="8" fill="#eeedff"/><text x="24" y="189" fill="#4264ed" font-weight="700">Operators</text><text x="24" y="237">Facilities</text><text x="24" y="284">Reports</text></g><text x="205" y="48" font-size="25" font-weight="700" fill="#222638">Operators</text><text x="205" y="74" font-size="12" fill="#838999">Manage your team and operator activity.</text><rect x="205" y="100" width="640" height="42" rx="8" fill="#fff" stroke="#e2e5ed"/><text x="225" y="126" font-size="12" fill="#969baa">Search operators…</text><rect x="860" y="100" width="210" height="42" rx="8" fill="#4264ed"/><text x="965" y="126" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">+ Add operator</text><rect x="205" y="160" width="865" height="320" rx="10" fill="#fff" stroke="#e2e5ed"/><rect x="205" y="160" width="865" height="45" rx="10" fill="#f4f5f9"/><g font-size="11" fill="#858b9a" font-weight="700"><text x="225" y="187">OPERATOR</text><text x="470" y="187">ROLE</text><text x="640" y="187">ACTIVITY</text><text x="830" y="187">STATUS</text></g><g><circle cx="244" cy="235" r="17" fill="#dcd9ff"/><circle cx="244" cy="232" r="6" fill="#7f7ae1"/><path d="M232 247q12-20 24 0" fill="#7f7ae1"/><circle cx="244" cy="295" r="17" fill="#d9f1e6"/><circle cx="244" cy="292" r="6" fill="#5fae91"/><path d="M232 307q12-20 24 0" fill="#5fae91"/><circle cx="244" cy="355" r="17" fill="#ffe8d3"/><circle cx="244" cy="352" r="6" fill="#d49b65"/><path d="M232 367q12-20 24 0" fill="#d49b65"/><circle cx="244" cy="415" r="17" fill="#d9e7ff"/><circle cx="244" cy="412" r="6" fill="#6f96d9"/><path d="M232 427q12-20 24 0" fill="#6f96d9"/></g><g font-size="12" fill="#33384a"><text x="272" y="232" font-weight="700">Operator 01</text><text x="272" y="248" font-size="10" fill="#858b9a">operator01@example.com</text><text x="470" y="239">Laundry operator</text><text x="640" y="239">24 garments handled</text><text x="272" y="292" font-weight="700">Operator 02</text><text x="272" y="308" font-size="10" fill="#858b9a">operator02@example.com</text><text x="470" y="299">Team lead</text><text x="640" y="299">18 garments handled</text><text x="272" y="352" font-weight="700">Operator 03</text><text x="272" y="368" font-size="10" fill="#858b9a">operator03@example.com</text><text x="470" y="359">Laundry operator</text><text x="640" y="359">16 garments handled</text><text x="272" y="412" font-weight="700">Operator 04</text><text x="272" y="428" font-size="10" fill="#858b9a">operator04@example.com</text><text x="470" y="419">Laundry operator</text><text x="640" y="419">12 garments handled</text></g><g font-size="10" font-weight="700"><rect x="820" y="222" width="80" height="24" rx="12" fill="#e5f7ed"/><text x="860" y="238" text-anchor="middle" fill="#23885d">Active</text><rect x="820" y="282" width="80" height="24" rx="12" fill="#e5f7ed"/><text x="860" y="298" text-anchor="middle" fill="#23885d">Active</text><rect x="820" y="342" width="80" height="24" rx="12" fill="#fff3dc"/><text x="860" y="358" text-anchor="middle" fill="#9b6a0d">On break</text><rect x="820" y="402" width="80" height="24" rx="12" fill="#e5f7ed"/><text x="860" y="418" text-anchor="middle" fill="#23885d">Active</text></g><g stroke="#edf0f5"><path d="M205 265H1070M205 325H1070M205 385H1070M205 445H1070"/></g></svg><div class="caption"><span>Operator management</span><span>Illustrative interface preview</span></div></div></div>
-<section class="facility-story" id="facility-management">
-  <style>
-    .facility-story{padding:96px 0;border-top:1px solid var(--line)}
-    .facility-story .facility-intro,.facility-story .facility-feature{display:grid;grid-template-columns:190px minmax(0,1fr);gap:56px;max-width:1080px;margin:0 auto}
-    .facility-story .facility-intro{margin-bottom:68px}
-    .facility-story .facility-kicker,.facility-story .facility-index{font-size:10px;letter-spacing:.13em;line-height:1.7;color:var(--blue);font-weight:750;padding-top:5px}
-    .facility-story h2{max-width:760px;margin:0 0 20px;font:650 clamp(38px,5vw,62px)/1.04 'Manrope',sans-serif;letter-spacing:-.06em;color:var(--ink)}
-    .facility-story .facility-lede,.facility-story .facility-copy p{max-width:700px;margin:0;color:var(--muted);font-size:15px;line-height:1.85}
-    .facility-story .facility-feature{padding:38px 0 44px;border-top:1px solid var(--line)}
-    .facility-story .facility-feature-copy{max-width:700px}
-    .facility-story .facility-feature h3{max-width:650px;margin:0 0 16px;font:650 clamp(27px,3.4vw,42px)/1.1 'Manrope',sans-serif;letter-spacing:-.05em;color:var(--ink)}
-    .facility-story .facility-copy p+p{margin-top:12px}
-    .facility-story .facility-decision{margin-top:24px}
-    .facility-story .decision-tag{display:inline-flex;align-items:center;gap:7px;margin-bottom:12px;padding:7px 10px;border-radius:4px;background:#fff4d6;color:#755b16;font-size:10px;font-weight:750}
-    .facility-story .facility-decision p{font-size:14px;line-height:1.8;color:var(--ink)}
-    .facility-story .facility-image-holder{margin:30px 0 0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff}
-    .facility-story .facility-image-placeholder{min-height:390px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px;padding:32px;text-align:center;background:linear-gradient(180deg,#fff,#f8f7f4)}
-    .facility-story .facility-image-placeholder strong{font:600 clamp(23px,3vw,32px)/1.2 'Manrope',sans-serif;letter-spacing:-.035em;color:var(--ink)}
-    .facility-story .facility-image-placeholder span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);font-weight:750}
-    .facility-story .facility-image-placeholder small{font-size:12px;line-height:1.6;color:var(--muted)}
-    .facility-story .facility-image-holder figcaption{display:flex;justify-content:space-between;gap:16px;padding:13px 16px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}
-    @media(max-width:760px){.facility-story{padding:58px 0}.facility-story .facility-intro,.facility-story .facility-feature{grid-template-columns:1fr;gap:16px}.facility-story .facility-intro{margin-bottom:42px}.facility-story .facility-feature{padding:28px 0 34px}.facility-story .facility-image-placeholder{min-height:250px;padding:24px}.facility-story .facility-image-holder figcaption{flex-direction:column;gap:4px}}
-  </style>
-  <div class="facility-intro">
-    <div class="facility-kicker">04 — FACILITY &amp; CAMERA MANAGEMENT</div>
-    <div>
-      <h2>One system. Multiple facilities. Clearer oversight.</h2>
-      <p class="facility-lede">As laundry operations expand across locations, owners need a way to manage each facility without treating it as a separate system. LaundroMart brings facility information and camera access into one central interface, allowing owners to review locations, manage their camera setup and open surveillance views.</p>
-    </div>
-  </div>
 
-  <article class="facility-feature">
-    <div class="facility-index">01 / FACILITY OVERVIEW</div>
-    <div class="facility-feature-copy">
-      <h3>A central view of every location.</h3>
-      <div class="facility-copy">
-        <p>The facility overview displays individual facility records with their contact details and camera counts. Owners can search the list, add a facility and open a location to access its camera configuration.</p>
-      </div>
-      <div class="facility-decision">
-        <div class="decision-tag"><span aria-hidden="true">↗</span> Design decision</div>
-        <div class="facility-copy"><p>Organising facilities as distinct, scannable records gives owners a consistent starting point for managing multiple locations from one interface.</p></div>
-      </div>
-      <figure class="facility-image-holder">
-        <div class="facility-image-placeholder"><span>Image 1 · Main screen</span><strong>Facility management overview</strong><small>Actual product screenshot holder — to be replaced with the supplied Facility Management screen.</small></div>
-        <figcaption><span>Facility management</span><span>Search, facility records and camera counts</span></figcaption>
-      </figure>
-      <figure class="facility-image-holder">
-        <div class="facility-image-placeholder"><span>Image 2 · Closer look</span><strong>Facility card and camera setup</strong><small>Screenshot composition holder — final crop to be added after the case-study content is complete.</small></div>
-        <figcaption><span>Closer look</span><span>Facility-level actions and camera overview</span></figcaption>
-      </figure>
-    </div>
-  </article>
-
-  <article class="facility-feature">
-    <div class="facility-index">02 / CAMERA CONFIGURATION</div>
-    <div class="facility-feature-copy">
-      <h3>Keep camera setup tied to its location.</h3>
-      <div class="facility-copy">
-        <p>Each facility card displays its camera count and provides a visual overview of the cameras configured for that location. Owners can add cameras and open the relevant facility to access its camera options.</p>
-      </div>
-      <div class="facility-decision">
-        <div class="decision-tag"><span aria-hidden="true">↗</span> Design decision</div>
-        <div class="facility-copy"><p>Keeping cameras grouped under their respective facilities helps owners understand which surveillance devices belong to each location, rather than managing them as one unstructured list.</p></div>
-      </div>
-      <figure class="facility-image-holder">
-        <div class="facility-image-placeholder"><span>Image 1 · Main screen</span><strong>Camera configuration by facility</strong><small>Actual product screenshot holder — use the facility cards showing camera thumbnails and the Add Camera action.</small></div>
-        <figcaption><span>Camera configuration</span><span>Camera counts, thumbnails and Add Camera</span></figcaption>
-      </figure>
-      <figure class="facility-image-holder">
-        <div class="facility-image-placeholder"><span>Image 2 · Closer look</span><strong>Camera options within a facility</strong><small>Screenshot composition holder — use the real camera selection and facility view screens.</small></div>
-        <figcaption><span>Closer look</span><span>Camera selection and location context</span></figcaption>
-      </figure>
-    </div>
-  </article>
-
-  <article class="facility-feature">
-    <div class="facility-index">03 / SURVEILLANCE ACCESS</div>
-    <div class="facility-feature-copy">
-      <h3>Move from camera selection to surveillance.</h3>
-      <div class="facility-copy">
-        <p>The camera view presents a large surveillance viewing area alongside selectable camera thumbnails. This layout makes the selected feed the primary focus while keeping other camera options accessible.</p>
-      </div>
-      <div class="facility-decision">
-        <div class="decision-tag"><span aria-hidden="true">↗</span> Design decision</div>
-        <div class="facility-copy"><p>Prioritising the main viewing area and placing camera selection beneath it supports a straightforward transition between available camera views.</p></div>
-      </div>
-      <figure class="facility-image-holder">
-        <div class="facility-image-placeholder"><span>Image 1 · Main screen</span><strong>Selected camera surveillance view</strong><small>Actual product screenshot holder — use the screen with the large camera viewing area and camera thumbnails below.</small></div>
-        <figcaption><span>Surveillance view</span><span>Main viewing area and camera selector</span></figcaption>
-      </figure>
-      <figure class="facility-image-holder">
-        <div class="facility-image-placeholder"><span>Image 2 · Closer look</span><strong>Switching between available cameras</strong><small>Screenshot composition holder — final image crop to be prepared after all sections are written.</small></div>
-        <figcaption><span>Closer look</span><span>Camera thumbnails and selection</span></figcaption>
-      </figure>
-    </div>
-  </article>
-</section>
 
 <div class="feature"><div class="feature-grid"><div><div class="feature-label">05 / Reporting</div><h3>Turn operational activity into information people can review.</h3></div><div class="feature-copy"><p>Reporting closes the loop by making activity easier to inspect over time. Clear chart hierarchy, labelled metrics and consistent spacing help the data feel approachable instead of overwhelming.</p><p>The goal is not decoration: the visualisation should help a user understand what is happening and where to look next.</p></div></div><div class="art"><svg class="screen" viewBox="0 0 1100 490" role="img" aria-label="Illustrative reports dashboard"><rect width="1100" height="490" rx="14" fill="#f8f9fc"/><rect width="175" height="490" fill="#fff"/><text x="24" y="42" font-size="16" font-weight="700" fill="#24283a">LaundroMart</text><g font-size="13" fill="#777e8d"><text x="24" y="100">Overview</text><text x="24" y="145">Inventory</text><text x="24" y="190">Transactions</text><text x="24" y="237">Operators</text><text x="24" y="284">Facilities</text><rect x="12" y="303" width="150" height="38" rx="8" fill="#eeedff"/><text x="24" y="327" fill="#4264ed" font-weight="700">Reports</text></g><text x="205" y="48" font-size="25" font-weight="700" fill="#222638">Reports</text><text x="205" y="74" font-size="12" fill="#838999">Review garment activity across a selected period.</text><rect x="205" y="100" width="865" height="68" rx="10" fill="#fff" stroke="#e2e5ed"/><g font-size="11" fill="#858b9a"><text x="228" y="126">DATE RANGE</text><text x="450" y="126">FACILITY</text><text x="675" y="126">REPORT TYPE</text></g><g font-size="12" fill="#33384a"><text x="228" y="149">Last 30 days⌄</text><text x="450" y="149">All facilities⌄</text><text x="675" y="149">Garment activity⌄</text></g><rect x="205" y="188" width="420" height="260" rx="10" fill="#fff" stroke="#e2e5ed"/><rect x="645" y="188" width="425" height="260" rx="10" fill="#fff" stroke="#e2e5ed"/><text x="228" y="220" font-size="15" font-weight="700" fill="#222638">Activity over time</text><text x="668" y="220" font-size="15" font-weight="700" fill="#222638">Completion status</text><g stroke="#edf0f5"><path d="M230 260H600M230 305H600M230 350H600M230 395H600"/><path d="M670 260H1045M670 305H1045M670 350H1045M670 395H1045"/></g><path d="M235 388L280 354 325 365 370 312 415 326 460 285 505 299 550 252 595 269" fill="none" stroke="#4264ed" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M235 402L280 390 325 376 370 362 415 350 460 338 505 324 550 315 595 302" fill="none" stroke="#a39aff" stroke-width="3" stroke-linecap="round"/><g font-size="10" fill="#858b9a"><text x="230" y="428">Week 1</text><text x="330" y="428">Week 2</text><text x="430" y="428">Week 3</text><text x="530" y="428">Week 4</text></g><rect x="700" y="264" width="330" height="26" rx="6" fill="#eef0f6"/><rect x="700" y="264" width="245" height="26" rx="6" fill="#4264ed"/><text x="700" y="309" font-size="11" fill="#555c6d">Completed</text><text x="1030" y="309" text-anchor="end" font-size="11" fill="#33384a" font-weight="700">—</text><rect x="700" y="328" width="330" height="26" rx="6" fill="#eef0f6"/><rect x="700" y="328" width="65" height="26" rx="6" fill="#a39aff"/><text x="700" y="373" font-size="11" fill="#555c6d">In progress</text><text x="1030" y="373" text-anchor="end" font-size="11" fill="#33384a" font-weight="700">—</text><rect x="700" y="392" width="330" height="26" rx="6" fill="#eef0f6"/><rect x="700" y="392" width="24" height="26" rx="6" fill="#76c9a0"/><text x="700" y="437" font-size="11" fill="#555c6d">Needs attention</text><text x="1030" y="437" text-anchor="end" font-size="11" fill="#33384a" font-weight="700">—</text></svg><div class="caption"><span>Reporting overview</span><span>Illustrative interface preview</span></div></div></div>
 </section>
