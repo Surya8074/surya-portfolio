@@ -2745,3 +2745,32 @@ main.cv4-page .cv6-ia-reference-steps article:hover > span { transform: scale(1.
   main.cv4-page .cv6-ia-reference-analysis article:hover,
   main.cv4-page .cv6-ia-reference-steps article:hover > span { transform: none; }
 }
+
+
+/* Remove the section index/kicker and align the architecture heading with the preceding section */
+main.cv4-page .cv6-information-architecture > .cv4-section-marker,
+main.cv4-page .cv6-information-architecture .cv4-section-marker,
+main.cv4-page .cv6-information-architecture .cv4-section-kicker {
+  display: none !important;
+}
+main.cv4-page .cv6-information-architecture .cv4-section-content {
+  width: min(100% - 64px, 1240px);
+  margin-inline: auto;
+}
+main.cv4-page .cv6-information-architecture .cv6-ia-intro {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 0 clamp(34px, 5vw, 58px);
+  text-align: left;
+}
+main.cv4-page .cv6-information-architecture .cv6-ia-intro h2,
+main.cv4-page .cv6-information-architecture .cv6-ia-intro .cv4-lede {
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}
+@media (max-width: 600px) {
+  main.cv4-page .cv6-information-architecture .cv4-section-content {
+    width: calc(100% - 32px);
+  }
+}
