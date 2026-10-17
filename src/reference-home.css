@@ -147,3 +147,27 @@ main .other-reference .other-reference-grid>.other-reference-card .other-card-ta
  main .other-reference .other-reference-grid>.other-reference-card{aspect-ratio:344 / 547;border-radius:30px}
  main .other-reference .other-reference-grid>.other-reference-card .other-card-copy{padding:48px 32px 0}
 }
+
+
+/* Match the reference card's measured 424 x 675 desktop dimensions. */
+main .other-reference .other-reference-grid{
+  width:min(872px,calc(100% - 32px));
+  max-width:872px;
+  grid-template-columns:repeat(2,minmax(0,424px));
+  justify-content:center;
+  gap:24px;
+}
+main .other-reference .other-reference-grid>.other-reference-card{
+  width:100%;
+  aspect-ratio:424 / 675;
+}
+@media(max-width:1023px){
+ main .other-reference .other-reference-grid{
+   width:min(424px,calc(100% - 32px));
+   max-width:424px;
+   grid-template-columns:minmax(0,1fr);
+ }
+ main .other-reference .other-reference-grid>.other-reference-card{
+   aspect-ratio:424 / 675;
+ }
+}
