@@ -852,14 +852,105 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
     <div class="workflow-copy">
       <span class="workflow-number">02 — OWNER EXPERIENCE</span>
       <h3>See the business at a glance.</h3>
-      <p>Owners need a broader view than the day-to-day order queue. The owner experience brings oversight tools into one place so facilities, operational activity and available reports can be reviewed without working through each operator task individually.</p>
-      <p class="workflow-asset-note"><strong>Screen needed:</strong> Original owner dashboard or business overview.</p>
+      <p>The owner dashboard brings operational activity into one overview. Instead of checking individual orders to understand how the business is moving, the owner can start with the key volumes and trends, then look more closely at performance and garment mix.</p>
+      <p>The hierarchy moves from headline totals to visual summaries: received, completed and pending work first, followed by total-clothes activity over time, before/after-wash comparisons and clothing-type distribution.</p>
     </div>
-    <div class="workflow-screen-placeholder" role="note" aria-label="Original owner dashboard screenshot needed">
-      <span class="workflow-placeholder-index">02 / ORIGINAL PRODUCT SCREEN</span>
-      <span class="workflow-placeholder-title">Owner dashboard</span>
-      <span class="workflow-placeholder-copy">Add the real LaundroMart owner dashboard here</span>
+    <figure class="workflow-product-figure">
+      <div class="workflow-image-frame"><div class="workflow-image-placeholder">
+        <span class="workflow-placeholder-index">OWNER EXPERIENCE / FULL SCREEN</span>
+        <strong>Business overview dashboard</strong>
+        <span>Original screen: Dashboard Overview (1).png</span>
+      </div></div>
+      <figcaption><span>Owner dashboard</span><span>Full interface view</span></figcaption>
+    </figure>
+    <div class="workflow-feature-intro">
+      <span class="workflow-detail-label">A CLOSER LOOK</span>
+      <h4>Move from headline metrics to operational patterns.</h4>
+      <p>The dashboard combines three levels of information: summary metrics for a quick status check, a trend line for activity over time, and supporting charts for daily performance and clothing-type distribution. This gives the owner several ways to read the same operation without making every metric compete for attention.</p>
     </div>
+    <figure class="workflow-product-figure workflow-composite-figure">
+      <div class="workflow-image-frame"><div class="workflow-composite-placeholder">
+        <div class="workflow-composite-tile"><span>01 / STATUS</span><strong>Received, completed and pending</strong><small>Headline volumes for a quick operational read</small></div>
+        <div class="workflow-composite-tile"><span>02 / TREND</span><strong>Total clothes over time</strong><small>A longer view of changing activity</small></div>
+        <div class="workflow-composite-tile"><span>03 / BREAKDOWN</span><strong>Performance and cloth type</strong><small>Daily comparison and category distribution</small></div>
+      </div></div>
+      <figcaption><span>Dashboard information hierarchy</span><span>Breakdown composition placeholder</span></figcaption>
+    </figure>
+    <div class="workflow-detail">
+      <div class="workflow-detail-copy"><span class="workflow-detail-label">AT-A-GLANCE STATUS</span><h4>Put the most immediate numbers first.</h4><p>Received, completed and pending volumes sit at the top of the page. Their placement helps the owner establish a quick status before reading the more detailed charts below.</p></div>
+      <div class="workflow-detail-copy"><span class="workflow-detail-label">PERFORMANCE CONTEXT</span><h4>Give totals more than one point of reference.</h4><p>The trend line, daily before/after-wash comparison and clothing-type chart show different views of operational activity. Together they help the owner move beyond a single total and inspect how the work is distributed.</p></div>
+    </div>
+    <div class="workflow-decision-story">
+      <div class="role-decision-tag"><span aria-hidden="true">↗</span> Design decision</div>
+      <p>I placed the summary metrics before the charts so the owner can scan the current workload first, then explore patterns in the supporting visualisations. The page progresses from quick status to deeper context rather than presenting every data point with equal emphasis.</p>
+    </div>
+    <div class="workflow-owner-subsection">
+      <div class="workflow-copy">
+        <span class="workflow-number">02.2 — OPERATOR MANAGEMENT</span>
+        <h3>Manage the people behind the workflow.</h3>
+        <p>The operator directory gives the owner one place to find staff records. Search, working-status labels and operator details support scanning, while the add, edit and view actions provide direct paths to common management tasks.</p>
+        <p>Opening an operator profile continues the workflow from the staff list to that person's details and order history.</p>
+      </div>
+      <figure class="workflow-product-figure">
+        <div class="workflow-image-frame"><div class="workflow-image-placeholder">
+          <span class="workflow-placeholder-index">OPERATOR MANAGEMENT / FULL SCREEN</span>
+          <strong>Operator directory</strong>
+          <span>Original screen: Operator.png</span>
+        </div></div>
+        <figcaption><span>Operator management</span><span>Full interface view</span></figcaption>
+      </figure>
+      <div class="workflow-feature-intro">
+        <span class="workflow-detail-label">A CLOSER LOOK</span>
+        <h4>Keep staff actions close to each record.</h4>
+        <p>The directory groups each operator's identity, status and contact details together, with actions placed at the bottom of the record. This makes the available next step clear without opening every profile just to find a management action.</p>
+      </div>
+      <figure class="workflow-product-figure workflow-composite-figure">
+        <div class="workflow-image-frame"><div class="workflow-composite-placeholder">
+          <div class="workflow-composite-tile"><span>01 / FIND</span><strong>Search the directory</strong><small>Locate a staff record by searching</small></div>
+          <div class="workflow-composite-tile"><span>02 / MAINTAIN</span><strong>Add or edit an operator</strong><small>Manage staff details from the directory</small></div>
+          <div class="workflow-composite-tile"><span>03 / INSPECT</span><strong>Open the operator profile</strong><small>Continue into individual activity</small></div>
+        </div></div>
+        <figcaption><span>Operator directory actions</span><span>Breakdown composition placeholder</span></figcaption>
+      </figure>
+      <div class="workflow-decision-story">
+        <div class="role-decision-tag"><span aria-hidden="true">↗</span> Design decision</div>
+        <p>I kept operator discovery and management in the same directory. Search supports finding a record, status labels make availability easier to scan, and the view action leads into the individual profile when more context is needed.</p>
+      </div>
+    </div>
+    <div class="workflow-owner-subsection">
+      <div class="workflow-copy">
+        <span class="workflow-number">02.3 — OPERATOR PROFILE &amp; ORDER HISTORY</span>
+        <h3>Connect each operator to the work they handle.</h3>
+        <p>The operator profile brings personal details and transaction activity into one view. A total transaction count provides a quick summary, while the order table lets the owner inspect individual records by order ID, operator, wash dates, clothing count, status and downloadable record.</p>
+        <p>Keeping the order history alongside the profile gives the owner a more direct way to review work associated with a specific operator.</p>
+      </div>
+      <figure class="workflow-product-figure">
+        <div class="workflow-image-frame"><div class="workflow-image-placeholder">
+          <span class="workflow-placeholder-index">OPERATOR PROFILE / FULL SCREEN</span>
+          <strong>Operator details and order history</strong>
+          <span>Original screen: Operator profile.png</span>
+        </div></div>
+        <figcaption><span>Operator profile</span><span>Full interface view</span></figcaption>
+      </figure>
+      <div class="workflow-feature-intro">
+        <span class="workflow-detail-label">A CLOSER LOOK</span>
+        <h4>Make individual transactions easier to inspect.</h4>
+        <p>The order table presents the key details in consistent columns, with completion states visible in the status column and a download action available for each row. This supports record-level review without separating the operator context from the work history.</p>
+      </div>
+      <figure class="workflow-product-figure workflow-composite-figure">
+        <div class="workflow-image-frame"><div class="workflow-composite-placeholder">
+          <div class="workflow-composite-tile"><span>01 / OPERATOR CONTEXT</span><strong>Identity and transaction total</strong><small>Keep the profile summary visible</small></div>
+          <div class="workflow-composite-tile"><span>02 / ORDER DETAILS</span><strong>Dates and clothing counts</strong><small>Compare key fields across order rows</small></div>
+          <div class="workflow-composite-tile"><span>03 / RECORD STATUS</span><strong>Status and download</strong><small>Make the state and available action scannable</small></div>
+        </div></div>
+        <figcaption><span>Profile and order-history hierarchy</span><span>Breakdown composition placeholder</span></figcaption>
+      </figure>
+      <div class="workflow-decision-story">
+        <div class="role-decision-tag"><span aria-hidden="true">↗</span> Design decision</div>
+        <p>I kept the profile summary and order table within the same screen so the owner can move from an operator-level overview to individual records without losing context. Consistent columns and explicit status labels make the table easier to scan row by row.</p>
+      </div>
+    </div>
+    <p class="workflow-asset-note"><strong>Asset note:</strong> The layout and storytelling are in place using image holders. The supplied screenshots will be added after the case-study structure and copy are complete.</p>
   </article>
 
   <article class="workflow-step workflow-connected">
@@ -1224,6 +1315,19 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
 #core-workflow .workflow-composite-tile small{font-size:12px;line-height:1.5;color:var(--muted)}
 #core-workflow .workflow-detail{margin-top:44px}
 @media(max-width:760px){#core-workflow .workflow-image-placeholder{min-height:280px;padding:24px}#core-workflow .workflow-composite-placeholder{grid-template-columns:1fr;padding:12px;gap:12px}#core-workflow .workflow-composite-tile,#core-workflow .workflow-composite-tile:first-child{grid-row:auto;min-height:150px;padding:18px}#core-workflow .workflow-product-figure figcaption{flex-direction:column;gap:4px}#core-workflow .workflow-feature-intro p{font-size:16px}}
+
+<style>
+/* Owner experience storytelling: retain the existing workflow layout and editorial language */
+#core-workflow .workflow-owner-subsection{padding-top:64px;margin-top:64px;border-top:1px solid var(--line)}
+#core-workflow .workflow-owner-subsection>.workflow-copy{max-width:790px;margin:0 auto 34px}
+#core-workflow .workflow-owner-subsection>.workflow-copy h3{max-width:760px}
+#core-workflow .workflow-owner-subsection>.workflow-product-figure{margin-bottom:48px}
+#core-workflow .workflow-owner-subsection .workflow-feature-intro{margin-top:0}
+#core-workflow .workflow-owner-subsection .workflow-decision-story{max-width:790px;margin:34px auto 0}
+#core-workflow .workflow-owner-subsection .workflow-decision-story p{font-size:15px;line-height:1.85;color:var(--muted);margin:0 0 12px}
+#core-workflow .workflow-owner-subsection .workflow-decision-story p:last-child{margin-bottom:0}
+@media(max-width:760px){#core-workflow .workflow-owner-subsection{padding-top:42px;margin-top:42px}#core-workflow .workflow-owner-subsection>.workflow-copy{margin-bottom:24px}}
+</style>
 </style>
 </main><footer class="footer wrap"><span>© Surya Kiran · Product Design</span><span><a href="../../">Back to portfolio ↗</a></span></footer>
 <script>
