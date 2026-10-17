@@ -957,7 +957,8 @@ function ComskiCaseStudyCV4() {
               <h2>System architecture</h2>
               <p className="cv4-lede">ComSki connects learner context, communication practice, AI-supported feedback and progress in one experience. Four distinct skill areas share a familiar structure, while each task adapts to the way learners communicate.</p>
          
-            </div>   </Reveal>
+            </Reveal>
+            </div>
 
             <div className="cv6-ia-architecture-hero cv6-ia-architecture-reference" aria-label="ComSki system architecture diagram">
               <div className="cv6-ia-reference-inputs">
