@@ -1791,3 +1791,36 @@ main.cv4-page .cv6-philosophy-application .cv6-challenge-art-reading img {
   visibility: visible !important;
   transform: none !important;
 }
+
+
+/* Restore challenge 03 and 04 artwork: a later layout rule hid every challenge-art wrapper. */
+main.cv4-page .cv6-philosophy-application .cv6-challenge-card:nth-child(3) .cv6-challenge-art-feedback,
+main.cv4-page .cv6-philosophy-application .cv6-challenge-card:nth-child(4) .cv6-challenge-art-reading {
+  position: relative !important;
+  inset: auto !important;
+  display: flex !important;
+  flex: 1 1 auto !important;
+  width: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 16px 14px 14px !important;
+  padding: 0 !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  background: #F8FAFF !important;
+  border-radius: 12px !important;
+}
+main.cv4-page .cv6-philosophy-application .cv6-challenge-card:nth-child(3) .cv6-challenge-art-feedback img,
+main.cv4-page .cv6-philosophy-application .cv6-challenge-card:nth-child(4) .cv6-challenge-art-reading img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  transform: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
