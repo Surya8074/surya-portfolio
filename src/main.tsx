@@ -179,18 +179,31 @@ function App() {
       <section className="other-reference">
         <h2>Other Projects</h2>
         <div className="other-reference-grid">
-          <a className="other-reference-card" href="/surya-portfolio/work/genesis-v7/?v=phase4#s01" aria-label="AI product explorations — AI-assisted workflows, interaction and product design experiments">
-            <article>
-              <img src="/surya-portfolio/genesis/Dashboard.webp" alt="" loading="lazy" />
-            </article>
-            <span className="sr-only"><strong>AI product explorations</strong><span>AI-assisted workflows, interaction and product design experiments.</span><span>AI-Assisted · Spatial UX · Product Design</span></span>
-          </a>
-          <a className="other-reference-card" href="/surya-portfolio/laundromart/" aria-label="Web and product experiments — small digital products exploring interaction, systems and prototyping">
-            <article>
-              <img src="/surya-portfolio/laundromart/problem-banner.png.png" alt="" loading="lazy" />
-            </article>
-            <span className="sr-only"><strong>Web &amp; product experiments</strong><span>Small digital products exploring interaction, systems and prototyping.</span><span>Web Design · Interaction Design · UX Design</span></span>
-          </a>
+          <article className="other-reference-card toniq-card" aria-label="Toniq AI project">
+            <div className="other-card-copy">
+              <h3>Toniq AI</h3>
+              <p>Virtual networking was spatially broken. I designed a 2D spatial event platform with an AI layer that gives attendees context before conversation.</p>
+              <div className="other-card-tags"><span>AI-Assisted</span><span>Spatial UX</span><span>Product Design</span></div>
+            </div>
+            <div className="toniq-illustration" aria-hidden="true">
+              <span className="reaction reaction-heart">💗✨</span><span className="reaction reaction-party">🎉</span>
+              <div className="chat-bubble chat-yellow">Let’s play Tennis?</div>
+              <div className="chat-bubble chat-coral">how’d you know?</div>
+              <div className="avatar avatar-matt"><span>👨🏻</span><small>Matt D</small></div>
+              <div className="avatar avatar-maria"><span>👩🏼</span><small>Maria</small></div>
+            </div>
+          </article>
+          <article className="other-reference-card shine-card" aria-label="Shine desk buddy project">
+            <div className="other-card-copy">
+              <h3>Shine desk<br />buddy</h3>
+              <p>A desk companion that physically celebrates every Notion task you finish (ESP32, touch LCD, and a servo-driven flower)</p>
+              <div className="other-card-tags"><span>Smart Object</span><span>Interaction Design</span><span>Prototyping</span><span>UX Design</span></div>
+            </div>
+            <div className="shine-illustration" aria-hidden="true">
+              <div className="shine-flower">🌻</div>
+              <div className="shine-robot"><div className="robot-screen"><i></i><i></i><span>⌣</span></div><div className="robot-arm robot-arm-left"></div><div className="robot-arm robot-arm-right"></div><div className="robot-base"></div></div>
+            </div>
+          </article>
         </div>
       </section>
       <section id="art" className="simple-section"><h2>Art + Explorations</h2><p>AI, fun, visual experiments and things I make outside product work.</p></section>
