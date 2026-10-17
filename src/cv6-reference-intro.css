@@ -3285,3 +3285,42 @@ main.cv4-page section.cv6-information-architecture .cv6-ia-architecture-referenc
     width: calc(100% - 32px) !important;
   }
 }
+
+
+/* Definitive shared left edge: match the IA copy to the centered content column above. */
+main.cv4-page section.cv6-information-architecture > .cv4-section-content {
+  display: block !important;
+  width: min(1240px, calc(100% - 64px)) !important;
+  max-width: 1240px !important;
+  min-width: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box !important;
+}
+main.cv4-page section.cv6-information-architecture > .cv4-section-content > .cv6-ia-editorial-grid {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 0 28px !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+main.cv4-page section.cv6-information-architecture .cv6-ia-editorial-grid .cv6-ia-intro {
+  width: 100% !important;
+  max-width: 920px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+main.cv4-page section.cv6-information-architecture .cv6-ia-editorial-grid .cv6-ia-intro h2,
+main.cv4-page section.cv6-information-architecture .cv6-ia-editorial-grid .cv6-ia-intro p.cv4-lede {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  text-indent: 0 !important;
+}
+@media (max-width: 760px) {
+  main.cv4-page section.cv6-information-architecture > .cv4-section-content {
+    width: calc(100% - 32px) !important;
+  }
+}
