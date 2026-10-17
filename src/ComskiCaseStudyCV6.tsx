@@ -1029,54 +1029,6 @@ function ComskiCaseStudyCV4() {
               <p className="cv6-ia-caption">The committed screens show onboarding, all four skill areas, a speaking-response feedback state and the My Journey dashboard. The shared feedback-to-progress relationship is presented as the organising model; confirm the exact post-task sequence for each skill before describing it as fully implemented.</p>
             </div>
 
-            <div className="cv6-ia-block">
-              <div className="cv6-ia-block-heading">
-                <span>02 / LEARNER JOURNEY</span>
-                <p>A shallow path makes the next action easy to understand.</p>
-              </div>
-              <div className="cv6-ia-journey" aria-label="Learner journey from onboarding to practice, feedback and progress">
-                {[
-                  ['01','Get oriented','Introduction'],
-                  ['02','Personalise','Goals and practice context'],
-                  ['03','Choose a skill','Speaking · Writing · Listening · Reading'],
-                  ['04','Complete a task','Skill-specific response'],
-                  ['05','Review and continue','Feedback → My Journey']
-                ].map((step, i) => <React.Fragment key={step[0]}>
-                  <article><span>{step[0]}</span><b>{step[1]}</b><small>{step[2]}</small></article>
-                  {i < 4 && <i className="cv6-ia-journey-arrow" aria-hidden="true">→</i>}
-                </React.Fragment>)}
-              </div>
-            </div>
-
-            <div className="cv6-ia-block">
-              <div className="cv6-ia-block-heading">
-                <span>03 / SHARED SKILL FRAMEWORK</span>
-                <p>Change the task, not the whole interaction model.</p>
-              </div>
-              <div className="cv6-ia-framework">
-                <article className="cv6-ia-speaking"><span>01</span><b>Speaking</b><small>Spoken response</small></article>
-                <article className="cv6-ia-writing"><span>02</span><b>Writing</b><small>Written response</small></article>
-                <article className="cv6-ia-listening"><span>03</span><b>Listening</b><small>Audio comprehension</small></article>
-                <article className="cv6-ia-reading"><span>04</span><b>Reading</b><small>Reading comprehension</small></article>
-              </div>
-              <div className="cv6-ia-shared-pattern"><span>SHARED PATTERN</span><b>Understand task <i>→</i> Respond <i>→</i> Complete <i>→</i> Review</b></div>
-              <p className="cv6-ia-caption">The task and input modality differ by skill; the screen inventory supports a common progression language. The exact feedback components vary by skill and should be verified against the full product.</p>
-            </div>
-
-            <div className="cv6-ia-block cv6-ia-decisions">
-              <div className="cv6-ia-block-heading">
-                <span>04 / FROM USER NEEDS TO DESIGN DECISIONS</span>
-                <p>The architecture responds to the main product tensions.</p>
-              </div>
-              <div className="cv6-ia-decision-table">
-                <div className="cv6-ia-decision-head"><span>USER NEED / FRICTION</span><span>ARCHITECTURAL DECISION</span></div>
-                <div><p>Onboarding should not feel like a long form.</p><b>Stage personalisation into a few focused questions.</b></div>
-                <div><p>Four skills can feel like four separate products.</p><b>Keep skill-specific tasks within one shared experience.</b></div>
-                <div><p>Feedback should guide, not feel like a verdict.</p><b>Separate task completion from the feedback review.</b></div>
-                <div><p>Practice needs to connect to a wider goal.</p><b>Bring the learner back to My Journey as the progression view.</b></div>
-              </div>
-              <p className="cv6-ia-caption">These are design rationales derived from the documented problem framing and current screen set, not claims of measured impact or completed user validation.</p>
-            </div>
           </Section>
 
 
