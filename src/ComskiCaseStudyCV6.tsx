@@ -951,6 +951,94 @@ function ComskiCaseStudyCV4() {
             </div>
           </Section>
 
+          <Section n="10" title="INFORMATION ARCHITECTURE" tone="pink" className="cv6-information-architecture">
+            <Reveal className="cv6-ia-intro">
+              <h2>Structuring the ComSki experience</h2>
+              <p className="cv4-lede">ComSki brings personalised onboarding, four communication skills, feedback and learner progression into one connected experience. Each skill has its own task, while the wider journey stays recognisable.</p>
+            </Reveal>
+
+            <div className="cv6-ia-block cv6-ia-primary">
+              <div className="cv6-ia-block-heading">
+                <span>01 / INFORMATION ARCHITECTURE</span>
+                <p>One learner experience, organised around a repeatable practice loop.</p>
+              </div>
+              <div className="cv6-ia-map" role="img" aria-label="ComSki information architecture: onboarding leads into four communication skills, then feedback and My Journey progression.">
+                <div className="cv6-ia-root"><span>COMSKI</span><b>Communication practice</b></div>
+                <div className="cv6-ia-stem" aria-hidden="true"/>
+                <div className="cv6-ia-lanes">
+                  <article className="cv6-ia-lane cv6-ia-onboarding">
+                    <span className="cv6-ia-lane-index">01</span><div><b>Onboarding</b><small>Introduction · Personalisation · Practice preferences</small></div>
+                  </article>
+                  <div className="cv6-ia-connector" aria-hidden="true"><i/></div>
+                  <article className="cv6-ia-lane cv6-ia-skills">
+                    <span className="cv6-ia-lane-index">02</span><div className="cv6-ia-lane-main"><b>Skill practice</b><small>Four distinct tasks, one familiar interaction model</small>
+                      <div className="cv6-ia-skill-nodes">
+                        <span>Speaking</span><span>Writing</span><span>Listening</span><span>Reading</span>
+                      </div>
+                    </div>
+                  </article>
+                  <div className="cv6-ia-connector" aria-hidden="true"><i/></div>
+                  <div className="cv6-ia-outcomes">
+                    <article><span className="cv6-ia-lane-index">03</span><div><b>Feedback</b><small>Review the response</small></div></article>
+                    <span className="cv6-ia-join" aria-hidden="true">→</span>
+                    <article><span className="cv6-ia-lane-index">04</span><div><b>My Journey</b><small>See progress · Continue practising</small></div></article>
+                  </div>
+                </div>
+              </div>
+              <p className="cv6-ia-caption">The committed screens show onboarding, all four skill areas, a speaking-response feedback state and the My Journey dashboard. The shared feedback-to-progress relationship is presented as the organising model; confirm the exact post-task sequence for each skill before describing it as fully implemented.</p>
+            </div>
+
+            <div className="cv6-ia-block">
+              <div className="cv6-ia-block-heading">
+                <span>02 / LEARNER JOURNEY</span>
+                <p>A shallow path makes the next action easy to understand.</p>
+              </div>
+              <div className="cv6-ia-journey" aria-label="Learner journey from onboarding to practice, feedback and progress">
+                {[
+                  ['01','Get oriented','Introduction'],
+                  ['02','Personalise','Goals and practice context'],
+                  ['03','Choose a skill','Speaking · Writing · Listening · Reading'],
+                  ['04','Complete a task','Skill-specific response'],
+                  ['05','Review and continue','Feedback → My Journey']
+                ].map((step, i) => <React.Fragment key={step[0]}>
+                  <article><span>{step[0]}</span><b>{step[1]}</b><small>{step[2]}</small></article>
+                  {i < 4 && <i className="cv6-ia-journey-arrow" aria-hidden="true">→</i>}
+                </React.Fragment>)}
+              </div>
+            </div>
+
+            <div className="cv6-ia-block">
+              <div className="cv6-ia-block-heading">
+                <span>03 / SHARED SKILL FRAMEWORK</span>
+                <p>Change the task, not the whole interaction model.</p>
+              </div>
+              <div className="cv6-ia-framework">
+                <article className="cv6-ia-speaking"><span>01</span><b>Speaking</b><small>Spoken response</small></article>
+                <article className="cv6-ia-writing"><span>02</span><b>Writing</b><small>Written response</small></article>
+                <article className="cv6-ia-listening"><span>03</span><b>Listening</b><small>Audio comprehension</small></article>
+                <article className="cv6-ia-reading"><span>04</span><b>Reading</b><small>Reading comprehension</small></article>
+              </div>
+              <div className="cv6-ia-shared-pattern"><span>SHARED PATTERN</span><b>Understand task <i>→</i> Respond <i>→</i> Complete <i>→</i> Review</b></div>
+              <p className="cv6-ia-caption">The task and input modality differ by skill; the screen inventory supports a common progression language. The exact feedback components vary by skill and should be verified against the full product.</p>
+            </div>
+
+            <div className="cv6-ia-block cv6-ia-decisions">
+              <div className="cv6-ia-block-heading">
+                <span>04 / FROM USER NEEDS TO DESIGN DECISIONS</span>
+                <p>The architecture responds to the main product tensions.</p>
+              </div>
+              <div className="cv6-ia-decision-table">
+                <div className="cv6-ia-decision-head"><span>USER NEED / FRICTION</span><span>ARCHITECTURAL DECISION</span></div>
+                <div><p>Onboarding should not feel like a long form.</p><b>Stage personalisation into a few focused questions.</b></div>
+                <div><p>Four skills can feel like four separate products.</p><b>Keep skill-specific tasks within one shared experience.</b></div>
+                <div><p>Feedback should guide, not feel like a verdict.</p><b>Separate task completion from the feedback review.</b></div>
+                <div><p>Practice needs to connect to a wider goal.</p><b>Bring the learner back to My Journey as the progression view.</b></div>
+              </div>
+              <p className="cv6-ia-caption">These are design rationales derived from the documented problem framing and current screen set, not claims of measured impact or completed user validation.</p>
+            </div>
+          </Section>
+
+
 
       <aside className="cv4-section-nav" aria-label="Case study sections">
         <div className="cv4-section-nav-line" />
@@ -1108,92 +1196,7 @@ function ComskiCaseStudyCV4() {
             </Stagger>
           </Section>
 
-          <Section n="10" title="INFORMATION ARCHITECTURE" tone="pink" className="cv6-information-architecture">
-            <Reveal className="cv6-ia-intro">
-              <h2>Structuring the ComSki experience</h2>
-              <p className="cv4-lede">ComSki brings personalised onboarding, four communication skills, feedback and learner progression into one connected experience. Each skill has its own task, while the wider journey stays recognisable.</p>
-            </Reveal>
 
-            <div className="cv6-ia-block cv6-ia-primary">
-              <div className="cv6-ia-block-heading">
-                <span>01 / INFORMATION ARCHITECTURE</span>
-                <p>One learner experience, organised around a repeatable practice loop.</p>
-              </div>
-              <div className="cv6-ia-map" role="img" aria-label="ComSki information architecture: onboarding leads into four communication skills, then feedback and My Journey progression.">
-                <div className="cv6-ia-root"><span>COMSKI</span><b>Communication practice</b></div>
-                <div className="cv6-ia-stem" aria-hidden="true"/>
-                <div className="cv6-ia-lanes">
-                  <article className="cv6-ia-lane cv6-ia-onboarding">
-                    <span className="cv6-ia-lane-index">01</span><div><b>Onboarding</b><small>Introduction · Personalisation · Practice preferences</small></div>
-                  </article>
-                  <div className="cv6-ia-connector" aria-hidden="true"><i/></div>
-                  <article className="cv6-ia-lane cv6-ia-skills">
-                    <span className="cv6-ia-lane-index">02</span><div className="cv6-ia-lane-main"><b>Skill practice</b><small>Four distinct tasks, one familiar interaction model</small>
-                      <div className="cv6-ia-skill-nodes">
-                        <span>Speaking</span><span>Writing</span><span>Listening</span><span>Reading</span>
-                      </div>
-                    </div>
-                  </article>
-                  <div className="cv6-ia-connector" aria-hidden="true"><i/></div>
-                  <div className="cv6-ia-outcomes">
-                    <article><span className="cv6-ia-lane-index">03</span><div><b>Feedback</b><small>Review the response</small></div></article>
-                    <span className="cv6-ia-join" aria-hidden="true">→</span>
-                    <article><span className="cv6-ia-lane-index">04</span><div><b>My Journey</b><small>See progress · Continue practising</small></div></article>
-                  </div>
-                </div>
-              </div>
-              <p className="cv6-ia-caption">The committed screens show onboarding, all four skill areas, a speaking-response feedback state and the My Journey dashboard. The shared feedback-to-progress relationship is presented as the organising model; confirm the exact post-task sequence for each skill before describing it as fully implemented.</p>
-            </div>
-
-            <div className="cv6-ia-block">
-              <div className="cv6-ia-block-heading">
-                <span>02 / LEARNER JOURNEY</span>
-                <p>A shallow path makes the next action easy to understand.</p>
-              </div>
-              <div className="cv6-ia-journey" aria-label="Learner journey from onboarding to practice, feedback and progress">
-                {[
-                  ['01','Get oriented','Introduction'],
-                  ['02','Personalise','Goals and practice context'],
-                  ['03','Choose a skill','Speaking · Writing · Listening · Reading'],
-                  ['04','Complete a task','Skill-specific response'],
-                  ['05','Review and continue','Feedback → My Journey']
-                ].map((step, i) => <React.Fragment key={step[0]}>
-                  <article><span>{step[0]}</span><b>{step[1]}</b><small>{step[2]}</small></article>
-                  {i < 4 && <i className="cv6-ia-journey-arrow" aria-hidden="true">→</i>}
-                </React.Fragment>)}
-              </div>
-            </div>
-
-            <div className="cv6-ia-block">
-              <div className="cv6-ia-block-heading">
-                <span>03 / SHARED SKILL FRAMEWORK</span>
-                <p>Change the task, not the whole interaction model.</p>
-              </div>
-              <div className="cv6-ia-framework">
-                <article className="cv6-ia-speaking"><span>01</span><b>Speaking</b><small>Spoken response</small></article>
-                <article className="cv6-ia-writing"><span>02</span><b>Writing</b><small>Written response</small></article>
-                <article className="cv6-ia-listening"><span>03</span><b>Listening</b><small>Audio comprehension</small></article>
-                <article className="cv6-ia-reading"><span>04</span><b>Reading</b><small>Reading comprehension</small></article>
-              </div>
-              <div className="cv6-ia-shared-pattern"><span>SHARED PATTERN</span><b>Understand task <i>→</i> Respond <i>→</i> Complete <i>→</i> Review</b></div>
-              <p className="cv6-ia-caption">The task and input modality differ by skill; the screen inventory supports a common progression language. The exact feedback components vary by skill and should be verified against the full product.</p>
-            </div>
-
-            <div className="cv6-ia-block cv6-ia-decisions">
-              <div className="cv6-ia-block-heading">
-                <span>04 / FROM USER NEEDS TO DESIGN DECISIONS</span>
-                <p>The architecture responds to the main product tensions.</p>
-              </div>
-              <div className="cv6-ia-decision-table">
-                <div className="cv6-ia-decision-head"><span>USER NEED / FRICTION</span><span>ARCHITECTURAL DECISION</span></div>
-                <div><p>Onboarding should not feel like a long form.</p><b>Stage personalisation into a few focused questions.</b></div>
-                <div><p>Four skills can feel like four separate products.</p><b>Keep skill-specific tasks within one shared experience.</b></div>
-                <div><p>Feedback should guide, not feel like a verdict.</p><b>Separate task completion from the feedback review.</b></div>
-                <div><p>Practice needs to connect to a wider goal.</p><b>Bring the learner back to My Journey as the progression view.</b></div>
-              </div>
-              <p className="cv6-ia-caption">These are design rationales derived from the documented problem framing and current screen set, not claims of measured impact or completed user validation.</p>
-            </div>
-          </Section>
 
           <Section n="11" title="Features & screens" tone="orange">
             <Reveal><h2>From personalisation to practice to progress — the interface keeps the grammar stable while the task changes.</h2><p className="cv4-lede">These are the original ComSki exports now integrated into the case study. Twelve representative states show the learner journey across onboarding, assessment, feedback and progression without replacing the product with invented UI.</p></Reveal>
