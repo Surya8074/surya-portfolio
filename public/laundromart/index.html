@@ -953,6 +953,24 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
     <p class="workflow-asset-note"><strong>Asset note:</strong> The layout and storytelling are in place using image holders. The supplied screenshots will be added after the case-study structure and copy are complete.</p>
   </article>
 
+  <style>
+    #core-workflow .workflow-facility-details{max-width:1120px;margin:44px auto 0}
+    #core-workflow .workflow-facility-detail{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:38px;align-items:center;padding:42px 0;border-top:1px solid var(--line)}
+    #core-workflow .workflow-facility-detail .workflow-copy{width:100%;margin:0}
+    #core-workflow .workflow-facility-detail .workflow-copy h3{font-size:clamp(23px,2.6vw,30px);margin-bottom:14px}
+    #core-workflow .workflow-facility-detail .workflow-copy p{font-size:15px;line-height:1.8;color:var(--muted)}
+    #core-workflow .workflow-facility-detail .workflow-decision-story{margin:22px 0 0}
+    #core-workflow .workflow-facility-detail .workflow-decision-story p{font-size:13px;line-height:1.75;color:var(--ink)}
+    #core-workflow .workflow-facility-detail .workflow-screen-placeholder{min-height:360px;margin:0;border-radius:18px}
+    #core-workflow .workflow-facility .workflow-decision-story{max-width:720px;margin:28px auto 0}
+    #core-workflow .workflow-facility .workflow-decision-story p{font-size:15px;line-height:1.85;color:var(--muted)}
+    @media(max-width:760px){
+      #core-workflow .workflow-facility-detail{grid-template-columns:1fr;gap:22px;padding:30px 0}
+      #core-workflow .workflow-facility-detail .workflow-screen-placeholder{min-height:240px}
+      #core-workflow .workflow-facility-details{margin-top:30px}
+    }
+  </style>
+
   <article class="workflow-step workflow-facility" id="facility-management">
     <div class="workflow-copy">
       <span class="workflow-number">03 — FACILITY &amp; CAMERA MANAGEMENT</span>
