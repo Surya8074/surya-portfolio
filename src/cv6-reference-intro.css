@@ -3058,3 +3058,36 @@ main.cv4-page > section.cv6-information-architecture .cv6-ia-architecture-refere
     padding-bottom: 48px !important;
   }
 }
+
+
+/* Hard-align the System Architecture title and its supporting copy to one identical left edge. */
+main.cv4-page > section.cv6-information-architecture > .cv4-section-content > .cv6-ia-intro {
+  display: block !important;
+  width: 100% !important;
+  max-width: 920px !important;
+  margin: 0 0 24px 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+  transform: none !important;
+}
+main.cv4-page > section.cv6-information-architecture > .cv4-section-content > .cv6-ia-intro h2,
+main.cv4-page > section.cv6-information-architecture > .cv4-section-content > .cv6-ia-intro p.cv4-lede {
+  display: block !important;
+  width: 100% !important;
+  max-width: 760px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  text-align: left !important;
+  text-indent: 0 !important;
+  transform: none !important;
+}
+main.cv4-page > section.cv6-information-architecture > .cv4-section-content > .cv6-ia-intro h2 {
+  margin-top: 0 !important;
+  margin-bottom: 14px !important;
+}
+main.cv4-page > section.cv6-information-architecture > .cv4-section-content > .cv6-ia-intro p.cv4-lede {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
