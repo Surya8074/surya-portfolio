@@ -2993,3 +2993,29 @@ main.cv4-page .cv6-information-architecture .cv6-ia-intro {
     width: calc(100% - 32px) !important;
   }
 }
+
+
+/* Use one shared heading and body type scale for Design System and System Architecture. */
+main.cv4-page .cv6-design-system-section .cv6-ios-system-intro h2,
+main.cv4-page .cv6-information-architecture .cv6-ia-intro h2 {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", Inter, sans-serif !important;
+  font-size: clamp(36px, 5.2vw, 62px) !important;
+  font-weight: 650 !important;
+  line-height: 1.02 !important;
+  letter-spacing: -.06em !important;
+}
+main.cv4-page .cv6-design-system-section .cv6-ios-system-lede,
+main.cv4-page .cv6-information-architecture .cv6-ia-intro .cv4-lede {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", Inter, sans-serif !important;
+  font-size: clamp(15px, 1.4vw, 18px) !important;
+  font-weight: 400 !important;
+  line-height: 1.72 !important;
+  letter-spacing: normal !important;
+}
+@media (max-width: 760px) {
+  main.cv4-page .cv6-design-system-section .cv6-ios-system-intro h2,
+  main.cv4-page .cv6-information-architecture .cv6-ia-intro h2 {
+    font-size: clamp(30px, 7vw, 42px) !important;
+    line-height: 1.06 !important;
+  }
+}
