@@ -103,3 +103,47 @@
  .other-reference-grid>.other-reference-card{aspect-ratio:344 / 547;border-radius:30px}
  .other-reference-grid>.other-reference-card .other-card-copy{padding:48px 32px 0}
 }
+
+
+/* Final sizing override: match Hello Ayushi's 873px desktop grid and equal 344:547 cards. */
+main .other-reference{width:100%;max-width:none;margin:0 auto;padding:20px 0 120px;box-sizing:border-box}
+main .other-reference>h2{margin:0 0 76px;font-size:22px;line-height:1.1;letter-spacing:-.3px;text-align:center}
+main .other-reference .other-reference-grid{
+  display:grid;
+  width:min(873px,calc(100% - 32px));
+  max-width:873px;
+  margin:0 auto;
+  padding:0;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px;
+  align-items:stretch;
+  box-sizing:border-box;
+}
+main .other-reference .other-reference-grid>.other-reference-card{
+  position:relative;
+  display:block;
+  width:100%;
+  min-width:0;
+  min-height:0;
+  height:auto;
+  aspect-ratio:344 / 547;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  overflow:hidden;
+  border:1px solid #d8d9dd;
+  border-radius:34px;
+}
+main .other-reference .other-reference-grid>.other-reference-card .other-card-copy{
+  position:relative;
+  z-index:2;
+  padding:58px 36px 0;
+}
+main .other-reference .other-reference-grid>.other-reference-card .other-card-copy h3{font-size:38px;line-height:1.08;margin:0 0 20px;letter-spacing:-.045em}
+main .other-reference .other-reference-grid>.other-reference-card .other-card-copy p{font-size:14px;line-height:1.48;margin:0}
+main .other-reference .other-reference-grid>.other-reference-card .other-card-tags{margin-top:32px}
+@media(max-width:1023px){
+ main .other-reference .other-reference-grid{width:min(344px,calc(100% - 32px));max-width:344px;grid-template-columns:minmax(0,1fr);gap:40px}
+ main .other-reference .other-reference-grid>.other-reference-card{aspect-ratio:344 / 547;border-radius:30px}
+ main .other-reference .other-reference-grid>.other-reference-card .other-card-copy{padding:48px 32px 0}
+}
