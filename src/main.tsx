@@ -176,7 +176,23 @@ function App() {
       <header className="reference-nav"><div className="reference-nav-inner"><button className="reference-brand" onClick={() => go('#home')}><strong>Surya Kiran</strong><span className="reference-brand-divider" /><span>India</span></button><nav><button onClick={() => go('#art')}>Art</button><button onClick={() => go('#about')}>About Me</button><a className="resume-nav-link" href="/surya-portfolio/resume/">Resume</a></nav></div></header>
       <section id="home" className="reference-home"><div className="reference-home-viewport"><div className="reference-home-stage"><div className="reference-portrait" aria-label="Portrait of Surya Kiran"><img className="reference-portrait-image" src={portraitUrl} alt="Surya Kiran" /></div><div className="reference-fade" /><div className="reference-head-animation" aria-hidden="true"><svg viewBox="0 0 260 130" className="head-animation-svg"><text className="head-animation-text" x="18" y="88">ART</text></svg></div><div className="reference-hero-copy"><h1><span>Designing how products earn trust,</span><span>across <em>visual, product &amp; growth.</em></span></h1><button className="reference-work" onClick={() => go('#work')}>See my work</button></div></div></div></section>
       <section id="work" className="reference-work-section"><div className="work-intro"><p>SELECTED WORK</p></div><GenesisCard /><ComskiCard /><article className="secondary-work-card"><div><p>Product · Web</p><h3>More work coming next</h3></div><div className="work-placeholder work-two">Next project</div></article></section>
-      <section className="other-reference"><h2>Other Projects</h2><div className="other-reference-grid"><article><h3>AI product explorations</h3><p>AI-assisted workflows, interaction and product design experiments.</p><div className="tags"><span>AI-Assisted</span><span>Spatial UX</span><span>Product Design</span></div></article><article><h3>Web &amp; product experiments</h3><p>Small digital products exploring interaction, systems and prototyping.</p><div className="tags"><span>Web Design</span><span>Interaction Design</span><span>UX Design</span></div></article></div></section>
+      <section className="other-reference">
+        <h2>Other Projects</h2>
+        <div className="other-reference-grid">
+          <a className="other-reference-card" href="/surya-portfolio/work/genesis-v7/?v=phase4#s01" aria-label="AI product explorations — AI-assisted workflows, interaction and product design experiments">
+            <article>
+              <img src="/surya-portfolio/genesis/Dashboard.webp" alt="" loading="lazy" />
+            </article>
+            <span className="sr-only"><strong>AI product explorations</strong><span>AI-assisted workflows, interaction and product design experiments.</span><span>AI-Assisted · Spatial UX · Product Design</span></span>
+          </a>
+          <a className="other-reference-card" href="/surya-portfolio/laundromart/" aria-label="Web and product experiments — small digital products exploring interaction, systems and prototyping">
+            <article>
+              <img src="/surya-portfolio/laundromart/problem-banner.png.png" alt="" loading="lazy" />
+            </article>
+            <span className="sr-only"><strong>Web &amp; product experiments</strong><span>Small digital products exploring interaction, systems and prototyping.</span><span>Web Design · Interaction Design · UX Design</span></span>
+          </a>
+        </div>
+      </section>
       <section id="art" className="simple-section"><h2>Art + Explorations</h2><p>AI, fun, visual experiments and things I make outside product work.</p></section>
       <ToolsWorkflow />
       <footer className="reference-footer"><h2>Every pixel here was a decision.</h2><p>Every word, a choice. Thanks for seeing it.</p><div className="footer-icons"><Linkedin/><FileText/><Github/></div><div className="footer-line" /><div className="footer-mark">≈≈≈</div><strong>Surya Kiran © 2026</strong></footer>
