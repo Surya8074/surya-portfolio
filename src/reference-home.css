@@ -171,3 +171,63 @@ main .other-reference .other-reference-grid>.other-reference-card{
    aspect-ratio:424 / 675;
  }
 }
+
+
+/* Definitive card sizing override: fixed 424 × 675 px desktop cards. */
+html body main .other-reference{
+  width:100% !important;
+  max-width:none !important;
+  margin:0 !important;
+  padding:20px 0 120px !important;
+  box-sizing:border-box !important;
+}
+html body main .other-reference .other-reference-grid{
+  display:grid !important;
+  grid-template-columns:repeat(2,424px) !important;
+  column-gap:24px !important;
+  row-gap:24px !important;
+  width:872px !important;
+  max-width:calc(100% - 32px) !important;
+  margin:0 auto !important;
+  padding:0 !important;
+  align-items:start !important;
+  justify-content:center !important;
+  box-sizing:border-box !important;
+}
+html body main .other-reference .other-reference-grid > article.other-reference-card{
+  display:block !important;
+  position:relative !important;
+  width:424px !important;
+  min-width:0 !important;
+  max-width:100% !important;
+  height:675px !important;
+  min-height:675px !important;
+  max-height:675px !important;
+  aspect-ratio:auto !important;
+  margin:0 !important;
+  padding:0 !important;
+  box-sizing:border-box !important;
+  overflow:hidden !important;
+  border:1px solid #d8d9dd !important;
+  border-radius:34px !important;
+}
+html body main .other-reference .other-reference-grid > article.other-reference-card .other-card-copy{
+  padding:58px 36px 0 !important;
+}
+@media(max-width:920px){
+ html body main .other-reference .other-reference-grid{
+   grid-template-columns:minmax(0,424px) !important;
+   width:424px !important;
+   max-width:calc(100% - 32px) !important;
+   row-gap:40px !important;
+ }
+ html body main .other-reference .other-reference-grid > article.other-reference-card{
+   width:100% !important;
+   height:675px !important;
+   min-height:675px !important;
+   max-height:675px !important;
+ }
+ html body main .other-reference .other-reference-grid > article.other-reference-card .other-card-copy{
+   padding:48px 32px 0 !important;
+ }
+}
