@@ -864,7 +864,7 @@ function ComskiCaseStudyCV4() {
                 <p>Feedback had to feel understandable and useful—not like a score that judges every mistake.</p>
               </div>
               <div className="cv6-challenge-art cv6-challenge-art-feedback">
-                <img src="/surya-portfolio/comski/3rd%20card%20c.png" alt="ComSki learner receiving supportive AI communication feedback" loading="lazy" />
+                <img src="https://raw.githubusercontent.com/Surya8074/surya-portfolio/main/public/comski/3rd%20card%20c.png" alt="ComSki learner receiving supportive AI communication feedback" loading="lazy" />
               </div>
               <span className="cv6-challenge-plus" aria-hidden="true">+</span>
             </article>
@@ -875,7 +875,7 @@ function ComskiCaseStudyCV4() {
                 <p>Make the experience supportive enough for learners to try, reflect, and try again with confidence.</p>
               </div>
               <div className="cv6-challenge-art cv6-challenge-art-reading">
-                <img src="/surya-portfolio/comski/4th%20card.png" alt="ComSki learner practising communication with supportive AI guidance" loading="lazy" />
+                <img src="https://raw.githubusercontent.com/Surya8074/surya-portfolio/main/public/comski/4th%20card.png" alt="ComSki learner practising communication with supportive AI guidance" loading="lazy" />
               </div>
               <span className="cv6-challenge-plus" aria-hidden="true">+</span>
             </article>
