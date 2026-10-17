@@ -2817,3 +2817,69 @@ main.cv4-page .cv6-information-architecture .cv6-ia-architecture-reference {
     width: calc(100% - 32px) !important;
   }
 }
+
+
+/* Repair collapsed Information Architecture layout: section marker/grid must not constrain the content column. */
+main.cv4-page section.cv6-information-architecture.cv4-section {
+  display: block !important;
+  position: relative;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+}
+main.cv4-page section.cv6-information-architecture.cv4-section > .cv4-section-marker {
+  display: none !important;
+}
+main.cv4-page section.cv6-information-architecture.cv4-section > .cv4-section-content {
+  display: block !important;
+  position: relative;
+  float: none !important;
+  flex: none !important;
+  box-sizing: border-box !important;
+  width: min(calc(100% - 64px), 1240px) !important;
+  min-width: 0 !important;
+  max-width: 1240px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+main.cv4-page .cv6-information-architecture .cv6-ia-block,
+main.cv4-page .cv6-information-architecture .cv6-ia-block-heading,
+main.cv4-page .cv6-information-architecture .cv6-ia-journey,
+main.cv4-page .cv6-information-architecture .cv6-ia-framework,
+main.cv4-page .cv6-information-architecture .cv6-ia-decisions {
+  box-sizing: border-box !important;
+  min-width: 0 !important;
+  width: 100% !important;
+}
+main.cv4-page .cv6-information-architecture .cv6-ia-block-heading {
+  grid-template-columns: minmax(220px, .75fr) minmax(0, 1.25fr) !important;
+}
+main.cv4-page .cv6-information-architecture .cv6-ia-journey {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  align-items: stretch;
+  gap: 12px !important;
+}
+main.cv4-page .cv6-information-architecture .cv6-ia-journey article {
+  width: auto !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  overflow-wrap: anywhere;
+}
+main.cv4-page .cv6-information-architecture .cv6-ia-journey-arrow {
+  display: none !important;
+}
+@media (max-width: 760px) {
+  main.cv4-page section.cv6-information-architecture.cv4-section > .cv4-section-content {
+    width: calc(100% - 32px) !important;
+  }
+  main.cv4-page .cv6-information-architecture .cv6-ia-block-heading {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+  main.cv4-page .cv6-information-architecture .cv6-ia-journey {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
