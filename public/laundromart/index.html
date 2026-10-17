@@ -432,12 +432,17 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
 
 </style>
 <style id="laundromart-shared-design-decision-pattern">
-/* Shared Design decision treatment: use the same callout pattern throughout the case study. */
+/* Shared Design decision callout: consistent highlight box throughout the case study. */
 .role-decision-story,
 .matrix-decision-story,
 .editorial-decision-copy {
-  width: min(100%, 650px);
-  margin: 26px auto 0;
+  box-sizing: border-box;
+  width: min(100%, 760px);
+  margin: 28px auto 0;
+  padding: 24px 28px;
+  border: 1px solid #f0d98f;
+  border-radius: 14px;
+  background: #fffaf0;
 }
 .role-decision-tag,
 .decision-tag,
@@ -451,7 +456,7 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
   font-size: 13px;
   font-weight: 700;
   color: #202020;
-  margin-bottom: 15px;
+  margin: 0 0 15px;
 }
 .role-decision-tag span,
 .decision-tag span,
@@ -472,6 +477,13 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
   margin-bottom: 0;
 }
 @media (max-width: 640px) {
+  .role-decision-story,
+  .matrix-decision-story,
+  .editorial-decision-copy {
+    padding: 18px 18px;
+    border-radius: 12px;
+    margin-top: 22px;
+  }
   .role-decision-story p,
   .matrix-decision-story p,
   .editorial-decision-copy p {
