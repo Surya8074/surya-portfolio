@@ -2632,3 +2632,116 @@ main.cv4-page .cv6-ia-reference-steps > i { display:none; }
 @media (max-width:420px) {
  main.cv4-page .cv6-ia-reference-steps { grid-template-columns:1fr; }
 }
+
+
+/* Alignment, scale and hover refinement for the ComSki architecture diagram */
+main.cv4-page .cv6-information-architecture .cv6-ia-architecture-reference {
+  grid-template-columns: minmax(165px,.82fr) 18px minmax(360px,1.8fr) minmax(185px,.82fr) 18px minmax(165px,.82fr);
+  gap: clamp(7px,.85vw,12px);
+  padding: clamp(14px,1.6vw,22px);
+  max-width: 1320px;
+  margin-inline: auto;
+}
+main.cv4-page .cv6-ia-reference-inputs,
+main.cv4-page .cv6-ia-reference-outputs { gap: 11px; }
+main.cv4-page .cv6-ia-reference-node,
+main.cv4-page .cv6-ia-reference-outputs article {
+  min-height: 82px;
+  padding: 10px;
+  gap: 10px;
+  border-radius: 16px;
+  box-shadow: 0 5px 16px rgba(33,56,100,.035);
+  transition: transform 280ms cubic-bezier(.2,.7,.2,1), box-shadow 280ms ease, border-color 280ms ease, background-color 280ms ease;
+}
+main.cv4-page .cv6-ia-reference-icon,
+main.cv4-page .cv6-ia-reference-outputs article > span {
+  flex-basis: 46px;
+  width: 46px;
+  height: 46px;
+  font-size: 23px;
+}
+main.cv4-page .cv6-ia-reference-node b,
+main.cv4-page .cv6-ia-reference-outputs b { font-size: 11px; }
+main.cv4-page .cv6-ia-reference-node small,
+main.cv4-page .cv6-ia-reference-outputs small { font-size: 9px; }
+main.cv4-page .cv6-ia-reference-core {
+  padding: 16px;
+  border-radius: 24px;
+  box-shadow: 0 8px 22px rgba(75,119,225,.07);
+}
+main.cv4-page .cv6-ia-reference-brand strong { font-size: 30px; }
+main.cv4-page .cv6-ia-reference-subtitle { margin-bottom: 13px; font-size: 11px; }
+main.cv4-page .cv6-ia-reference-skills { gap: 6px; }
+main.cv4-page .cv6-ia-reference-skills article {
+  min-height: 132px;
+  padding: 10px 4px 8px;
+  gap: 6px;
+  border-radius: 14px;
+  transition: transform 280ms cubic-bezier(.2,.7,.2,1), box-shadow 280ms ease, border-color 280ms ease;
+}
+main.cv4-page .cv6-ia-reference-skills article > span { width: 42px; height: 42px; font-size: 22px; }
+main.cv4-page .cv6-ia-reference-skills article b { font-size: 10px; }
+main.cv4-page .cv6-ia-reference-skills article small { font-size: 8px; }
+main.cv4-page .cv6-ia-reference-engine { margin-top: 11px; padding: 10px 8px; }
+main.cv4-page .cv6-ia-reference-engine b { font-size: 10px; }
+main.cv4-page .cv6-ia-reference-engine small { font-size: 8px; }
+main.cv4-page .cv6-ia-reference-analysis { min-height: 236px; }
+main.cv4-page .cv6-ia-reference-analysis article {
+  width: 108px; height: 108px;
+  transition: transform 280ms cubic-bezier(.2,.7,.2,1), box-shadow 280ms ease, border-color 280ms ease;
+}
+main.cv4-page .cv6-ia-reference-analysis article span { font-size: 23px; }
+main.cv4-page .cv6-ia-reference-analysis article b { font-size: 9px; }
+main.cv4-page .cv6-ia-reference-steps { max-width: 1240px; margin: 22px auto 10px; gap: 8px; }
+main.cv4-page .cv6-ia-reference-steps article { gap: 9px; }
+main.cv4-page .cv6-ia-reference-steps article > span { flex-basis: 28px; width: 28px; height: 28px; font-size: 10px; }
+main.cv4-page .cv6-ia-reference-steps article b { font-size: 12px; }
+main.cv4-page .cv6-ia-reference-steps article small { font-size: 9px; }
+main.cv4-page .cv6-ia-reference-node:hover,
+main.cv4-page .cv6-ia-reference-outputs article:hover {
+  transform: translateY(-3px) scale(1.015);
+  border-color: rgba(59,91,219,.32);
+  box-shadow: 0 12px 24px rgba(47,76,148,.10);
+}
+main.cv4-page .cv6-ia-reference-skills article:hover {
+  transform: translateY(-4px) scale(1.025);
+  border-color: rgba(59,91,219,.22);
+  box-shadow: 0 12px 22px rgba(47,76,148,.12);
+}
+main.cv4-page .cv6-ia-reference-analysis article:hover {
+  z-index: 2;
+  transform: scale(1.045);
+  box-shadow: 0 12px 24px rgba(47,76,148,.10);
+}
+main.cv4-page .cv6-ia-reference-steps article > span { transition: transform 260ms ease, box-shadow 260ms ease; }
+main.cv4-page .cv6-ia-reference-steps article:hover > span { transform: scale(1.08); box-shadow: 0 5px 12px rgba(52,117,255,.22); }
+@media (max-width: 1200px) and (min-width: 761px) {
+  main.cv4-page .cv6-information-architecture .cv6-ia-architecture-reference {
+    grid-template-columns: minmax(150px,.8fr) 16px minmax(300px,1.6fr) minmax(165px,.8fr);
+    align-items: center;
+    gap: 9px;
+  }
+  main.cv4-page .cv6-ia-reference-core { grid-column: 3; grid-row: 1; }
+  main.cv4-page .cv6-ia-reference-analysis { grid-column: 3; grid-row: 2; min-height: 188px; margin-top: 8px; }
+  main.cv4-page .cv6-ia-reference-outputs { grid-column: 4; grid-row: 1 / span 2; }
+  main.cv4-page .cv6-ia-reference-arrow:nth-of-type(2) { display: none; }
+  main.cv4-page .cv6-ia-reference-steps { grid-template-columns: repeat(4,minmax(0,1fr)); }
+}
+@media (max-width: 760px) {
+  main.cv4-page .cv6-information-architecture .cv6-ia-architecture-reference { padding: 12px; }
+  main.cv4-page .cv6-ia-reference-analysis { min-height: 232px; }
+  main.cv4-page .cv6-ia-reference-analysis article { width: 104px; height: 104px; }
+  main.cv4-page .cv6-ia-reference-steps article small { font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  main.cv4-page .cv6-ia-reference-node,
+  main.cv4-page .cv6-ia-reference-outputs article,
+  main.cv4-page .cv6-ia-reference-skills article,
+  main.cv4-page .cv6-ia-reference-analysis article,
+  main.cv4-page .cv6-ia-reference-steps article > span { transition: none; }
+  main.cv4-page .cv6-ia-reference-node:hover,
+  main.cv4-page .cv6-ia-reference-outputs article:hover,
+  main.cv4-page .cv6-ia-reference-skills article:hover,
+  main.cv4-page .cv6-ia-reference-analysis article:hover,
+  main.cv4-page .cv6-ia-reference-steps article:hover > span { transform: none; }
+}
