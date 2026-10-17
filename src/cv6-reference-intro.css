@@ -3324,3 +3324,32 @@ main.cv4-page section.cv6-information-architecture .cv6-ia-editorial-grid .cv6-i
     width: calc(100% - 32px) !important;
   }
 }
+
+
+/* Match the System architecture intro to the inner text edge of the preceding principle panel. */
+main.cv4-page section.cv6-information-architecture .cv6-ia-editorial-grid {
+  width: auto !important;
+  max-width: 920px !important;
+  margin: 0 0 28px max(55px, calc((100vw - 1302px) / 2 + 55px)) !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+main.cv4-page section.cv6-information-architecture .cv6-ia-editorial-grid .cv6-ia-intro {
+  width: 100% !important;
+  max-width: 920px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+}
+main.cv4-page section.cv6-information-architecture .cv6-ia-editorial-grid .cv6-ia-intro h2,
+main.cv4-page section.cv6-information-architecture .cv6-ia-editorial-grid .cv6-ia-intro p.cv4-lede {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+@media (max-width: 760px) {
+  main.cv4-page section.cv6-information-architecture .cv6-ia-editorial-grid {
+    width: calc(100% - 32px) !important;
+    max-width: none !important;
+    margin: 0 16px 24px !important;
+  }
+}
