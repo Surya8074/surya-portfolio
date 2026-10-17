@@ -68,3 +68,38 @@
  .other-card-tags span{font-size:12px}
 }
 @media(prefers-reduced-motion:reduce){.other-reference-card{transition:none}}
+
+
+/* Reset legacy generic article rules; the reference uses two equal 344:547 cards. */
+.other-reference-grid{width:min(873px,calc(100% - 32px));grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch}
+.other-reference-grid>.other-reference-card{
+  display:block;
+  box-sizing:border-box;
+  width:100%;
+  min-width:0;
+  min-height:0;
+  height:auto;
+  aspect-ratio:344 / 547;
+  margin:0;
+  padding:0;
+  border:1px solid #d8d9dd;
+  border-radius:34px;
+  overflow:hidden;
+}
+.other-reference-grid>.other-reference-card:first-child{
+  background-color:#fbfbfd;
+  background-image:radial-gradient(#e6e7ed 1.25px,transparent 1.25px);
+  background-size:24px 24px;
+}
+.other-reference-grid>.other-reference-card:last-child{
+  background:linear-gradient(115deg,#fff 0%,#f0fbfd 100%);
+}
+.other-reference-grid>.other-reference-card .other-card-copy{padding:58px 36px 0}
+.other-reference-grid>.other-reference-card .other-card-copy h3{font-size:38px;line-height:1.08;margin:0 0 20px}
+.other-reference-grid>.other-reference-card .other-card-copy p{font-size:14px;line-height:1.48;margin:0}
+.other-reference-grid>.other-reference-card .other-card-tags{margin-top:32px}
+@media(max-width:1023px){
+ .other-reference-grid{width:min(344px,calc(100% - 32px));grid-template-columns:minmax(0,1fr);gap:40px}
+ .other-reference-grid>.other-reference-card{aspect-ratio:344 / 547;border-radius:30px}
+ .other-reference-grid>.other-reference-card .other-card-copy{padding:48px 32px 0}
+}
