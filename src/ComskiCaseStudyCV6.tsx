@@ -957,27 +957,43 @@ function ComskiCaseStudyCV4() {
               <p className="cv4-lede">ComSki connects learner context, communication practice, AI-supported feedback and progress in one experience. Four distinct skill areas share a familiar structure, while each task adapts to the way learners communicate.</p>
             </Reveal>
 
-            <div className="cv6-ia-architecture-hero" role="img" aria-label="ComSki system architecture showing learner context flowing through a shared practice system into skill-specific practice, feedback and progress.">
-              <div className="cv6-ia-arch-inputs">
-                <span className="cv6-ia-arch-node"><i>01</i><b>Learner goals</b><small>Purpose and confidence</small></span>
-                <span className="cv6-ia-arch-node"><i>02</i><b>Personalisation</b><small>Context and preferences</small></span>
-                <span className="cv6-ia-arch-node"><i>03</i><b>Practice history</b><small>Previous attempts</small></span>
+            <div className="cv6-ia-architecture-hero cv6-ia-architecture-reference" aria-label="ComSki system architecture diagram">
+              <div className="cv6-ia-reference-inputs">
+                <article className="cv6-ia-reference-node input-blue"><span className="cv6-ia-reference-icon">♙</span><div><b>Learner profile</b><small>Goals, proficiency level,<br/>interests</small></div></article>
+                <article className="cv6-ia-reference-node input-pink"><span className="cv6-ia-reference-icon">▤</span><div><b>Learning context</b><small>School / exam / personal<br/>growth</small></div></article>
+                <article className="cv6-ia-reference-node input-orange"><span className="cv6-ia-reference-icon">▥</span><div><b>Practice history</b><small>Past performance<br/>and behaviour</small></div></article>
               </div>
-              <span className="cv6-ia-arch-link" aria-hidden="true">→</span>
-              <div className="cv6-ia-arch-core">
-                <span className="cv6-ia-arch-brand"><i></i> COMSKI EXPERIENCE</span>
-                <h3>One connected<br/><em>practice system</em></h3>
-                <div className="cv6-ia-arch-skills"><span>Speaking</span><span>Writing</span><span>Listening</span><span>Reading</span></div>
-                <div className="cv6-ia-arch-loop"><span>Practice</span><b>↔</b><span>AI feedback</span><b>↔</b><span>Improve</span></div>
+              <span className="cv6-ia-reference-arrow" aria-hidden="true">→</span>
+              <div className="cv6-ia-reference-core">
+                <div className="cv6-ia-reference-brand"><span>✦</span><strong>ComSki</strong></div>
+                <p className="cv6-ia-reference-subtitle">AI-powered communication practice</p>
+                <div className="cv6-ia-reference-skills">
+                  <article className="skill-speaking"><span>🎙</span><b>Speaking</b><small>Real-time conversation<br/>practice</small></article>
+                  <article className="skill-writing"><span>✎</span><b>Writing</b><small>Structured writing tasks<br/>and feedback</small></article>
+                  <article className="skill-listening"><span>♬</span><b>Listening</b><small>Audio comprehension<br/>and response</small></article>
+                  <article className="skill-reading"><span>▱</span><b>Reading</b><small>Reading comprehension<br/>and analysis</small></article>
+                </div>
+                <div className="cv6-ia-reference-engine"><b>✦ &nbsp; AI Analysis Engine</b><small>Analyses responses, identifies strengths and areas to improve</small></div>
               </div>
-              <span className="cv6-ia-arch-link" aria-hidden="true">→</span>
-              <div className="cv6-ia-arch-outputs">
-                <span className="cv6-ia-arch-outcome"><b>Useful feedback</b><small>Understand what to improve</small></span>
-                <span className="cv6-ia-arch-outcome"><b>Visible progress</b><small>My Journey</small></span>
-                <span className="cv6-ia-arch-outcome"><b>Next practice</b><small>Keep building confidence</small></span>
+              <div className="cv6-ia-reference-analysis">
+                <article className="analysis-pattern"><span>⌁</span><b>Pattern<br/>detection</b></article>
+                <article className="analysis-performance"><span>☷</span><b>Performance<br/>assessment</b></article>
+                <article className="analysis-correlation"><span>⌘</span><b>Skill<br/>correlation</b></article>
+              </div>
+              <span className="cv6-ia-reference-arrow" aria-hidden="true">→</span>
+              <div className="cv6-ia-reference-outputs">
+                <article className="output-green"><span>▥</span><div><b>Personalised insights</b><small>Clear and understandable<br/>feedback</small></div></article>
+                <article className="output-blue"><span>◎</span><div><b>Actionable guidance</b><small>What to improve<br/>next</small></div></article>
+                <article className="output-purple"><span>☆</span><div><b>Progress tracking</b><small>Track growth across<br/>all skills</small></div></article>
               </div>
             </div>
-            <p className="cv6-ia-arch-note">A conceptual view of the product structure, based on the ComSki screens and shared practice model.</p>
+            <div className="cv6-ia-reference-steps">
+              <article><span>01</span><div><b>Input</b><small>Learner data &amp; context</small></div></article><i aria-hidden="true">⟶</i>
+              <article><span>02</span><div><b>Practice</b><small>Four communication skills<br/>with a consistent experience</small></div></article><i aria-hidden="true">⟶</i>
+              <article><span>03</span><div><b>Analysis</b><small>AI-powered feedback<br/>and skill insights</small></div></article><i aria-hidden="true">⟶</i>
+              <article><span>04</span><div><b>Output</b><small>Personalised guidance<br/>and measurable progress</small></div></article>
+            </div>
+            <p className="cv6-ia-arch-note">Conceptual system map of ComSki’s learner inputs, four practice modes, AI analysis and feedback outcomes.</p>
 
             <div className="cv6-ia-block cv6-ia-primary">
               <div className="cv6-ia-block-heading">
