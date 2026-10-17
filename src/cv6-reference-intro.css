@@ -2949,3 +2949,47 @@ main.cv4-page > section.cv6-information-architecture .cv6-ia-architecture-refere
     font-size: clamp(28px, 7vw, 38px) !important;
   }
 }
+
+
+/* Align Design System and System Architecture to the same editorial left edge. */
+main.cv4-page > section.cv6-design-system-section > .cv4-section-content,
+main.cv4-page > section.cv6-information-architecture > .cv4-section-content {
+  width: min(calc(100% - 64px), 1240px) !important;
+  max-width: 1240px !important;
+  margin-inline: auto !important;
+}
+main.cv4-page .cv6-design-system-section .cv6-ios-system,
+main.cv4-page .cv6-information-architecture .cv6-ia-intro,
+main.cv4-page .cv6-information-architecture .cv6-ia-architecture-reference {
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box !important;
+}
+main.cv4-page .cv6-design-system-section .cv6-ios-system-intro {
+  width: min(100%, 920px) !important;
+  max-width: 920px !important;
+  margin: 0 0 clamp(28px, 3.5vw, 44px) !important;
+  text-align: left !important;
+}
+main.cv4-page .cv6-design-system-section .cv6-ios-system-intro h2,
+main.cv4-page .cv6-information-architecture .cv6-ia-intro h2 {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: left !important;
+}
+main.cv4-page .cv6-design-system-section .cv6-ios-system-lede,
+main.cv4-page .cv6-information-architecture .cv6-ia-intro .cv4-lede {
+  max-width: 760px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: left !important;
+}
+main.cv4-page .cv6-information-architecture .cv6-ia-intro {
+  margin: 0 0 clamp(28px, 3.5vw, 44px) !important;
+}
+@media (max-width: 760px) {
+  main.cv4-page > section.cv6-design-system-section > .cv4-section-content,
+  main.cv4-page > section.cv6-information-architecture > .cv4-section-content {
+    width: calc(100% - 32px) !important;
+  }
+}
