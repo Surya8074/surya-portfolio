@@ -2883,3 +2883,69 @@ main.cv4-page .cv6-information-architecture .cv6-ia-journey-arrow {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 }
+
+
+/* Final containment fix: these editorial sections must span the viewport, not inherit a narrow parent track. */
+main.cv4-page > section.cv6-design-system-section,
+main.cv4-page > section.cv6-information-architecture {
+  display: block !important;
+  width: 100vw !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+}
+main.cv4-page > section.cv6-design-system-section > .cv4-section-content,
+main.cv4-page > section.cv6-information-architecture > .cv4-section-content {
+  display: block !important;
+  float: none !important;
+  position: relative !important;
+  width: min(calc(100% - 64px), 1240px) !important;
+  max-width: 1240px !important;
+  min-width: 0 !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+main.cv4-page > section.cv6-design-system-section .cv6-ios-system-intro,
+main.cv4-page > section.cv6-information-architecture .cv6-ia-intro {
+  display: block !important;
+  width: 100% !important;
+  max-width: 920px !important;
+  margin: 0 0 28px !important;
+  text-align: left !important;
+}
+main.cv4-page > section.cv6-design-system-section .cv6-ios-system-intro h2,
+main.cv4-page > section.cv6-information-architecture .cv6-ia-intro h2 {
+  font-size: clamp(32px, 4vw, 52px) !important;
+  line-height: 1.08 !important;
+  margin: 0 0 14px !important;
+  text-align: left !important;
+}
+main.cv4-page > section.cv6-design-system-section .cv6-ios-system-lede,
+main.cv4-page > section.cv6-information-architecture .cv6-ia-intro .cv4-lede {
+  display: block !important;
+  width: 100% !important;
+  max-width: 760px !important;
+  margin: 0 !important;
+  font-size: 16px !important;
+  line-height: 1.65 !important;
+  text-align: left !important;
+}
+main.cv4-page > section.cv6-information-architecture .cv6-ia-architecture-reference {
+  width: 100% !important;
+  max-width: 1240px !important;
+  margin: 28px auto 0 !important;
+}
+@media (max-width: 760px) {
+  main.cv4-page > section.cv6-design-system-section > .cv4-section-content,
+  main.cv4-page > section.cv6-information-architecture > .cv4-section-content {
+    width: calc(100% - 32px) !important;
+  }
+  main.cv4-page > section.cv6-design-system-section .cv6-ios-system-intro h2,
+  main.cv4-page > section.cv6-information-architecture .cv6-ia-intro h2 {
+    font-size: clamp(28px, 7vw, 38px) !important;
+  }
+}
