@@ -953,9 +953,31 @@ function ComskiCaseStudyCV4() {
 
           <Section n="10" title="INFORMATION ARCHITECTURE" tone="pink" className="cv6-information-architecture">
             <Reveal className="cv6-ia-intro">
-              <h2>Structuring the ComSki experience</h2>
-              <p className="cv4-lede">ComSki brings personalised onboarding, four communication skills, feedback and learner progression into one connected experience. Each skill has its own task, while the wider journey stays recognisable.</p>
+              <h2>System architecture</h2>
+              <p className="cv4-lede">ComSki connects learner context, communication practice, AI-supported feedback and progress in one experience. Four distinct skill areas share a familiar structure, while each task adapts to the way learners communicate.</p>
             </Reveal>
+
+            <div className="cv6-ia-architecture-hero" role="img" aria-label="ComSki system architecture showing learner context flowing through a shared practice system into skill-specific practice, feedback and progress.">
+              <div className="cv6-ia-arch-inputs">
+                <span className="cv6-ia-arch-node"><i>01</i><b>Learner goals</b><small>Purpose and confidence</small></span>
+                <span className="cv6-ia-arch-node"><i>02</i><b>Personalisation</b><small>Context and preferences</small></span>
+                <span className="cv6-ia-arch-node"><i>03</i><b>Practice history</b><small>Previous attempts</small></span>
+              </div>
+              <span className="cv6-ia-arch-link" aria-hidden="true">→</span>
+              <div className="cv6-ia-arch-core">
+                <span className="cv6-ia-arch-brand"><i></i> COMSKI EXPERIENCE</span>
+                <h3>One connected<br/><em>practice system</em></h3>
+                <div className="cv6-ia-arch-skills"><span>Speaking</span><span>Writing</span><span>Listening</span><span>Reading</span></div>
+                <div className="cv6-ia-arch-loop"><span>Practice</span><b>↔</b><span>AI feedback</span><b>↔</b><span>Improve</span></div>
+              </div>
+              <span className="cv6-ia-arch-link" aria-hidden="true">→</span>
+              <div className="cv6-ia-arch-outputs">
+                <span className="cv6-ia-arch-outcome"><b>Useful feedback</b><small>Understand what to improve</small></span>
+                <span className="cv6-ia-arch-outcome"><b>Visible progress</b><small>My Journey</small></span>
+                <span className="cv6-ia-arch-outcome"><b>Next practice</b><small>Keep building confidence</small></span>
+              </div>
+            </div>
+            <p className="cv6-ia-arch-note">A conceptual view of the product structure, based on the ComSki screens and shared practice model.</p>
 
             <div className="cv6-ia-block cv6-ia-primary">
               <div className="cv6-ia-block-heading">
