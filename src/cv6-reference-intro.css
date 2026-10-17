@@ -2524,3 +2524,111 @@ main.cv4-page .cv6-ia-arch-note {
   main.cv4-page .cv6-ia-arch-node,
   main.cv4-page .cv6-ia-arch-outcome { min-height: auto; }
 }
+
+
+/* Reference-matched ComSki system architecture diagram */
+main.cv4-page .cv6-information-architecture .cv6-ia-architecture-reference {
+  display: grid;
+  grid-template-columns: minmax(190px,.9fr) 24px minmax(430px,2.05fr) minmax(210px,.9fr) 24px minmax(190px,.9fr);
+  align-items: center;
+  gap: clamp(8px,1.1vw,16px);
+  min-height: 0;
+  margin: 0;
+  padding: clamp(20px,2.2vw,32px);
+  border: 0;
+  border-radius: 0;
+  background: radial-gradient(ellipse at 50% 48%,rgba(224,234,255,.38),transparent 58%),#FFFEFB;
+  box-shadow: none;
+}
+main.cv4-page .cv6-ia-reference-inputs,
+main.cv4-page .cv6-ia-reference-outputs { display:flex; flex-direction:column; gap:14px; }
+main.cv4-page .cv6-ia-reference-node,
+main.cv4-page .cv6-ia-reference-outputs article {
+  display:flex; align-items:center; gap:13px; min-width:0; min-height:94px; padding:12px;
+  border:1px solid rgba(100,143,255,.22); border-radius:18px; background:rgba(255,255,255,.84);
+}
+main.cv4-page .cv6-ia-reference-node > div,
+main.cv4-page .cv6-ia-reference-outputs article > div { min-width:0; }
+main.cv4-page .cv6-ia-reference-icon,
+main.cv4-page .cv6-ia-reference-outputs article > span {
+  flex:0 0 54px; width:54px; height:54px; display:grid; place-items:center; border-radius:50%;
+  font-size:27px; font-weight:600; background:#E5F3FF; color:#168CF2;
+}
+main.cv4-page .cv6-ia-reference-node b,
+main.cv4-page .cv6-ia-reference-outputs b { display:block; color:#17213B; font-size:12px; line-height:1.35; }
+main.cv4-page .cv6-ia-reference-node small,
+main.cv4-page .cv6-ia-reference-outputs small { display:block; margin-top:5px; color:#68748C; font-size:10px; line-height:1.4; }
+main.cv4-page .cv6-ia-reference-node.input-pink { border-color:rgba(234,85,192,.22); }
+main.cv4-page .cv6-ia-reference-node.input-pink .cv6-ia-reference-icon { background:#FDE8F8; color:#D93DB0; }
+main.cv4-page .cv6-ia-reference-node.input-orange { border-color:rgba(244,169,58,.25); }
+main.cv4-page .cv6-ia-reference-node.input-orange .cv6-ia-reference-icon { background:#FFF1D9; color:#C77B0B; }
+main.cv4-page .cv6-ia-reference-arrow { color:#3475FF; font-size:28px; text-align:center; }
+main.cv4-page .cv6-ia-reference-core {
+  min-width:0; padding:20px; border:1px solid #D7E5FF; border-radius:28px;
+  background:linear-gradient(145deg,#FBFDFF,#F5F7FF); box-shadow:0 10px 28px rgba(75,119,225,.08);
+  text-align:center;
+}
+main.cv4-page .cv6-ia-reference-brand { display:flex; align-items:center; justify-content:center; gap:9px; color:#316BFA; }
+main.cv4-page .cv6-ia-reference-brand span { font-size:26px; }
+main.cv4-page .cv6-ia-reference-brand strong { font-size:34px; letter-spacing:-.05em; }
+main.cv4-page .cv6-ia-reference-subtitle { margin:0 0 18px; color:#64708B; font-size:12px; }
+main.cv4-page .cv6-ia-reference-skills { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:7px; }
+main.cv4-page .cv6-ia-reference-skills article {
+  display:flex; min-width:0; min-height:154px; flex-direction:column; align-items:center; justify-content:flex-start;
+  gap:7px; padding:13px 5px 10px; border:1px solid rgba(255,255,255,.9); border-radius:17px;
+  background:linear-gradient(160deg,#EDF4FF,#FFFFFF); box-shadow:0 5px 15px rgba(53,84,145,.07);
+}
+main.cv4-page .cv6-ia-reference-skills article > span { display:grid; place-items:center; width:48px; height:48px; border-radius:50%; background:#DDEBFF; color:#168CF2; font-size:25px; }
+main.cv4-page .cv6-ia-reference-skills article b { color:#17213B; font-size:11px; }
+main.cv4-page .cv6-ia-reference-skills article small { color:#68748C; font-size:9px; line-height:1.35; }
+main.cv4-page .cv6-ia-reference-skills .skill-writing { background:linear-gradient(160deg,#FFF0FA,#FFF); }
+main.cv4-page .cv6-ia-reference-skills .skill-writing > span { background:#FCE0F4; color:#D93DB0; }
+main.cv4-page .cv6-ia-reference-skills .skill-listening { background:linear-gradient(160deg,#EDF8FF,#FFF); }
+main.cv4-page .cv6-ia-reference-skills .skill-listening > span { background:#DDF2FF; }
+main.cv4-page .cv6-ia-reference-skills .skill-reading { background:linear-gradient(160deg,#FFF6E7,#FFF); }
+main.cv4-page .cv6-ia-reference-skills .skill-reading > span { background:#FFEAC8; color:#B87312; }
+main.cv4-page .cv6-ia-reference-engine { display:flex; flex-direction:column; gap:5px; margin-top:14px; padding:12px 9px; border:1px solid #E0E5FF; border-radius:999px; background:linear-gradient(90deg,#F1EFFF,#E9EEFF); }
+main.cv4-page .cv6-ia-reference-engine b { color:#273B83; font-size:11px; }
+main.cv4-page .cv6-ia-reference-engine small { color:#65708A; font-size:9px; line-height:1.4; }
+main.cv4-page .cv6-ia-reference-analysis { position:relative; min-height:270px; display:grid; place-items:center; }
+main.cv4-page .cv6-ia-reference-analysis article { position:absolute; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; width:126px; height:126px; border:1px solid rgba(91,152,255,.3); border-radius:50%; background:rgba(242,249,255,.76); text-align:center; }
+main.cv4-page .cv6-ia-reference-analysis article span { color:#3288F7; font-size:27px; }
+main.cv4-page .cv6-ia-reference-analysis article b { color:#17213B; font-size:10px; line-height:1.3; }
+main.cv4-page .cv6-ia-reference-analysis .analysis-pattern { top:0; left:50%; transform:translateX(-50%); }
+main.cv4-page .cv6-ia-reference-analysis .analysis-performance { bottom:0; left:0; border-color:rgba(230,102,207,.3); background:rgba(255,239,251,.74); }
+main.cv4-page .cv6-ia-reference-analysis .analysis-performance span { color:#BE58E9; }
+main.cv4-page .cv6-ia-reference-analysis .analysis-correlation { right:0; bottom:0; border-color:rgba(167,110,255,.3); background:rgba(249,243,255,.76); }
+main.cv4-page .cv6-ia-reference-analysis .analysis-correlation span { color:#9A59EF; }
+main.cv4-page .cv6-ia-reference-outputs article.output-green { border-color:rgba(45,196,133,.22); }
+main.cv4-page .cv6-ia-reference-outputs .output-green > span { background:#DDFBED; color:#17A66B; }
+main.cv4-page .cv6-ia-reference-outputs .output-blue > span { background:#E1F3FF; color:#168CF2; }
+main.cv4-page .cv6-ia-reference-outputs .output-purple > span { background:#F1E6FF; color:#9255EB; }
+main.cv4-page .cv6-ia-reference-steps { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; align-items:start; gap:10px; margin:28px 0 12px; }
+main.cv4-page .cv6-ia-reference-steps article { display:flex; align-items:flex-start; gap:12px; min-width:0; }
+main.cv4-page .cv6-ia-reference-steps article > span { flex:0 0 31px; width:31px; height:31px; display:grid; place-items:center; border-radius:50%; background:#3475FF; color:white; font-size:11px; font-weight:700; }
+main.cv4-page .cv6-ia-reference-steps article b { display:block; padding-top:3px; color:#17213B; font-size:13px; }
+main.cv4-page .cv6-ia-reference-steps article small { display:block; margin-top:5px; color:#68748C; font-size:10px; line-height:1.45; }
+main.cv4-page .cv6-ia-reference-steps > i { display:none; }
+@media (max-width:1100px) {
+ main.cv4-page .cv6-information-architecture .cv6-ia-architecture-reference { grid-template-columns:minmax(160px,.8fr) 18px minmax(340px,1.7fr) minmax(190px,.8fr); }
+ main.cv4-page .cv6-ia-reference-analysis { grid-column:3; grid-row:2; min-height:190px; }
+ main.cv4-page .cv6-ia-reference-outputs { grid-column:4; grid-row:1 / span 2; }
+ main.cv4-page .cv6-ia-reference-core { grid-column:3; }
+ main.cv4-page .cv6-ia-reference-core + .cv6-ia-reference-analysis { grid-column:3; }
+ main.cv4-page .cv6-ia-reference-steps { gap:8px; }
+}
+@media (max-width:760px) {
+ main.cv4-page .cv6-information-architecture .cv6-ia-architecture-reference { display:flex; flex-direction:column; align-items:stretch; gap:12px; padding:14px; }
+ main.cv4-page .cv6-ia-reference-inputs { display:grid; grid-template-columns:1fr; }
+ main.cv4-page .cv6-ia-reference-node { min-height:75px; }
+ main.cv4-page .cv6-ia-reference-arrow { transform:rotate(90deg); }
+ main.cv4-page .cv6-ia-reference-core { padding:16px 10px; }
+ main.cv4-page .cv6-ia-reference-brand strong { font-size:29px; }
+ main.cv4-page .cv6-ia-reference-skills { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ main.cv4-page .cv6-ia-reference-analysis { min-height:260px; width:100%; max-width:300px; align-self:center; }
+ main.cv4-page .cv6-ia-reference-outputs { display:flex; }
+ main.cv4-page .cv6-ia-reference-steps { grid-template-columns:1fr 1fr; gap:18px 12px; }
+}
+@media (max-width:420px) {
+ main.cv4-page .cv6-ia-reference-steps { grid-template-columns:1fr; }
+}
