@@ -3229,3 +3229,59 @@ section.cv6-information-architecture.cv4-section > .cv4-section-content > .cv6-i
     width: calc(100% - 32px) !important;
   }
 }
+
+
+/* Structural alignment: keep the architecture heading/copy on the same centered editorial grid as the section above. */
+main.cv4-page section.cv6-information-architecture .cv6-ia-editorial-grid {
+  display: block !important;
+  position: relative !important;
+  float: none !important;
+  clear: both !important;
+  width: min(1240px, calc(100% - 64px)) !important;
+  max-width: 1240px !important;
+  min-width: 0 !important;
+  margin: 0 auto 28px !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  inset: auto !important;
+  transform: none !important;
+}
+main.cv4-page section.cv6-information-architecture .cv6-ia-editorial-grid .cv6-ia-intro {
+  display: block !important;
+  position: relative !important;
+  float: none !important;
+  width: min(920px, 100%) !important;
+  max-width: 920px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  inset: auto !important;
+  transform: none !important;
+  text-align: left !important;
+  box-sizing: border-box !important;
+}
+main.cv4-page section.cv6-information-architecture .cv6-ia-editorial-grid .cv6-ia-intro h2,
+main.cv4-page section.cv6-information-architecture .cv6-ia-editorial-grid .cv6-ia-intro p.cv4-lede {
+  display: block !important;
+  width: 100% !important;
+  max-width: 760px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  text-align: left !important;
+  text-indent: 0 !important;
+  transform: none !important;
+}
+main.cv4-page section.cv6-information-architecture .cv6-ia-architecture-reference {
+  width: min(1440px, calc(100% - 64px)) !important;
+  max-width: 1440px !important;
+  margin-inline: auto !important;
+}
+@media (max-width: 760px) {
+  main.cv4-page section.cv6-information-architecture .cv6-ia-editorial-grid {
+    width: calc(100% - 32px) !important;
+  }
+  main.cv4-page section.cv6-information-architecture .cv6-ia-architecture-reference {
+    width: calc(100% - 32px) !important;
+  }
+}
