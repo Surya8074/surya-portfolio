@@ -3120,3 +3120,52 @@ main.cv4-page section.cv6-information-architecture .cv6-ia-intro p.cv4-lede {
     margin-left: 16px !important;
   }
 }
+
+
+/* Final alignment correction: center the architecture content container exactly like the Design System board. */
+section.cv6-information-architecture.cv4-section {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box !important;
+}
+section.cv6-information-architecture.cv4-section > .cv4-section-content {
+  display: block !important;
+  float: none !important;
+  box-sizing: border-box !important;
+  width: min(1240px, calc(100% - 64px)) !important;
+  max-width: 1240px !important;
+  min-width: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+section.cv6-information-architecture.cv4-section .cv6-ia-intro {
+  display: block !important;
+  width: 100% !important;
+  max-width: 920px !important;
+  margin: 0 0 24px 0 !important;
+  padding: 0 !important;
+  position: static !important;
+  transform: none !important;
+  text-align: left !important;
+}
+section.cv6-information-architecture.cv4-section .cv6-ia-intro h2,
+section.cv6-information-architecture.cv4-section .cv6-ia-intro p.cv4-lede {
+  display: block !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  text-align: left !important;
+  text-indent: 0 !important;
+}
+section.cv6-information-architecture.cv4-section .cv6-ia-architecture-reference {
+  width: 100% !important;
+  max-width: 1240px !important;
+  margin: 0 auto !important;
+}
+@media (max-width: 760px) {
+  section.cv6-information-architecture.cv4-section > .cv4-section-content {
+    width: calc(100% - 32px) !important;
+  }
+}
