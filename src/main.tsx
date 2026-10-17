@@ -178,8 +178,8 @@ function App() {
       <section id="work" className="reference-work-section"><div className="work-intro"><p>SELECTED WORK</p></div><GenesisCard /><ComskiCard /><article className="secondary-work-card"><div><p>Product · Web</p><h3>More work coming next</h3></div><div className="work-placeholder work-two">Next project</div></article></section>
       <section className="other-reference">
         <h2>Other Projects</h2>
-        <div className="other-reference-grid">
-          <article className="other-reference-card toniq-card" aria-label="Toniq AI project">
+        <div className="other-reference-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2, 424px)", gap: "24px", width: "872px", maxWidth: "calc(100% - 32px)", margin: "0 auto", alignItems: "start", boxSizing: "border-box" }}>
+          <article className="other-reference-card toniq-card" aria-label="Toniq AI project" style={{ width: "424px", height: "675px", minHeight: "675px", maxHeight: "675px", boxSizing: "border-box", padding: 0 }}>
             <div className="other-card-copy">
               <h3>Toniq AI</h3>
               <p>Virtual networking was spatially broken. I designed a 2D spatial event platform with an AI layer that gives attendees context before conversation.</p>
@@ -193,7 +193,7 @@ function App() {
               <div className="avatar avatar-maria"><span>👩🏼</span><small>Maria</small></div>
             </div>
           </article>
-          <article className="other-reference-card shine-card" aria-label="Shine desk buddy project">
+          <article className="other-reference-card shine-card" aria-label="Shine desk buddy project" style={{ width: "424px", height: "675px", minHeight: "675px", maxHeight: "675px", boxSizing: "border-box", padding: 0 }}>
             <div className="other-card-copy">
               <h3>Shine desk<br />buddy</h3>
               <p>A desk companion that physically celebrates every Notion task you finish (ESP32, touch LCD, and a servo-driven flower)</p>
