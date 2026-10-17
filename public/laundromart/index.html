@@ -430,7 +430,57 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
 #problem-banner-frame{margin-bottom:72px!important}
 @media(max-width:760px){#problem-banner-frame{margin-bottom:44px!important}}
 
-</style></head>
+</style>
+<style id="laundromart-shared-design-decision-pattern">
+/* Shared Design decision treatment: use the same callout pattern throughout the case study. */
+.role-decision-story,
+.matrix-decision-story,
+.editorial-decision-copy {
+  width: min(100%, 650px);
+  margin: 26px auto 0;
+}
+.role-decision-tag,
+.decision-tag,
+.editorial-decision-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffe49a;
+  border-radius: 9px;
+  padding: 9px 13px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #202020;
+  margin-bottom: 15px;
+}
+.role-decision-tag span,
+.decision-tag span,
+.editorial-decision-tag span {
+  font-size: 17px;
+}
+.role-decision-story p,
+.matrix-decision-story p,
+.editorial-decision-copy p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+  margin: 0 0 14px;
+}
+.role-decision-story p:last-child,
+.matrix-decision-story p:last-child,
+.editorial-decision-copy p:last-child {
+  margin-bottom: 0;
+}
+@media (max-width: 640px) {
+  .role-decision-story p,
+  .matrix-decision-story p,
+  .editorial-decision-copy p {
+    font-size: 15px;
+  }
+}
+</style>
+
+</head>
 <body><div class="progress"></div>
 <nav class="nav"><div class="brand"><a class="mark" href="../../" aria-label="Back to portfolio">S</a><a href="../../"><strong>Surya Kiran</strong></a><span class="muted">/ LaundroMart</span></div><div class="navlinks"><a href="#context">Context</a><a href="#system">System</a><a href="#experience">Experience</a><a href="#reflection">Reflection</a></div></nav>
 <main>
