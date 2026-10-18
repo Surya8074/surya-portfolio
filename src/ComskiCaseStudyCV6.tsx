@@ -1252,6 +1252,60 @@ function ComskiCaseStudyCV4() {
                 <p className="cv6-experience-deep-dive-footnote">These are the design lessons and next-step hypotheses I take from the project—not claims of validated outcomes or measured learning gains.</p>
               </div>
             </section>
+
+          <section className="cv6-outcome-impact cv6-outcome-ancestra" id="outcome-impact" aria-labelledby="cv6-outcome-title">
+            <div className="cv6-outcome-impact-inner">
+              <header className="cv6-oa-intro">
+                <span className="cv6-outcome-eyebrow">OUTCOME &amp; IMPACT</span>
+                <h2 id="cv6-outcome-title">A more human way to practise communication.</h2>
+                <p className="cv6-oa-deck">ComSki’s design challenge was not simply to create four skill experiences. It was to make those different ways of communicating feel like parts of one understandable, supportive journey.</p>
+              </header>
+
+              <div className="cv6-oa-feature">
+                <div className="cv6-oa-feature-copy">
+                  <span className="cv6-oa-index">01 / THE EXPERIENCE</span>
+                  <h3>Make the first step feel clear, not intimidating.</h3>
+                  <p>Onboarding introduces the purpose of ComSki before asking learners to personalise their experience. The intent is to establish context first, then build commitment one question at a time.</p>
+                  <p className="cv6-oa-caption">Design intention · Context before commitment</p>
+                </div>
+                <figure className="cv6-oa-feature-visual">
+                  <div className="cv6-oa-screen-frame"><img src={BASE + 'Onboarding Intro.svg'} alt="ComSki onboarding introduction screen" loading="lazy" /></div>
+                  <figcaption>ONBOARDING / INTRODUCTION</figcaption>
+                </figure>
+              </div>
+
+              <div className="cv6-oa-principles" aria-label="Three design outcomes">
+                <article className="cv6-oa-principle">
+                  <span>02 / CONSISTENCY</span>
+                  <h3>Four skills. One familiar rhythm.</h3>
+                  <p>Reading, listening, writing and speaking have different tasks, but can share recognisable patterns for orientation, response and progression.</p>
+                  <figure><img src={BASE + 'Reading.svg'} alt="ComSki reading practice screen" loading="lazy" /><figcaption>SKILL PRACTICE</figcaption></figure>
+                </article>
+                <article className="cv6-oa-principle">
+                  <span>03 / CONTINUITY</span>
+                  <h3>Practice should lead somewhere.</h3>
+                  <p>My Journey places individual activities within a broader view of learner progress, helping connect a single practice session to what comes next.</p>
+                  <figure><img src={BASE + 'Desktop - 1.svg'} alt="ComSki My Journey dashboard" loading="lazy" /><figcaption>MY JOURNEY</figcaption></figure>
+                </article>
+              </div>
+
+              <div className="cv6-oa-reflection">
+                <div className="cv6-oa-reflection-heading">
+                  <span className="cv6-outcome-eyebrow">LOOKING BACK</span>
+                  <h3>Good AI experiences are defined by what people can understand and do next.</h3>
+                </div>
+                <div className="cv6-oa-reflection-copy">
+                  <p>This work reinforced that the interface around an intelligent system matters as much as the system’s capability. Learners need to understand where they are, what a task asks of them, and how to continue without feeling judged by an opaque score.</p>
+                  <p>The design outcome is a connected direction: clearer onboarding, a reusable interaction model across four skills, and a journey view that gives practice a wider context.</p>
+                </div>
+              </div>
+
+              <aside className="cv6-oa-evidence-note">
+                <span>MEASUREMENT STILL TO COME</span>
+                <p>The available project material does not include verified usability results, launch data or adoption metrics. The next step is to test task completion, feedback comprehension and whether learners know what to do next—then report measured results rather than assumed impact.</p>
+              </aside>
+            </div>
+          </section>
       </div>
 
           </Section>
@@ -1572,59 +1626,7 @@ function ComskiCaseStudyCV4() {
             </div></Reveal>
           </Section>
 
-          <section className="cv6-outcome-impact cv6-outcome-ancestra" id="outcome-impact" aria-labelledby="cv6-outcome-title">
-            <div className="cv6-outcome-impact-inner">
-              <header className="cv6-oa-intro">
-                <span className="cv6-outcome-eyebrow">OUTCOME &amp; IMPACT</span>
-                <h2 id="cv6-outcome-title">A more human way to practise communication.</h2>
-                <p className="cv6-oa-deck">ComSki’s design challenge was not simply to create four skill experiences. It was to make those different ways of communicating feel like parts of one understandable, supportive journey.</p>
-              </header>
 
-              <div className="cv6-oa-feature">
-                <div className="cv6-oa-feature-copy">
-                  <span className="cv6-oa-index">01 / THE EXPERIENCE</span>
-                  <h3>Make the first step feel clear, not intimidating.</h3>
-                  <p>Onboarding introduces the purpose of ComSki before asking learners to personalise their experience. The intent is to establish context first, then build commitment one question at a time.</p>
-                  <p className="cv6-oa-caption">Design intention · Context before commitment</p>
-                </div>
-                <figure className="cv6-oa-feature-visual">
-                  <div className="cv6-oa-screen-frame"><img src={BASE + 'Onboarding Intro.svg'} alt="ComSki onboarding introduction screen" loading="lazy" /></div>
-                  <figcaption>ONBOARDING / INTRODUCTION</figcaption>
-                </figure>
-              </div>
-
-              <div className="cv6-oa-principles" aria-label="Three design outcomes">
-                <article className="cv6-oa-principle">
-                  <span>02 / CONSISTENCY</span>
-                  <h3>Four skills. One familiar rhythm.</h3>
-                  <p>Reading, listening, writing and speaking have different tasks, but can share recognisable patterns for orientation, response and progression.</p>
-                  <figure><img src={BASE + 'Reading.svg'} alt="ComSki reading practice screen" loading="lazy" /><figcaption>SKILL PRACTICE</figcaption></figure>
-                </article>
-                <article className="cv6-oa-principle">
-                  <span>03 / CONTINUITY</span>
-                  <h3>Practice should lead somewhere.</h3>
-                  <p>My Journey places individual activities within a broader view of learner progress, helping connect a single practice session to what comes next.</p>
-                  <figure><img src={BASE + 'Desktop - 1.svg'} alt="ComSki My Journey dashboard" loading="lazy" /><figcaption>MY JOURNEY</figcaption></figure>
-                </article>
-              </div>
-
-              <div className="cv6-oa-reflection">
-                <div className="cv6-oa-reflection-heading">
-                  <span className="cv6-outcome-eyebrow">LOOKING BACK</span>
-                  <h3>Good AI experiences are defined by what people can understand and do next.</h3>
-                </div>
-                <div className="cv6-oa-reflection-copy">
-                  <p>This work reinforced that the interface around an intelligent system matters as much as the system’s capability. Learners need to understand where they are, what a task asks of them, and how to continue without feeling judged by an opaque score.</p>
-                  <p>The design outcome is a connected direction: clearer onboarding, a reusable interaction model across four skills, and a journey view that gives practice a wider context.</p>
-                </div>
-              </div>
-
-              <aside className="cv6-oa-evidence-note">
-                <span>MEASUREMENT STILL TO COME</span>
-                <p>The available project material does not include verified usability results, launch data or adoption metrics. The next step is to test task completion, feedback comprehension and whether learners know what to do next—then report measured results rather than assumed impact.</p>
-              </aside>
-            </div>
-          </section>
         </div>
       </div>
 
