@@ -1510,6 +1510,50 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
  .laundro-ds-reference .lds-card-redesign .lds-mini-card{min-height:0}
 }
 
+
+/* Approved width and wrapping refinement for the design-system showcase. */
+.laundro-ds-reference .lds-showcase{
+  grid-template-columns:minmax(0,1.04fr) minmax(0,1.46fr);
+  gap:22px;
+  align-items:stretch;
+}
+.laundro-ds-reference .lds-card-redesign{
+  min-width:0;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-rows:repeat(2,minmax(245px,auto));
+  gap:12px;
+}
+.laundro-ds-reference .lds-card-redesign .lds-mini-card{min-width:0;padding:14px}
+.laundro-ds-reference .lds-evidence-visual{gap:10px;padding:9px}
+.laundro-ds-reference .lds-evidence-thumb{flex-basis:58px}
+.laundro-ds-reference .lds-evidence-meta{flex:1 1 0}
+.laundro-ds-reference .lds-evidence-meta b{overflow-wrap:normal;word-break:normal;white-space:nowrap;font-size:10px}
+.laundro-ds-reference .lds-evidence-meta>span{overflow-wrap:normal;word-break:normal}
+.laundro-ds-reference .lds-mini-head{letter-spacing:.065em;font-size:8px}
+@media(min-width:1200px){
+ .laundro-ds-reference .lds-showcase{grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:28px}
+}
+@media(max-width:980px) and (min-width:761px){
+ .laundro-ds-reference .lds-showcase{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:16px}
+ .laundro-ds-reference .lds-card-redesign{grid-template-rows:repeat(2,minmax(220px,auto));gap:10px}
+ .laundro-ds-reference .lds-card-redesign .lds-mini-card{padding:11px}
+ .laundro-ds-reference .lds-evidence-visual{flex-direction:column;align-items:flex-start}
+ .laundro-ds-reference .lds-evidence-thumb{width:100%;flex-basis:auto;height:48px}
+ .laundro-ds-reference .lds-evidence-thumb svg{height:44px}
+ .laundro-ds-reference .lds-evidence-meta b{white-space:normal}
+}
+@media(max-width:760px){
+ .laundro-ds-reference .lds-showcase{grid-template-columns:1fr;gap:20px}
+ .laundro-ds-reference .lds-card-redesign{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(210px,auto))}
+ .laundro-ds-reference .lds-evidence-visual{flex-direction:row;align-items:center}
+ .laundro-ds-reference .lds-evidence-thumb{width:auto;flex:0 0 48px;height:58px}
+ .laundro-ds-reference .lds-evidence-meta b{white-space:nowrap}
+}
+@media(max-width:480px){
+ .laundro-ds-reference .lds-card-redesign{grid-template-columns:1fr;grid-template-rows:auto}
+ .laundro-ds-reference .lds-card-redesign .lds-mini-card{min-height:190px}
+}
+
 </style>
 
 <style>
