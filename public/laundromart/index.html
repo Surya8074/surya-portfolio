@@ -1111,17 +1111,23 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
         <p>Shared color, type and spacing rules keep order details, garment evidence and operational data clear without forcing every workflow into the same layout.</p>
       </div>
       <div class="lds-showcase">
-        <div class="lds-dashboard">
-          <aside class="lds-sidebar"><b class="lds-brand"><i>♧</i> LaundroMart</b><span>⌂　Dashboard</span><strong>▦　Orders</strong><span>▣　Inventory</span><span>♙　Customers</span><span>▣　Facility &amp; Cameras</span><span>▤　Reports</span><span>⚙　Settings</span><small><i>S</i><b>Surya Kiran<em>Owner</em></b></small></aside>
-          <div class="lds-orders"><header><h3>Orders</h3><span>⌕　Search by order ID, customer or mobile...</span><button>＋ New Order</button></header><nav><b>All Orders　<small>124</small></b><span>In Progress　28</span><span>Ready　36</span><span>Delivered　52</span></nav>
-            <div class="lds-table"><div class="lds-tr lds-th"><span>□</span><span>Order ID</span><span>Customer</span><span>Items</span><span>Amount</span><span>Status</span><span>Garment Images</span><span>Actions</span></div>
-            <div class="lds-tr"><span>□</span><b>#LM8921</b><span>◉ Rohit Sharma</span><span>5 items</span><b>₹320</b><label class="lds-processing">● Processing</label><span class="lds-clothes">♟ ♟ ♟</span><span>•••</span></div>
-            <div class="lds-tr"><span>□</span><b>#LM8920</b><span>◉ Priya Verma</span><span>3 items</span><b>₹180</b><label class="lds-ready">● Ready</label><span class="lds-clothes">♟ ♟ ♟</span><span>•••</span></div>
-            <div class="lds-tr"><span>□</span><b>#LM8919</b><span>◉ Karthik Reddy</span><span>8 items</span><b>₹540</b><label class="lds-progress">● In Progress</label><span class="lds-clothes">♟ ♟ ♟</span><span>•••</span></div>
-            <div class="lds-tr"><span>□</span><b>#LM8918</b><span>◉ Ananya Patel</span><span>2 items</span><b>₹120</b><label class="lds-delivered">● Delivered</label><span class="lds-clothes">♟ ♟ ♟</span><span>•••</span></div>
-            <div class="lds-tr"><span>□</span><b>#LM8917</b><span>◉ Sameer Khan</span><span>4 items</span><b>₹260</b><label class="lds-processing">● Processing</label><span class="lds-clothes">♟ ♟ ♟</span><span>•••</span></div>
-            <div class="lds-tr"><span>□</span><b>#LM8916</b><span>◉ Neha Joshi</span><span>6 items</span><b>₹410</b><label class="lds-ready">● Ready</label><span class="lds-clothes">♟ ♟ ♟</span><span>•••</span></div></div>
+        <div class="lds-care-visual">
+          <div class="lds-care-heading"><span>GARMENT CARE</span><span class="lds-care-badge"><i></i> Care record</span></div>
+          <div class="lds-care-art">
+            <div class="lds-care-spark lds-spark-one">✦</div><div class="lds-care-spark lds-spark-two">✧</div>
+            <svg viewBox="0 0 320 220" role="img" aria-label="Folded clean shirt and garment care details">
+              <ellipse cx="160" cy="186" rx="106" ry="13" fill="#dfe8fa" opacity=".55"/>
+              <path d="M95 60 126 42 145 51 160 69 175 51 194 42 225 60 254 96 224 116 207 99 207 174 113 174 113 99 96 116 66 96Z" fill="#9fc4ff" stroke="#3b5bdb" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M126 42 145 66 160 78 175 66 194 42M160 78v96M145 66l15 12 15-12" fill="none" stroke="#f7faff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M113 99 135 110M207 99 185 110" stroke="#6d9cf2" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="236" cy="52" r="23" fill="#fff" stroke="#e4ebfb" stroke-width="1.5"/>
+              <path d="M236 38v28M222 52h28M226 42l20 20M246 42l-20 20" stroke="#3b5bdb" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="81" cy="145" r="17" fill="#fff" stroke="#e4ebfb" stroke-width="1.5"/>
+              <path d="M74 145l5 5 9-11" fill="none" stroke="#269b75" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="lds-care-float"><span>✓</span><div><b>Fabric checked</b><small>Care instructions noted</small></div></div>
           </div>
+          <div class="lds-care-bottom"><div><small>CARE PROFILE</small><b>Every garment, handled with care.</b></div><span class="lds-care-chip">Gentle care</span></div>
         </div>
         <div class="lds-sidecards lds-card-redesign">
           <article class="lds-mini-card lds-evidence-card">
@@ -1552,6 +1558,57 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
 @media(max-width:480px){
  .laundro-ds-reference .lds-card-redesign{grid-template-columns:1fr;grid-template-rows:auto}
  .laundro-ds-reference .lds-card-redesign .lds-mini-card{min-height:190px}
+}
+
+
+/* Garment-care hero replaces the oversized orders dashboard; supporting cards are shorter. */
+.laundro-ds-reference .lds-showcase{grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);gap:16px;align-items:stretch}
+.laundro-ds-reference .lds-care-visual{min-width:0;min-height:0;align-self:stretch;display:flex;flex-direction:column;padding:20px;border:1px solid #e4eaf6;border-radius:18px;background:linear-gradient(155deg,#fff 0%,#f8faff 70%,#f2f6ff 100%);overflow:hidden}
+.laundro-ds-reference .lds-care-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;color:#7c88a2;font-size:9px;letter-spacing:.09em;font-weight:750}
+.laundro-ds-reference .lds-care-badge{display:flex;align-items:center;gap:5px;padding:6px 8px;border:1px solid #e5ebf8;border-radius:20px;background:#fff;color:#586783;font-size:8px;letter-spacing:0;font-weight:600;white-space:nowrap}
+.laundro-ds-reference .lds-care-badge i{width:5px;height:5px;border-radius:50%;background:#35a77b}
+.laundro-ds-reference .lds-care-art{position:relative;display:flex;align-items:center;justify-content:center;flex:1;min-height:170px;margin:12px 0;background:radial-gradient(ellipse at center,#eaf1ff 0%,rgba(234,241,255,.2) 55%,transparent 72%);border-radius:14px}
+.laundro-ds-reference .lds-care-art>svg{width:100%;max-width:310px;height:auto;max-height:230px}
+.laundro-ds-reference .lds-care-spark{position:absolute;color:#3b5bdb;font-size:18px}
+.laundro-ds-reference .lds-spark-one{left:13%;top:22%}
+.laundro-ds-reference .lds-spark-two{right:14%;bottom:22%;color:#7ea5f5}
+.laundro-ds-reference .lds-care-float{position:absolute;right:5%;bottom:8%;display:flex;align-items:center;gap:8px;padding:9px 11px;border:1px solid #e4eaf6;border-radius:10px;background:rgba(255,255,255,.96);box-shadow:0 8px 22px rgba(36,66,125,.08)}
+.laundro-ds-reference .lds-care-float>span{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#e7f8f0;color:#16865d;font-size:12px}
+.laundro-ds-reference .lds-care-float>div{display:flex;flex-direction:column;gap:3px}
+.laundro-ds-reference .lds-care-float b{font-size:9px;color:#26334d}
+.laundro-ds-reference .lds-care-float small{font-size:8px;color:#7e8aa3}
+.laundro-ds-reference .lds-care-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:13px;border-top:1px solid #e8edf7}
+.laundro-ds-reference .lds-care-bottom>div{display:flex;flex-direction:column;gap:5px;min-width:0}
+.laundro-ds-reference .lds-care-bottom small{font-size:8px;color:#8a95ab;letter-spacing:.08em;font-weight:700}
+.laundro-ds-reference .lds-care-bottom b{font-size:11px;line-height:1.45;color:#273149}
+.laundro-ds-reference .lds-care-chip{flex:0 0 auto;padding:7px 9px;border-radius:8px;background:#eaf1ff;color:#3159d9;font-size:8px;font-weight:700}
+.laundro-ds-reference .lds-card-redesign{grid-template-rows:repeat(2,minmax(0,1fr));gap:10px}
+.laundro-ds-reference .lds-card-redesign .lds-mini-card{padding:12px;gap:8px;border-radius:13px}
+.laundro-ds-reference .lds-evidence-visual{padding:7px;gap:7px}
+.laundro-ds-reference .lds-evidence-thumb{flex-basis:48px;height:52px}
+.laundro-ds-reference .lds-evidence-thumb svg{width:40px;height:44px}
+.laundro-ds-reference .lds-mini-foot{padding-top:6px}
+.laundro-ds-reference .lds-order-metrics>div{padding:6px}
+.laundro-ds-reference .lds-timeline{gap:6px}
+.laundro-ds-reference .lds-report-preview{padding:7px}
+.laundro-ds-reference .lds-report-thumbs i{width:15px;height:19px}
+@media(max-width:1100px){
+ .laundro-ds-reference .lds-showcase{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+ .laundro-ds-reference .lds-care-visual{padding:15px}
+ .laundro-ds-reference .lds-care-art{min-height:150px}
+ .laundro-ds-reference .lds-care-float{right:2%;bottom:5%;padding:7px}
+ .laundro-ds-reference .lds-card-redesign .lds-mini-card{padding:10px}
+}
+@media(max-width:760px){
+ .laundro-ds-reference .lds-showcase{grid-template-columns:1fr;gap:12px}
+ .laundro-ds-reference .lds-care-visual{min-height:320px}
+ .laundro-ds-reference .lds-card-redesign{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(175px,auto))}
+}
+@media(max-width:480px){
+ .laundro-ds-reference .lds-care-visual{min-height:290px;padding:14px}
+ .laundro-ds-reference .lds-care-art{min-height:145px}
+ .laundro-ds-reference .lds-card-redesign{grid-template-columns:1fr;grid-template-rows:auto}
+ .laundro-ds-reference .lds-card-redesign .lds-mini-card{min-height:160px}
 }
 
 </style>
