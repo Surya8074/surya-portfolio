@@ -3070,3 +3070,130 @@ main.cv4-page .cv6-architecture-screen-note {
   main.cv4-page .cv6-architecture-screen-picker button,
   main.cv4-page .cv6-architecture-picker-arrow { transition: none; }
 }
+
+
+/* Journey-based screen navigation: keep every control inside the showcase */
+main.cv4-page .cv6-journey-nav {
+  display: flex;
+  align-items: stretch;
+  gap: 6px;
+  margin: 0 0 10px;
+  padding: 0 0 2px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(59,91,219,.28) transparent;
+}
+main.cv4-page .cv6-journey-nav button {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 9px;
+  min-height: 42px;
+  padding: 10px 13px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: #F6F7FA;
+  color: #58647B;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+main.cv4-page .cv6-journey-nav button small {
+  color: #8D96A8;
+  font-size: 9px;
+  font-weight: 700;
+}
+main.cv4-page .cv6-journey-nav button.is-active {
+  border-color: rgba(59,91,219,.22);
+  background: #EEF2FF;
+  color: #3154D7;
+}
+main.cv4-page .cv6-journey-nav button.is-active small { color: #3154D7; }
+main.cv4-page .cv6-journey-screen-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 clamp(24px, 3vw, 38px);
+  padding: 12px 0 0;
+  border-top: 1px solid rgba(26,29,41,.1);
+}
+main.cv4-page .cv6-journey-screen-nav button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 8px 11px;
+  border: 1px solid rgba(26,29,41,.12);
+  border-radius: 7px;
+  background: #fff;
+  color: #46516A;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 180ms ease, background 180ms ease, color 180ms ease;
+}
+main.cv4-page .cv6-journey-screen-number {
+  color: #8D96A8;
+  font-size: 10px;
+  font-weight: 750;
+}
+main.cv4-page .cv6-journey-screen-label {
+  font-size: 11px;
+  font-weight: 650;
+}
+main.cv4-page .cv6-journey-screen-current {
+  color: #3154D7;
+  font-size: 9px;
+  font-weight: 750;
+}
+main.cv4-page .cv6-journey-screen-nav button.is-active {
+  border-color: rgba(59,91,219,.38);
+  background: #F4F6FF;
+  color: #2448CF;
+}
+main.cv4-page .cv6-journey-adjacent {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+}
+main.cv4-page .cv6-journey-adjacent button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 0;
+  border: 0;
+  background: transparent;
+  color: #4055A0;
+  font-size: 11px;
+  font-weight: 650;
+  cursor: pointer;
+}
+main.cv4-page .cv6-journey-adjacent button:disabled {
+  color: #B2B8C4;
+  cursor: not-allowed;
+}
+main.cv4-page .cv6-journey-nav button:focus-visible,
+main.cv4-page .cv6-journey-screen-nav button:focus-visible,
+main.cv4-page .cv6-journey-adjacent button:focus-visible {
+  outline: 2px solid #3B5BDB;
+  outline-offset: 3px;
+}
+@media (max-width: 900px) {
+  main.cv4-page .cv6-journey-nav { margin-bottom: 8px; }
+  main.cv4-page .cv6-journey-screen-nav { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 5px; }
+  main.cv4-page .cv6-journey-screen-nav button { flex: 0 0 auto; }
+}
+@media (max-width: 600px) {
+  main.cv4-page .cv6-journey-nav { margin-right: -16px; padding-right: 16px; }
+  main.cv4-page .cv6-journey-nav button { min-height: 40px; padding: 9px 11px; font-size: 11px; }
+  main.cv4-page .cv6-journey-screen-nav { gap: 7px; margin-bottom: 24px; }
+  main.cv4-page .cv6-journey-screen-nav button { min-height: 40px; padding: 9px 10px; }
+  main.cv4-page .cv6-journey-adjacent button { min-height: 40px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  main.cv4-page .cv6-journey-nav button,
+  main.cv4-page .cv6-journey-screen-nav button { transition: none; }
+}
