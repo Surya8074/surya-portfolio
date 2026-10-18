@@ -1027,13 +1027,90 @@ function ComskiCaseStudyCV4() {
                 </div>
               </div>
               <p className="cv6-ia-caption">The committed screens show onboarding, all four skill areas, a speaking-response feedback state and the My Journey dashboard. The shared feedback-to-progress relationship is presented as the organising model; confirm the exact post-task sequence for each skill before describing it as fully implemented.</p>
+
+            </div>
+
+            <div className="cv6-architecture-screen-story" aria-labelledby="cv6-architecture-screen-title">
+              <div className="cv6-architecture-screen-intro">
+                <span className="cv6-architecture-screen-eyebrow">FROM SYSTEM TO EXPERIENCE</span>
+                <h3 id="cv6-architecture-screen-title">How the system shows up in the interface.</h3>
+                <p>Architecture only matters when it makes the next action feel clear. Explore the original ComSki screens to see how learner context, focused practice and ongoing progress translate into product decisions.</p>
+              </div>
+
+              <div className="cv6-architecture-screen-feature">
+                <div className="cv6-architecture-screen-visual">
+                  <div className="cv6-architecture-screen-meta">
+                    <span>{active.phase}</span>
+                    <span>{String(activeScreen + 1).padStart(2, '0')} / {String(screenData.length).padStart(2, '0')}</span>
+                  </div>
+                  <Screen {...active} wide />
+                </div>
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={activeScreen}
+                    className="cv6-architecture-screen-decision"
+                    initial={reduce ? false : { opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={reduce ? undefined : { opacity: 0, y: -8 }}
+                    transition={{ duration: reduce ? 0 : 0.28, ease }}
+                  >
+                    <span className="cv6-architecture-screen-index">DECISION STORY · {String(activeScreen + 1).padStart(2, '0')}</span>
+                    <h4>{active.label.split(' · ')[1]}</h4>
+                    <div className="cv6-architecture-decision-block">
+                      <span>THE USER NEED</span>
+                      <p>{active.goal}</p>
+                    </div>
+                    <div className="cv6-architecture-decision-block">
+                      <span>THE DESIGN DECISION</span>
+                      <p>{active.decision}</p>
+                    </div>
+                    <div className="cv6-architecture-decision-block">
+                      <span>WHY IT MATTERS</span>
+                      <p>{[
+                        'Establishes context before commitment, so learners understand the value of the experience before investing effort.',
+                        'Progressive personalisation reduces the perceived cost of setup while still giving the product useful learner context.',
+                        'A realistic practice cadence helps align the experience with the learner’s routine instead of creating an aspirational but fragile plan.',
+                        'A consistent assessment structure lets learners focus on the communication task rather than repeatedly learning new interface patterns.',
+                        'Predictable progression lowers navigation effort and makes the next step easier to anticipate.',
+                        'Familiar controls preserve continuity when the interaction shifts from reading text to interpreting audio.',
+                        'Separating modality-specific work from shared navigation keeps the interface learnable as the task changes.',
+                        'A stable task frame gives learners room to focus on expressing an idea rather than decoding a new workflow.',
+                        'Clear action hierarchy helps learners understand what to complete before the system interprets their response.',
+                        'A practice-first framing helps the recording interaction feel like rehearsal, not a judgement or final performance.',
+                        'A visible transition between response and analysis helps prevent AI processing from feeling like a black box.',
+                        'A persistent journey view connects individual practice moments to broader progress and a meaningful next step.'
+                      ][activeScreen]}</p>
+                    </div>
+                    <div className="cv6-architecture-screen-tags">
+                      <span>{active.phase}</span><span>Consistent interaction model</span><span>Progressive disclosure</span>
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+
+              <div className="cv6-architecture-screen-picker" role="tablist" aria-label="Explore ComSki screens">
+                {screenData.map((screen, index) => (
+                  <button
+                    key={screen.src}
+                    type="button"
+                    role="tab"
+                    aria-selected={activeScreen === index}
+                    aria-controls="cv6-architecture-screen-title"
+                    className={activeScreen === index ? 'is-active' : ''}
+                    onClick={() => setActiveScreen(index)}
+                  >
+                    <span className="cv6-architecture-picker-number">{String(index + 1).padStart(2, '0')}</span>
+                    <span className="cv6-architecture-picker-copy"><strong>{screen.label.split(' · ')[1]}</strong><small>{screen.phase}</small></span>
+                    <span className="cv6-architecture-picker-arrow" aria-hidden="true">↗</span>
+                  </button>
+                ))}
+              </div>
+              <p className="cv6-architecture-screen-note">Original ComSki design exports. The decision stories describe the intent visible in these screens; unverified AI-result and recovery states are not presented as shipped UI.</p>
             </div>
 
           </Section>
 
-
-
-      <aside className="cv4-section-nav" aria-label="Case study sections">
+          <aside className="cv4-section-nav" aria-label="Case study sections">
         <div className="cv4-section-nav-line" />
         {[['01','Problem'],['02','Constraints'],['03','Research'],['04','Users'],['05','Competition'],['06','Synthesis'],['07','Journey'],['08','Process'],['09','Exploration'],['10','IA + Flow'],['11','Screens'],['12','AI UX'],['13','System'],['14','Validation'],['15','Build'],['16','Outcomes'],['17','Business'],['18','Learnings'],['19','Next'],['20','Role']].map(([n,label]) => (
           <a
