@@ -8,6 +8,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'index.html',
+        toniqAi: 'toniq-ai.html',
         resume: 'resume/index.html',
         genesis: 'work/genesis/index.html',
         genesisStyle2: 'work/genesis-style-2/index.html',
