@@ -3438,3 +3438,209 @@ main.cv4-page .cv6-journey-screen-nav button:focus-visible {
     transform: none !important;
   }
 }
+
+
+/* ComSki closing chapter — editorial outcome layout aligned to the case-study system. */
+main.cv4-page .cv6-outcome-impact {
+  --outcome-ink: #101B3A;
+  --outcome-muted: #596782;
+  --outcome-line: rgba(26, 29, 41, .12);
+  padding: clamp(64px, 8vw, 112px) 32px clamp(64px, 7vw, 96px);
+  background: #fff;
+  color: var(--outcome-ink);
+  border-top: 1px solid rgba(26,29,41,.08);
+}
+main.cv4-page .cv6-outcome-impact-inner {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+main.cv4-page .cv6-outcome-impact-heading {
+  max-width: 790px;
+  margin: 0 0 clamp(34px, 4.5vw, 58px);
+}
+main.cv4-page .cv6-outcome-eyebrow {
+  display: block;
+  margin: 0 0 18px;
+  color: #3B5BDB;
+  font-size: 10px;
+  font-weight: 760;
+  letter-spacing: .15em;
+  line-height: 1.4;
+}
+main.cv4-page .cv6-outcome-impact-heading h2 {
+  margin: 0 0 20px;
+  max-width: 760px;
+  color: var(--outcome-ink);
+  font-family: "Work Sans", Inter, Arial, sans-serif;
+  font-size: clamp(36px, 5vw, 62px);
+  font-weight: 680;
+  letter-spacing: -.052em;
+  line-height: 1.04;
+}
+main.cv4-page .cv6-outcome-lede {
+  max-width: 690px;
+  margin: 0;
+  color: var(--outcome-muted);
+  font-size: clamp(15px, 1.25vw, 18px);
+  line-height: 1.8;
+}
+main.cv4-page .cv6-outcome-evidence {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 2.6vw, 32px);
+  align-items: start;
+}
+main.cv4-page .cv6-outcome-evidence-item {
+  min-width: 0;
+  margin: 0;
+}
+main.cv4-page .cv6-outcome-image-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(250px, 31vw, 390px);
+  overflow: hidden;
+  padding: 18px;
+  border: 1px solid rgba(26,29,41,.09);
+  border-radius: 16px;
+  background: #F8F9FC;
+}
+main.cv4-page .cv6-outcome-image-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+main.cv4-page .cv6-outcome-evidence-progress .cv6-outcome-image-wrap {
+  background: #F5F7FC;
+}
+main.cv4-page .cv6-outcome-evidence-item figcaption {
+  padding: 18px 1px 0;
+}
+main.cv4-page .cv6-outcome-evidence-item figcaption > span {
+  display: block;
+  margin: 0 0 10px;
+  color: #758099;
+  font-size: 9px;
+  font-weight: 760;
+  letter-spacing: .12em;
+  line-height: 1.5;
+}
+main.cv4-page .cv6-outcome-evidence-item figcaption strong {
+  display: block;
+  margin: 0 0 9px;
+  color: var(--outcome-ink);
+  font-size: clamp(16px, 1.45vw, 19px);
+  font-weight: 680;
+  letter-spacing: -.025em;
+  line-height: 1.35;
+}
+main.cv4-page .cv6-outcome-evidence-item figcaption p {
+  margin: 0;
+  color: var(--outcome-muted);
+  font-size: 13px;
+  line-height: 1.75;
+}
+main.cv4-page .cv6-outcome-closing {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(250px, .75fr);
+  gap: clamp(30px, 6vw, 84px);
+  margin: clamp(56px, 7vw, 88px) 0 0;
+  padding: clamp(28px, 4vw, 44px) 0;
+  border-top: 1px solid var(--outcome-line);
+  border-bottom: 1px solid var(--outcome-line);
+}
+main.cv4-page .cv6-outcome-closing-main h3 {
+  max-width: 550px;
+  margin: 0 0 16px;
+  color: var(--outcome-ink);
+  font-family: "Work Sans", Inter, Arial, sans-serif;
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 680;
+  letter-spacing: -.04em;
+  line-height: 1.12;
+}
+main.cv4-page .cv6-outcome-closing-main p,
+main.cv4-page .cv6-outcome-validation p {
+  margin: 0;
+  color: var(--outcome-muted);
+  font-size: 14px;
+  line-height: 1.85;
+}
+main.cv4-page .cv6-outcome-validation {
+  padding-left: clamp(20px, 3vw, 38px);
+  border-left: 1px solid var(--outcome-line);
+}
+main.cv4-page .cv6-outcome-validation .cv6-outcome-eyebrow {
+  color: #758099;
+}
+main.cv4-page .cv6-outcome-reflection {
+  max-width: 850px;
+  margin: clamp(30px, 4vw, 48px) 0 0;
+  color: var(--outcome-muted);
+  font-size: clamp(15px, 1.35vw, 18px);
+  line-height: 1.85;
+}
+main.cv4-page .cv6-outcome-reflection strong {
+  color: var(--outcome-ink);
+  font-weight: 700;
+}
+@media (max-width: 900px) {
+  main.cv4-page .cv6-outcome-evidence {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  main.cv4-page .cv6-outcome-evidence-progress {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 12px);
+  }
+  main.cv4-page .cv6-outcome-evidence-progress .cv6-outcome-image-wrap {
+    height: 300px;
+  }
+}
+@media (max-width: 640px) {
+  main.cv4-page .cv6-outcome-impact {
+    padding: 52px 20px 58px;
+  }
+  main.cv4-page .cv6-outcome-impact-heading {
+    margin-bottom: 32px;
+  }
+  main.cv4-page .cv6-outcome-impact-heading h2 {
+    font-size: clamp(34px, 10vw, 44px);
+  }
+  main.cv4-page .cv6-outcome-evidence {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+  main.cv4-page .cv6-outcome-evidence-progress {
+    grid-column: auto;
+    max-width: none;
+  }
+  main.cv4-page .cv6-outcome-image-wrap,
+  main.cv4-page .cv6-outcome-evidence-progress .cv6-outcome-image-wrap {
+    height: 340px;
+    padding: 16px;
+  }
+  main.cv4-page .cv6-outcome-evidence-item figcaption {
+    padding-top: 14px;
+  }
+  main.cv4-page .cv6-outcome-closing {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    margin-top: 48px;
+    padding: 28px 0;
+  }
+  main.cv4-page .cv6-outcome-validation {
+    padding: 24px 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--outcome-line);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  main.cv4-page .cv6-outcome-impact * {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
