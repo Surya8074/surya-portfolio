@@ -2837,9 +2837,9 @@ main.cv4-page > section.cv6-information-architecture .cv6-ia-intro .cv4-lede {
 }
 main.cv4-page > section.cv6-information-architecture .cv6-ia-architecture-reference {
   display: grid;
-  width: 100%;
-  max-width: none;
-  margin: 0;
+  width: min(1320px, calc(100% - 64px));
+  max-width: 1320px;
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
