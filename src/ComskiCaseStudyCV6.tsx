@@ -1088,7 +1088,7 @@ function ComskiCaseStudyCV4() {
                       {activeScreen === index && <motion.span className="cv6-journey-screen-pill" layoutId="cv6-screen-active-pill" transition={{ type: 'spring', stiffness: 520, damping: 38, mass: 0.72 }} aria-hidden="true" />}
                       <span className="cv6-journey-screen-number">{String(index + 1).padStart(2, '0')}</span>
                       <span className="cv6-journey-screen-label">{screen.label.split(' · ')[1]}</span>
-                      {activeScreen === index && <span className="cv6-journey-screen-current">Viewing</span>}}
+                      {activeScreen === index && <span className="cv6-journey-screen-current">Viewing</span>}
                     </button>
                   );
                 })}
