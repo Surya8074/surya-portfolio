@@ -1192,9 +1192,93 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
  .laundro-ds-reference .lds-foundations{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
  .laundro-ds-reference .lds-decision{width:100%;padding:18px;margin-top:22px}
 }
+/* Approved supporting-card refinement: balanced grid, clearer hierarchy, no clipped summary text. */
+.laundro-ds-reference .lds-sidecards{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-rows:minmax(205px,1fr) minmax(185px,.92fr);
+  gap:14px;
+  align-items:stretch;
+}
+.laundro-ds-reference .lds-sidecards > div{
+  min-width:0;
+  box-sizing:border-box;
+  padding:18px;
+  border-radius:16px;
+  background:#fff;
+  box-shadow:0 5px 20px rgba(25,35,70,.025);
+}
+.laundro-ds-reference .lds-shirt{
+  gap:12px;
+  justify-content:center;
+}
+.laundro-ds-reference .lds-shirt svg{
+  display:block;
+  width:100%;
+  max-width:112px;
+  height:clamp(78px,7vw,104px);
+  flex:0 0 auto;
+}
+.laundro-ds-reference .lds-shirt div{gap:8px;flex-wrap:wrap;justify-content:center}
+.laundro-ds-reference .lds-shirt div span{padding:7px 12px;font-size:10px}
+.laundro-ds-reference .lds-summary{display:flex;flex-direction:column;justify-content:center;gap:0}
+.laundro-ds-reference .lds-summary>b{
+  font-size:12px;
+  line-height:1.35;
+  margin:0 0 18px;
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
+.laundro-ds-reference .lds-summary p{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  gap:8px;
+  white-space:normal;
+  margin:0 0 12px;
+  font-size:11px;
+  line-height:1.4;
+}
+.laundro-ds-reference .lds-summary p strong{
+  min-width:0;
+  text-align:right;
+  overflow-wrap:anywhere;
+  font-size:10px;
+}
+.laundro-ds-reference .lds-summary p:last-child{margin-bottom:0}
+.laundro-ds-reference .lds-summary .lds-processing{white-space:nowrap}
+.laundro-ds-reference .lds-feature{
+  align-items:stretch;
+  justify-content:center;
+  text-align:left;
+  gap:0;
+}
+.laundro-ds-reference .lds-feature svg{
+  align-self:center;
+  width:88px;
+  height:58px;
+  margin:0 0 12px;
+  flex:0 0 auto;
+}
+.laundro-ds-reference .lds-feature b{
+  align-self:stretch;
+  font-size:13px;
+  line-height:1.35;
+  text-align:left;
+}
+.laundro-ds-reference .lds-feature p{
+  max-width:none;
+  font-size:11px;
+  line-height:1.55;
+  margin:7px 0 0;
+  color:#626b80;
+}
 @media(max-width:480px){
- .laundro-ds-reference .lds-sidecards{grid-template-columns:1fr 1fr}
- .laundro-ds-reference .lds-summary p{white-space:normal;flex-wrap:wrap}
+ .laundro-ds-reference .lds-sidecards{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto;gap:10px}
+ .laundro-ds-reference .lds-sidecards > div{padding:12px;min-height:160px}
+ .laundro-ds-reference .lds-summary p{grid-template-columns:minmax(0,1fr) auto;gap:5px;margin-bottom:10px}
+ .laundro-ds-reference .lds-summary p strong{font-size:9px}
+ .laundro-ds-reference .lds-feature b{font-size:11px}
+ .laundro-ds-reference .lds-feature p{font-size:10px}
  .laundro-ds-reference .lds-foundations{grid-template-columns:1fr}
  .laundro-ds-reference .lds-swatches{justify-content:space-between}
 }
