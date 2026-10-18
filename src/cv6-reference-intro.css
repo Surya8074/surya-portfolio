@@ -3348,3 +3348,93 @@ main.cv4-page .cv6-architecture-screen-visual > .cv6-architecture-screen-meta { 
   main.cv4-page .cv6-journey-screen-nav button,
   main.cv4-page .cv6-architecture-screen-transition { transition: none !important; animation: none !important; }
 }
+
+
+/* CV6 navigation polish pass — make the Apple-inspired interaction unmistakable. */
+main.cv4-page .cv6-journey-nav {
+  gap: 3px !important;
+  padding: 5px !important;
+  border: 1px solid rgba(25, 35, 60, .055) !important;
+  border-radius: 16px !important;
+  background: rgba(242, 244, 248, .92) !important;
+  box-shadow: inset 0 1px 2px rgba(20, 30, 55, .035), 0 4px 14px rgba(20, 30, 55, .035) !important;
+}
+main.cv4-page .cv6-journey-nav button {
+  min-height: 44px !important;
+  padding: 0 17px !important;
+  border: 1px solid transparent !important;
+  border-radius: 12px !important;
+  background: transparent !important;
+  color: #5E6678 !important;
+  box-shadow: none !important;
+  transition:
+    color 360ms cubic-bezier(.2,.8,.2,1),
+    background-color 360ms cubic-bezier(.2,.8,.2,1),
+    border-color 360ms cubic-bezier(.2,.8,.2,1),
+    box-shadow 420ms cubic-bezier(.2,.8,.2,1),
+    transform 420ms cubic-bezier(.2,.8,.2,1) !important;
+  will-change: transform;
+}
+main.cv4-page .cv6-journey-nav button.is-active {
+  border-color: rgba(255,255,255,.96) !important;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FBFCFF 100%) !important;
+  color: #2448CF !important;
+  box-shadow: 0 1px 2px rgba(18, 28, 55, .09), 0 4px 10px rgba(18, 28, 55, .055), inset 0 1px 0 #FFFFFF !important;
+}
+main.cv4-page .cv6-journey-nav button.is-active small { color: #3154D7 !important; }
+main.cv4-page .cv6-journey-nav button small {
+  transition: color 360ms cubic-bezier(.2,.8,.2,1);
+}
+@media (hover: hover) and (pointer: fine) {
+  main.cv4-page .cv6-journey-nav button:not(.is-active):hover {
+    transform: translateY(-2px) scale(1.025) !important;
+    border-color: rgba(255,255,255,.95) !important;
+    background: rgba(255,255,255,.76) !important;
+    color: #25324D !important;
+    box-shadow: 0 5px 14px rgba(20, 30, 55, .075), inset 0 1px 0 rgba(255,255,255,.95) !important;
+  }
+  main.cv4-page .cv6-journey-nav button.is-active:hover {
+    transform: translateY(-1px) scale(1.015) !important;
+    box-shadow: 0 3px 7px rgba(18, 28, 55, .08), 0 8px 18px rgba(18, 28, 55, .065), inset 0 1px 0 #FFFFFF !important;
+  }
+  main.cv4-page .cv6-journey-screen-nav button {
+    border-color: rgba(26,29,41,.075) !important;
+    border-radius: 13px !important;
+    background: linear-gradient(180deg,#FFFFFF 0%,#FCFCFE 100%) !important;
+    box-shadow: 0 1px 2px rgba(20,30,55,.025), inset 0 1px 0 #FFFFFF !important;
+    transition:
+      color 360ms cubic-bezier(.2,.8,.2,1),
+      background-color 360ms cubic-bezier(.2,.8,.2,1),
+      border-color 360ms cubic-bezier(.2,.8,.2,1),
+      box-shadow 420ms cubic-bezier(.2,.8,.2,1),
+      transform 420ms cubic-bezier(.2,.8,.2,1) !important;
+  }
+  main.cv4-page .cv6-journey-screen-nav button:not(.is-active):hover {
+    transform: translateY(-3px) scale(1.025) !important;
+    border-color: rgba(59,91,219,.19) !important;
+    background: linear-gradient(180deg,#FFFFFF 0%,#F6F8FF 100%) !important;
+    color: #2448CF !important;
+    box-shadow: 0 7px 18px rgba(35,57,115,.105), inset 0 1px 0 #FFFFFF !important;
+  }
+  main.cv4-page .cv6-journey-screen-nav button.is-active:hover {
+    transform: translateY(-2px) scale(1.02) !important;
+    box-shadow: 0 6px 16px rgba(35,57,115,.11), inset 0 1px 0 #FFFFFF !important;
+  }
+}
+main.cv4-page .cv6-journey-nav button:active,
+main.cv4-page .cv6-journey-screen-nav button:active {
+  transform: scale(.965) !important;
+  transition-duration: 120ms !important;
+}
+main.cv4-page .cv6-journey-nav button:focus-visible,
+main.cv4-page .cv6-journey-screen-nav button:focus-visible {
+  outline: 3px solid rgba(59,91,219,.38) !important;
+  outline-offset: 3px !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  main.cv4-page .cv6-journey-nav button,
+  main.cv4-page .cv6-journey-screen-nav button {
+    transition: none !important;
+    transform: none !important;
+  }
+}
