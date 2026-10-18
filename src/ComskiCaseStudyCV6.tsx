@@ -1164,7 +1164,48 @@ function ComskiCaseStudyCV4() {
                 </AnimatePresence>
               </div>
               <p className="cv6-architecture-screen-note">Original ComSki design exports. Explanations describe the design intent visible in these screens; they do not imply unverified functionality or research outcomes.</p>
-            </div>
+      
+
+            <section className="cv6-experience-deep-dive" aria-labelledby="cv6-experience-deep-dive-title">
+              <div className="cv6-experience-deep-dive-inner">
+                <header className="cv6-experience-deep-dive-header">
+                  <span>DESIGNING FOR REAL LEARNER MOMENTS</span>
+                  <h3 id="cv6-experience-deep-dive-title">From completing a task to knowing what comes next.</h3>
+                  <p>The screens are more than individual layouts. They express a sequence of decisions: make the task clear, keep the interaction familiar, and make the next step legible.</p>
+                </header>
+                <div className="cv6-experience-deep-dive-grid">
+                  <article className="cv6-experience-deep-dive-card">
+                    <div className="cv6-experience-deep-dive-number">01</div>
+                    <div className="cv6-experience-deep-dive-copy">
+                      <span>START WITH CONTEXT</span>
+                      <h4>Make the first action easy to understand.</h4>
+                      <p>The onboarding introduction gives learners a sense of the product before asking them to make choices. Personalisation then unfolds through smaller questions instead of one dense setup step.</p>
+                    </div>
+                    <img src={BASE + 'Onboarding 1st Question.svg'} alt="ComSki onboarding personalisation question" loading="lazy" />
+                  </article>
+                  <article className="cv6-experience-deep-dive-card">
+                    <div className="cv6-experience-deep-dive-number">02</div>
+                    <div className="cv6-experience-deep-dive-copy">
+                      <span>KEEP THE MODEL FAMILIAR</span>
+                      <h4>Change the skill, not the whole interaction.</h4>
+                      <p>Reading, listening, writing and speaking call for different responses. A recognisable task structure helps the learner focus on the skill itself rather than repeatedly learning a new interface.</p>
+                    </div>
+                    <img src={BASE + 'Listening 1.svg'} alt="ComSki listening assessment screen" loading="lazy" />
+                  </article>
+                  <article className="cv6-experience-deep-dive-card">
+                    <div className="cv6-experience-deep-dive-number">03</div>
+                    <div className="cv6-experience-deep-dive-copy">
+                      <span>MAKE FEEDBACK ACTIONABLE</span>
+                      <h4>Feedback should support a next move.</h4>
+                      <p>The speaking feedback screen represents a key handoff: the learner has responded, and the product needs to make the system’s response understandable. The design intent is guidance, not an unexplained judgement.</p>
+                    </div>
+                    <img src={BASE + 'Speaking Feedback.svg'} alt="ComSki speaking feedback screen" loading="lazy" />
+                  </article>
+                </div>
+                <p className="cv6-experience-deep-dive-footnote">These are design intentions illustrated by the supplied screens, not claims of validated usability or measured learning improvement.</p>
+              </div>
+            </section>
+      </div>
 
           </Section>
 
