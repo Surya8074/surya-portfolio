@@ -3644,3 +3644,223 @@ main.cv4-page .cv6-outcome-reflection strong {
     transition: none !important;
   }
 }
+
+
+/* ComSki outcome & impact — Ancestra AI-inspired editorial storytelling */
+main.cv4-page section.cv6-outcome-ancestra {
+  padding: clamp(64px, 8vw, 112px) 32px clamp(72px, 9vw, 124px);
+  margin: 0;
+  background: #fff !important;
+  color: #101B3A;
+  font-family: "Work Sans", Inter, Arial, sans-serif;
+  box-sizing: border-box;
+}
+main.cv4-page .cv6-outcome-ancestra .cv6-outcome-impact-inner {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+main.cv4-page .cv6-oa-intro {
+  max-width: 820px;
+  margin: 0 auto clamp(48px, 7vw, 88px);
+}
+main.cv4-page .cv6-oa-intro .cv6-outcome-eyebrow,
+main.cv4-page .cv6-oa-reflection .cv6-outcome-eyebrow {
+  display: block;
+  margin-bottom: 22px;
+  color: #3B5BDB;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .18em;
+}
+main.cv4-page .cv6-oa-intro h2 {
+  max-width: 780px;
+  margin: 0;
+  color: #101B3A;
+  font-size: clamp(40px, 6.2vw, 76px);
+  line-height: .99;
+  font-weight: 650;
+  letter-spacing: -.065em;
+  text-wrap: balance;
+}
+main.cv4-page .cv6-oa-deck {
+  max-width: 690px;
+  margin: 24px 0 0;
+  color: #596681;
+  font-size: clamp(17px, 1.6vw, 20px);
+  line-height: 1.6;
+  letter-spacing: -.015em;
+}
+main.cv4-page .cv6-oa-feature {
+  display: grid;
+  grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+  gap: clamp(32px, 6vw, 88px);
+  align-items: center;
+  padding: clamp(28px, 5vw, 64px) 0;
+  border-top: 1px solid #DCE3F0;
+  border-bottom: 1px solid #DCE3F0;
+}
+main.cv4-page .cv6-oa-index,
+main.cv4-page .cv6-oa-principle > span {
+  display: block;
+  margin-bottom: 20px;
+  color: #3B5BDB;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+main.cv4-page .cv6-oa-feature-copy h3,
+main.cv4-page .cv6-oa-reflection-heading h3 {
+  margin: 0;
+  color: #101B3A;
+  font-size: clamp(28px, 3.2vw, 42px);
+  font-weight: 650;
+  line-height: 1.08;
+  letter-spacing: -.045em;
+  text-wrap: balance;
+}
+main.cv4-page .cv6-oa-feature-copy > p:not(.cv6-oa-caption) {
+  margin: 20px 0 0;
+  color: #596681;
+  font-size: 16px;
+  line-height: 1.7;
+}
+main.cv4-page .cv6-oa-feature-copy .cv6-oa-caption {
+  margin: 24px 0 0;
+  padding-top: 15px;
+  border-top: 1px solid #E1E7F1;
+  color: #3B5BDB;
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.5;
+}
+main.cv4-page .cv6-oa-feature-visual,
+main.cv4-page .cv6-oa-principle figure {
+  min-width: 0;
+  margin: 0;
+}
+main.cv4-page .cv6-oa-screen-frame {
+  display: flex;
+  min-height: 300px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: clamp(16px, 3vw, 32px);
+  border: 1px solid #E4EAF5;
+  border-radius: 22px;
+  background: linear-gradient(145deg, #F5F8FF, #F9FAFE 68%, #EDF2FF);
+}
+main.cv4-page .cv6-oa-screen-frame img {
+  display: block;
+  width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  object-position: center;
+}
+main.cv4-page .cv6-oa-feature-visual > figcaption,
+main.cv4-page .cv6-oa-principle figure figcaption {
+  margin-top: 12px;
+  color: #7A87A2;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: .14em;
+}
+main.cv4-page .cv6-oa-principles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 4vw, 56px);
+  padding: clamp(52px, 7vw, 88px) 0;
+  border-bottom: 1px solid #DCE3F0;
+}
+main.cv4-page .cv6-oa-principle {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+}
+main.cv4-page .cv6-oa-principle h3 {
+  max-width: 430px;
+  margin: 0;
+  color: #101B3A;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 650;
+  line-height: 1.1;
+  letter-spacing: -.045em;
+}
+main.cv4-page .cv6-oa-principle > p {
+  max-width: 470px;
+  margin: 16px 0 24px;
+  color: #596681;
+  font-size: 15px;
+  line-height: 1.7;
+}
+main.cv4-page .cv6-oa-principle figure {
+  width: 100%;
+  margin-top: auto;
+}
+main.cv4-page .cv6-oa-principle figure img {
+  display: block;
+  width: 100%;
+  height: clamp(220px, 28vw, 340px);
+  padding: 12px;
+  box-sizing: border-box;
+  object-fit: contain;
+  border: 1px solid #E4EAF5;
+  border-radius: 18px;
+  background: #F7F9FE;
+}
+main.cv4-page .cv6-oa-reflection {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, .9fr);
+  gap: clamp(32px, 7vw, 100px);
+  padding: clamp(56px, 8vw, 100px) 0 48px;
+}
+main.cv4-page .cv6-oa-reflection-heading h3 {
+  max-width: 560px;
+  font-size: clamp(30px, 4vw, 48px);
+}
+main.cv4-page .cv6-oa-reflection-copy {
+  padding-top: 34px;
+}
+main.cv4-page .cv6-oa-reflection-copy p {
+  margin: 0 0 18px;
+  color: #596681;
+  font-size: 15px;
+  line-height: 1.8;
+}
+main.cv4-page .cv6-oa-evidence-note {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 24px;
+  padding: 22px 0 0;
+  border-top: 1px solid #DCE3F0;
+}
+main.cv4-page .cv6-oa-evidence-note > span {
+  color: #3B5BDB;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  line-height: 1.5;
+}
+main.cv4-page .cv6-oa-evidence-note p {
+  max-width: 760px;
+  margin: 0;
+  color: #77829A;
+  font-size: 12px;
+  line-height: 1.7;
+}
+@media (max-width: 760px) {
+  main.cv4-page section.cv6-outcome-ancestra { padding: 56px 20px 72px; }
+  main.cv4-page .cv6-oa-intro { margin-bottom: 44px; }
+  main.cv4-page .cv6-oa-intro h2 { font-size: clamp(38px, 10vw, 58px); }
+  main.cv4-page .cv6-oa-feature { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  main.cv4-page .cv6-oa-screen-frame { min-height: 220px; padding: 16px; border-radius: 16px; }
+  main.cv4-page .cv6-oa-principles { grid-template-columns: minmax(0, 1fr); gap: 44px; }
+  main.cv4-page .cv6-oa-principle figure img { height: auto; max-height: 360px; }
+  main.cv4-page .cv6-oa-reflection { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  main.cv4-page .cv6-oa-reflection-copy { padding-top: 0; }
+  main.cv4-page .cv6-oa-evidence-note { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  main.cv4-page .cv6-outcome-ancestra * { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+}
