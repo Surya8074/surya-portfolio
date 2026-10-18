@@ -2859,3 +2859,214 @@ main.cv4-page > section.cv6-information-architecture .cv6-ia-architecture-refere
     padding-bottom: 48px;
   }
 }
+
+
+/* Ancestra-inspired, mockup-led screen storytelling nested under System architecture */
+main.cv4-page .cv6-architecture-screen-story {
+  width: min(1320px, calc(100% - 64px));
+  margin: clamp(56px, 7vw, 92px) auto 0;
+  padding-top: clamp(34px, 4vw, 56px);
+  border-top: 1px solid rgba(26,29,41,.12);
+  color: #1A1D29;
+}
+main.cv4-page .cv6-architecture-screen-intro {
+  max-width: 760px;
+  margin: 0 0 clamp(28px, 4vw, 48px);
+}
+main.cv4-page .cv6-architecture-screen-eyebrow,
+main.cv4-page .cv6-architecture-screen-index {
+  display: block;
+  margin: 0 0 14px;
+  color: #3B5BDB;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: .14em;
+  line-height: 1.4;
+}
+main.cv4-page .cv6-architecture-screen-intro h3 {
+  margin: 0 0 16px;
+  color: #101B3A;
+  font-family: "Work Sans", Inter, Arial, sans-serif;
+  font-size: clamp(30px, 3.2vw, 44px);
+  font-weight: 740;
+  letter-spacing: -.045em;
+  line-height: 1.08;
+}
+main.cv4-page .cv6-architecture-screen-intro p {
+  max-width: 660px;
+  margin: 0;
+  color: #59647A;
+  font-size: 16px;
+  line-height: 1.7;
+}
+main.cv4-page .cv6-architecture-screen-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, .75fr);
+  align-items: center;
+  gap: clamp(28px, 5vw, 76px);
+}
+main.cv4-page .cv6-architecture-screen-visual { min-width: 0; }
+main.cv4-page .cv6-architecture-screen-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 14px;
+  color: #69748A;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+}
+main.cv4-page .cv6-architecture-screen-meta span:first-child {
+  color: #3B5BDB;
+}
+main.cv4-page .cv6-architecture-screen-visual .cv4-screen {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+main.cv4-page .cv6-architecture-screen-visual .cv4-screen-browser {
+  overflow: hidden;
+  border: 1px solid rgba(26,29,41,.1);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 22px 60px rgba(30,48,89,.09);
+}
+main.cv4-page .cv6-architecture-screen-visual .cv4-screen-browser > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+main.cv4-page .cv6-architecture-screen-visual .cv4-screen figcaption { display: none; }
+main.cv4-page .cv6-architecture-screen-decision { min-width: 0; }
+main.cv4-page .cv6-architecture-screen-decision h4 {
+  margin: 0 0 28px;
+  color: #101B3A;
+  font-family: "Work Sans", Inter, Arial, sans-serif;
+  font-size: clamp(27px, 2.7vw, 36px);
+  font-weight: 730;
+  letter-spacing: -.04em;
+  line-height: 1.12;
+}
+main.cv4-page .cv6-architecture-decision-block {
+  padding: 17px 0 18px;
+  border-top: 1px solid rgba(26,29,41,.12);
+}
+main.cv4-page .cv6-architecture-decision-block > span {
+  display: block;
+  margin-bottom: 8px;
+  color: #758099;
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: .13em;
+}
+main.cv4-page .cv6-architecture-decision-block p {
+  margin: 0;
+  color: #46516A;
+  font-size: 14px;
+  line-height: 1.65;
+}
+main.cv4-page .cv6-architecture-screen-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 8px;
+}
+main.cv4-page .cv6-architecture-screen-tags span {
+  padding: 7px 10px;
+  border: 1px solid rgba(59,91,219,.15);
+  border-radius: 999px;
+  background: rgba(238,242,255,.6);
+  color: #42548C;
+  font-size: 10px;
+  line-height: 1.2;
+}
+main.cv4-page .cv6-architecture-screen-picker {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0 18px;
+  margin-top: clamp(30px, 4vw, 52px);
+  border-top: 1px solid rgba(26,29,41,.12);
+}
+main.cv4-page .cv6-architecture-screen-picker button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 17px 2px;
+  border: 0;
+  border-bottom: 1px solid rgba(26,29,41,.12);
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: color 240ms ease, border-color 240ms ease, opacity 240ms ease;
+}
+main.cv4-page .cv6-architecture-picker-number {
+  flex: 0 0 28px;
+  color: #9AA2B2;
+  font-size: 10px;
+  font-weight: 700;
+}
+main.cv4-page .cv6-architecture-picker-copy { display: flex; flex: 1; flex-direction: column; gap: 5px; min-width: 0; }
+main.cv4-page .cv6-architecture-picker-copy strong {
+  color: #28334D;
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.35;
+}
+main.cv4-page .cv6-architecture-picker-copy small {
+  color: #858EA1;
+  font-size: 9px;
+  letter-spacing: .06em;
+}
+main.cv4-page .cv6-architecture-picker-arrow {
+  color: #A0A8B7;
+  font-size: 15px;
+  opacity: 0;
+  transform: translate(-3px, 3px);
+  transition: opacity 240ms ease, transform 240ms ease;
+}
+main.cv4-page .cv6-architecture-screen-picker button:hover .cv6-architecture-picker-arrow,
+main.cv4-page .cv6-architecture-screen-picker button.is-active .cv6-architecture-picker-arrow {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+main.cv4-page .cv6-architecture-screen-picker button.is-active {
+  border-bottom-color: #3B5BDB;
+}
+main.cv4-page .cv6-architecture-screen-picker button.is-active .cv6-architecture-picker-number,
+main.cv4-page .cv6-architecture-screen-picker button.is-active .cv6-architecture-picker-copy strong {
+  color: #3B5BDB;
+}
+main.cv4-page .cv6-architecture-screen-picker button:focus-visible {
+  outline: 2px solid #3B5BDB;
+  outline-offset: 3px;
+}
+main.cv4-page .cv6-architecture-screen-note {
+  margin: 18px 0 0;
+  color: #858EA1;
+  font-size: 11px;
+  line-height: 1.6;
+}
+@media (max-width: 900px) {
+  main.cv4-page .cv6-architecture-screen-feature { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  main.cv4-page .cv6-architecture-screen-decision { max-width: 720px; }
+  main.cv4-page .cv6-architecture-screen-picker { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 14px; }
+}
+@media (max-width: 600px) {
+  main.cv4-page .cv6-architecture-screen-story { width: calc(100% - 32px); margin-top: 44px; padding-top: 30px; }
+  main.cv4-page .cv6-architecture-screen-intro h3 { font-size: clamp(28px, 8vw, 36px); }
+  main.cv4-page .cv6-architecture-screen-intro p { font-size: 14px; }
+  main.cv4-page .cv6-architecture-screen-visual .cv4-screen-browser { border-radius: 12px; }
+  main.cv4-page .cv6-architecture-screen-picker { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 12px; }
+  main.cv4-page .cv6-architecture-screen-picker button { gap: 8px; padding: 14px 0; }
+  main.cv4-page .cv6-architecture-picker-number { flex-basis: 22px; font-size: 9px; }
+  main.cv4-page .cv6-architecture-picker-copy strong { font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  main.cv4-page .cv6-architecture-screen-picker button,
+  main.cv4-page .cv6-architecture-picker-arrow { transition: none; }
+}
