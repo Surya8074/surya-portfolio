@@ -1166,43 +1166,90 @@ function ComskiCaseStudyCV4() {
               <p className="cv6-architecture-screen-note">Original ComSki design exports. Explanations describe the design intent visible in these screens; they do not imply unverified functionality or research outcomes.</p>
       
 
-            <section className="cv6-experience-deep-dive" aria-labelledby="cv6-experience-deep-dive-title">
+            <section className="cv6-experience-deep-dive cv6-senior-learnings" aria-labelledby="cv6-experience-deep-dive-title">
               <div className="cv6-experience-deep-dive-inner">
                 <header className="cv6-experience-deep-dive-header">
-                  <span>DESIGNING FOR REAL LEARNER MOMENTS</span>
-                  <h3 id="cv6-experience-deep-dive-title">From completing a task to knowing what comes next.</h3>
-                  <p>The screens are more than individual layouts. They express a sequence of decisions: make the task clear, keep the interaction familiar, and make the next step legible.</p>
+                  <span>WHAT THIS PROJECT TAUGHT ME</span>
+                  <h3 id="cv6-experience-deep-dive-title">The hardest part of designing AI is not making it intelligent. It is making its behaviour understandable.</h3>
+                  <p>ComSki shifted my focus from designing individual screens to designing the relationship between a person, an intelligent system, and the decisions they need to make. These are the principles I would carry into the next product.</p>
                 </header>
-                <div className="cv6-experience-deep-dive-grid">
-                  <article className="cv6-experience-deep-dive-card">
-                    <div className="cv6-experience-deep-dive-number">01</div>
-                    <div className="cv6-experience-deep-dive-copy">
-                      <span>START WITH CONTEXT</span>
-                      <h4>Make the first action easy to understand.</h4>
-                      <p>The onboarding introduction gives learners a sense of the product before asking them to make choices. Personalisation then unfolds through smaller questions instead of one dense setup step.</p>
+
+                <div className="cv6-learning-lead">
+                  <div className="cv6-learning-lead-index">THE SHIFT</div>
+                  <div>
+                    <span>FROM SCREEN-LEVEL POLISH</span>
+                    <strong>“Does this screen look clear?”</strong>
+                  </div>
+                  <div className="cv6-learning-lead-arrow" aria-hidden="true">→</div>
+                  <div>
+                    <span>TO SYSTEM-LEVEL DESIGN</span>
+                    <strong>“Does the whole experience help someone understand, act, and recover?”</strong>
+                  </div>
+                </div>
+
+                <div className="cv6-learning-list">
+                  <article className="cv6-learning-item">
+                    <div className="cv6-learning-count">01</div>
+                    <div className="cv6-learning-title">
+                      <span>TRUST IS AN INTERACTION PROPERTY</span>
+                      <h4>AI trust is earned at every handoff.</h4>
                     </div>
-                    <img src={BASE + 'Onboarding 1st Question.svg'} alt="ComSki onboarding personalisation question" loading="lazy" />
+                    <div className="cv6-learning-detail">
+                      <p>A capable model can still feel opaque if people cannot tell what is expected, what the system has done, or how to interpret its response. I learned to treat clarity around input, system response and next action as part of the product—not as copy added at the end.</p>
+                      <p className="cv6-learning-application"><b>How I apply it:</b> design explicit states and feedback loops before polishing the surface UI.</p>
+                    </div>
+                    <figure><img src={BASE + 'Speaking Feedback.svg'} alt="ComSki speaking feedback interface" loading="lazy" /><figcaption>THE SYSTEM RESPONDS</figcaption></figure>
                   </article>
-                  <article className="cv6-experience-deep-dive-card">
-                    <div className="cv6-experience-deep-dive-number">02</div>
-                    <div className="cv6-experience-deep-dive-copy">
-                      <span>KEEP THE MODEL FAMILIAR</span>
-                      <h4>Change the skill, not the whole interaction.</h4>
-                      <p>Reading, listening, writing and speaking call for different responses. A recognisable task structure helps the learner focus on the skill itself rather than repeatedly learning a new interface.</p>
+
+                  <article className="cv6-learning-item">
+                    <div className="cv6-learning-count">02</div>
+                    <div className="cv6-learning-title">
+                      <span>CONSISTENCY WITHOUT UNIFORMITY</span>
+                      <h4>Build a shared grammar, not four copies of the same screen.</h4>
                     </div>
-                    <img src={BASE + 'Listening 1.svg'} alt="ComSki listening assessment screen" loading="lazy" />
+                    <div className="cv6-learning-detail">
+                      <p>Reading, listening, writing and speaking have different cognitive demands. The design challenge is to preserve a recognisable interaction model while letting each skill keep the controls and content it genuinely needs.</p>
+                      <p className="cv6-learning-application"><b>How I apply it:</b> separate reusable system patterns from skill-specific behaviour, then test where consistency helps and where it becomes a constraint.</p>
+                    </div>
+                    <figure><img src={BASE + 'Listening 1.svg'} alt="ComSki listening practice interface" loading="lazy" /><figcaption>A SHARED INTERACTION MODEL</figcaption></figure>
                   </article>
-                  <article className="cv6-experience-deep-dive-card">
-                    <div className="cv6-experience-deep-dive-number">03</div>
-                    <div className="cv6-experience-deep-dive-copy">
-                      <span>MAKE FEEDBACK ACTIONABLE</span>
-                      <h4>Feedback should support a next move.</h4>
-                      <p>The speaking feedback screen represents a key handoff: the learner has responded, and the product needs to make the system’s response understandable. The design intent is guidance, not an unexplained judgement.</p>
+
+                  <article className="cv6-learning-item">
+                    <div className="cv6-learning-count">03</div>
+                    <div className="cv6-learning-title">
+                      <span>REDUCE UNCERTAINTY BEFORE ADDING FEATURES</span>
+                      <h4>Personalisation should earn its place.</h4>
                     </div>
-                    <img src={BASE + 'Speaking Feedback.svg'} alt="ComSki speaking feedback screen" loading="lazy" />
+                    <div className="cv6-learning-detail">
+                      <p>Onboarding is an exchange: the learner gives information and expects the experience to become more relevant. Each question should have a clear purpose; otherwise personalisation becomes friction disguised as sophistication.</p>
+                      <p className="cv6-learning-application"><b>How I apply it:</b> ask only for context that can meaningfully shape the experience, and make the value of each step visible.</p>
+                    </div>
+                    <figure><img src={BASE + 'Onboarding 1st Question.svg'} alt="ComSki onboarding question" loading="lazy" /><figcaption>CONTEXT BEFORE COMPLEXITY</figcaption></figure>
+                  </article>
+
+                  <article className="cv6-learning-item">
+                    <div className="cv6-learning-count">04</div>
+                    <div className="cv6-learning-title">
+                      <span>DESIGN FOR THE NEXT DECISION</span>
+                      <h4>A completed task is not the end of the journey.</h4>
+                    </div>
+                    <div className="cv6-learning-detail">
+                      <p>Practice becomes more coherent when a learner can connect an individual activity to a wider sense of progress. The experience should not leave people at a dead end after an answer or score; it should help them understand what they can do next.</p>
+                      <p className="cv6-learning-application"><b>How I apply it:</b> map the transitions between task, feedback, reflection and continuation—not only the happy path through each screen.</p>
+                    </div>
+                    <figure><img src={BASE + 'Desktop - 1.svg'} alt="ComSki My Journey progress dashboard" loading="lazy" /><figcaption>FROM TASK TO CONTINUITY</figcaption></figure>
                   </article>
                 </div>
-                <p className="cv6-experience-deep-dive-footnote">These are design intentions illustrated by the supplied screens, not claims of validated usability or measured learning improvement.</p>
+
+                <div className="cv6-learning-next">
+                  <div>
+                    <span>WHAT I WOULD VALIDATE NEXT</span>
+                    <h4>Turn design principles into evidence.</h4>
+                  </div>
+                  <p>The project screens communicate the intended experience, but they do not prove that learners understand AI feedback or improve their communication. My next step would be usability sessions and task-based testing to measure task completion, feedback comprehension, confidence in the next action, and points where learners hesitate or recover.</p>
+                </div>
+
+                <p className="cv6-experience-deep-dive-footnote">These are the design lessons and next-step hypotheses I take from the project—not claims of validated outcomes or measured learning gains.</p>
               </div>
             </section>
       </div>
