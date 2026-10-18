@@ -3021,335 +3021,116 @@ main.cv4-page .cv6-information-architecture .cv6-ia-intro .cv4-lede {
 }
 
 
-/* Match System Architecture typography to the actual compact Design System heading shown above. */
+
+/* ComSki case-study section grid and heading type: one source of truth.
+   The previous alignment attempts used conflicting widths and left offsets.
+   The reference section's content grid is a centered 1240px maximum with 32px
+   minimum desktop gutters and 16px mobile gutters. */
+main.cv4-page > section.cv6-design-system-section .cv4-section-content,
+main.cv4-page > section.cv6-information-architecture .cv4-section-content {
+  display: block;
+  float: none;
+  position: relative;
+  width: min(1240px, calc(100% - 64px));
+  max-width: 1240px;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Match equivalent section-level headings to the reference heading:
+   “Turning principles into product decisions.” */
+main.cv4-page .cv6-philosophy-application > h2,
 main.cv4-page > section.cv6-design-system-section .cv6-ios-system-intro h2,
 main.cv4-page > section.cv6-information-architecture .cv6-ia-intro h2 {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", Inter, sans-serif !important;
-  font-size: clamp(24px, 2.1vw, 32px) !important;
-  font-weight: 650 !important;
-  line-height: 1.12 !important;
-  letter-spacing: -.035em !important;
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 0 14px;
+  padding: 0;
+  color: #101B3A;
+  font-family: "Work Sans", Inter, Arial, sans-serif;
+  font-size: clamp(32px, 3vw, 42px);
+  font-weight: 750;
+  line-height: 1.08;
+  letter-spacing: -.04em;
+  text-align: left;
+  text-indent: 0;
+  transform: none;
+  box-sizing: border-box;
 }
-main.cv4-page > section.cv6-design-system-section .cv6-ios-system-lede,
-main.cv4-page > section.cv6-information-architecture .cv6-ia-intro .cv4-lede {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", Inter, sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  line-height: 1.65 !important;
-  letter-spacing: 0 !important;
-}
-main.cv4-page > section.cv6-information-architecture {
-  padding-top: 48px !important;
-  padding-bottom: 64px !important;
+
+/* The architecture introduction and diagram now inherit one shared grid.
+   No viewport-derived left offsets or nested max-width containers. */
+main.cv4-page > section.cv6-information-architecture .cv6-ia-editorial-grid {
+  display: block;
+  position: relative;
+  float: none;
+  clear: both;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  margin: 0 0 28px;
+  padding: 0;
+  inset: auto;
+  transform: none;
+  box-sizing: border-box;
 }
 main.cv4-page > section.cv6-information-architecture .cv6-ia-intro {
-  margin-bottom: 24px !important;
+  display: block;
+  position: relative;
+  float: none;
+  width: 100%;
+  max-width: 760px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  inset: auto;
+  transform: none;
+  text-align: left;
+  box-sizing: border-box;
+}
+main.cv4-page > section.cv6-information-architecture .cv6-ia-intro h2 {
+  margin: 0 0 14px;
+}
+main.cv4-page > section.cv6-information-architecture .cv6-ia-intro .cv4-lede {
+  display: block;
+  width: 100%;
+  max-width: 680px;
+  margin: 0;
+  padding: 0;
+  color: #45516B;
+  font-family: "Work Sans", Inter, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0;
+  text-align: left;
+  text-indent: 0;
+  transform: none;
+  box-sizing: border-box;
 }
 main.cv4-page > section.cv6-information-architecture .cv6-ia-architecture-reference {
-  margin-top: 0 !important;
+  display: grid;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  box-sizing: border-box;
 }
 @media (max-width: 760px) {
+  main.cv4-page > section.cv6-design-system-section .cv4-section-content,
+  main.cv4-page > section.cv6-information-architecture .cv4-section-content {
+    width: calc(100% - 32px);
+  }
+  main.cv4-page .cv6-philosophy-application > h2,
   main.cv4-page > section.cv6-design-system-section .cv6-ios-system-intro h2,
   main.cv4-page > section.cv6-information-architecture .cv6-ia-intro h2 {
-    font-size: clamp(24px, 6vw, 30px) !important;
+    font-size: clamp(28px, 7vw, 38px);
+    line-height: 1.08;
   }
   main.cv4-page > section.cv6-information-architecture {
-    padding-top: 32px !important;
-    padding-bottom: 48px !important;
-  }
-}
-
-
-/* Hard-align the System Architecture title and its supporting copy to one identical left edge. */
-main.cv4-page > section.cv6-information-architecture > .cv4-section-content > .cv6-ia-intro {
-  display: block !important;
-  width: 100% !important;
-  max-width: 920px !important;
-  margin: 0 0 24px 0 !important;
-  padding: 0 !important;
-  text-align: left !important;
-  transform: none !important;
-}
-main.cv4-page > section.cv6-information-architecture > .cv4-section-content > .cv6-ia-intro h2,
-main.cv4-page > section.cv6-information-architecture > .cv4-section-content > .cv6-ia-intro p.cv4-lede {
-  display: block !important;
-  width: 100% !important;
-  max-width: 760px !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  text-align: left !important;
-  text-indent: 0 !important;
-  transform: none !important;
-}
-main.cv4-page > section.cv6-information-architecture > .cv4-section-content > .cv6-ia-intro h2 {
-  margin-top: 0 !important;
-  margin-bottom: 14px !important;
-}
-main.cv4-page > section.cv6-information-architecture > .cv4-section-content > .cv6-ia-intro p.cv4-lede {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-
-/* Match the architecture heading's left edge to the Design System footer's centered 1240px content grid. */
-main.cv4-page section.cv6-information-architecture .cv6-ia-intro {
-  box-sizing: border-box !important;
-  width: min(calc(100vw - 64px), 1240px) !important;
-  max-width: 1240px !important;
-  margin-left: max(32px, calc((100vw - 1240px) / 2)) !important;
-  margin-right: 0 !important;
-  padding: 0 !important;
-  text-align: left !important;
-  transform: none !important;
-}
-main.cv4-page section.cv6-information-architecture .cv6-ia-intro h2,
-main.cv4-page section.cv6-information-architecture .cv6-ia-intro p.cv4-lede {
-  width: 100% !important;
-  max-width: 760px !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  padding-left: 0 !important;
-  text-align: left !important;
-  text-indent: 0 !important;
-}
-@media (max-width: 760px) {
-  main.cv4-page section.cv6-information-architecture .cv6-ia-intro {
-    width: calc(100vw - 32px) !important;
-    margin-left: 16px !important;
-  }
-}
-
-
-/* Final alignment correction: center the architecture content container exactly like the Design System board. */
-section.cv6-information-architecture.cv4-section {
-  display: block !important;
-  width: 100% !important;
-  max-width: none !important;
-  box-sizing: border-box !important;
-}
-section.cv6-information-architecture.cv4-section > .cv4-section-content {
-  display: block !important;
-  float: none !important;
-  box-sizing: border-box !important;
-  width: min(1240px, calc(100% - 64px)) !important;
-  max-width: 1240px !important;
-  min-width: 0 !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-section.cv6-information-architecture.cv4-section .cv6-ia-intro {
-  display: block !important;
-  width: 100% !important;
-  max-width: 920px !important;
-  margin: 0 0 24px 0 !important;
-  padding: 0 !important;
-  position: static !important;
-  transform: none !important;
-  text-align: left !important;
-}
-section.cv6-information-architecture.cv4-section .cv6-ia-intro h2,
-section.cv6-information-architecture.cv4-section .cv6-ia-intro p.cv4-lede {
-  display: block !important;
-  margin-left: 0 !important;
-  padding-left: 0 !important;
-  text-align: left !important;
-  text-indent: 0 !important;
-}
-section.cv6-information-architecture.cv4-section .cv6-ia-architecture-reference {
-  width: 100% !important;
-  max-width: 1240px !important;
-  margin: 0 auto !important;
-}
-@media (max-width: 760px) {
-  section.cv6-information-architecture.cv4-section > .cv4-section-content {
-    width: calc(100% - 32px) !important;
-  }
-}
-
-
-/* Root-cause fix: the section content wrapper was centering/narrowing the entire section,
-   while the reference board uses a full-width section and a separate centered inner grid. */
-section.cv6-information-architecture.cv4-section {
-  display: block !important;
-  width: 100% !important;
-  max-width: none !important;
-  padding-inline: 0 !important;
-  box-sizing: border-box !important;
-}
-section.cv6-information-architecture.cv4-section > .cv4-section-content {
-  display: block !important;
-  width: 100% !important;
-  max-width: none !important;
-  min-width: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  box-sizing: border-box !important;
-}
-section.cv6-information-architecture.cv4-section > .cv4-section-content > .cv6-ia-intro {
-  display: block !important;
-  position: relative !important;
-  inset: auto !important;
-  transform: none !important;
-  width: min(920px, calc(100vw - 64px)) !important;
-  max-width: 920px !important;
-  margin: 0 0 28px max(32px, calc((100vw - 1240px) / 2)) !important;
-  padding: 0 !important;
-  text-align: left !important;
-  box-sizing: border-box !important;
-}
-section.cv6-information-architecture.cv4-section > .cv4-section-content > .cv6-ia-intro h2,
-section.cv6-information-architecture.cv4-section > .cv4-section-content > .cv6-ia-intro p.cv4-lede {
-  display: block !important;
-  width: 100% !important;
-  max-width: 760px !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  text-align: left !important;
-  text-indent: 0 !important;
-}
-section.cv6-information-architecture.cv4-section > .cv4-section-content > .cv6-ia-architecture-reference {
-  display: grid !important;
-  width: min(1240px, calc(100% - 64px)) !important;
-  max-width: 1240px !important;
-  margin: 0 auto !important;
-  box-sizing: border-box !important;
-}
-@media (max-width: 760px) {
-  section.cv6-information-architecture.cv4-section > .cv4-section-content > .cv6-ia-intro {
-    width: calc(100vw - 32px) !important;
-    margin-left: 16px !important;
-  }
-  section.cv6-information-architecture.cv4-section > .cv4-section-content > .cv6-ia-architecture-reference {
-    width: calc(100% - 32px) !important;
-  }
-}
-
-
-/* Structural alignment: keep the architecture heading/copy on the same centered editorial grid as the section above. */
-main.cv4-page section.cv6-information-architecture .cv6-ia-editorial-grid {
-  display: block !important;
-  position: relative !important;
-  float: none !important;
-  clear: both !important;
-  width: min(1240px, calc(100% - 64px)) !important;
-  max-width: 1240px !important;
-  min-width: 0 !important;
-  margin: 0 auto 28px !important;
-  padding: 0 !important;
-  box-sizing: border-box !important;
-  inset: auto !important;
-  transform: none !important;
-}
-main.cv4-page section.cv6-information-architecture .cv6-ia-editorial-grid .cv6-ia-intro {
-  display: block !important;
-  position: relative !important;
-  float: none !important;
-  width: min(920px, 100%) !important;
-  max-width: 920px !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  inset: auto !important;
-  transform: none !important;
-  text-align: left !important;
-  box-sizing: border-box !important;
-}
-main.cv4-page section.cv6-information-architecture .cv6-ia-editorial-grid .cv6-ia-intro h2,
-main.cv4-page section.cv6-information-architecture .cv6-ia-editorial-grid .cv6-ia-intro p.cv4-lede {
-  display: block !important;
-  width: 100% !important;
-  max-width: 760px !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  text-align: left !important;
-  text-indent: 0 !important;
-  transform: none !important;
-}
-main.cv4-page section.cv6-information-architecture .cv6-ia-architecture-reference {
-  width: min(1440px, calc(100% - 64px)) !important;
-  max-width: 1440px !important;
-  margin-inline: auto !important;
-}
-@media (max-width: 760px) {
-  main.cv4-page section.cv6-information-architecture .cv6-ia-editorial-grid {
-    width: calc(100% - 32px) !important;
-  }
-  main.cv4-page section.cv6-information-architecture .cv6-ia-architecture-reference {
-    width: calc(100% - 32px) !important;
-  }
-}
-
-
-/* Definitive shared left edge: match the IA copy to the centered content column above. */
-main.cv4-page section.cv6-information-architecture > .cv4-section-content {
-  display: block !important;
-  width: min(1240px, calc(100% - 64px)) !important;
-  max-width: 1240px !important;
-  min-width: 0 !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  box-sizing: border-box !important;
-}
-main.cv4-page section.cv6-information-architecture > .cv4-section-content > .cv6-ia-editorial-grid {
-  display: block !important;
-  width: 100% !important;
-  max-width: none !important;
-  margin: 0 0 28px !important;
-  padding: 0 !important;
-  box-sizing: border-box !important;
-}
-main.cv4-page section.cv6-information-architecture .cv6-ia-editorial-grid .cv6-ia-intro {
-  width: 100% !important;
-  max-width: 920px !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-main.cv4-page section.cv6-information-architecture .cv6-ia-editorial-grid .cv6-ia-intro h2,
-main.cv4-page section.cv6-information-architecture .cv6-ia-editorial-grid .cv6-ia-intro p.cv4-lede {
-  margin-left: 0 !important;
-  padding-left: 0 !important;
-  text-indent: 0 !important;
-}
-@media (max-width: 760px) {
-  main.cv4-page section.cv6-information-architecture > .cv4-section-content {
-    width: calc(100% - 32px) !important;
-  }
-}
-
-
-/* Match the System architecture intro to the inner text edge of the preceding principle panel. */
-main.cv4-page section.cv6-information-architecture .cv6-ia-editorial-grid {
-  width: auto !important;
-  max-width: 920px !important;
-  margin: 0 0 28px max(55px, calc((100vw - 1302px) / 2 + 55px)) !important;
-  padding: 0 !important;
-  box-sizing: border-box !important;
-}
-main.cv4-page section.cv6-information-architecture .cv6-ia-editorial-grid .cv6-ia-intro {
-  width: 100% !important;
-  max-width: 920px !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  transform: none !important;
-}
-main.cv4-page section.cv6-information-architecture .cv6-ia-editorial-grid .cv6-ia-intro h2,
-main.cv4-page section.cv6-information-architecture .cv6-ia-editorial-grid .cv6-ia-intro p.cv4-lede {
-  margin-left: 0 !important;
-  padding-left: 0 !important;
-}
-@media (max-width: 760px) {
-  main.cv4-page section.cv6-information-architecture .cv6-ia-editorial-grid {
-    width: calc(100% - 32px) !important;
-    max-width: none !important;
-    margin: 0 16px 24px !important;
+    padding-top: 32px;
+    padding-bottom: 48px;
   }
 }
