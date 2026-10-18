@@ -1362,6 +1362,61 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
  .laundro-ds-reference .lds-feature b{font-size:11px}
  .laundro-ds-reference .lds-feature p{font-size:9px}
 }
+
+/* Approved visual-balance pass: equal card rhythm and tighter illustration spacing. */
+.laundro-ds-reference .lds-showcase{align-items:stretch}
+.laundro-ds-reference .lds-sidecards{
+  grid-template-rows:repeat(2,minmax(0,1fr));
+  align-content:stretch;
+  gap:14px;
+}
+.laundro-ds-reference .lds-sidecards > div{
+  min-height:0;
+  padding:16px;
+  border-radius:16px;
+}
+.laundro-ds-reference .lds-shirt{
+  justify-content:center;
+  gap:14px;
+}
+.laundro-ds-reference .lds-shirt svg{
+  width:100%;
+  max-width:94px;
+  height:90px;
+  padding:5px 8px;
+  background:#f7f9ff;
+}
+.laundro-ds-reference .lds-shirt div{gap:7px}
+.laundro-ds-reference .lds-shirt div span{padding:7px 3px;font-size:10px}
+.laundro-ds-reference .lds-summary{justify-content:center}
+.laundro-ds-reference .lds-summary>b{margin-bottom:12px;padding-bottom:10px}
+.laundro-ds-reference .lds-summary p{padding:5px 0}
+.laundro-ds-reference .lds-summary p:last-child{margin-top:4px;padding-top:7px}
+.laundro-ds-reference .lds-feature{justify-content:center}
+.laundro-ds-reference .lds-feature svg{
+  align-self:flex-start;
+  width:100%;
+  max-width:90px;
+  height:58px;
+  margin-bottom:12px;
+  padding:4px;
+  background:transparent;
+}
+.laundro-ds-reference .lds-feature b{font-size:13px;line-height:1.35}
+.laundro-ds-reference .lds-feature p{font-size:11px;line-height:1.5;margin-top:7px}
+@media(max-width:1100px) and (min-width:761px){
+ .laundro-ds-reference .lds-sidecards{grid-template-rows:repeat(2,minmax(175px,auto))}
+}
+@media(max-width:760px){
+ .laundro-ds-reference .lds-sidecards{grid-template-rows:repeat(2,minmax(155px,auto))}
+ .laundro-ds-reference .lds-sidecards > div{padding:13px}
+ .laundro-ds-reference .lds-shirt svg{height:76px}
+}
+@media(max-width:480px){
+ .laundro-ds-reference .lds-sidecards{grid-template-rows:repeat(2,minmax(155px,auto))}
+ .laundro-ds-reference .lds-sidecards > div{padding:11px}
+}
+
 </style>
 
 <style>
