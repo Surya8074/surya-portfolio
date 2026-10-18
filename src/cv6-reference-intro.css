@@ -3197,3 +3197,117 @@ main.cv4-page .cv6-journey-adjacent button:focus-visible {
   main.cv4-page .cv6-journey-nav button,
   main.cv4-page .cv6-journey-screen-nav button { transition: none; }
 }
+
+
+/* iOS-inspired animated segmented controls for the ComSki screen explorer. */
+main.cv4-page .cv6-journey-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 12px;
+  padding: 5px;
+  overflow-x: auto;
+  border: 1px solid rgba(30, 42, 75, .075);
+  border-radius: 16px;
+  background: rgba(244, 245, 248, .92);
+  box-shadow: inset 0 1px 1px rgba(20, 28, 50, .035);
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+main.cv4-page .cv6-journey-nav::-webkit-scrollbar { display: none; }
+main.cv4-page .cv6-journey-nav button {
+  position: relative;
+  isolation: isolate;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 38px;
+  padding: 9px 13px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  background: transparent;
+  color: #667085;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color 220ms ease, transform 260ms cubic-bezier(.22,1,.36,1);
+}
+main.cv4-page .cv6-journey-nav button:hover { color: #26334D; }
+main.cv4-page .cv6-journey-nav button:active { transform: scale(.975); }
+main.cv4-page .cv6-journey-pill {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border: 1px solid rgba(26, 29, 41, .055);
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(20, 28, 50, .09), 0 2px 7px rgba(20, 28, 50, .045);
+}
+main.cv4-page .cv6-journey-nav button.is-active { color: #243C91; }
+main.cv4-page .cv6-journey-nav button small {
+  position: relative;
+  color: #8B94A7;
+  font-size: 9px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+main.cv4-page .cv6-journey-nav button.is-active small { color: #3154D7; }
+main.cv4-page .cv6-journey-button-label,
+main.cv4-page .cv6-journey-nav button small { position: relative; }
+main.cv4-page .cv6-journey-screen-nav {
+  gap: 7px;
+  margin: 0 0 clamp(24px, 3vw, 38px);
+  padding: 11px 0 0;
+  border-top: 1px solid rgba(26, 29, 41, .085);
+}
+main.cv4-page .cv6-journey-screen-nav button {
+  position: relative;
+  isolation: isolate;
+  gap: 8px;
+  min-height: 38px;
+  padding: 8px 12px;
+  border: 1px solid rgba(26, 29, 41, .09);
+  border-radius: 11px;
+  background: rgba(255,255,255,.8);
+  color: #59657A;
+  transition: color 220ms ease, border-color 220ms ease, transform 260ms cubic-bezier(.22,1,.36,1);
+}
+main.cv4-page .cv6-journey-screen-nav button:hover { border-color: rgba(59,91,219,.22); color: #263B80; }
+main.cv4-page .cv6-journey-screen-nav button:active { transform: scale(.98); }
+main.cv4-page .cv6-journey-screen-nav button.is-active {
+  border-color: rgba(59,91,219,.24);
+  background: #EEF2FF;
+  color: #2448CF;
+}
+main.cv4-page .cv6-journey-screen-pill {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border: 1px solid rgba(59,91,219,.18);
+  border-radius: 10px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FF 100%);
+  box-shadow: 0 1px 3px rgba(36,72,207,.08);
+}
+main.cv4-page .cv6-journey-screen-number,
+main.cv4-page .cv6-journey-screen-label,
+main.cv4-page .cv6-journey-screen-current { position: relative; }
+main.cv4-page .cv6-journey-screen-nav button.is-active .cv6-journey-screen-number { color: #6178D6; }
+main.cv4-page .cv6-journey-screen-nav button.is-active .cv6-journey-screen-current { color: #3154D7; }
+main.cv4-page .cv6-architecture-screen-transition { width: 100%; transform-origin: center center; }
+main.cv4-page .cv6-architecture-screen-visual > .cv6-architecture-screen-meta { margin-bottom: 12px; }
+@media (max-width: 767px) {
+  main.cv4-page .cv6-journey-nav { width: 100%; border-radius: 14px; }
+  main.cv4-page .cv6-journey-nav button { min-height: 40px; padding-inline: 11px; }
+  main.cv4-page .cv6-journey-screen-nav { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
+  main.cv4-page .cv6-journey-screen-nav::-webkit-scrollbar { display: none; }
+  main.cv4-page .cv6-journey-screen-nav button { flex: 0 0 auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  main.cv4-page .cv6-journey-nav button,
+  main.cv4-page .cv6-journey-screen-nav button,
+  main.cv4-page .cv6-architecture-screen-transition { transition: none !important; animation: none !important; }
+}
