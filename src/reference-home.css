@@ -231,3 +231,77 @@ html body main .other-reference .other-reference-grid > article.other-reference-
    padding:48px 32px 0 !important;
  }
 }
+
+
+/* Exact reference artwork cards: the original card visuals are embedded as full-card images. */
+html body main .other-reference .other-reference-grid{
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,424px)) !important;
+  gap:24px !important;
+  width:872px !important;
+  max-width:calc(100% - 32px) !important;
+  margin:0 auto !important;
+  padding:0 !important;
+  align-items:start !important;
+  justify-content:center !important;
+  box-sizing:border-box !important;
+}
+html body main .other-reference .other-reference-grid > .reference-card-link{
+  display:block !important;
+  width:100% !important;
+  min-width:0 !important;
+  height:675px !important;
+  color:inherit !important;
+  text-decoration:none !important;
+}
+html body main .other-reference .other-reference-grid > .reference-card-link > .reference-artwork-card{
+  position:relative !important;
+  display:block !important;
+  width:100% !important;
+  height:675px !important;
+  min-height:675px !important;
+  max-height:675px !important;
+  aspect-ratio:424 / 675 !important;
+  overflow:hidden !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-sizing:border-box !important;
+  transition:transform 300ms ease !important;
+}
+html body main .other-reference .other-reference-grid > .reference-card-link:hover > .reference-artwork-card{
+  transform:translateY(-4px) !important;
+}
+html body main .other-reference .other-reference-grid > .reference-card-link > .reference-artwork-card > img{
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  max-width:none !important;
+  object-fit:contain !important;
+  object-position:center top !important;
+}
+@media(max-width:920px){
+ html body main .other-reference .other-reference-grid{
+   grid-template-columns:minmax(0,424px) !important;
+   width:424px !important;
+   max-width:calc(100% - 32px) !important;
+   gap:40px !important;
+ }
+ html body main .other-reference .other-reference-grid > .reference-card-link{
+   height:auto !important;
+   aspect-ratio:424 / 675 !important;
+ }
+ html body main .other-reference .other-reference-grid > .reference-card-link > .reference-artwork-card{
+   width:100% !important;
+   height:auto !important;
+   min-height:0 !important;
+   max-height:none !important;
+   aspect-ratio:424 / 675 !important;
+ }
+ html body main .other-reference .other-reference-grid > .reference-card-link > .reference-artwork-card > img{
+   position:absolute !important;
+   inset:0 !important;
+ }
+}
