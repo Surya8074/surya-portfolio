@@ -3,305 +3,76 @@
 .reference-nav nav .resume-nav-link{border:0;background:transparent;color:var(--reference-text);padding:0;font-size:12px;line-height:1.35;letter-spacing:-.12px;text-decoration:none;cursor:pointer;transition:opacity .2s ease}.reference-nav nav .resume-nav-link:hover{opacity:.7}
 
 
-/* Other Projects — match the reference's centered, image-led two-card layout. */
-.other-reference{width:100%;max-width:none;margin:0 auto;padding:20px 0 120px}
-.other-reference>h2{margin:0 0 80px;text-align:center;font-size:32px;line-height:1.2;letter-spacing:-.04em;font-weight:700}
-.other-reference-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;width:min(873px,calc(100% - 32px));margin:0 auto}
-.other-reference-card{display:block;min-width:0;width:100%;color:inherit;text-decoration:none}
-.other-reference-card article{position:relative;width:100%;aspect-ratio:344/547;overflow:hidden;transition:transform .3s ease}
-.other-reference-card img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;object-position:center;background:#fff}
-.other-reference-card:hover article,.other-reference-card:focus-visible article{transform:translateY(-4px)}
-.other-reference-card:focus-visible{outline:2px solid #1034c2;outline-offset:5px;border-radius:2px}
-@media(max-width:1023px){
-  .other-reference{padding:20px 0 100px}
-  .other-reference>h2{margin-bottom:40px;font-size:28px}
-  .other-reference-grid{width:min(344px,calc(100% - 32px));grid-template-columns:1fr;gap:40px}
+/* Additional project cards — values taken from the supplied HelloAyushi HTML.
+   Desktop: 873px wrapper, two equal columns, 24px gap.
+   Mobile: 344px maximum width, one column, 40px vertical gap.
+   The reference artwork's intrinsic 344:547 ratio yields ~675px card height at desktop size. */
+main .other-reference {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  padding: 20px 0 120px;
+  box-sizing: border-box;
 }
-@media(prefers-reduced-motion:reduce){.other-reference-card article{transition:none}}
-
-.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
-
-
-/* Reference-matched Other Projects cards */
-.other-reference{width:100%;max-width:none;margin:0 auto;padding:20px 0 120px;background:#fff}
-.other-reference>h2{margin:0 0 76px;text-align:center;font-size:20px;line-height:1.25;letter-spacing:-.02em;font-weight:700;color:#111}
-.other-reference-grid{display:grid;grid-template-columns:repeat(2,minmax(0,410px));gap:24px;width:min(856px,calc(100% - 32px));margin:0 auto;align-items:stretch}
-.other-reference-card{position:relative;display:block;min-width:0;width:100%;aspect-ratio:410/650;overflow:hidden;border:1.5px solid #d8d9dd;border-radius:34px;color:#111;text-decoration:none;box-sizing:border-box}
-.other-reference-card.toniq-card{background-color:#fbfbfd;background-image:radial-gradient(#e6e7ed 1.25px,transparent 1.25px);background-size:24px 24px}
-.other-reference-card.shine-card{background:linear-gradient(115deg,#fff 0%,#f0fbfd 100%)}
-.other-card-copy{position:relative;z-index:2;padding:58px 36px 0}
-.other-card-copy h3{font-size:38px;line-height:1.08;letter-spacing:-.045em;font-weight:750;margin:0 0 20px;color:#101010}
-.other-card-copy p{font-size:14px;line-height:1.48;letter-spacing:-.01em;color:#34363a;margin:0;max-width:100%}
-.other-card-tags{display:flex;flex-wrap:wrap;gap:12px 10px;margin-top:32px;max-width:100%}
-.other-card-tags span{display:inline-flex;align-items:center;min-height:35px;padding:0 12px;border:1px solid #d7d9dc;border-radius:14px;background:#ffffffc9;color:#686b70;font-size:12px;line-height:1;white-space:nowrap}
-.toniq-illustration{position:absolute;inset:0;pointer-events:none}
-.reaction{position:absolute;display:flex;align-items:center;justify-content:center;height:35px;padding:0 12px;border:1px solid #ececf0;border-radius:22px;background:#fff;box-shadow:0 2px 5px #00000012;font-size:17px}
-.reaction-heart{top:51%;left:9%}.reaction-party{top:57%;right:8%}
-.chat-bubble{position:absolute;padding:11px 17px;border-radius:22px;color:white;font-size:14px;font-weight:650;white-space:nowrap;box-shadow:0 3px 8px #00000012}
-.chat-yellow{top:64%;left:28%;background:#ffb900}.chat-yellow:after{content:"";position:absolute;left:9px;bottom:-9px;border-width:10px 12px 0 0;border-style:solid;border-color:#ffb900 transparent transparent transparent}
-.chat-coral{top:76%;left:35%;background:#ff795d}.chat-coral:after{content:"";position:absolute;right:5px;bottom:-9px;border-width:10px 0 0 12px;border-style:solid;border-color:#ff795d transparent transparent transparent}
-.avatar{position:absolute;display:flex;align-items:center;justify-content:center;flex-direction:column;width:86px;height:86px;border-radius:50%;border:5px solid #fff;box-shadow:0 0 0 6px #ffc20a;background:#ffbd08}
-.avatar>span{font-size:43px;line-height:1}
-.avatar small{position:absolute;bottom:-21px;padding:4px 10px;border-radius:12px;background:#fff;box-shadow:0 2px 4px #00000018;font-size:9px;color:#333}
-.avatar-matt{top:70%;left:8%}
-.avatar-maria{top:83%;right:8%;background:#ff795d;box-shadow:0 0 0 6px #ff795d}
-.shine-illustration{position:absolute;inset:0;pointer-events:none}
-.shine-flower{position:absolute;right:22%;bottom:48%;font-size:42px;filter:drop-shadow(0 2px 1px #0000000a)}
-.shine-robot{position:absolute;right:-8%;bottom:-2%;width:88%;height:40%;background:#f7f5f0;border-radius:35px 35px 18px 18px;box-shadow:inset 0 7px 12px #fff,0 -2px 10px #e6e7e8;display:flex;align-items:center;justify-content:center}
-.robot-screen{position:relative;width:52%;height:55%;border-radius:20px;background:#202331;display:flex;align-items:center;justify-content:space-evenly;box-shadow:0 3px 5px #00000025}
-.robot-screen i{display:block;width:23px;height:30px;border-radius:50%;background:#eaf8ff;position:relative}
-.robot-screen i:after{content:"";position:absolute;width:9px;height:13px;border-radius:50%;background:#242c39;left:7px;top:8px}
-.robot-screen>span{position:absolute;bottom:8px;color:#dcecf5;font-size:19px}
-.robot-base{position:absolute;bottom:-10%;left:0;right:0;height:22%;background:#079b6a;border-radius:0 0 12px 12px}
-.robot-arm{position:absolute;bottom:0;width:22px;height:46px;border-radius:15px;background:#16191b;z-index:2}
-.robot-arm-left{left:5%}.robot-arm-right{right:5%}
-.other-reference-card:hover{transform:translateY(-3px);transition:transform .3s ease}
-@media(max-width:1023px){
- .other-reference{padding:20px 0 100px}
- .other-reference>h2{font-size:20px;margin-bottom:40px}
- .other-reference-grid{width:min(410px,calc(100% - 32px));grid-template-columns:1fr;gap:28px}
- .other-reference-card{aspect-ratio:410/650;border-radius:30px}
- .other-card-copy{padding:48px 32px 0}
- .other-card-copy h3{font-size:38px}
- .other-card-copy p{font-size:14px}
- .other-card-tags{gap:10px;margin-top:28px}
- .other-card-tags span{font-size:12px}
+main .other-reference .other-reference-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: min(873px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 0;
+  align-items: start;
+  box-sizing: border-box;
 }
-@media(prefers-reduced-motion:reduce){.other-reference-card{transition:none}}
-
-
-/* Reset legacy generic article rules; the reference uses two equal 344:547 cards. */
-.other-reference-grid{width:min(873px,calc(100% - 32px));grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch}
-.other-reference-grid>.other-reference-card{
-  display:block;
-  box-sizing:border-box;
-  width:100%;
-  min-width:0;
-  min-height:0;
-  height:auto;
-  aspect-ratio:344 / 547;
-  margin:0;
-  padding:0;
-  border:1px solid #d8d9dd;
-  border-radius:34px;
-  overflow:hidden;
+main .other-reference .reference-card-link {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
 }
-.other-reference-grid>.other-reference-card:first-child{
-  background-color:#fbfbfd;
-  background-image:radial-gradient(#e6e7ed 1.25px,transparent 1.25px);
-  background-size:24px 24px;
+main .other-reference .reference-artwork-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 344 / 547;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+  box-sizing: border-box;
+  transition: transform 300ms ease;
 }
-.other-reference-grid>.other-reference-card:last-child{
-  background:linear-gradient(115deg,#fff 0%,#f0fbfd 100%);
+main .other-reference .reference-artwork-card img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
+  object-position: center top;
 }
-.other-reference-grid>.other-reference-card .other-card-copy{padding:58px 36px 0}
-.other-reference-grid>.other-reference-card .other-card-copy h3{font-size:38px;line-height:1.08;margin:0 0 20px}
-.other-reference-grid>.other-reference-card .other-card-copy p{font-size:14px;line-height:1.48;margin:0}
-.other-reference-grid>.other-reference-card .other-card-tags{margin-top:32px}
-@media(max-width:1023px){
- .other-reference-grid{width:min(344px,calc(100% - 32px));grid-template-columns:minmax(0,1fr);gap:40px}
- .other-reference-grid>.other-reference-card{aspect-ratio:344 / 547;border-radius:30px}
- .other-reference-grid>.other-reference-card .other-card-copy{padding:48px 32px 0}
+main .other-reference .reference-card-link:hover .reference-artwork-card,
+main .other-reference .reference-card-link:focus-visible .reference-artwork-card {
+  transform: translateY(-4px);
 }
-
-
-/* Final sizing override: match Hello Ayushi's 873px desktop grid and equal 344:547 cards. */
-main .other-reference{width:100%;max-width:none;margin:0 auto;padding:20px 0 120px;box-sizing:border-box}
-main .other-reference>h2{margin:0 0 76px;font-size:22px;line-height:1.1;letter-spacing:-.3px;text-align:center}
-main .other-reference .other-reference-grid{
-  display:grid;
-  width:min(873px,calc(100% - 32px));
-  max-width:873px;
-  margin:0 auto;
-  padding:0;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:24px;
-  align-items:stretch;
-  box-sizing:border-box;
+main .other-reference .reference-card-link:focus-visible {
+  outline: 2px solid #1034c2;
+  outline-offset: 5px;
 }
-main .other-reference .other-reference-grid>.other-reference-card{
-  position:relative;
-  display:block;
-  width:100%;
-  min-width:0;
-  min-height:0;
-  height:auto;
-  aspect-ratio:344 / 547;
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  overflow:hidden;
-  border:1px solid #d8d9dd;
-  border-radius:34px;
+@media (max-width: 1023px) {
+  main .other-reference {
+    padding: 20px 0 100px;
+  }
+  main .other-reference .other-reference-grid {
+    grid-template-columns: minmax(0, 344px);
+    width: min(344px, calc(100% - 32px));
+    gap: 40px;
+  }
 }
-main .other-reference .other-reference-grid>.other-reference-card .other-card-copy{
-  position:relative;
-  z-index:2;
-  padding:58px 36px 0;
-}
-main .other-reference .other-reference-grid>.other-reference-card .other-card-copy h3{font-size:38px;line-height:1.08;margin:0 0 20px;letter-spacing:-.045em}
-main .other-reference .other-reference-grid>.other-reference-card .other-card-copy p{font-size:14px;line-height:1.48;margin:0}
-main .other-reference .other-reference-grid>.other-reference-card .other-card-tags{margin-top:32px}
-@media(max-width:1023px){
- main .other-reference .other-reference-grid{width:min(344px,calc(100% - 32px));max-width:344px;grid-template-columns:minmax(0,1fr);gap:40px}
- main .other-reference .other-reference-grid>.other-reference-card{aspect-ratio:344 / 547;border-radius:30px}
- main .other-reference .other-reference-grid>.other-reference-card .other-card-copy{padding:48px 32px 0}
-}
-
-
-/* Match the reference card's measured 424 x 675 desktop dimensions. */
-main .other-reference .other-reference-grid{
-  width:min(872px,calc(100% - 32px));
-  max-width:872px;
-  grid-template-columns:repeat(2,minmax(0,424px));
-  justify-content:center;
-  gap:24px;
-}
-main .other-reference .other-reference-grid>.other-reference-card{
-  width:100%;
-  aspect-ratio:424 / 675;
-}
-@media(max-width:1023px){
- main .other-reference .other-reference-grid{
-   width:min(424px,calc(100% - 32px));
-   max-width:424px;
-   grid-template-columns:minmax(0,1fr);
- }
- main .other-reference .other-reference-grid>.other-reference-card{
-   aspect-ratio:424 / 675;
- }
-}
-
-
-/* Definitive card sizing override: fixed 424 × 675 px desktop cards. */
-html body main .other-reference{
-  width:100% !important;
-  max-width:none !important;
-  margin:0 !important;
-  padding:20px 0 120px !important;
-  box-sizing:border-box !important;
-}
-html body main .other-reference .other-reference-grid{
-  display:grid !important;
-  grid-template-columns:repeat(2,424px) !important;
-  column-gap:24px !important;
-  row-gap:24px !important;
-  width:872px !important;
-  max-width:calc(100% - 32px) !important;
-  margin:0 auto !important;
-  padding:0 !important;
-  align-items:start !important;
-  justify-content:center !important;
-  box-sizing:border-box !important;
-}
-html body main .other-reference .other-reference-grid > article.other-reference-card{
-  display:block !important;
-  position:relative !important;
-  width:424px !important;
-  min-width:0 !important;
-  max-width:100% !important;
-  height:675px !important;
-  min-height:675px !important;
-  max-height:675px !important;
-  aspect-ratio:auto !important;
-  margin:0 !important;
-  padding:0 !important;
-  box-sizing:border-box !important;
-  overflow:hidden !important;
-  border:1px solid #d8d9dd !important;
-  border-radius:34px !important;
-}
-html body main .other-reference .other-reference-grid > article.other-reference-card .other-card-copy{
-  padding:58px 36px 0 !important;
-}
-@media(max-width:920px){
- html body main .other-reference .other-reference-grid{
-   grid-template-columns:minmax(0,424px) !important;
-   width:424px !important;
-   max-width:calc(100% - 32px) !important;
-   row-gap:40px !important;
- }
- html body main .other-reference .other-reference-grid > article.other-reference-card{
-   width:100% !important;
-   height:675px !important;
-   min-height:675px !important;
-   max-height:675px !important;
- }
- html body main .other-reference .other-reference-grid > article.other-reference-card .other-card-copy{
-   padding:48px 32px 0 !important;
- }
-}
-
-
-/* Exact reference artwork cards: the original card visuals are embedded as full-card images. */
-html body main .other-reference .other-reference-grid{
-  display:grid !important;
-  grid-template-columns:repeat(2,minmax(0,424px)) !important;
-  gap:24px !important;
-  width:872px !important;
-  max-width:calc(100% - 32px) !important;
-  margin:0 auto !important;
-  padding:0 !important;
-  align-items:start !important;
-  justify-content:center !important;
-  box-sizing:border-box !important;
-}
-html body main .other-reference .other-reference-grid > .reference-card-link{
-  display:block !important;
-  width:100% !important;
-  min-width:0 !important;
-  height:675px !important;
-  color:inherit !important;
-  text-decoration:none !important;
-}
-html body main .other-reference .other-reference-grid > .reference-card-link > .reference-artwork-card{
-  position:relative !important;
-  display:block !important;
-  width:100% !important;
-  height:675px !important;
-  min-height:675px !important;
-  max-height:675px !important;
-  aspect-ratio:424 / 675 !important;
-  overflow:hidden !important;
-  margin:0 !important;
-  padding:0 !important;
-  border:0 !important;
-  border-radius:0 !important;
-  background:transparent !important;
-  box-sizing:border-box !important;
-  transition:transform 300ms ease !important;
-}
-html body main .other-reference .other-reference-grid > .reference-card-link:hover > .reference-artwork-card{
-  transform:translateY(-4px) !important;
-}
-html body main .other-reference .other-reference-grid > .reference-card-link > .reference-artwork-card > img{
-  display:block !important;
-  width:100% !important;
-  height:100% !important;
-  max-width:none !important;
-  object-fit:contain !important;
-  object-position:center top !important;
-}
-@media(max-width:920px){
- html body main .other-reference .other-reference-grid{
-   grid-template-columns:minmax(0,424px) !important;
-   width:424px !important;
-   max-width:calc(100% - 32px) !important;
-   gap:40px !important;
- }
- html body main .other-reference .other-reference-grid > .reference-card-link{
-   height:auto !important;
-   aspect-ratio:424 / 675 !important;
- }
- html body main .other-reference .other-reference-grid > .reference-card-link > .reference-artwork-card{
-   width:100% !important;
-   height:auto !important;
-   min-height:0 !important;
-   max-height:none !important;
-   aspect-ratio:424 / 675 !important;
- }
- html body main .other-reference .other-reference-grid > .reference-card-link > .reference-artwork-card > img{
-   position:absolute !important;
-   inset:0 !important;
- }
+@media (prefers-reduced-motion: reduce) {
+  main .other-reference .reference-artwork-card {
+    transition: none;
+  }
 }
