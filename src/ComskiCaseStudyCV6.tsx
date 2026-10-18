@@ -1484,41 +1484,57 @@ function ComskiCaseStudyCV4() {
             </div></Reveal>
           </Section>
 
-          <section className="cv6-outcome-impact" id="outcome-impact" aria-labelledby="cv6-outcome-title">
+          <section className="cv6-outcome-impact cv6-outcome-ancestra" id="outcome-impact" aria-labelledby="cv6-outcome-title">
             <div className="cv6-outcome-impact-inner">
-              <div className="cv6-outcome-impact-heading">
+              <header className="cv6-oa-intro">
                 <span className="cv6-outcome-eyebrow">OUTCOME &amp; IMPACT</span>
-                <h2 id="cv6-outcome-title">A clearer system for communication practice.</h2>
-                <p className="cv6-outcome-lede">The design work brought ComSki’s onboarding, four communication skills and learner progression into one connected experience. The outcome is a more coherent product direction and a set of interaction decisions ready to be tested—not a claim of measured user or business improvement.</p>
-              </div>
+                <h2 id="cv6-outcome-title">A more human way to practise communication.</h2>
+                <p className="cv6-oa-deck">ComSki’s design challenge was not simply to create four skill experiences. It was to make those different ways of communicating feel like parts of one understandable, supportive journey.</p>
+              </header>
 
-              <div className="cv6-outcome-evidence" aria-label="ComSki design outcomes shown through existing product screens">
-                <figure className="cv6-outcome-evidence-item cv6-outcome-evidence-onboarding">
-                  <div className="cv6-outcome-image-wrap"><img src={BASE + 'Onboarding Intro.svg'} alt="ComSki onboarding introduction screen" loading="lazy" /></div>
-                  <figcaption><span>01 / ONBOARDING</span><strong>Set context before asking for commitment.</strong><p>A low-pressure introduction establishes what ComSki is before personalisation begins.</p></figcaption>
-                </figure>
-                <figure className="cv6-outcome-evidence-item cv6-outcome-evidence-skills">
-                  <div className="cv6-outcome-image-wrap"><img src={BASE + 'Reading.svg'} alt="ComSki reading practice screen" loading="lazy" /></div>
-                  <figcaption><span>02 / SHARED PRACTICE MODEL</span><strong>Four skills, one familiar interaction rhythm.</strong><p>Reading, listening, writing and speaking can retain their distinct tasks while sharing a consistent progression model.</p></figcaption>
-                </figure>
-                <figure className="cv6-outcome-evidence-item cv6-outcome-evidence-progress">
-                  <div className="cv6-outcome-image-wrap"><img src={BASE + 'Desktop - 1.svg'} alt="ComSki My Journey learner dashboard" loading="lazy" /></div>
-                  <figcaption><span>03 / CONTINUITY</span><strong>Connect a practice session to the wider journey.</strong><p>The My Journey screen frames individual skill work as part of an ongoing learner experience.</p></figcaption>
+              <div className="cv6-oa-feature">
+                <div className="cv6-oa-feature-copy">
+                  <span className="cv6-oa-index">01 / THE EXPERIENCE</span>
+                  <h3>Make the first step feel clear, not intimidating.</h3>
+                  <p>Onboarding introduces the purpose of ComSki before asking learners to personalise their experience. The intent is to establish context first, then build commitment one question at a time.</p>
+                  <p className="cv6-oa-caption">Design intention · Context before commitment</p>
+                </div>
+                <figure className="cv6-oa-feature-visual">
+                  <div className="cv6-oa-screen-frame"><img src={BASE + 'Onboarding Intro.svg'} alt="ComSki onboarding introduction screen" loading="lazy" /></div>
+                  <figcaption>ONBOARDING / INTRODUCTION</figcaption>
                 </figure>
               </div>
 
-              <div className="cv6-outcome-closing">
-                <div className="cv6-outcome-closing-main">
-                  <span className="cv6-outcome-eyebrow">WHAT THE WORK ENABLES</span>
-                  <h3>From individual screens to a connected product system.</h3>
-                  <p>The strongest deliverable is the relationship between the screens: onboarding sets context, skill tasks reuse familiar patterns, and the journey view gives practice a place to continue. Shared interaction rules and design tokens also make that direction easier to communicate and extend.</p>
+              <div className="cv6-oa-principles" aria-label="Three design outcomes">
+                <article className="cv6-oa-principle">
+                  <span>02 / CONSISTENCY</span>
+                  <h3>Four skills. One familiar rhythm.</h3>
+                  <p>Reading, listening, writing and speaking have different tasks, but can share recognisable patterns for orientation, response and progression.</p>
+                  <figure><img src={BASE + 'Reading.svg'} alt="ComSki reading practice screen" loading="lazy" /><figcaption>SKILL PRACTICE</figcaption></figure>
+                </article>
+                <article className="cv6-oa-principle">
+                  <span>03 / CONTINUITY</span>
+                  <h3>Practice should lead somewhere.</h3>
+                  <p>My Journey places individual activities within a broader view of learner progress, helping connect a single practice session to what comes next.</p>
+                  <figure><img src={BASE + 'Desktop - 1.svg'} alt="ComSki My Journey dashboard" loading="lazy" /><figcaption>MY JOURNEY</figcaption></figure>
+                </article>
+              </div>
+
+              <div className="cv6-oa-reflection">
+                <div className="cv6-oa-reflection-heading">
+                  <span className="cv6-outcome-eyebrow">LOOKING BACK</span>
+                  <h3>Good AI experiences are defined by what people can understand and do next.</h3>
                 </div>
-                <div className="cv6-outcome-validation">
-                  <span className="cv6-outcome-eyebrow">WHAT STILL NEEDS VALIDATION</span>
-                  <p>No participant-level usability results, launch data or adoption metrics are preserved in the available project material. The next step is to test whether learners understand the feedback, complete a practice loop, and know what to do next—then measure completion, feedback-to-action and return rates.</p>
+                <div className="cv6-oa-reflection-copy">
+                  <p>This work reinforced that the interface around an intelligent system matters as much as the system’s capability. Learners need to understand where they are, what a task asks of them, and how to continue without feeling judged by an opaque score.</p>
+                  <p>The design outcome is a connected direction: clearer onboarding, a reusable interaction model across four skills, and a journey view that gives practice a wider context.</p>
                 </div>
               </div>
-              <p className="cv6-outcome-reflection"><strong>My takeaway:</strong> designing AI-supported learning is not only about presenting an answer. It is about making the system’s state understandable, keeping the learner in control, and turning feedback into a useful next action.</p>
+
+              <aside className="cv6-oa-evidence-note">
+                <span>MEASUREMENT STILL TO COME</span>
+                <p>The available project material does not include verified usability results, launch data or adoption metrics. The next step is to test task completion, feedback comprehension and whether learners know what to do next—then report measured results rather than assumed impact.</p>
+              </aside>
             </div>
           </section>
         </div>
