@@ -3236,8 +3236,28 @@ main.cv4-page .cv6-journey-nav button {
   white-space: nowrap;
   transition: color 220ms ease, transform 260ms cubic-bezier(.22,1,.36,1);
 }
-main.cv4-page .cv6-journey-nav button:hover { color: #26334D; }
-main.cv4-page .cv6-journey-nav button:active { transform: scale(.975); }
+main.cv4-page .cv6-journey-nav button:hover {
+  color: #26334D;
+  transform: translateY(-1px);
+}
+main.cv4-page .cv6-journey-nav button:active { transform: scale(.965) translateY(0); }
+@media (hover: hover) and (pointer: fine) {
+  main.cv4-page .cv6-journey-nav button:not(.is-active):hover::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    border: 1px solid rgba(255,255,255,.85);
+    border-radius: 10px;
+    background: rgba(255,255,255,.48);
+    box-shadow: 0 2px 7px rgba(20,28,50,.035);
+    animation: cv6-ios-hover-in 300ms cubic-bezier(.22,1,.36,1) both;
+    pointer-events: none;
+  }
+  main.cv4-page .cv6-journey-nav button.is-active:hover {
+    box-shadow: 0 2px 8px rgba(20,28,50,.06);
+  }
+}
 main.cv4-page .cv6-journey-pill {
   position: absolute;
   z-index: -1;
@@ -3276,8 +3296,21 @@ main.cv4-page .cv6-journey-screen-nav button {
   color: #59657A;
   transition: color 220ms ease, border-color 220ms ease, transform 260ms cubic-bezier(.22,1,.36,1);
 }
-main.cv4-page .cv6-journey-screen-nav button:hover { border-color: rgba(59,91,219,.22); color: #263B80; }
-main.cv4-page .cv6-journey-screen-nav button:active { transform: scale(.98); }
+main.cv4-page .cv6-journey-screen-nav button:hover {
+  border-color: rgba(59,91,219,.22);
+  color: #263B80;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 13px rgba(35,57,115,.07);
+}
+main.cv4-page .cv6-journey-screen-nav button:active {
+  transform: scale(.975) translateY(0);
+  box-shadow: 0 1px 3px rgba(35,57,115,.06);
+}
+@media (hover: hover) and (pointer: fine) {
+  main.cv4-page .cv6-journey-screen-nav button:not(.is-active):hover {
+    background: rgba(255,255,255,.98);
+  }
+}
 main.cv4-page .cv6-journey-screen-nav button.is-active {
   border-color: rgba(59,91,219,.24);
   background: #EEF2FF;
@@ -3297,6 +3330,10 @@ main.cv4-page .cv6-journey-screen-label,
 main.cv4-page .cv6-journey-screen-current { position: relative; }
 main.cv4-page .cv6-journey-screen-nav button.is-active .cv6-journey-screen-number { color: #6178D6; }
 main.cv4-page .cv6-journey-screen-nav button.is-active .cv6-journey-screen-current { color: #3154D7; }
+@keyframes cv6-ios-hover-in {
+  from { opacity: 0; transform: scale(.97); }
+  to { opacity: 1; transform: scale(1); }
+}
 main.cv4-page .cv6-architecture-screen-transition { width: 100%; transform-origin: center center; }
 main.cv4-page .cv6-architecture-screen-visual > .cv6-architecture-screen-meta { margin-bottom: 12px; }
 @media (max-width: 767px) {
