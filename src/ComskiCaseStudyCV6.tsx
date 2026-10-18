@@ -1033,8 +1033,63 @@ function ComskiCaseStudyCV4() {
             <div className="cv6-architecture-screen-story" aria-labelledby="cv6-architecture-screen-title">
               <div className="cv6-architecture-screen-intro">
                 <span className="cv6-architecture-screen-eyebrow">FROM SYSTEM TO EXPERIENCE</span>
-                <h3 id="cv6-architecture-screen-title">How the system shows up in the interface.</h3>
-                <p>Architecture only matters when it makes the next action feel clear. Explore the original ComSki screens to see how learner context, focused practice and ongoing progress translate into product decisions.</p>
+                <h3 id="cv6-architecture-screen-title">Explore the ComSki experience.</h3>
+                <p>Move through the real screens by learner journey. Each selection pairs the interface with the product decision behind it.</p>
+              </div>
+
+              <div className="cv6-journey-nav" aria-label="ComSki learner journeys">
+                {[
+                  { id: 'onboarding', label: 'Onboarding', range: [0, 1, 2] },
+                  { id: 'reading', label: 'Reading', range: [3, 4] },
+                  { id: 'listening', label: 'Listening', range: [5, 6] },
+                  { id: 'writing', label: 'Writing', range: [7, 8] },
+                  { id: 'speaking', label: 'Speaking', range: [9, 10] },
+                  { id: 'progress', label: 'Progress', range: [11] }
+                ].map((group) => {
+                  const selected = group.range.includes(activeScreen);
+                  return (
+                    <button
+                      key={group.id}
+                      type="button"
+                      className={selected ? 'is-active' : ''}
+                      aria-pressed={selected}
+                      onClick={() => setActiveScreen(group.range[0])}
+                    >
+                      <span>{group.label}</span>
+                      <small>{String(group.range.length).padStart(2, '0')}</small>
+                    </button>
+                  );
+                })}
+              </div>
+
+              <div className="cv6-journey-screen-nav" aria-label="Screens in selected journey">
+                {screenData.map((screen, index) => {
+                  const groupRanges = [
+                    { id: 'onboarding', range: [0, 1, 2] },
+                    { id: 'reading', range: [3, 4] },
+                    { id: 'listening', range: [5, 6] },
+                    { id: 'writing', range: [7, 8] },
+                    { id: 'speaking', range: [9, 10] },
+                    { id: 'progress', range: [11] }
+                  ];
+                  const currentGroup = groupRanges.find((group) => group.range.includes(activeScreen));
+                  const visible = currentGroup?.range.includes(index) ?? false;
+                  if (!visible) return null;
+                  return (
+                    <button
+                      key={screen.src}
+                      type="button"
+                      className={activeScreen === index ? 'is-active' : ''}
+                      aria-current={activeScreen === index ? 'true' : undefined}
+                      aria-label={`Show screen ${index + 1}: ${screen.label.split(' · ')[1]}`}
+                      onClick={() => setActiveScreen(index)}
+                    >
+                      <span className="cv6-journey-screen-number">{String(index + 1).padStart(2, '0')}</span>
+                      <span className="cv6-journey-screen-label">{screen.label.split(' · ')[1]}</span>
+                      {activeScreen === index && <span className="cv6-journey-screen-current">Viewing</span>}
+                    </button>
+                  );
+                })}
               </div>
 
               <div className="cv6-architecture-screen-feature">
@@ -1044,68 +1099,58 @@ function ComskiCaseStudyCV4() {
                     <span>{String(activeScreen + 1).padStart(2, '0')} / {String(screenData.length).padStart(2, '0')}</span>
                   </div>
                   <Screen {...active} wide />
+                  <div className="cv6-journey-adjacent">
+                    <button type="button" onClick={() => setActiveScreen(Math.max(0, activeScreen - 1))} disabled={activeScreen === 0}>
+                      <span aria-hidden="true">←</span> Previous screen
+                    </button>
+                    <button type="button" onClick={() => setActiveScreen(Math.min(screenData.length - 1, activeScreen + 1))} disabled={activeScreen === screenData.length - 1}>
+                      Next screen <span aria-hidden="true">→</span>
+                    </button>
+                  </div>
                 </div>
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeScreen}
                     className="cv6-architecture-screen-decision"
-                    initial={reduce ? false : { opacity: 0, y: 12 }}
+                    initial={reduce ? false : { opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={reduce ? undefined : { opacity: 0, y: -8 }}
-                    transition={{ duration: reduce ? 0 : 0.28, ease }}
+                    exit={reduce ? undefined : { opacity: 0, y: -6 }}
+                    transition={{ duration: reduce ? 0 : 0.2, ease }}
                   >
                     <span className="cv6-architecture-screen-index">DECISION STORY · {String(activeScreen + 1).padStart(2, '0')}</span>
                     <h4>{active.label.split(' · ')[1]}</h4>
                     <div className="cv6-architecture-decision-block">
-                      <span>THE USER NEED</span>
+                      <span>DESIGN INTENT</span>
                       <p>{active.goal}</p>
                     </div>
                     <div className="cv6-architecture-decision-block">
-                      <span>THE DESIGN DECISION</span>
+                      <span>DESIGN DECISION</span>
                       <p>{active.decision}</p>
                     </div>
                     <div className="cv6-architecture-decision-block">
                       <span>WHY IT MATTERS</span>
                       <p>{[
-                        'Establishes context before commitment, so learners understand the value of the experience before investing effort.',
-                        'Progressive personalisation reduces the perceived cost of setup while still giving the product useful learner context.',
-                        'A realistic practice cadence helps align the experience with the learner’s routine instead of creating an aspirational but fragile plan.',
-                        'A consistent assessment structure lets learners focus on the communication task rather than repeatedly learning new interface patterns.',
-                        'Predictable progression lowers navigation effort and makes the next step easier to anticipate.',
-                        'Familiar controls preserve continuity when the interaction shifts from reading text to interpreting audio.',
-                        'Separating modality-specific work from shared navigation keeps the interface learnable as the task changes.',
-                        'A stable task frame gives learners room to focus on expressing an idea rather than decoding a new workflow.',
-                        'Clear action hierarchy helps learners understand what to complete before the system interprets their response.',
-                        'A practice-first framing helps the recording interaction feel like rehearsal, not a judgement or final performance.',
-                        'A visible transition between response and analysis helps prevent AI processing from feeling like a black box.',
-                        'A persistent journey view connects individual practice moments to broader progress and a meaningful next step.'
+                        'Establishes context before commitment, helping learners understand the experience before investing effort.',
+                        'Progressive personalisation reduces setup burden while giving the product useful learner context.',
+                        'A realistic practice cadence relates the experience to the learner’s routine rather than an idealised schedule.',
+                        'A familiar assessment structure lets attention stay on the reading task instead of relearning the interface.',
+                        'Predictable progression reduces navigation effort and makes the next action easier to anticipate.',
+                        'The audio task changes while familiar controls preserve continuity across skill assessments.',
+                        'Keeping the response interaction familiar separates listening complexity from interface complexity.',
+                        'A stable task frame lets the learner focus on expressing an idea rather than decoding a new workflow.',
+                        'Clear action hierarchy makes the expected learner response visible before any system interpretation.',
+                        'A practice-first framing positions speaking as rehearsal rather than a high-stakes performance.',
+                        'A distinct response state signals the handoff from learner input to system feedback.',
+                        'A persistent journey view connects individual practice moments to broader progress across skills.'
                       ][activeScreen]}</p>
                     </div>
                     <div className="cv6-architecture-screen-tags">
-                      <span>{active.phase}</span><span>Consistent interaction model</span><span>Progressive disclosure</span>
+                      <span>{active.phase}</span><span>Progressive disclosure</span>
                     </div>
                   </motion.div>
                 </AnimatePresence>
               </div>
-
-              <div className="cv6-architecture-screen-picker" role="tablist" aria-label="Explore ComSki screens">
-                {screenData.map((screen, index) => (
-                  <button
-                    key={screen.src}
-                    type="button"
-                    role="tab"
-                    aria-selected={activeScreen === index}
-                    aria-controls="cv6-architecture-screen-title"
-                    className={activeScreen === index ? 'is-active' : ''}
-                    onClick={() => setActiveScreen(index)}
-                  >
-                    <span className="cv6-architecture-picker-number">{String(index + 1).padStart(2, '0')}</span>
-                    <span className="cv6-architecture-picker-copy"><strong>{screen.label.split(' · ')[1]}</strong><small>{screen.phase}</small></span>
-                    <span className="cv6-architecture-picker-arrow" aria-hidden="true">↗</span>
-                  </button>
-                ))}
-              </div>
-              <p className="cv6-architecture-screen-note">Original ComSki design exports. The decision stories describe the intent visible in these screens; unverified AI-result and recovery states are not presented as shipped UI.</p>
+              <p className="cv6-architecture-screen-note">Original ComSki design exports. Explanations describe the design intent visible in these screens; they do not imply unverified functionality or research outcomes.</p>
             </div>
 
           </Section>
