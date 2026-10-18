@@ -1055,7 +1055,8 @@ function ComskiCaseStudyCV4() {
                       aria-pressed={selected}
                       onClick={() => setActiveScreen(group.range[0])}
                     >
-                      <span>{group.label}</span>
+                      {selected && <motion.span className="cv6-journey-pill" layoutId="cv6-journey-active-pill" transition={{ type: 'spring', stiffness: 520, damping: 38, mass: 0.72 }} aria-hidden="true" />}
+                      <span className="cv6-journey-button-label">{group.label}</span>
                       <small>{String(group.range.length).padStart(2, '0')}</small>
                     </button>
                   );
@@ -1084,9 +1085,10 @@ function ComskiCaseStudyCV4() {
                       aria-label={`Show screen ${index + 1}: ${screen.label.split(' · ')[1]}`}
                       onClick={() => setActiveScreen(index)}
                     >
+                      {activeScreen === index && <motion.span className="cv6-journey-screen-pill" layoutId="cv6-screen-active-pill" transition={{ type: 'spring', stiffness: 520, damping: 38, mass: 0.72 }} aria-hidden="true" />}
                       <span className="cv6-journey-screen-number">{String(index + 1).padStart(2, '0')}</span>
                       <span className="cv6-journey-screen-label">{screen.label.split(' · ')[1]}</span>
-                      {activeScreen === index && <span className="cv6-journey-screen-current">Viewing</span>}
+                      {activeScreen === index && <span className="cv6-journey-screen-current">Viewing</span>
                     </button>
                   );
                 })}
@@ -1098,7 +1100,18 @@ function ComskiCaseStudyCV4() {
                     <span>{active.phase}</span>
                     <span>{String(activeScreen + 1).padStart(2, '0')} / {String(screenData.length).padStart(2, '0')}</span>
                   </div>
-                  <Screen {...active} wide />
+                  <AnimatePresence mode="wait" initial={false}>
+                    <motion.div
+                      key={activeScreen}
+                      className="cv6-architecture-screen-transition"
+                      initial={reduce ? false : { opacity: 0, y: 8, scale: 0.992 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={reduce ? undefined : { opacity: 0, y: -5, scale: 0.996 }}
+                      transition={{ duration: reduce ? 0 : 0.26, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                      <Screen {...active} wide />
+                    </motion.div>
+                  </AnimatePresence>
                   <div className="cv6-journey-adjacent">
                     <button type="button" onClick={() => setActiveScreen(Math.max(0, activeScreen - 1))} disabled={activeScreen === 0}>
                       <span aria-hidden="true">←</span> Previous screen
