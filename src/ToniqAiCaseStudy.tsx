@@ -1,5 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
+import './styles.css';
+import './reference-home.css';
 import './toniq-ai-page.css';
 
 const asset = (path: string) => `https://www.helloayushi.com/images/case-studies/toniq-ai/${path}`;
@@ -8,7 +10,7 @@ function Figure({src,alt,caption}:{src:string;alt:string;caption?:string}) {
 }
 function ToniqPage(){
  return <div className="ta-page">
-  <header className="ta-nav"><a href="/surya-portfolio/">Surya Kiran <span>| India</span></a><nav><a href="/surya-portfolio/">Home</a><a href="/surya-portfolio/">Art</a><a href="/surya-portfolio/resume/">Resume</a></nav></header>
+  <header className="reference-nav"><div className="reference-nav-inner"><a className="reference-brand" href="/surya-portfolio/"><strong>Surya Kiran</strong><span className="reference-brand-divider" /><span>India</span></a><nav><a href="/surya-portfolio/#art">Art</a><a href="/surya-portfolio/#about">About Me</a><a className="resume-nav-link" href="/surya-portfolio/resume/">Resume</a></nav></div></header>
   <main>
    <section className="ta-hero">
     <div className="ta-hero-copy"><p className="ta-kicker">TONIQ AI · PRODUCT DESIGN</p><h1>Reimagining online events worth exploring</h1><p className="ta-subtitle">A spatial event experience that helps people find context, conversation, and connection.</p><a className="ta-pill" href="#solution">Explore the case study ↓</a></div>
@@ -24,7 +26,7 @@ function ToniqPage(){
    <section className="ta-section ta-testing"><p className="ta-kicker">07 — VALIDATION</p><h2>Test the experience, learn from the friction</h2><p className="ta-lead">Formative testing helped identify where people needed clearer orientation, more transparent AI reasoning, and stronger feedback.</p><div className="ta-two-figures"><Figure src="testing/low-fidelity-synthesis.png" alt="Low fidelity testing synthesis"/><Figure src="testing/card-sorting.png" alt="Card sorting research activity"/></div></section>
    <section className="ta-section ta-ui"><p className="ta-kicker">08 — PRODUCT DETAILS</p><h2>The details that make the system feel coherent</h2><p className="ta-lead">From event cards to the collapsible sidebar and avatar states, the interface keeps useful information close without overwhelming the shared space.</p><div className="ta-two-figures"><Figure src="ui/event-card-sidebar.png" alt="Toniq event card and sidebar components"/><Figure src="ui/progress-toolbar-ai-panel.png" alt="Toniq toolbar and AI chat panel"/></div></section>
    <section className="ta-section ta-reflection"><p className="ta-kicker">09 — REFLECTION</p><h2>What I would improve next</h2><div className="ta-reflection-list"><p><b>Teach through movement.</b> Let people learn the spatial interface by using it, not by reading a tutorial.</p><p><b>Make AI transparency foundational.</b> Explanations and consent should scale with the product.</p><p><b>Design the post-event moment.</b> Help meaningful connections become ongoing relationships.</p></div></section>
-   <footer className="ta-footer"><a href="/surya-portfolio/">← Back to portfolio</a><p>Surya Kiran · Product Design</p></footer>
+   <footer className="ta-footer"><a href="/surya-portfolio/">← Back to portfolio</a><p>Surya Kiran · Product Designer</p></footer>
   </main>
  </div>
 }
