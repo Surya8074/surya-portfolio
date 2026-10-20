@@ -21,10 +21,10 @@ function ToniqPage(){
      <div className="ta-float ta-float-amy" style={{left:'23%',top:'80%',width:88,animationDuration:'7.3s',animationDelay:'1.1s'}}><img className="ta-avatar" src={base+'redesign/hero-avatar-amy-s.png'} alt="Attendee Amy S"/></div>
      <div className="ta-float ta-float-you" style={{left:'66.5%',top:'73%',width:154,animationDuration:'6.6s',animationDelay:'.3s'}}><img className="ta-avatar" src={base+'redesign/hero-avatar-you.png'} alt="You"/></div>
      <div className="ta-float ta-float-aria" style={{left:'91.5%',top:'80%',width:88,animationDuration:'7.5s',animationDelay:'.8s'}}><img className="ta-avatar" src={base+'redesign/hero-avatar-aria-l.png'} alt="Attendee Aria L"/></div>
-     <span className="ta-hero-tag ta-tag-one" style={{left:'16.5%',top:'calc(22% + 16px)',animationDuration:'6.7s',animationDelay:'.2s'}}>Anyone in SAAS?</span>
-     <span className="ta-hero-tag ta-tag-two" style={{left:'calc(10.5% - 10px)',top:'66%',animationDuration:'6.3s',animationDelay:'.4s'}}>You also love Tennis?</span>
-     <span className="ta-hero-tag ta-tag-three" style={{left:'calc(13.5% + 28px)',top:'90.5%',animationDuration:'7s',animationDelay:'1s'}}>Yeah, Lets play?</span>
-     <span className="ta-hero-tag ta-tag-four" style={{left:'calc(72.5% + 15px)',top:'calc(72% - 45px)',animationDuration:'6.9s',animationDelay:'.5s'}}>Open to collab</span>
+     <div className="ta-float" style={{left:'16.5%',top:'calc(22% + 16px)',animationDuration:'6.7s',animationDelay:'.2s'}}><span className="ta-hero-tag ta-tag-one" style={{background:'#649fa6',color:'#f9f9f9'}}>Anyone in SAAS?<i className="ta-tag-tail ta-tail-top"/></span></div>
+     <div className="ta-float" style={{left:'calc(10.5% - 10px)',top:'66%',animationDuration:'6.3s',animationDelay:'.4s'}}><span className="ta-hero-tag ta-tag-two" style={{background:'#fdb201',color:'#f9f9f9'}}>You also love Tennis?<i className="ta-tag-tail ta-tail-bottom"/></span></div>
+     <div className="ta-float" style={{left:'calc(13.5% + 28px)',top:'90.5%',animationDuration:'7s',animationDelay:'1s'}}><span className="ta-hero-tag ta-tag-three" style={{background:'#01c861',color:'#f9f9f9'}}>Yeah, Lets play?<i className="ta-tag-tail ta-tail-top ta-tail-right"/></span></div>
+     <div className="ta-float" style={{left:'calc(72.5% + 15px)',top:'calc(72% - 45px)',animationDuration:'6.9s',animationDelay:'.5s'}}><span className="ta-hero-tag ta-tag-four" style={{background:'rgba(242,242,242,.9)',color:'#202a40',border:'1px solid #e2e2e2',padding:'9px 17px',fontSize:16}}>Open to collab<i className="ta-tag-tail ta-tail-circle"/></span></div>
      <img className="ta-party-tag" style={{left:'calc(83% + 34px)',top:'calc(67.5% + 45px)',width:112,animationDuration:'7.4s',animationDelay:'.9s'}} src={base+'redesign/hero-tag-party.png'} alt=""/>
     </div>
     <div className="ta-hero-copy">
