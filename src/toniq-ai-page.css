@@ -547,3 +547,9 @@
   .ta-page .ta-ai-card-gallery{grid-template-columns:1fr;gap:16px}
   .ta-page .ta-solution-note{grid-template-columns:1fr}
 }
+
+
+/* Final asset/layout corrections from the scrape. */
+.ta-page .ta-hero .ta-live{display:inline-flex !important}
+.ta-page .ta-hero-visual .ta-party-tag{display:block}
+.ta-page .ta-hero-visual .ta-avatar{display:block}
