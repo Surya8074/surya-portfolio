@@ -257,8 +257,7 @@
 .ta-page .ta-thesis-copy .ta-lead, .ta-page .ta-thesis-copy .ta-copy { color: #2c2c2c; font-size: 19px; line-height: 1.5; letter-spacing: -.2px; }
 .ta-page .ta-thesis-visual { position: relative; width: 100%; max-width: 315px; aspect-ratio: 315 / 316; overflow: hidden; border-radius: 14px; }
 .ta-page .ta-thesis-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.ta-page .ta-thesis-visual img + img { opacity: 0; animation: thesisCrossfade 8s ease-in-out infinite; }
-@keyframes thesisCrossfade { 0%,42% { opacity: 0; } 50%,92% { opacity: 1; } 100% { opacity: 0; } }
+.ta-page .ta-thesis-visual img + img { opacity: 0; transition: opacity .7s ease-out; }
 .ta-page .ta-journey-inner { display: flex; flex-direction: column; align-items: center; }
 .ta-page .ta-journey-intro { display: flex; width: 100%; max-width: 620px; flex-direction: column; align-items: center; gap: 18px; text-align: center; }
 .ta-page .ta-journey-intro .ta-kicker, .ta-page .ta-journey-intro h2, .ta-page .ta-journey-intro .ta-lead { max-width: none; margin-left: 0; margin-right: 0; }
