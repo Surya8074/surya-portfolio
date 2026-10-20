@@ -282,7 +282,7 @@
 .ta-page .ta-sketch-section { width: 100%; margin: 48px auto 0; padding: 0 20px; }
 .ta-page .ta-sketch-gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; width: 100%; max-width: 1281px; margin: 0 auto; }
 .ta-page .ta-sketch-zoom { width: calc(50% - 6px); padding: 0; border: 0; background: transparent; overflow: hidden; cursor: zoom-in; }
-.ta-page .ta-sketch-gallery .ta-figure img { width: 100%; height: auto; }
+.ta-page .ta-sketch-zoom img { display: block; width: 100%; height: auto; }
 .ta-page .ta-lightbox { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 48px; background: rgba(12,12,12,.88); cursor: zoom-out; }
 .ta-page .ta-lightbox > img { display: block; max-width: min(100%, 1281px); max-height: calc(100vh - 96px); width: auto; height: auto; object-fit: contain; }
 .ta-page .ta-lightbox-close { position: absolute; top: 20px; right: 24px; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.5); border-radius: 50%; background: rgba(255,255,255,.12); color: #fff; font: 400 28px/1 Rubik,Arial,sans-serif; cursor: pointer; }
@@ -309,7 +309,7 @@
 .ta-page .ta-figure { min-width: 0; margin: 0; }
 .ta-page .ta-figure img { display: block; width: 100%; height: auto; object-fit: contain; }
 .ta-page .ta-figure figcaption { margin-top: 12px; color: #777; font-size: 12px; }
-.ta-page .ta-problem > .ta-figure { max-width: 411px; margin: 0 auto; }
+
 .ta-page .ta-two-figures { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 18px; margin-top: 34px; }
 .ta-page .ta-quotes-window { width: 100vw; margin: 40px calc(50% - 50vw) 0; overflow: hidden; }
 .ta-page .ta-quotes { display: flex; width: max-content; gap: 24px; margin: 0; padding: 0 0 12px; animation: taMarquee 60s linear infinite; }
@@ -335,7 +335,7 @@
 .ta-page .ta-quotes article small { color: #777; font-size: 11px; }
 .ta-page .ta-painpoints { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin: 34px 0; }
 .ta-page .ta-painpoints > div { padding: 22px; border: 1px solid #e6e6e6; border-radius: 8px; background: #fff; }
-.ta-page .ta-painpoints h3, .ta-page .ta-solution-block h3 { margin: 0 0 18px; font: 600 21px/1.3 Rubik, Arial, sans-serif; letter-spacing: -.03em; }
+.ta-page .ta-painpoints h3 { margin: 0 0 18px; font: 600 21px/1.3 Rubik, Arial, sans-serif; letter-spacing: -.03em; }
 .ta-page .ta-painpoints p { padding-top: 13px; border-top: 1px solid #eee; color: #666; font-size: 14px; }
 .ta-page .ta-callout { margin: 42px 0; padding: 22px 24px; border-radius: 4px; background: #f6f6f4; color: #444; font-size: 15px; line-height: 1.75; }
 .ta-page .ta-ai-graphic { display: block; width: 100%; margin-top: 36px; }
