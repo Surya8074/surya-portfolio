@@ -281,9 +281,14 @@
 
 .ta-page .ta-sketch-section { width: 100%; margin: 48px auto 0; padding: 0 20px; }
 .ta-page .ta-sketch-gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; width: 100%; max-width: 1281px; margin: 0 auto; }
-.ta-page .ta-sketch-gallery .ta-figure { width: calc(50% - 6px); overflow: hidden; cursor: zoom-in; }
+.ta-page .ta-sketch-zoom { width: calc(50% - 6px); padding: 0; border: 0; background: transparent; overflow: hidden; cursor: zoom-in; }
 .ta-page .ta-sketch-gallery .ta-figure img { width: 100%; height: auto; }
-@media (min-width: 640px) { .ta-page .ta-sketch-gallery .ta-figure { width: calc(33.333% - 8px); } }
+.ta-page .ta-lightbox { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 48px; background: rgba(12,12,12,.88); cursor: zoom-out; }
+.ta-page .ta-lightbox > img { display: block; max-width: min(100%, 1281px); max-height: calc(100vh - 96px); width: auto; height: auto; object-fit: contain; }
+.ta-page .ta-lightbox-close { position: absolute; top: 20px; right: 24px; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.5); border-radius: 50%; background: rgba(255,255,255,.12); color: #fff; font: 400 28px/1 Rubik,Arial,sans-serif; cursor: pointer; }
+@media (max-width: 767px) { .ta-page .ta-lightbox { padding: 20px; } .ta-page .ta-lightbox > img { max-height: calc(100vh - 40px); } }
+
+@media (min-width: 640px) { .ta-page .ta-sketch-zoom { width: calc(33.333% - 8px); } }
 @media (min-width: 768px) {
   .ta-page .ta-section { margin-top: 120px; }
   .ta-page .ta-dashboard-cta { margin-top: 44px; }
@@ -294,7 +299,7 @@
   .ta-page .ta-thesis-inner { flex-direction: row; align-items: center; gap: 80px; }
   .ta-page .ta-thesis-copy { width: 465px; flex: 0 0 465px; }
   .ta-page .ta-thesis-visual { width: 315px; flex: 0 0 315px; }
-  .ta-page .ta-sketch-gallery .ta-figure { width: calc(25% - 12px); }
+
 }
 
 .ta-page .ta-kicker { margin: 0 0 16px; color: #777; font-size: 12px; font-weight: 500; }
