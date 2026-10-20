@@ -227,6 +227,11 @@
 .ta-page .ta-journey-map .ta-figure { width: 100%; max-width: 1035px; overflow: hidden; border-radius: 8px; background: #fff; }
 .ta-page .ta-journey-map .ta-figure img { width: 100%; height: auto; }
 .ta-page .ta-journey-matrix { width: 100%; max-width: 1020px; }
+.ta-page .ta-ui-gallery { width: 100%; max-width: 1226px; margin: 40px auto 0; display: flex; align-items: flex-end; justify-content: center; gap: 75px; }
+.ta-page .ta-ui-left { width: 294px; flex: 0 0 294px; }
+.ta-page .ta-ui-middle { width: 449px; flex: 0 0 449px; display: flex; flex-direction: column; align-items: flex-end; gap: 89px; }
+.ta-page .ta-ui-right { width: 333px; flex: 0 0 333px; }
+.ta-page .ta-ui-gallery .ta-figure img { display: block; width: 100%; height: auto; }
 .ta-page .ta-journey-matrix > div { border: 0; border-radius: 0; padding: 0 24px; background: transparent; }
 .ta-page .ta-journey-matrix h3 { margin-bottom: 14px; }
 .ta-page .ta-journey-matrix p { display: grid; grid-template-columns: 100px 1fr; gap: 14px; padding: 12px 0; margin: 0; border-top: 1px solid #e5e5e5; font-size: 14px; line-height: 1.5; }
@@ -259,7 +264,10 @@
 .ta-page .ta-figure figcaption { margin-top: 12px; color: #777; font-size: 12px; }
 .ta-page .ta-problem > .ta-figure { max-width: 411px; margin: 0 auto; }
 .ta-page .ta-two-figures { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 18px; margin-top: 34px; }
-.ta-page .ta-quotes { display: flex; gap: 24px; overflow-x: auto; margin-top: 36px; padding: 0 0 12px; scroll-snap-type: x mandatory; }
+.ta-page .ta-quotes-window { width: 100vw; margin: 40px calc(50% - 50vw) 0; overflow: hidden; }
+.ta-page .ta-quotes { display: flex; width: max-content; gap: 24px; margin: 0; padding: 0 0 12px; animation: taMarquee 60s linear infinite; }
+.ta-page .ta-quotes-window:hover .ta-quotes { animation-play-state: paused; }
+@keyframes taMarquee { to { transform: translateX(-50%); } }
 .ta-page .ta-quotes article {
   flex: 0 0 289px;
   min-height: 360px;
@@ -270,7 +278,7 @@
   border: 1px solid #dfdfdf;
   border-radius: 26px;
   background: #fbfbfb;
-  scroll-snap-align: start;
+
 }
 .ta-page .ta-quotes h3 { margin: 0 0 18px; font: 600 17px/1.4 Manrope, Arial, sans-serif; letter-spacing: -.025em; }
 .ta-page .ta-quotes blockquote { margin: 0 0 24px; color: #606060; font-size: 14px; line-height: 1.7; }
@@ -334,7 +342,7 @@
   .ta-page .ta-lead { font-size: 16px; }
   .ta-page .ta-copy { font-size: 16px; }
   .ta-page .ta-two-figures, .ta-page .ta-painpoints, .ta-page .ta-ai-reasons { grid-template-columns: 1fr; gap: 16px; margin-top: 30px; }
-  .ta-page .ta-quotes article { flex-basis: 289px; min-height: 360px; padding: 30px; }
+  .ta-page .ta-quotes-window { margin-top: 40px; }\n  .ta-page .ta-quotes { animation-duration: 75s; }\n  .ta-page .ta-quotes article { flex-basis: 289px; min-height: 360px; padding: 30px; }\n  .ta-page .ta-ui-gallery { display: grid; grid-template-columns: 190fr 141fr; align-items: start; gap: 15px; }\n  .ta-page .ta-ui-left { width: auto; grid-column: 1; }\n  .ta-page .ta-ui-middle { width: auto; grid-column: 2; gap: 28px; }\n  .ta-page .ta-ui-right { width: auto; grid-column: 1 / -1; }
   .ta-page .ta-event-states { grid-template-columns: 1fr 1fr; }
   .ta-page .ta-end { width: calc(100% - 36px); }
   .ta-page .ta-footer { width: calc(100% - 36px); gap: 16px; flex-wrap: wrap; }
