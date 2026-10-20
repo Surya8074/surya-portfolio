@@ -302,3 +302,49 @@
     background-size:29px 29px;
   }
 }
+
+
+/* Correct hero overlap seen in the latest browser screenshot.
+   Keep every avatar inside the visual stage and place the headline after it. */
+.ta-page .ta-hero{
+  margin-top:250px;
+  margin-bottom:80px;
+}
+.ta-page .ta-hero-visual{
+  height:520px;
+  margin-bottom:8px;
+}
+.ta-page .ta-hero-visual .ta-hero-cube{
+  left:50%;
+  top:43%;
+  width:clamp(150px,15vw,196px);
+}
+.ta-page .ta-avatar-anna{left:8%;top:12%}
+.ta-page .ta-avatar-marcus{right:8%;top:0}
+.ta-page .ta-avatar-maria{left:1%;top:69%}
+.ta-page .ta-avatar-pair{right:10%;top:48%}
+.ta-page .ta-avatar-matt{left:8%;top:72%}
+.ta-page .ta-avatar-amy{left:25%;top:76%}
+.ta-page .ta-avatar-you{left:46%;top:70%}
+.ta-page .ta-avatar-aria{right:4%;top:72%}
+.ta-page .ta-tag-one{left:14%;top:34%}
+.ta-page .ta-tag-two{left:4%;top:69%}
+.ta-page .ta-tag-three{right:6%;top:47%}
+.ta-page .ta-tag-four{right:17%;top:73%}
+.ta-page .ta-hero-visual .ta-party-tag{left:51%;top:75%}
+.ta-page .ta-hero-copy{margin-top:0}
+@media(max-width:760px){
+  .ta-page .ta-hero{margin-top:125px;margin-bottom:65px}
+  .ta-page .ta-hero-visual{height:340px}
+  .ta-page .ta-hero-visual .ta-hero-cube{width:100px;top:43%}
+  .ta-page .ta-avatar-anna{left:1%;top:5%}
+  .ta-page .ta-avatar-marcus{right:1%;top:0}
+  .ta-page .ta-avatar-maria{left:0;top:67%}
+  .ta-page .ta-avatar-pair{right:0;top:48%;width:100px}
+  .ta-page .ta-avatar-matt,.ta-page .ta-avatar-amy,.ta-page .ta-avatar-you,.ta-page .ta-avatar-aria{display:none}
+  .ta-page .ta-tag-one{left:5%;top:32%}
+  .ta-page .ta-tag-two{left:0;top:67%}
+  .ta-page .ta-tag-three{right:0;top:45%}
+  .ta-page .ta-tag-four{right:2%;top:70%}
+  .ta-page .ta-hero-visual .ta-party-tag{width:45px;left:53%;top:72%}
+}
