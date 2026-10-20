@@ -101,7 +101,7 @@ function ToniqPage(){
       </div>
       <span className="ta-journey-divider" aria-hidden="true"/>
      </div>
-     <p className="ta-section-note">What the map revealed: every breakdown was an information problem. The system knew who was there, who was talking, what was on profiles. It just wasn’t surfacing any of it to the people who needed it.</p>
+     <p className="ta-section-note ta-journey-note">What the map revealed: every breakdown was an information problem. The system knew who was there, who was talking, what was on profiles. It just wasn’t surfacing any of it to the people who needed it.</p>
     </div>
    </section>
    <section className="ta-sketch-section"><div className="ta-sketch-gallery">{[1,2,3,4,5,6,7].map(n=><button type="button" className="ta-sketch-zoom" key={n} aria-label={`Enlarge research synthesis sketch ${n}`} onClick={()=>setActiveSketch(n-1)}><img src={toniqReferenceAssets.sketches[n-1]} alt={`Research synthesis sketch ${n}`} loading="lazy"/></button>)}</div>{activeSketch !== null && <div className="ta-lightbox" role="dialog" aria-modal="true" aria-label="Research sketch enlarged" onClick={()=>setActiveSketch(null)}><button type="button" className="ta-lightbox-close" aria-label="Close enlarged sketch" onClick={(event)=>{event.stopPropagation();setActiveSketch(null)}}>×</button><img src={toniqReferenceAssets.sketches[activeSketch]} alt={`Research synthesis sketch ${activeSketch+1}`} onClick={(event)=>event.stopPropagation()}/></div>}</section>
