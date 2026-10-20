@@ -290,6 +290,8 @@
 
 @media (min-width: 640px) { .ta-page .ta-sketch-zoom { width: calc(33.333% - 8px); } }
 @media (min-width: 768px) {
+  .ta-page .ta-sketch-section { margin-top: 64px; }
+  .ta-page .ta-sketch-zoom { width: calc(25% - 12px); }
   .ta-page .ta-section { margin-top: 120px; }
   .ta-page .ta-dashboard-cta { margin-top: 44px; }
   .ta-page .ta-meta { margin-top: 56px; padding: 32px 64px; }
