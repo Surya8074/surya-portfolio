@@ -267,3 +267,38 @@
  .ta-page .ta-hero h1{font-size:clamp(34px,9vw,44px)}
  .ta-page .ta-hero .ta-subtitle{font-size:15px}
 }
+
+
+/* Final hero pass: put the reference dot field behind the complete hero composition
+   without affecting the shared navigation, footer, or later case-study sections. */
+.ta-page main{background:transparent}
+.ta-page .ta-hero{
+  position:relative;
+  isolation:isolate;
+}
+.ta-page .ta-hero::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  pointer-events:none;
+  left:50%;
+  transform:translateX(-50%);
+  top:-112px;
+  width:100vw;
+  height:calc(100% + 132px);
+  background-color:#fffefb;
+  background-image:radial-gradient(circle,rgba(35,35,35,.15) 1.35px,transparent 1.6px);
+  background-size:39px 39px;
+  background-position:0 0;
+}
+.ta-page .ta-hero-visual{overflow:visible}
+.ta-page .ta-hero-copy{margin-top:0}
+.ta-page .ta-hero h1{max-width:720px}
+.ta-page .ta-hero .ta-subtitle{color:#5e5e5e}
+@media(max-width:760px){
+  .ta-page .ta-hero::before{
+    top:-82px;
+    height:calc(100% + 100px);
+    background-size:29px 29px;
+  }
+}
