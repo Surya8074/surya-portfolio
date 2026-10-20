@@ -240,6 +240,9 @@
 .ta-page .ta-section-inner { width: 100%; max-width: 912px; margin: 0 auto; }
 .ta-page .ta-problem-inner { display: flex; flex-direction: column; align-items: center; gap: 40px; }
 .ta-page .ta-problem-copy { display: flex; width: 100%; flex-direction: column; gap: 20px; }
+.ta-page .ta-problem-body, .ta-page .ta-thesis-body { display: flex; flex-direction: column; gap: 10px; }
+.ta-page .ta-problem-body .ta-lead, .ta-page .ta-problem-body .ta-copy, .ta-page .ta-thesis-body .ta-lead, .ta-page .ta-thesis-body .ta-copy { margin: 0; }
+
 .ta-page .ta-problem-copy .ta-kicker, .ta-page .ta-problem-copy h2, .ta-page .ta-problem-copy .ta-lead, .ta-page .ta-problem-copy .ta-copy { width: 100%; max-width: none; margin-left: 0; margin-right: 0; }
 .ta-page .ta-problem-copy .ta-kicker { text-transform: uppercase; letter-spacing: 3px; line-height: 1.5; font-size: 13px; }
 .ta-page .ta-problem-copy h2 { font-size: 38px; line-height: 1.11; letter-spacing: -.38px; margin: 0; }
