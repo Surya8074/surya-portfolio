@@ -2152,6 +2152,14 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
         <p>Explain the next step</p>
       </li>
     </ol>
+    <div class="lm-outcome-detail-panel" aria-label="Order record information structure">
+      <div class="lm-outcome-detail-head"><span>ORDER RECORD / TRACEABILITY</span><span>KEY FIELDS</span></div>
+      <div class="lm-outcome-record-grid">
+        <div><span>01 / IDENTIFY</span><strong>Order ID · Customer</strong><small>Locate the relevant order</small></div>
+        <div><span>02 / VERIFY</span><strong>Status · Garment details</strong><small>Understand the item context</small></div>
+        <div><span>03 / REVIEW</span><strong>Captured images · Timeline</strong><small>Check evidence when available</small></div>
+      </div>
+    </div>
   </article>
 
   <article class="lm-outcome-pillar" aria-labelledby="lm-owner-outcome-title">
@@ -2182,6 +2190,15 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
         <p>Identify issues and next steps</p>
       </li>
     </ol>
+    <div class="lm-outcome-detail-panel lm-outcome-operating-model" aria-label="Operational information model">
+      <div class="lm-outcome-detail-head"><span>OPERATING MODEL / SHARED CONTEXT</span><span>CONNECTED WORK AREAS</span></div>
+      <div class="lm-outcome-operations-grid">
+        <div><span class="lm-outcome-operation-index">A</span><strong>Orders &amp; transactions</strong><small>Order state and work in progress</small></div>
+        <div><span class="lm-outcome-operation-index">B</span><strong>People &amp; assignments</strong><small>Operator context and responsibility</small></div>
+        <div><span class="lm-outcome-operation-index">C</span><strong>Facilities &amp; cameras</strong><small>Location and capture setup</small></div>
+        <div><span class="lm-outcome-operation-index">D</span><strong>Reports &amp; evidence</strong><small>Records available for review</small></div>
+      </div>
+    </div>
   </article>
 
   <div class="lm-outcome-measurement" aria-labelledby="lm-outcome-measurement-title">
@@ -2246,8 +2263,18 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
 #outcome-impact .lm-outcome-step-number{display:block;margin-bottom:18px;color:var(--blue);font-size:10px;font-weight:750;letter-spacing:.08em}
 #outcome-impact .lm-outcome-flow h4{margin:0 0 7px;color:var(--ink);font-size:13px;line-height:1.4;font-weight:700;letter-spacing:-.015em}
 #outcome-impact .lm-outcome-flow p{margin:0;color:var(--muted);font-size:12px;line-height:1.65}
-
-
+#outcome-impact .lm-outcome-detail-panel{grid-column:2;min-width:0;margin-top:-3px;padding:14px 16px 16px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.42)}
+#outcome-impact .lm-outcome-detail-head{display:flex;justify-content:space-between;gap:16px;margin-bottom:14px;color:var(--blue);font-size:9px;font-weight:750;letter-spacing:.1em}
+#outcome-impact .lm-outcome-record-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+#outcome-impact .lm-outcome-record-grid>div{min-width:0;padding:0 14px 0 0}
+#outcome-impact .lm-outcome-record-grid>div+div{padding-left:14px;border-left:1px solid var(--line)}
+#outcome-impact .lm-outcome-record-grid span{display:block;margin-bottom:7px;color:var(--muted);font-size:9px;letter-spacing:.05em}
+#outcome-impact .lm-outcome-record-grid strong,#outcome-impact .lm-outcome-operations-grid strong{display:block;margin-bottom:5px;color:var(--ink);font-size:11px;line-height:1.45;font-weight:700}
+#outcome-impact .lm-outcome-record-grid small,#outcome-impact .lm-outcome-operations-grid small{display:block;color:var(--muted);font-size:10px;line-height:1.55}
+#outcome-impact .lm-outcome-operations-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+#outcome-impact .lm-outcome-operations-grid>div{min-width:0;padding:0 12px 0 0}
+#outcome-impact .lm-outcome-operations-grid>div+div{padding-left:12px;border-left:1px solid var(--line)}
+#outcome-impact .lm-outcome-operation-index{display:block;margin-bottom:8px;color:var(--blue);font-size:10px;font-weight:750;letter-spacing:.06em}
 
 #outcome-impact .lm-outcome-measurement{max-width:1080px;margin:0 auto;padding-top:32px;border-top:1px solid var(--line)}
 #outcome-impact .lm-outcome-measurement-intro{display:grid;grid-template-columns:190px minmax(0,1fr);column-gap:56px;align-items:start}
@@ -2280,6 +2307,15 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
   #outcome-impact .lm-outcome-flow li:nth-child(2)::after{display:none}
   #outcome-impact .lm-outcome-step-number{margin-bottom:10px}
   #outcome-impact .lm-outcome-flow h4{font-size:12px}
+  #outcome-impact .lm-outcome-detail-panel{grid-column:1;margin-top:0;padding:14px 12px}
+  #outcome-impact .lm-outcome-detail-head{font-size:8px;gap:8px}
+  #outcome-impact .lm-outcome-record-grid{grid-template-columns:1fr;gap:12px}
+  #outcome-impact .lm-outcome-record-grid>div,#outcome-impact .lm-outcome-record-grid>div+div{padding:0;border-left:0}
+  #outcome-impact .lm-outcome-record-grid>div+div{padding-top:11px;border-top:1px solid var(--line)}
+  #outcome-impact .lm-outcome-operations-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 0}
+  #outcome-impact .lm-outcome-operations-grid>div:nth-child(odd){padding-left:0;border-left:0}
+  #outcome-impact .lm-outcome-operations-grid>div:nth-child(even){padding-left:12px;border-left:1px solid var(--line)}
+  #outcome-impact .lm-outcome-operations-grid>div:nth-child(n+3){padding-top:12px;border-top:1px solid var(--line)}
   #outcome-impact .lm-outcome-measurement-intro{grid-template-columns:1fr;gap:10px}
   #outcome-impact .lm-outcome-measurement-intro>.lm-outcome-label{grid-row:auto;padding-top:0;margin-bottom:4px}
   #outcome-impact .lm-outcome-measurement-intro h3{font-size:25px}
