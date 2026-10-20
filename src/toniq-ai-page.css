@@ -156,25 +156,59 @@
 }
 .ta-page .ta-dashboard-preview-frame iframe {
   position: absolute;
-  inset: 0;
+  left: 0;
+  top: 0;
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 1440px;
+  height: 900px;
   border: 0;
   background: #080808;
+  transform: scale(calc(min(912px, 100vw - 40px) / 1440px));
+  transform-origin: left top;
+  pointer-events: none;
 }
-.ta-page .ta-dashboard-preview-label {
-  display: flex;
+.ta-page .ta-dashboard-preview-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(8,8,8,.85);
+  transition: opacity .5s ease;
+  pointer-events: none;
+}
+.ta-page .ta-dashboard-preview:hover .ta-dashboard-preview-overlay { opacity: .5; }
+.ta-page .ta-dashboard-preview-logo {
+  position: absolute;
+  left: 50%;
+  top: calc(50% - 175px);
+  width: min(30%, 192px);
+  height: auto;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.ta-page .ta-dashboard-preview-button {
+  position: absolute;
+  left: 50%;
+  top: calc(50% + 41px);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  gap: 8px;
-  margin-top: 12px;
-  color: #2b2b2b;
+  white-space: nowrap;
+  padding: 14px 28px;
+  border: 1px solid rgba(255,255,255,.44);
+  border-radius: 14.451px;
+  background: rgba(255,255,255,.26);
+  color: #fff;
+  box-shadow: 0 4px 24px rgba(0,0,0,.25);
+  backdrop-filter: blur(12px);
   font-family: Arial,sans-serif;
-  font-size: 13px;
-  line-height: 1.5;
-  transition: opacity .2s ease;
+  font-size: clamp(14px,1.5vw,19.27px);
+  font-weight: 600;
+  letter-spacing: -.19px;
+  transform: translate(-50%,-50%);
+  transition: transform .2s, background-color .2s;
+  pointer-events: none;
 }
-.ta-page .ta-dashboard-preview:hover .ta-dashboard-preview-label { opacity: .68; }
+.ta-page .ta-dashboard-preview:hover .ta-dashboard-preview-button { transform: translate(-50%,-50%) scale(1.03); background: rgba(255,255,255,.4); }
 @keyframes toniqFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
 
 .ta-page .ta-meta {
