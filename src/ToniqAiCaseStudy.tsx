@@ -13,27 +13,27 @@ function ToniqPage(){
   <main>
    <section className="ta-hero" id="top">
     <div className="ta-hero-visual" aria-label="Toniq virtual networking space">
-     <img className="ta-avatar ta-avatar-anna" src={base+'redesign/hero-avatar-anna-marie.png'} alt="Attendee Anna Marie"/>
-     <img className="ta-avatar ta-avatar-marcus" src={base+'redesign/hero-avatar-marcus.png'} alt="Attendee Marcus"/>
-     <img className="ta-avatar ta-avatar-maria" src={base+'redesign/hero-avatar-maria.png'} alt="Attendee Maria"/>
-     <img className="ta-avatar ta-avatar-pair" src={base+'redesign/hero-avatar-pair-kristian-alexx.png'} alt="Attendees Kristian and Alexx, glad to meet you here"/>
-     <img className="ta-avatar ta-avatar-matt" src={base+'redesign/hero-avatar-matt-d.png'} alt="Attendee Matt D"/>
-     <img className="ta-avatar ta-avatar-amy" src={base+'redesign/hero-avatar-amy-s.png'} alt="Attendee Amy S"/>
-     <img className="ta-avatar ta-avatar-you" src={base+'redesign/hero-avatar-you.png'} alt="You"/>
-     <img className="ta-avatar ta-avatar-aria" src={base+'redesign/hero-avatar-aria-l.png'} alt="Attendee Aria L"/>
-     <span className="ta-hero-tag ta-tag-one">Anyone in SAAS?</span>
-     <span className="ta-hero-tag ta-tag-two">You also love Tennis?</span>
-     <span className="ta-hero-tag ta-tag-three">Yeah, Lets play?</span>
-     <span className="ta-hero-tag ta-tag-four">Open to collab</span>
-     <img className="ta-party-tag" src={base+'redesign/hero-tag-party.png'} alt=""/>
-     <img className="ta-hero-cube" src={base+'redesign/hero-cube.png'} alt="Toniq logo"/>
+     <div className="ta-float ta-float-anna" style={{left:'11.5%',top:'calc(14% + 5px)',width:88,animationDuration:'6.4s',animationDelay:'0s'}}><img className="ta-avatar" src={base+'redesign/hero-avatar-anna-marie.png'} alt="Attendee Anna Marie"/></div>
+     <div className="ta-float ta-float-marcus" style={{left:'86%',top:'5%',width:88,animationDuration:'7.1s',animationDelay:'.5s'}}><img className="ta-avatar" src={base+'redesign/hero-avatar-marcus.png'} alt="Attendee Marcus"/></div>
+     <div className="ta-float ta-float-maria" style={{left:'.5%',top:'47%',width:88,animationDuration:'7.6s',animationDelay:'.9s'}}><img className="ta-avatar" src={base+'redesign/hero-avatar-maria.png'} alt="Attendee Maria"/></div>
+     <div className="ta-float ta-float-pair" style={{left:'70%',top:'32%',width:320,animationDuration:'6.8s',animationDelay:'.2s'}}><img className="ta-avatar" src={base+'redesign/hero-avatar-pair-kristian-alexx.png'} alt="Attendees Kristian and Alexx, glad to meet you here"/></div>
+     <div className="ta-float ta-float-matt" style={{left:'5.5%',top:'69%',width:88,animationDuration:'6.1s',animationDelay:'.6s'}}><img className="ta-avatar" src={base+'redesign/hero-avatar-matt-d.png'} alt="Attendee Matt D"/></div>
+     <div className="ta-float ta-float-amy" style={{left:'23%',top:'80%',width:88,animationDuration:'7.3s',animationDelay:'1.1s'}}><img className="ta-avatar" src={base+'redesign/hero-avatar-amy-s.png'} alt="Attendee Amy S"/></div>
+     <div className="ta-float ta-float-you" style={{left:'66.5%',top:'73%',width:154,animationDuration:'6.6s',animationDelay:'.3s'}}><img className="ta-avatar" src={base+'redesign/hero-avatar-you.png'} alt="You"/></div>
+     <div className="ta-float ta-float-aria" style={{left:'91.5%',top:'80%',width:88,animationDuration:'7.5s',animationDelay:'.8s'}}><img className="ta-avatar" src={base+'redesign/hero-avatar-aria-l.png'} alt="Attendee Aria L"/></div>
+     <span className="ta-hero-tag ta-tag-one" style={{left:'16.5%',top:'calc(22% + 16px)',animationDuration:'6.7s',animationDelay:'.2s'}}>Anyone in SAAS?</span>
+     <span className="ta-hero-tag ta-tag-two" style={{left:'calc(10.5% - 10px)',top:'66%',animationDuration:'6.3s',animationDelay:'.4s'}}>You also love Tennis?</span>
+     <span className="ta-hero-tag ta-tag-three" style={{left:'calc(13.5% + 28px)',top:'90.5%',animationDuration:'7s',animationDelay:'1s'}}>Yeah, Lets play?</span>
+     <span className="ta-hero-tag ta-tag-four" style={{left:'calc(72.5% + 15px)',top:'calc(72% - 45px)',animationDuration:'6.9s',animationDelay:'.5s'}}>Open to collab</span>
+     <img className="ta-party-tag" style={{left:'calc(83% + 34px)',top:'calc(67.5% + 45px)',width:112,animationDuration:'7.4s',animationDelay:'.9s'}} src={base+'redesign/hero-tag-party.png'} alt=""/>
     </div>
     <div className="ta-hero-copy">
+     <div className="ta-hero-mark"><img src={base+'redesign/hero-cube.png'} alt="Toniq logo"/></div>
      <h1>Reimagining online events worth exploring</h1>
      <p className="ta-subtitle">Toniq AI combines spatial navigation with AI-powered connection, so online events feel alive</p>
-     <a className="ta-live" href="https://www.helloayushi.com/toniq-dashboard/index.html" target="_blank" rel="noreferrer">Try the LIVE dashboard <span aria-hidden="true">↗</span></a>
     </div>
    </section>
+   <section className="ta-dashboard-cta"><div className="ta-dashboard-cta-inner"><a className="ta-live" href="https://www.helloayushi.com/toniq-dashboard/index.html" target="_blank" rel="noreferrer">Try the LIVE dashboard <span aria-hidden="true">↗</span></a></div></section>
    <section className="ta-meta"><div><span>Role</span><strong>Product Strategy, Product Design &amp; Visual Identity</strong></div><div><span>Timeline</span><strong>8 Months<br/><small>August 2025 – April 2026</small></strong></div><div><span>Mentor</span><strong>Blake Hudelson<br/><small>Co-Founder, BoomPop</small></strong></div></section>
    <section className="ta-section ta-problem"><K>The problem</K><h2>Virtual networking events are broken</h2><p className="ta-lead">There’s a difference between being at an event and being in one.</p><p className="ta-copy">Online events solved attendance. What they never solved: the moment two strangers find each other, recognize a reason to talk, and walk away with something worth keeping.</p><p className="ta-copy">Toniq is an argument that the problem isn’t the video call. It’s the absence of a design.</p><A src="jury-presentation.png" alt="Toniq project jury presentation" caption="Jury Presentation"/></section>
    <section className="ta-section ta-thesis"><K>The thesis</K><h2>Rebuild the room</h2><p className="ta-lead">Rebuild the room (spatial proximity, ambient awareness, the option to drift) and let AI handle what the room can’t (context, recall, follow-through).</p><p className="ta-copy">The connection problem stops being a UX problem and becomes a system problem worth solving.</p><div className="ta-two-figures"><A src="redesign/thesis-visual-1.png" alt="People scattered at varying proximities in a real-world space"/><A src="redesign/thesis-visual-2.png" alt="The same proximity replicated as avatar bubbles inside the Toniq spatial canvas"/></div></section>
