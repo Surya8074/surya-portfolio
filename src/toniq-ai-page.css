@@ -398,6 +398,90 @@
   .ta-page .ta-system-demo { gap: 36px; }
 }
 
+
+/* The reference's full-width light-grey solution band. */
+.ta-page .ta-solution {
+  width: 100%;
+  margin: 80px auto 0;
+  padding: 72px 0;
+  background: #f2f2f2;
+}
+.ta-page .ta-solution-heading {
+  display: flex;
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+.ta-page .ta-solution-heading h2 {
+  margin: 0;
+  color: #353535;
+  font: 600 28px/1.11 Rubik,Arial,sans-serif;
+  letter-spacing: -.38px;
+}
+.ta-page .ta-spatial-layer {
+  width: 100%;
+  max-width: 620px;
+  margin: 64px auto 0;
+  padding: 0 20px;
+  color: #2c2c2c;
+}
+.ta-page .ta-spatial-layer h3 {
+  margin: 0;
+  color: #353535;
+  font: 600 26px/1.11 Rubik,Arial,sans-serif;
+  letter-spacing: -.38px;
+}
+.ta-page .ta-spatial-copy, .ta-page .ta-spatial-principles {
+  display: flex;
+  flex-direction: column;
+  color: #2c2c2c;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -.2px;
+}
+.ta-page .ta-spatial-copy { gap: 10px; margin-top: 20px; }
+.ta-page .ta-spatial-principles { gap: 18px; margin-top: 20px; }
+.ta-page .ta-spatial-copy p, .ta-page .ta-spatial-principles p { margin: 0; }
+.ta-page .ta-spatial-principles strong { font-weight: 700; }
+.ta-page .ta-spatial-close { margin-top: 20px; }
+.ta-page .ta-section.ta-system {
+  width: 100%;
+  max-width: none;
+  margin: 80px auto 0;
+  padding: 0 20px;
+}
+.ta-page .ta-section.ta-principle {
+  width: 100%;
+  max-width: none;
+  margin: 80px auto 0;
+  padding: 0;
+}
+.ta-page .ta-principle-copy { padding: 0 20px; }
+.ta-page .ta-ai-mobile-cards { display: none; }
+@media (min-width: 768px) {
+  .ta-page .ta-solution { margin-top: 120px; padding: 110px 0; }
+  .ta-page .ta-solution-heading h2 { font-size: 38px; }
+  .ta-page .ta-spatial-layer { margin-top: 80px; }
+  .ta-page .ta-spatial-layer h3 { font-size: 34px; }
+  .ta-page .ta-spatial-copy, .ta-page .ta-spatial-principles { font-size: 19px; }
+  .ta-page .ta-section.ta-system, .ta-page .ta-section.ta-principle { margin-top: 120px; }
+}
+@media (max-width: 767px) {
+  .ta-page .ta-ai-graphic { display: none; }
+  .ta-page .ta-ai-mobile-cards { display: grid; grid-template-columns: 1fr; gap: 24px; width: 100%; margin-top: 36px; }
+  .ta-page .ta-ai-mobile-cards img { display: block; width: 100%; height: auto; }
+  .ta-page .ta-solution-heading h2 { font-size: 28px; }
+  .ta-page .ta-spatial-layer { margin-top: 48px; }
+  .ta-page .ta-spatial-layer h3 { font-size: 26px; }
+  .ta-page .ta-spatial-copy, .ta-page .ta-spatial-principles { font-size: 16px; }
+  .ta-page .ta-section.ta-system, .ta-page .ta-section.ta-principle { margin-top: 80px; }
+}
+
 @media (max-width: 1023px) {
   .ta-page .ta-hero { height: auto; min-height: 0; overflow: visible; }
   .ta-page .ta-hero-visual { height: 100%; background-image: radial-gradient(circle,#e5e5e5 1.5px,transparent 1.6px); background-size: 30px 30px; }
