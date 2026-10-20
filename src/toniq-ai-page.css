@@ -6,7 +6,7 @@
   padding-top: 1px;
   background: #fff;
   color: #171717;
-  font-family: Rubik, Arial, sans-serif;
+  font-family: 'Work Sans', Arial, sans-serif;
 }
 .ta-page * { box-sizing: border-box; }
 .ta-page a { color: inherit; text-decoration: none; }
@@ -234,9 +234,9 @@
 
 .ta-page .ta-section { width: 100%; margin: 80px auto 0; padding: 0 20px; }
 .ta-page .ta-section > * { }
-.ta-page .ta-section > .ta-figure, .ta-page .ta-section > .ta-two-figures, .ta-page .ta-section > .ta-quotes, .ta-page .ta-section > .ta-painpoints, .ta-page .ta-section > .ta-callout, .ta-page .ta-section > .ta-ai-reasons, .ta-page .ta-section > .ta-sketch-gallery, .ta-page .ta-section > .ta-reflection-list { max-width: 912px; margin-left: auto; margin-right: auto; }
+.ta-page .ta-section > .ta-figure, .ta-page .ta-section > .ta-two-figures, .ta-page .ta-section > .ta-quotes, .ta-page .ta-section > .ta-painpoints, .ta-page .ta-section > .ta-callout, .ta-page .ta-section > .ta-sketch-gallery, .ta-page .ta-section > .ta-reflection-list { max-width: 912px; margin-left: auto; margin-right: auto; }
 .ta-page .ta-section > .ta-kicker, .ta-page .ta-section > h2, .ta-page .ta-section > .ta-lead, .ta-page .ta-section > .ta-copy { max-width: 912px; margin-left: auto; margin-right: auto; }
-.ta-page .ta-section h2 { font-size: 38px; line-height: 1.11; letter-spacing: -.38px; }
+.ta-page .ta-section h2 { font-family: Rubik, Arial, sans-serif; font-size: 38px; line-height: 1.11; letter-spacing: -.38px; }
 .ta-page .ta-section-inner { width: 100%; max-width: 912px; margin: 0 auto; }
 .ta-page .ta-problem-inner { display: flex; flex-direction: column; align-items: center; gap: 40px; }
 .ta-page .ta-problem-copy { display: flex; width: 100%; flex-direction: column; gap: 20px; }
@@ -268,8 +268,12 @@
 .ta-page .ta-journey-tabs { display: flex; justify-content: center; gap: 8px; margin-bottom: 18px; }
 .ta-page .ta-journey-tabs button { padding: 9px 16px; border: 1px solid #e2e2e2; border-radius: 999px; background: #fff; color: #2b2b2b; font: 500 13px/1.2 Rubik,Arial,sans-serif; cursor: pointer; transition: background .2s,color .2s,border-color .2s; }
 .ta-page .ta-journey-tabs button.active { background: #030c36; border-color: #030c36; color: #fff; }
-.ta-page .ta-journey-map .ta-figure { width: 100%; max-width: 1035px; overflow: hidden; border-radius: 8px; background: #fff; }
-.ta-page .ta-journey-map .ta-figure img { width: 100%; height: auto; }
+.ta-page .ta-journey-map-frame { position: relative; width: 100%; aspect-ratio: 2681 / 1745; overflow: hidden; border-radius: 8px; background: #fff; }
+.ta-page .ta-journey-map-frame img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; }
+.ta-page .ta-journey-map-attendee { opacity: 0; }
+.ta-page .ta-journey-evidence { position: relative; width: 100%; max-width: 1035px; aspect-ratio: 1035 / 370; margin: 36px auto 0; overflow: hidden; }
+.ta-page .ta-journey-evidence img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; }
+.ta-page .ta-journey-evidence img + img { opacity: 0; }
 .ta-page .ta-journey-matrix { width: 100%; max-width: 1020px; }
 .ta-page .ta-ui-gallery { width: 100%; max-width: 1226px; margin: 40px auto 0; display: flex; align-items: flex-end; justify-content: center; gap: 75px; }
 .ta-page .ta-ui-left { width: 294px; flex: 0 0 294px; }
@@ -308,7 +312,7 @@
 }
 
 .ta-page .ta-kicker { margin: 0 0 16px; color: #747474; font-size: 13px; font-weight: 400; line-height: 1.5; letter-spacing: 3px; text-transform: uppercase; }
-.ta-page .ta-section h2 { max-width: 760px; margin: 0 0 24px; font-size: clamp(34px, 4vw, 48px); line-height: 1.08; }
+.ta-page .ta-section h2 { max-width: 760px; margin: 0 0 24px; font-family: Rubik, Arial, sans-serif; font-size: clamp(34px, 4vw, 48px); line-height: 1.08; }
 .ta-page .ta-lead { max-width: 700px; margin: 0 0 18px; color: #252525; font-size: 19px; line-height: 1.55; }
 .ta-page .ta-copy { max-width: 700px; margin: 0 0 16px; color: #575757; font-size: 15px; line-height: 1.78; }
 .ta-page .ta-figure { min-width: 0; margin: 0; }
@@ -353,11 +357,7 @@
 .ta-page .ta-callout { margin: 42px 0; padding: 22px 24px; border-radius: 4px; background: #f6f6f4; color: #444; font-size: 15px; line-height: 1.75; }
 .ta-page .ta-ai-graphic { display: block; width: 100%; margin-top: 36px; }
 .ta-page .ta-ai-graphic .ta-figure { width: 100%; max-width: 912px; margin: 0 auto; }
-.ta-page .ta-ai-reasons { display: none; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 34px; }
-.ta-page .ta-ai-reasons article { padding: 21px 18px; border: 1px solid #e6e6e6; border-radius: 8px; background: #fff; }
-.ta-page .ta-ai-reasons span { color: #888; font-size: 12px; }
-.ta-page .ta-ai-reasons h3 { margin: 24px 0 14px; font: 600 17px/1.35 Rubik, Arial, sans-serif; letter-spacing: -.025em; }
-.ta-page .ta-ai-reasons p { margin: 0; color: #666; font-size: 13px; line-height: 1.7; }
+.ta-page .ta-ai-mobile-cards { display: none; }
 .ta-page .ta-reflection > .ta-kicker, .ta-page .ta-reflection > h2 { max-width: 624px; margin-left: auto; margin-right: auto; }
 .ta-page .ta-reflection-list { max-width: 624px; border-top: 0; }
 .ta-page .ta-reflection-list article { padding: 22px 0; border-bottom: 1px solid #e5e5e5; }
@@ -370,6 +370,33 @@
 .ta-page .ta-end p { margin: 28px auto 0; color: #8a8a8a; font-family: Work Sans,Arial,sans-serif; font-size: 15px; line-height: 1.6; letter-spacing: -.15px; }
 .ta-page .ta-footer { width: min(915px, calc(100% - 48px)); margin: 0 auto; padding: 26px 0 40px; display: flex; justify-content: space-between; color: #777; font-size: 13px; border-top: 1px solid #eee; }
 .ta-page .ta-footer a { color: #171717; }
+
+
+/* Reference sections 2 and 3 — source dimensions and typography. */
+.ta-page .ta-system-inner { display: flex; width: 100%; max-width: 1020px; margin: 0 auto; flex-direction: column; align-items: center; }
+.ta-page .ta-system-intro { display: flex; width: 100%; max-width: 620px; flex-direction: column; gap: 18px; }
+.ta-page .ta-system-intro h3, .ta-page .ta-principle-copy h3 { margin: 0; color: #353535; font: 600 26px/1.11 Rubik, Arial, sans-serif; letter-spacing: -.38px; }
+.ta-page .ta-system-copy, .ta-page .ta-principle-intro, .ta-page .ta-principle-decisions { display: flex; flex-direction: column; gap: 10px; color: #2c2c2c; font-size: 16px; line-height: 1.5; letter-spacing: -.2px; }
+.ta-page .ta-system-copy p, .ta-page .ta-principle-intro p, .ta-page .ta-principle-decisions p { margin: 0; }
+.ta-page .ta-system-demo { width: 100%; margin-top: 40px; display: flex; flex-direction: column; align-items: center; gap: 28px; }
+.ta-page .ta-system-tabs { width: 100%; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; }
+.ta-page .ta-system-tabs button { padding: 12px 22px; border: 1px solid #e5e5e5; border-radius: 999px; background: #fff; color: #1e1e1e; box-shadow: 0 1px 6px rgba(0,0,0,.06); font: 400 15px/1.2 Rubik,Arial,sans-serif; cursor: default; }
+.ta-page .ta-system-tabs button.active { border-color: #030c36; background: #030c36; color: #fff; font-weight: 600; box-shadow: none; }
+.ta-page .ta-system-tabs button:disabled { opacity: 1; }
+.ta-page .ta-system-panel { width: 100%; max-width: 622px; display: flex; flex-direction: column; gap: 10px; color: #2c2c2c; font-size: 16px; line-height: 1.5; letter-spacing: -.2px; }
+.ta-page .ta-system-panel p { margin: 0; }
+.ta-page .ta-system-panel .ta-system-panel-title { font: 700 18px/1.5 Rubik,Arial,sans-serif; }
+.ta-page .ta-system-panel img { display: block; width: 100%; max-width: 619px; height: auto; margin-top: 8px; background: #9a9a9a; }
+.ta-page .ta-principle-copy { width: 100%; max-width: 620px; margin: 0 auto; padding: 0 20px; }
+.ta-page .ta-principle-intro { margin-top: 20px; }
+.ta-page .ta-principle-decisions { margin-top: 20px; gap: 18px; }
+.ta-page .ta-principle-decisions strong { font-weight: 700; }
+@media (min-width: 768px) {
+  .ta-page .ta-system-intro h3, .ta-page .ta-principle-copy h3 { font-size: 34px; }
+  .ta-page .ta-system-copy, .ta-page .ta-principle-intro, .ta-page .ta-principle-decisions { font-size: 19px; }
+  .ta-page .ta-system-panel .ta-system-panel-title { font-size: 20px; }
+  .ta-page .ta-system-demo { gap: 36px; }
+}
 
 @media (max-width: 1023px) {
   .ta-page .ta-hero { height: auto; min-height: 0; overflow: visible; }
@@ -389,7 +416,8 @@
   .ta-page .ta-hero { height: auto; min-height: 0; overflow: visible; }
   .ta-page .ta-hero-visual { height: 0; background: none; }
   .ta-page .ta-ai-graphic { display: none; }
-  .ta-page .ta-ai-reasons { display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 36px; }
+  .ta-page .ta-ai-mobile-cards { display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 36px; }
+  .ta-page .ta-ai-mobile-cards img { display: block; width: 100%; height: auto; }
   .ta-page .ta-float, .ta-page .ta-hero-tag, .ta-page .ta-party-tag { display: none; }
   .ta-page .ta-hero-copy {
     position: relative; top: auto; left: auto; transform: none;
@@ -421,7 +449,12 @@
   .ta-page .ta-section h2 { font-size: 28px; line-height: 1.11; }
   .ta-page .ta-lead { font-size: 16px; }
   .ta-page .ta-copy { font-size: 16px; }
-  .ta-page .ta-two-figures, .ta-page .ta-painpoints, .ta-page .ta-ai-reasons { grid-template-columns: 1fr; gap: 16px; margin-top: 30px; }
+  .ta-page .ta-two-figures, .ta-page .ta-painpoints { grid-template-columns: 1fr; gap: 16px; margin-top: 30px; }
+  .ta-page .ta-journey-evidence { aspect-ratio: 1 / 1; }
+  .ta-page .ta-system-inner { align-items: stretch; }
+  .ta-page .ta-system-tabs { gap: 8px; }
+  .ta-page .ta-system-tabs button { padding: 10px 13px; font-size: 13px; }
+  .ta-page .ta-principle-copy { width: 100%; }
   .ta-page .ta-testing .ta-two-figures { gap: 24px; margin-top: 40px; }
   .ta-page .ta-quotes-window { margin-top: 40px; }
   .ta-page .ta-quotes { animation-duration: 75s; }
