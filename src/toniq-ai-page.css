@@ -69,23 +69,25 @@
   filter: none;
 }
 .ta-page .ta-hero-tag {
-  position: absolute;
+  position: relative;
   z-index: 1;
-  display: block;
-  padding: 9px 14px;
-  border: 1px solid #e3e3e3;
+  display: inline-block;
+  padding: 7px 14px;
+  border: 0;
   border-radius: 999px;
-  background: rgba(255,255,255,.96);
-  color: #303030;
-  box-shadow: 0 4px 14px rgba(0,0,0,.07);
+  color: #f9f9f9;
+  box-shadow: 0 2px 8px rgba(0,0,0,.14);
   font-size: 13px;
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1;
   white-space: nowrap;
-  animation-name: toniqFloat;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
 }
+.ta-page .ta-tag-four { padding: 9px 17px; font-size: 16px; }
+.ta-page .ta-tag-tail { position: absolute; display: block; width: 10px; height: 10px; transform: rotate(45deg); }
+.ta-page .ta-tail-top { top: -4px; left: 16px; }
+.ta-page .ta-tail-bottom { bottom: -4px; left: 16px; }
+.ta-page .ta-tail-right { left: auto; right: 16px; }
+.ta-page .ta-tail-circle { width: 18px; height: 18px; border-radius: 50%; top: -7px; left: auto; right: 14px; background: #f2f2f2; border: 1px solid #e2e2e2; }
 .ta-page .ta-hero-copy {
   position: absolute;
   z-index: 10;
@@ -189,6 +191,49 @@
 .ta-page .ta-meta small { color: #747474; font-size: 13px; line-height: 1.5; font-weight: 400; }
 
 .ta-page .ta-section { width: 100%; margin: 80px auto 0; padding: 0 20px; }\n.ta-page .ta-section > * { }\n.ta-page .ta-section > .ta-figure, .ta-page .ta-section > .ta-two-figures, .ta-page .ta-section > .ta-quotes, .ta-page .ta-section > .ta-painpoints, .ta-page .ta-section > .ta-callout, .ta-page .ta-section > .ta-ai-reasons, .ta-page .ta-section > .ta-sketch-gallery, .ta-page .ta-section > .ta-ai-card-gallery, .ta-page .ta-section > .ta-solution-block, .ta-page .ta-section > .ta-reflection-list { max-width: 912px; margin-left: auto; margin-right: auto; }\n.ta-page .ta-section > .ta-kicker, .ta-page .ta-section > h2, .ta-page .ta-section > .ta-lead, .ta-page .ta-section > .ta-copy { max-width: 912px; margin-left: auto; margin-right: auto; }\n.ta-page .ta-section h2 { font-size: 38px; line-height: 1.11; letter-spacing: -.38px; }
+.ta-page .ta-section-inner { width: 100%; max-width: 912px; margin: 0 auto; }
+.ta-page .ta-problem-inner { display: flex; flex-direction: column; align-items: center; gap: 40px; }
+.ta-page .ta-problem-copy { display: flex; width: 100%; flex-direction: column; gap: 20px; }
+.ta-page .ta-problem-copy .ta-kicker, .ta-page .ta-problem-copy h2, .ta-page .ta-problem-copy .ta-lead, .ta-page .ta-problem-copy .ta-copy { width: 100%; max-width: none; margin-left: 0; margin-right: 0; }
+.ta-page .ta-problem-copy .ta-kicker { text-transform: uppercase; letter-spacing: 3px; line-height: 1.5; font-size: 13px; }
+.ta-page .ta-problem-copy h2 { font-size: 38px; line-height: 1.11; letter-spacing: -.38px; margin: 0; }
+.ta-page .ta-problem-copy .ta-lead, .ta-page .ta-problem-copy .ta-copy { font-size: 19px; line-height: 1.5; letter-spacing: -.2px; color: #2c2c2c; }
+.ta-page .ta-problem-visual { width: 100%; max-width: 411px; }
+.ta-page .ta-problem-visual img { width: 100%; aspect-ratio: 411 / 512; border-radius: 30px; object-fit: cover; filter: grayscale(1); }
+.ta-page .ta-problem-visual figcaption { margin-top: 7px; text-align: right; color: #2b2b2b; font-family: Arial,sans-serif; font-size: 12px; letter-spacing: -.12px; }
+.ta-page .ta-thesis-inner { display: flex; flex-direction: column; align-items: center; gap: 36px; }
+.ta-page .ta-thesis-copy { width: 100%; display: flex; flex-direction: column; gap: 15px; }
+.ta-page .ta-thesis-copy .ta-kicker, .ta-page .ta-thesis-copy h2, .ta-page .ta-thesis-copy .ta-lead, .ta-page .ta-thesis-copy .ta-copy { width: 100%; max-width: none; margin-left: 0; margin-right: 0; }
+.ta-page .ta-thesis-copy h2 { margin: 0; font-size: 38px; line-height: 1.11; letter-spacing: -.38px; }
+.ta-page .ta-thesis-copy .ta-lead, .ta-page .ta-thesis-copy .ta-copy { color: #2c2c2c; font-size: 19px; line-height: 1.5; letter-spacing: -.2px; }
+.ta-page .ta-thesis-visual { position: relative; width: 100%; max-width: 315px; aspect-ratio: 315 / 316; overflow: hidden; border-radius: 14px; }
+.ta-page .ta-thesis-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ta-page .ta-thesis-visual img + img { opacity: 0; animation: thesisCrossfade 8s ease-in-out infinite; }
+@keyframes thesisCrossfade { 0%,42% { opacity: 0; } 50%,92% { opacity: 1; } 100% { opacity: 0; } }
+.ta-page .ta-journey-inner { display: flex; flex-direction: column; align-items: center; }
+.ta-page .ta-journey-intro { display: flex; width: 100%; max-width: 620px; flex-direction: column; align-items: center; gap: 18px; text-align: center; }
+.ta-page .ta-journey-intro .ta-kicker, .ta-page .ta-journey-intro h2, .ta-page .ta-journey-intro .ta-lead { max-width: none; margin-left: 0; margin-right: 0; }
+.ta-page .ta-journey-intro h2 { margin-bottom: 0; }
+.ta-page .ta-journey-intro .ta-lead { margin-bottom: 0; color: #2c2c2c; font-size: 19px; line-height: 1.5; letter-spacing: -.2px; }
+.ta-page .ta-journey-inner .ta-two-figures { width: 100%; max-width: 1035px; margin-top: 40px; }
+.ta-page .ta-sketch-section { width: 100%; margin: 48px auto 0; padding: 0 20px; }
+.ta-page .ta-sketch-gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; width: 100%; max-width: 1281px; margin: 0 auto; }
+.ta-page .ta-sketch-gallery .ta-figure { width: calc(50% - 6px); overflow: hidden; cursor: zoom-in; }
+.ta-page .ta-sketch-gallery .ta-figure img { width: 100%; height: auto; }
+@media (min-width: 640px) { .ta-page .ta-sketch-gallery .ta-figure { width: calc(33.333% - 8px); } }
+@media (min-width: 768px) {
+  .ta-page .ta-section { margin-top: 120px; }
+  .ta-page .ta-dashboard-cta { margin-top: 44px; }
+  .ta-page .ta-meta { margin-top: 56px; padding: 32px 64px; }
+  .ta-page .ta-problem-inner { flex-direction: row; align-items: center; gap: 64px; }
+  .ta-page .ta-problem-copy { width: 444px; flex: 0 0 444px; }
+  .ta-page .ta-problem-visual { width: 411px; flex: 0 0 411px; }
+  .ta-page .ta-thesis-inner { flex-direction: row; align-items: center; gap: 80px; }
+  .ta-page .ta-thesis-copy { width: 465px; flex: 0 0 465px; }
+  .ta-page .ta-thesis-visual { width: 315px; flex: 0 0 315px; }
+  .ta-page .ta-sketch-gallery .ta-figure { width: calc(25% - 12px); }
+}
+
 .ta-page .ta-kicker { margin: 0 0 16px; color: #777; font-size: 12px; font-weight: 500; }
 .ta-page .ta-section h2 { max-width: 760px; margin: 0 0 24px; font-size: clamp(34px, 4vw, 48px); line-height: 1.08; }
 .ta-page .ta-lead { max-width: 700px; margin: 0 0 18px; color: #252525; font-size: 19px; line-height: 1.55; }
@@ -268,7 +313,7 @@
     border-radius: 22px;
   }
   .ta-page .ta-meta > div:nth-child(n) { width: 100%; }
-  .ta-page .ta-section { margin-top: 80px; padding: 0 20px; }
+  .ta-page .ta-section { margin-top: 80px; padding: 0 20px; }\n  .ta-page .ta-section-inner { width: 100%; }\n  .ta-page .ta-problem-inner, .ta-page .ta-thesis-inner { flex-direction: column; gap: 40px; }\n  .ta-page .ta-problem-copy, .ta-page .ta-thesis-copy { width: 100%; flex: none; }\n  .ta-page .ta-problem-visual, .ta-page .ta-thesis-visual { width: 100%; max-width: 411px; flex: none; }\n  .ta-page .ta-problem-copy h2, .ta-page .ta-thesis-copy h2 { font-size: 28px; }\n  .ta-page .ta-problem-copy .ta-lead, .ta-page .ta-problem-copy .ta-copy, .ta-page .ta-thesis-copy .ta-lead, .ta-page .ta-thesis-copy .ta-copy { font-size: 16px; }\n  .ta-page .ta-journey-intro .ta-lead { font-size: 16px; }\n  .ta-page .ta-sketch-section { margin-top: 48px; }
   .ta-page .ta-section h2 { font-size: 28px; line-height: 1.11; }
   .ta-page .ta-lead { font-size: 16px; }
   .ta-page .ta-copy { font-size: 16px; }
