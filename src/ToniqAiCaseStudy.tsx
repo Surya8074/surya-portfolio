@@ -25,7 +25,7 @@ function ToniqPage(){
      <span className="ta-hero-tag ta-tag-two">You also love Tennis?</span>
      <span className="ta-hero-tag ta-tag-three">Yeah, Lets play?</span>
      <span className="ta-hero-tag ta-tag-four">Open to collab</span>
-     <img className="ta-party-tag" src={base+'hero-tag-party.png'} alt=""/>
+     <img className="ta-party-tag" src={base+'redesign/hero-tag-party.png'} alt=""/>
      <img className="ta-hero-cube" src={base+'redesign/hero-cube.png'} alt="Toniq logo"/>
     </div>
     <div className="ta-hero-copy">
