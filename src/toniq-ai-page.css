@@ -57,8 +57,7 @@
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
-.ta-page .ta-float .ta-avatar,
-.ta-page .ta-hero-visual .ta-party-tag {
+.ta-page .ta-float .ta-avatar {
   position: static;
   display: block;
   width: 100%;
@@ -68,6 +67,7 @@
   object-fit: contain;
   filter: none;
 }
+.ta-page .ta-hero-visual .ta-party-tag { position: absolute; z-index: 2; }
 .ta-page .ta-hero-tag {
   position: relative;
   z-index: 1;
@@ -180,8 +180,8 @@
   padding: 32px 28px;
   display: flex;
   align-items: flex-end;
-  justify-content: flex-end;
-  gap: 0;
+  justify-content: center;
+  gap: 86px;
   border: 0;
   border-radius: 22px;
   background: #fff;
