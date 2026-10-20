@@ -23,7 +23,7 @@ function ToniqPage(){
      <img className="ta-avatar ta-avatar-aria" src={base+'redesign/hero-avatar-aria-l.png'} alt="Attendee Aria L"/>
      <span className="ta-hero-tag ta-tag-one">Anyone in SAAS?</span>
      <span className="ta-hero-tag ta-tag-two">You also love Tennis?</span>
-     <span className="ta-hero-tag ta-tag-three">Yeah, Lets play?</span>
+     <span className="ta-hero-tag ta-tag-three">Glad to meet you here</span>
      <span className="ta-hero-tag ta-tag-four">Open to collab</span>
      <img className="ta-party-tag" src={base+'hero-tag-party.png'} alt=""/>
      <img className="ta-hero-cube" src={base+'redesign/hero-cube.png'} alt="Toniq logo"/>
