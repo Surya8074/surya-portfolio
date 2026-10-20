@@ -40,13 +40,13 @@ function ToniqPage(){
    <section className="ta-meta"><div><span>Role</span><strong>Product Strategy, Product Design &amp; Visual Identity</strong></div><div><span>Timeline</span><strong>8 Months<br/><small>August 2025 – April 2026</small></strong></div><div><span>Mentor</span><strong>Blake Hudelson<br/><small>Co-Founder, BoomPop</small></strong></div></section>
    <section className="ta-section ta-problem">
     <div className="ta-section-inner ta-problem-inner">
-     <div className="ta-problem-copy"><K>The problem</K><h2>Virtual networking events are broken</h2><p className="ta-lead">There’s a difference between being at an event and being in one.</p><p className="ta-copy">Online events solved attendance. What they never solved: the moment two strangers find each other, recognize a reason to talk, and walk away with something worth keeping.</p><p className="ta-copy">Toniq is an argument that the problem isn’t the video call. It’s the absence of a design.</p></div>
+     <div className="ta-problem-copy"><K>The problem</K><h2>Virtual networking events are broken</h2><div className="ta-problem-body"><p className="ta-lead">There’s a difference between being at an event and being in one.</p><p className="ta-copy">Online events solved attendance. What they never solved: the moment two strangers find each other, recognize a reason to talk, and walk away with something worth keeping.</p><p className="ta-copy">Toniq is an argument that the problem isn’t the video call. It’s the absence of a design.</p></div></div>
      <figure className="ta-figure ta-problem-visual"><img src={toniqReferenceAssets.jury} alt="Ayushi presenting Toniq at the jury review" loading="lazy"/><figcaption>Jury Presentation</figcaption></figure>
     </div>
    </section>
    <section className="ta-section ta-thesis">
     <div className="ta-section-inner ta-thesis-inner">
-     <div className="ta-thesis-copy"><K>The thesis</K><h2>Rebuild the room</h2><p className="ta-lead">Rebuild the room (spatial proximity, ambient awareness, the option to drift) and let AI handle what the room can’t (context, recall, follow-through).</p><p className="ta-copy">The connection problem stops being a UX problem and becomes a system problem worth solving.</p></div>
+     <div className="ta-thesis-copy"><K>The thesis</K><h2>Rebuild the room</h2><div className="ta-thesis-body"><p className="ta-lead">Rebuild the room (spatial proximity, ambient awareness, the option to drift) and let AI handle what the room can’t (context, recall, follow-through).</p><p className="ta-copy">The connection problem stops being a UX problem and becomes a system problem worth solving.</p></div></div>
      <div className="ta-thesis-visual" aria-label="Spatial proximity translated into the Toniq canvas"><img src={base+'redesign/thesis-visual-1.png'} alt="People scattered at varying proximities in a real-world space" loading="lazy"/><img src={base+'redesign/thesis-visual-2.png'} alt="The same proximity replicated as avatar bubbles inside the Toniq spatial canvas" loading="lazy"/></div>
     </div>
    </section>
