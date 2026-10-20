@@ -11,9 +11,28 @@ function ToniqPage(){
  return <div className="ta-page">
   <header className="reference-nav"><div className="reference-nav-inner"><a className="reference-brand" href="/surya-portfolio/"><strong>Surya Kiran</strong><span className="reference-brand-divider" /><span>India</span></a><nav><a href="/surya-portfolio/#art">Art</a><a href="/surya-portfolio/#about">About Me</a><a className="resume-nav-link" href="/surya-portfolio/resume/">Resume</a></nav></div></header>
   <main>
-   <section className="ta-hero">
-    <div className="ta-hero-copy"><div className="ta-brandline"><span>TONIQ</span></div><h1>Reimagining online events worth exploring</h1><p className="ta-subtitle">Toniq AI combines spatial navigation with AI-powered connection, so online events feel alive</p><a className="ta-live" href="#solution">Try the LIVE dashboard ↗</a></div>
-    <A src="redesign/hero-cube.png" alt="Toniq AI cube logo"/>
+   <section className="ta-hero" id="top">
+    <div className="ta-hero-visual" aria-label="Toniq virtual networking space">
+     <img className="ta-avatar ta-avatar-anna" src={base+'hero-avatar-anna-marie.png'} alt="Attendee Anna Marie"/>
+     <img className="ta-avatar ta-avatar-marcus" src={base+'hero-avatar-marcus.png'} alt="Attendee Marcus"/>
+     <img className="ta-avatar ta-avatar-maria" src={base+'hero-avatar-maria.png'} alt="Attendee Maria"/>
+     <img className="ta-avatar ta-avatar-pair" src={base+'hero-avatar-pair-kristian-alexx.png'} alt="Attendees Kristian and Alexx, glad to meet you here"/>
+     <img className="ta-avatar ta-avatar-matt" src={base+'hero-avatar-matt-d.png'} alt="Attendee Matt D"/>
+     <img className="ta-avatar ta-avatar-amy" src={base+'hero-avatar-amy-s.png'} alt="Attendee Amy S"/>
+     <img className="ta-avatar ta-avatar-you" src={base+'hero-avatar-you.png'} alt="You"/>
+     <img className="ta-avatar ta-avatar-aria" src={base+'hero-avatar-aria-l.png'} alt="Attendee Aria L"/>
+     <span className="ta-hero-tag ta-tag-one">Anyone in SAAS?</span>
+     <span className="ta-hero-tag ta-tag-two">You also love Tennis?</span>
+     <span className="ta-hero-tag ta-tag-three">Yeah, Lets play?</span>
+     <span className="ta-hero-tag ta-tag-four">Open to collab</span>
+     <img className="ta-party-tag" src={base+'hero-tag-party.png'} alt=""/>
+     <img className="ta-hero-cube" src={base+'redesign/hero-cube.png'} alt="Toniq logo"/>
+    </div>
+    <div className="ta-hero-copy">
+     <h1>Reimagining online events worth exploring</h1>
+     <p className="ta-subtitle">Toniq AI combines spatial navigation with AI-powered connection, so online events feel alive</p>
+     <a className="ta-live" href="https://www.helloayushi.com/toniq-dashboard/index.html" target="_blank" rel="noreferrer">Try the LIVE dashboard <span aria-hidden="true">↗</span></a>
+    </div>
    </section>
    <section className="ta-meta"><div><span>Role</span><strong>Product Strategy, Product Design &amp; Visual Identity</strong></div><div><span>Timeline</span><strong>8 Months<br/><small>August 2025 – April 2026</small></strong></div><div><span>Mentor</span><strong>Blake Hudelson<br/><small>Co-Founder, BoomPop</small></strong></div></section>
    <section className="ta-section ta-problem"><K>The problem</K><h2>Virtual networking events are broken</h2><p className="ta-lead">There’s a difference between being at an event and being in one.</p><p className="ta-copy">Online events solved attendance. What they never solved: the moment two strangers find each other, recognize a reason to talk, and walk away with something worth keeping.</p><p className="ta-copy">Toniq is an argument that the problem isn’t the video call. It’s the absence of a design.</p><A src="jury-presentation.png" alt="Toniq project jury presentation" caption="Jury Presentation"/></section>
