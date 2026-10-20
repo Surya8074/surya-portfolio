@@ -10,6 +10,7 @@ const A = ({src,alt,caption}:{src:string;alt:string;caption?:string}) => <figure
 const K = ({children}:{children:React.ReactNode}) => <p className="ta-kicker">{children}</p>;
 function ToniqPage(){
  const [activeSketch, setActiveSketch] = React.useState<number | null>(null);
+ const [journeyMode, setJourneyMode] = React.useState<"pain" | "needs" | "goals">("needs");
  return <div className="ta-page">
   <header className="reference-nav"><div className="reference-nav-inner"><a className="reference-brand" href="/surya-portfolio/"><strong>Surya Kiran</strong><span className="reference-brand-divider" /><span>India</span></a><nav><a href="/surya-portfolio/#art">Art</a><a href="/surya-portfolio/#about">About Me</a><a className="resume-nav-link" href="/surya-portfolio/resume/">Resume</a></nav></div></header>
   <main>
@@ -75,9 +76,30 @@ function ToniqPage(){
        <img className="ta-journey-map-attendee" src={toniqReferenceAssets.journeyAttendee} alt="Attendee journey map across Discover, Setup, Use, Reflection" loading="lazy"/>
       </div>
      </div>
-     <div className="ta-journey-evidence" aria-label="Journey map findings">
-      <img src={toniqReferenceAssets.painPoints} alt="Pain points identified across the attendee and host journeys" loading="lazy"/>
-      <img src={toniqReferenceAssets.needs} alt="Needs identified across the attendee and host journeys" loading="lazy"/>
+     <div className="ta-journey-diagram" aria-label="Attendee and host pain points, needs, and goals">
+      <p className="ta-journey-label ta-label-attendee">Attendee</p>
+      <p className="ta-journey-label ta-label-hosts">Hosts</p>
+      <div className="ta-journey-shapes" aria-hidden="true">
+       <img className={journeyMode==="pain" ? "shape-active" : ""} src={toniqReferenceAssets.painPoints} alt=""/>
+       <img className={journeyMode==="needs" ? "shape-active" : ""} src={toniqReferenceAssets.needs} alt=""/>
+       <img className={journeyMode==="goals" ? "shape-active shape-flipped" : "shape-flipped"} src={toniqReferenceAssets.painPoints} alt=""/>
+      </div>
+      <div className="ta-journey-mode-buttons">
+       <button type="button" aria-pressed={journeyMode==="pain"} className={journeyMode==="pain" ? "active" : ""} onClick={()=>setJourneyMode("pain")}>Pain Points</button>
+       <button type="button" aria-pressed={journeyMode==="needs"} className={journeyMode==="needs" ? "active" : ""} onClick={()=>setJourneyMode("needs")}>Needs</button>
+       <button type="button" aria-pressed={journeyMode==="goals"} className={journeyMode==="goals" ? "active" : ""} onClick={()=>setJourneyMode("goals")}>Goals</button>
+      </div>
+      <div className="ta-journey-text ta-journey-attendee">
+       <p>See who's there before committing</p>
+       <p>Connections that carry context</p>
+       <p>Discovery built into the space, not the agenda</p>
+      </div>
+      <div className="ta-journey-text ta-journey-host">
+       <p>Bird's-eye view of the room in real time</p>
+       <p>Tools to guide movement</p>
+       <p>Ready-made templates and Post-event summary of engagement</p>
+      </div>
+      <span className="ta-journey-divider" aria-hidden="true"/>
      </div>
      <p className="ta-section-note">What the map revealed: every breakdown was an information problem. The system knew who was there, who was talking, what was on profiles. It just wasn’t surfacing any of it to the people who needed it.</p>
     </div>
