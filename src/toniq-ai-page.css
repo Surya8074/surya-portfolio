@@ -72,3 +72,136 @@
  .ta-footer{width:calc(100% - 36px)}
  .ta-end{width:calc(100% - 36px)}
 }
+
+
+/* Section 1 — Toniq hero composition. All rules are scoped to the case-study page. */
+.ta-page .ta-hero{
+  width:min(1040px,calc(100% - 48px));
+  margin:126px auto 82px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:0;
+}
+.ta-page .ta-hero-visual{
+  position:relative;
+  width:min(100%,920px);
+  height:430px;
+  margin:0 auto 6px;
+  isolation:isolate;
+}
+.ta-page .ta-hero-visual img{
+  position:absolute;
+  display:block;
+  height:auto;
+  object-fit:contain;
+}
+.ta-page .ta-hero-visual .ta-avatar{
+  width:clamp(76px,9.4vw,122px);
+  max-height:138px;
+  filter:drop-shadow(0 8px 18px rgba(24,24,24,.07));
+}
+.ta-page .ta-avatar-anna{left:13%;top:9%;width:clamp(76px,8.4vw,108px)}
+.ta-page .ta-avatar-marcus{left:31%;top:1%;width:clamp(72px,8vw,102px)}
+.ta-page .ta-avatar-maria{right:28%;top:3%;width:clamp(78px,8.8vw,112px)}
+.ta-page .ta-avatar-pair{right:8%;top:13%;width:clamp(102px,12vw,152px)}
+.ta-page .ta-avatar-matt{left:5%;top:47%;width:clamp(76px,8.8vw,112px)}
+.ta-page .ta-avatar-amy{left:26%;top:53%;width:clamp(76px,8.8vw,112px)}
+.ta-page .ta-avatar-you{left:48%;top:39%;width:clamp(82px,9.2vw,118px);z-index:2}
+.ta-page .ta-avatar-aria{right:8%;top:49%;width:clamp(76px,8.8vw,112px)}
+.ta-page .ta-hero-tag{
+  position:absolute;
+  z-index:3;
+  display:block;
+  max-width:180px;
+  padding:10px 15px;
+  border:1px solid #e8e7e3;
+  border-radius:999px;
+  background:rgba(255,254,251,.94);
+  box-shadow:0 5px 18px rgba(20,20,20,.055);
+  color:#353535;
+  font-size:12px;
+  line-height:1.2;
+  white-space:nowrap;
+}
+.ta-page .ta-tag-one{left:18%;top:36%}
+.ta-page .ta-tag-two{left:38%;top:22%}
+.ta-page .ta-tag-three{right:17%;top:39%}
+.ta-page .ta-tag-four{left:39%;bottom:7%}
+.ta-page .ta-hero-visual .ta-party-tag{width:74px;right:28%;bottom:8%;z-index:1}
+.ta-page .ta-hero-visual .ta-hero-cube{
+  width:clamp(70px,8vw,104px);
+  right:2%;
+  bottom:0;
+  z-index:2;
+}
+.ta-page .ta-hero-copy{
+  width:min(100%,760px);
+  max-width:760px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+.ta-page .ta-hero-copy .ta-brandline{display:none}
+.ta-page .ta-hero h1{
+  max-width:720px;
+  margin:0 auto 19px;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:clamp(34px,4.15vw,54px);
+  line-height:1.08;
+  letter-spacing:-.052em;
+  font-weight:700;
+  text-wrap:balance;
+}
+.ta-page .ta-hero .ta-subtitle{
+  max-width:520px;
+  margin:0 auto;
+  font-size:16px;
+  line-height:1.65;
+  color:#626262;
+}
+.ta-page .ta-hero .ta-live{
+  margin-top:24px;
+  min-height:46px;
+  padding:0 20px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  background:#fff;
+  border:1px solid #e5e5e5;
+  border-radius:999px;
+  box-shadow:0 2px 8px #0000000d;
+  font-size:12px;
+  font-weight:600;
+  transition:transform .22s ease,box-shadow .22s ease;
+}
+.ta-page .ta-hero .ta-live:hover{transform:translateY(-2px);box-shadow:0 5px 14px #00000012}
+@media(max-width:760px){
+ .ta-page .ta-hero{width:calc(100% - 32px);margin:94px auto 68px}
+ .ta-page .ta-hero-visual{height:300px;width:100%;margin-bottom:8px}
+ .ta-page .ta-hero-visual .ta-avatar{width:clamp(54px,16vw,82px)}
+ .ta-page .ta-avatar-anna{left:3%;top:8%}
+ .ta-page .ta-avatar-marcus{left:29%;top:0}
+ .ta-page .ta-avatar-maria{right:28%;top:4%}
+ .ta-page .ta-avatar-pair{right:0;top:17%;width:clamp(70px,19vw,104px)}
+ .ta-page .ta-avatar-matt{left:0;top:49%}
+ .ta-page .ta-avatar-amy{left:23%;top:54%}
+ .ta-page .ta-avatar-you{left:45%;top:36%;width:clamp(62px,17vw,90px)}
+ .ta-page .ta-avatar-aria{right:0;top:52%}
+ .ta-page .ta-hero-tag{font-size:9px;padding:7px 9px}
+ .ta-page .ta-tag-one{left:4%;top:35%}
+ .ta-page .ta-tag-two{left:33%;top:21%}
+ .ta-page .ta-tag-three{right:2%;top:40%}
+ .ta-page .ta-tag-four{left:31%;bottom:4%}
+ .ta-page .ta-hero-visual .ta-party-tag{width:44px;right:24%;bottom:2%}
+ .ta-page .ta-hero-visual .ta-hero-cube{width:52px;right:1%;bottom:0}
+ .ta-page .ta-hero h1{font-size:clamp(32px,8.8vw,42px);line-height:1.08;margin-bottom:16px}
+ .ta-page .ta-hero .ta-subtitle{font-size:14px;max-width:430px}
+ .ta-page .ta-hero .ta-live{margin-top:20px}
+}
+@media(prefers-reduced-motion:reduce){
+ .ta-page .ta-hero .ta-live{transition:none}
+}
