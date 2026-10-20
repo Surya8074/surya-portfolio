@@ -553,3 +553,76 @@
 .ta-page .ta-hero .ta-live{display:inline-flex !important}
 .ta-page .ta-hero-visual .ta-party-tag{display:block}
 .ta-page .ta-hero-visual .ta-avatar{display:block}
+
+
+/* Source-driven final pass: preserve the reference's open editorial composition.
+   The scraped page uses a centered hero stage with floating people around the mark,
+   followed by centered title/copy, then compact metadata and long-form sections. */
+.ta-page{background:#fff;color:#171717}
+.ta-page main{width:100%;overflow:clip}
+.ta-page .ta-hero{
+  width:min(1120px,calc(100% - 48px));
+  display:flex;flex-direction:column;align-items:center;gap:0;
+  margin:130px auto 92px;
+}
+.ta-page .ta-hero-visual{
+  order:0;position:relative;width:100%;height:500px;
+  margin:0 auto;overflow:visible;
+}
+.ta-page .ta-hero-visual .ta-hero-cube{
+  position:absolute;left:50%;top:43%;width:clamp(142px,14vw,184px);
+  height:auto;transform:translate(-50%,-50%);object-fit:contain;z-index:4;
+}
+.ta-page .ta-hero-visual .ta-avatar{
+  position:absolute;display:block;height:auto;object-fit:contain;z-index:2;
+}
+.ta-page .ta-hero-copy{
+  order:1;width:min(100%,760px);max-width:760px;
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  background:transparent!important;border:0!important;border-radius:0!important;
+  box-shadow:none!important;padding:0 20px!important;margin:-4px auto 0!important;
+  position:relative;z-index:5;min-height:0!important;
+}
+.ta-page .ta-hero h1{
+  max-width:730px;font-family:Manrope,Arial,sans-serif;
+  font-size:clamp(42px,4.6vw,60px);line-height:1.04;letter-spacing:-.055em;
+  font-weight:800;margin:0 auto 18px!important;
+}
+.ta-page .ta-hero .ta-subtitle{
+  max-width:590px;font-size:17px;line-height:1.6;color:#5f6064;margin:0 auto;
+}
+.ta-page .ta-hero .ta-live{
+  display:inline-flex!important;margin-top:22px;background:transparent;
+  color:#171717!important;border:1px solid #dedede;box-shadow:none;
+}
+.ta-page .ta-meta{margin-top:0}
+.ta-page .ta-quotes{
+  display:flex;overflow-x:auto;gap:18px;padding:0 0 12px;
+  scroll-snap-type:x mandatory;scrollbar-width:thin;
+}
+.ta-page .ta-quotes article{
+  flex:0 0 289px;min-height:360px;border:1px solid #dfdfdf;
+  border-radius:26px;background:#fbfbfb;padding:30px;
+  scroll-snap-align:start;
+}
+.ta-page .ta-quotes h3{font-size:18px;line-height:1.35}
+.ta-page .ta-quotes blockquote{font-size:14px;line-height:1.7}
+.ta-page .ta-sketch-gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.ta-page .ta-sketch-gallery .ta-figure:first-child{grid-column:span 2}
+.ta-page .ta-ai-card-gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.ta-page .ta-ai-card-gallery .ta-figure{background:transparent;border:0;border-radius:0;padding:0}
+.ta-page .ta-ai-card-gallery img{border-radius:0}
+.ta-page .ta-solution-note span{background:transparent;border-color:#e4e4e4}
+@media(max-width:760px){
+  .ta-page .ta-hero{width:calc(100% - 28px);margin:90px auto 68px}
+  .ta-page .ta-hero-visual{height:340px}
+  .ta-page .ta-hero-visual .ta-hero-cube{width:102px;top:43%}
+  .ta-page .ta-hero-copy{padding:0 4px!important;margin:0 auto!important}
+  .ta-page .ta-hero h1{font-size:clamp(34px,9vw,44px);line-height:1.08}
+  .ta-page .ta-hero .ta-subtitle{font-size:15px;line-height:1.6}
+  .ta-page .ta-hero .ta-live{margin-top:18px}
+  .ta-page .ta-quotes article{flex-basis:280px;min-height:320px;padding:24px;border-radius:22px}
+  .ta-page .ta-sketch-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .ta-page .ta-sketch-gallery .ta-figure:first-child{grid-column:span 2}
+  .ta-page .ta-ai-card-gallery{grid-template-columns:1fr}
+}
