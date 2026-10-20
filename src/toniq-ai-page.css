@@ -84,8 +84,8 @@
 }
 .ta-page .ta-tag-four { padding: 9px 17px; font-size: 16px; }
 .ta-page .ta-tag-tail { position: absolute; display: block; width: 10px; height: 10px; transform: rotate(45deg); }
-.ta-page .ta-tail-top { top: -4px; left: 16px; }
-.ta-page .ta-tail-bottom { bottom: -4px; left: 16px; }
+.ta-page .ta-tail-top { top: -4px; left: 16px; }\n.ta-page .ta-tag-one .ta-tail-top { background: #649fa6; }\n.ta-page .ta-tag-three .ta-tail-top { background: #01c861; }
+.ta-page .ta-tail-bottom { bottom: -4px; left: 16px; }\n.ta-page .ta-tag-two .ta-tail-bottom { background: #fdb201; }
 .ta-page .ta-tail-right { left: auto; right: 16px; }
 .ta-page .ta-tail-circle { width: 18px; height: 18px; border-radius: 50%; top: -7px; left: auto; right: 14px; background: #f2f2f2; border: 1px solid #e2e2e2; }
 .ta-page .ta-hero-copy {
@@ -314,6 +314,16 @@
 .ta-page .ta-footer { width: min(915px, calc(100% - 48px)); margin: 0 auto; padding: 26px 0 40px; display: flex; justify-content: space-between; color: #777; font-size: 13px; border-top: 1px solid #eee; }
 .ta-page .ta-footer a { color: #171717; }
 
+@media (max-width: 1023px) {
+  .ta-page .ta-hero { height: auto; min-height: 0; overflow: visible; }
+  .ta-page .ta-hero-visual { height: 100%; background-image: radial-gradient(circle,#e5e5e5 1.5px,transparent 1.6px); background-size: 30px 30px; }
+  .ta-page .ta-float, .ta-page .ta-hero-tag, .ta-page .ta-party-tag { display: none; }
+  .ta-page .ta-hero-copy { position: relative; top: auto; left: auto; transform: none; width: 100%; max-width: 620px; margin: 0 auto; padding: 120px 20px 56px; }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .ta-page .ta-hero h1 { font-size: 39px; }
+  .ta-page .ta-hero .ta-subtitle { font-size: 16.5px; }
+}
 @media (max-width: 760px) {
   .ta-page .reference-nav { top: 12px; }
   .ta-page .reference-nav-inner { width: calc(100% - 24px); padding: 0 18px; }
