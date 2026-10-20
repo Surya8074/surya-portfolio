@@ -33,7 +33,7 @@ function ToniqPage(){
      <p className="ta-subtitle">Toniq AI combines spatial navigation with AI-powered connection, so online events feel alive</p>
     </div>
    </section>
-   <section className="ta-dashboard-cta"><div className="ta-dashboard-cta-inner"><a className="ta-live" href="https://www.helloayushi.com/toniq-dashboard/index.html" target="_blank" rel="noreferrer">Try the LIVE dashboard <span aria-hidden="true">↗</span></a></div></section>
+   <section className="ta-dashboard-cta"><div className="ta-dashboard-cta-inner"><a className="ta-dashboard-preview" href="https://www.helloayushi.com/toniq-dashboard/index.html" aria-label="Open the live Toniq AI dashboard" target="_blank" rel="noopener noreferrer"><div className="ta-dashboard-preview-frame"><iframe title="Toniq AI live dashboard preview" loading="lazy" sandbox="allow-popups allow-top-navigation-by-user-activation allow-scripts allow-modals allow-popups allow-downloads allow-pointer-lock allow-presentation" scrolling="no" src={import.meta.env.BASE_URL + 'toniq-dashboard-preview.html'} /></div><span className="ta-dashboard-preview-label">Try the LIVE dashboard <span aria-hidden="true">↗</span></span></a></div></section>
    <section className="ta-meta"><div><span>Role</span><strong>Product Strategy, Product Design &amp; Visual Identity</strong></div><div><span>Timeline</span><strong>8 Months<br/><small>August 2025 – April 2026</small></strong></div><div><span>Mentor</span><strong>Blake Hudelson<br/><small>Co-Founder, BoomPop</small></strong></div></section>
    <section className="ta-section ta-problem">
     <div className="ta-section-inner ta-problem-inner">
