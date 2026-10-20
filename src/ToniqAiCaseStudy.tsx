@@ -8,6 +8,7 @@ const base = 'https://www.helloayushi.com/images/case-studies/toniq-ai/';
 const A = ({src,alt,caption}:{src:string;alt:string;caption?:string}) => <figure className="ta-figure"><img src={base+src} alt={alt} loading="lazy"/>{caption&&<figcaption>{caption}</figcaption>}</figure>;
 const K = ({children}:{children:React.ReactNode}) => <p className="ta-kicker">{children}</p>;
 function ToniqPage(){
+ const [journeyView, setJourneyView] = React.useState<"host" | "attendee">("host");
  return <div className="ta-page">
   <header className="reference-nav"><div className="reference-nav-inner"><a className="reference-brand" href="/surya-portfolio/"><strong>Surya Kiran</strong><span className="reference-brand-divider" /><span>India</span></a><nav><a href="/surya-portfolio/#art">Art</a><a href="/surya-portfolio/#about">About Me</a><a className="resume-nav-link" href="/surya-portfolio/resume/">Resume</a></nav></div></header>
   <main>
