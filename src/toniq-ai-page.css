@@ -67,7 +67,7 @@
   object-fit: contain;
   filter: none;
 }
-.ta-page .ta-hero-visual .ta-party-tag { position: absolute; z-index: 2; }
+.ta-page .ta-hero-visual .ta-party-tag { position: absolute; z-index: 2; animation-name: toniqFloat; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
 .ta-page .ta-hero-tag {
   position: relative;
   z-index: 1;
@@ -293,6 +293,7 @@
 
 @media (min-width: 640px) { .ta-page .ta-sketch-zoom { width: calc(33.333% - 8px); } }
 @media (min-width: 768px) {
+  .ta-page .ta-hero-mark { width: 152px; height: 141px; }
   .ta-page .ta-sketch-section { margin-top: 64px; }
   .ta-page .ta-sketch-zoom { width: calc(25% - 12px); }
   .ta-page .ta-section { margin-top: 120px; }
@@ -386,9 +387,9 @@
   .ta-page .ta-float, .ta-page .ta-hero-tag, .ta-page .ta-party-tag { display: none; }
   .ta-page .ta-hero-copy { position: relative; top: auto; left: auto; transform: none; width: 100%; max-width: 620px; margin: 0 auto; padding: 120px 20px 56px; }
 }
-@media (min-width: 640px) and (max-width: 1023px) {
+@media (min-width: 640px) and (max-width: 767px) {
   .ta-page .ta-hero h1 { font-size: 39px; }
-  .ta-page .ta-hero .ta-subtitle { font-size: 16.5px; }
+
 }
 @media (max-width: 767px) {
   .ta-page .reference-nav { top: 12px; }
