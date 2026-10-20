@@ -13,14 +13,14 @@ function ToniqPage(){
   <main>
    <section className="ta-hero" id="top">
     <div className="ta-hero-visual" aria-label="Toniq virtual networking space">
-     <img className="ta-avatar ta-avatar-anna" src={base+'hero-avatar-anna-marie.png'} alt="Attendee Anna Marie"/>
-     <img className="ta-avatar ta-avatar-marcus" src={base+'hero-avatar-marcus.png'} alt="Attendee Marcus"/>
-     <img className="ta-avatar ta-avatar-maria" src={base+'hero-avatar-maria.png'} alt="Attendee Maria"/>
-     <img className="ta-avatar ta-avatar-pair" src={base+'hero-avatar-pair-kristian-alexx.png'} alt="Attendees Kristian and Alexx, glad to meet you here"/>
-     <img className="ta-avatar ta-avatar-matt" src={base+'hero-avatar-matt-d.png'} alt="Attendee Matt D"/>
-     <img className="ta-avatar ta-avatar-amy" src={base+'hero-avatar-amy-s.png'} alt="Attendee Amy S"/>
-     <img className="ta-avatar ta-avatar-you" src={base+'hero-avatar-you.png'} alt="You"/>
-     <img className="ta-avatar ta-avatar-aria" src={base+'hero-avatar-aria-l.png'} alt="Attendee Aria L"/>
+     <img className="ta-avatar ta-avatar-anna" src={base+'redesign/hero-avatar-anna-marie.png'} alt="Attendee Anna Marie"/>
+     <img className="ta-avatar ta-avatar-marcus" src={base+'redesign/hero-avatar-marcus.png'} alt="Attendee Marcus"/>
+     <img className="ta-avatar ta-avatar-maria" src={base+'redesign/hero-avatar-maria.png'} alt="Attendee Maria"/>
+     <img className="ta-avatar ta-avatar-pair" src={base+'redesign/hero-avatar-pair-kristian-alexx.png'} alt="Attendees Kristian and Alexx, glad to meet you here"/>
+     <img className="ta-avatar ta-avatar-matt" src={base+'redesign/hero-avatar-matt-d.png'} alt="Attendee Matt D"/>
+     <img className="ta-avatar ta-avatar-amy" src={base+'redesign/hero-avatar-amy-s.png'} alt="Attendee Amy S"/>
+     <img className="ta-avatar ta-avatar-you" src={base+'redesign/hero-avatar-you.png'} alt="You"/>
+     <img className="ta-avatar ta-avatar-aria" src={base+'redesign/hero-avatar-aria-l.png'} alt="Attendee Aria L"/>
      <span className="ta-hero-tag ta-tag-one">Anyone in SAAS?</span>
      <span className="ta-hero-tag ta-tag-two">You also love Tennis?</span>
      <span className="ta-hero-tag ta-tag-three">Yeah, Lets play?</span>
