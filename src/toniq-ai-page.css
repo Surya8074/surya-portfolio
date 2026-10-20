@@ -271,9 +271,39 @@
 .ta-page .ta-journey-map-frame { position: relative; width: 100%; aspect-ratio: 2681 / 1745; overflow: hidden; border-radius: 8px; background: #fff; }
 .ta-page .ta-journey-map-frame img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; }
 .ta-page .ta-journey-map-attendee { opacity: 0; }
-.ta-page .ta-journey-evidence { position: relative; width: 100%; max-width: 1035px; aspect-ratio: 910.647 / 182.803; margin: 36px auto 0; overflow: hidden; }
-.ta-page .ta-journey-evidence img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; }
-.ta-page .ta-journey-evidence img + img { opacity: 0; }
+.ta-page .ta-journey-diagram {
+  position: relative;
+  width: 100%;
+  max-width: 1018px;
+  aspect-ratio: 1018 / 332;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 28.4px;
+  background: #fbfbfb;
+  color: #030c36;
+  font-family: Rubik,Arial,sans-serif;
+}
+.ta-page .ta-journey-label { position: absolute; margin: 0; font-size: clamp(15px,2vw,20.4px); font-weight: 700; line-height: 1.3; letter-spacing: -.4081px; white-space: nowrap; }
+.ta-page .ta-label-attendee { left: 31.08%; top: 13.4%; }
+.ta-page .ta-label-hosts { left: 64.57%; top: 13.4%; }
+.ta-page .ta-journey-shapes { position: absolute; left: 5.29%; top: 25.6%; width: 89.46%; height: 55.06%; pointer-events: none; }
+.ta-page .ta-journey-shapes img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; opacity: 0; transition: opacity .5s ease; }
+.ta-page .ta-journey-shapes img.shape-active { opacity: 1; }
+.ta-page .ta-journey-shapes img.shape-flipped { transform: scaleY(-1); }
+.ta-page .ta-journey-mode-buttons button {
+  position: absolute; display: flex; align-items: center; justify-content: center;
+  padding: 0; border: 0; background: transparent; color: #000;
+  font: 400 clamp(13px,1.6vw,16.32px)/1.2 Rubik,Arial,sans-serif; cursor: pointer;
+}
+.ta-page .ta-journey-mode-buttons button.active { font-weight: 700; }
+.ta-page .ta-journey-mode-buttons button:nth-child(1) { left: 6.29%; top: 27.6%; width: 17.24%; height: 11.1%; }
+.ta-page .ta-journey-mode-buttons button:nth-child(2) { left: 5.29%; top: 45.75%; width: 17.68%; height: 14.76%; }
+.ta-page .ta-journey-mode-buttons button:nth-child(3) { left: 5.3%; top: 66%; width: 17.68%; height: 14.76%; }
+.ta-page .ta-journey-text { position: absolute; top: 33%; display: flex; flex-direction: column; gap: 8px; color: #2c2c2c; font-size: clamp(11.5px,1.6vw,16.32px); line-height: 1.25; letter-spacing: -.3265px; }
+.ta-page .ta-journey-text p { margin: 0; }
+.ta-page .ta-journey-attendee { left: 31.08%; width: 18.89%; }
+.ta-page .ta-journey-host { left: 64.57%; width: 20.54%; }
+.ta-page .ta-journey-divider { position: absolute; left: 57.15%; top: 33%; width: 1px; height: 39.87%; background: #e2c98a; }
 .ta-page .ta-journey-matrix { width: 100%; max-width: 1020px; }
 .ta-page .ta-ui-gallery { width: 100%; max-width: 1226px; margin: 40px auto 0; display: flex; align-items: flex-end; justify-content: center; gap: 75px; }
 .ta-page .ta-ui-left { width: 294px; flex: 0 0 294px; }
@@ -529,12 +559,13 @@
   .ta-page .ta-journey-intro .ta-lead { font-size: 16px; }
   .ta-page .ta-journey-matrix > div { padding: 0; }
   .ta-page .ta-journey-matrix p { grid-template-columns: 82px 1fr; gap: 10px; }
+  .ta-page .ta-journey-map { overflow-x: auto; }
   .ta-page .ta-sketch-section { margin-top: 48px; }
   .ta-page .ta-section h2 { font-size: 28px; line-height: 1.11; }
   .ta-page .ta-lead { font-size: 16px; }
   .ta-page .ta-copy { font-size: 16px; }
   .ta-page .ta-two-figures, .ta-page .ta-painpoints { grid-template-columns: 1fr; gap: 16px; margin-top: 30px; }
-  .ta-page .ta-journey-evidence { aspect-ratio: 1 / 1; }
+  .ta-page .ta-journey-diagram { min-width: 680px; }
   .ta-page .ta-system-inner { align-items: stretch; }
   .ta-page .ta-system-tabs { gap: 8px; }
   .ta-page .ta-system-tabs button { padding: 10px 13px; font-size: 13px; }
