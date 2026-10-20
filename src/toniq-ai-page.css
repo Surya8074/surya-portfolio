@@ -234,7 +234,7 @@
 
 .ta-page .ta-section { width: 100%; margin: 80px auto 0; padding: 0 20px; }
 .ta-page .ta-section > * { }
-.ta-page .ta-section > .ta-figure, .ta-page .ta-section > .ta-two-figures, .ta-page .ta-section > .ta-quotes, .ta-page .ta-section > .ta-painpoints, .ta-page .ta-section > .ta-callout, .ta-page .ta-section > .ta-ai-reasons, .ta-page .ta-section > .ta-sketch-gallery, .ta-page .ta-section > .ta-ai-card-gallery, .ta-page .ta-section > .ta-solution-block, .ta-page .ta-section > .ta-reflection-list { max-width: 912px; margin-left: auto; margin-right: auto; }
+.ta-page .ta-section > .ta-figure, .ta-page .ta-section > .ta-two-figures, .ta-page .ta-section > .ta-quotes, .ta-page .ta-section > .ta-painpoints, .ta-page .ta-section > .ta-callout, .ta-page .ta-section > .ta-ai-reasons, .ta-page .ta-section > .ta-sketch-gallery, .ta-page .ta-section > .ta-reflection-list { max-width: 912px; margin-left: auto; margin-right: auto; }
 .ta-page .ta-section > .ta-kicker, .ta-page .ta-section > h2, .ta-page .ta-section > .ta-lead, .ta-page .ta-section > .ta-copy { max-width: 912px; margin-left: auto; margin-right: auto; }
 .ta-page .ta-section h2 { font-size: 38px; line-height: 1.11; letter-spacing: -.38px; }
 .ta-page .ta-section-inner { width: 100%; max-width: 912px; margin: 0 auto; }
@@ -358,15 +358,6 @@
 .ta-page .ta-ai-reasons span { color: #888; font-size: 12px; }
 .ta-page .ta-ai-reasons h3 { margin: 24px 0 14px; font: 600 17px/1.35 Rubik, Arial, sans-serif; letter-spacing: -.025em; }
 .ta-page .ta-ai-reasons p { margin: 0; color: #666; font-size: 13px; line-height: 1.7; }
-.ta-page .ta-solution > h2 { font-size: clamp(38px, 4.5vw, 56px); }
-.ta-page .ta-solution-block { margin-top: 54px; }
-.ta-page .ta-solution-block h4 { margin: 28px 0 14px; font: 600 18px Rubik, Arial, sans-serif; }
-.ta-page .ta-solution-block ul, .ta-page .ta-solution-block ol { max-width: 780px; padding-left: 22px; }
-.ta-page .ta-solution-block li { margin: 0 0 14px; padding-left: 5px; color: #555; font-size: 14px; line-height: 1.8; }
-.ta-page .ta-solution-block > .ta-figure { margin-top: 35px; }
-.ta-page .ta-event-states { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 28px 0; }
-.ta-page .ta-event-states span { padding: 12px 6px; border: 1px solid #dedede; border-radius: 3px; background: #fafafa; text-align: center; font-size: 11px; }
-.ta-page .ta-ui > .ta-figure { max-width: 100%; margin: 28px auto 0; }
 .ta-page .ta-reflection > .ta-kicker, .ta-page .ta-reflection > h2 { max-width: 624px; margin-left: auto; margin-right: auto; }
 .ta-page .ta-reflection-list { max-width: 624px; border-top: 0; }
 .ta-page .ta-reflection-list article { padding: 22px 0; border-bottom: 1px solid #e5e5e5; }
@@ -439,7 +430,6 @@
   .ta-page .ta-ui-left { width: auto; grid-column: 1; }
   .ta-page .ta-ui-middle { width: auto; grid-column: 2; gap: 28px; }
   .ta-page .ta-ui-right { width: auto; grid-column: 1 / -1; }
-  .ta-page .ta-event-states { grid-template-columns: 1fr 1fr; }
   .ta-page .ta-end { width: 100%; }
   .ta-page .ta-reflection-divider { margin-top: 44px; }
   .ta-page .ta-footer { width: calc(100% - 36px); gap: 16px; flex-wrap: wrap; }
