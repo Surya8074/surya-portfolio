@@ -60,8 +60,14 @@ function ToniqPage(){
    <section className="ta-section ta-journey">
     <div className="ta-section-inner ta-journey-inner">
      <div className="ta-journey-intro"><K>Journey mapping</K><h2>Two users, two parallel journeys</h2><p className="ta-lead">Two users experienced the same event through different interfaces. Every existing platform designed for one and assumed the other would benefit. They mapped differently.</p></div>
-     <div className="ta-two-figures"><A src="redesign/journey-map-host.png" alt="Host journey map across Discover, Setup, Use, Reflection"/><A src="redesign/journey-map-attendee.png" alt="Attendee journey map across Discover, Setup, Use, Reflection"/></div>
-     <div className="ta-painpoints"><div><h3>Attendee</h3><p>No context of people</p><p>Can’t flow in and out of conversations</p><p>Connections disappear after the call</p></div><div><h3>Hosts</h3><p>Can’t see who’s disengaged</p><p>Forced participation kills energy</p><p>Hard to find engaging activities</p></div></div>
+     <div className="ta-journey-map">
+      <div className="ta-journey-tabs" role="tablist" aria-label="Journey map view">
+       <button type="button" role="tab" aria-selected={journeyView==="host"} className={journeyView==="host" ? "active" : ""} onClick={()=>setJourneyView("host")}>Host journey</button>
+       <button type="button" role="tab" aria-selected={journeyView==="attendee"} className={journeyView==="attendee" ? "active" : ""} onClick={()=>setJourneyView("attendee")}>Attendee journey</button>
+      </div>
+      <figure className="ta-figure"><img src={base+(journeyView==="host" ? "redesign/journey-map-host.png" : "redesign/journey-map-attendee.png")} alt={journeyView==="host" ? "Host journey map across Discover, Setup, Use, Reflection" : "Attendee journey map across Discover, Setup, Use, Reflection"} loading="lazy"/></figure>
+     </div>
+     <div className="ta-painpoints ta-journey-matrix"><div><h3>Attendee</h3><p><b>Pain point</b>No context of people before committing</p><p><b>Need</b>Connections that carry context</p><p><b>Goal</b>Discovery built into the space, not the agenda</p></div><div><h3>Host</h3><p><b>Pain point</b>Limited view of the room in real time</p><p><b>Need</b>Tools to guide movement</p><p><b>Goal</b>Ready-made templates and a post-event summary of engagement</p></div></div>
      <p className="ta-callout">What the map revealed: every breakdown was an information problem. The system knew who was there, who was talking, what was on profiles. It just wasn’t surfacing any of it to the people who needed it.</p>
     </div>
    </section>
