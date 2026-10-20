@@ -400,3 +400,25 @@
   .ta-page .ta-hero h1{font-size:clamp(34px,9vw,44px)}
   .ta-page .ta-hero .ta-subtitle{font-size:15px}
 }
+
+
+/* Latest requested adjustment: transparent text area below the logo.
+   Preserve avatar and chat-bubble coordinates exactly as currently defined. */
+.ta-page .ta-hero-copy{
+  background:transparent !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  padding:8px 28px 18px !important;
+  margin-top:0 !important;
+  min-height:0 !important;
+  position:relative;
+  z-index:5;
+}
+.ta-page .ta-hero-visual{height:410px !important;margin-bottom:0 !important}
+.ta-page .ta-hero{margin-top:116px !important;margin-bottom:80px !important}
+.ta-page .ta-hero h1{margin-top:0 !important}
+@media(max-width:760px){
+  .ta-page .ta-hero-copy{padding:12px 8px 18px !important}
+  .ta-page .ta-hero-visual{height:300px !important}
+  .ta-page .ta-hero{margin-top:90px !important}
+}
