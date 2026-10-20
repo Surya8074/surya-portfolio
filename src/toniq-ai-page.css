@@ -205,3 +205,65 @@
 @media(prefers-reduced-motion:reduce){
  .ta-page .ta-hero .ta-live{transition:none}
 }
+
+
+/* Hero visual corrections from reference comparison */
+.ta-page{
+  background-color:#fff;
+  background-image:radial-gradient(circle,rgba(35,35,35,.13) 1.5px,transparent 1.7px);
+  background-size:39px 39px;
+  background-position:0 0;
+}
+.ta-page .ta-hero{margin-top:116px;margin-bottom:80px}
+.ta-page .ta-hero-visual{height:410px;width:min(100%,1040px);margin-bottom:0}
+.ta-page .ta-hero-visual .ta-hero-cube{
+  width:clamp(128px,15vw,190px);
+  left:50%;right:auto;top:43%;bottom:auto;
+  transform:translate(-50%,-50%);
+  z-index:4;
+}
+.ta-page .ta-hero-visual .ta-avatar{
+  max-height:none;
+  filter:drop-shadow(0 3px 5px rgba(20,20,20,.12));
+}
+.ta-page .ta-avatar-anna{left:8%;top:12%;width:clamp(82px,8vw,108px)}
+.ta-page .ta-avatar-marcus{left:auto;right:8%;top:0;width:clamp(82px,8vw,108px)}
+.ta-page .ta-avatar-maria{left:-1%;right:auto;top:75%;width:clamp(82px,8vw,108px)}
+.ta-page .ta-avatar-pair{right:12%;top:56%;width:clamp(120px,13vw,166px)}
+.ta-page .ta-avatar-matt{left:7%;top:122%;width:clamp(82px,8vw,108px)}
+.ta-page .ta-avatar-amy{left:22%;top:120%;width:clamp(82px,8vw,108px)}
+.ta-page .ta-avatar-you{left:45%;top:118%;width:clamp(82px,8vw,108px)}
+.ta-page .ta-avatar-aria{right:2%;top:119%;width:clamp(82px,8vw,108px)}
+.ta-page .ta-hero-tag{
+  padding:11px 17px;border:0;border-radius:999px;
+  color:#fff;font-size:15px;font-weight:700;
+  box-shadow:0 3px 8px rgba(0,0,0,.15);
+  background:#639fa4;
+}
+.ta-page .ta-tag-one{left:14%;top:42%;background:#639fa4}
+.ta-page .ta-tag-two{left:4%;top:113%;background:#ffb300;color:#fff}
+.ta-page .ta-tag-three{right:6%;top:61%;background:#00c6ad}
+.ta-page .ta-tag-four{right:18%;top:115%;left:auto;bottom:auto;background:#f4f4f4;color:#263143;border:1px solid #e6e6e6}
+.ta-page .ta-hero-visual .ta-party-tag{width:74px;left:51%;right:auto;top:82%;bottom:auto}
+.ta-page .ta-hero-copy{position:relative;z-index:5;margin-top:-1px}
+.ta-page .ta-hero h1{font-size:clamp(42px,4.3vw,56px);max-width:700px;margin-bottom:18px}
+.ta-page .ta-hero .ta-subtitle{font-size:18px;line-height:1.6;max-width:560px}
+.ta-page .ta-hero .ta-live{display:none}
+@media(max-width:760px){
+ .ta-page{background-size:28px 28px}
+ .ta-page .ta-hero{margin-top:90px}
+ .ta-page .ta-hero-visual{height:300px}
+ .ta-page .ta-hero-visual .ta-hero-cube{width:100px;top:47%}
+ .ta-page .ta-avatar-anna{left:1%;top:5%}
+ .ta-page .ta-avatar-marcus{right:1%;top:0}
+ .ta-page .ta-avatar-maria{left:0;top:70%}
+ .ta-page .ta-avatar-pair{right:0;top:56%;width:100px}
+ .ta-page .ta-avatar-matt,.ta-page .ta-avatar-amy,.ta-page .ta-avatar-you,.ta-page .ta-avatar-aria{display:none}
+ .ta-page .ta-tag-one{left:5%;top:34%}
+ .ta-page .ta-tag-two{left:0;top:88%}
+ .ta-page .ta-tag-three{right:0;top:47%}
+ .ta-page .ta-tag-four{right:2%;top:88%}
+ .ta-page .ta-hero-visual .ta-party-tag{width:45px;left:53%;top:75%}
+ .ta-page .ta-hero h1{font-size:clamp(34px,9vw,44px)}
+ .ta-page .ta-hero .ta-subtitle{font-size:15px}
+}
