@@ -2410,6 +2410,32 @@ const bar=document.querySelector('.progress');function progress(){const max=docu
 .reference-nav nav a:hover{opacity:.7}
 @media(max-width:1023px){.reference-nav{top:24px}.reference-nav-inner{width:calc(100% - 30px);height:60px;padding:0 22px}.reference-brand{font-size:13px}.reference-nav nav{gap:18px}.reference-nav nav a{font-size:12px}}
 @media(max-width:560px){.reference-nav{top:14px}.reference-nav-inner{width:calc(100% - 24px);height:54px;padding:0 13px}.reference-brand{font-size:12px;gap:5px}.reference-brand-divider{margin:0 4px}.reference-nav nav{gap:12px}.reference-nav nav a{font-size:10px;letter-spacing:-.15px}}
+
+
+/* LaundroMart hero — adapted 3D orbital carousel; original concept by @ybouane.
+   Reference: https://crazygl.com/hero/orbital-carousel */
+.lm-orbital-wrap{position:relative;z-index:3;width:min(1120px,100%);margin:10px auto 0;padding:0 0 26px}
+.lm-orbital-topline,.lm-orbital-bottomline{display:flex;align-items:center;justify-content:space-between;gap:18px;position:relative;z-index:3;color:#aebbe0;font-size:9px;line-height:1.5;letter-spacing:.12em;text-transform:uppercase}
+.lm-orbital-topline>span,.lm-orbital-bottomline>span{display:inline-flex;align-items:center;gap:9px}
+.lm-orbital-live-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#68a2ff;box-shadow:0 0 12px rgba(76,139,255,.7)}
+.lm-orbital-hint-top{color:#9aa8cf;letter-spacing:.08em}
+.lm-orbital-hint-top b{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;font-size:15px;font-weight:400;color:#dce6ff;border:1px solid rgba(124,153,255,.3);background:rgba(15,29,63,.65)}
+.lm-orbital-stage{height:clamp(310px,37vw,440px);width:100%;position:relative;overflow:visible;touch-action:pan-y;isolation:isolate}
+.lm-orbital-stage canvas{position:absolute;inset:0;display:block;width:100%;height:100%;outline:0;cursor:grab;touch-action:none;-webkit-tap-highlight-color:transparent}
+.lm-orbital-stage canvas:active{cursor:grabbing}
+.lm-orbital-fallback{position:absolute;inset:16px 2% 10px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;transform:perspective(900px) rotateX(4deg);transition:opacity .4s ease}
+.lm-orbital-fallback>div{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:110px;padding:17px;border:1px solid rgba(140,164,255,.22);border-radius:14px;background:linear-gradient(150deg,rgba(24,40,81,.94),rgba(8,18,42,.96));box-shadow:0 18px 42px rgba(0,0,0,.2)}
+.lm-orbital-fallback small{font-size:8px;letter-spacing:.12em;color:#8eaeff}
+.lm-orbital-fallback b{font:600 15px Manrope,sans-serif;color:#f7f8ff;letter-spacing:-.035em}
+.lm-orbital-fallback i{position:absolute;right:14px;bottom:13px;color:#637fce;font-size:10px;font-style:normal}
+.lm-orbital-stage.is-ready .lm-orbital-fallback{opacity:0;pointer-events:none}
+.lm-orbital-bottomline{padding-top:3px;color:#8393bc;font-size:8px;letter-spacing:.14em}
+.lm-orbital-bottomline>span:last-child{color:#a9b7d8;letter-spacing:.06em;text-transform:none}
+.lm-orbital-bottomline>span:last-child i{display:inline-block;width:5px;height:5px;border-radius:50%;background:#719eff}
+@media(min-width:1450px){.lm-orbital-wrap{width:min(1160px,100%)}.lm-orbital-stage{height:460px}}
+@media(max-width:900px){.lm-orbital-wrap{margin-top:22px}.lm-orbital-stage{height:clamp(300px,49vw,395px)}.lm-orbital-fallback{inset:14px 0 10px;gap:8px}.lm-orbital-fallback>div{padding:14px}.lm-orbital-fallback b{font-size:13px}}
+@media(max-width:600px){.lm-orbital-wrap{margin-top:19px;padding-bottom:18px}.lm-orbital-topline,.lm-orbital-bottomline{font-size:7px;letter-spacing:.08em;gap:8px}.lm-orbital-hint-top{font-size:7px}.lm-orbital-hint-top b{width:21px;height:21px}.lm-orbital-stage{height:300px;margin:0 -10px;width:calc(100% + 20px)}.lm-orbital-fallback{grid-template-columns:repeat(2,minmax(0,1fr));inset:10px 2px;gap:8px}.lm-orbital-fallback>div{min-height:80px;padding:11px;border-radius:11px}.lm-orbital-fallback small{font-size:7px}.lm-orbital-fallback b{font-size:11px;max-width:90%}.lm-orbital-bottomline{align-items:flex-start}.lm-orbital-bottomline>span:first-child{max-width:52%}.lm-orbital-bottomline>span:last-child{max-width:44%;text-align:right}}
+@media(prefers-reduced-motion:reduce){.lm-orbital-fallback{transition:none}}
 </style>
 <script id="lm-screen-carousel-script">
 (function(){
@@ -2631,28 +2657,3 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.m
 </script>
 
 </body></html>
-
-/* LaundroMart hero — adapted 3D orbital carousel; original concept by @ybouane.
-   Reference: https://crazygl.com/hero/orbital-carousel */
-.lm-orbital-wrap{position:relative;z-index:3;width:min(1120px,100%);margin:10px auto 0;padding:0 0 26px}
-.lm-orbital-topline,.lm-orbital-bottomline{display:flex;align-items:center;justify-content:space-between;gap:18px;position:relative;z-index:3;color:#aebbe0;font-size:9px;line-height:1.5;letter-spacing:.12em;text-transform:uppercase}
-.lm-orbital-topline>span,.lm-orbital-bottomline>span{display:inline-flex;align-items:center;gap:9px}
-.lm-orbital-live-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#68a2ff;box-shadow:0 0 12px rgba(76,139,255,.7)}
-.lm-orbital-hint-top{color:#9aa8cf;letter-spacing:.08em}
-.lm-orbital-hint-top b{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;font-size:15px;font-weight:400;color:#dce6ff;border:1px solid rgba(124,153,255,.3);background:rgba(15,29,63,.65)}
-.lm-orbital-stage{height:clamp(310px,37vw,440px);width:100%;position:relative;overflow:visible;touch-action:pan-y;isolation:isolate}
-.lm-orbital-stage canvas{position:absolute;inset:0;display:block;width:100%;height:100%;outline:0;cursor:grab;touch-action:none;-webkit-tap-highlight-color:transparent}
-.lm-orbital-stage canvas:active{cursor:grabbing}
-.lm-orbital-fallback{position:absolute;inset:16px 2% 10px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;transform:perspective(900px) rotateX(4deg);transition:opacity .4s ease}
-.lm-orbital-fallback>div{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:110px;padding:17px;border:1px solid rgba(140,164,255,.22);border-radius:14px;background:linear-gradient(150deg,rgba(24,40,81,.94),rgba(8,18,42,.96));box-shadow:0 18px 42px rgba(0,0,0,.2)}
-.lm-orbital-fallback small{font-size:8px;letter-spacing:.12em;color:#8eaeff}
-.lm-orbital-fallback b{font:600 15px Manrope,sans-serif;color:#f7f8ff;letter-spacing:-.035em}
-.lm-orbital-fallback i{position:absolute;right:14px;bottom:13px;color:#637fce;font-size:10px;font-style:normal}
-.lm-orbital-stage.is-ready .lm-orbital-fallback{opacity:0;pointer-events:none}
-.lm-orbital-bottomline{padding-top:3px;color:#8393bc;font-size:8px;letter-spacing:.14em}
-.lm-orbital-bottomline>span:last-child{color:#a9b7d8;letter-spacing:.06em;text-transform:none}
-.lm-orbital-bottomline>span:last-child i{display:inline-block;width:5px;height:5px;border-radius:50%;background:#719eff}
-@media(min-width:1450px){.lm-orbital-wrap{width:min(1160px,100%)}.lm-orbital-stage{height:460px}}
-@media(max-width:900px){.lm-orbital-wrap{margin-top:22px}.lm-orbital-stage{height:clamp(300px,49vw,395px)}.lm-orbital-fallback{inset:14px 0 10px;gap:8px}.lm-orbital-fallback>div{padding:14px}.lm-orbital-fallback b{font-size:13px}}
-@media(max-width:600px){.lm-orbital-wrap{margin-top:19px;padding-bottom:18px}.lm-orbital-topline,.lm-orbital-bottomline{font-size:7px;letter-spacing:.08em;gap:8px}.lm-orbital-hint-top{font-size:7px}.lm-orbital-hint-top b{width:21px;height:21px}.lm-orbital-stage{height:300px;margin:0 -10px;width:calc(100% + 20px)}.lm-orbital-fallback{grid-template-columns:repeat(2,minmax(0,1fr));inset:10px 2px;gap:8px}.lm-orbital-fallback>div{min-height:80px;padding:11px;border-radius:11px}.lm-orbital-fallback small{font-size:7px}.lm-orbital-fallback b{font-size:11px;max-width:90%}.lm-orbital-bottomline{align-items:flex-start}.lm-orbital-bottomline>span:first-child{max-width:52%}.lm-orbital-bottomline>span:last-child{max-width:44%;text-align:right}}
-@media(prefers-reduced-motion:reduce){.lm-orbital-fallback{transition:none}}
