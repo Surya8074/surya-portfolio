@@ -1,0 +1,244 @@
+:root {
+  --orbital-ink: #17191f;
+  --orbital-muted: #717580;
+  --orbital-blue: #3f5ee8;
+  --orbital-border: #e5e6eb;
+}
+.orbital-hero {
+  min-height: clamp(720px, 91vh, 920px);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(134px, 16vh, 160px) 24px 18px;
+  background:
+    radial-gradient(ellipse at 50% 70%, rgba(219, 228, 255, .82) 0%, rgba(241, 244, 255, .5) 26%, rgba(255, 254, 251, 0) 61%),
+    linear-gradient(180deg, #fffefb 0%, #fcfbfa 53%, #f6f7fc 100%);
+  color: var(--orbital-ink);
+}
+.orbital-hero::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 8% -4% 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(63, 94, 232, .15) .8px, transparent .8px);
+  background-size: 30px 30px;
+  opacity: .22;
+  mask-image: linear-gradient(to bottom, transparent 4%, #000 36%, transparent 93%);
+}
+.orbital-ambient {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  filter: blur(76px);
+  opacity: .34;
+}
+.orbital-ambient-one {
+  top: 42%;
+  left: -250px;
+  background: #dbe6ff;
+}
+.orbital-ambient-two {
+  top: 30%;
+  right: -250px;
+  background: #f4e4f5;
+}
+.orbital-hero-content {
+  position: relative;
+  z-index: 4;
+  max-width: 1020px;
+  margin: 0 auto;
+  text-align: center;
+}
+.orbital-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin: 0 0 22px;
+  color: #737784;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: .15em;
+  line-height: 1.4;
+}
+.orbital-eyebrow > span {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: var(--orbital-blue);
+  box-shadow: 0 0 0 4px rgba(63, 94, 232, .09);
+}
+.orbital-hero-content h1 {
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #17191f;
+  font-family: Inter, Arial, sans-serif;
+  font-size: clamp(38px, 5.15vw, 68px);
+  font-weight: 650;
+  line-height: 1.045;
+  letter-spacing: -.066em;
+}
+.orbital-hero-content h1 span {
+  display: block;
+}
+.orbital-hero-content h1 em {
+  color: #4264ed;
+  font-style: normal;
+  font-weight: 650;
+}
+.orbital-hero-description {
+  margin: 17px auto 0;
+  color: #757984;
+  font-size: clamp(13px, 1.2vw, 15px);
+  line-height: 1.6;
+  letter-spacing: -.012em;
+}
+.orbital-work-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  height: 43px;
+  margin-top: 22px;
+  padding: 0 20px;
+  color: #fff;
+  background: #17191f;
+  border: 1px solid #17191f;
+  border-radius: 999px;
+  box-shadow: 0 5px 15px rgba(18, 24, 46, .12);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.orbital-work-button span {
+  font-size: 15px;
+  line-height: 1;
+  transition: transform .25s ease;
+}
+.orbital-work-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 23px rgba(18, 24, 46, .16);
+  background: #303443;
+}
+.orbital-work-button:hover span {
+  transform: translate(2px, 2px);
+}
+.orbital-stage {
+  position: relative;
+  z-index: 2;
+  width: min(1160px, 100%);
+  height: clamp(345px, 43vw, 515px);
+  margin: -3px auto 0;
+  touch-action: pan-y;
+}
+.orbital-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  cursor: grab;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.orbital-instruction {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: -9px auto 0;
+  color: #9296a1;
+  font-size: 9px;
+  font-weight: 650;
+  letter-spacing: .14em;
+  text-align: center;
+}
+.orbital-instruction > i {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #b4b7c1;
+}
+.orbital-drag-icon {
+  color: #536de0;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: .7;
+}
+.orbital-fallback {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  gap: 15px;
+  width: min(960px, 100%);
+  margin: 35px auto 0;
+  transform: perspective(1200px) rotateX(3deg);
+}
+.orbital-fallback-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 22px;
+  min-height: 145px;
+  padding: 20px;
+  border: 1px solid #e3e5ed;
+  border-radius: 17px;
+  background: rgba(255,255,255,.9);
+  box-shadow: 0 22px 50px rgba(37, 49, 90, .09);
+}
+.orbital-fallback-card span {
+  color: #777d8c;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .13em;
+}
+.orbital-fallback-card strong {
+  color: #262a37;
+  font-size: 14px;
+}
+.orbital-fallback-card i {
+  align-self: flex-end;
+  color: #3f5ee8;
+  font-size: 11px;
+  font-style: normal;
+}
+@media (min-width: 1500px) {
+  .orbital-hero-content h1 { font-size: clamp(64px, 4.4vw, 78px); }
+  .orbital-stage { height: min(36vw, 545px); }
+}
+@media (max-width: 900px) {
+  .orbital-hero { min-height: 760px; padding-top: 132px; }
+  .orbital-hero-content h1 { font-size: clamp(39px, 6.2vw, 57px); }
+  .orbital-stage { height: clamp(340px, 55vw, 450px); width: calc(100% + 30px); margin-left: -15px; }
+  .orbital-ambient { opacity: .26; }
+}
+@media (max-width: 600px) {
+  .orbital-hero { min-height: 700px; padding: 118px 17px 22px; }
+  .orbital-eyebrow { gap: 7px; margin-bottom: 17px; font-size: 8px; letter-spacing: .12em; }
+  .orbital-eyebrow > span { width: 6px; height: 6px; flex-basis: 6px; }
+  .orbital-hero-content h1 { font-size: clamp(34px, 9.3vw, 48px); line-height: 1.05; letter-spacing: -.067em; }
+  .orbital-hero-content h1 span { display: inline; }
+  .orbital-hero-content h1 span + span::before { content: ' '; }
+  .orbital-hero-description { max-width: 310px; font-size: 12px; margin-top: 14px; }
+  .orbital-work-button { height: 40px; margin-top: 17px; }
+  .orbital-stage { width: calc(100% + 52px); height: 335px; margin: 0 -26px 0; }
+  .orbital-instruction { gap: 8px; margin-top: -4px; font-size: 7px; letter-spacing: .1em; }
+  .orbital-drag-icon { font-size: 14px; }
+  .orbital-fallback { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; margin-top: 24px; }
+  .orbital-fallback-card { min-height: 95px; gap: 14px; padding: 13px; border-radius: 12px; }
+  .orbital-fallback-card strong { font-size: 11px; }
+  .orbital-fallback-card span { font-size: 7px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .orbital-work-button,
+  .orbital-work-button span { transition: none; }
+}
