@@ -627,3 +627,70 @@
     margin-right: calc(50% - 50vw);
   }
 }
+
+
+/* Product-piece section: match the reference's narrow editorial column and balanced artwork spread. */
+.ta-page .ta-section.ta-ui {
+  width: 100%;
+  max-width: none;
+  margin: 120px auto 0;
+  padding: 0;
+}
+.ta-page .ta-section.ta-ui > h2,
+.ta-page .ta-section.ta-ui > .ta-lead,
+.ta-page .ta-section.ta-ui > .ta-copy {
+  width: min(624px, calc(100% - 48px));
+  max-width: 624px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ta-page .ta-section.ta-ui > h2 {
+  margin-bottom: 24px;
+  font-size: clamp(34px, 3vw, 48px);
+  line-height: 1.12;
+  letter-spacing: -.4px;
+}
+.ta-page .ta-section.ta-ui > .ta-lead {
+  margin-bottom: 18px;
+  font-size: 19px;
+  line-height: 1.5;
+  letter-spacing: -.15px;
+}
+.ta-page .ta-section.ta-ui > .ta-copy {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -.15px;
+}
+.ta-page .ta-ui-gallery {
+  width: min(1226px, calc(100% - 48px));
+  margin: 40px auto 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 75px;
+}
+.ta-page .ta-ui-left { width: 294px; flex: 0 1 294px; }
+.ta-page .ta-ui-middle { width: 449px; flex: 0 1 449px; }
+.ta-page .ta-ui-right { width: 333px; flex: 0 1 333px; }
+.ta-page .ta-ui-gallery .ta-figure img { display: block; width: 100%; height: auto; }
+@media (max-width: 767px) {
+  .ta-page .ta-section.ta-ui { margin-top: 80px; padding: 0; }
+  .ta-page .ta-section.ta-ui > h2,
+  .ta-page .ta-section.ta-ui > .ta-lead,
+  .ta-page .ta-section.ta-ui > .ta-copy { width: calc(100% - 40px); }
+  .ta-page .ta-section.ta-ui > h2 { font-size: 28px; }
+  .ta-page .ta-section.ta-ui > .ta-lead,
+  .ta-page .ta-section.ta-ui > .ta-copy { font-size: 16px; }
+  .ta-page .ta-ui-gallery {
+    width: calc(100% - 40px);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, .74fr);
+    align-items: start;
+    gap: 16px;
+  }
+  .ta-page .ta-ui-left,
+  .ta-page .ta-ui-middle,
+  .ta-page .ta-ui-right { width: auto; min-width: 0; flex: initial; }
+  .ta-page .ta-ui-middle { gap: 24px; }
+  .ta-page .ta-ui-right { grid-column: 1 / -1; }
+}
