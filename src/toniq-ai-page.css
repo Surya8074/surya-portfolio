@@ -1012,3 +1012,56 @@
     scroll-margin-top: 100px;
   }
 }
+
+
+/* Definitive research intro alignment: use the same centered 912px editorial column
+   as the thesis copy, so every line starts at the exact same left edge as “Rebuild the room”. */
+.ta-page main > section.ta-research {
+  width: min(912px, calc(100% - 40px)) !important;
+  max-width: 912px !important;
+  margin: 120px auto 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+.ta-page main > section.ta-research > h2,
+.ta-page main > section.ta-research > .ta-lead,
+.ta-page main > section.ta-research > .ta-copy {
+  display: block;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+.ta-page main > section.ta-research > h2 {
+  max-width: 650px !important;
+  margin-top: 0 !important;
+  margin-bottom: 24px !important;
+  font-size: 38px !important;
+  line-height: 1.11 !important;
+  letter-spacing: -.38px !important;
+}
+.ta-page main > section.ta-research > .ta-lead {
+  max-width: 650px !important;
+  margin-top: 0 !important;
+  margin-bottom: 18px !important;
+  font-size: 19px !important;
+  line-height: 1.5 !important;
+}
+.ta-page main > section.ta-research > .ta-copy {
+  max-width: 650px !important;
+  margin-top: 0 !important;
+  font-size: 19px !important;
+  line-height: 1.5 !important;
+}
+@media (max-width: 767px) {
+  .ta-page main > section.ta-research {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin-top: 80px !important;
+    padding: 0 !important;
+  }
+  .ta-page main > section.ta-research > h2 { font-size: 28px !important; }
+  .ta-page main > section.ta-research > .ta-lead,
+  .ta-page main > section.ta-research > .ta-copy { font-size: 16px !important; }
+}
