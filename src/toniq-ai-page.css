@@ -576,17 +576,13 @@
 }
 
 
-/* Research section: match the reference's near-full-width editorial alignment. */
-.ta-page .reference-nav {
-  position: absolute;
-  top: 32px;
-}
+/* Research section: centered editorial column aligned to the reference's left edge. */
 .ta-page .ta-research {
-  width: 100%;
+  width: min(1176px, calc(100% - 48px));
   max-width: none;
   box-sizing: border-box;
   margin: 120px auto 0;
-  padding: 0 48px;
+  padding: 0;
 }
 .ta-page .ta-research > h2 {
   max-width: 560px;
