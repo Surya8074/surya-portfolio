@@ -2273,20 +2273,19 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
 #outcome-impact .lm-outcome-flow p{margin:0;color:var(--muted);font-size:12px;line-height:1.65}
 #outcome-impact .lm-outcome-step-icon{display:flex;align-items:center;justify-content:center;width:36px;height:36px;margin:0 0 13px;border:1px solid var(--line);border-radius:50%;background:rgba(255,255,255,.7);color:var(--blue)}
 #outcome-impact .lm-outcome-step-icon svg,#outcome-impact .lm-outcome-record-icon svg,#outcome-impact .lm-outcome-operation-icon svg{display:block;width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
-#outcome-impact .lm-outcome-detail-panel{grid-column:1;min-width:0;align-self:start;margin-top:-3px;padding:14px 14px 15px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.42)}
-#outcome-impact .lm-outcome-detail-head{display:flex;justify-content:space-between;gap:12px;margin-bottom:12px;color:var(--blue);font-size:9px;font-weight:750;letter-spacing:.1em}
-#outcome-impact .lm-outcome-record-grid{display:grid;grid-template-columns:1fr}
-#outcome-impact .lm-outcome-record-grid>div{display:grid;grid-template-columns:30px minmax(0,1fr);gap:9px;align-items:start;min-width:0;padding:11px 0}
-#outcome-impact .lm-outcome-record-grid>div+div{border-top:1px solid var(--line)}
+#outcome-impact .lm-outcome-detail-panel{grid-column:1 / -1;min-width:0;margin-top:8px;padding:15px 18px 17px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.42)}
+#outcome-impact .lm-outcome-detail-head{display:flex;justify-content:space-between;gap:12px;margin-bottom:16px;color:var(--blue);font-size:9px;font-weight:750;letter-spacing:.1em}
+#outcome-impact .lm-outcome-record-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
+#outcome-impact .lm-outcome-record-grid>div{display:grid;grid-template-columns:30px minmax(0,1fr);gap:9px;align-items:start;min-width:0;padding:2px 18px 2px 0}
+#outcome-impact .lm-outcome-record-grid>div+div{padding-left:18px;border-left:1px solid var(--line)}
 #outcome-impact .lm-outcome-record-icon,#outcome-impact .lm-outcome-operation-icon{display:flex;align-items:center;justify-content:center;width:29px;height:29px;border:1px solid #e8e9f4;border-radius:50%;background:#fff;color:var(--blue)}
 #outcome-impact .lm-outcome-record-icon svg,#outcome-impact .lm-outcome-operation-icon svg{width:15px;height:15px}
 #outcome-impact .lm-outcome-record-grid>div>div>span{display:block;margin:0 0 5px;color:var(--muted);font-size:9px;letter-spacing:.05em}
 #outcome-impact .lm-outcome-record-grid strong,#outcome-impact .lm-outcome-operations-grid strong{display:block;margin-bottom:4px;color:var(--ink);font-size:11px;line-height:1.45;font-weight:700}
 #outcome-impact .lm-outcome-record-grid small,#outcome-impact .lm-outcome-operations-grid small{display:block;color:var(--muted);font-size:10px;line-height:1.55}
-#outcome-impact .lm-outcome-operations-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0}
-#outcome-impact .lm-outcome-operations-grid>div{display:grid;grid-template-columns:29px minmax(0,1fr);gap:9px;align-items:start;min-width:0;padding:12px 10px 12px 0}
-#outcome-impact .lm-outcome-operations-grid>div:nth-child(even){padding-left:10px;padding-right:0;border-left:1px solid var(--line)}
-#outcome-impact .lm-outcome-operations-grid>div:nth-child(n+3){border-top:1px solid var(--line)}
+#outcome-impact .lm-outcome-operations-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+#outcome-impact .lm-outcome-operations-grid>div{display:grid;grid-template-columns:29px minmax(0,1fr);gap:9px;align-items:start;min-width:0;padding:2px 15px 2px 0}
+#outcome-impact .lm-outcome-operations-grid>div+div{padding-left:15px;border-left:1px solid var(--line)}
 
 #outcome-impact .lm-outcome-measurement{max-width:1080px;margin:0 auto;padding-top:32px;border-top:1px solid var(--line)}
 #outcome-impact .lm-outcome-measurement-intro{display:grid;grid-template-columns:190px minmax(0,1fr);column-gap:56px;align-items:start}
@@ -2321,10 +2320,12 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
   #outcome-impact .lm-outcome-flow h4{font-size:12px}
   #outcome-impact .lm-outcome-detail-panel{grid-column:1 / -1;margin-top:0;padding:14px 12px}
   #outcome-impact .lm-outcome-detail-head{font-size:8px;gap:8px}
-  #outcome-impact .lm-outcome-record-grid{grid-template-columns:1fr}
-  #outcome-impact .lm-outcome-record-grid>div{padding:11px 0}
+  #outcome-impact .lm-outcome-record-grid{grid-template-columns:1fr;gap:0}
+  #outcome-impact .lm-outcome-record-grid>div,#outcome-impact .lm-outcome-record-grid>div+div{padding:11px 0;border-left:0}
+  #outcome-impact .lm-outcome-record-grid>div+div{border-top:1px solid var(--line)}
   #outcome-impact .lm-outcome-operations-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:0}
-  #outcome-impact .lm-outcome-operations-grid>div{padding:12px 8px 12px 0}
+  #outcome-impact .lm-outcome-operations-grid>div,#outcome-impact .lm-outcome-operations-grid>div+div{padding:12px 8px 12px 0}
+  #outcome-impact .lm-outcome-operations-grid>div:nth-child(odd){padding-left:0;border-left:0}
   #outcome-impact .lm-outcome-operations-grid>div:nth-child(even){padding-left:8px;border-left:1px solid var(--line)}
   #outcome-impact .lm-outcome-operations-grid>div:nth-child(n+3){padding-top:12px;border-top:1px solid var(--line)}
   #outcome-impact .lm-outcome-measurement-intro{grid-template-columns:1fr;gap:10px}
@@ -2345,6 +2346,7 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
   #outcome-impact .lm-outcome-operations-grid{grid-template-columns:1fr}
   #outcome-impact .lm-outcome-operations-grid>div,#outcome-impact .lm-outcome-operations-grid>div:nth-child(even){padding:12px 0;border-left:0}
   #outcome-impact .lm-outcome-operations-grid>div+div{border-top:1px solid var(--line)}
+  #outcome-impact .lm-outcome-record-grid>div,#outcome-impact .lm-outcome-record-grid>div+div{padding:11px 0}
   #outcome-impact .lm-outcome-metrics{grid-template-columns:1fr}
   #outcome-impact .lm-outcome-metric,#outcome-impact .lm-outcome-metric+ .lm-outcome-metric{padding:16px 0;border-left:0}
   #outcome-impact .lm-outcome-metric+ .lm-outcome-metric{border-top:1px solid var(--line)}
