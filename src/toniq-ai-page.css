@@ -921,3 +921,74 @@
   .ta-page main > section.ta-research > .ta-lead,
   .ta-page main > section.ta-research > .ta-copy { font-size: 16px; }
 }
+
+
+/* Why-AI section: match the reference's centered 1192px content frame.
+   Keep the heading, explanatory copy, and three cards on the same left edge. */
+.ta-page main > section.ta-ai {
+  width: min(1192px, calc(100% - 48px)) !important;
+  max-width: 1192px !important;
+  margin: 120px auto 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+.ta-page main > section.ta-ai > h2,
+.ta-page main > section.ta-ai > .ta-lead {
+  width: 100% !important;
+  max-width: 912px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+.ta-page main > section.ta-ai > h2 {
+  margin-top: 0 !important;
+  margin-bottom: 24px !important;
+  font-size: clamp(38px, 3vw, 48px);
+  line-height: 1.12;
+}
+.ta-page main > section.ta-ai > .ta-lead {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  font-size: 19px;
+  line-height: 1.5;
+}
+.ta-page main > section.ta-ai .ta-ai-mobile-cards {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 40px 0 0 !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 36px !important;
+  align-items: stretch;
+}
+.ta-page main > section.ta-ai .ta-ai-mobile-cards img {
+  width: 100% !important;
+  min-width: 0;
+  height: 100%;
+  object-fit: contain;
+  object-position: top center;
+}
+.ta-page main > section.ta-ai > .ta-section-note {
+  max-width: 912px;
+  margin: 36px 0 0 !important;
+}
+@media (max-width: 767px) {
+  .ta-page main > section.ta-ai {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin-top: 80px !important;
+    padding: 0 !important;
+  }
+  .ta-page main > section.ta-ai > h2 {
+    max-width: 480px !important;
+    font-size: 28px;
+  }
+  .ta-page main > section.ta-ai > .ta-lead { font-size: 16px; }
+  .ta-page main > section.ta-ai .ta-ai-mobile-cards {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 24px !important;
+    margin-top: 32px !important;
+  }
+  .ta-page main > section.ta-ai .ta-ai-mobile-cards img { height: auto; }
+  .ta-page main > section.ta-ai > .ta-section-note { margin-top: 28px !important; }
+}
