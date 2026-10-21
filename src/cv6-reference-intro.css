@@ -4814,3 +4814,61 @@ main.cv4-page .cv4-footer .cv4-footer-nav {
     margin-top: 22px !important;
   }
 }
+
+
+/* Restore the dark iOS-inspired closing footer for ComSki CV6. */
+main.cv4-page .cv4-footer {
+  position: relative;
+  isolation: isolate;
+  color: #f5f7ff !important;
+  background:
+    radial-gradient(ellipse at 78% 18%, rgba(59, 91, 219, .24), transparent 34%),
+    radial-gradient(ellipse at 18% 90%, rgba(91, 120, 255, .10), transparent 32%),
+    linear-gradient(145deg, #111522 0%, #090c14 58%, #101626 100%) !important;
+  border-radius: 36px 36px 0 0;
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 -20px 70px rgba(10, 16, 36, .10);
+}
+main.cv4-page .cv4-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(115deg, rgba(255,255,255,.035), transparent 42%, rgba(91,120,255,.035));
+}
+main.cv4-page .cv4-footer .cv4-footer-inner > span {
+  color: #9caeea !important;
+}
+main.cv4-page .cv4-footer .cv4-footer-inner h2 {
+  color: #f7f8ff !important;
+}
+main.cv4-page .cv4-footer .cv4-footer-inner h2 em {
+  color: #83adff !important;
+  font-style: normal;
+}
+main.cv4-page .cv4-footer .cv4-footer-inner p {
+  color: #aeb8d0 !important;
+}
+main.cv4-page .cv4-footer .cv4-footer-inner .cv4-cta {
+  color: #fff !important;
+  background: linear-gradient(135deg, #4565ed, #3152d7) !important;
+  border: 1px solid rgba(255,255,255,.16);
+  box-shadow: 0 12px 34px rgba(59,91,219,.32);
+}
+main.cv4-page .cv4-footer .cv4-footer-inner .cv4-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 38px rgba(59,91,219,.42);
+}
+main.cv4-page .cv4-footer .cv4-footer-nav {
+  border-top-color: rgba(255,255,255,.14) !important;
+}
+main.cv4-page .cv4-footer .cv4-footer-nav a {
+  color: #aab8df !important;
+}
+main.cv4-page .cv4-footer .cv4-footer-nav a:hover {
+  color: #fff !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  main.cv4-page .cv4-footer .cv4-footer-inner .cv4-cta:hover { transform: none; }
+}
