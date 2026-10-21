@@ -515,15 +515,28 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
       <a href="#design-system-contribution"><svg class="action-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 4-8 4-8-4 8-4Z"/><path d="m4 12 8 4 8-4M4 17l8 4 8-4"/></svg>Design System <svg class="action-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15m-6-6 6 6 6-6"/></svg></a>
     </div>
   </div>
-  <div class="hero-orbit hero-orbit-left" aria-hidden="true">
-    <span class="orbit-icon orbit-washer"><svg viewBox="0 0 48 48"><rect x="8" y="5" width="32" height="38" rx="5"/><path d="M8 14h32"/><circle cx="24" cy="28" r="9"/><path d="M19 28a5 5 0 0 1 8-4"/></svg></span>
-    <span class="orbit-icon orbit-shirt"><svg viewBox="0 0 48 48"><path d="m16 9 8 4 8-4 10 7-6 9-5-3v17H17V22l-5 3-6-9 10-7Z"/></svg></span>
+  <!-- This hero was inspired and implemented based on the implementation at https://crazygl.com/hero/orbital-carousel -->
+  <!-- Original implementation by @ybouane https://x.com/ybouane -->
+  <div class="lm-orbital-wrap reveal">
+    <div class="lm-orbital-topline">
+      <span><i class="lm-orbital-live-dot"></i> Product surfaces · Interactive preview</span>
+      <span class="lm-orbital-hint-top">Drag to explore <b>↔</b></span>
+    </div>
+    <div id="lm-orbital-stage" class="lm-orbital-stage" aria-label="Interactive three-dimensional carousel of LaundroMart interface previews. Drag to rotate.">
+      <div class="lm-orbital-fallback" aria-hidden="true">
+        <div><small>01 / INTAKE</small><b>Garment records</b><i>01</i></div>
+        <div><small>02 / OPERATIONS</small><b>Owner overview</b><i>02</i></div>
+        <div><small>03 / TRANSACTIONS</small><b>Order tracking</b><i>03</i></div>
+        <div><small>04 / FACILITIES</small><b>Camera setup</b><i>04</i></div>
+        <div><small>05 / OPERATORS</small><b>Daily workflow</b><i>05</i></div>
+        <div><small>06 / REPORTING</small><b>Evidence & reports</b><i>06</i></div>
+      </div>
+    </div>
+    <div class="lm-orbital-bottomline">
+      <span>LAUNDROMART / MULTI-SURFACE OPERATIONS</span>
+      <span><i></i> Grab the ring to rotate</span>
+    </div>
   </div>
-  <div class="hero-orbit hero-orbit-right" aria-hidden="true">
-    <span class="orbit-icon orbit-store"><svg viewBox="0 0 48 48"><path d="M7 20 11 8h26l4 12"/><path d="M9 20v21h30V20"/><path d="M6 20h36a0 0 0 0 1 0 0v2a6 6 0 0 1-12 0 6 6 0 0 1-12 0 6 6 0 0 1-12 0v-2Z"/><path d="M19 41V29h10v12"/></svg></span>
-    <span class="orbit-icon orbit-truck"><svg viewBox="0 0 48 48"><path d="M5 11h24v23H5z"/><path d="M29 20h8l7 8v6H29z"/><circle cx="14" cy="37" r="4"/><circle cx="36" cy="37" r="4"/><path d="M34 20v8h10"/></svg></span>
-  </div>
-  <div class="hero-art reveal"><div class="laptop-display"><svg class="screen" viewBox="0 0 1200 690" role="img" aria-label="Illustrative LaundroMart operations dashboard preview"><rect width="1200" height="690" rx="16" fill="#f8f9fc"/><rect width="190" height="690" rx="16" fill="#fff"/><rect x="24" y="24" width="34" height="34" rx="10" fill="#4264ed"/><text x="41" y="46" fill="#fff" font-size="17" text-anchor="middle" font-weight="700">L</text><text x="70" y="45" font-size="17" fill="#202332" font-weight="700">LaundroMart</text><text x="24" y="102" font-size="10" fill="#9397a5">WORKSPACE</text><g font-size="14" fill="#707586"><rect x="14" y="118" width="162" height="42" rx="9" fill="#eeedff"/><text x="48" y="144" fill="#4264ed" font-weight="700">Overview</text><text x="48" y="191">Inventory</text><text x="48" y="238">Transactions</text><text x="48" y="285">Operators</text><text x="48" y="332">Facilities</text><text x="48" y="379">Reports</text></g><text x="225" y="52" font-size="12" fill="#777d8c">Operations / Overview</text><text x="225" y="91" font-size="28" fill="#202332" font-weight="700">Dashboard overview</text><text x="225" y="116" font-size="12" fill="#858b9a">A snapshot of garment activity across your workspace.</text><rect x="225" y="145" width="220" height="105" rx="12" fill="#fff" stroke="#e6e8ef"/><rect x="460" y="145" width="220" height="105" rx="12" fill="#fff" stroke="#e6e8ef"/><rect x="695" y="145" width="220" height="105" rx="12" fill="#fff" stroke="#e6e8ef"/><rect x="930" y="145" width="235" height="105" rx="12" fill="#fff" stroke="#e6e8ef"/><g font-size="12" fill="#7c8291"><text x="245" y="173">Garments received</text><text x="480" y="173">Completed</text><text x="715" y="173">In progress</text><text x="950" y="173">Pending review</text></g><g font-size="29" font-weight="700" fill="#222638"><text x="245" y="216">—</text><text x="480" y="216">—</text><text x="715" y="216">—</text><text x="950" y="216">—</text></g><rect x="225" y="270" width="570" height="350" rx="12" fill="#fff" stroke="#e6e8ef"/><rect x="815" y="270" width="350" height="350" rx="12" fill="#fff" stroke="#e6e8ef"/><text x="248" y="303" font-size="16" fill="#252a3b" font-weight="700">Garment activity</text><text x="838" y="303" font-size="16" fill="#252a3b" font-weight="700">By garment type</text><g stroke="#eef0f5" stroke-width="1"><path d="M250 360H770M250 420H770M250 480H770M250 540H770M250 600H770"/></g><path d="M260 560 C320 510 350 535 400 455 S485 470 530 420 S615 440 665 355 S720 390 760 335" fill="none" stroke="#4264ed" stroke-width="5" stroke-linecap="round"/><path d="M260 570 C320 555 365 575 410 520 S500 545 550 490 S630 505 680 460 S730 470 760 440" fill="none" stroke="#9b8cff" stroke-width="4" stroke-linecap="round"/><g font-size="11" fill="#7c8291"><text x="250" y="610">Mon</text><text x="350" y="610">Tue</text><text x="450" y="610">Wed</text><text x="550" y="610">Thu</text><text x="650" y="610">Fri</text><text x="745" y="610">Sat</text></g><circle cx="985" cy="430" r="88" fill="none" stroke="#e9eaff" stroke-width="28"/><circle cx="985" cy="430" r="88" fill="none" stroke="#4264ed" stroke-width="28" stroke-dasharray="210 553" transform="rotate(-90 985 430)"/><circle cx="985" cy="430" r="88" fill="none" stroke="#a39aff" stroke-width="28" stroke-dasharray="145 553" stroke-dashoffset="-220" transform="rotate(-90 985 430)"/><circle cx="985" cy="430" r="88" fill="none" stroke="#76c9a0" stroke-width="28" stroke-dasharray="95 553" stroke-dashoffset="-375" transform="rotate(-90 985 430)"/><g font-size="12" fill="#6e7483"><circle cx="846" cy="555" r="5" fill="#4264ed"/><text x="858" y="559">Shirts</text><circle cx="925" cy="555" r="5" fill="#a39aff"/><text x="937" y="559">Trousers</text><circle cx="1035" cy="555" r="5" fill="#76c9a0"/><text x="1047" y="559">Other</text></g></svg></div><div class="laptop-base" aria-hidden="true"><span></span></div><div class="caption"><span>LAUNDROMART / OPERATIONS OVERVIEW</span><span>Product interface preview</span></div></div>
 </header>
 <section class="project-meta wrap reveal" aria-label="Project details">
   <div class="meta-item"><div class="meta-label">Role</div><div class="meta-value">Product Designer</div></div>
@@ -2414,4 +2427,232 @@ const bar=document.querySelector('.progress');function progress(){const max=docu
  show(active);
 })();
 </script>
+
+<script type="module" id="lm-orbital-carousel-script">
+/*
+ * Adapted from CrazyGL's Multi-Screen Orbital Carousel implementation guide:
+ * https://crazygl.com/hero/orbital-carousel
+ * Original implementation by @ybouane: https://x.com/ybouane
+ * Preview cards are generated locally until the project screenshots are supplied.
+ */
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js';
+
+(() => {
+  const stage = document.getElementById('lm-orbital-stage');
+  if (!stage || stage.dataset.orbitalReady === 'true') return;
+  stage.dataset.orbitalReady = 'true';
+
+  const definitions = [
+    { section:'INTAKE / GARMENT RECORDS', title:'Garment intake', metric:['Garments received','Ready for cleaning','Needs review'], values:['128','094','07'], rows:['Order #LM-1048','Order #LM-1047','Order #LM-1046','Order #LM-1045'], accent:'#6c91ff' },
+    { section:'OPERATIONS / OWNER OVERVIEW', title:'Operations overview', metric:['Received today','In progress','Ready for pickup'], values:['128','042','036'], rows:['Intake queue updated','Operator shift started','Pickup batch prepared','Quality review ready'], accent:'#8b80ff' },
+    { section:'TRANSACTIONS / ORDER TRACKING', title:'Transactions & orders', metric:['Today’s orders','Payments matched','Pending review'], values:['086','074','012'], rows:['LM-1048 · Paid','LM-1047 · Processing','LM-1046 · Ready','LM-1045 · Completed'], accent:'#5ca9cf' },
+    { section:'FACILITIES / CAMERA SETUP', title:'Facility management', metric:['Active facilities','Cameras online','Needs attention'], values:['04','12','01'], rows:['Main floor · Online','Intake counter · Online','Dispatch bay · Review','Dry-cleaning · Online'], accent:'#69b99a' },
+    { section:'OPERATORS / DAILY WORKSPACE', title:'Operator workspace', metric:['Assigned today','In progress','Completed'], values:['34','09','25'], rows:['Sort incoming garments','Verify garment labels','Update process status','Prepare pickup batch'], accent:'#7d96ff' },
+    { section:'REPORTING / EVIDENCE', title:'Reports & evidence', metric:['Evidence captured','Resolved cases','Open items'], values:['96%','18','03'], rows:['Garment condition recorded','Camera evidence attached','Exception case reviewed','Daily report prepared'], accent:'#b28bff' }
+  ];
+
+  const rounded = (ctx,x,y,w,h,r) => {
+    const radius=Math.min(r,w/2,h/2);
+    ctx.beginPath();ctx.moveTo(x+radius,y);ctx.lineTo(x+w-radius,y);ctx.quadraticCurveTo(x+w,y,x+w,y+radius);
+    ctx.lineTo(x+w,y+h-radius);ctx.quadraticCurveTo(x+w,y+h,x+w-radius,y+h);ctx.lineTo(x+radius,y+h);
+    ctx.quadraticCurveTo(x,y+h,x,y+h-radius);ctx.lineTo(x,y+radius);ctx.quadraticCurveTo(x,y,x+radius,y);ctx.closePath();
+  };
+  const text=(ctx,value,x,y,font,color)=>{ctx.font=font;ctx.fillStyle=color;ctx.fillText(value,x,y);};
+
+  function makeScreen(d,index){
+    const canvas=document.createElement('canvas');canvas.width=900;canvas.height=600;
+    const ctx=canvas.getContext('2d');if(!ctx)return canvas;
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    rounded(ctx,2,2,896,596,26);ctx.fillStyle='#f7f8fc';ctx.fill();ctx.save();ctx.clip();
+
+    ctx.fillStyle='#ffffff';ctx.fillRect(0,0,900,60);ctx.strokeStyle='#e6e8f0';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(0,59.5);ctx.lineTo(900,59.5);ctx.stroke();
+    rounded(ctx,20,16,29,29,8);ctx.fillStyle='#4264ed';ctx.fill();text(ctx,'L',30,36,'700 15px Manrope,Arial,sans-serif','#fff');
+    text(ctx,'LaundroMart',59,36,'700 16px Manrope,Arial,sans-serif','#202435');
+    text(ctx,'WORKSPACE',21,91,'700 9px Inter,Arial,sans-serif','#969cac');
+    ctx.fillStyle='#f0f1f8';ctx.fillRect(0,60,155,540);
+    const nav=['Overview','Inventory','Transactions','Operators','Facilities','Reports'];
+    nav.forEach((label,i)=>{
+      const y=112+i*48;
+      if(i===index){rounded(ctx,12,y-21,130,34,7);ctx.fillStyle='#e8ebff';ctx.fill();text(ctx,label,28,y,'600 12px Inter,Arial,sans-serif','#4264ed');}
+      else text(ctx,label,28,y,'500 12px Inter,Arial,sans-serif','#747a8b');
+    });
+
+    text(ctx,d.section,181,88,'600 9px Inter,Arial,sans-serif','#777e90');
+    text(ctx,d.title,181,126,'700 25px Manrope,Arial,sans-serif','#202435');
+    text(ctx,'A clear view of garment activity across your workspace.',181,149,'400 11px Inter,Arial,sans-serif','#83899a');
+
+    const metricW=214, metricGap=13;
+    d.metric.forEach((label,i)=>{
+      const x=181+i*(metricW+metricGap);
+      rounded(ctx,x,173,metricW,78,10);ctx.fillStyle='#fff';ctx.fill();ctx.strokeStyle='#e6e8f0';ctx.stroke();
+      text(ctx,label,x+13,196,'500 10px Inter,Arial,sans-serif','#7e8495');
+      text(ctx,d.values[i],x+13,230,'700 23px Manrope,Arial,sans-serif','#252a3d');
+      rounded(ctx,x+161,187,38,5,3);ctx.fillStyle=i===0?d.accent:'#e9ebf5';ctx.fill();
+    });
+
+    rounded(ctx,181,267,420,286,11);ctx.fillStyle='#fff';ctx.fill();ctx.strokeStyle='#e6e8f0';ctx.stroke();
+    text(ctx,index===3?'Facility status':index===5?'Evidence completeness':'Activity overview',197,294,'700 13px Manrope,Arial,sans-serif','#272c3e');
+    text(ctx,'Last 7 days',197,312,'400 9px Inter,Arial,sans-serif','#8b90a0');
+    for(let i=0;i<4;i++){ctx.strokeStyle='#eef0f5';ctx.beginPath();ctx.moveTo(197,350+i*42);ctx.lineTo(586,350+i*42);ctx.stroke();}
+    const heights=[57,86,66,116,94,147,126,169,141];
+    heights.forEach((h,i)=>{rounded(ctx,204+i*42,509-h,25,h,5);ctx.fillStyle=i===5?d.accent:(i%2===0?'#dfe5ff':'#edf0ff');ctx.fill();});
+    text(ctx,'MON',202,535,'400 8px Inter,Arial,sans-serif','#979cac');text(ctx,'WED',286,535,'400 8px Inter,Arial,sans-serif','#979cac');text(ctx,'FRI',370,535,'400 8px Inter,Arial,sans-serif','#979cac');text(ctx,'SUN',454,535,'400 8px Inter,Arial,sans-serif','#979cac');
+
+    rounded(ctx,616,267,264,286,11);ctx.fillStyle='#fff';ctx.fill();ctx.strokeStyle='#e6e8f0';ctx.stroke();
+    text(ctx,index===5?'Evidence log':index===3?'Facility checklist':'Recent activity',632,294,'700 13px Manrope,Arial,sans-serif','#272c3e');
+    d.rows.forEach((label,i)=>{
+      const y=329+i*51;ctx.beginPath();ctx.arc(640,y-3,5,0,Math.PI*2);ctx.fillStyle=i===0?d.accent:'#dce2fa';ctx.fill();
+      text(ctx,label.slice(0,27),653,y,'500 9px Inter,Arial,sans-serif','#53596a');
+      text(ctx,['2 min ago','8 min ago','14 min ago','22 min ago'][i],653,y+14,'400 8px Inter,Arial,sans-serif','#a0a5b2');
+      if(i<3){ctx.strokeStyle='#eff0f5';ctx.beginPath();ctx.moveTo(632,y+25);ctx.lineTo(863,y+25);ctx.stroke();}
+    });
+    ctx.restore();
+    ctx.strokeStyle='rgba(224,228,242,.95)';ctx.lineWidth=2;rounded(ctx,2,2,896,596,26);ctx.stroke();
+    const texture=new THREE.CanvasTexture(canvas);texture.colorSpace=THREE.SRGBColorSpace;texture.anisotropy=4;
+    return texture;
+  }
+
+  let renderer, resizeObserver, raf=0, disposed=false;
+  let dragging=false, startX=0, yawStart=0, lastX=0, lastTime=0, velocity=0, pointerX=0, pointerY=0, lastFrame=0;
+  const motion=window.matchMedia('(prefers-reduced-motion: reduce)');
+  const prefersReduced=motion.matches;
+  try {
+    renderer=new THREE.WebGLRenderer({alpha:true,antialias:true,powerPreference:'high-performance'});
+  } catch(error) {
+    stage.classList.add('is-fallback-only');
+    console.warn('LaundroMart orbital carousel: WebGL unavailable; showing static previews.',error);
+    return;
+  }
+
+  const w=Math.max(stage.clientWidth,320),h=Math.max(stage.clientHeight,260);
+  const scene=new THREE.Scene();
+  const camera=new THREE.PerspectiveCamera(34,w/h,.1,80);
+  camera.position.set(0,.35,5.65);camera.lookAt(0,0,0);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.5));
+  renderer.setSize(w,h,false);renderer.outputColorSpace=THREE.SRGBColorSpace;
+  renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;
+  renderer.setClearColor(0x000000,0);renderer.domElement.setAttribute('aria-hidden','true');
+  renderer.domElement.setAttribute('aria-label','Drag to rotate LaundroMart product screen carousel');renderer.domElement.className='lm-orbital-canvas';
+  renderer.domElement.style.cursor='grab';stage.appendChild(renderer.domElement);
+
+  scene.add(new THREE.HemisphereLight(0xdce6ff,0x283455,2.0));
+  const key=new THREE.DirectionalLight(0xffffff,2.4);key.position.set(-2.8,4.5,5.5);scene.add(key);
+  const rim=new THREE.DirectionalLight(0x739bff,1.25);rim.position.set(3,1,-4);scene.add(rim);
+  const ring=new THREE.Group();ring.rotation.set(-.04,-Math.PI/2,0);scene.add(ring);
+  const radius=2.24,count=definitions.length,cardWidth=2*radius*Math.sin(Math.PI/count)*.96;
+  const geometry=new THREE.PlaneGeometry(1,1),cards=[],textures=[];
+  definitions.forEach((definition,index)=>{
+    const texture=makeScreen(definition,index);textures.push(texture);
+    const material=new THREE.MeshStandardMaterial({
+      map:texture,emissive:new THREE.Color(0xffffff),emissiveMap:texture,emissiveIntensity:.29,
+      roughness:.7,metalness:0,transparent:true,opacity:.77,depthWrite:false,side:THREE.DoubleSide
+    });
+    const mesh=new THREE.Mesh(geometry,material);
+    mesh.scale.set(cardWidth,cardWidth/(900/600),1);
+    const theta=index/count*Math.PI*2;
+    const group=new THREE.Group();
+    group.position.set(Math.cos(theta)*radius,0,Math.sin(theta)*radius);
+    group.rotation.y=Math.atan2(group.position.x,group.position.z);
+    group.add(mesh);ring.add(group);cards.push({group,mesh,material,texture});
+  });
+  stage.classList.add('is-ready');
+
+  const world=new THREE.Vector3();
+  const idleSpeed=.13,momentumDecay=.94,focusScale=1.14,focusOpacity=.98,baseOpacity=.61;
+  function onDown(event){
+    if(event.pointerType==='mouse'&&event.button!==0)return;
+    dragging=true;startX=event.clientX;yawStart=ring.rotation.y;lastX=event.clientX;lastTime=performance.now();velocity=0;
+    renderer.domElement.style.cursor='grabbing';
+    try{renderer.domElement.setPointerCapture(event.pointerId);}catch(_error){}
+  }
+  function onMove(event){
+    const rect=renderer.domElement.getBoundingClientRect();
+    if(rect.width){pointerX=((event.clientX-rect.left)/rect.width-.5)*2;pointerY=((event.clientY-rect.top)/rect.height-.5)*2;}
+    if(!dragging)return;
+    const now=performance.now(),dt=Math.max((now-lastTime)/1000,.008),dx=event.clientX-lastX;
+    ring.rotation.y=yawStart+((event.clientX-startX)/Math.max(rect.width,1))*Math.PI*2*1.05;
+    const sample=(dx/Math.max(rect.width,1))*Math.PI*2/dt;
+    velocity=THREE.MathUtils.clamp(velocity*.55+sample*.45,-4,4);lastX=event.clientX;lastTime=now;
+  }
+  function onUp(event){
+    dragging=false;if(prefersReduced)velocity=0;renderer.domElement.style.cursor='grab';
+    try{if(renderer.domElement.hasPointerCapture(event.pointerId))renderer.domElement.releasePointerCapture(event.pointerId);}catch(_error){}
+  }
+  function onLeave(){if(!dragging){pointerX=0;pointerY=0;}}
+  renderer.domElement.addEventListener('pointerdown',onDown);
+  renderer.domElement.addEventListener('pointermove',onMove);
+  renderer.domElement.addEventListener('pointerup',onUp);
+  renderer.domElement.addEventListener('pointercancel',onUp);
+  renderer.domElement.addEventListener('pointerleave',onLeave);
+
+  resizeObserver=new ResizeObserver(()=>{
+    if(disposed)return;
+    const nw=Math.max(stage.clientWidth,320),nh=Math.max(stage.clientHeight,260);
+    camera.aspect=nw/nh;camera.updateProjectionMatrix();renderer.setSize(nw,nh,false);
+  });
+  resizeObserver.observe(stage);
+
+  function animate(time){
+    if(disposed)return;
+    const dt=lastFrame?Math.min((time-lastFrame)/1000,.05):1/60;lastFrame=time;
+    if(!document.hidden){
+      if(!dragging){
+        if(!prefersReduced)ring.rotation.y+=idleSpeed*dt;
+        ring.rotation.y+=velocity*dt;velocity*=Math.pow(momentumDecay,dt*60);
+        if(Math.abs(velocity)<.001)velocity=0;
+      }
+      const ease=1-Math.exp(-7*dt);
+      let front=-Infinity,frontIndex=0;
+      cards.forEach((card,i)=>{card.group.getWorldPosition(world);if(world.z>front){front=world.z;frontIndex=i;}});
+      cards.forEach((card,i)=>{
+        const isFront=i===frontIndex;
+        const target=isFront?focusScale:1;
+        card.group.scale.setScalar(THREE.MathUtils.lerp(card.group.scale.x,target,ease));
+        card.material.opacity=THREE.MathUtils.lerp(card.material.opacity,isFront?focusOpacity:baseOpacity,ease);
+        card.material.emissiveIntensity=THREE.MathUtils.lerp(card.material.emissiveIntensity,isFront?.43:.24,ease);
+      });
+      camera.position.x=THREE.MathUtils.lerp(camera.position.x,pointerX*.24,ease);
+      camera.position.y=THREE.MathUtils.lerp(camera.position.y,.35-pointerY*.12,ease);
+      camera.lookAt(0,0,0);
+      renderer.render(scene,camera);
+    }
+    raf=requestAnimationFrame(animate);
+  }
+  raf=requestAnimationFrame(animate);
+
+  window.addEventListener('pagehide',()=>{
+    disposed=true;cancelAnimationFrame(raf);resizeObserver?.disconnect();
+    renderer.domElement.removeEventListener('pointerdown',onDown);renderer.domElement.removeEventListener('pointermove',onMove);
+    renderer.domElement.removeEventListener('pointerup',onUp);renderer.domElement.removeEventListener('pointercancel',onUp);
+    renderer.domElement.removeEventListener('pointerleave',onLeave);
+    cards.forEach(card=>card.material.dispose());textures.forEach(texture=>texture.dispose());geometry.dispose();renderer.dispose();
+  },{once:true});
+})();
+</script>
+
 </body></html>
+
+/* LaundroMart hero — adapted 3D orbital carousel; original concept by @ybouane.
+   Reference: https://crazygl.com/hero/orbital-carousel */
+.lm-orbital-wrap{position:relative;z-index:3;width:min(1120px,100%);margin:10px auto 0;padding:0 0 26px}
+.lm-orbital-topline,.lm-orbital-bottomline{display:flex;align-items:center;justify-content:space-between;gap:18px;position:relative;z-index:3;color:#aebbe0;font-size:9px;line-height:1.5;letter-spacing:.12em;text-transform:uppercase}
+.lm-orbital-topline>span,.lm-orbital-bottomline>span{display:inline-flex;align-items:center;gap:9px}
+.lm-orbital-live-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#68a2ff;box-shadow:0 0 12px rgba(76,139,255,.7)}
+.lm-orbital-hint-top{color:#9aa8cf;letter-spacing:.08em}
+.lm-orbital-hint-top b{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;font-size:15px;font-weight:400;color:#dce6ff;border:1px solid rgba(124,153,255,.3);background:rgba(15,29,63,.65)}
+.lm-orbital-stage{height:clamp(310px,37vw,440px);width:100%;position:relative;overflow:visible;touch-action:pan-y;isolation:isolate}
+.lm-orbital-stage canvas{position:absolute;inset:0;display:block;width:100%;height:100%;outline:0;cursor:grab;touch-action:none;-webkit-tap-highlight-color:transparent}
+.lm-orbital-stage canvas:active{cursor:grabbing}
+.lm-orbital-fallback{position:absolute;inset:16px 2% 10px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;transform:perspective(900px) rotateX(4deg);transition:opacity .4s ease}
+.lm-orbital-fallback>div{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:110px;padding:17px;border:1px solid rgba(140,164,255,.22);border-radius:14px;background:linear-gradient(150deg,rgba(24,40,81,.94),rgba(8,18,42,.96));box-shadow:0 18px 42px rgba(0,0,0,.2)}
+.lm-orbital-fallback small{font-size:8px;letter-spacing:.12em;color:#8eaeff}
+.lm-orbital-fallback b{font:600 15px Manrope,sans-serif;color:#f7f8ff;letter-spacing:-.035em}
+.lm-orbital-fallback i{position:absolute;right:14px;bottom:13px;color:#637fce;font-size:10px;font-style:normal}
+.lm-orbital-stage.is-ready .lm-orbital-fallback{opacity:0;pointer-events:none}
+.lm-orbital-bottomline{padding-top:3px;color:#8393bc;font-size:8px;letter-spacing:.14em}
+.lm-orbital-bottomline>span:last-child{color:#a9b7d8;letter-spacing:.06em;text-transform:none}
+.lm-orbital-bottomline>span:last-child i{display:inline-block;width:5px;height:5px;border-radius:50%;background:#719eff}
+@media(min-width:1450px){.lm-orbital-wrap{width:min(1160px,100%)}.lm-orbital-stage{height:460px}}
+@media(max-width:900px){.lm-orbital-wrap{margin-top:22px}.lm-orbital-stage{height:clamp(300px,49vw,395px)}.lm-orbital-fallback{inset:14px 0 10px;gap:8px}.lm-orbital-fallback>div{padding:14px}.lm-orbital-fallback b{font-size:13px}}
+@media(max-width:600px){.lm-orbital-wrap{margin-top:19px;padding-bottom:18px}.lm-orbital-topline,.lm-orbital-bottomline{font-size:7px;letter-spacing:.08em;gap:8px}.lm-orbital-hint-top{font-size:7px}.lm-orbital-hint-top b{width:21px;height:21px}.lm-orbital-stage{height:300px;margin:0 -10px;width:calc(100% + 20px)}.lm-orbital-fallback{grid-template-columns:repeat(2,minmax(0,1fr));inset:10px 2px;gap:8px}.lm-orbital-fallback>div{min-height:80px;padding:11px;border-radius:11px}.lm-orbital-fallback small{font-size:7px}.lm-orbital-fallback b{font-size:11px;max-width:90%}.lm-orbital-bottomline{align-items:flex-start}.lm-orbital-bottomline>span:first-child{max-width:52%}.lm-orbital-bottomline>span:last-child{max-width:44%;text-align:right}}
+@media(prefers-reduced-motion:reduce){.lm-orbital-fallback{transition:none}}
