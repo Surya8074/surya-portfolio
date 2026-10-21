@@ -574,3 +574,56 @@
 @media (prefers-reduced-motion: reduce) {
   .ta-page .ta-live { transition: none; }
 }
+
+
+/* Research section alignment — match the supplied reference at desktop width. */
+.ta-page .reference-nav {
+  position: absolute;
+  top: 32px;
+}
+.ta-page .ta-research {
+  width: min(1192px, calc(100% - 48px));
+  margin: 120px auto 0;
+  padding: 0;
+}
+.ta-page .ta-research > h2 {
+  max-width: 560px;
+  margin: 0 0 24px;
+  font-size: clamp(38px, 3vw, 48px);
+  line-height: 1.12;
+  letter-spacing: -.45px;
+}
+.ta-page .ta-research > .ta-lead,
+.ta-page .ta-research > .ta-copy {
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+.ta-page .ta-research > .ta-lead {
+  margin-bottom: 18px;
+  font-size: 19px;
+  line-height: 1.5;
+}
+.ta-page .ta-research > .ta-copy {
+  font-size: 19px;
+  line-height: 1.5;
+}
+.ta-page .ta-research .ta-quotes-window {
+  margin-top: 40px;
+}
+@media (max-width: 767px) {
+  .ta-page .reference-nav { position: fixed; top: 12px; }
+  .ta-page .ta-research {
+    width: 100%;
+    margin-top: 80px;
+    padding: 0 20px;
+  }
+  .ta-page .ta-research > h2 { max-width: 480px; font-size: 28px; }
+  .ta-page .ta-research > .ta-lead,
+  .ta-page .ta-research > .ta-copy { font-size: 16px; }
+  .ta-page .ta-research .ta-quotes-window {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+}
