@@ -694,3 +694,30 @@
   .ta-page .ta-ui-middle { gap: 24px; }
   .ta-page .ta-ui-right { grid-column: 1 / -1; }
 }
+
+
+/* Why AI section: use the complete three-card artwork at desktop as well.
+   The desktop composite contains only the illustration panels in the current render,
+   while the individual supplied card assets include their titles and body copy. */
+.ta-page .ta-ai-graphic { display: none; }
+.ta-page .ta-ai-mobile-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 28px;
+  width: min(1196px, calc(100% - 48px));
+  margin: 36px auto 0;
+}
+.ta-page .ta-ai-mobile-cards img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+}
+@media (max-width: 767px) {
+  .ta-page .ta-ai-mobile-cards {
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    gap: 24px;
+  }
+}
