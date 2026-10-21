@@ -873,3 +873,51 @@
   .ta-page main > section.ta-research > .ta-lead,
   .ta-page main > section.ta-research > .ta-copy { font-size: 16px; }
 }
+
+
+/* Final research alignment: use the same centered 1192px content frame as the “Rebuild the room” section. Keep all research intro text on that frame's left edge. */
+.ta-page main > section.ta-research {
+  width: min(1192px, calc(100% - 48px)) !important;
+  max-width: 1192px !important;
+  margin: 120px auto 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+.ta-page main > section.ta-research > h2,
+.ta-page main > section.ta-research > .ta-lead,
+.ta-page main > section.ta-research > .ta-copy {
+  display: block;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+.ta-page main > section.ta-research > h2 {
+  max-width: 650px !important;
+  margin-top: 0 !important;
+  margin-bottom: 24px !important;
+  font-size: clamp(38px, 3vw, 48px);
+  line-height: 1.12;
+}
+.ta-page main > section.ta-research > .ta-lead,
+.ta-page main > section.ta-research > .ta-copy {
+  max-width: 912px !important;
+}
+.ta-page main > section.ta-research > .ta-lead { margin-bottom: 18px !important; }
+.ta-page main > section.ta-research .ta-quotes-window {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+@media (max-width: 767px) {
+  .ta-page main > section.ta-research {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin-top: 80px !important;
+    padding: 0 !important;
+  }
+  .ta-page main > section.ta-research > h2 { max-width: 480px !important; font-size: 28px; }
+  .ta-page main > section.ta-research > .ta-lead,
+  .ta-page main > section.ta-research > .ta-copy { font-size: 16px; }
+}
