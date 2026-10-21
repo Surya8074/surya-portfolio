@@ -1065,3 +1065,84 @@
   .ta-page main > section.ta-research > .ta-lead,
   .ta-page main > section.ta-research > .ta-copy { font-size: 16px !important; }
 }
+
+
+/* Reference-matched Why AI cards: complete cards, not loose illustration panels. */
+.ta-page main > section.ta-section.ta-ai .ta-ai-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 36px;
+  width: 100%;
+  max-width: 1176px;
+  margin: 40px auto 0;
+}
+.ta-page main > section.ta-section.ta-ai .ta-ai-card {
+  min-width: 0;
+  min-height: 582px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #dedede;
+  border-radius: 30px;
+  background: #fbfbfb;
+}
+.ta-page main > section.ta-section.ta-ai .ta-ai-card > img {
+  display: block;
+  width: calc(100% - 28px);
+  height: 238px;
+  margin: 12px 14px 0;
+  flex: 0 0 238px;
+  object-fit: cover;
+  object-position: top center;
+  border: 1px solid #e2e2e2;
+  border-radius: 26px 26px 5px 5px;
+}
+.ta-page main > section.ta-section.ta-ai .ta-ai-card-copy {
+  padding: 38px 29px 32px;
+}
+.ta-page main > section.ta-section.ta-ai .ta-ai-card-copy h3 {
+  margin: 0 0 14px;
+  color: #202020;
+  font: 600 22px/1.3 Rubik, Arial, sans-serif;
+  letter-spacing: -.35px;
+}
+.ta-page main > section.ta-section.ta-ai .ta-ai-card-copy p {
+  margin: 0;
+  color: #242424;
+  font: 400 19px/1.48 'Work Sans', Arial, sans-serif;
+  letter-spacing: -.2px;
+}
+.ta-page main > section.ta-section.ta-ai > .ta-section-note {
+  margin-top: 36px !important;
+}
+@media (max-width: 1023px) {
+  .ta-page main > section.ta-section.ta-ai .ta-ai-cards { gap: 20px; }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card { min-height: 0; }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card > img {
+    height: 190px;
+    flex-basis: 190px;
+  }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card-copy { padding: 26px 20px 28px; }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card-copy h3 { font-size: 19px; }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card-copy p { font-size: 16px; }
+}
+@media (max-width: 767px) {
+  .ta-page main > section.ta-section.ta-ai .ta-ai-cards {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    width: 100%;
+    margin-top: 32px;
+  }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card { border-radius: 24px; }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card > img {
+    height: auto;
+    max-height: none;
+    aspect-ratio: 1.12 / 1;
+    flex-basis: auto;
+    object-fit: cover;
+  }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card-copy { padding: 24px; }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card-copy h3 { font-size: 20px; }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card-copy p { font-size: 16px; }
+}
