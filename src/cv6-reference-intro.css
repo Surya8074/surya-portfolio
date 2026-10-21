@@ -5186,3 +5186,103 @@ html body #root main.cv4-page > footer.cv4-footer .cv4-footer-nav a:last-child {
 @media (prefers-reduced-motion: reduce) {
   html body #root main.cv4-page > footer.cv4-footer .cv4-cta { transition: none !important; }
 }
+
+
+/* CV6: reuse the original CV4 footer composition and visual treatment. */
+html body #root main.cv4-page > footer.cv4-footer {
+  display: block !important;
+  position: relative !important;
+  isolation: isolate !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  margin: 80px 0 0 !important;
+  padding: 128px 24px 64px !important;
+  overflow: hidden !important;
+  clip-path: none !important;
+  border: 0 !important;
+  border-radius: 48px 48px 0 0 !important;
+  background:
+    radial-gradient(500px 300px at 50% 0%, rgba(93,132,230,.28), transparent 70%),
+    linear-gradient(160deg, #10172c, #151f3d) !important;
+  color: #fff !important;
+  box-shadow: 0 -30px 100px rgba(15,25,48,.16) !important;
+}
+html body #root main.cv4-page > footer.cv4-footer::before {
+  content: none !important;
+}
+html body #root main.cv4-page > footer.cv4-footer .cv4-footer-inner {
+  display: block !important;
+  width: 100% !important;
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+html body #root main.cv4-page > footer.cv4-footer .cv4-footer-inner > span {
+  display: block !important;
+  color: #aebbd5 !important;
+  font-size: 9px !important;
+  letter-spacing: .12em !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+html body #root main.cv4-page > footer.cv4-footer .cv4-footer-inner h2 {
+  display: block !important;
+  max-width: none !important;
+  margin: 20px 0 !important;
+  color: #fff !important;
+  font-size: clamp(46px, 6vw, 80px) !important;
+  line-height: .96 !important;
+  letter-spacing: -.07em !important;
+  font-weight: 750 !important;
+}
+html body #root main.cv4-page > footer.cv4-footer .cv4-footer-inner h2 em {
+  color: #8dbdff !important;
+  font-style: normal !important;
+}
+html body #root main.cv4-page > footer.cv4-footer .cv4-footer-inner p {
+  display: block !important;
+  margin: 0 auto !important;
+  color: #b5c1d8 !important;
+  font-size: 12px !important;
+  line-height: 1.6 !important;
+}
+html body #root main.cv4-page > footer.cv4-footer .cv4-footer-inner .cv4-cta {
+  display: inline-block !important;
+  margin-top: 15px !important;
+  padding: 14px 21px !important;
+  border-radius: 999px !important;
+  color: #fff !important;
+  background: linear-gradient(135deg, #4565ed, #3152d7) !important;
+  border: 1px solid rgba(255,255,255,.16) !important;
+  box-shadow: 0 12px 30px rgba(59,91,219,.28) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+}
+html body #root main.cv4-page > footer.cv4-footer .cv4-footer-nav {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 20px !important;
+  margin-top: 80px !important;
+  padding-top: 18px !important;
+  border-top: 1px solid #34415e !important;
+}
+html body #root main.cv4-page > footer.cv4-footer .cv4-footer-nav a {
+  color: #c4cee0 !important;
+  font-size: 10px !important;
+  text-decoration: none !important;
+}
+@media (max-width: 768px) {
+  html body #root main.cv4-page > footer.cv4-footer {
+    margin-top: 60px !important;
+    padding: 90px 20px 44px !important;
+    border-radius: 32px 32px 0 0 !important;
+  }
+  html body #root main.cv4-page > footer.cv4-footer .cv4-footer-inner h2 {
+    font-size: clamp(42px, 10vw, 58px) !important;
+  }
+  html body #root main.cv4-page > footer.cv4-footer .cv4-footer-nav {
+    margin-top: 50px !important;
+  }
+}
