@@ -992,3 +992,23 @@
   .ta-page main > section.ta-ai .ta-ai-mobile-cards img { height: auto; }
   .ta-page main > section.ta-ai > .ta-section-note { margin-top: 28px !important; }
 }
+
+
+/* Final reference correction: the fixed portfolio nav must never cover the
+   Why AI heading. Move the complete section down as a unit, not just its title,
+   so heading, intro, visuals and closing note retain their shared left edge. */
+.ta-page main > section.ta-section.ta-ai {
+  margin-top: 220px !important;
+  scroll-margin-top: 130px;
+}
+.ta-page main > section.ta-section.ta-ai > h2 {
+  position: relative;
+  z-index: 1;
+  margin-top: 0 !important;
+}
+@media (max-width: 767px) {
+  .ta-page main > section.ta-section.ta-ai {
+    margin-top: 140px !important;
+    scroll-margin-top: 100px;
+  }
+}
