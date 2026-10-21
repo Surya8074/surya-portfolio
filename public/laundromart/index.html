@@ -525,6 +525,19 @@ figure.contribution-visual[aria-label="LaundroMart problem-space banner"] img{
 @media(max-width:600px){.lm-orbital-wrap{margin-top:19px;padding-bottom:18px}.lm-orbital-topline,.lm-orbital-bottomline{font-size:7px;letter-spacing:.08em;gap:8px}.lm-orbital-hint-top{font-size:7px}.lm-orbital-hint-top b{width:21px;height:21px}.lm-orbital-stage{height:300px;margin:0 -10px;width:calc(100% + 20px)}.lm-orbital-fallback{grid-template-columns:repeat(2,minmax(0,1fr));inset:10px 2px;gap:8px}.lm-orbital-fallback>div{min-height:80px;padding:11px;border-radius:11px}.lm-orbital-fallback small{font-size:7px}.lm-orbital-fallback b{font-size:11px;max-width:90%}.lm-orbital-bottomline{align-items:flex-start}.lm-orbital-bottomline>span:first-child{max-width:52%}.lm-orbital-bottomline>span:last-child{max-width:44%;text-align:right}}
 @media(prefers-reduced-motion:reduce){.lm-orbital-fallback{transition:none}}
 </style>
+<style id="laundromart-reference-nav-fix">
+/* Match the floating navigation used on the portfolio homepage. */
+.reference-nav{z-index:50;pointer-events:none;display:flex;justify-content:center;position:fixed;top:48px;left:0;right:0;transform:translateY(0);font-family:'DM Sans',sans-serif;color:#100f11}
+.reference-nav .reference-nav-inner{pointer-events:auto;background:#fafafa;border:1px solid #e5e5e5;border-radius:37px;justify-content:center;align-items:center;width:min(90vw,915px);height:55px;padding:0 46px;display:flex;box-shadow:0 2px 8px #0000000d;box-sizing:border-box}
+.reference-nav .reference-brand{border:0;background:transparent;color:#100f11;display:flex;align-items:center;gap:7px;padding:0;letter-spacing:0;font-size:14px;font-weight:500;line-height:1.35;white-space:nowrap;text-decoration:none}
+.reference-nav .reference-brand-divider{vertical-align:middle;background:#b4b4b4;width:1px;height:.68em;margin:0 8px;display:inline-block;flex:none}
+.reference-nav .reference-brand>span:last-child{color:#b4b4b4;white-space:nowrap;font-weight:500}
+.reference-nav nav{display:flex;align-items:center;gap:48px;margin-left:auto}
+.reference-nav nav a{border:0;background:transparent;color:#100f11;text-decoration:none;padding:0;font-size:12px;line-height:1.35;letter-spacing:-.12px;white-space:nowrap;transition:opacity .2s ease}
+.reference-nav nav a:hover,.reference-nav .reference-brand:hover{opacity:.7}
+@media(max-width:1023px){.reference-nav{top:24px}.reference-nav .reference-nav-inner{width:calc(100% - 30px);height:60px;padding:0 22px}.reference-nav .reference-brand{font-size:13px}.reference-nav nav{gap:18px}.reference-nav nav a{font-size:12px}}
+@media(max-width:560px){.reference-nav{top:14px}.reference-nav .reference-nav-inner{width:calc(100% - 24px);height:54px;padding:0 13px}.reference-nav .reference-brand{font-size:12px;gap:5px}.reference-nav .reference-brand-divider{margin:0 4px}.reference-nav nav{gap:12px}.reference-nav nav a{font-size:10px;letter-spacing:-.15px}}
+</style>
 </head>
 <body><div class="progress"></div>
 <header class="reference-nav"><div class="reference-nav-inner"><a class="reference-brand" href="/surya-portfolio/" aria-label="Surya Kiran portfolio home"><strong>Surya Kiran</strong><span class="reference-brand-divider" aria-hidden="true"></span><span>India</span></a><nav aria-label="Main navigation"><a href="/surya-portfolio/#art">Art</a><a href="/surya-portfolio/#about">About Me</a><a class="resume-nav-link" href="/surya-portfolio/resume/">Resume</a></nav></div></header>
@@ -2422,22 +2435,6 @@ const bar=document.querySelector('.progress');function progress(){const max=docu
 #product-screens .lm-showcase-stage>.lm-screen-card figcaption{font-size:10px;margin-top:10px}
 #product-screens .lm-showcase-controls{margin-top:4px}
 }
-@media(prefers-reduced-motion:reduce){#product-screens .lm-showcase-stage>.lm-screen-card,#product-screens .lm-showcase-arrow,#product-screens .lm-
-
-/* Shared portfolio navigation: match the main portfolio's floating pill nav. */
-.reference-nav{position:fixed;z-index:50;top:48px;left:0;right:0;display:flex;justify-content:center;transform:translateY(0);pointer-events:none;font-family:'DM Sans',sans-serif;color:#100f11}
-.reference-nav-inner{width:min(90vw,915px);height:55px;padding:0 46px;display:flex;justify-content:center;align-items:center;background:#fafafa;border:1px solid #e5e5e5;border-radius:37px;box-shadow:0 2px 8px #0000000d;pointer-events:auto}
-.reference-brand{display:flex;align-items:center;gap:7px;padding:0;border:0;background:transparent;color:#100f11;font-size:14px;font-weight:500;line-height:1.35;letter-spacing:0;white-space:nowrap}
-.reference-brand:hover{opacity:.7}
-.reference-brand-divider{display:inline-block;width:1px;height:.68em;margin:0 8px;background:#b4b4b4;vertical-align:middle}
-.reference-brand>span:last-child{color:#b4b4b4;font-weight:500;white-space:nowrap}
-.reference-nav nav{display:flex;align-items:center;gap:48px;margin-left:auto}
-.reference-nav nav a{padding:0;border:0;background:transparent;color:#100f11;text-decoration:none;font-size:12px;line-height:1.35;letter-spacing:-.12px;white-space:nowrap;transition:opacity .2s ease}
-.reference-nav nav a:hover{opacity:.7}
-@media(max-width:1023px){.reference-nav{top:24px}.reference-nav-inner{width:calc(100% - 30px);height:60px;padding:0 22px}.reference-brand{font-size:13px}.reference-nav nav{gap:18px}.reference-nav nav a{font-size:12px}}
-@media(max-width:560px){.reference-nav{top:14px}.reference-nav-inner{width:calc(100% - 24px);height:54px;padding:0 13px}.reference-brand{font-size:12px;gap:5px}.reference-brand-divider{margin:0 4px}.reference-nav nav{gap:12px}.reference-nav nav a{font-size:10px;letter-spacing:-.15px}}
-
-
 </style>
 <script id="lm-screen-carousel-script">
 (function(){
