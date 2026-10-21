@@ -5326,3 +5326,30 @@ html body #root main.cv4-page > footer.cv4-footer .cv4-footer-nav a {
 html body #root main.cv4-page > footer.cv4-footer .cv4-footer-nav a:hover {
   color: #3b5bdb !important;
 }
+
+
+/* Subtle ComSki-blue gradient outline around the light iOS footer. */
+html body #root main.cv4-page > footer.cv4-footer {
+  border: 1px solid transparent !important;
+  background-clip: padding-box !important;
+  position: relative !important;
+  isolation: isolate !important;
+}
+html body #root main.cv4-page > footer.cv4-footer::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  padding: 1.5px !important;
+  border-radius: inherit !important;
+  background: linear-gradient(125deg, #3b5bdb 0%, #8dbdff 32%, #dce7ff 58%, #6c8cff 78%, #3b5bdb 100%) !important;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) !important;
+  -webkit-mask-composite: xor !important;
+  mask-composite: exclude !important;
+  pointer-events: none !important;
+}
+html body #root main.cv4-page > footer.cv4-footer .cv4-footer-inner,
+html body #root main.cv4-page > footer.cv4-footer .cv4-footer-nav {
+  position: relative !important;
+  z-index: 1 !important;
+}
