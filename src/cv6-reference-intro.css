@@ -4872,3 +4872,18 @@ main.cv4-page .cv4-footer .cv4-footer-nav a:hover {
 @media (prefers-reduced-motion: reduce) {
   main.cv4-page .cv4-footer .cv4-footer-inner .cv4-cta:hover { transform: none; }
 }
+
+
+/* Match the broad, soft outer-edge silhouette shown in the reference screenshot. */
+main.cv4-page .cv4-footer {
+  border-radius: 64px 64px 0 0 !important;
+  margin-top: 0 !important;
+  overflow: hidden;
+  clip-path: inset(0 round 64px 64px 0 0);
+}
+@media (max-width: 650px) {
+  main.cv4-page .cv4-footer {
+    border-radius: 36px 36px 0 0 !important;
+    clip-path: inset(0 round 36px 36px 0 0);
+  }
+}
