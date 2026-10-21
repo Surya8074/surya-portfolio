@@ -744,3 +744,39 @@
     padding-right: 20px !important;
   }
 }
+
+
+/* Research intro: keep the heading, lead, and supporting sentence on one shared left edge, aligned with “Rebuild the room”. */
+.ta-page main > section.ta-research {
+  width: min(1176px, calc(100% - 48px)) !important;
+  max-width: 1176px !important;
+  margin: 120px auto 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+.ta-page main > section.ta-research > h2,
+.ta-page main > section.ta-research > .ta-lead,
+.ta-page main > section.ta-research > .ta-copy {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  text-align: left;
+}
+.ta-page main > section.ta-research > h2 {
+  width: 100%;
+  max-width: 560px;
+  margin-top: 0 !important;
+  margin-bottom: 24px !important;
+}
+.ta-page main > section.ta-research > .ta-lead,
+.ta-page main > section.ta-research > .ta-copy {
+  width: 100%;
+  max-width: 100%;
+}
+@media (max-width: 767px) {
+  .ta-page main > section.ta-research {
+    width: 100% !important;
+    max-width: none !important;
+    margin-top: 80px !important;
+    padding: 0 20px !important;
+  }
+}
