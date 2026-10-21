@@ -719,3 +719,28 @@
     gap: 24px;
   }
 }
+
+/* Final alignment correction: research heading shares the same centered editorial left edge as “Rebuild the room”. */
+.ta-page main > section.ta-research {
+  width: min(1176px, calc(100% - 48px)) !important;
+  max-width: 1176px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box;
+}
+.ta-page main > section.ta-research > h2,
+.ta-page main > section.ta-research > .ta-lead,
+.ta-page main > section.ta-research > .ta-copy {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+@media (max-width: 767px) {
+  .ta-page main > section.ta-research {
+    width: 100% !important;
+    max-width: none !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
