@@ -1867,3 +1867,58 @@
     order: 0;
   }
 }
+
+
+/* Final reference correction: reflection section typography and column width. */
+.ta-page main > section.ta-section.ta-reflection > .ta-kicker,
+.ta-page main > section.ta-section.ta-reflection > h2 {
+  box-sizing: border-box !important;
+  width: min(912px, calc(100% - 48px)) !important;
+  max-width: 912px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.ta-page main > section.ta-section.ta-reflection > h2 {
+  margin-top: 0 !important;
+  margin-bottom: 34px !important;
+  font-size: 48px !important;
+  line-height: 1.12 !important;
+  letter-spacing: -.45px !important;
+}
+.ta-page main > section.ta-section.ta-reflection .ta-reflection-list {
+  width: min(912px, calc(100% - 48px)) !important;
+  max-width: 912px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.ta-page main > section.ta-section.ta-reflection .ta-reflection-list article {
+  padding: 22px 0 !important;
+}
+.ta-page main > section.ta-section.ta-reflection .ta-reflection-list h3 {
+  margin-bottom: 10px !important;
+  font-size: 22px !important;
+  line-height: 1.4 !important;
+}
+.ta-page main > section.ta-section.ta-reflection .ta-reflection-list p {
+  font-size: 18px !important;
+  line-height: 1.75 !important;
+}
+.ta-page main > section.ta-section.ta-reflection .ta-reflection-divider,
+.ta-page main > section.ta-section.ta-reflection .ta-end {
+  width: min(912px, calc(100% - 48px)) !important;
+  max-width: 912px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+@media (max-width: 767px) {
+  .ta-page main > section.ta-section.ta-reflection > .ta-kicker,
+  .ta-page main > section.ta-section.ta-reflection > h2,
+  .ta-page main > section.ta-section.ta-reflection .ta-reflection-list,
+  .ta-page main > section.ta-section.ta-reflection .ta-reflection-divider,
+  .ta-page main > section.ta-section.ta-reflection .ta-end {
+    width: calc(100% - 40px) !important;
+  }
+  .ta-page main > section.ta-section.ta-reflection > h2 { font-size: 32px !important; }
+  .ta-page main > section.ta-section.ta-reflection .ta-reflection-list h3 { font-size: 18px !important; }
+  .ta-page main > section.ta-section.ta-reflection .ta-reflection-list p { font-size: 16px !important; }
+}
