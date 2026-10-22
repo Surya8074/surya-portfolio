@@ -2072,3 +2072,103 @@
   .ta-page main > section.ta-section.ta-reflection .ta-reflection-list h3 { font-size: 18px !important; }
   .ta-page main > section.ta-section.ta-reflection .ta-reflection-list p { font-size: 16px !important; }
 }
+
+
+/* Reflection — final values transcribed from the supplied Toniq HTML.
+   Source: section mt-[80px] px-5 sm:px-6 md:mt-[120px];
+   inner max-w-[624px]; title 28px/38px; list mt-[28px], gap-[24px];
+   each item 16px/19px, leading 1.5, tracking -0.2px, item gap 6px.
+   This intentionally overrides the earlier experimental wide-column rules. */
+.ta-page main > section.ta-section.ta-reflection {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 80px auto 0 !important;
+  padding: 0 20px !important;
+}
+.ta-page main > section.ta-section.ta-reflection > .ta-kicker,
+.ta-page main > section.ta-section.ta-reflection > h2,
+.ta-page main > section.ta-section.ta-reflection > .ta-reflection-list,
+.ta-page main > section.ta-section.ta-reflection > .ta-reflection-divider,
+.ta-page main > section.ta-section.ta-reflection > .ta-end {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 624px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.ta-page main > section.ta-section.ta-reflection > .ta-kicker {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  color: #747474 !important;
+  font: 400 13px/1.5 'Work Sans', Arial, sans-serif !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+}
+.ta-page main > section.ta-section.ta-reflection > h2 {
+  margin-top: 19px !important;
+  margin-bottom: 0 !important;
+  color: #2b2b2b !important;
+  font: 600 28px/1.11 Rubik, Arial, sans-serif !important;
+  letter-spacing: -.38px !important;
+}
+.ta-page main > section.ta-section.ta-reflection .ta-reflection-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 24px !important;
+  margin-top: 28px !important;
+}
+.ta-page main > section.ta-section.ta-reflection .ta-reflection-list article {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+}
+.ta-page main > section.ta-section.ta-reflection .ta-reflection-list h3 {
+  margin: 0 !important;
+  color: #2b2b2b !important;
+  font: 700 16px/1.5 'Work Sans', Arial, sans-serif !important;
+  letter-spacing: -.2px !important;
+}
+.ta-page main > section.ta-section.ta-reflection .ta-reflection-list p {
+  margin: 0 !important;
+  color: #2c2c2c !important;
+  font: 400 16px/1.5 'Work Sans', Arial, sans-serif !important;
+  letter-spacing: -.2px !important;
+}
+.ta-page main > section.ta-section.ta-reflection .ta-reflection-divider {
+  display: none !important;
+}
+.ta-page main > section.ta-section.ta-reflection .ta-end {
+  margin-top: 32px !important;
+}
+@media (min-width: 768px) {
+  .ta-page main > section.ta-section.ta-reflection {
+    margin-top: 120px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+  .ta-page main > section.ta-section.ta-reflection > h2 {
+    font-size: 38px !important;
+  }
+  .ta-page main > section.ta-section.ta-reflection .ta-reflection-list h3,
+  .ta-page main > section.ta-section.ta-reflection .ta-reflection-list p {
+    font-size: 19px !important;
+  }
+}
+@media (max-width: 767px) {
+  .ta-page main > section.ta-section.ta-reflection {
+    margin-top: 80px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .ta-page main > section.ta-section.ta-reflection > h2 {
+    font-size: 28px !important;
+  }
+  .ta-page main > section.ta-section.ta-reflection .ta-reflection-list h3,
+  .ta-page main > section.ta-section.ta-reflection .ta-reflection-list p {
+    font-size: 16px !important;
+  }
+}
