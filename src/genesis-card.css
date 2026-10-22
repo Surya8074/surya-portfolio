@@ -284,3 +284,54 @@
 @media(prefers-reduced-motion:reduce){
   .genesis-float-screen{animation:none}
 }
+
+
+/* ComSki homepage thumbnail — communication practice collage */
+.comski-project-card{grid-template-columns:minmax(320px,.78fr) minmax(560px,1.22fr);gap:32px;min-height:600px}
+.comski-project-copy h4{color:#697386}
+.comski-project-eyebrow{color:#1976e8}
+.comski-project-visual{height:600px;min-width:0;overflow:visible;isolation:isolate}
+.comski-project-visual:before{inset:6% -4% 4% -3%;border-radius:44px;background:radial-gradient(ellipse at 58% 48%,#f1f6ff 0%,#f8fbff 44%,rgba(255,255,255,0) 76%);box-shadow:none}
+.comski-scene-glow{filter:blur(25px)}
+.glow-one{width:270px;height:270px;right:2%;top:2%;background:rgba(59,91,219,.12)}
+.glow-two{width:230px;height:230px;left:6%;bottom:3%;background:rgba(119,177,255,.15)}
+.comski-scene-ring{border-color:rgba(59,91,219,.14)}
+.ring-one{width:360px;height:360px;right:1%;top:10%}
+.ring-two{width:230px;height:230px;left:5%;bottom:3%}
+.comski-skills-card,.comski-practice-card{position:absolute;z-index:8;border:1px solid rgba(226,232,242,.95);border-radius:20px;background:rgba(255,255,255,.96);box-shadow:0 16px 38px rgba(29,48,93,.10)}
+.comski-skills-card{left:0;top:12%;width:37%;padding:15px 13px;transform:rotate(-4deg)}
+.comski-skills-card>strong{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;color:#1a1d29;font-size:12px}
+.comski-skills-card>strong span{color:#3b5bdb;font-size:16px}
+.comski-skills-card>div{display:flex;align-items:center;gap:8px;padding:8px 3px;border-top:1px solid #f0f3f8;color:#273148;font-size:10px}
+.comski-skills-card>div>i{margin-left:auto;color:#7c8ba5;font-style:normal;font-size:17px}
+.skill-icon{display:grid;place-items:center;width:27px;height:27px;border-radius:9px;font-size:14px}
+.skill-icon.speaking{background:#e8f1ff;color:#2874df}.skill-icon.writing{background:#fff0eb;color:#e7785d}.skill-icon.listening{background:#e4f8f1;color:#159d79}.skill-icon.reading{background:#f0eaff;color:#8262d9}
+.comski-video-card{left:22%;top:23%;bottom:auto;width:43%;padding:8px;border:5px solid white;border-radius:24px;background:#f2f6fc;box-shadow:0 24px 50px rgba(32,62,123,.14);transform:rotate(2deg)}
+.comski-project-card:hover .comski-video-card{transform:rotate(1deg) translateY(-4px)}
+.video-label{font-size:7px;color:#61708b}
+.video-label span{background:#e7efff;color:#3b5bdb}
+.video-person{height:235px;display:flex;align-items:flex-end;justify-content:center;padding:13px;border-radius:15px;background:linear-gradient(145deg,#e4edfb,#f5f8fd 56%,#dbe8fc);color:#65748e;font-size:11px;text-align:center}
+.video-person span{padding:8px 11px;border:1px solid rgba(255,255,255,.85);border-radius:11px;background:rgba(255,255,255,.86)}
+.video-controls{height:25px;margin-top:6px;border-radius:9px;background:#fff}
+.video-controls i{background:#3b5bdb}
+.comski-floating-chip{grid-template-columns:30px auto;column-gap:8px;left:1%;top:58%;right:auto;padding:11px 13px 11px 10px;border-color:#e7edf7;border-radius:15px;background:rgba(255,255,255,.97);box-shadow:0 13px 30px rgba(29,48,93,.10);transform:rotate(-3deg) translate(calc(var(--mx)*5px),calc(var(--my)*5px))}
+.comski-floating-chip b{width:30px;height:30px;border-radius:10px;background:#3b5bdb}
+.comski-floating-chip span{font-size:10px;color:#1a1d29}.comski-floating-chip small{font-size:8px;color:#6b7890}
+.chip-student{left:1%;top:59%}
+.chip-pro{display:none}
+.comski-feedback-card{right:-1%;top:17%;bottom:auto;width:35%;padding:15px;border-color:#e6ebf4;border-radius:20px;background:rgba(255,255,255,.97);box-shadow:0 18px 42px rgba(29,48,93,.12);transform:rotate(3deg)}
+.comski-feedback-card>strong{font-size:12px;color:#1a1d29}.comski-feedback-card>strong span{font-size:6px;color:#7b8aa3}
+.comski-feedback-card>div{grid-template-columns:1fr 42px;gap:8px;margin:11px 0;font-size:9px;color:#56647b}
+.comski-feedback-card i{height:5px;background:#edf1f8}.comski-feedback-card i em{background:#3b5bdb}
+.comski-feedback-card b{grid-column:1/-1;font-size:8px;color:#71809a}
+.comski-feedback-card>div:nth-child(3) i em{background:#3b5bdb}.comski-feedback-card>div:nth-child(4) i em{background:#3b5bdb}.comski-feedback-card>div:nth-child(5) i em{background:#3b5bdb}
+.comski-practice-card{right:0;bottom:4%;width:45%;display:flex;align-items:center;gap:10px;padding:14px 13px;transform:rotate(-2deg)}
+.comski-practice-card>div{min-width:0}.practice-card-icon{display:grid;place-items:center;flex:0 0 34px;height:34px;border-radius:11px;background:#eaf1ff;color:#3b5bdb;font-size:20px}
+.comski-practice-card small{display:block;color:#77859c;font-size:7px;font-weight:700;letter-spacing:.08em}
+.comski-practice-card strong{display:block;margin-top:5px;color:#1a1d29;font-size:11px}
+.comski-practice-card p{margin:4px 0 0;color:#6b7890;font-size:8px;line-height:1.4}
+.practice-card-arrow{display:grid;place-items:center;flex:0 0 26px;height:26px;margin-left:auto;border-radius:50%;background:#edf3ff;color:#3b5bdb}
+.comski-mascot{display:none}
+@media(max-width:1050px){.comski-project-card{grid-template-columns:1fr;gap:20px;width:min(900px,calc(100% - 48px));min-height:0}.comski-project-copy{max-width:650px}.comski-project-visual{height:590px}}
+@media(max-width:600px){.comski-project-card{width:calc(100% - 36px);gap:22px}.comski-project-index{margin-bottom:42px}.comski-project-copy h3{font-size:60px}.comski-project-copy h4{font-size:20px}.comski-project-description{font-size:15px}.comski-project-visual{height:420px}.comski-skills-card{left:-1%;top:8%;width:42%;padding:9px 8px;border-radius:14px}.comski-skills-card>strong{font-size:9px}.comski-skills-card>div{gap:5px;padding:6px 1px;font-size:8px}.skill-icon{width:22px;height:22px;font-size:11px}.comski-video-card{left:22%;top:21%;width:48%;padding:5px;border-width:4px;border-radius:17px}.video-person{height:155px;padding:7px;font-size:8px}.video-controls{height:18px}.comski-floating-chip{left:-1%;top:57%;width:49%;padding:8px;grid-template-columns:24px auto;column-gap:6px}.comski-floating-chip b{width:24px;height:24px}.comski-floating-chip span{font-size:8px}.comski-floating-chip small{font-size:6px}.comski-feedback-card{right:-2%;top:8%;width:42%;padding:10px;border-radius:14px}.comski-feedback-card>strong{font-size:9px}.comski-feedback-card>strong span{font-size:5px}.comski-feedback-card>div{grid-template-columns:1fr 30px;gap:5px;margin:7px 0;font-size:7px}.comski-feedback-card b{font-size:6px}.comski-practice-card{right:-1%;bottom:1%;width:53%;gap:6px;padding:9px;border-radius:14px}.practice-card-icon{flex-basis:25px;height:25px;font-size:14px}.comski-practice-card small{font-size:5px}.comski-practice-card strong{font-size:8px}.comski-practice-card p{font-size:6px}.practice-card-arrow{flex-basis:20px;height:20px}}
+@media(prefers-reduced-motion:reduce){.comski-project-card:hover .comski-video-card{transform:none}}
