@@ -1769,3 +1769,55 @@
     padding: 22px 24px 26px !important;
   }
 }
+
+
+/* Reference-matched editorial width for “The pieces that make the product”.
+   Keep the existing image gallery untouched; correct only the text column geometry. */
+.ta-page main > section.ta-section.ta-ui > h2,
+.ta-page main > section.ta-section.ta-ui > .ta-lead,
+.ta-page main > section.ta-section.ta-ui > .ta-copy {
+  box-sizing: border-box !important;
+  width: min(640px, calc(100% - 48px)) !important;
+  max-width: 640px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.ta-page main > section.ta-section.ta-ui > h2 {
+  max-width: 440px !important;
+  margin-top: 0 !important;
+  margin-bottom: 24px !important;
+  font-size: 48px !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.48px !important;
+}
+.ta-page main > section.ta-section.ta-ui > .ta-lead {
+  max-width: 560px !important;
+  margin-top: 0 !important;
+  margin-bottom: 18px !important;
+  font-size: 19px !important;
+  line-height: 1.5 !important;
+  letter-spacing: -.15px !important;
+}
+.ta-page main > section.ta-section.ta-ui > .ta-copy {
+  max-width: 560px !important;
+  margin-top: 0 !important;
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  letter-spacing: -.15px !important;
+}
+@media (max-width: 767px) {
+  .ta-page main > section.ta-section.ta-ui > h2,
+  .ta-page main > section.ta-section.ta-ui > .ta-lead,
+  .ta-page main > section.ta-section.ta-ui > .ta-copy {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+  }
+  .ta-page main > section.ta-section.ta-ui > h2 {
+    font-size: 28px !important;
+    line-height: 1.12 !important;
+  }
+  .ta-page main > section.ta-section.ta-ui > .ta-lead,
+  .ta-page main > section.ta-section.ta-ui > .ta-copy {
+    font-size: 16px !important;
+  }
+}
