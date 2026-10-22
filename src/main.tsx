@@ -100,55 +100,50 @@ function ComskiCard() {
         <div className="comski-project-index">02 <span>/ 04</span></div>
         <p className="comski-project-eyebrow">AI · EdTech · Product Design</p>
         <h3>ComSki</h3>
-        <h4>One AI coach. Two very different learners.</h4>
+        <h4>The human side of communication</h4>
         <p className="comski-project-description">
-          Designing an adaptive communication-learning system for students and professionals without fragmenting the core product experience.
+          An AI-powered communication practice platform that helps learners speak, write, listen and read with confidence.
         </p>
         <div className="comski-project-action"><b>→</b><span>View Case Study</span></div>
       </div>
 
       <div className="comski-project-visual" aria-hidden="true">
-        <div className="comski-glow comski-glow-a" />
-        <div className="comski-glow comski-glow-b" />
+        <div className="comski-scene-glow glow-one" />
+        <div className="comski-scene-glow glow-two" />
+        <div className="comski-scene-ring ring-one" />
+        <div className="comski-scene-ring ring-two" />
 
-        <div className="comski-dashboard">
-          <div className="comski-sidebar">
-            <strong><span className="comski-mark">⌣</span> ComSki</strong>
-            <span className="active">Home</span>
-            <span>Practice</span>
-            <span>My Journey</span>
-            <span>Feedback</span>
-          </div>
-          <div className="comski-dashboard-main">
-            <small>GOOD MORNING</small>
-            <h5>Continue your journey</h5>
-            <div className="comski-journey-row">
-              <div className="comski-journey-card">
-                <span>Google SDE Journey</span>
-                <i><em /></i>
-                <small>3 / 6 completed</small>
-              </div>
-              <div className="comski-metric"><b>+20%</b><span>Confidence</span><i /></div>
-              <div className="comski-metric purple"><b>+15%</b><span>Body Language</span><i /></div>
-            </div>
-          </div>
+        <div className="comski-skills-card">
+          <strong>Choose a skill <span>↗</span></strong>
+          <div><b className="skill-icon speaking">◖</b><span>Speaking</span><i>›</i></div>
+          <div><b className="skill-icon writing">✎</b><span>Writing</span><i>›</i></div>
+          <div><b className="skill-icon listening">♫</b><span>Listening</span><i>›</i></div>
+          <div><b className="skill-icon reading">▤</b><span>Reading</span><i>›</i></div>
         </div>
 
-        <div className="comski-recording">
-          <div className="comski-recording-top"><span>● 00:45</span><b>Video Practice</b></div>
-          <div className="comski-person"><span>◒</span></div>
-          <div className="comski-wave"><i /><i /><i /><i /><i /><i /><i /><i /><i /></div>
+        <div className="comski-video-card">
+          <div className="video-label"><span>● LIVE PRACTICE</span><span>00:45</span></div>
+          <div className="video-person"><span>Hi, I’m ready to practise.</span></div>
+          <div className="video-controls"><i /><i /><i /><i /><i /><i /><i /><i /><i /></div>
         </div>
 
-        <div className="comski-feedback">
-          <strong>✦ AI Feedback</strong>
-          <div><span>Content Structure</span><i><em /></i><b>Great flow</b></div>
-          <div><span>Confidence</span><i><em /></i><b>Keep going</b></div>
-          <div><span>Body Language</span><i><em /></i><b>More eye contact</b></div>
-          <div><span>Speech Clarity</span><i><em /></i><b>Slow down slightly</b></div>
+        <div className="comski-floating-chip chip-student">
+          <b>✦</b><span>Speaking practice</span><small>Build confidence, one step at a time</small>
         </div>
 
-        <div className="comski-mascot"><span>⌣</span></div>
+        <div className="comski-feedback-card">
+          <strong>AI Feedback <span>PERSONALISED INSIGHTS ↗</span></strong>
+          <div><span>Clarity</span><i><em /></i><b>Clearer</b></div>
+          <div><span>Confidence</span><i><em /></i><b>Growing</b></div>
+          <div><span>Structure</span><i><em /></i><b>Good flow</b></div>
+          <div><span>Pace</span><i><em /></i><b>Take your time</b></div>
+        </div>
+
+        <div className="comski-practice-card">
+          <span className="practice-card-icon">↗</span>
+          <div><small>YOUR NEXT PRACTICE</small><strong>Introduce yourself</strong><p>Prepare for your next team meeting.</p></div>
+          <b className="practice-card-arrow">→</b>
+        </div>
       </div>
     </a>
   );
