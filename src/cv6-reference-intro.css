@@ -5404,3 +5404,18 @@ html body #root main.cv4-page > footer.cv4-footer::after {
 html body #root main.cv4-page > footer.cv4-footer {
   isolation: auto !important;
 }
+
+
+/* CV6 footer: restrained ComSki-blue gradient border to separate the white footer from the page. */
+html body #root main.cv4-page > footer.cv4-footer {
+  border: 2px solid transparent !important;
+  background: linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(115deg, #3b5bdb 0%, #8dbdff 48%, #3b5bdb 100%) border-box !important;
+  background-clip: padding-box, border-box !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+html body #root main.cv4-page > footer.cv4-footer::before,
+html body #root main.cv4-page > footer.cv4-footer::after {
+  content: none !important;
+  display: none !important;
+}
