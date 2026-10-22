@@ -2025,3 +2025,50 @@
     font-size: 16px !important;
   }
 }
+
+
+/* Verified desktop geometry for the Reflection section: match the supplied reference's narrow editorial column. */
+.ta-page main > section.ta-section.ta-reflection {
+  width: 100% !important;
+  max-width: 824px !important;
+  margin: 80px auto 0 !important;
+  padding: 0 !important;
+}
+.ta-page main > section.ta-section.ta-reflection > .ta-kicker,
+.ta-page main > section.ta-section.ta-reflection > h2,
+.ta-page main > section.ta-section.ta-reflection > .ta-reflection-list,
+.ta-page main > section.ta-section.ta-reflection > .ta-reflection-divider,
+.ta-page main > section.ta-section.ta-reflection > .ta-end {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.ta-page main > section.ta-section.ta-reflection > h2 {
+  margin: 0 0 34px !important;
+  font-size: 48px !important;
+  line-height: 1.11 !important;
+  letter-spacing: -.38px !important;
+}
+.ta-page main > section.ta-section.ta-reflection .ta-reflection-list article {
+  padding: 22px 0 !important;
+}
+.ta-page main > section.ta-section.ta-reflection .ta-reflection-list h3 {
+  margin: 0 0 10px !important;
+  font-size: 22px !important;
+  line-height: 1.4 !important;
+}
+.ta-page main > section.ta-section.ta-reflection .ta-reflection-list p {
+  font-size: 18px !important;
+  line-height: 1.55 !important;
+}
+@media (max-width: 767px) {
+  .ta-page main > section.ta-section.ta-reflection {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    padding: 0 !important;
+  }
+  .ta-page main > section.ta-section.ta-reflection > h2 { font-size: 32px !important; }
+  .ta-page main > section.ta-section.ta-reflection .ta-reflection-list h3 { font-size: 18px !important; }
+  .ta-page main > section.ta-section.ta-reflection .ta-reflection-list p { font-size: 16px !important; }
+}
