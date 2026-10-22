@@ -1146,3 +1146,102 @@
   }
   .ta-page main > section.ta-section.ta-ai .ta-ai-card-copy { padding: 24px; }
 }
+
+
+/* Why AI cards — reference-measured desktop proportions (Toniq source screenshot).
+   Keep the section's 1192px editorial frame, but constrain the card row to 1174px:
+   three ~366px cards with ~38px gutters, rather than stretching to the full viewport. */
+.ta-page main > section.ta-section.ta-ai .ta-ai-cards {
+  display: grid !important;
+  width: min(1174px, 100%) !important;
+  max-width: 1174px !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 38px !important;
+  align-items: stretch !important;
+  margin: 36px auto 0 !important;
+}
+.ta-page main > section.ta-section.ta-ai .ta-ai-card {
+  width: 100%;
+  min-width: 0;
+  min-height: 390px !important;
+  height: 390px;
+  box-sizing: border-box;
+  border: 1px solid #dedede;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #fbfbfb;
+  display: flex;
+  flex-direction: column;
+}
+.ta-page main > section.ta-section.ta-ai .ta-ai-card > img {
+  display: block;
+  width: calc(100% - 28px) !important;
+  height: 240px !important;
+  min-height: 240px;
+  flex: 0 0 240px !important;
+  margin: 12px 14px 0 !important;
+  object-fit: cover;
+  object-position: top center;
+  border: 1px solid #e2e2e2;
+  border-radius: 24px 24px 5px 5px;
+  box-sizing: border-box;
+}
+.ta-page main > section.ta-section.ta-ai .ta-ai-card-copy {
+  padding: 36px 28px 24px !important;
+  min-width: 0;
+}
+.ta-page main > section.ta-section.ta-ai .ta-ai-card-copy h3 {
+  margin: 0 0 12px !important;
+  color: #2c2c2c;
+  font: 700 20px/1.3 Rubik, Arial, sans-serif !important;
+  letter-spacing: -.35px;
+}
+.ta-page main > section.ta-section.ta-ai .ta-ai-card-copy p {
+  margin: 0 !important;
+  color: #2c2c2c;
+  font: 400 18px/1.5 'Work Sans', Arial, sans-serif !important;
+  letter-spacing: -.15px;
+}
+@media (max-width: 1023px) {
+  .ta-page main > section.ta-section.ta-ai .ta-ai-cards {
+    width: 100% !important;
+    gap: 20px !important;
+  }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card {
+    height: auto;
+    min-height: 0 !important;
+  }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card > img {
+    height: 200px !important;
+    min-height: 200px;
+    flex-basis: 200px !important;
+  }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card-copy {
+    padding: 28px 20px 24px !important;
+  }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card-copy h3 { font-size: 18px !important; }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card-copy p { font-size: 16px !important; }
+}
+@media (max-width: 767px) {
+  .ta-page main > section.ta-section.ta-ai .ta-ai-cards {
+    width: 100% !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 24px !important;
+    margin-top: 32px !important;
+  }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card {
+    height: auto;
+    min-height: 0 !important;
+    border-radius: 24px;
+  }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card > img {
+    height: auto !important;
+    min-height: 0;
+    aspect-ratio: 1.42 / 1;
+    flex-basis: auto !important;
+    object-fit: cover;
+  }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card-copy { padding: 24px !important; }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card-copy h3 { font-size: 18px !important; }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card-copy p { font-size: 16px !important; }
+}
