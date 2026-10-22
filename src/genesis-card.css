@@ -379,3 +379,26 @@
   .comski-feedback-card>div{grid-template-columns:1fr 28px;gap:4px;margin:7px 0;font-size:7px}
   .comski-practice-card{right:0;bottom:2%;width:53%;padding:8px}
 }
+
+
+/* ComSki hero artwork replacement — one coherent, responsive visual */
+.comski-project-card{grid-template-columns:minmax(300px,.78fr) minmax(0,1.22fr);gap:34px;min-height:600px}
+.comski-project-visual.comski-project-visual-art{height:auto;min-height:0;align-self:center;overflow:visible;contain:none;background:transparent;isolation:isolate}
+.comski-project-visual.comski-project-visual-art::before,
+.comski-project-visual.comski-project-visual-art::after{display:none!important}
+.comski-project-visual-art img{display:block;width:calc(100% + 34px);max-width:none;height:auto;object-fit:contain;transform:translateX(-12px);filter:drop-shadow(0 22px 28px rgba(52,72,125,.06));transition:transform .55s cubic-bezier(.2,.8,.2,1),filter .55s ease}
+.comski-project-card:hover .comski-project-visual-art img{transform:translate(-8px,-4px);filter:drop-shadow(0 28px 34px rgba(52,72,125,.11))}
+@media(max-width:1050px){
+ .comski-project-card{grid-template-columns:1fr;gap:16px;min-height:0}
+ .comski-project-copy{max-width:650px}
+ .comski-project-visual.comski-project-visual-art{width:100%;max-width:780px;margin:-5px auto 0}
+ .comski-project-visual-art img{width:100%;transform:none}
+ .comski-project-card:hover .comski-project-visual-art img{transform:translateY(-3px)}
+}
+@media(max-width:600px){
+ .comski-project-card{gap:10px}
+ .comski-project-visual.comski-project-visual-art{margin:0 auto;width:calc(100% + 12px);margin-left:-6px}
+ .comski-project-visual-art img{width:100%;filter:none}
+ .comski-project-card:hover .comski-project-visual-art img{transform:none;filter:none}
+}
+@media(prefers-reduced-motion:reduce){.comski-project-visual-art img{transition:none}.comski-project-card:hover .comski-project-visual-art img{transform:none}}
