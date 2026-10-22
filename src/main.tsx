@@ -11,7 +11,7 @@ import ToolsWorkflow from './ToolsWorkflow';
 import GenesisMacBook from './GenesisMacBook';
 
 const portraitUrl = '/surya-portfolio/surya-portrait.svg';
-const genesisPath = '/surya-portfolio/work/genesis-v7/?v=phase4#s01';
+const genesisPath = '/surya-portfolio/work/genesis-v8/';
 const comskiPath = '/surya-portfolio/comski.html';
 
 function GenesisCard() {
