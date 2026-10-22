@@ -5937,3 +5937,17 @@ main.cv4-page .cv6-research-redesign .cv6-research-transition strong {
     transition-duration: .01ms !important;
   }
 }
+
+/* Keep the four research lenses balanced when Market Research is included. */
+main.cv4-page .cv6-research-redesign .cv6-research-lenses {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+main.cv4-page .cv6-research-redesign .cv6-lens-market .cv6-research-lens-icon {
+  color: #248b68;
+  background: #e8f8f0;
+}
+@media (max-width: 760px) {
+  main.cv4-page .cv6-research-redesign .cv6-research-lenses {
+    grid-template-columns: 1fr;
+  }
+}
