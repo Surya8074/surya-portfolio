@@ -1922,3 +1922,46 @@
   .ta-page main > section.ta-section.ta-reflection .ta-reflection-list h3 { font-size: 18px !important; }
   .ta-page main > section.ta-section.ta-reflection .ta-reflection-list p { font-size: 16px !important; }
 }
+
+
+/* Reflection section: match the supplied reference width and type scale. */
+.ta-page .ta-section.ta-reflection {
+  width: 100%;
+  max-width: 864px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.ta-page .ta-section.ta-reflection > .ta-kicker,
+.ta-page .ta-section.ta-reflection > h2,
+.ta-page .ta-section.ta-reflection > .ta-reflection-list,
+.ta-page .ta-section.ta-reflection > .ta-reflection-divider,
+.ta-page .ta-section.ta-reflection > .ta-end {
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+.ta-page .ta-section.ta-reflection > h2 {
+  margin-top: 0;
+  margin-bottom: 40px;
+  font-size: 48px;
+  line-height: 1.11;
+  letter-spacing: -.38px;
+}
+.ta-page .ta-section.ta-reflection .ta-reflection-list article {
+  padding: 22px 0;
+}
+.ta-page .ta-section.ta-reflection .ta-reflection-list h3 {
+  font-size: 17px;
+  line-height: 1.4;
+}
+.ta-page .ta-section.ta-reflection .ta-reflection-list p {
+  font-size: 14px;
+  line-height: 1.75;
+}
+@media (max-width: 767px) {
+  .ta-page .ta-section.ta-reflection { padding-left: 20px; padding-right: 20px; }
+  .ta-page .ta-section.ta-reflection > h2 { margin-bottom: 28px; font-size: 32px; }
+}
