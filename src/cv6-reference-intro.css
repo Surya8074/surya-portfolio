@@ -5419,3 +5419,81 @@ html body #root main.cv4-page > footer.cv4-footer::after {
   content: none !important;
   display: none !important;
 }
+
+
+/* CV6 final consistency pass: shared typography and predictable section rhythm.
+   Keep this block last so older section-level overrides cannot drift the system. */
+main.cv4-page {
+  --cv6-font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --cv6-section-space: clamp(56px, 6vw, 80px);
+  --cv6-section-space-compact: clamp(40px, 4.5vw, 64px);
+  --cv6-content-gutter: clamp(20px, 4vw, 48px);
+  --cv6-content-max: 1240px;
+  font-family: var(--cv6-font-family) !important;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+main.cv4-page,
+main.cv4-page *:not(svg):not(svg *) {
+  font-family: var(--cv6-font-family) !important;
+}
+main.cv4-page > section:not(.cv4-hero):not(.cv6-reference-intro) {
+  box-sizing: border-box;
+  padding-block: var(--cv6-section-space) !important;
+}
+main.cv4-page > .cv6-reference-intro {
+  box-sizing: border-box;
+  padding: 0 var(--cv6-content-gutter) var(--cv6-section-space) !important;
+}
+main.cv4-page > section:not(.cv4-hero) > :first-child {
+  scroll-margin-top: 24px;
+}
+main.cv4-page h1,
+main.cv4-page h2,
+main.cv4-page h3,
+main.cv4-page h4,
+main.cv4-page h5 {
+  font-family: var(--cv6-font-family) !important;
+  text-wrap: balance;
+}
+main.cv4-page p,
+main.cv4-page li {
+  text-wrap: pretty;
+}
+main.cv4-page p {
+  line-height: 1.6;
+}
+main.cv4-page .cv6-reference-copy h2 {
+  font-size: clamp(30px, 3.2vw, 40px);
+  line-height: 1.12;
+  letter-spacing: -.035em;
+}
+main.cv4-page .cv6-reference-copy p {
+  font-size: clamp(16px, 1.25vw, 18px);
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+main.cv4-page .cv6-research-header h2,
+main.cv4-page .cv6-problem-copy h2 {
+  line-height: 1.12;
+  letter-spacing: -.035em;
+}
+@media (max-width: 759px) {
+  main.cv4-page > section:not(.cv4-hero):not(.cv6-reference-intro) {
+    padding-block: 48px !important;
+  }
+  main.cv4-page > .cv6-reference-intro {
+    padding: 0 20px 48px !important;
+  }
+  main.cv4-page .cv6-reference-copy h2 {
+    font-size: clamp(28px, 7vw, 34px);
+  }
+  main.cv4-page .cv6-reference-copy p {
+    font-size: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  main.cv4-page * {
+    scroll-behavior: auto !important;
+  }
+}
