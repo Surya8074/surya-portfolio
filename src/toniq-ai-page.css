@@ -1821,3 +1821,49 @@
     font-size: 16px !important;
   }
 }
+
+
+/* Product pieces: place the supplied editorial copy in the centre column between the two side images. */
+.ta-page main > section.ta-section.ta-ui .ta-ui-gallery {
+  align-items: flex-end !important;
+}
+.ta-page main > section.ta-section.ta-ui .ta-ui-middle {
+  align-items: stretch !important;
+  gap: 40px !important;
+}
+.ta-page main > section.ta-section.ta-ui .ta-ui-copy {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  align-self: stretch !important;
+}
+.ta-page main > section.ta-section.ta-ui .ta-ui-copy .ta-lead {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 0 18px !important;
+  font-size: 19px !important;
+  line-height: 1.5 !important;
+}
+.ta-page main > section.ta-section.ta-ui .ta-ui-copy .ta-copy {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+}
+@media (max-width: 767px) {
+  .ta-page main > section.ta-section.ta-ui .ta-ui-gallery {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .ta-page main > section.ta-section.ta-ui .ta-ui-middle {
+    width: 100% !important;
+    flex: initial !important;
+    gap: 24px !important;
+  }
+  .ta-page main > section.ta-section.ta-ui .ta-ui-copy {
+    order: 0;
+  }
+}
