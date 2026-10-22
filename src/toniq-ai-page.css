@@ -2172,3 +2172,132 @@
     font-size: 16px !important;
   }
 }
+
+
+/* Why AI — dimensions and responsive structure transcribed from the supplied source HTML.
+   Desktop: 912px section column, 440px heading, 650px intro, source SVG at 927:460.
+   Mobile: use the three original 640px source card images; never render duplicate text cards. */
+.ta-page main > section.ta-section.ta-ai {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 80px auto 0 !important;
+  padding: 0 20px !important;
+}
+.ta-page main > section.ta-section.ta-ai > h2,
+.ta-page main > section.ta-section.ta-ai > .ta-lead,
+.ta-page main > section.ta-section.ta-ai > .ta-ai-graphic,
+.ta-page main > section.ta-section.ta-ai > .ta-ai-cards,
+.ta-page main > section.ta-section.ta-ai > .ta-section-note {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 912px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.ta-page main > section.ta-section.ta-ai > h2 {
+  max-width: 440px !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  color: #353535 !important;
+  font: 600 28px/1.11 Rubik, Arial, sans-serif !important;
+  letter-spacing: -.38px !important;
+}
+.ta-page main > section.ta-section.ta-ai > .ta-lead {
+  max-width: 650px !important;
+  margin-top: 18px !important;
+  margin-bottom: 0 !important;
+  color: #2c2c2c !important;
+  font: 400 16px/1.5 'Work Sans', Arial, sans-serif !important;
+  letter-spacing: -.2px !important;
+}
+.ta-page main > section.ta-section.ta-ai > .ta-ai-graphic {
+  position: relative !important;
+  display: block !important;
+  max-width: 912px !important;
+  aspect-ratio: 927 / 460 !important;
+  margin-top: 36px !important;
+  overflow: hidden !important;
+}
+.ta-page main > section.ta-section.ta-ai .ta-ai-source-art {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+.ta-page main > section.ta-section.ta-ai .ta-ai-source-copy {
+  position: absolute !important;
+  z-index: 1 !important;
+  display: block !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #2c2c2c !important;
+}
+.ta-page main > section.ta-section.ta-ai .ta-ai-source-copy h3 {
+  margin: 0 0 8px !important;
+  color: #2b2b2b !important;
+  font: 600 19px/1.3 Rubik, Arial, sans-serif !important;
+  letter-spacing: -.2px !important;
+}
+.ta-page main > section.ta-section.ta-ai .ta-ai-source-copy p {
+  margin: 0 !important;
+  color: #2c2c2c !important;
+  font: 400 16px/1.5 'Work Sans', Arial, sans-serif !important;
+  letter-spacing: -.2px !important;
+}
+.ta-page main > section.ta-section.ta-ai .ta-ai-source-copy-one {
+  left: 2.4% !important; top: 61% !important; width: 28.5% !important;
+}
+.ta-page main > section.ta-section.ta-ai .ta-ai-source-copy-two {
+  left: 35.8% !important; top: 61% !important; width: 28.5% !important;
+}
+.ta-page main > section.ta-section.ta-ai .ta-ai-source-copy-three {
+  left: 69.2% !important; top: 61% !important; width: 28.5% !important;
+}
+.ta-page main > section.ta-section.ta-ai > .ta-ai-cards { display: none !important; }
+.ta-page main > section.ta-section.ta-ai > .ta-section-note {
+  max-width: 760px !important;
+  margin-top: 36px !important;
+  color: #2c2c2c !important;
+  font: 400 16px/1.5 'Work Sans', Arial, sans-serif !important;
+  letter-spacing: -.2px !important;
+}
+@media (min-width: 768px) {
+  .ta-page main > section.ta-section.ta-ai { margin-top: 120px !important; padding-left: 24px !important; padding-right: 24px !important; }
+  .ta-page main > section.ta-section.ta-ai > h2 { font-size: 38px !important; }
+  .ta-page main > section.ta-section.ta-ai > .ta-lead { font-size: 19px !important; }
+}
+@media (max-width: 767px) {
+  .ta-page main > section.ta-section.ta-ai > .ta-ai-graphic { display: none !important; }
+  .ta-page main > section.ta-section.ta-ai > .ta-ai-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    max-width: 440px !important;
+    margin-top: 28px !important;
+  }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card > img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+  }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card-copy { display: none !important; }
+  .ta-page main > section.ta-section.ta-ai > .ta-section-note { margin-top: 36px !important; }
+}
