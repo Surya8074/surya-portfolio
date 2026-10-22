@@ -724,6 +724,12 @@ function ComskiCaseStudyCV4() {
                 <p>The barriers people may encounter across speaking, writing, listening, and reading.</p>
                 <span className="cv6-research-lens-link">Opportunity areas <span aria-hidden="true">↗</span></span>
               </article>
+              <article className="cv6-research-lens cv6-lens-market">
+                <span className="cv6-research-lens-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h17M8 15l4-4 3 2 5-6M16 7h4v4"/></svg></span>
+                <h3>Market research</h3>
+                <p>Compare communication-learning products, their core features, and potential gaps in the experience.</p>
+                <span className="cv6-research-lens-link">Competitive landscape <span aria-hidden="true">↗</span></span>
+              </article>
             </div>
           </div>
 
