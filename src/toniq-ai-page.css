@@ -1694,3 +1694,143 @@
   .ta-page main > section.ta-section.ta-ai .ta-ai-card-copy h3 { font-size: 18px !important; }
   .ta-page main > section.ta-section.ta-ai .ta-ai-card-copy p { font-size: 16px !important; }
 }
+
+
+/* Definitive repair: render the three Why AI cards and their full copy.
+   This intentionally overrides all earlier conflicting card experiments above. */
+.ta-page main > section.ta-section.ta-ai .ta-ai-cards {
+  display: grid !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  width: min(1174px, calc(100% - 40px)) !important;
+  max-width: 1174px !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 38px !important;
+  margin: 36px auto 0 !important;
+  align-items: stretch !important;
+}
+.ta-page main > section.ta-section.ta-ai .ta-ai-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-self: stretch !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+  position: relative !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  box-sizing: border-box !important;
+  border: 1px solid #dedede !important;
+  border-radius: 28px !important;
+  background: #fbfbfb !important;
+}
+.ta-page main > section.ta-section.ta-ai .ta-ai-card > img {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: calc(100% - 28px) !important;
+  height: 240px !important;
+  min-height: 240px !important;
+  max-height: 240px !important;
+  flex: 0 0 240px !important;
+  margin: 12px 14px 0 !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+  box-sizing: border-box !important;
+  border: 1px solid #e2e2e2 !important;
+  border-radius: 24px 24px 5px 5px !important;
+}
+.ta-page main > section.ta-section.ta-ai .ta-ai-card .ta-ai-card-copy {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+  flex: 0 0 auto !important;
+  padding: 24px 28px 28px !important;
+  margin: 0 !important;
+  color: #2c2c2c !important;
+  background: transparent !important;
+  clip: auto !important;
+  clip-path: none !important;
+}
+.ta-page main > section.ta-section.ta-ai .ta-ai-card .ta-ai-card-copy h3 {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  margin: 0 0 12px !important;
+  color: #2c2c2c !important;
+  font: 700 20px/1.3 Rubik, Arial, sans-serif !important;
+  letter-spacing: -.3px !important;
+  overflow-wrap: anywhere;
+}
+.ta-page main > section.ta-section.ta-ai .ta-ai-card .ta-ai-card-copy p {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  margin: 0 !important;
+  color: #2c2c2c !important;
+  font: 400 17px/1.5 'Work Sans', Arial, sans-serif !important;
+  letter-spacing: 0 !important;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 1023px) {
+  .ta-page main > section.ta-section.ta-ai .ta-ai-cards {
+    width: min(100%, 760px) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+  }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card > img {
+    height: 200px !important;
+    min-height: 200px !important;
+    max-height: 200px !important;
+    flex-basis: 200px !important;
+  }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card .ta-ai-card-copy {
+    padding: 22px 20px 24px !important;
+  }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card .ta-ai-card-copy h3 { font-size: 18px !important; }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card .ta-ai-card-copy p { font-size: 16px !important; }
+}
+@media (max-width: 767px) {
+  .ta-page main > section.ta-section.ta-ai .ta-ai-cards {
+    width: 100% !important;
+    max-width: 344px !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 24px !important;
+    margin-top: 28px !important;
+  }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card { overflow: hidden !important; border-radius: 22px !important; }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card > img {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    flex: 0 0 auto !important;
+    margin: 0 !important;
+    object-fit: contain !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+  }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card .ta-ai-card-copy { padding: 20px 20px 24px !important; }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card .ta-ai-card-copy h3 { font-size: 18px !important; }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-card .ta-ai-card-copy p { font-size: 16px !important; }
+}
