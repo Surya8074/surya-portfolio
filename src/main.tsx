@@ -107,43 +107,8 @@ function ComskiCard() {
         <div className="comski-project-action"><b>→</b><span>View Case Study</span></div>
       </div>
 
-      <div className="comski-project-visual" aria-hidden="true">
-        <div className="comski-scene-glow glow-one" />
-        <div className="comski-scene-glow glow-two" />
-        <div className="comski-scene-ring ring-one" />
-        <div className="comski-scene-ring ring-two" />
-
-        <div className="comski-skills-card">
-          <strong>Choose a skill <span>↗</span></strong>
-          <div><b className="skill-icon speaking">◖</b><span>Speaking</span><i>›</i></div>
-          <div><b className="skill-icon writing">✎</b><span>Writing</span><i>›</i></div>
-          <div><b className="skill-icon listening">♫</b><span>Listening</span><i>›</i></div>
-          <div><b className="skill-icon reading">▤</b><span>Reading</span><i>›</i></div>
-        </div>
-
-        <div className="comski-video-card">
-          <div className="video-label"><span>● LIVE PRACTICE</span><span>00:45</span></div>
-          <div className="video-person"><span>Hi, I’m ready to practise.</span></div>
-          <div className="video-controls"><i /><i /><i /><i /><i /><i /><i /><i /><i /></div>
-        </div>
-
-        <div className="comski-floating-chip chip-student">
-          <b>✦</b><span>Speaking practice</span><small>Build confidence, one step at a time</small>
-        </div>
-
-        <div className="comski-feedback-card">
-          <strong>AI Feedback <span>PERSONALISED INSIGHTS ↗</span></strong>
-          <div><span>Clarity</span><i><em /></i><b>Clearer</b></div>
-          <div><span>Confidence</span><i><em /></i><b>Growing</b></div>
-          <div><span>Structure</span><i><em /></i><b>Good flow</b></div>
-          <div><span>Pace</span><i><em /></i><b>Take your time</b></div>
-        </div>
-
-        <div className="comski-practice-card">
-          <span className="practice-card-icon">↗</span>
-          <div><small>YOUR NEXT PRACTICE</small><strong>Introduce yourself</strong><p>Prepare for your next team meeting.</p></div>
-          <b className="practice-card-arrow">→</b>
-        </div>
+      <div className="comski-project-visual comski-project-visual-art" aria-hidden="true">
+        <img src="/surya-portfolio/comski-hero-art.svg" alt="" loading="eager" />
       </div>
     </a>
   );
