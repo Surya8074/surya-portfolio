@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 650" role="img" aria-labelledby="title desc">
+<title id="title">ComSki communication practice interface</title><desc id="desc">A layered interface showing speaking, writing, listening and reading, a person practising communication, AI feedback and a suggested next practice.</desc>
+<defs>
+ <linearGradient id="back" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7f5ff"/><stop offset=".55" stop-color="#eef5ff"/><stop offset="1" stop-color="#f9eafa"/></linearGradient>
+ <linearGradient id="phone" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fdfdff"/><stop offset="1" stop-color="#dfeaff"/></linearGradient>
+ <linearGradient id="skin" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e8b18c"/><stop offset="1" stop-color="#b96f51"/></linearGradient>
+ <linearGradient id="shirt" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9bb8ee"/><stop offset="1" stop-color="#d4e2ff"/></linearGradient>
+ <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="15" stdDeviation="18" flood-color="#536a9c" flood-opacity=".16"/></filter>
+ <filter id="soft"><feGaussianBlur stdDeviation="28"/></filter>
+</defs>
+<ellipse cx="474" cy="325" rx="370" ry="278" fill="#dce8ff" opacity=".55" filter="url(#soft)"/>
+<circle cx="570" cy="325" r="265" fill="none" stroke="#b8adff" stroke-width="2" opacity=".7"/><circle cx="570" cy="325" r="214" fill="none" stroke="#d8dfff" stroke-width="1.5"/>
+<circle cx="766" cy="94" r="63" fill="#eee5ff" opacity=".8"/><circle cx="150" cy="500" r="84" fill="#e4efff" opacity=".8"/>
+<!-- skill selector -->
+<g transform="translate(70 112) rotate(-5 115 130)" filter="url(#shadow)">
+ <rect width="225" height="290" rx="26" fill="#fff" stroke="#e7ebf5"/>
+ <text x="23" y="34" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#202842">Choose a skill</text><text x="191" y="34" font-family="Arial,sans-serif" font-size="19" fill="#6079de">↗</text>
+ <g font-family="Arial,sans-serif" font-size="15" font-weight="600" fill="#27334f">
+  <rect x="15" y="52" width="195" height="48" rx="15" fill="#f3f6ff"/><circle cx="40" cy="76" r="14" fill="#deebff"/><path d="M35 76h10m-5-5v10" stroke="#3677dc" stroke-width="2" stroke-linecap="round"/><text x="64" y="81">Speaking</text><text x="190" y="81" fill="#9aa6be" font-size="22">›</text>
+  <rect x="15" y="108" width="195" height="48" rx="15" fill="#fff8f6"/><circle cx="40" cy="132" r="14" fill="#ffe6df"/><path d="m35 136 2-7 8-4 2 2-4 8-8 3z" fill="none" stroke="#df7a67" stroke-width="2"/><text x="64" y="137">Writing</text><text x="190" y="137" fill="#9aa6be" font-size="22">›</text>
+  <rect x="15" y="164" width="195" height="48" rx="15" fill="#f2fbf8"/><circle cx="40" cy="188" r="14" fill="#d9f5eb"/><path d="M33 188v-4a7 7 0 0 1 14 0v4m-14-1h-3v6h5v-5m12-1h3v6h-5v-5" fill="none" stroke="#1e9e7b" stroke-width="2"/><text x="64" y="193">Listening</text><text x="190" y="193" fill="#9aa6be" font-size="22">›</text>
+  <rect x="15" y="220" width="195" height="48" rx="15" fill="#f8f4ff"/><circle cx="40" cy="244" r="14" fill="#eee3ff"/><path d="M34 237h5a5 5 0 0 1 5 5v9h-5a5 5 0 0 0-5-2zM46 237h-2v14h2a5 5 0 0 1 5-2v-12z" fill="none" stroke="#8a63d8" stroke-width="1.8"/><text x="64" y="249">Reading</text><text x="190" y="249" fill="#9aa6be" font-size="22">›</text>
+ </g>
+</g>
+<!-- central practice phone -->
+<g transform="translate(304 78) rotate(2 150 260)" filter="url(#shadow)">
+ <rect width="302" height="496" rx="37" fill="#fff" stroke="#fff" stroke-width="7"/>
+ <rect x="9" y="9" width="284" height="478" rx="29" fill="url(#phone)"/>
+ <circle cx="36" cy="37" r="17" fill="#4b77e8"/><path d="M29 37h2m3-5v10m4-13v16m4-12v8" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+ <rect x="187" y="23" width="84" height="29" rx="14" fill="#fff" stroke="#d7e1ff"/><circle cx="201" cy="37" r="4" fill="#8767f4"/><text x="211" y="41" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#263450">02:34</text>
+ <!-- illustrated person -->
+ <path d="M42 434c5-72 18-108 55-128 22-12 79-11 104 1 38 19 52 62 57 127v32H42z" fill="url(#shirt)"/>
+ <path d="M98 307c-18-26-18-63-8-93 10-32 32-54 63-52 36 2 55 32 56 70 1 33-10 65-25 81l-5 30-63-1z" fill="#30252b"/>
+ <ellipse cx="149" cy="226" rx="51" ry="63" fill="url(#skin)"/>
+ <path d="M97 218c-2-50 25-77 59-75 38 1 59 27 56 71-14-8-26-20-35-35-17 18-42 29-80 31z" fill="#34252b"/>
+ <path d="M105 236c2 28 18 50 42 51 27 1 43-22 45-48-9 10-18 13-27 13-18 0-30-11-38-22-7 4-14 6-22 6z" fill="#cf8b69" opacity=".65"/>
+ <ellipse cx="131" cy="227" rx="4" ry="5" fill="#362b31"/><ellipse cx="169" cy="227" rx="4" ry="5" fill="#362b31"/><path d="M139 251q12 10 23-1" fill="none" stroke="#8c4d43" stroke-width="3" stroke-linecap="round"/>
+ <path d="M113 204q10-8 21-2m21 0q12-7 23 2" fill="none" stroke="#51333a" stroke-width="3" stroke-linecap="round"/>
+ <path d="M79 369q-14 9-17 35m135-32q18 8 24 29" fill="none" stroke="#f3c9b0" stroke-width="17" stroke-linecap="round"/>
+ <rect x="25" y="423" width="252" height="45" rx="16" fill="#fff" opacity=".94"/><path d="M88 445h4v5h-4zm10-8h4v13h-4zm10-5h4v18h-4zm10 9h4v9h-4zm10-13h4v22h-4zm10 5h4v17h-4zm10 3h4v14h-4zm10-8h4v22h-4zm10 8h4v14h-4zm10-3h4v17h-4zm10 6h4v11h-4z" fill="#7b9cff"/>
+</g>
+<!-- feedback panel -->
+<g transform="translate(588 151) rotate(3 140 125)" filter="url(#shadow)">
+ <rect width="267" height="242" rx="25" fill="#fff" stroke="#e6eaf4"/>
+ <text x="22" y="34" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#202842">AI Feedback</text><text x="22" y="52" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="1" fill="#8961e9">PERSONALISED INSIGHTS</text>
+ <circle cx="60" cy="111" r="35" fill="none" stroke="#e7edfb" stroke-width="10"/><circle cx="60" cy="111" r="35" fill="none" stroke="#4d82f4" stroke-width="10" stroke-dasharray="172 220" stroke-linecap="round" transform="rotate(-90 60 111)"/><text x="60" y="117" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#263553">78%</text>
+ <g font-family="Arial,sans-serif" font-size="10" fill="#65728c"><text x="118" y="88">Clarity</text><text x="118" y="119">Confidence</text><text x="118" y="150">Engagement</text><text x="118" y="181">Pace</text><text x="118" y="212">Structure</text></g>
+ <g><rect x="179" y="80" width="66" height="6" rx="3" fill="#edf0f8"/><rect x="179" y="80" width="48" height="6" rx="3" fill="#4fc7a0"/><rect x="179" y="111" width="66" height="6" rx="3" fill="#edf0f8"/><rect x="179" y="111" width="44" height="6" rx="3" fill="#4d8ef7"/><rect x="179" y="142" width="66" height="6" rx="3" fill="#edf0f8"/><rect x="179" y="142" width="51" height="6" rx="3" fill="#ff917f"/><rect x="179" y="173" width="66" height="6" rx="3" fill="#edf0f8"/><rect x="179" y="173" width="37" height="6" rx="3" fill="#a27cf3"/><rect x="179" y="204" width="66" height="6" rx="3" fill="#edf0f8"/><rect x="179" y="204" width="42" height="6" rx="3" fill="#8d9cf5"/></g>
+</g>
+<!-- feedback bubble -->
+<g transform="translate(69 423) rotate(-4)" filter="url(#shadow)"><rect width="247" height="93" rx="20" fill="#fff" stroke="#e8edf7"/><circle cx="31" cy="32" r="14" fill="#e9efff"/><path d="m31 21 3 8 8 3-8 3-3 8-3-8-8-3 8-3z" fill="#4777e6"/><text x="54" y="29" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#27334f">Great structure!</text><text x="54" y="50" font-family="Arial,sans-serif" font-size="12" fill="#66738d">Try to slow down a bit</text><text x="54" y="67" font-family="Arial,sans-serif" font-size="12" fill="#66738d">for better clarity.</text></g>
+<!-- next practice -->
+<g transform="translate(563 445) rotate(-2 155 69)" filter="url(#shadow)"><rect width="294" height="132" rx="24" fill="#fff" stroke="#e6eaf4"/><rect x="18" y="22" width="39" height="39" rx="13" fill="#f0eaff"/><path d="M29 31h15v20H29zM33 36h8m-8 5h8m-8 5h5" fill="none" stroke="#8a67dc" stroke-width="2" stroke-linecap="round"/><text x="71" y="33" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="1" fill="#8a96ad">YOUR NEXT PRACTICE</text><text x="71" y="56" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#202842">Introduce yourself</text><text x="71" y="76" font-family="Arial,sans-serif" font-size="11" fill="#71809a">Prepare for your next team meeting.</text><circle cx="259" cy="100" r="17" fill="#edf2ff"/><path d="M251 100h15m-6-6 6 6-6 6" fill="none" stroke="#4d6fe2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+<!-- audio chip -->
+<g transform="translate(415 370) rotate(5)" filter="url(#shadow)"><rect width="132" height="56" rx="18" fill="#fff" stroke="#e8edf7"/><circle cx="23" cy="28" r="12" fill="#f0eaff"/><path d="m23 19 2 6 6 3-6 2-2 6-2-6-6-2 6-3z" fill="#8b65df"/><path d="M48 29h3v5h-3zm8-8h3v17h-3zm8 4h3v12h-3zm8-7h3v19h-3zm8 6h3v13h-3zm8-2h3v15h-3zm8 6h3v9h-3zm8-4h3v13h-3z" fill="#5b83ee"/></g>
+<!-- floating chat -->
+<g transform="translate(735 48) rotate(8)"><rect width="104" height="67" rx="20" fill="#fff" stroke="#eef0f7"/><circle cx="31" cy="33" r="6" fill="#a6b9fa"/><circle cx="51" cy="33" r="6" fill="#a6b9fa"/><circle cx="71" cy="33" r="6" fill="#a6b9fa"/></g>
+</svg>
