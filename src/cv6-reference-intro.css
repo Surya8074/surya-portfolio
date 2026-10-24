@@ -6172,3 +6172,110 @@ main.cv4-page .cv6-user-study-note strong { color:#555d70; }
   main.cv4-page .cv6-user-study-cards { grid-template-columns:1fr; }
   main.cv4-page .cv6-user-study-image { height:180px; }
 }
+
+
+/* Market research: editorial landscape and comparison notebook */
+main.cv4-page .cv6-research-market.cv6-market-editorial {
+  margin-top: clamp(42px,5.5vw,76px);
+  padding: clamp(25px,4vw,52px);
+  background: #fffefa;
+  color: #1b2030;
+  border: 1px solid #e8e5dc;
+  border-radius: 3px;
+  box-shadow: 0 18px 48px rgba(29,34,48,.035);
+}
+main.cv4-page .cv6-market-editorial-head { max-width: 900px; margin: 0 auto 28px; }
+main.cv4-page .cv6-market-editorial-head .cv6-research-eyebrow { justify-content:flex-start; }
+main.cv4-page .cv6-market-editorial-head h3 { max-width:780px; margin:20px 0 12px; font-size:clamp(38px,5.1vw,68px); line-height:.98; letter-spacing:-.06em; font-weight:760; }
+main.cv4-page .cv6-market-deck { max-width:650px; margin:0; color:#666e7f; font-size:16px; line-height:1.65; }
+main.cv4-page .cv6-market-head-meta { display:flex; justify-content:space-between; gap:16px; padding:13px 0; margin-top:27px; border-top:1px solid #deded8; border-bottom:1px solid #deded8; color:#8a8c91; font-size:9px; font-weight:800; letter-spacing:.13em; }
+main.cv4-page .cv6-market-notebook { display:grid; grid-template-columns:minmax(150px,.58fr) minmax(0,2.42fr); gap:clamp(22px,3.4vw,44px); align-items:start; }
+main.cv4-page .cv6-market-margin-note { position:relative; padding:20px 16px 18px; margin-top:34px; background:#fff1b9; color:#423b2c; transform:rotate(-2deg); box-shadow:0 9px 20px #332b1b12; }
+main.cv4-page .cv6-market-hand-label { display:block; color:#4963bb; font-family:Georgia,serif; font-size:17px; font-style:italic; }
+main.cv4-page .cv6-market-margin-note p { margin:12px 0 18px; font-family:Georgia,serif; font-size:18px; line-height:1.38; }
+main.cv4-page .cv6-market-note-rule { display:block; width:48px; height:2px; margin-bottom:12px; background:#b6a56a; }
+main.cv4-page .cv6-market-margin-note small { color:#746b55; font-size:10px; line-height:1.45; }
+main.cv4-page .cv6-market-landscape { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0; border-top:1px solid #dfdfd9; border-bottom:1px solid #dfdfd9; }
+main.cv4-page .cv6-market-landscape-item { min-width:0; padding:17px 15px 20px; }
+main.cv4-page .cv6-market-landscape-item + .cv6-market-landscape-item { border-left:1px solid #e6e5df; }
+main.cv4-page .cv6-market-landscape-featured { background:#f6f7fb; }
+main.cv4-page .cv6-market-item-top { display:flex; align-items:center; justify-content:space-between; gap:5px; color:#6d7485; font-size:9px; font-weight:800; letter-spacing:.09em; }
+main.cv4-page .cv6-market-stamp { border:1px solid #cdd4e6; padding:4px 5px; color:#52648e; font-size:8px; }
+main.cv4-page .cv6-market-product-visual { display:grid; place-items:center; height:168px; margin:15px 0 17px; padding:10px; overflow:hidden; background:#edf1fa; border:1px solid #e2e6f0; }
+main.cv4-page .cv6-market-product-language { background:#f2f0fb; }
+main.cv4-page .cv6-market-visual-window { width:86%; min-height:126px; padding:10px; border:1px solid #e0e3ed; border-radius:7px; background:#fff; box-shadow:0 7px 15px #242c4010; }
+main.cv4-page .cv6-market-window-dot { display:inline-block; width:5px; height:5px; margin-right:4px; border-radius:50%; background:#b7c4e5; }
+main.cv4-page .cv6-market-lesson-line { height:6px; width:78%; margin-top:15px; border-radius:4px; background:#dce3f3; }
+main.cv4-page .cv6-market-lesson-line.short { width:51%; margin-top:7px; background:#edf0f6; }
+main.cv4-page .cv6-market-lesson-progress { height:5px; margin-top:13px; border-radius:4px; background:#e7eaf3; }
+main.cv4-page .cv6-market-lesson-progress i { display:block; width:65%; height:100%; border-radius:4px; background:#4764d8; }
+main.cv4-page .cv6-market-lesson-choice { display:flex; justify-content:space-between; margin-top:10px; color:#515b74; font-size:8px; }
+main.cv4-page .cv6-market-lesson-choice b { color:#4563d7; }
+main.cv4-page .cv6-market-product-speaking { background:#e8edfb; }
+main.cv4-page .cv6-market-record-card { width:85%; padding:12px; border:1px solid #d8dff1; border-radius:7px; background:#fff; }
+main.cv4-page .cv6-market-record-orb { display:block; width:28px; height:28px; margin:0 auto 8px; border-radius:50%; background:#7898ef; box-shadow:0 0 0 7px #edf1ff; }
+main.cv4-page .cv6-market-record-line { width:60%; height:5px; margin:6px auto; border-radius:4px; background:#dce3f3; }
+main.cv4-page .cv6-market-record-line.short { width:38%; }
+main.cv4-page .cv6-market-wave { display:flex; align-items:center; justify-content:center; gap:3px; height:25px; margin:7px 0; }
+main.cv4-page .cv6-market-wave i { display:block; width:3px; height:var(--h,10px); border-radius:3px; background:#7894ed; }
+main.cv4-page .cv6-market-wave i:nth-child(3n) { height:19px; } main.cv4-page .cv6-market-wave i:nth-child(3n + 1) { height:8px; } main.cv4-page .cv6-market-wave i:nth-child(4n) { height:14px; }
+main.cv4-page .cv6-market-record-button { display:block; width:max-content; margin:0 auto; padding:5px 8px; border-radius:4px; background:#edf1ff; color:#3d56ae; font-size:8px; }
+main.cv4-page .cv6-market-product-coach { background:#f1edf9; }
+main.cv4-page .cv6-market-coach-panel { display:flex; align-items:center; flex-wrap:wrap; gap:7px; width:88%; padding:12px; background:white; border:1px solid #e4dff0; border-radius:7px; }
+main.cv4-page .cv6-market-coach-check { display:grid; place-items:center; width:27px; height:27px; border-radius:50%; background:#e4f2e9; color:#39845a; }
+main.cv4-page .cv6-market-coach-panel > div { flex:1; min-width:0; }
+main.cv4-page .cv6-market-coach-panel b,.cv6-market-coach-panel small { display:block; }
+main.cv4-page .cv6-market-coach-panel b { font-size:9px; } main.cv4-page .cv6-market-coach-panel small { margin-top:3px; color:#888b98; font-size:7px; }
+main.cv4-page .cv6-market-coach-score { color:#4563d7; }
+main.cv4-page .cv6-market-coach-divider { width:100%; height:1px; background:#eceaf1; }
+main.cv4-page .cv6-market-coach-pill { padding:4px 6px; border-radius:3px; background:#f2f3f8; color:#616b81; font-size:7px; }
+main.cv4-page .cv6-market-landscape-item h4 { margin:0 0 8px; font-size:15px; line-height:1.25; letter-spacing:-.025em; }
+main.cv4-page .cv6-market-landscape-item > p { min-height:68px; margin:0; color:#697286; font-size:12px; line-height:1.55; }
+main.cv4-page .cv6-market-annotation { margin-top:13px; padding-top:11px; border-top:1px solid #e5e5df; color:#535d70; font-size:11px; line-height:1.5; }
+main.cv4-page .cv6-market-annotation span { display:block; margin-bottom:4px; color:#4963bb; font-size:9px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+main.cv4-page .cv6-market-matrix-wrap { margin:38px 0 0; }
+main.cv4-page .cv6-market-matrix-heading { display:flex; align-items:baseline; justify-content:space-between; gap:15px; margin-bottom:12px; }
+main.cv4-page .cv6-market-matrix-heading p { margin:0; color:#7b7f89; font-size:11px; }
+main.cv4-page .cv6-market-matrix { border-top:1px solid #dcdedc; }
+main.cv4-page .cv6-market-matrix-row { display:grid; grid-template-columns:1.05fr repeat(3,1fr); border-bottom:1px solid #e3e4e0; }
+main.cv4-page .cv6-market-matrix-row > * { padding:12px 13px; color:#646d7e; font-size:11px; line-height:1.45; border-left:1px solid #ecece7; }
+main.cv4-page .cv6-market-matrix-row > *:first-child { border-left:0; }
+main.cv4-page .cv6-market-matrix-row strong { color:#252b3b; font-size:11px; font-weight:750; }
+main.cv4-page .cv6-market-matrix-header > span { color:#858995; font-size:8px; font-weight:800; letter-spacing:.06em; }
+main.cv4-page .cv6-market-matrix-header > span:first-child { color:#4963bb; }
+main.cv4-page .cv6-market-method-note { max-width:900px; margin:15px 0 0; color:#898b92; font-size:10px; line-height:1.6; }
+main.cv4-page .cv6-market-method-note strong { color:#5c6371; }
+main.cv4-page .cv6-market-opportunity { display:grid; grid-template-columns:150px 1fr 34px; align-items:center; gap:22px; margin-top:26px; padding:23px 25px; background:#20283d; color:#fff; }
+main.cv4-page .cv6-market-opportunity-index { align-self:start; padding-top:4px; color:#aebce8; font-size:9px; font-weight:800; letter-spacing:.1em; }
+main.cv4-page .cv6-market-opportunity h4 { margin:0 0 7px; font-family:Georgia,serif; font-size:clamp(22px,2.6vw,31px); font-weight:500; letter-spacing:-.03em; }
+main.cv4-page .cv6-market-opportunity p { max-width:680px; margin:0; color:#d2d7e3; font-size:12px; line-height:1.6; }
+main.cv4-page .cv6-market-opportunity-arrow { display:grid; place-items:center; width:32px; height:32px; border:1px solid #606b83; border-radius:50%; font-size:18px; }
+@media (max-width:900px) {
+ main.cv4-page .cv6-market-notebook { grid-template-columns:1fr; }
+ main.cv4-page .cv6-market-margin-note { max-width:420px; margin:0 0 12px 15px; }
+ main.cv4-page .cv6-market-landscape-item { padding:14px 10px 16px; }
+ main.cv4-page .cv6-market-product-visual { height:140px; }
+ main.cv4-page .cv6-market-matrix-row > * { padding:10px 8px; }
+}
+@media (max-width:640px) {
+ main.cv4-page .cv6-research-market.cv6-market-editorial { padding:22px 16px; }
+ main.cv4-page .cv6-market-head-meta { flex-direction:column; gap:6px; }
+ main.cv4-page .cv6-market-landscape { grid-template-columns:1fr; }
+ main.cv4-page .cv6-market-landscape-item + .cv6-market-landscape-item { border-left:0; border-top:1px solid #e6e5df; }
+ main.cv4-page .cv6-market-product-visual { height:165px; }
+ main.cv4-page .cv6-market-landscape-item > p { min-height:0; }
+ main.cv4-page .cv6-market-matrix-heading { display:block; }
+ main.cv4-page .cv6-market-matrix-heading p { margin-top:5px; }
+ main.cv4-page .cv6-market-matrix-row { grid-template-columns:1fr 1fr; }
+ main.cv4-page .cv6-market-matrix-header { display:none; }
+ main.cv4-page .cv6-market-matrix-row > * { border-bottom:1px solid #ecece7; }
+ main.cv4-page .cv6-market-matrix-row > *:nth-child(2n + 1) { border-left:0; }
+ main.cv4-page .cv6-market-matrix-row strong { grid-column:1/-1; padding-bottom:0; background:#f8f8f4; }
+ main.cv4-page .cv6-market-matrix-row > *:nth-child(2)::before { content:"LEARNING"; display:block; margin-bottom:4px; color:#8b8e99; font-size:8px; font-weight:800; }
+ main.cv4-page .cv6-market-matrix-row > *:nth-child(3)::before { content:"SPEAKING"; display:block; margin-bottom:4px; color:#8b8e99; font-size:8px; font-weight:800; }
+ main.cv4-page .cv6-market-matrix-row > *:nth-child(4) { grid-column:1/-1; }
+ main.cv4-page .cv6-market-matrix-row > *:nth-child(4)::before { content:"AI COACHES"; display:block; margin-bottom:4px; color:#8b8e99; font-size:8px; font-weight:800; }
+ main.cv4-page .cv6-market-opportunity { grid-template-columns:1fr 28px; gap:10px; padding:20px 16px; }
+ main.cv4-page .cv6-market-opportunity-index { grid-column:1/-1; }
+ main.cv4-page .cv6-market-opportunity-arrow { grid-column:2; grid-row:2; }
+}
