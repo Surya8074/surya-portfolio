@@ -699,40 +699,55 @@ function ComskiCaseStudyCV4() {
 
       <section className="cv6-research-section cv6-research-redesign" id="s-research" aria-labelledby="cv6-research-title">
         <div className="cv6-research-shell">
-          <div className="cv6-research-overview">
+          <div className="cv6-research-overview cv6-research-editorial-overview">
             <header className="cv6-research-header">
               <div className="cv6-research-eyebrow"><span>03</span><i aria-hidden="true" /><span>RESEARCH</span></div>
               <h2 id="cv6-research-title">Understanding the human side of communication</h2>
-              <p>We explored the moments that make communication difficult and the kinds of support that could help people practise with greater confidence. These themes frame the opportunity for ComSki.</p>
+              <p>Before shaping ComSki, I explored the moments that make communication difficult, how existing tools support practice, and what could help learners feel more confident.</p>
+              <div className="cv6-research-method-strip" aria-label="Research focus">
+                <span><b>01</b><strong>User behaviour</strong><small>Everyday communication</small></span>
+                <span><b>02</b><strong>Market review</strong><small>Existing solutions</small></span>
+                <span><b>03</b><strong>Opportunity mapping</strong><small>From needs to design</small></span>
+              </div>
             </header>
-            <div className="cv6-research-lenses" aria-label="Research lenses">
-              <article className="cv6-research-lens cv6-lens-behaviour">
-                <span className="cv6-research-lens-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 20v-1.5a3.5 3.5 0 0 0-3.5-3.5h-6A3.5 3.5 0 0 0 3 18.5V20M9.5 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM16 4.2a3.5 3.5 0 0 1 0 6.6M17 15h.5a3.5 3.5 0 0 1 3.5 3.5V20"/></svg></span>
-                <h3>User behaviour</h3>
-                <p>How people prepare, practise, and communicate in everyday situations.</p>
-                <span className="cv6-research-lens-link">Research focus <span aria-hidden="true">↗</span></span>
-              </article>
-              <article className="cv6-research-lens cv6-lens-solutions">
-                <span className="cv6-research-lens-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20h4V10H4zM10 20h4V4h-4zM16 20h4V7h-4z"/></svg></span>
-                <h3>Existing solutions</h3>
-                <p>Where current tools help, and where a more connected experience may be useful.</p>
-                <span className="cv6-research-lens-link">Market review <span aria-hidden="true">↗</span></span>
-              </article>
-              <article className="cv6-research-lens cv6-lens-challenges">
-                <span className="cv6-research-lens-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M8.5 14.5A7 7 0 1 1 15.5 14.5C14.6 15.2 14 16 14 17h-4c0-1-.6-1.8-1.5-2.5Z"/></svg></span>
-                <h3>Communication challenges</h3>
-                <p>The barriers people may encounter across speaking, writing, listening, and reading.</p>
-                <span className="cv6-research-lens-link">Opportunity areas <span aria-hidden="true">↗</span></span>
-              </article>
-              <article className="cv6-research-lens cv6-lens-market">
-                <span className="cv6-research-lens-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h17M8 15l4-4 3 2 5-6M16 7h4v4"/></svg></span>
-                <h3>Market research</h3>
-                <p>Compare communication-learning products, their core features, and potential gaps in the experience.</p>
-                <span className="cv6-research-lens-link">Competitive landscape <span aria-hidden="true">↗</span></span>
-              </article>
+            <div className="cv6-research-collage" aria-label="Research notebook visual">
+              <div className="cv6-collage-photo cv6-collage-main"><img src="/surya-portfolio/comski/speaking-background.jpg" alt="A learner thinking through a communication task" loading="lazy" /></div>
+              <div className="cv6-collage-note cv6-collage-note-one"><span>Research question</span><p>What makes people hesitate before speaking?</p></div>
+              <div className="cv6-collage-note cv6-collage-note-two"><span>Working note</span><p>Practice should feel safe, specific, and repeatable.</p></div>
+              <div className="cv6-collage-photo cv6-collage-small-one"><img src="/surya-portfolio/comski/writing-background.jpg" alt="A learner practising and reflecting" loading="lazy" /></div>
+              <div className="cv6-collage-photo cv6-collage-small-two"><img src="/surya-portfolio/comski/listening-background.jpg" alt="A communication practice moment" loading="lazy" /></div>
+              <span className="cv6-collage-caption">FIELD NOTES / COMSKI DISCOVERY</span>
             </div>
           </div>
-
+          <div className="cv6-research-user-study">
+            <header className="cv6-research-subhead">
+              <div className="cv6-research-eyebrow"><span>01</span><i aria-hidden="true" /><span>USER RESEARCH</span></div>
+              <h3>Looking at communication in everyday life</h3>
+              <p>Research prompts to investigate how people prepare, practise, and reflect on communication. Replace these illustrative profiles with verified participant evidence before publishing.</p>
+            </header>
+            <div className="cv6-user-study-layout">
+              <aside className="cv6-user-study-methods">
+                <div><span className="cv6-method-mark">01</span><p><strong>Explore real situations</strong><small>Where communication feels difficult or high-pressure.</small></p></div>
+                <div><span className="cv6-method-mark">02</span><p><strong>Listen for patterns</strong><small>Look for recurring needs, workarounds, and barriers.</small></p></div>
+                <div><span className="cv6-method-mark">03</span><p><strong>Translate into needs</strong><small>Connect observations to opportunities for design.</small></p></div>
+              </aside>
+              <div className="cv6-user-study-cards">
+                <article className="cv6-user-study-card">
+                  <div className="cv6-user-study-image"><img src="/surya-portfolio/comski/speaking-background.jpg" alt="Illustrative image of a learner preparing to speak" loading="lazy" /><span>Research prompt 01</span></div>
+                  <div className="cv6-user-study-copy"><h4>Speaking up</h4><blockquote>“What makes it harder to express an idea in the moment?”</blockquote><p><strong>Explore:</strong> confidence, fear of judgement, and preparation habits.</p></div>
+                </article>
+                <article className="cv6-user-study-card">
+                  <div className="cv6-user-study-image"><img src="/surya-portfolio/comski/writing-background.jpg" alt="Illustrative image of a learner working through a task" loading="lazy" /><span>Research prompt 02</span></div>
+                  <div className="cv6-user-study-copy"><h4>Finding the words</h4><blockquote>“When do you know what you want to say, but struggle to say it?”</blockquote><p><strong>Explore:</strong> organising thoughts, clarity, and vocabulary.</p></div>
+                </article>
+                <article className="cv6-user-study-card">
+                  <div className="cv6-user-study-image"><img src="/surya-portfolio/comski/listening-background.jpg" alt="Illustrative image of a communication practice moment" loading="lazy" /><span>Research prompt 03</span></div>
+                  <div className="cv6-user-study-copy"><h4>Learning from feedback</h4><blockquote>“What helps you understand what to improve next?”</blockquote><p><strong>Explore:</strong> feedback clarity, self-awareness, and next steps.</p></div>
+                </article>
+              </div>
+            </div>
+            <p className="cv6-user-study-note"><strong>Evidence integrity</strong> — These are research prompts and illustrative visuals, not interview findings or participant quotes.</p>
+          </div>
           <div className="cv6-research-findings">
             <header className="cv6-research-subhead">
               <div className="cv6-research-eyebrow"><span>KEY FINDINGS</span></div>
