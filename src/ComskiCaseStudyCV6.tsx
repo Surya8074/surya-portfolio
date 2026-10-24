@@ -782,35 +782,66 @@ function ComskiCaseStudyCV4() {
             </div>
           </div>
 
-          <div className="cv6-research-market">
-            <header className="cv6-research-subhead">
-              <div className="cv6-research-eyebrow"><span>MARKET RESEARCH</span></div>
+          <div className="cv6-research-market cv6-market-editorial">
+            <header className="cv6-market-editorial-head">
+              <div className="cv6-research-eyebrow"><span>02</span><i aria-hidden="true" /><span>MARKET RESEARCH</span></div>
               <h3>Where ComSki fits in the market</h3>
-              <p>A structured comparison of adjacent product categories to investigate existing strengths, gaps, and opportunities. These are research lenses—not verified competitor findings.</p>
+              <p className="cv6-market-deck">A closer look at how existing products help people learn, practise, and improve how they communicate.</p>
+              <div className="cv6-market-head-meta"><span>DISCOVERY NOTES</span><span>PRODUCT LANDSCAPE / 01—03</span></div>
             </header>
-            <div className="cv6-research-finding-grid cv6-market-grid">
-              <article className="cv6-research-finding cv6-market-card">
-                <div className="cv6-finding-heading"><span className="cv6-finding-number">01</span><div><h4>Language-learning platforms</h4><p>Products organised around lessons, vocabulary, and skill-building routines.</p></div></div>
-                <div className="cv6-market-visual cv6-market-language" aria-hidden="true"><span className="cv6-market-orbit cv6-market-orbit-one"></span><span className="cv6-market-orbit cv6-market-orbit-two"></span><span className="cv6-market-core">Learn</span><span className="cv6-market-chip cv6-market-chip-a">Lessons</span><span className="cv6-market-chip cv6-market-chip-b">Practice</span><span className="cv6-market-chip cv6-market-chip-c">Progress</span></div>
-                <div className="cv6-market-detail"><strong>Compare</strong><p>Learning structure, repetition, progress cues, and how practice is personalised.</p></div>
-                <div className="cv6-finding-insight"><span className="cv6-insight-spark" aria-hidden="true">✦</span><div><strong>Opportunity to investigate</strong><p>Can communication practice connect more directly to a learner’s real-world goals?</p></div></div>
-              </article>
-              <article className="cv6-research-finding cv6-market-card">
-                <div className="cv6-finding-heading"><span className="cv6-finding-number">02</span><div><h4>Presentation and speaking tools</h4><p>Products focused on rehearsing talks, interviews, or specific speaking situations.</p></div></div>
-                <div className="cv6-market-visual cv6-market-speaking" aria-hidden="true"><span className="cv6-market-stage"></span><span className="cv6-market-person"></span><span className="cv6-market-signal cv6-market-signal-a"></span><span className="cv6-market-signal cv6-market-signal-b"></span><span className="cv6-market-signal cv6-market-signal-c"></span><span className="cv6-market-caption">Speak with confidence</span></div>
-                <div className="cv6-market-detail"><strong>Compare</strong><p>Scenario variety, rehearsal flow, feedback clarity, and repeat-practice support.</p></div>
-                <div className="cv6-finding-insight"><span className="cv6-insight-spark" aria-hidden="true">✦</span><div><strong>Opportunity to investigate</strong><p>Could practice extend beyond one speaking scenario into everyday communication?</p></div></div>
-              </article>
-              <article className="cv6-research-finding cv6-market-card">
-                <div className="cv6-finding-heading"><span className="cv6-finding-number">03</span><div><h4>AI communication coaches</h4><p>Products that use automated analysis or coaching to help people reflect on communication.</p></div></div>
-                <div className="cv6-market-visual cv6-market-feedback" aria-hidden="true"><span className="cv6-market-feedback-ring"></span><span className="cv6-market-feedback-dot"></span><span className="cv6-market-feedback-line cv6-market-feedback-line-a"></span><span className="cv6-market-feedback-line cv6-market-feedback-line-b"></span><span className="cv6-market-feedback-line cv6-market-feedback-line-c"></span><span className="cv6-market-feedback-label">Feedback → next step</span></div>
-                <div className="cv6-market-detail"><strong>Compare</strong><p>Actionability, transparency, personalisation, and how feedback leads to improvement.</p></div>
-                <div className="cv6-finding-insight"><span className="cv6-insight-spark" aria-hidden="true">✦</span><div><strong>Opportunity to investigate</strong><p>Can feedback feel understandable, supportive, and easy to put into practice?</p></div></div>
-              </article>
+            <div className="cv6-market-notebook">
+              <aside className="cv6-market-margin-note">
+                <span className="cv6-market-hand-label">The question</span>
+                <p>What happens between learning a skill and using it in a real conversation?</p>
+                <span className="cv6-market-note-rule" />
+                <small>Research lens · not a validated finding</small>
+              </aside>
+              <div className="cv6-market-landscape">
+                <article className="cv6-market-landscape-item">
+                  <div className="cv6-market-item-top"><span>01 / LEARN</span><span className="cv6-market-stamp">CATEGORY</span></div>
+                  <div className="cv6-market-product-visual cv6-market-product-language" aria-hidden="true">
+                    <div className="cv6-market-visual-window"><span className="cv6-market-window-dot" /><span className="cv6-market-window-dot" /><span className="cv6-market-window-dot" /><div className="cv6-market-lesson-line" /><div className="cv6-market-lesson-line short" /><div className="cv6-market-lesson-progress"><i /></div><div className="cv6-market-lesson-choice">Choose your next lesson <b>→</b></div></div>
+                  </div>
+                  <h4>Language-learning platforms</h4>
+                  <p>Structured lessons, repetition, vocabulary practice, and visible progress.</p>
+                  <div className="cv6-market-annotation"><span>Look for</span>How practice connects to everyday communication.</div>
+                </article>
+                <article className="cv6-market-landscape-item cv6-market-landscape-featured">
+                  <div className="cv6-market-item-top"><span>02 / REHEARSE</span><span className="cv6-market-stamp">CATEGORY</span></div>
+                  <div className="cv6-market-product-visual cv6-market-product-speaking" aria-hidden="true">
+                    <div className="cv6-market-record-card"><span className="cv6-market-record-orb" /><span className="cv6-market-record-line" /><span className="cv6-market-record-line short" /><div className="cv6-market-wave"><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /></div><span className="cv6-market-record-button">● &nbsp; Start practice</span></div>
+                  </div>
+                  <h4>Presentation & speaking tools</h4>
+                  <p>Rehearsal for talks, interviews, and other high-pressure speaking moments.</p>
+                  <div className="cv6-market-annotation"><span>Look for</span>Feedback that is specific, understandable, and repeatable.</div>
+                </article>
+                <article className="cv6-market-landscape-item">
+                  <div className="cv6-market-item-top"><span>03 / REFLECT</span><span className="cv6-market-stamp">CATEGORY</span></div>
+                  <div className="cv6-market-product-visual cv6-market-product-coach" aria-hidden="true">
+                    <div className="cv6-market-coach-panel"><span className="cv6-market-coach-check">✓</span><div><b>Practice review</b><small>Strengths & next steps</small></div><span className="cv6-market-coach-score">↗</span><div className="cv6-market-coach-divider" /><span className="cv6-market-coach-pill">Clarity</span><span className="cv6-market-coach-pill">Pace</span><span className="cv6-market-coach-pill">Confidence</span></div>
+                  </div>
+                  <h4>AI communication coaches</h4>
+                  <p>Automated feedback and coaching to help people reflect on performance.</p>
+                  <div className="cv6-market-annotation"><span>Look for</span>Whether feedback leads to a clear next action.</div>
+                </article>
+              </div>
             </div>
-            <p className="cv6-market-method-note"><strong>Research note</strong> — This is a comparison framework. Add named competitors, screenshots, citations, and evidence-backed conclusions after validating them against the actual market research.</p>
+            <div className="cv6-market-matrix-wrap">
+              <div className="cv6-market-matrix-heading"><span className="cv6-market-hand-label">Comparison framework</span><p>What to examine across the landscape</p></div>
+              <div className="cv6-market-matrix">
+                <div className="cv6-market-matrix-row cv6-market-matrix-header"><span>RESEARCH LENS</span><span>LEARNING PLATFORMS</span><span>SPEAKING TOOLS</span><span>AI COACHES</span></div>
+                <div className="cv6-market-matrix-row"><strong>Practice format</strong><span>Lessons & repetition</span><span>Scenario rehearsal</span><span>Recorded or guided tasks</span></div>
+                <div className="cv6-market-matrix-row"><strong>Feedback to inspect</strong><span>Progress & corrections</span><span>Delivery & presentation</span><span>Performance insights</span></div>
+                <div className="cv6-market-matrix-row"><strong>Question for ComSki</strong><span>Real-world transfer?</span><span>Beyond one scenario?</span><span>Clear next step?</span></div>
+              </div>
+              <p className="cv6-market-method-note"><strong>Evidence status</strong> — This is a category-level comparison framework, not a completed competitor audit. The visual panels are schematic, not product screenshots. Named competitors, source links, captured interfaces, and verified observations should be added before presenting conclusions as market findings.</p>
+            </div>
+            <div className="cv6-market-opportunity">
+              <span className="cv6-market-opportunity-index">DESIGN OPPORTUNITY / 01</span>
+              <div><h4>Connect practice with progress.</h4><p>Explore an experience where people can practise different communication skills, understand feedback, and leave with a concrete next step.</p></div>
+              <span className="cv6-market-opportunity-arrow" aria-hidden="true">↗</span>
+            </div>
           </div>
-
           <div className="cv6-research-journey">
             <header className="cv6-research-subhead">
               <div className="cv6-research-eyebrow"><span>USER JOURNEY</span></div>
