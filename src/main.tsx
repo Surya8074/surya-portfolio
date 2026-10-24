@@ -7,6 +7,7 @@ import Dock from './Dock';
 import './styles.css';
 import './reference-home.css';
 import './genesis-card.css';
+import './laundromart-card.css';
 import ToolsWorkflow from './ToolsWorkflow';
 import GenesisMacBook from './GenesisMacBook';
 
@@ -114,6 +115,35 @@ function ComskiCard() {
   );
 }
 
+
+function LaundroMartCard() {
+  return (
+    <a className="laundromart-project-card" href="/surya-portfolio/laundromart/" aria-label="Open LaundroMart case study">
+      <div className="laundromart-project-copy">
+        <p className="laundromart-project-eyebrow">AI · Operations · SaaS · Product Design</p>
+        <h3><span>Laundro</span><span>Mart</span></h3>
+        <h4>Smarter laundry operations, simplified</h4>
+        <p className="laundromart-project-description">An AI-powered laundry management platform that helps operators manage orders, track operations and grow their business with real-time insights.</p>
+        <div className="laundromart-project-action"><b aria-hidden="true">↗</b><span>View Case Study</span></div>
+      </div>
+      <div className="laundromart-project-visual" aria-hidden="true">
+        <div className="laundromart-glow laundromart-glow-blue" /><div className="laundromart-glow laundromart-glow-lavender" />
+        <div className="laundromart-dashboard">
+          <aside className="laundromart-dashboard-sidebar"><div className="laundromart-dashboard-brand"><i /> LaundroMart</div><span className="laundromart-nav-active">Overview</span><span>Orders</span><span>Machines</span><span>Services</span><span>Inventory</span></aside>
+          <div className="laundromart-dashboard-main">
+            <div className="laundromart-dashboard-top"><div><small>WORKSPACE OVERVIEW</small><strong>Dashboard</strong></div><span className="laundromart-date">Today</span></div>
+            <div className="laundromart-metric-row"><div className="laundromart-metric"><small>Today's revenue</small><strong>Revenue overview</strong><i className="laundromart-chart-line" /></div><div className="laundromart-metric"><small>Machine status</small><strong>Live status</strong><div className="laundromart-machine-dots"><i/><i/><i/><i/></div></div></div>
+            <div className="laundromart-orders-panel"><div className="laundromart-orders-heading"><strong>Recent orders</strong><span>View all ↗</span></div><div className="laundromart-order"><i className="laundromart-order-avatar" /><span><b>Order overview</b><small>Order status</small></span><em>In progress</em></div><div className="laundromart-order"><i className="laundromart-order-avatar second" /><span><b>Service overview</b><small>Service details</small></span><em className="laundromart-ready">Ready</em></div></div>
+          </div>
+        </div>
+        <div className="laundromart-float-card laundromart-machine-card"><span className="laundromart-float-icon">◌</span><div><small>Machine status</small><strong>Operations at a glance</strong></div><i className="laundromart-status-dot" /></div>
+        <div className="laundromart-float-card laundromart-order-card"><span className="laundromart-float-icon blue-icon">＋</span><div><small>New order</small><strong>Order received</strong></div><span className="laundromart-order-arrow">↗</span></div>
+        <div className="laundromart-float-card laundromart-inventory-card"><span className="laundromart-alert-icon">!</span><div><small>Inventory</small><strong>Stock reminder</strong></div></div>
+      </div>
+    </a>
+  );
+}
+
 function App() {
   useEffect(() => {
     const lenis = new Lenis({ duration: 1.15, smoothWheel: true, touchMultiplier: 1.05 });
@@ -135,7 +165,7 @@ function App() {
     <main>
       <header className="reference-nav"><div className="reference-nav-inner"><button className="reference-brand" onClick={() => go('#home')}><strong>Surya Kiran</strong><span className="reference-brand-divider" /><span>India</span></button><nav><button onClick={() => go('#art')}>Art</button><button onClick={() => go('#about')}>About Me</button><a className="resume-nav-link" href="/surya-portfolio/resume/">Resume</a></nav></div></header>
       <section id="home" className="reference-home"><div className="reference-home-viewport"><div className="reference-home-stage"><div className="reference-portrait" aria-label="Portrait of Surya Kiran"><img className="reference-portrait-image" src={portraitUrl} alt="Surya Kiran" /></div><div className="reference-fade" /><div className="reference-head-animation" aria-hidden="true"><svg viewBox="0 0 260 130" className="head-animation-svg"><text className="head-animation-text" x="18" y="88">ART</text></svg></div><div className="reference-hero-copy"><h1><span>Designing how products earn trust,</span><span>across <em>visual, product &amp; growth.</em></span></h1><button className="reference-work" onClick={() => go('#work')}>See my work</button></div></div></div></section>
-      <section id="work" className="reference-work-section"><div className="work-intro"><p>SELECTED WORK</p></div><GenesisCard /><ComskiCard /><article className="secondary-work-card"><div><p>Product · Web</p><h3>More work coming next</h3></div><div className="work-placeholder work-two">Next project</div></article></section>
+      <section id="work" className="reference-work-section"><div className="work-intro"><p>SELECTED WORK</p></div><GenesisCard /><ComskiCard /><LaundroMartCard /></section>
       <section className="other-reference" aria-label="Other Projects">
         <h2 className="other-reference-heading">Other Projects</h2>
         <div className="other-reference-grid">
