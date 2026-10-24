@@ -55,7 +55,6 @@ export default function CV6ParticleBackdrop() {
       uniforms: {
         uTime: { value: 0 },
         uMorph: { value: 0 },
-        uPointer: { value: new THREE.Vector2(10, 10) },
         uPixelRatio: { value: renderer.getPixelRatio() },
         uBlue: { value: new THREE.Color('#3B5BDB') },
         uWarm: { value: new THREE.Color('#FF8A45') },
@@ -65,7 +64,6 @@ export default function CV6ParticleBackdrop() {
         attribute float aSize;
         uniform float uTime;
         uniform float uMorph;
-        uniform vec2 uPointer;
         uniform float uPixelRatio;
         varying float vAlpha;
         varying float vWarm;
@@ -76,10 +74,6 @@ export default function CV6ParticleBackdrop() {
           p = mix(position, arranged, uMorph);
           p.x += sin(t + aPhase) * 0.018;
           p.y += cos(t * 0.8 + aPhase * 1.7) * 0.022;
-          vec2 delta = p.xy - uPointer;
-          float dist = length(delta);
-          float influence = 1.0 - smoothstep(0.0, 0.42, dist);
-          if (dist > 0.0001) p.xy += normalize(delta) * influence * 0.20;
           vec4 mv = modelViewMatrix * vec4(p, 1.0);
           gl_Position = projectionMatrix * mv;
           gl_PointSize = clamp(aSize * uPixelRatio * 2.8, 2.0, 5.2);
@@ -101,22 +95,6 @@ export default function CV6ParticleBackdrop() {
       `,
     });
     scene.add(new THREE.Points(geometry, material));
-
-    const pointer = new THREE.Vector2(10, 10);
-    const target = new THREE.Vector2(10, 10);
-    const onMove = (event: PointerEvent) => {
-      const rect = host.getBoundingClientRect();
-      if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) {
-        target.set(10, 10);
-        return;
-      }
-      const x = ((event.clientX - rect.left) / Math.max(1, rect.width)) * 2 - 1;
-      const y = -(((event.clientY - rect.top) / Math.max(1, rect.height)) * 2 - 1);
-      target.set(x * (rect.width / Math.max(1, rect.height)), y);
-    };
-    const onLeave = () => target.set(10, 10);
-    window.addEventListener('pointermove', onMove, { passive: true });
-    window.addEventListener('blur', onLeave);
 
     const resize = () => {
       const width = Math.max(1, host.clientWidth);
@@ -142,12 +120,10 @@ export default function CV6ParticleBackdrop() {
       if (disposed) return;
       raf = requestAnimationFrame(animate);
       if (!visible) return;
-      pointer.lerp(target, 0.055);
       const elapsed = clock.getElapsedTime();
       material.uniforms.uTime.value = reducedMotion ? 0 : elapsed;
       const cycle = reducedMotion ? 0 : (Math.sin(elapsed * 0.22 - Math.PI / 2) + 1) / 2;
       material.uniforms.uMorph.value = cycle * cycle * (3 - 2 * cycle);
-      material.uniforms.uPointer.value.copy(pointer);
       renderer.render(scene, camera);
     };
     animate();
@@ -155,8 +131,6 @@ export default function CV6ParticleBackdrop() {
     return () => {
       disposed = true;
       cancelAnimationFrame(raf);
-      window.removeEventListener('pointermove', onMove);
-      window.removeEventListener('blur', onLeave);
       document.removeEventListener('visibilitychange', onVisibility);
       resizeObserver.disconnect();
       visibilityObserver.disconnect();
