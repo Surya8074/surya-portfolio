@@ -8,6 +8,7 @@ import './styles.css';
 import './reference-home.css';
 import './genesis-card.css';
 import './laundromart-card.css';
+import './comski-home-card.css';
 import ToolsWorkflow from './ToolsWorkflow';
 import GenesisMacBook from './GenesisMacBook';
 
@@ -98,23 +99,44 @@ function ComskiCard() {
       onPointerLeave={resetPointer}
     >
       <div className="comski-project-copy">
-        <div className="comski-project-index">02 <span>/ 04</span></div>
-        <p className="comski-project-eyebrow">AI · EdTech · Product Design</p>
-        <h3>ComSki</h3>
-        <h4>The human side of communication</h4>
+        <p className="comski-project-index"><span>02</span><i /> COMMUNICATION AI</p>
+        <h3><span>Com</span><span>Ski</span></h3>
+        <h4>The human side of communication.</h4>
         <p className="comski-project-description">
-          An AI-powered communication practice platform that helps learners speak, write, listen and read with confidence.
+          An AI-powered platform to practise speaking, writing, listening and reading with real-time feedback.
         </p>
-        <div className="comski-project-action"><b>→</b><span>View Case Study</span></div>
+        <div className="comski-project-tags"><span>AI</span><span>EdTech</span><span>Communication</span></div>
+        <div className="comski-project-action"><b aria-hidden="true">↗</b><span>View Case Study</span></div>
       </div>
 
-      <div className="comski-project-visual comski-project-visual-art" aria-hidden="true">
-        <img src="/surya-portfolio/comski-hero-art.svg" alt="" loading="eager" />
+      <div className="comski-project-visual" aria-label="ComSki communication practice interface">
+        <div className="comski-thumb-stack">
+          <div className="comski-thumb-panel comski-thumb-speaking">
+            <div className="comski-thumb-panel-heading"><span className="comski-thumb-icon">♫</span><span><strong>Speaking Practice</strong><small>Build confidence</small></span></div>
+            <div className="comski-waveform" aria-hidden="true"><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /></div>
+            <div className="comski-thumb-score-row"><span><b>78%</b><small>Confidence</small></span><span><b>82%</b><small>Fluency</small></span><span><b>90%</b><small>Progress</small></span></div>
+          </div>
+          <div className="comski-thumb-panel comski-thumb-writing">
+            <div className="comski-thumb-panel-heading"><span className="comski-thumb-icon writing">✎</span><span><strong>Writing Assistant</strong><small>Feedback that helps you improve</small></span></div>
+            <div className="comski-writing-lines"><i /><i /><i /><i /></div>
+            <span className="comski-thumb-mini-button">Improve with AI <b>↗</b></span>
+          </div>
+        </div>
+        <div className="comski-thumb-dashboard">
+          <img src="/surya-portfolio/comski-hero-art.svg" alt="ComSki AI communication practice dashboard illustration" loading="eager" />
+          <div className="comski-thumb-dashboard-label"><span className="comski-thumb-brand-mark">C</span><span><strong>ComSki</strong><small>Your communication, growing every day</small></span></div>
+          <div className="comski-thumb-skill-strip">
+            <span className="speaking"><b>●</b><strong>Speaking</strong><small>78%</small></span>
+            <span className="writing"><b>✎</b><strong>Writing</strong><small>82%</small></span>
+            <span className="listening"><b>◖</b><strong>Listening</strong><small>90%</small></span>
+            <span className="reading"><b>▤</b><strong>Reading</strong><small>76%</small></span>
+          </div>
+          <div className="comski-thumb-feedback"><span>✦</span><div><strong>AI Feedback</strong><small>Great progress! Your communication is becoming more confident and clear.</small></div></div>
+        </div>
       </div>
     </a>
   );
 }
-
 
 function LaundroMartCard() {
   return (
