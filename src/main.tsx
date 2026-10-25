@@ -133,7 +133,7 @@ function LaundroMartCard() {
             <img src="https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?auto=format&fit=crop&w=700&q=85" alt="Freshly folded laundry in a clean laundry workspace" loading="lazy" />
           </div>
           <div className="laundromart-photo laundromart-photo-operations">
-            <img src="/surya-portfolio/laundromart/problem-banner.png.png" alt="LaundroMart laundry operations challenge" loading="lazy" />
+            <img src="/surya-portfolio/laundromart/l11.webp" alt="LaundroMart laundry operations challenge" loading="lazy" />
           </div>
         </div>
         <div className="laundromart-dashboard-preview laundromart-dashboard-video">
