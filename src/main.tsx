@@ -120,25 +120,29 @@ function LaundroMartCard() {
   return (
     <a className="laundromart-project-card" href="/surya-portfolio/laundromart/" aria-label="Open LaundroMart case study">
       <div className="laundromart-project-copy">
-        <p className="laundromart-project-eyebrow">AI · Operations · SaaS · Product Design</p>
+        <p className="laundromart-project-index"><span>03</span><i /> OPERATIONS SAAS</p>
         <h3><span>Laundro</span><span>Mart</span></h3>
-        <h4>Smarter laundry operations, simplified</h4>
-        <p className="laundromart-project-description">An AI-powered laundry management platform that helps operators manage orders, track operations and grow their business with real-time insights.</p>
+        <h4>Smarter laundry operations, simplified.</h4>
+        <p className="laundromart-project-description">An AI-powered platform to manage orders, track operations and grow your laundry business.</p>
+        <div className="laundromart-project-tags"><span>AI</span><span>SaaS</span><span>Operations</span></div>
         <div className="laundromart-project-action"><b aria-hidden="true">↗</b><span>View Case Study</span></div>
       </div>
-      <div className="laundromart-project-visual" aria-hidden="true">
-        <div className="laundromart-glow laundromart-glow-blue" /><div className="laundromart-glow laundromart-glow-lavender" />
-        <div className="laundromart-dashboard">
-          <aside className="laundromart-dashboard-sidebar"><div className="laundromart-dashboard-brand"><i /> LaundroMart</div><span className="laundromart-nav-active">Overview</span><span>Orders</span><span>Machines</span><span>Services</span><span>Inventory</span></aside>
-          <div className="laundromart-dashboard-main">
-            <div className="laundromart-dashboard-top"><div><small>WORKSPACE OVERVIEW</small><strong>Dashboard</strong></div><span className="laundromart-date">Today</span></div>
-            <div className="laundromart-metric-row"><div className="laundromart-metric"><small>Today's revenue</small><strong>Revenue overview</strong><i className="laundromart-chart-line" /></div><div className="laundromart-metric"><small>Machine status</small><strong>Live status</strong><div className="laundromart-machine-dots"><i/><i/><i/><i/></div></div></div>
-            <div className="laundromart-orders-panel"><div className="laundromart-orders-heading"><strong>Recent orders</strong><span>View all ↗</span></div><div className="laundromart-order"><i className="laundromart-order-avatar" /><span><b>Order overview</b><small>Order status</small></span><em>In progress</em></div><div className="laundromart-order"><i className="laundromart-order-avatar second" /><span><b>Service overview</b><small>Service details</small></span><em className="laundromart-ready">Ready</em></div></div>
+      <div className="laundromart-project-visual" aria-label="LaundroMart project visuals">
+        <div className="laundromart-photo-stack">
+          <div className="laundromart-photo laundromart-photo-folded">
+            <img src="/surya-portfolio/laundromart/problem-banner.png.png" alt="LaundroMart laundry operations challenge" loading="lazy" />
+          </div>
+          <div className="laundromart-photo laundromart-photo-operations">
+            <img src="/surya-portfolio/laundromart/f40750d1-25de-48ee-93d8-e5c11b6670b2-2026-10-14%20(1).gif" alt="LaundroMart operations interface preview" loading="lazy" />
           </div>
         </div>
-        <div className="laundromart-float-card laundromart-machine-card"><span className="laundromart-float-icon">◌</span><div><small>Machine status</small><strong>Operations at a glance</strong></div><i className="laundromart-status-dot" /></div>
-        <div className="laundromart-float-card laundromart-order-card"><span className="laundromart-float-icon blue-icon">＋</span><div><small>New order</small><strong>Order received</strong></div><span className="laundromart-order-arrow">↗</span></div>
-        <div className="laundromart-float-card laundromart-inventory-card"><span className="laundromart-alert-icon">!</span><div><small>Inventory</small><strong>Stock reminder</strong></div></div>
+        <div className="laundromart-dashboard-preview">
+          <div className="laundromart-preview-top"><span className="laundromart-preview-brand"><i /> LaundroMart</span><span className="laundromart-preview-search">Search orders…</span><span className="laundromart-preview-user">S</span></div>
+          <div className="laundromart-preview-body">
+            <aside><b>Overview</b><span>Orders</span><span>Machines</span><span>Services</span><span>Inventory</span></aside>
+            <section><small>WORKSPACE OVERVIEW</small><h5>Dashboard</h5><div className="laundromart-preview-metrics"><div><small>Today's orders</small><strong>Order activity</strong><i /></div><div><small>Machine status</small><strong>Live overview</strong><i /></div></div><div className="laundromart-preview-table"><b>Recent orders</b><span><i /> Order status <em>In progress</em></span><span><i /> Service details <em>Ready</em></span></div></section>
+          </div>
+        </div>
       </div>
     </a>
   );
