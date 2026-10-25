@@ -180,7 +180,7 @@ function ComskiCard() {
       <div className="comski-project-copy">
         <p className="comski-project-index"><span>{comskiProject.index}</span><i /> {comskiProject.category.toUpperCase()}</p>
         <h3><span>{comskiProject.title.primary}</span><span>{comskiProject.title.highlight}</span></h3>
-        <h4>The human side<br />of communication.</h4>
+        <h4>{comskiProject.headline}</h4>
         <p className="comski-project-description">{comskiProject.description}</p>
         <div className="comski-project-tags">{comskiProject.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
         <div className="comski-project-action"><b aria-hidden="true">→</b><span>View Case Study</span></div>
