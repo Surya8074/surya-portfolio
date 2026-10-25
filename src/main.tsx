@@ -84,54 +84,49 @@ function ComskiCard() {
     event.currentTarget.style.setProperty('--mx', x.toFixed(3));
     event.currentTarget.style.setProperty('--my', y.toFixed(3));
   };
-
   const resetPointer = (event: React.PointerEvent<HTMLAnchorElement>) => {
     event.currentTarget.style.setProperty('--mx', '0');
     event.currentTarget.style.setProperty('--my', '0');
   };
-
   return (
-    <a
-      className="comski-project-card"
-      href={comskiPath}
-      aria-label="Open ComSki case study"
-      onPointerMove={handlePointerMove}
-      onPointerLeave={resetPointer}
-    >
+    <a className="comski-project-card" href={comskiPath} aria-label="Open ComSki case study" onPointerMove={handlePointerMove} onPointerLeave={resetPointer}>
       <div className="comski-project-copy">
         <p className="comski-project-index"><span>02</span><i /> COMMUNICATION AI</p>
         <h3><span>Com</span><span>Ski</span></h3>
-        <h4>The human side of communication.</h4>
-        <p className="comski-project-description">
-          An AI-powered platform to practise speaking, writing, listening and reading with real-time feedback.
-        </p>
+        <h4>The human side<br />of communication.</h4>
+        <p className="comski-project-description">An AI-powered platform to practice speaking, writing, listening and reading with real-time feedback.</p>
         <div className="comski-project-tags"><span>AI</span><span>EdTech</span><span>Communication</span></div>
-        <div className="comski-project-action"><b aria-hidden="true">↗</b><span>View Case Study</span></div>
+        <div className="comski-project-action"><b aria-hidden="true">→</b><span>View Case Study</span></div>
       </div>
-
-      <div className="comski-project-visual" aria-label="ComSki communication practice interface">
-        <div className="comski-thumb-stack">
-          <div className="comski-thumb-panel comski-thumb-speaking">
-            <div className="comski-thumb-panel-heading"><span className="comski-thumb-icon">♫</span><span><strong>Speaking Practice</strong><small>Build confidence</small></span></div>
-            <div className="comski-waveform" aria-hidden="true"><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /></div>
-            <div className="comski-thumb-score-row"><span><b>78%</b><small>Confidence</small></span><span><b>82%</b><small>Fluency</small></span><span><b>90%</b><small>Progress</small></span></div>
-          </div>
-          <div className="comski-thumb-panel comski-thumb-writing">
-            <div className="comski-thumb-panel-heading"><span className="comski-thumb-icon writing">✎</span><span><strong>Writing Assistant</strong><small>Feedback that helps you improve</small></span></div>
-            <div className="comski-writing-lines"><i /><i /><i /><i /></div>
-            <span className="comski-thumb-mini-button">Improve with AI <b>↗</b></span>
+      <div className="comski-project-visual" aria-label="ComSki communication practice and dashboard previews">
+        <div className="comski-small-visual comski-speaking-visual">
+          <img src="/surya-portfolio/comski-hero-art.svg" alt="" loading="eager" />
+          <div className="comski-speaking-float"><span className="comski-mic">●</span><span><strong>Speaking Practice</strong><small>Practice</small></span><b className="comski-soundwave">〰</b></div>
+          <div className="comski-confidence-float"><span>↗</span><strong>78%</strong><small>Confidence</small><b>↗</b></div>
+        </div>
+        <div className="comski-small-visual comski-writing-visual">
+          <div className="comski-tablet">
+            <div className="comski-tablet-side"><b>C</b><span>◉</span><span>✎</span><span>◖</span><span>▤</span></div>
+            <div className="comski-tablet-content"><strong>ComSki</strong><h5>Writing Assistant</h5><p>Your ideas are strong! Try using more connecting words to make your message flow better.</p><div className="comski-tablet-button">Improve with AI <b>›</b></div></div>
           </div>
         </div>
-        <div className="comski-thumb-dashboard">
-          <img src="/surya-portfolio/comski-hero-art.svg" alt="ComSki AI communication practice dashboard illustration" loading="eager" />
-          <div className="comski-thumb-dashboard-label"><span className="comski-thumb-brand-mark">C</span><span><strong>ComSki</strong><small>Your communication, growing every day</small></span></div>
-          <div className="comski-thumb-skill-strip">
-            <span className="speaking"><b>●</b><strong>Speaking</strong><small>78%</small></span>
-            <span className="writing"><b>✎</b><strong>Writing</strong><small>82%</small></span>
-            <span className="listening"><b>◖</b><strong>Listening</strong><small>90%</small></span>
-            <span className="reading"><b>▤</b><strong>Reading</strong><small>76%</small></span>
+        <div className="comski-laptop-visual">
+          <div className="comski-laptop-shell">
+            <div className="comski-laptop-screen">
+              <aside className="comski-dashboard-sidebar"><strong>♩ <i>ComSki</i></strong><span className="active">⌂ &nbsp; Home</span><span>♧ &nbsp; Practice</span><span>✧ &nbsp; AI Coach</span><span>◔ &nbsp; Progress</span><span>▤ &nbsp; Library</span></aside>
+              <div className="comski-dashboard-main">
+                <div className="comski-dashboard-top"><div><h5>Good morning, Surya!</h5><p>Let’s build your communication skills today.</p></div><span>♧　●</span></div>
+                <div className="comski-dashboard-skills">
+                  <div className="skill-speaking"><b>🎙</b><strong>Speaking</strong><em>78%</em><small>Confidence</small></div>
+                  <div className="skill-writing"><b>✎</b><strong>Writing</strong><em>82%</em><small>Structure</small></div>
+                  <div className="skill-listening"><b>◖</b><strong>Listening</strong><em>90%</em><small>Comprehension</small></div>
+                  <div className="skill-reading"><b>▤</b><strong>Reading</strong><em>76%</em><small>Clarity</small></div>
+                </div>
+                <div className="comski-recommended"><strong>Recommended for you</strong><div><span>👨🏻‍💼</span><p><b>Job Interview Practice</b><small>Realistic AI mock interviews with instant feedback.</small></p><span>▤</span><p><b>Business Email Writing</b><small>Improve clarity and professional tone.</small></p></div></div>
+              </div>
+            </div>
+            <div className="comski-laptop-base"></div>
           </div>
-          <div className="comski-thumb-feedback"><span>✦</span><div><strong>AI Feedback</strong><small>Great progress! Your communication is becoming more confident and clear.</small></div></div>
         </div>
       </div>
     </a>
