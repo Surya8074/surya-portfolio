@@ -188,7 +188,6 @@ function ComskiCard() {
         <div className="comski-photo-stack">
           <div className="comski-photo comski-speaking-visual">
             <ComskiMedia media={comskiProject.media.upper} className="comski-media-image" />
-            {comskiProject.media.upper.src && <div className="comski-speaking-overlay"><span className="comski-speaking-float"><span className="comski-mic">●</span><span><strong>Speaking Practice</strong><small>Practice</small></span><b className="comski-soundwave">〰</b></span><span className="comski-confidence-float"><span>↗</span><strong>78%</strong><small>Confidence</small><b>↗</b></span></div>}
           </div>
           <div className="comski-photo comski-writing-visual">
             <ComskiMedia media={comskiProject.media.lower} className="comski-media-image" />
