@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 500" role="img" aria-labelledby="title desc">
-  <title id="title">Real speaking practice photography</title>
-  <desc id="desc">A woman wearing headphones practising speaking at her desk with a laptop and notebook.</desc>
-  <defs><linearGradient id="wash" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#DDE7FF" stop-opacity=".16"/><stop offset="1" stop-color="#3B5BDB" stop-opacity=".12"/></linearGradient></defs>
-  <image href="https://sitecontent.kumon.com.br/site/general/639165355203162382_pronuncia-de-palavras-em-ingles.jpg?width=1000" x="0" y="0" width="640" height="500" preserveAspectRatio="xMidYMid slice"/>
+  <title id="title">ComSki speaking practice photography</title>
+  <desc id="desc">A woman wearing headphones speaking with a laptop at her desk.</desc>
+  <defs><linearGradient id="wash" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#DDE7FF" stop-opacity=".04"/><stop offset="1" stop-color="#3B5BDB" stop-opacity=".08"/></linearGradient></defs>
+  <image href="https://images.unsplash.com/photo-1759984782076-2909625b0aa8?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=85&amp;w=1400" x="0" y="0" width="640" height="500" preserveAspectRatio="xMidYMid slice"/>
   <rect width="640" height="500" fill="url(#wash)"/>
-  <rect x="10" y="10" width="620" height="480" rx="20" fill="none" stroke="#FFFFFF" stroke-opacity=".5" stroke-width="2"/>
+  <rect x="10" y="10" width="620" height="480" rx="20" fill="none" stroke="#FFFFFF" stroke-opacity=".32" stroke-width="2"/>
 </svg>
