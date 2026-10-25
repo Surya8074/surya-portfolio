@@ -90,6 +90,7 @@ function ComskiMedia({ media, className }: { media: ComskiMediaConfig; className
         controls={media.controls ?? true}
         preload="metadata"
         aria-label={media.alt}
+        style={{ objectFit: media.objectFit, objectPosition: media.objectPosition }}
       />
     );
   }
