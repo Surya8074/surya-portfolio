@@ -88,8 +88,8 @@ function ComskiCard() {
         <div className="comski-showcase-cta"><b aria-hidden="true">→</b><span>View Case Study</span></div>
       </div>
       <div className="comski-showcase-stack" aria-label="Speaking and writing practice previews">
-        <div className="comski-showcase-media"><img src="/surya-portfolio/comski/speaking-card-visual.svg" alt="ComSki speaking practice interface" loading="lazy" /></div>
-        <div className="comski-showcase-media"><img src="/surya-portfolio/comski/writing-card-visual.svg" alt="ComSki writing assistant interface" loading="lazy" /></div>
+        <div className="comski-showcase-media"><img src="https://images.unsplash.com/photo-1759984782076-2909625b0aa8?auto=format&fit=crop&fm=jpg&q=85&w=1400" alt="Woman wearing headphones practising speaking at her laptop" loading="lazy" referrerPolicy="no-referrer" /></div>
+        <div className="comski-showcase-media"><img src="https://images.squarespace-cdn.com/content/v1/52f8bc3de4b0b0787ce1ea4e/7559fd5a-d2e1-4212-a276-91ea6fe0d943/BeckyPart1-053.jpg" alt="Woman writing in a notebook beside her laptop" loading="lazy" referrerPolicy="no-referrer" /></div>
       </div>
       <div className="comski-showcase-dashboard"><img src="/surya-portfolio/comski/Desktop%20-%201.svg" alt="ComSki communication skills dashboard" loading="lazy" /></div>
     </a>
