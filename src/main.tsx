@@ -130,18 +130,14 @@ function LaundroMartCard() {
       <div className="laundromart-project-visual" aria-label="LaundroMart project visuals">
         <div className="laundromart-photo-stack">
           <div className="laundromart-photo laundromart-photo-folded">
-            <img src="/surya-portfolio/laundromart/problem-banner.png.png" alt="LaundroMart laundry operations challenge" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?auto=format&fit=crop&w=700&q=85" alt="Freshly folded laundry in a clean laundry workspace" loading="lazy" />
           </div>
           <div className="laundromart-photo laundromart-photo-operations">
-            <img src="/surya-portfolio/laundromart/f40750d1-25de-48ee-93d8-e5c11b6670b2-2026-10-14%20(1).gif" alt="LaundroMart operations interface preview" loading="lazy" />
+            <img src="/surya-portfolio/laundromart/problem-banner.png.png" alt="LaundroMart laundry operations challenge" loading="lazy" />
           </div>
         </div>
-        <div className="laundromart-dashboard-preview">
-          <div className="laundromart-preview-top"><span className="laundromart-preview-brand"><i /> LaundroMart</span><span className="laundromart-preview-search">Search orders…</span><span className="laundromart-preview-user">S</span></div>
-          <div className="laundromart-preview-body">
-            <aside><b>Overview</b><span>Orders</span><span>Machines</span><span>Services</span><span>Inventory</span></aside>
-            <section><small>WORKSPACE OVERVIEW</small><h5>Dashboard</h5><div className="laundromart-preview-metrics"><div><small>Today's orders</small><strong>Order activity</strong><i /></div><div><small>Machine status</small><strong>Live overview</strong><i /></div></div><div className="laundromart-preview-table"><b>Recent orders</b><span><i /> Order status <em>In progress</em></span><span><i /> Service details <em>Ready</em></span></div></section>
-          </div>
+        <div className="laundromart-dashboard-preview laundromart-dashboard-video">
+          <img src="/surya-portfolio/laundromart/f40750d1-25de-48ee-93d8-e5c11b6670b2-2026-10-14%20(1).gif" alt="Animated preview of the LaundroMart operations dashboard" loading="lazy" />
         </div>
       </div>
     </a>
