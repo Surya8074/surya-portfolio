@@ -1,1 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 500"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#3155A5"/><stop offset="1" stop-color="#172C5B"/></linearGradient><radialGradient id="glow"><stop stop-color="#92AEFF" stop-opacity=".52"/><stop offset="1" stop-color="#92AEFF" stop-opacity="0"/></radialGradient></defs><rect width="640" height="500" fill="url(#bg)"/><circle cx="320" cy="240" r="205" fill="url(#glow)"/><g fill="none" stroke="#AFC3FF" stroke-width="2" opacity=".65"><circle cx="320" cy="238" r="145"/><circle cx="320" cy="238" r="108"/><circle cx="320" cy="238" r="72"/></g><g transform="translate(225 125)"><path d="M40 25h110a28 28 0 0 1 28 28v62a28 28 0 0 1-28 28H95l-35 28v-28H40a28 28 0 0 1-28-28V53a28 28 0 0 1 28-28Z" fill="#EAF0FF" fill-opacity=".96"/><path d="M55 68h72M55 88h52" stroke="#3B5BDB" stroke-width="8" stroke-linecap="round"/><circle cx="178" cy="158" r="14" fill="#AFC3FF"/><circle cx="205" cy="180" r="7" fill="#EAF0FF"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 500" role="img" aria-labelledby="title desc">
+  <title id="title">ComSki speaking practice</title>
+  <desc id="desc">Illustration of a woman wearing headphones while practising communication.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F3F6FF"/><stop offset="1" stop-color="#DDE7FF"/></linearGradient>
+    <radialGradient id="halo"><stop stop-color="#B9CAFF" stop-opacity=".8"/><stop offset="1" stop-color="#B9CAFF" stop-opacity="0"/></radialGradient>
+    <linearGradient id="hair" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#29304A"/><stop offset="1" stop-color="#10182E"/></linearGradient>
+    <linearGradient id="skin" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F5C9AC"/><stop offset="1" stop-color="#D99778"/></linearGradient>
+    <linearGradient id="top" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#5577F5"/><stop offset="1" stop-color="#2948BD"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#344D9D" flood-opacity=".16"/></filter>
+  </defs>
+  <rect width="640" height="500" rx="28" fill="url(#bg)"/>
+  <circle cx="322" cy="228" r="214" fill="url(#halo)"/>
+  <circle cx="93" cy="92" r="5" fill="#7D96F8" opacity=".6"/><circle cx="536" cy="112" r="8" fill="#7D96F8" opacity=".45"/><circle cx="518" cy="385" r="5" fill="#7D96F8" opacity=".6"/>
+  <g filter="url(#shadow)">
+    <path d="M151 500c9-76 45-126 110-144h120c69 20 104 69 112 144Z" fill="url(#top)"/>
+    <path d="M256 355c17 22 42 34 67 34s51-12 68-34l-10-53H266Z" fill="url(#skin)"/>
+    <path d="M220 190c-10-80 34-135 105-135 70 0 113 49 111 124l-12 109c-10 49-47 85-99 85-48 0-86-31-101-81Z" fill="url(#hair)"/>
+    <path d="M247 190c0-54 30-91 77-91 50 0 79 39 79 93v75c0 51-35 91-79 91-43 0-77-40-77-91Z" fill="url(#skin)"/>
+    <path d="M240 184c3-67 30-105 77-115 42-9 86 18 100 63-34-14-58-39-71-55-19 34-53 57-105 66Z" fill="url(#hair)"/>
+    <path d="M246 193c-13-15-27-7-27 14 0 19 12 38 27 39M400 193c13-15 27-7 27 14 0 19-12 38-27 39" fill="none" stroke="#D89A7E" stroke-width="11" stroke-linecap="round"/>
+    <path d="M250 173c-16-14-21-1-22 19l2 55c1 17 10 29 22 30M398 173c16-14 21-1 22 19l-2 55c-1 17-10 29-22 30" fill="none" stroke="#26345E" stroke-width="17" stroke-linecap="round"/>
+    <rect x="224" y="190" width="29" height="57" rx="13" fill="#3B5BDB"/><rect x="395" y="190" width="29" height="57" rx="13" fill="#3B5BDB"/>
+    <rect x="230" y="199" width="15" height="38" rx="7" fill="#9FB4FF"/><rect x="403" y="199" width="15" height="38" rx="7" fill="#9FB4FF"/>
+    <path d="M276 222q17-12 32 0M340 222q17-12 32 0" fill="none" stroke="#50352F" stroke-width="4" stroke-linecap="round"/>
+    <ellipse cx="293" cy="237" rx="4" ry="5" fill="#272C3D"/><ellipse cx="355" cy="237" rx="4" ry="5" fill="#272C3D"/>
+    <path d="M323 238l-7 26 12 3" fill="none" stroke="#C78166" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M303 282q20 18 41 0" fill="none" stroke="#A64F58" stroke-width="4" stroke-linecap="round"/>
+    <path d="M274 284q-15-8-21 4M370 284q15-8 21 4" fill="none" stroke="#E8A38D" stroke-width="8" stroke-linecap="round" opacity=".7"/>
+    <path d="M250 205c-8-44 3-84 28-108-9 40-5 67-1 82M390 196c7-28 3-54-6-73 26 21 32 51 24 82" fill="url(#hair)"/>
+    <path d="M275 390l48 49 48-49" fill="none" stroke="#E8EEFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+  </g>
+  <g transform="translate(440 324)"><rect width="142" height="65" rx="18" fill="#fff" fill-opacity=".92" stroke="#D5DFFF"/><circle cx="25" cy="32" r="13" fill="#3B5BDB"/><path d="M22 25v14l11-7Z" fill="#fff"/><rect x="47" y="23" width="75" height="6" rx="3" fill="#A9B9F4"/><rect x="47" y="36" width="54" height="5" rx="2.5" fill="#D0D9F8"/></g>
+  <path d="M95 351q-14-12-27 0t0 24q13 12 27 0 13 12 26 0t0-24q-13-12-26 0Z" fill="#7893F6" opacity=".35"/>
+</svg>
