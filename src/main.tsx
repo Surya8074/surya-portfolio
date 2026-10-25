@@ -100,7 +100,7 @@ function ComskiCard() {
       </div>
       <div className="comski-project-visual" aria-label="ComSki communication practice and dashboard previews">
         <div className="comski-small-visual comski-speaking-visual">
-          <img src="/surya-portfolio/comski-hero-art.svg" alt="" loading="eager" />
+          <img src="/surya-portfolio/comski-speaking-photo.svg" alt="" loading="eager" />
           <div className="comski-speaking-float"><span className="comski-mic">●</span><span><strong>Speaking Practice</strong><small>Practice</small></span><b className="comski-soundwave">〰</b></div>
           <div className="comski-confidence-float"><span>↗</span><strong>78%</strong><small>Confidence</small><b>↗</b></div>
         </div>
