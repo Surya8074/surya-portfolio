@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
 import { ArrowUp, FileText, Github, Linkedin } from 'lucide-react';
 import { createRoot } from 'react-dom/client';
@@ -187,6 +187,50 @@ function LaundroMartCard() {
   );
 }
 
+function CinematicIntro() {
+  const [visible, setVisible] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    try {
+      return !window.sessionStorage.getItem('surya-cinematic-intro-seen')
+        && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    } catch {
+      return !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    }
+  });
+
+  useEffect(() => {
+    if (!visible) return;
+    try { window.sessionStorage.setItem('surya-cinematic-intro-seen', '1'); } catch {}
+    const finish = window.setTimeout(() => setVisible(false), 3400);
+    return () => window.clearTimeout(finish);
+  }, [visible]);
+
+  if (!visible) return null;
+
+  return (
+    <div className="cinematic-intro" role="status" aria-label="Introducing Surya Kiran's portfolio">
+      <div className="cinematic-intro-grain" aria-hidden="true" />
+      <div className="cinematic-intro-kicker">SURYA KIRAN <span> / </span> PRODUCT DESIGNER</div>
+      <svg className="cinematic-intro-orbits" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <path className="cinematic-orbit cinematic-orbit-main" d="M -90 570 C 170 160, 460 190, 660 430 S 1010 790, 1290 400 S 1040 120, 780 330 S 470 700, 160 560" />
+        <path className="cinematic-orbit cinematic-orbit-echo" d="M 90 700 C 340 510, 430 260, 760 350 S 1130 610, 1360 260" />
+        <circle className="cinematic-orbit-dot" cx="0" cy="0" r="6" />
+      </svg>
+      <div className="cinematic-intro-word" aria-hidden="true">
+        <svg viewBox="0 0 760 230" preserveAspectRatio="xMidYMid meet">
+          <text x="28" y="158">DESIGN</text>
+        </svg>
+      </div>
+      <div className="cinematic-intro-portrait" aria-hidden="true">
+        <img src={portraitUrl} alt="" />
+      </div>
+      <div className="cinematic-intro-caption">Ideas into experiences<span>.</span></div>
+      <button className="cinematic-intro-skip" onClick={() => setVisible(false)} aria-label="Skip intro">Skip intro <span>↗</span></button>
+      <div className="cinematic-intro-progress" aria-hidden="true"><span /></div>
+    </div>
+  );
+}
+
 function App() {
   useEffect(() => {
     const lenis = new Lenis({ duration: 1.15, smoothWheel: true, touchMultiplier: 1.05 });
@@ -206,8 +250,9 @@ function App() {
 
   return (
     <main>
+      <CinematicIntro />
       <header className="reference-nav"><div className="reference-nav-inner"><button className="reference-brand" onClick={() => go('#home')}><strong>Surya Kiran</strong><span className="reference-brand-divider" /><span>India</span></button><nav><button onClick={() => go('#art')}>Art</button><button onClick={() => go('#about')}>About Me</button><a className="resume-nav-link" href="/surya-portfolio/resume/">Resume</a></nav></div></header>
-      <section id="home" className="reference-home"><div className="reference-home-viewport"><div className="reference-home-stage"><div className="reference-portrait" aria-label="Portrait of Surya Kiran"><img className="reference-portrait-image" src={portraitUrl} alt="Surya Kiran" /></div><div className="reference-fade" /><div className="reference-head-animation" aria-hidden="true"><svg viewBox="0 0 260 130" className="head-animation-svg"><text className="head-animation-text" x="18" y="88">ART</text></svg></div><div className="reference-hero-copy"><h1><span>Designing how products earn trust,</span><span>across <em>visual, product &amp; growth.</em></span></h1><button className="reference-work" onClick={() => go('#work')}>See my work</button></div></div></div></section>
+      <section id="home" className="reference-home"><div className="reference-home-viewport"><div className="reference-home-stage"><div className="reference-portrait" aria-label="Portrait of Surya Kiran"><img className="reference-portrait-image" src={portraitUrl} alt="Surya Kiran" /></div><div className="reference-fade" /><div className="reference-head-animation" aria-hidden="true"><svg viewBox="0 0 260 130" className="head-animation-svg"><text className="head-animation-text" x="12" y="88">DESIGN</text></svg></div><div className="reference-hero-copy"><h1><span>Designing how products earn trust,</span><span>across <em>visual, product &amp; growth.</em></span></h1><button className="reference-work" onClick={() => go('#work')}>See my work</button></div></div></div></section>
       <section id="work" className="reference-work-section"><div className="work-intro"><p>SELECTED WORK</p></div><GenesisCard /><ComskiCard /><LaundroMartCard /></section>
       <section className="other-reference" aria-label="Other Projects">
         <h2 className="other-reference-heading">Other Projects</h2>
