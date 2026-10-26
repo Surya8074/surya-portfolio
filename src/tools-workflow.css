@@ -4,7 +4,7 @@
   --tw-line: var(--reference-border, #e5e5e5);
   width: 100%;
   padding: 108px 0 132px;
-  background: var(--reference-bg, #fffefb);
+  background: #f4f5f7;
   color: var(--tw-ink);
 }
 .tw-inner {
