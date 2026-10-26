@@ -549,3 +549,8 @@
   .genesis-project-visual{height:290px}
   .genesis-3d-laptop{inset:-3% -5%;transform:translateY(0) scale(1.08)}
 }
+
+/* Premium spatial reveal support */
+.genesis-project-visual{perspective:1200px;transform-style:preserve-3d;transform-origin:58% 50%;}
+.genesis-project-card:hover .genesis-project-visual{filter:drop-shadow(0 16px 24px rgba(29,49,86,.07));}
+@media(prefers-reduced-motion:reduce){.genesis-project-card:hover .genesis-project-visual{filter:none}}
