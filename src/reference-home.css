@@ -91,4 +91,4 @@ main .other-reference .reference-card-link:focus-visible {
 
 /* Center the Selected Work label above the project cards */
 .reference-work-section .work-intro{width:100%;display:flex;justify-content:center;text-align:center;margin:0 0 32px;}
-.reference-work-section .work-intro p{margin:0;text-align:center;}
+.reference-work-section .work-intro p{margin:0;text-align:center;color:#63718b;font-size:11px;line-height:1.2;font-weight:650;letter-spacing:.12em;}
