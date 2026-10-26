@@ -227,32 +227,29 @@ main .other-reference .reference-card-link:focus-visible {
 /* Keep the hero copy and CTA above all decorative layers. */
 .hero-headline,.hero-kicker,.hero-stats,.hero-scroll-cue{isolation:isolate}
 
-/* Scale the homepage hero artwork down by 30%, keeping text and navigation readable. */
-.hero-portrait-wrap{left:48.55%;width:37.45%;height:63%;top:37%}
-.hero-design-word{font-size:clamp(105px,12.6vw,200px);left:22%;top:52%}
-.hero-neon-orbit{left:12%;top:42%;width:76%;height:41%}
-.hero-handnote{right:7.4%;top:17%;font-size:clamp(16px,1.26vw,20px)}
-.hero-note-arrow{right:17%;top:22%;width:67px;height:76px}
-.hero-process{right:4.1%;top:57%;font-size:9px;gap:4px}
-.hero-accent{left:43%;top:29%;width:39px}
-.hero-accent-two{left:42%;top:33%;width:43px}
+
+/* Uniformly scale the complete hero artwork as one composition. Keep copy and navigation at their original size. */
+.hero-artwork-scale{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  transform:scale(.7);
+  transform-origin:center center;
+  pointer-events:none;
+}
+.hero-artwork-scale .hero-portrait-wrap,
+.hero-artwork-scale .hero-neon-orbit,
+.hero-artwork-scale .hero-design-word,
+.hero-artwork-scale .hero-accent,
+.hero-artwork-scale .hero-handnote,
+.hero-artwork-scale .hero-note-arrow,
+.hero-artwork-scale .hero-process,
+.hero-artwork-scale .hero-stats,
+.hero-artwork-scale .hero-scroll-cue{pointer-events:none}
 @media(max-width:1023px){
- .hero-portrait-wrap{left:35%;top:48%;width:52.5%;height:42.7%}
- .hero-design-word{left:9%;top:62%;font-size:clamp(95px,21vw,165px)}
- .hero-neon-orbit{left:4%;top:54%;width:84%;height:30%}
- .hero-handnote{right:4%;top:30%;font-size:13px}
- .hero-note-arrow{right:21%;top:34%;width:42px;height:53px}
- .hero-process{right:3%;top:66%;font-size:7px}
- .hero-accent{left:45%;top:50%;width:32px}
- .hero-accent-two{left:43%;top:53%;width:35px}
+  .hero-artwork-scale{transform:scale(.7);transform-origin:center center}
 }
 @media(max-width:560px){
- .hero-portrait-wrap{left:30%;top:51%;width:65.8%;height:40.6%}
- .hero-design-word{left:0%;top:64%;font-size:clamp(82px,21.7vw,130px)}
- .hero-neon-orbit{left:-5%;top:57%;width:91%;height:27%}
- .hero-handnote{right:4%;top:31%;font-size:11px}
- .hero-note-arrow{right:24%;top:35%;width:36px;height:45px}
- .hero-process{right:2%;top:69%;font-size:6px}
- .hero-accent{left:49%;top:53%;width:28px}
- .hero-accent-two{left:46%;top:56%;width:32px}
+  .hero-artwork-scale{transform:scale(.7);transform-origin:center center}
 }
