@@ -409,3 +409,58 @@
 .comski-project-card:hover .comski-project-visual-art img{transform:translate(-8px,14px)}
 @media(max-width:1050px){.comski-project-visual-art img{transform:none}.comski-project-card:hover .comski-project-visual-art img{transform:translateY(-3px)}}
 @media(max-width:600px){.comski-project-visual-art img{transform:none}.comski-project-card:hover .comski-project-visual-art img{transform:none}}
+
+
+/* Genesis homepage card — aligned with ComSki and LaundroMart; laptop prototype only */
+.genesis-project-card{
+  width:min(884px,calc(100% - 64px));
+  min-height:0;
+  grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+  gap:clamp(16px,2vw,26px);
+  margin:0 auto 78px;
+  padding:clamp(24px,2.4vw,36px);
+  box-sizing:border-box;
+  border:1px solid #e4e6eb;
+  border-radius:28px;
+  background:#fff;
+  box-shadow:0 3px 18px rgba(21,35,60,.025);
+  overflow:hidden;
+  transition:border-color .25s ease,box-shadow .25s ease;
+}
+.genesis-project-card:hover{border-color:#d9e1ef;box-shadow:0 14px 38px rgba(21,35,60,.06)}
+.genesis-project-copy{max-width:100%;padding:0;align-self:center}
+.genesis-project-index{margin:0 0 28px;font-size:13px}
+.genesis-project-eyebrow{margin:0 0 24px;font-size:13px;letter-spacing:.01em}
+.genesis-project-copy h3{font-size:clamp(44px,4.5vw,64px);line-height:.92;letter-spacing:-.08em}
+.genesis-project-copy h4{margin:18px 0 0;font-size:clamp(21px,2vw,28px);line-height:1.08;letter-spacing:-.055em;font-weight:730}
+.genesis-project-description{max-width:360px;margin:16px 0 0;font-size:15px;line-height:1.75;letter-spacing:-.012em}
+.genesis-project-action{gap:12px;margin-top:26px;font-size:13px}
+.genesis-project-action b{width:42px;height:42px;flex:0 0 42px;border:0;background:#246bff;color:#fff;box-shadow:0 8px 20px rgba(36,107,255,.13);font-size:20px}
+.genesis-project-visual{height:clamp(236px,23.5vw,314px);min-width:0;overflow:hidden;align-self:center;isolation:isolate}
+.genesis-3d-laptop{inset:0;width:100%;height:100%;transform:translateY(8px) scale(1);pointer-events:auto}
+.genesis-project-card:focus-visible{outline:2px solid #246bff;outline-offset:5px;border-radius:28px}
+@media(max-width:1250px){
+  .genesis-project-card{width:min(884px,calc(100% - 40px));min-height:0;padding:26px;gap:16px;border-radius:24px}
+  .genesis-project-visual{height:340px}
+  .genesis-3d-laptop{inset:0;transform:translateY(4px) scale(1)}
+}
+@media(max-width:900px){
+  .genesis-project-card{grid-template-columns:minmax(0,1fr);gap:24px;padding:32px;border-radius:30px}
+  .genesis-project-copy{max-width:680px}
+  .genesis-project-visual{height:clamp(300px,48vw,420px);width:100%}
+  .genesis-project-description{font-size:17px}
+}
+@media(max-width:600px){
+  .genesis-project-card{width:calc(100% - 28px);display:flex;flex-direction:column;align-items:stretch;gap:22px;margin-bottom:64px;padding:25px 20px;border-radius:24px}
+  .genesis-project-copy{display:flex;flex-direction:column;gap:16px}
+  .genesis-project-index{margin:0}
+  .genesis-project-eyebrow{margin:0;font-size:12px}
+  .genesis-project-copy h3{font-size:clamp(58px,15vw,76px)}
+  .genesis-project-copy h4{margin:0;font-size:27px;line-height:1.12}
+  .genesis-project-description{margin:0;font-size:15px;line-height:1.65}
+  .genesis-project-action{margin:0;gap:16px;font-size:17px}
+  .genesis-project-action b{width:50px;height:50px;flex-basis:50px;font-size:23px}
+  .genesis-project-visual{height:290px;width:100%;margin:0}
+  .genesis-3d-laptop{inset:0;transform:translateY(4px) scale(1)}
+}
+@media(prefers-reduced-motion:reduce){.genesis-project-card,.genesis-project-action b{transition:none}}
