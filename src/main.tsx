@@ -216,15 +216,17 @@ function App() {
               <p>I design and build AI-powered products,<br />turning complex ideas into simple,<br />meaningful experiences.</p>
               <button className="reference-work hero-work-cta" onClick={() => go('#work')}>See my work <span aria-hidden="true">→</span></button>
             </div>
-            <div className="hero-portrait-wrap"><img className="reference-portrait-image hero-portrait-image" src={portraitUrl} alt="Portrait of Surya Kiran" /></div>
-            <svg className="hero-neon-orbit" viewBox="0 0 1400 600" aria-hidden="true"><path d="M70 480 C260 300 520 230 760 250 S1160 80 1320 170 C1390 210 1190 300 1030 390 S550 560 210 570 C70 570 20 540 70 480Z" /><path d="M1050 195 C1160 150 1290 120 1350 155 C1390 180 1320 220 1260 255" /></svg>
-            <div className="hero-design-word" aria-hidden="true">DESIGN</div>
-            <div className="hero-accent hero-accent-one" aria-hidden="true"></div><div className="hero-accent hero-accent-two" aria-hidden="true"></div>
-            <div className="hero-handnote"><span>UI/UX</span><span>AI Products</span><span>Problem Solver</span></div>
-            <svg className="hero-note-arrow" viewBox="0 0 120 120" aria-hidden="true"><path d="M105 12 Q50 34 26 94 M26 94 l-2 -20 M26 94 l18 -10" /></svg>
-            <div className="hero-process"><span>IDEA</span><span>RESEARCH</span><span>DESIGN</span><span>PROTOTYPE</span><span>TEST</span><span>ITERATE</span><span>LAUNCH</span></div>
-            <div className="hero-stats"><div><strong>2+</strong><span>Years<br />Experience</span></div><i></i><div><strong>4+</strong><span>Products<br />Designed</span></div></div>
-            <div className="hero-scroll-cue"><span>Scroll to explore</span><b aria-hidden="true">↓</b></div>
+            <div className="hero-artwork-scale" aria-hidden="true">
+              <div className="hero-portrait-wrap"><img className="reference-portrait-image hero-portrait-image" src={portraitUrl} alt="" /></div>
+              <svg className="hero-neon-orbit" viewBox="0 0 1400 600"><path d="M70 480 C260 300 520 230 760 250 S1160 80 1320 170 C1390 210 1190 300 1030 390 S550 560 210 570 C70 570 20 540 70 480Z" /><path d="M1050 195 C1160 150 1290 120 1350 155 C1390 180 1320 220 1260 255" /></svg>
+              <div className="hero-design-word">DESIGN</div>
+              <div className="hero-accent hero-accent-one"></div><div className="hero-accent hero-accent-two"></div>
+              <div className="hero-handnote"><span>UI/UX</span><span>AI Products</span><span>Problem Solver</span></div>
+              <svg className="hero-note-arrow" viewBox="0 0 120 120"><path d="M105 12 Q50 34 26 94 M26 94 l-2 -20 M26 94 l18 -10" /></svg>
+              <div className="hero-process"><span>IDEA</span><span>RESEARCH</span><span>DESIGN</span><span>PROTOTYPE</span><span>TEST</span><span>ITERATE</span><span>LAUNCH</span></div>
+              <div className="hero-stats"><div><strong>2+</strong><span>Years<br />Experience</span></div><i></i><div><strong>4+</strong><span>Products<br />Designed</span></div></div>
+              <div className="hero-scroll-cue"><span>Scroll to explore</span><b>↓</b></div>
+            </div>
           </div>
         </div>
       </section>
