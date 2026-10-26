@@ -42,10 +42,42 @@ const revealItem = {
 };
 
 const revealVisual = {
-  hidden: { opacity: 0, y: 18, scale: 0.965, rotate: -0.7, clipPath: 'inset(4% 2% 4% 2% round 22px)' },
+  hidden: { opacity: 0, y: 18, scale: 0.965, rotate: -0.7 },
   visible: {
-    opacity: 1, y: 0, scale: 1, rotate: 0, clipPath: 'inset(0% 0% 0% 0% round 22px)',
+    opacity: 1, y: 0, scale: 1, rotate: 0,
     transition: { duration: 1.05, ease: [0.16, 1, 0.3, 1], delay: 0.12 }
+  }
+};
+
+const genesisVisual = {
+  hidden: { opacity: 0, y: 28, scale: 0.94, rotateX: 7, rotateY: -4 },
+  visible: {
+    opacity: 1, y: 0, scale: 1, rotateX: 0, rotateY: 0,
+    transition: { duration: 1.25, ease: [0.16, 1, 0.3, 1], delay: 0.16 }
+  }
+};
+
+const comskiStackVisual = {
+  hidden: { opacity: 0, x: -22, y: 18, scale: 0.96, rotate: -1.5 },
+  visible: {
+    opacity: 1, x: 0, y: 0, scale: 1, rotate: 0,
+    transition: { duration: 1.05, ease: [0.16, 1, 0.3, 1], delay: 0.12 }
+  }
+};
+
+const comskiDashboardVisual = {
+  hidden: { opacity: 0, x: 28, y: 22, scale: 0.955, rotate: 1.2 },
+  visible: {
+    opacity: 1, x: 0, y: 0, scale: 1, rotate: 0,
+    transition: { duration: 1.15, ease: [0.16, 1, 0.3, 1], delay: 0.24 }
+  }
+};
+
+const laundromartVisual = {
+  hidden: { opacity: 0, y: 24, scale: 0.95, rotateX: 5 },
+  visible: {
+    opacity: 1, y: 0, scale: 1, rotateX: 0,
+    transition: { duration: 1.15, ease: [0.16, 1, 0.3, 1], delay: 0.16 }
   }
 };
 
@@ -85,7 +117,7 @@ function GenesisCard() {
         <motion.div className="genesis-project-action" variants={revealItem}><b>→</b><span>View Case Study</span></motion.div>
       </motion.div>
 
-      <motion.div className="genesis-project-visual" aria-label="Interactive 3D laptop displaying the Genesis dashboard" variants={revealVisual}>
+      <motion.div className="genesis-project-visual" aria-label="Interactive 3D laptop displaying the Genesis dashboard" variants={genesisVisual}>
         <GenesisMacBook />
       </motion.div>
     </motion.a>
@@ -111,11 +143,11 @@ function ComskiCard() {
         <motion.div className="comski-showcase-tags" variants={revealItem}><span>AI</span><span>EdTech</span><span>Communication</span></motion.div>
         <motion.div className="comski-showcase-cta" variants={revealItem}><b aria-hidden="true">→</b><span>View Case Study</span></motion.div>
       </motion.div>
-      <motion.div className="comski-showcase-stack" aria-label="Speaking and writing practice previews" variants={revealVisual}>
+      <motion.div className="comski-showcase-stack" aria-label="Speaking and writing practice previews" variants={comskiStackVisual}>
         <div className="comski-showcase-media"><img src="https://images.unsplash.com/photo-1759984782076-2909625b0aa8?auto=format&fit=crop&fm=jpg&q=85&w=1400" alt="Woman wearing headphones practising speaking at her laptop" loading="lazy" referrerPolicy="no-referrer" /></div>
         <div className="comski-showcase-media"><img src="https://images.squarespace-cdn.com/content/v1/52f8bc3de4b0b0787ce1ea4e/7559fd5a-d2e1-4212-a276-91ea6fe0d943/BeckyPart1-053.jpg" alt="Woman writing in a notebook beside her laptop" loading="lazy" referrerPolicy="no-referrer" /></div>
       </motion.div>
-      <motion.div className="comski-showcase-dashboard" variants={revealVisual}><img src="/surya-portfolio/comski/comski-skills-q30.webp" alt="A learner practising speaking, listening, writing and reading with ComSki" loading="lazy" /></motion.div>
+      <motion.div className="comski-showcase-dashboard" variants={comskiDashboardVisual}><img src="/surya-portfolio/comski/comski-skills-q30.webp" alt="A learner practising speaking, listening, writing and reading with ComSki" loading="lazy" /></motion.div>
     </motion.a>
   );
 }
@@ -138,7 +170,7 @@ function LaundroMartCard() {
         <motion.div className="laundromart-project-tags" variants={revealItem}><span>AI</span><span>SaaS</span><span>Operations</span></motion.div>
         <motion.div className="laundromart-project-action" variants={revealItem}><b aria-hidden="true">↗</b><span>View Case Study</span></motion.div>
       </motion.div>
-      <motion.div className="laundromart-project-visual" aria-label="LaundroMart project visuals" variants={revealVisual}>
+      <motion.div className="laundromart-project-visual" aria-label="LaundroMart project visuals" variants={laundromartVisual}>
         <div className="laundromart-photo-stack">
           <div className="laundromart-photo laundromart-photo-folded">
             <img src="https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?auto=format&fit=crop&w=700&q=85" alt="Freshly folded laundry in a clean laundry workspace" loading="lazy" />
