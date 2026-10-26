@@ -83,7 +83,7 @@ function GenesisCard() {
         <motion.h4 variants={revealItem}>AI-powered test automation platform</motion.h4>
         <motion.p className="genesis-project-description" variants={revealItem}>Designing an AI-driven testing workflow that helps QA teams move faster while keeping humans in control.</motion.p>
         <motion.div className="genesis-project-action" variants={revealItem}><b>→</b><span>View Case Study</span></motion.div>
-      </div>
+      </motion.div>
 
       <motion.div className="genesis-project-visual" aria-label="Interactive 3D laptop displaying the Genesis dashboard" variants={revealVisual}>
         <GenesisMacBook />
@@ -110,11 +110,11 @@ function ComskiCard() {
         <motion.p className="comski-showcase-description" variants={revealItem}>An AI-powered platform to practice speaking, writing, listening and reading with real-time feedback.</motion.p>
         <motion.div className="comski-showcase-tags" variants={revealItem}><span>AI</span><span>EdTech</span><span>Communication</span></motion.div>
         <motion.div className="comski-showcase-cta" variants={revealItem}><b aria-hidden="true">→</b><span>View Case Study</span></motion.div>
-      </div>
+      </motion.div>
       <motion.div className="comski-showcase-stack" aria-label="Speaking and writing practice previews" variants={revealVisual}>
         <div className="comski-showcase-media"><img src="https://images.unsplash.com/photo-1759984782076-2909625b0aa8?auto=format&fit=crop&fm=jpg&q=85&w=1400" alt="Woman wearing headphones practising speaking at her laptop" loading="lazy" referrerPolicy="no-referrer" /></div>
         <div className="comski-showcase-media"><img src="https://images.squarespace-cdn.com/content/v1/52f8bc3de4b0b0787ce1ea4e/7559fd5a-d2e1-4212-a276-91ea6fe0d943/BeckyPart1-053.jpg" alt="Woman writing in a notebook beside her laptop" loading="lazy" referrerPolicy="no-referrer" /></div>
-      </div>
+      </motion.div>
       <motion.div className="comski-showcase-dashboard" variants={revealVisual}><img src="/surya-portfolio/comski/comski-skills-q30.webp" alt="A learner practising speaking, listening, writing and reading with ComSki" loading="lazy" /></motion.div>
     </motion.a>
   );
@@ -137,7 +137,7 @@ function LaundroMartCard() {
         <motion.p className="laundromart-project-description" variants={revealItem}>An AI-powered platform to manage orders, track operations and grow your laundry business.</motion.p>
         <motion.div className="laundromart-project-tags" variants={revealItem}><span>AI</span><span>SaaS</span><span>Operations</span></motion.div>
         <motion.div className="laundromart-project-action" variants={revealItem}><b aria-hidden="true">↗</b><span>View Case Study</span></motion.div>
-      </div>
+      </motion.div>
       <motion.div className="laundromart-project-visual" aria-label="LaundroMart project visuals" variants={revealVisual}>
         <div className="laundromart-photo-stack">
           <div className="laundromart-photo laundromart-photo-folded">
