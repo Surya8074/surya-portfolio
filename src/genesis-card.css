@@ -513,3 +513,39 @@
   .genesis-project-visual{height:330px;overflow:visible}
   .genesis-3d-laptop{inset:-4% -9%;transform:translateY(0) scale(1.12)}
 }
+
+
+/* Final size alignment: Genesis matches the ComSki and LaundroMart card width,
+   while keeping the laptop prototype prominent within the visual area. */
+.genesis-project-card{
+  width:min(884px,calc(100% - 64px));
+  grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+  gap:clamp(16px,2vw,26px);
+}
+.genesis-project-visual{
+  height:clamp(236px,23.5vw,314px);
+  overflow:visible;
+}
+.genesis-3d-laptop{
+  inset:-2% -6%;
+  transform:translateY(5px) scale(1.16);
+}
+@media(max-width:1250px){
+  .genesis-project-card{
+    width:min(884px,calc(100% - 40px));
+    grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+    gap:16px;
+  }
+  .genesis-project-visual{height:340px;overflow:visible}
+  .genesis-3d-laptop{inset:-2% -5%;transform:translateY(3px) scale(1.12)}
+}
+@media(max-width:900px){
+  .genesis-project-card{grid-template-columns:minmax(0,1fr)}
+  .genesis-project-visual{height:clamp(300px,48vw,420px)}
+  .genesis-3d-laptop{inset:-3% -4%;transform:translateY(0) scale(1.12)}
+}
+@media(max-width:600px){
+  .genesis-project-card{width:calc(100% - 28px)}
+  .genesis-project-visual{height:290px}
+  .genesis-3d-laptop{inset:-3% -5%;transform:translateY(0) scale(1.08)}
+}
