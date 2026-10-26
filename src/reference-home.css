@@ -94,89 +94,30 @@ main .other-reference .reference-card-link:focus-visible {
 .reference-work-section .work-intro p{margin:0;text-align:center;color:#63718b;font-size:11px;line-height:1.2;font-weight:650;letter-spacing:.12em;}
 
 
-/* Cinematic brand reveal — plays once per browser session and respects reduced motion. */
-.cinematic-intro{
-  position:fixed;inset:0;z-index:9999;overflow:hidden;isolation:isolate;
-  display:grid;place-items:center;background:#fffefb;color:#100f11;
-  animation:cinematic-intro-exit .62s cubic-bezier(.76,0,.24,1) 2.78s forwards;
-}
-.cinematic-intro-grain{
-  position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.16;
-  background-image:radial-gradient(#c9c7c0 .55px,transparent .65px);background-size:5px 5px;
-  mask-image:linear-gradient(135deg,#000,transparent 78%);
-}
-.cinematic-intro-kicker{
-  position:absolute;top:clamp(28px,6vh,64px);left:clamp(24px,6vw,92px);
-  font-size:11px;font-weight:650;letter-spacing:.18em;color:#77777a;
-  opacity:0;animation:cinematic-kicker-in .55s ease .18s forwards;
-}
-.cinematic-intro-kicker span{color:#b9e51a;margin:0 8px}
-.cinematic-intro-orbits{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.cinematic-orbit{
-  fill:none;stroke:#b9f51a;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round;
-  stroke-dasharray:2400;stroke-dashoffset:2400;vector-effect:non-scaling-stroke;
-  animation:cinematic-orbit-draw 1.55s cubic-bezier(.16,1,.3,1) .12s forwards;
-}
-.cinematic-orbit-echo{stroke-width:1;opacity:.7;stroke-dasharray:1500;stroke-dashoffset:1500;animation-delay:.38s}
-.cinematic-orbit-dot{fill:#b9f51a;opacity:0;transform:translate(9vw,65vh);animation:cinematic-dot-pop .4s ease .08s forwards}
-.cinematic-intro-word{
-  position:absolute;left:clamp(8px,5vw,80px);top:50%;width:min(66vw,900px);
-  transform:translateY(-44%);z-index:1;opacity:0;
-  animation:cinematic-word-arrive .65s cubic-bezier(.16,1,.3,1) .58s forwards;
-}
-.cinematic-intro-word svg{display:block;width:100%;height:auto;overflow:visible}
-.cinematic-intro-word text{
-  font-family:"Brush Script MT","Segoe Print","Comic Sans MS",cursive;
-  font-size:146px;font-style:italic;font-weight:800;letter-spacing:-8px;
-  fill:transparent;stroke:#b9f51a;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round;
-  paint-order:stroke;stroke-dasharray:1250;stroke-dashoffset:1250;
-  animation:cinematic-letter-draw 1.15s cubic-bezier(.16,1,.3,1) .7s forwards;
-}
-.cinematic-intro-portrait{
-  position:absolute;z-index:2;right:clamp(7%, calc((100vw - 1440px)/2 + 13%), 20%);
-  bottom:-7%;height:min(78vh,760px);width:min(39vw,500px);
-  display:flex;align-items:flex-end;justify-content:center;opacity:0;
-  transform:translate3d(0,36px,0) scale(.965);transform-origin:center bottom;
-  animation:cinematic-portrait-arrive 1s cubic-bezier(.16,1,.3,1) 1.05s forwards;
-}
-.cinematic-intro-portrait img{display:block;width:100%;height:100%;object-fit:contain;object-position:center bottom;filter:grayscale(1) contrast(1.04)}
-.cinematic-intro-caption{
-  position:absolute;z-index:3;left:clamp(24px,6vw,92px);bottom:clamp(35px,8vh,86px);
-  color:#6f7072;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
-  opacity:0;transform:translateY(8px);animation:cinematic-caption-in .5s ease 1.85s forwards;
-}
-.cinematic-intro-caption span{color:#b9f51a;font-size:22px;margin-left:2px}
-.cinematic-intro-skip{
-  position:absolute;z-index:4;right:clamp(22px,5vw,70px);bottom:clamp(26px,5vh,48px);
-  border:1px solid #e5e5e5;border-radius:999px;padding:10px 15px;background:#fffefb;
-  color:#55565a;font-size:11px;letter-spacing:.03em;cursor:pointer;
-  opacity:0;animation:cinematic-kicker-in .4s ease .5s forwards;transition:background .2s ease,color .2s ease;
-}
-.cinematic-intro-skip span{color:#a7d900;margin-left:9px}
-.cinematic-intro-skip:hover{background:#171719;color:#fff}
-.cinematic-intro-progress{position:absolute;bottom:0;left:0;right:0;height:2px;background:#e9e9e4}
-.cinematic-intro-progress span{display:block;width:100%;height:100%;background:#b9f51a;transform:scaleX(0);transform-origin:left;animation:cinematic-progress 3.15s linear forwards}
-@keyframes cinematic-orbit-draw{to{stroke-dashoffset:0}}
-@keyframes cinematic-dot-pop{0%{opacity:0;transform:translate(9vw,65vh) scale(.3)}70%{opacity:1;transform:translate(9vw,65vh) scale(1.25)}100%{opacity:1;transform:translate(9vw,65vh) scale(1)}}
-@keyframes cinematic-word-arrive{to{opacity:1;transform:translateY(-50%)}}
-@keyframes cinematic-letter-draw{0%{stroke-dashoffset:1250;fill:transparent}76%{stroke-dashoffset:0;fill:transparent}100%{stroke-dashoffset:0;fill:#b9f51a}}
-@keyframes cinematic-portrait-arrive{to{opacity:1;transform:translate3d(0,0,0) scale(1)}}
-@keyframes cinematic-kicker-in{to{opacity:1}}
-@keyframes cinematic-caption-in{to{opacity:1;transform:translateY(0)}}
-@keyframes cinematic-progress{to{transform:scaleX(1)}}
-@keyframes cinematic-intro-exit{to{opacity:0;visibility:hidden;pointer-events:none}}
-@media(max-width:700px){
-  .cinematic-intro-kicker{top:25px;left:20px;font-size:9px;letter-spacing:.13em}
-  .cinematic-intro-word{left:4%;top:43%;width:96%;transform:translateY(-44%)}
-  .cinematic-intro-word text{font-size:138px;letter-spacing:-9px}
-  .cinematic-intro-portrait{right:4%;bottom:-2%;height:57vh;width:67vw}
-  .cinematic-intro-caption{left:22px;bottom:76px;font-size:9px;max-width:150px;line-height:1.6}
-  .cinematic-intro-skip{right:18px;bottom:22px;padding:9px 12px}
-  .cinematic-orbit{stroke-width:1.5}
+
+/* Unified homepage hero motion — no separate intro overlay. */
+.reference-nav{animation:hero-nav-arrive .75s cubic-bezier(.16,1,.3,1) both}
+.reference-hero-copy h1 span{opacity:0;animation:hero-copy-arrive .9s cubic-bezier(.16,1,.3,1) forwards}
+.reference-hero-copy h1 span:first-child{animation-delay:.12s}
+.reference-hero-copy h1 span:nth-child(2){animation-delay:.26s}
+.reference-hero-copy .reference-work{opacity:0;animation:hero-cta-arrive .8s cubic-bezier(.16,1,.3,1) .44s forwards}
+.reference-portrait{animation:hero-portrait-arrive 1.15s cubic-bezier(.16,1,.3,1) .2s both}
+.reference-head-animation{pointer-events:none}
+.head-animation-text{animation:referenceDraw 1.5s cubic-bezier(.22,1,.36,1) .48s forwards,referenceFloat 3.2s ease-in-out 2s infinite alternate}
+.reference-fade{animation:hero-fade-arrive 1.2s ease .25s both}
+@keyframes hero-nav-arrive{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes hero-copy-arrive{from{opacity:0;transform:translateY(17px);filter:blur(5px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+@keyframes hero-cta-arrive{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes hero-portrait-arrive{from{opacity:0;translate:0 24px;scale:.985}to{opacity:1;translate:0 0;scale:1}}
+@keyframes hero-fade-arrive{from{opacity:0}to{opacity:1}}
+@media(max-width:1023px){
+  .reference-hero-copy h1 span:first-child{animation-delay:.1s}
+  .reference-hero-copy h1 span:nth-child(2){animation-delay:.22s}
+  .reference-head-animation .head-animation-text{animation-duration:1.35s,3.2s}
 }
 @media(prefers-reduced-motion:reduce){
-  .cinematic-intro{display:none!important}
-  .cinematic-intro *{animation:none!important;transition:none!important}
+  .reference-nav,.reference-hero-copy h1 span,.reference-hero-copy .reference-work,.reference-portrait,.reference-fade{animation:none!important;opacity:1!important;filter:none!important;translate:none!important;scale:1!important}
+  .head-animation-text{animation:none!important;stroke-dashoffset:0}
 }
 
 /* Keep the final hero signature word legible after the intro exits. */
