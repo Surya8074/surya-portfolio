@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { motion, useReducedMotion } from 'motion/react';
 import { ArrowUp, FileText, Github, Linkedin } from 'lucide-react';
 import { createRoot } from 'react-dom/client';
 import Lenis from '@studio-freight/lenis';
@@ -17,6 +18,7 @@ const genesisPath = '/surya-portfolio/work/genesis-v8/';
 const comskiPath = '/surya-portfolio/comski.html';
 
 function GenesisCard() {
+  const shouldReduceMotion = useReducedMotion();
   const handlePointerMove = (event: React.PointerEvent<HTMLAnchorElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
     const x = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
@@ -31,8 +33,12 @@ function GenesisCard() {
   };
 
   return (
-    <a
+    <motion.a
       className="genesis-project-card"
+      initial={shouldReduceMotion ? false : { opacity: 0, y: 30, scale: 0.985 }}
+      whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.18 }}
+      transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
       href={genesisPath}
       aria-label="Open Genesis case study"
       onPointerMove={handlePointerMove}
@@ -50,14 +56,20 @@ function GenesisCard() {
       <div className="genesis-project-visual" aria-label="Interactive 3D laptop displaying the Genesis dashboard">
         <GenesisMacBook />
       </div>
-    </a>
+    </motion.a>
   );
 }
 
 
 function ComskiCard() {
+  const shouldReduceMotion = useReducedMotion();
   return (
-    <a className="comski-showcase" href="/surya-portfolio/comski.html" aria-label="View ComSki case study">
+    <motion.a
+      className="comski-showcase"
+      initial={shouldReduceMotion ? false : { opacity: 0, x: -32, scale: 0.99 }}
+      whileInView={shouldReduceMotion ? undefined : { opacity: 1, x: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.18 }}
+      transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }} href="/surya-portfolio/comski.html" aria-label="View ComSki case study">
       <div className="comski-showcase-copy">
         <p className="comski-showcase-eyebrow"><span>01</span><i /> COMMUNICATION AI</p>
         <h3><span>Com</span><span>Ski</span></h3>
@@ -71,13 +83,19 @@ function ComskiCard() {
         <div className="comski-showcase-media"><img src="https://images.squarespace-cdn.com/content/v1/52f8bc3de4b0b0787ce1ea4e/7559fd5a-d2e1-4212-a276-91ea6fe0d943/BeckyPart1-053.jpg" alt="Woman writing in a notebook beside her laptop" loading="lazy" referrerPolicy="no-referrer" /></div>
       </div>
       <div className="comski-showcase-dashboard"><img src="/surya-portfolio/comski/comski-skills-q30.webp" alt="A learner practising speaking, listening, writing and reading with ComSki" loading="lazy" /></div>
-    </a>
+    </motion.a>
   );
 }
 
 function LaundroMartCard() {
+  const shouldReduceMotion = useReducedMotion();
   return (
-    <a className="laundromart-project-card" href="/surya-portfolio/laundromart/" aria-label="Open LaundroMart case study">
+    <motion.a
+      className="laundromart-project-card"
+      initial={shouldReduceMotion ? false : { opacity: 0, x: 32, scale: 0.99 }}
+      whileInView={shouldReduceMotion ? undefined : { opacity: 1, x: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.18 }}
+      transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }} href="/surya-portfolio/laundromart/" aria-label="Open LaundroMart case study">
       <div className="laundromart-project-copy">
         <p className="laundromart-project-index"><span>03</span><i /> OPERATIONS SAAS</p>
         <h3><span>Laundro</span><span>Mart</span></h3>
@@ -99,7 +117,7 @@ function LaundroMartCard() {
           <img src="/surya-portfolio/laundromart/f40750d1-25de-48ee-93d8-e5c11b6670b2-2026-10-14%20(1).gif" alt="Animated preview of the LaundroMart operations dashboard" loading="lazy" />
         </div>
       </div>
-    </a>
+    </motion.a>
   );
 }
 
