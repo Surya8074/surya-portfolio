@@ -17,6 +17,30 @@ const portraitUrl = '/surya-portfolio/surya-portrait.svg';
 const genesisPath = '/surya-portfolio/work/genesis-v8/';
 const comskiPath = '/surya-portfolio/comski.html';
 
+const cardReveal = {
+  hidden: { opacity: 0, y: 22, scale: 0.992 },
+  visible: {
+    opacity: 1, y: 0, scale: 1,
+    transition: { duration: 0.95, ease: [0.16, 1, 0.3, 1], staggerChildren: 0.085, delayChildren: 0.08 }
+  }
+};
+
+const revealItem = {
+  hidden: { opacity: 0, y: 16, filter: 'blur(4px)' },
+  visible: {
+    opacity: 1, y: 0, filter: 'blur(0px)',
+    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] }
+  }
+};
+
+const revealVisual = {
+  hidden: { opacity: 0, y: 18, scale: 0.965, rotate: -0.7, clipPath: 'inset(4% 2% 4% 2% round 22px)' },
+  visible: {
+    opacity: 1, y: 0, scale: 1, rotate: 0, clipPath: 'inset(0% 0% 0% 0% round 22px)',
+    transition: { duration: 1.05, ease: [0.16, 1, 0.3, 1], delay: 0.12 }
+  }
+};
+
 function GenesisCard() {
   const shouldReduceMotion = useReducedMotion();
   const handlePointerMove = (event: React.PointerEvent<HTMLAnchorElement>) => {
@@ -35,27 +59,27 @@ function GenesisCard() {
   return (
     <motion.a
       className="genesis-project-card"
-      initial={shouldReduceMotion ? false : { opacity: 0, y: 30, scale: 0.985 }}
-      whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
-      viewport={{ once: true, amount: 0.18 }}
-      transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+      variants={cardReveal}
+      initial={shouldReduceMotion ? false : 'hidden'}
+      whileInView={shouldReduceMotion ? undefined : 'visible'}
+      viewport={{ once: true, amount: 0.2 }}
       href={genesisPath}
       aria-label="Open Genesis case study"
       onPointerMove={handlePointerMove}
       onPointerLeave={resetPointer}
     >
       <div className="genesis-project-copy">
-        <div className="genesis-project-index">01 <span>/ 04</span></div>
-        <p className="genesis-project-eyebrow">AI · Product Design</p>
-        <h3>Genesis</h3>
-        <h4>AI-powered test automation platform</h4>
-        <p className="genesis-project-description">Designing an AI-driven testing workflow that helps QA teams move faster while keeping humans in control.</p>
-        <div className="genesis-project-action"><b>→</b><span>View Case Study</span></div>
+        <motion.div className="genesis-project-index" variants={revealItem}>01 <span>/ 04</span></motion.div>
+        <motion.p className="genesis-project-eyebrow" variants={revealItem}>AI · Product Design</motion.p>
+        <motion.h3 variants={revealItem}>Genesis</motion.h3>
+        <motion.h4 variants={revealItem}>AI-powered test automation platform</motion.h4>
+        <motion.p className="genesis-project-description" variants={revealItem}>Designing an AI-driven testing workflow that helps QA teams move faster while keeping humans in control.</motion.p>
+        <motion.div className="genesis-project-action" variants={revealItem}><b>→</b><span>View Case Study</span></motion.div>
       </div>
 
-      <div className="genesis-project-visual" aria-label="Interactive 3D laptop displaying the Genesis dashboard">
+      <motion.div className="genesis-project-visual" aria-label="Interactive 3D laptop displaying the Genesis dashboard" variants={revealVisual}>
         <GenesisMacBook />
-      </div>
+      </motion.div>
     </motion.a>
   );
 }
@@ -66,23 +90,24 @@ function ComskiCard() {
   return (
     <motion.a
       className="comski-showcase"
-      initial={shouldReduceMotion ? false : { opacity: 0, x: -32, scale: 0.99 }}
-      whileInView={shouldReduceMotion ? undefined : { opacity: 1, x: 0, scale: 1 }}
-      viewport={{ once: true, amount: 0.18 }}
-      transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }} href="/surya-portfolio/comski.html" aria-label="View ComSki case study">
+      variants={{ ...cardReveal, hidden: { ...cardReveal.hidden, x: -34 }, visible: { ...cardReveal.visible, x: 0 } }}
+      initial={shouldReduceMotion ? false : 'hidden'}
+      whileInView={shouldReduceMotion ? undefined : 'visible'}
+      viewport={{ once: true, amount: 0.2 }}
+      href="/surya-portfolio/comski.html" aria-label="View ComSki case study">
       <div className="comski-showcase-copy">
-        <p className="comski-showcase-eyebrow"><span>01</span><i /> COMMUNICATION AI</p>
-        <h3><span>Com</span><span>Ski</span></h3>
-        <h4>The human side<br />of communication.</h4>
-        <p className="comski-showcase-description">An AI-powered platform to practice speaking, writing, listening and reading with real-time feedback.</p>
-        <div className="comski-showcase-tags"><span>AI</span><span>EdTech</span><span>Communication</span></div>
-        <div className="comski-showcase-cta"><b aria-hidden="true">→</b><span>View Case Study</span></div>
+        <motion.p className="comski-showcase-eyebrow" variants={revealItem}><span>01</span><i /> COMMUNICATION AI</motion.p>
+        <motion.h3 variants={revealItem}><span>Com</span><span>Ski</span></motion.h3>
+        <motion.h4 variants={revealItem}>The human side<br />of communication.</motion.h4>
+        <motion.p className="comski-showcase-description" variants={revealItem}>An AI-powered platform to practice speaking, writing, listening and reading with real-time feedback.</motion.p>
+        <motion.div className="comski-showcase-tags" variants={revealItem}><span>AI</span><span>EdTech</span><span>Communication</span></motion.div>
+        <motion.div className="comski-showcase-cta" variants={revealItem}><b aria-hidden="true">→</b><span>View Case Study</span></motion.div>
       </div>
-      <div className="comski-showcase-stack" aria-label="Speaking and writing practice previews">
+      <motion.div className="comski-showcase-stack" aria-label="Speaking and writing practice previews" variants={revealVisual}>
         <div className="comski-showcase-media"><img src="https://images.unsplash.com/photo-1759984782076-2909625b0aa8?auto=format&fit=crop&fm=jpg&q=85&w=1400" alt="Woman wearing headphones practising speaking at her laptop" loading="lazy" referrerPolicy="no-referrer" /></div>
         <div className="comski-showcase-media"><img src="https://images.squarespace-cdn.com/content/v1/52f8bc3de4b0b0787ce1ea4e/7559fd5a-d2e1-4212-a276-91ea6fe0d943/BeckyPart1-053.jpg" alt="Woman writing in a notebook beside her laptop" loading="lazy" referrerPolicy="no-referrer" /></div>
       </div>
-      <div className="comski-showcase-dashboard"><img src="/surya-portfolio/comski/comski-skills-q30.webp" alt="A learner practising speaking, listening, writing and reading with ComSki" loading="lazy" /></div>
+      <motion.div className="comski-showcase-dashboard" variants={revealVisual}><img src="/surya-portfolio/comski/comski-skills-q30.webp" alt="A learner practising speaking, listening, writing and reading with ComSki" loading="lazy" /></motion.div>
     </motion.a>
   );
 }
@@ -92,19 +117,20 @@ function LaundroMartCard() {
   return (
     <motion.a
       className="laundromart-project-card"
-      initial={shouldReduceMotion ? false : { opacity: 0, x: 32, scale: 0.99 }}
-      whileInView={shouldReduceMotion ? undefined : { opacity: 1, x: 0, scale: 1 }}
-      viewport={{ once: true, amount: 0.18 }}
-      transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }} href="/surya-portfolio/laundromart/" aria-label="Open LaundroMart case study">
+      variants={{ ...cardReveal, hidden: { ...cardReveal.hidden, x: 34 }, visible: { ...cardReveal.visible, x: 0 } }}
+      initial={shouldReduceMotion ? false : 'hidden'}
+      whileInView={shouldReduceMotion ? undefined : 'visible'}
+      viewport={{ once: true, amount: 0.2 }}
+      href="/surya-portfolio/laundromart/" aria-label="Open LaundroMart case study">
       <div className="laundromart-project-copy">
-        <p className="laundromart-project-index"><span>03</span><i /> OPERATIONS SAAS</p>
-        <h3><span>Laundro</span><span>Mart</span></h3>
-        <h4>Smarter laundry operations, simplified.</h4>
-        <p className="laundromart-project-description">An AI-powered platform to manage orders, track operations and grow your laundry business.</p>
-        <div className="laundromart-project-tags"><span>AI</span><span>SaaS</span><span>Operations</span></div>
-        <div className="laundromart-project-action"><b aria-hidden="true">↗</b><span>View Case Study</span></div>
+        <motion.p className="laundromart-project-index" variants={revealItem}><span>03</span><i /> OPERATIONS SAAS</motion.p>
+        <motion.h3 variants={revealItem}><span>Laundro</span><span>Mart</span></motion.h3>
+        <motion.h4 variants={revealItem}>Smarter laundry operations, simplified.</motion.h4>
+        <motion.p className="laundromart-project-description" variants={revealItem}>An AI-powered platform to manage orders, track operations and grow your laundry business.</motion.p>
+        <motion.div className="laundromart-project-tags" variants={revealItem}><span>AI</span><span>SaaS</span><span>Operations</span></motion.div>
+        <motion.div className="laundromart-project-action" variants={revealItem}><b aria-hidden="true">↗</b><span>View Case Study</span></motion.div>
       </div>
-      <div className="laundromart-project-visual" aria-label="LaundroMart project visuals">
+      <motion.div className="laundromart-project-visual" aria-label="LaundroMart project visuals" variants={revealVisual}>
         <div className="laundromart-photo-stack">
           <div className="laundromart-photo laundromart-photo-folded">
             <img src="https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?auto=format&fit=crop&w=700&q=85" alt="Freshly folded laundry in a clean laundry workspace" loading="lazy" />
@@ -116,7 +142,7 @@ function LaundroMartCard() {
         <div className="laundromart-dashboard-preview laundromart-dashboard-video">
           <img src="/surya-portfolio/laundromart/f40750d1-25de-48ee-93d8-e5c11b6670b2-2026-10-14%20(1).gif" alt="Animated preview of the LaundroMart operations dashboard" loading="lazy" />
         </div>
-      </div>
+      </motion.div>
     </motion.a>
   );
 }
