@@ -47,29 +47,8 @@ function GenesisCard() {
         <div className="genesis-project-action"><b>→</b><span>View Case Study</span></div>
       </div>
 
-      <div className="genesis-project-visual" aria-hidden="true">
-        <div className="genesis-visual-orbit genesis-orbit-one" />
-        <div className="genesis-visual-orbit genesis-orbit-two" />
-
-        <div className="genesis-float-screen genesis-float-input">
-          <span>Input Artifacts</span>
-          <img src="/surya-portfolio/genesis/Input-Artifacts.webp" alt="" />
-        </div>
-
-        <div className="genesis-float-screen genesis-float-config">
-          <span>AI Configuration</span>
-          <img src="/surya-portfolio/genesis/AI-Configuration.webp" alt="" />
-        </div>
-
-        <div className="genesis-float-screen genesis-float-reports">
-          <span>Reports</span>
-          <img src="/surya-portfolio/genesis/Reports.webp" alt="" />
-        </div>
-
+      <div className="genesis-project-visual" aria-label="Interactive 3D laptop displaying the Genesis dashboard">
         <GenesisMacBook />
-
-        <div className="genesis-note genesis-note-top">Test<br />Smarter <span>↗</span></div>
-        <div className="genesis-note genesis-note-bottom">Build<br />Better <span>↗</span></div>
       </div>
     </a>
   );
