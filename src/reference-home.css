@@ -102,3 +102,81 @@ main .other-reference .reference-card-link:focus-visible {
   .reference-head-animation{width:300px;height:112px;top:270px}
   .head-animation-text{font-size:62px;letter-spacing:-7px;stroke-width:4}
 }
+
+/* Reference-matched editorial hero */
+.reference-home{background:#fff;min-height:100vh;overflow:hidden}
+.reference-home-viewport{height:100svh;min-height:760px;max-height:1100px;display:block;overflow:hidden}
+.reference-home-stage.hero-exact-stage{position:relative;flex:none;width:100%;max-width:none;height:100%;min-height:760px;overflow:hidden;background:radial-gradient(ellipse at 96% 82%,rgba(191,255,33,.20),transparent 12%),radial-gradient(ellipse at 52% 38%,rgba(255,255,255,.8),transparent 55%),#fff}
+.hero-kicker{position:absolute;z-index:31;left:6.2%;top:14.7%;font-size:15px;letter-spacing:.18em;color:#929292;font-weight:500;white-space:nowrap}
+.hero-kicker span{letter-spacing:0;margin-left:8px}
+.hero-headline{position:absolute;z-index:31;left:6.15%;top:19.1%;width:38%;max-width:600px;text-align:left}
+.hero-headline h1{margin:0;color:#080808;font-size:clamp(42px,4.15vw,66px);line-height:.99;letter-spacing:-.065em;font-weight:750}
+.hero-headline h1 em{font-style:normal;color:#a5a5a7;letter-spacing:-.07em}
+.hero-headline p{margin:26px 0 27px;color:#858585;font-size:clamp(16px,1.35vw,20px);line-height:1.28;letter-spacing:-.025em}
+.hero-work-cta{height:55px;min-width:194px;padding:0 10px 0 33px;justify-content:space-between;gap:26px;background:#090909;color:white;border:0;border-radius:999px;font-size:15px;font-weight:600;box-shadow:0 3px 10px #00000012}
+.hero-work-cta span{width:39px;height:39px;border-radius:50%;background:#3a3a3a;display:grid;place-items:center;font-size:23px;font-weight:300;line-height:1}
+.hero-portrait-wrap{position:absolute;z-index:12;left:30.2%;top:12.5%;width:59.4%;height:91%;display:flex;align-items:flex-end;justify-content:center;pointer-events:none}
+.hero-portrait-image{width:100%;height:100%;object-fit:contain;object-position:center bottom;filter:grayscale(1) contrast(1.06);mix-blend-mode:multiply}
+.hero-design-word{position:absolute;z-index:8;left:19%;top:43%;font-family:"Brush Script MT","Segoe Script","Comic Sans MS",cursive;font-size:clamp(170px,22vw,340px);font-weight:900;font-style:italic;letter-spacing:-.12em;line-height:.8;color:#baff19;transform:rotate(-8deg) scaleX(1.03);white-space:nowrap;opacity:.96;pointer-events:none}
+.hero-neon-orbit{position:absolute;z-index:9;left:7%;top:28%;width:88%;height:64%;overflow:visible;fill:none;stroke:#aaff00;stroke-width:1.1;pointer-events:none}
+.hero-accent{position:absolute;z-index:22;width:62px;height:7px;background:#baff19;border-radius:2px;transform:rotate(43deg);left:40.5%;top:23.4%;clip-path:polygon(0 0,100% 30%,100% 100%,10% 55%)}
+.hero-accent-two{left:39.1%;top:28.5%;width:69px;transform:rotate(23deg)}
+.hero-handnote{position:absolute;z-index:25;right:8.2%;top:14.4%;display:flex;flex-direction:column;transform:rotate(-9deg);font-family:"Segoe Script","Bradley Hand",cursive;font-size:clamp(21px,2vw,31px);line-height:1.12;color:#292929;font-style:italic;white-space:nowrap}
+.hero-note-arrow{position:absolute;z-index:25;right:17.3%;top:20%;width:105px;height:120px;fill:none;stroke:#242424;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;transform:rotate(-4deg)}
+.hero-process{position:absolute;z-index:25;right:4.2%;top:50.2%;padding-left:17px;border-left:1px solid #333;display:flex;flex-direction:column;gap:5px;color:#969696;font-size:13px;line-height:1.1;letter-spacing:.01em}
+.hero-stats{position:absolute;z-index:30;left:6.2%;bottom:6.7%;display:flex;align-items:stretch;gap:31px;color:#080808}
+.hero-stats>div{display:flex;flex-direction:column;gap:5px}
+.hero-stats strong{font-size:27px;line-height:1;font-weight:750;letter-spacing:-.05em}
+.hero-stats span{font-size:15px;line-height:1.25;color:#969696}
+.hero-stats>i{display:block;width:1px;background:#999}
+.hero-scroll-cue{position:absolute;z-index:35;left:50%;bottom:2.8%;transform:translateX(-50%);display:flex;align-items:center;flex-direction:column;gap:6px;color:#090909;font-size:13px;white-space:nowrap}
+.hero-scroll-cue b{font-size:38px;line-height:.8;font-weight:300}
+@media(max-width:1023px){
+ .reference-home-viewport{height:auto;min-height:880px;max-height:none;padding-top:72px}
+ .reference-home-stage.hero-exact-stage{min-height:808px;height:808px}
+ .hero-kicker{left:6%;top:7%;font-size:11px}
+ .hero-headline{left:6%;top:12%;width:88%;max-width:500px}
+ .hero-headline h1{font-size:clamp(39px,8vw,58px)}
+ .hero-headline p{font-size:15px;margin:17px 0 19px}
+ .hero-work-cta{height:47px;min-width:160px;padding-left:22px;font-size:13px}
+ .hero-work-cta span{width:33px;height:33px}
+ .hero-portrait-wrap{left:17%;top:36%;width:85%;height:64%}
+ .hero-design-word{left:5%;top:55%;font-size:clamp(140px,34vw,260px)}
+ .hero-neon-orbit{left:-4%;top:44%;width:110%;height:48%}
+ .hero-accent{left:52%;top:41%}
+ .hero-accent-two{left:49%;top:45%}
+ .hero-handnote{right:5%;top:28%;font-size:19px}
+ .hero-note-arrow{right:23%;top:32%;width:65px;height:80px}
+ .hero-process{right:3%;top:63%;font-size:9px;gap:4px;padding-left:8px}
+ .hero-stats{left:6%;bottom:5%;gap:17px}
+ .hero-stats strong{font-size:22px}
+ .hero-stats span{font-size:12px}
+ .hero-scroll-cue{bottom:1.8%;font-size:11px}
+ .hero-scroll-cue b{font-size:29px}
+}
+@media(max-width:560px){
+ .reference-nav{top:12px}
+ .reference-nav-inner{height:50px;padding:0 14px}
+ .reference-nav nav{gap:13px}
+ .reference-nav nav button,.reference-nav nav .resume-nav-link{font-size:11px}
+ .reference-brand{font-size:12px}
+ .reference-home-viewport{min-height:820px;padding-top:64px}
+ .reference-home-stage.hero-exact-stage{min-height:756px;height:756px}
+ .hero-kicker{top:5.5%;font-size:10px}
+ .hero-headline{top:10.5%;width:90%}
+ .hero-headline h1{font-size:clamp(36px,10vw,48px)}
+ .hero-headline p{font-size:13px;line-height:1.3}
+ .hero-work-cta{height:43px;min-width:146px}
+ .hero-portrait-wrap{left:5%;top:40%;width:103%;height:59%}
+ .hero-design-word{left:-1%;top:59%;font-size:clamp(118px,34vw,185px)}
+ .hero-neon-orbit{left:-13%;top:48%;width:130%;height:44%}
+ .hero-handnote{right:4%;top:29%;font-size:16px}
+ .hero-note-arrow{right:24%;top:34%;width:52px;height:65px}
+ .hero-process{right:2%;top:68%;font-size:8px}
+ .hero-accent{left:57%;top:43%;width:40px}
+ .hero-accent-two{left:53%;top:47%;width:46px}
+ .hero-stats{bottom:4%;gap:13px}
+ .hero-stats strong{font-size:20px}
+ .hero-stats span{font-size:11px}
+ .hero-scroll-cue{bottom:1%;font-size:10px}
+}
