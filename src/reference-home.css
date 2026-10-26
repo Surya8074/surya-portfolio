@@ -178,3 +178,11 @@ main .other-reference .reference-card-link:focus-visible {
   .cinematic-intro{display:none!important}
   .cinematic-intro *{animation:none!important;transition:none!important}
 }
+
+/* Keep the final hero signature word legible after the intro exits. */
+.reference-head-animation{width:420px;height:150px;top:clamp(390px,48vh,455px)}
+.head-animation-text{font-size:74px;letter-spacing:-7px;stroke-width:5}
+@media(max-width:1023px){
+  .reference-head-animation{width:300px;height:112px;top:270px}
+  .head-animation-text{font-size:62px;letter-spacing:-7px;stroke-width:4}
+}
