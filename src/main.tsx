@@ -25,6 +25,14 @@ const cardReveal = {
   }
 };
 
+const revealCopy = {
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.085, delayChildren: 0.08 }
+  }
+};
+
 const revealItem = {
   hidden: { opacity: 0, y: 16, filter: 'blur(4px)' },
   visible: {
@@ -68,7 +76,7 @@ function GenesisCard() {
       onPointerMove={handlePointerMove}
       onPointerLeave={resetPointer}
     >
-      <div className="genesis-project-copy">
+      <motion.div className="genesis-project-copy" variants={revealCopy}>
         <motion.div className="genesis-project-index" variants={revealItem}>01 <span>/ 04</span></motion.div>
         <motion.p className="genesis-project-eyebrow" variants={revealItem}>AI · Product Design</motion.p>
         <motion.h3 variants={revealItem}>Genesis</motion.h3>
@@ -95,7 +103,7 @@ function ComskiCard() {
       whileInView={shouldReduceMotion ? undefined : 'visible'}
       viewport={{ once: true, amount: 0.2 }}
       href="/surya-portfolio/comski.html" aria-label="View ComSki case study">
-      <div className="comski-showcase-copy">
+      <motion.div className="comski-showcase-copy" variants={revealCopy}>
         <motion.p className="comski-showcase-eyebrow" variants={revealItem}><span>01</span><i /> COMMUNICATION AI</motion.p>
         <motion.h3 variants={revealItem}><span>Com</span><span>Ski</span></motion.h3>
         <motion.h4 variants={revealItem}>The human side<br />of communication.</motion.h4>
@@ -122,7 +130,7 @@ function LaundroMartCard() {
       whileInView={shouldReduceMotion ? undefined : 'visible'}
       viewport={{ once: true, amount: 0.2 }}
       href="/surya-portfolio/laundromart/" aria-label="Open LaundroMart case study">
-      <div className="laundromart-project-copy">
+      <motion.div className="laundromart-project-copy" variants={revealCopy}>
         <motion.p className="laundromart-project-index" variants={revealItem}><span>03</span><i /> OPERATIONS SAAS</motion.p>
         <motion.h3 variants={revealItem}><span>Laundro</span><span>Mart</span></motion.h3>
         <motion.h4 variants={revealItem}>Smarter laundry operations, simplified.</motion.h4>
