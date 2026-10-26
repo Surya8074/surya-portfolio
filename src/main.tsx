@@ -207,7 +207,27 @@ function App() {
   return (
     <main>
       <header className="reference-nav"><div className="reference-nav-inner"><button className="reference-brand" onClick={() => go('#home')}><strong>Surya Kiran</strong><span className="reference-brand-divider" /><span>India</span></button><nav><button onClick={() => go('#art')}>Art</button><button onClick={() => go('#about')}>About Me</button><a className="resume-nav-link" href="/surya-portfolio/resume/">Resume</a></nav></div></header>
-      <section id="home" className="reference-home"><div className="reference-home-viewport"><div className="reference-home-stage"><div className="reference-portrait" aria-label="Portrait of Surya Kiran"><img className="reference-portrait-image" src={portraitUrl} alt="Surya Kiran" /></div><div className="reference-fade" /><div className="reference-head-animation" aria-hidden="true"><svg viewBox="0 0 420 130" className="head-animation-svg"><text className="head-animation-text" x="12" y="88">DESIGN</text></svg></div><div className="reference-hero-copy"><h1><span>Designing how products earn trust,</span><span>across <em>visual, product &amp; growth.</em></span></h1><button className="reference-work" onClick={() => go('#work')}>See my work</button></div></div></div></section>
+      <section id="home" className="reference-home">
+        <div className="reference-home-viewport">
+          <div className="reference-home-stage hero-exact-stage">
+            <div className="hero-kicker">PRODUCT DESIGNER <span>—</span></div>
+            <div className="hero-headline">
+              <h1>Designing<br />thoughtful<br />digital <em>experiences</em></h1>
+              <p>I design and build AI-powered products,<br />turning complex ideas into simple,<br />meaningful experiences.</p>
+              <button className="reference-work hero-work-cta" onClick={() => go('#work')}>See my work <span aria-hidden="true">→</span></button>
+            </div>
+            <div className="hero-portrait-wrap"><img className="reference-portrait-image hero-portrait-image" src={portraitUrl} alt="Portrait of Surya Kiran" /></div>
+            <svg className="hero-neon-orbit" viewBox="0 0 1400 600" aria-hidden="true"><path d="M70 480 C260 300 520 230 760 250 S1160 80 1320 170 C1390 210 1190 300 1030 390 S550 560 210 570 C70 570 20 540 70 480Z" /><path d="M1050 195 C1160 150 1290 120 1350 155 C1390 180 1320 220 1260 255" /></svg>
+            <div className="hero-design-word" aria-hidden="true">DESIGN</div>
+            <div className="hero-accent hero-accent-one" aria-hidden="true"></div><div className="hero-accent hero-accent-two" aria-hidden="true"></div>
+            <div className="hero-handnote"><span>UI/UX</span><span>AI Products</span><span>Problem Solver</span></div>
+            <svg className="hero-note-arrow" viewBox="0 0 120 120" aria-hidden="true"><path d="M105 12 Q50 34 26 94 M26 94 l-2 -20 M26 94 l18 -10" /></svg>
+            <div className="hero-process"><span>IDEA</span><span>RESEARCH</span><span>DESIGN</span><span>PROTOTYPE</span><span>TEST</span><span>ITERATE</span><span>LAUNCH</span></div>
+            <div className="hero-stats"><div><strong>2+</strong><span>Years<br />Experience</span></div><i></i><div><strong>4+</strong><span>Products<br />Designed</span></div></div>
+            <div className="hero-scroll-cue"><span>Scroll to explore</span><b aria-hidden="true">↓</b></div>
+          </div>
+        </div>
+      </section>
       <section id="work" className="reference-work-section"><div className="work-intro"><p>SELECTED WORK</p></div><GenesisCard /><ComskiCard /><LaundroMartCard /></section>
       <section className="other-reference" aria-label="Other Projects">
         <h2 className="other-reference-heading">Other Projects</h2>
