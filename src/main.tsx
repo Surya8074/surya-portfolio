@@ -13,7 +13,7 @@ import './comski-showcase.css';
 import ToolsWorkflow from './ToolsWorkflow';
 import GenesisMacBook from './GenesisMacBook';
 
-const portraitUrl = '/surya-portfolio/surya-portrait-cutout.png.png';
+const portraitUrl = '/surya-portfolio/surya-portrait-cutout-retouched.png';
 const genesisPath = '/surya-portfolio/work/genesis-v8/';
 const comskiPath = '/surya-portfolio/comski.html';
 
