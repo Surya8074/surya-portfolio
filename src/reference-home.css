@@ -281,24 +281,24 @@ main .other-reference .reference-card-link:focus-visible {
 }
 
 
-/* Restore the centered hero message and CTA above the artwork. */
+/* Keep the hero headline right-aligned, as in the earlier design. */
 .hero-tagline{
-  position:absolute;z-index:31;top:18%;left:50%;transform:translateX(-50%);
-  width:min(86%,820px);margin:0;color:#111;font-size:clamp(30px,2.5vw,40px);
-  line-height:1.2;letter-spacing:-.035em;font-weight:700;text-align:center;text-wrap:balance;
+  position:absolute;z-index:31;top:20%;right:17%;left:auto;transform:none;
+  width:min(50%,650px);margin:0;color:#111;font-size:clamp(30px,2.5vw,40px);
+  line-height:1.2;letter-spacing:-.035em;font-weight:700;text-align:right;text-wrap:balance;
 }
 .hero-tagline span{display:block}
 .hero-tagline span+span{color:#b4b4b4}
 .hero-tagline-cta{
-  position:absolute;z-index:31;top:33.5%;left:50%;transform:translateX(-50%);
+  position:absolute;z-index:31;top:33.5%;right:27%;left:auto;transform:none;
   min-width:170px;height:49px;font-size:14px;white-space:nowrap;
 }
-.hero-tagline-cta:hover{transform:translateX(-50%) translateY(-1px)}
+.hero-tagline-cta:hover{transform:translateY(-1px)}
 @media(max-width:1023px){
- .hero-tagline{top:15%;width:90%;font-size:clamp(27px,4.2vw,35px);line-height:1.16}
- .hero-tagline-cta{top:29%;min-width:150px;height:45px;font-size:13px}
+ .hero-tagline{top:15%;right:6%;width:68%;font-size:clamp(27px,4.2vw,35px);line-height:1.16}
+ .hero-tagline-cta{top:29%;right:24%;min-width:150px;height:45px;font-size:13px}
 }
 @media(max-width:560px){
- .hero-tagline{top:13%;width:90%;font-size:clamp(24px,6.3vw,30px);line-height:1.16;letter-spacing:-.04em}
- .hero-tagline-cta{top:26%;min-width:140px;height:42px}
+ .hero-tagline{top:13%;right:5%;width:78%;font-size:clamp(24px,6.3vw,30px);line-height:1.16;letter-spacing:-.04em}
+ .hero-tagline-cta{top:26%;right:20%;min-width:140px;height:42px}
 }
