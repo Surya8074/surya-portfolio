@@ -267,3 +267,21 @@ main .other-reference .reference-card-link:focus-visible {
 .hero-artwork-scale .hero-accent{z-index:4}
 .hero-artwork-scale .hero-portrait-wrap{z-index:5;position:absolute}
 .hero-artwork-scale .hero-portrait-image{position:relative;z-index:5;display:block;background:transparent}
+
+/* Final portrait rendering fix: preserve the retouched pixels; do not darken the glasses via blend/filter. */
+.hero-artwork-scale .hero-portrait-wrap{
+  z-index:5 !important;
+  overflow:visible !important;
+}
+.hero-artwork-scale .hero-portrait-image{
+  z-index:5 !important;
+  filter:none !important;
+  mix-blend-mode:normal !important;
+  opacity:1 !important;
+  background:transparent !important;
+  object-fit:contain !important;
+  object-position:center bottom !important;
+}
+.hero-artwork-scale .hero-design-word{z-index:2 !important}
+.hero-artwork-scale .hero-neon-orbit{z-index:3 !important}
+.hero-artwork-scale .hero-accent{z-index:4 !important}
