@@ -383,3 +383,28 @@ main .other-reference .reference-card-link:focus-visible {
  .hero-left-cta{width:190px;height:52px;padding-left:24px;font-size:14px}
  .hero-left-cta span{width:36px;height:36px;font-size:20px}
 }
+
+
+/* Keep the handwritten role note clear of the portrait and its orbit arrow. */
+.hero-handnote{
+  right:10.2%;
+  top:27%;
+  width:190px;
+  line-height:1.08;
+  transform:rotate(-4deg);
+}
+.hero-note-arrow{
+  right:23.4%;
+  top:29.5%;
+  width:78px;
+  height:88px;
+  transform:rotate(-5deg);
+}
+@media(max-width:1023px){
+  .hero-handnote{right:5%;top:28%;width:155px;font-size:clamp(15px,2vw,19px)}
+  .hero-note-arrow{right:20%;top:31%;width:65px;height:75px}
+}
+@media(max-width:560px){
+  .hero-handnote{right:3%;top:36%;width:130px;font-size:14px}
+  .hero-note-arrow{right:22%;top:39%;width:54px;height:62px}
+}
