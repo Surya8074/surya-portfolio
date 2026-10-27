@@ -443,3 +443,25 @@ main .other-reference .reference-card-link:focus-visible {
   .hero-note-arrow{right:16%;top:41%;width:48px;height:58px}
   .hero-process{right:3%;top:59%}
 }
+
+
+/* Place the experience and product metrics directly beneath the primary CTA. */
+.hero-stats{
+  left:5.85%;
+  right:auto;
+  top:calc(15.5% + 438px);
+  bottom:auto;
+  z-index:32;
+}
+@media(max-width:1023px){
+  .hero-stats{
+    left:5%;
+    top:calc(14% + 390px);
+  }
+}
+@media(max-width:560px){
+  .hero-stats{
+    left:6%;
+    top:calc(12% + 355px);
+  }
+}
