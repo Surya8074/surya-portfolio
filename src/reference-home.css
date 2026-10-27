@@ -254,34 +254,28 @@ main .other-reference .reference-card-link:focus-visible {
   .hero-artwork-scale{transform:scale(.7);transform-origin:center center}
 }
 
-/* Fix hero artwork layering: the decorative lettering must remain visible around the portrait. */
-.hero-artwork-scale .hero-design-word{z-index:13}
-.hero-artwork-scale .hero-neon-orbit{z-index:14;pointer-events:none}
-.hero-artwork-scale .hero-portrait-wrap{z-index:12}
-.hero-artwork-scale .hero-portrait-image{background:transparent}
 
-/* Final hero stacking: keep the portrait in front of DESIGN lettering and orbit. */
+/* Hero portrait: use the transparent high-resolution source without tonal or blend effects.
+   Artwork stays uniformly scaled; lettering and orbit sit behind the portrait. */
 .hero-artwork-scale{isolation:isolate}
 .hero-artwork-scale .hero-design-word{z-index:2}
 .hero-artwork-scale .hero-neon-orbit{z-index:3}
 .hero-artwork-scale .hero-accent{z-index:4}
-.hero-artwork-scale .hero-portrait-wrap{z-index:5;position:absolute}
-.hero-artwork-scale .hero-portrait-image{position:relative;z-index:5;display:block;background:transparent}
-
-/* Final portrait rendering fix: preserve the retouched pixels; do not darken the glasses via blend/filter. */
 .hero-artwork-scale .hero-portrait-wrap{
-  z-index:5 !important;
-  overflow:visible !important;
+  position:absolute;
+  z-index:5;
+  overflow:visible;
 }
 .hero-artwork-scale .hero-portrait-image{
-  z-index:5 !important;
-  filter:none !important;
-  mix-blend-mode:normal !important;
-  opacity:1 !important;
-  background:transparent !important;
-  object-fit:contain !important;
-  object-position:center bottom !important;
+  position:relative;
+  z-index:5;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center bottom;
+  filter:none;
+  mix-blend-mode:normal;
+  opacity:1;
+  background:transparent;
 }
-.hero-artwork-scale .hero-design-word{z-index:2 !important}
-.hero-artwork-scale .hero-neon-orbit{z-index:3 !important}
-.hero-artwork-scale .hero-accent{z-index:4 !important}
