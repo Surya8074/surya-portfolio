@@ -443,3 +443,28 @@ main .other-reference .reference-card-link:focus-visible {
   .hero-note-arrow{right:16%;top:41%;width:48px;height:58px}
   .hero-process{right:3%;top:59%}
 }
+
+
+/* Slightly reduce the hero copy and CTA for a more balanced composition. */
+.hero-copy-left{width:350px}
+.hero-eyebrow{font-size:14px;margin-bottom:16px;letter-spacing:.15em}
+.hero-copy-left h1{font-size:clamp(40px,3.1vw,50px);line-height:1.03;letter-spacing:-.055em}
+.hero-description{font-size:15px;line-height:1.48;margin:21px 0 25px;max-width:330px}
+.hero-left-cta{width:214px;height:58px;padding-left:29px;font-size:15px}
+.hero-left-cta span{width:40px;height:40px;font-size:22px}
+@media(max-width:1023px){
+ .hero-copy-left{width:290px}
+ .hero-eyebrow{font-size:12px;margin-bottom:14px}
+ .hero-copy-left h1{font-size:clamp(36px,4.4vw,44px);line-height:1.04}
+ .hero-description{font-size:14px;line-height:1.45;margin:18px 0 22px}
+ .hero-left-cta{width:200px;height:54px;font-size:14px}
+ .hero-left-cta span{width:38px;height:38px;font-size:21px}
+}
+@media(max-width:560px){
+ .hero-copy-left{width:88%}
+ .hero-eyebrow{font-size:10px;letter-spacing:.12em;margin-bottom:12px}
+ .hero-copy-left h1{font-size:clamp(32px,8.2vw,39px);line-height:1.04}
+ .hero-description{font-size:13px;line-height:1.45;margin:16px 0 18px}
+ .hero-left-cta{width:184px;height:50px;padding-left:22px;font-size:13px}
+ .hero-left-cta span{width:35px;height:35px;font-size:19px}
+}
