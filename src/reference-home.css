@@ -354,36 +354,53 @@ main .other-reference .reference-card-link:focus-visible {
 }
 
 
-/* Restore the approved portfolio tagline below the navigation, outside the artwork scaling group. */
+/* Match the approved centered hero composition from the reference: tagline, CTA, then artwork. */
 .hero-tagline{
   position:absolute;
   z-index:31;
-  left:6.1%;
-  top:14.5%;
-  width:min(43%,620px);
+  top:25.2%;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(86%,820px);
   margin:0;
   color:#111;
-  font-size:clamp(30px,3.05vw,44px);
-  line-height:1.08;
-  letter-spacing:-.055em;
-  font-weight:650;
+  font-size:clamp(30px,2.5vw,40px);
+  line-height:1.2;
+  letter-spacing:-.035em;
+  font-weight:700;
+  text-align:center;
   text-wrap:balance;
 }
 .hero-tagline span{display:block}
+.hero-tagline span+span{color:#b4b4b4}
+.hero-tagline-cta{
+  position:absolute;
+  z-index:31;
+  top:40.3%;
+  left:50%;
+  transform:translateX(-50%);
+  min-width:170px;
+  height:49px;
+  font-size:14px;
+  white-space:nowrap;
+}
+.hero-tagline-cta:hover{transform:translateX(-50%) translateY(-1px)}
 @media(max-width:1023px){
   .hero-tagline{
-    left:6%;
-    top:7.5%;
-    width:min(88%,560px);
-    font-size:clamp(28px,5.1vw,38px);
-    line-height:1.08;
+    top:19%;
+    width:min(90%,650px);
+    font-size:clamp(27px,4.2vw,35px);
+    line-height:1.16;
   }
+  .hero-tagline-cta{top:34%;min-width:150px;height:45px;font-size:13px}
 }
 @media(max-width:560px){
   .hero-tagline{
-    top:7%;
-    width:88%;
-    font-size:clamp(25px,7vw,32px);
-    line-height:1.1;
+    top:17%;
+    width:90%;
+    font-size:clamp(24px,6.3vw,30px);
+    line-height:1.16;
+    letter-spacing:-.04em;
   }
+  .hero-tagline-cta{top:32%;min-width:140px;height:42px}
 }
