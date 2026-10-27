@@ -418,19 +418,19 @@ main .other-reference .reference-card-link:focus-visible {
     min-height: 0;
   }
   .hero-artwork-scale {
-    transform: translateY(42px) scale(.7);
+    transform: translateY(142px) scale(.7);
     transform-origin: center center;
   }
 }
 @media (max-width: 1023px) {
   .hero-artwork-scale {
-    transform: translateY(48px) scale(.7);
+    transform: translateY(88px) scale(.7);
     transform-origin: center center;
   }
 }
 @media (max-width: 560px) {
   .hero-artwork-scale {
-    transform: translateY(38px) scale(.7);
+    transform: translateY(68px) scale(.7);
     transform-origin: center center;
   }
 }
