@@ -211,6 +211,7 @@ function App() {
         <div className="reference-home-viewport">
           <div className="reference-home-stage hero-exact-stage">
             <h1 className="hero-tagline"><span>Designing how products earn trust,</span><span>across visual, brand &amp; growth.</span></h1>
+            <button className="reference-work hero-tagline-cta" onClick={() => go('#work')}>See my work</button>
             <div className="hero-artwork-scale" aria-hidden="true">
               <div className="hero-portrait-wrap"><img className="reference-portrait-image hero-portrait-image" src={portraitUrl} alt="" /></div>
               <svg className="hero-neon-orbit" viewBox="0 0 1400 600"><path d="M70 480 C260 300 520 230 760 250 S1160 80 1320 170 C1390 210 1190 300 1030 390 S550 560 210 570 C70 570 20 540 70 480Z" /><path d="M1050 195 C1160 150 1290 120 1350 155 C1390 180 1320 220 1260 255" /></svg>
