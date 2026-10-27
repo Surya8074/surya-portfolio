@@ -253,3 +253,9 @@ main .other-reference .reference-card-link:focus-visible {
 @media(max-width:560px){
   .hero-artwork-scale{transform:scale(.7);transform-origin:center center}
 }
+
+/* Fix hero artwork layering: the decorative lettering must remain visible around the portrait. */
+.hero-artwork-scale .hero-design-word{z-index:13}
+.hero-artwork-scale .hero-neon-orbit{z-index:14;pointer-events:none}
+.hero-artwork-scale .hero-portrait-wrap{z-index:12}
+.hero-artwork-scale .hero-portrait-image{background:transparent}
