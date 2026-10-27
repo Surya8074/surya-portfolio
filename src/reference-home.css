@@ -408,3 +408,38 @@ main .other-reference .reference-card-link:focus-visible {
   .hero-handnote{right:3%;top:36%;width:130px;font-size:14px}
   .hero-note-arrow{right:22%;top:39%;width:54px;height:62px}
 }
+
+
+/* Final composition pass: give the handwritten annotation its own clean space. */
+.hero-handnote{
+  right:8.6%;
+  top:24.5%;
+  width:180px;
+  font-size:21px;
+  line-height:1.12;
+  letter-spacing:-.025em;
+  transform:rotate(-5deg);
+  text-align:left;
+}
+.hero-handnote span{display:block}
+.hero-note-arrow{
+  right:18.8%;
+  top:31%;
+  width:68px;
+  height:78px;
+  transform:rotate(8deg);
+}
+.hero-process{
+  right:8.7%;
+  top:53%;
+}
+@media(max-width:1023px){
+  .hero-handnote{right:4.5%;top:25%;width:155px;font-size:17px}
+  .hero-note-arrow{right:16%;top:32%;width:58px;height:68px}
+  .hero-process{right:4.5%;top:55%}
+}
+@media(max-width:560px){
+  .hero-handnote{right:3%;top:35%;width:125px;font-size:14px}
+  .hero-note-arrow{right:16%;top:41%;width:48px;height:58px}
+  .hero-process{right:3%;top:59%}
+}
