@@ -352,3 +352,38 @@ main .other-reference .reference-card-link:focus-visible {
   .hero-artwork-scale .hero-handnote{right:4%;top:29%;font-size:17px}
   .hero-artwork-scale .hero-note-arrow{right:23%;top:35%;width:50px;height:62px}
 }
+
+
+/* Restore the approved portfolio tagline below the navigation, outside the artwork scaling group. */
+.hero-tagline{
+  position:absolute;
+  z-index:31;
+  left:6.1%;
+  top:14.5%;
+  width:min(43%,620px);
+  margin:0;
+  color:#111;
+  font-size:clamp(30px,3.05vw,44px);
+  line-height:1.08;
+  letter-spacing:-.055em;
+  font-weight:650;
+  text-wrap:balance;
+}
+.hero-tagline span{display:block}
+@media(max-width:1023px){
+  .hero-tagline{
+    left:6%;
+    top:7.5%;
+    width:min(88%,560px);
+    font-size:clamp(28px,5.1vw,38px);
+    line-height:1.08;
+  }
+}
+@media(max-width:560px){
+  .hero-tagline{
+    top:7%;
+    width:88%;
+    font-size:clamp(25px,7vw,32px);
+    line-height:1.1;
+  }
+}
