@@ -279,3 +279,76 @@ main .other-reference .reference-card-link:focus-visible {
   opacity:1;
   background:transparent;
 }
+
+
+/* Hero cleanup: remove the previous headline block and rebalance the remaining annotations. */
+.hero-kicker,
+.hero-headline{display:none !important}
+
+/* Keep the stats anchored to the left with clearer hierarchy despite the artwork's 70% scale. */
+.hero-artwork-scale .hero-stats{
+  left:6.2%;
+  bottom:5.5%;
+  gap:38px;
+  align-items:stretch;
+}
+.hero-artwork-scale .hero-stats>div{gap:7px;min-width:92px}
+.hero-artwork-scale .hero-stats strong{
+  font-size:38px;
+  line-height:1;
+  letter-spacing:-.055em;
+}
+.hero-artwork-scale .hero-stats span{
+  font-size:19px;
+  line-height:1.2;
+  color:#858585;
+}
+.hero-artwork-scale .hero-stats>i{width:1px;min-height:62px;background:#a3a3a3}
+
+/* Give the process list more readable type and a clean, consistent vertical rhythm. */
+.hero-artwork-scale .hero-process{
+  right:4.8%;
+  top:51%;
+  padding-left:19px;
+  gap:7px;
+  font-size:17px;
+  line-height:1.16;
+  letter-spacing:.015em;
+  border-left:1px solid #a0a0a0;
+}
+
+/* Separate the annotation from its arrow so the writing never collides with the arrowhead. */
+.hero-artwork-scale .hero-handnote{
+  right:7.5%;
+  top:14%;
+  font-size:clamp(25px,2vw,32px);
+  line-height:1.14;
+}
+.hero-artwork-scale .hero-note-arrow{
+  right:18.8%;
+  top:23.5%;
+  width:92px;
+  height:106px;
+  transform:rotate(-2deg);
+}
+
+@media(max-width:1023px){
+  .hero-artwork-scale .hero-stats{left:5.5%;bottom:4.5%;gap:20px}
+  .hero-artwork-scale .hero-stats>div{min-width:70px;gap:5px}
+  .hero-artwork-scale .hero-stats strong{font-size:31px}
+  .hero-artwork-scale .hero-stats span{font-size:15px}
+  .hero-artwork-scale .hero-stats>i{min-height:48px}
+  .hero-artwork-scale .hero-process{right:3%;top:63%;font-size:13px;gap:5px;padding-left:10px}
+  .hero-artwork-scale .hero-handnote{right:5%;top:28%;font-size:21px}
+  .hero-artwork-scale .hero-note-arrow{right:22%;top:34%;width:60px;height:75px}
+}
+@media(max-width:560px){
+  .hero-artwork-scale .hero-stats{left:4%;bottom:4%;gap:13px}
+  .hero-artwork-scale .hero-stats>div{min-width:57px}
+  .hero-artwork-scale .hero-stats strong{font-size:27px}
+  .hero-artwork-scale .hero-stats span{font-size:12px}
+  .hero-artwork-scale .hero-stats>i{min-height:40px}
+  .hero-artwork-scale .hero-process{right:2%;top:68%;font-size:10px;gap:4px;padding-left:7px}
+  .hero-artwork-scale .hero-handnote{right:4%;top:29%;font-size:17px}
+  .hero-artwork-scale .hero-note-arrow{right:23%;top:35%;width:50px;height:62px}
+}
