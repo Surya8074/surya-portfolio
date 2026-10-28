@@ -225,11 +225,26 @@
           <figure><img src="https://www.helloayushi.com/images/case-studies/shine/tech-enclosure.png" alt="Custom 3D-printed PLA enclosure" loading="lazy" width="360" height="280"><figcaption>Custom PLA enclosure</figcaption></figure>
           <figure><img src="https://www.helloayushi.com/images/case-studies/shine/tech-printer.png" alt="Bambu A1 3D printer" loading="lazy" width="360" height="280"><figcaption>Bambu A1 printer</figcaption></figure>
         </div>
-        <aside class="note-card">
-          <h3>Wiring reference</h3>
-          <p>The display and touch controller share SPI data and clock lines but use separate chip-select pins. The LCD backlight uses the 5V rail; the logic uses 3.3V.</p>
-          <a href="https://github.com/helloayushisharma/Shine_DeskBuddy/blob/main/docs/WIRING.md" target="_blank" rel="noreferrer">Read the full wiring map ↗</a>
-        </aside>
+        <div class="wiring-reference">
+          <h3>Wiring reference: ILI9486 LCD on ESP32 V2</h3>
+          <p>The display ships with documentation written for Raspberry Pi GPIO. Translating to the ESP32 V2's named breakout labels took the better part of a week, and is the single artifact I most want to publish for the next student doing this build. Two non-obvious things to know up front.</p>
+          <table>
+            <thead><tr><th>LCD Pin</th><th>LCD Function</th><th>ESP32 V2 Pin</th></tr></thead>
+            <tbody>
+              <tr><td>19</td><td>MOSI (SPI data out)</td><td>MO</td></tr>
+              <tr><td>21</td><td>MISO (SPI data in)</td><td>MI</td></tr>
+              <tr><td>23</td><td>SCK (SPI clock)</td><td>SCK</td></tr>
+              <tr><td>24</td><td>LCD_CS (display chip select)</td><td>15</td></tr>
+              <tr><td>18</td><td>DC (data / command select)</td><td>27</td></tr>
+              <tr><td>22</td><td>RST (display reset)</td><td>33</td></tr>
+              <tr><td>26</td><td>TP_CS (touch chip select)</td><td>14</td></tr>
+              <tr><td>1, 17</td><td>Logic power</td><td>3V</td></tr>
+              <tr><td>6</td><td>Ground</td><td>GND</td></tr>
+              <tr><td>Backlight</td><td>LED+ (5V rail)</td><td>USB / VBUS</td></tr>
+            </tbody>
+          </table>
+          <p>ESP32 V2 pins are highlighted in blue</p>
+        </div>
         <figure class="media-frame">
           <img src="https://www.helloayushi.com/images/case-studies/shine/wiring-ref-image.png" alt="Wiring reference for the assembled Shi+ne board" loading="lazy" width="1200" height="700">
           
@@ -280,10 +295,19 @@
 
   <footer class="site-footer wrap">
     <nav aria-label="Footer">
-      <a href="../../#work">Work</a>
-      <a href="https://github.com/helloayushisharma/Shine_DeskBuddy" target="_blank" rel="noreferrer">Project repository ↗</a>
-      <a href="#main">Back to top ↑</a>
+      <a href="https://www.helloayushi.com/work">Works</a>
+      <a href="https://www.helloayushi.com/fun">Fun</a>
+      <a href="https://www.helloayushi.com/art">Art</a>
+      <a href="https://www.helloayushi.com/about">About</a>
+      <a href="https://www.helloayushi.com/resume">Resume</a>
     </nav>
+    <div class="footer-contact">
+      <a href="mailto:ayushi1717@gmail.com">ayushi1717@gmail.com</a>
+      <a href="https://www.linkedin.com/in/helloayushi">LinkedIn↗</a>
+      <a href="https://www.helloayushi.com/resume">Resume↗</a>
+      <a href="https://github.com/helloayushisharma">GitHub↗</a>
+    </div>
+    <p>Ayushi Sharma© 2026</p>
   </footer>
 </body>
 </html>
