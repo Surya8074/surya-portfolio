@@ -21,10 +21,10 @@
   <main id="main" class="wrap">
     <section class="project-intro" aria-labelledby="page-title">
       <h1 id="page-title">Shi+ne: A productivity desk companion</h1>
-      <p class="dek">A small physical witness for the little wins in focused work.</p>
+      <p class="dek">Celebrates every Notion task you finish</p>
       <ul class="tag-list" aria-label="Project disciplines">
-        <li>Smart object</li>
-        <li>Interaction design</li>
+        <li>Smart Object</li>
+        <li>Interaction Design</li>
         <li>Prototyping</li>
         <li>UX design</li>
       </ul>
@@ -37,8 +37,8 @@
 
       <dl class="project-facts">
         <div><dt>Role</dt><dd>Concept, interaction design, visual design, firmware</dd></div>
-        <div><dt>Team</dt><dd>Ayushi Sharma and Neha Sedaye</dd></div>
-        <div><dt>Built with</dt><dd>ESP32 V2, LCD, servo motor, Notion API, Fusion 360, 3D printing</dd></div>
+        <div><dt>Team</dt><dd>Ayushi Sharma + Neha Sedaye</dd></div>
+        <div><dt>Built with</dt><dd>ESP32V2, LCD, Servo Motor, Notion API, Fusion 360, 3D printer</dd></div>
       </dl>
     </section>
 
@@ -56,14 +56,14 @@
     <article class="case-study">
       <section class="section story-section" aria-labelledby="context-heading">
         <h2 id="context-heading">Context</h2>
-        <p>Shi+ne checks a Notion task list. When a task is completed, a small mechanical sunflower rises while the screen face celebrates, then the object settles back into a quiet idle state.</p>
-        <p>The product is designed to acknowledge work already done—not to send reminders, coach the user, or compete with the task at hand.</p>
+        <p>Shi+ne is a small connected object that lives on your desk and reads your Notion to-do list.</p>
+        <p>When you complete a task, it lifts a sunflower from its head, animates a celebration on its LCD face, and returns to a soft idle state. Tap it once and it acknowledges the touch with a tickled expression. Tap it five times and it gets visibly annoyed.</p>
       </section>
 
       <section class="section story-section opportunity-section" aria-labelledby="opportunity-heading">
         <h2 id="opportunity-heading">Opportunity</h2>
-        <blockquote>Focused work has small wins. A desk companion can give those moments a gentle physical signal.</blockquote>
-        <p>The design space narrowed around a presence that only becomes noticeable when something meaningful happens. It should not need attention to function.</p>
+        <blockquote>The small wins of focused work deserve a small physical witness.</blockquote>
+        <p>That framing did most of the work of narrowing the design space. Anything that competed for attention with the task itself was out. Anything that demanded interaction to function was out. What we wanted was a presence on the desk that registered effort, celebrated quietly, and otherwise let you work.</p>
         <figure class="media-frame">
           <img src="https://www.helloayushi.com/images/case-studies/shine/opportunity-sketch.png"
                alt="Early Shi+ne concept sketches exploring the shape and flower-lifting gesture"
@@ -73,8 +73,8 @@
 
       <section class="section story-section" aria-labelledby="research-heading">
         <h2 id="research-heading">Research</h2>
-        <p>Two kinds of inquiry shaped the direction: a review of existing desk companions and a week of observing task completion in Notion. The product opportunity sat between needy desk pets and passive productivity tools.</p>
-        <p>Task completion brought a short-lived sense of satisfaction, but the surrounding workspace did little to mark the transition from effort to progress.</p>
+        <p>Three threads informed the design. Adjacent products: We mapped the existing landscape of desk companions and ambient productivity objects: Tamagotchi, Cozmo, Vector, the Pomodoro plant on Etsy, the various Pixar-lamp-style desk robots on Kickstarter. The gap we wanted to occupy sat between the two: a companion that did not need feeding, did not nag, and showed up only at meaningful moments.</p>
+        <p>Self-observation: I tracked my own task-completion patterns for a week using Notion. The data was unscientific but consistent. We finished an average of 10 tasks per workday. The moment of completion produced a brief satisfaction that decayed within seconds. Nothing about our environment marked the transition.</p>
         <figure class="media-frame media-frame--narrow">
           <img src="https://www.helloayushi.com/images/case-studies/shine/research-sketches.png"
                alt="Research sketches comparing desk companions and ambient productivity objects"
@@ -88,29 +88,29 @@
           <article class="principle-card">
             <img src="https://www.helloayushi.com/images/case-studies/shine/principle-icon-1.png" alt="" loading="lazy" width="96" height="96">
             <h3>Witness, not assistant</h3>
-            <p>React to what is already done. Do not remind, suggest, or coach.</p>
+            <p>Reacts to what you have already done. It does not remind, suggest, or coach.</p>
           </article>
           <article class="principle-card">
             <img src="https://www.helloayushi.com/images/case-studies/shine/principle-icon-2.png" alt="" loading="lazy" width="96" height="96">
             <h3>Quiet by default</h3>
-            <p>No sound or notifications. The celebration is subtle and local to the desk.</p>
+            <p>No sound. No notifications. Subtle you have to look directly at the screen to confirm it.</p>
           </article>
           <article class="principle-card">
             <img src="https://www.helloayushi.com/images/case-studies/shine/principle-icon-3.png" alt="" loading="lazy" width="96" height="96">
             <h3>Charm without infantilization</h3>
-            <p>Give the object expression while keeping it at home on an adult’s desk.</p>
+            <p>Expression and personality, calibrated for an adult professional desk.</p>
           </article>
           <article class="principle-card">
             <img src="https://www.helloayushi.com/images/case-studies/shine/principle-icon-4.png" alt="" loading="lazy" width="96" height="96">
             <h3>Honest hardware</h3>
-            <p>Let the display and mechanical flower be visible parts of the design.</p>
+            <p>A face that is clearly a screen, a flower that is clearly mechanical. The poetry comes from the assembly, not from hiding it.</p>
           </article>
         </div>
       </section>
 
       <section class="section story-section" aria-labelledby="concept-heading">
         <h2 id="concept-heading">The final concept</h2>
-        <p>The signature gesture is a sunflower lifted by a servo when the task count changes. The screen face blinks, celebrates, and responds to occasional touch interactions.</p>
+        <p>The flower-pot direction led us to the gesture that became the project's signature: a sunflower that rises when you complete a task. The final concept committed to four behaviors:</p>
         <div class="image-pair">
           <figure class="media-frame">
             <img src="https://www.helloayushi.com/images/case-studies/shine/final-concept-1.png" alt="Final Shi+ne concept with the sunflower raised" loading="lazy" width="900" height="700">
@@ -166,7 +166,7 @@
 
       <section class="section story-section" aria-labelledby="industrial-heading">
         <h2 id="industrial-heading">Industrial design</h2>
-        <p>The body gives the screen a clear orientation while the deep green lower section reads like a planter. The printed enclosure was iterated to make the LCD bezel and flower mechanism manufacturable.</p>
+        <p>The form was the slowest and most iterative part of the project, which felt right for an object meant to live on a desk for years.</p>
 
         <fieldset class="industrial-picker">
           <legend>View industrial-design media</legend>
@@ -200,7 +200,7 @@
 
       <section class="section story-section" aria-labelledby="architecture-heading">
         <h2 id="architecture-heading">Technical architecture</h2>
-        <p>The ESP32 V2 connects the display, touch input, servo and Wi-Fi task polling. The device uses a 3.5-inch ILI9486 SPI touch LCD, an SG90 micro servo and a USB-C power connection.</p>
+        <p>Shi+ne is a single-board system. The Adafruit ESP32 V2 handles Wi-Fi, the display LCD (for Raspberry Pi) SPI bus, the touch input, the servo motor PWM signal, and the Notion HTTP polling loop. Power is delivered over USB-C from a wall adapter.</p>
         <div class="component-grid" aria-label="Shi+ne hardware components">
           <figure><img src="https://www.helloayushi.com/images/case-studies/shine/tech-esp32.png" alt="Adafruit ESP32 V2 Feather board" loading="lazy" width="360" height="280"><figcaption>ESP32 V2 Feather</figcaption></figure>
           <figure><img src="https://www.helloayushi.com/images/case-studies/shine/tech-lcd.png" alt="3.5 inch ILI9486 SPI touch LCD" loading="lazy" width="360" height="280"><figcaption>ILI9486 touch display</figcaption></figure>
@@ -222,7 +222,7 @@
 
       <section class="section story-section" aria-labelledby="buildlog-heading">
         <h2 id="buildlog-heading">Build log (all the hurdles)</h2>
-        <p>Hardware iteration is physical: each mismatch asks for a new measurement, a wire adjustment, or another print.</p>
+        <p>The work that produced this object did not happen as cleanly as the sections above suggest. Below are the ten moments that shaped the final design, ordered roughly as they appeared.</p>
         <div class="build-log">
           <details><summary>The LCD refused to wake up</summary><p>A blank or blue display sent the team back to the panel datasheet and ESP32 pin map to trace the connection errors.</p></details>
           <details><summary>The default driver library targeted the wrong board</summary><p>The display driver needed configuration for the specific ILI9486 panel and ESP32 pin names.</p></details>
