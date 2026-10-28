@@ -496,3 +496,49 @@ main .other-reference .reference-card-link:focus-visible {
 @media(max-width:560px){
   .hero-note-arrow{right:17%;top:44%;width:44px;height:52px}
 }
+
+
+/* Hero-to-work transition: finish the hero softly and start projects sooner. */
+.reference-home-viewport{
+  position:relative;
+  isolation:isolate;
+}
+.reference-home-viewport::after{
+  content:"";
+  position:absolute;
+  z-index:25;
+  left:0;
+  right:0;
+  bottom:0;
+  height:clamp(42px,7vh,76px);
+  pointer-events:none;
+  background:linear-gradient(to bottom,rgba(255,254,251,0),#fffefb 94%);
+}
+.reference-work-section{
+  padding-top:clamp(28px,4vh,44px);
+}
+.reference-work-section .work-intro{
+  margin-bottom:clamp(24px,3vw,36px);
+}
+.hero-scroll-cue{
+  appearance:none;
+  border:0;
+  padding:8px 12px;
+  background:transparent;
+  cursor:pointer;
+  transition:opacity .25s ease,transform .3s ease;
+}
+.hero-scroll-cue:hover{opacity:.68;transform:translate(-50%,-3px)}
+.hero-scroll-cue:focus-visible{outline:2px solid #3b5bdb;outline-offset:5px;border-radius:8px}
+.hero-scroll-cue b{animation:heroScrollNudge 1.8s ease-in-out infinite}
+@keyframes heroScrollNudge{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+#work{scroll-margin-top:90px}
+@media(max-width:1023px){
+  .reference-work-section{padding-top:30px}
+  .hero-scroll-cue{bottom:1.2%}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-scroll-cue,.hero-scroll-cue b{animation:none;transition:none}
+}
