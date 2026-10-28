@@ -542,3 +542,11 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
   html{scroll-behavior:auto}
   .hero-scroll-cue,.hero-scroll-cue b{animation:none;transition:none}
 }
+
+
+/* The artwork layer is non-interactive by default; explicitly re-enable the scroll button. */
+.hero-artwork-scale .hero-scroll-cue{
+  pointer-events:auto;
+  z-index:60;
+  position:absolute;
+}
