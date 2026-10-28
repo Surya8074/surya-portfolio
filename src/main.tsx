@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
 import { ArrowUp, FileText, Github, Linkedin } from 'lucide-react';
 import { createRoot } from 'react-dom/client';
@@ -188,27 +188,15 @@ function LaundroMartCard() {
 }
 
 function App() {
-  const lenisRef = useRef<Lenis | null>(null);
-
   useEffect(() => {
-    const lenis = new Lenis({ duration: 1.15, smoothWheel: true, touchMultiplier: 1.05, anchors: true });
-    lenisRef.current = lenis;
+    const lenis = new Lenis({ duration: 1.15, smoothWheel: true, touchMultiplier: 1.05 });
     let raf = 0;
     const render = (time: number) => { lenis.raf(time); raf = requestAnimationFrame(render); };
     raf = requestAnimationFrame(render);
-    return () => { cancelAnimationFrame(raf); lenis.destroy(); lenisRef.current = null; };
+    return () => { cancelAnimationFrame(raf); lenis.destroy(); };
   }, []);
 
-  const go = (id: string) => {
-    const target = document.querySelector<HTMLElement>(id);
-    if (!target) return;
-    if (lenisRef.current) {
-      lenisRef.current.scrollTo(target, { offset: -100, immediate: false });
-    } else {
-      const top = target.getBoundingClientRect().top + window.scrollY - 100;
-      window.scrollTo({ top, behavior: 'smooth' });
-    }
-  };
+  const go = (id: string) => { const target = document.querySelector(id); if (target) target.scrollIntoView({ behavior: 'auto', block: 'start' }); };
   const items = [
     { icon: <VscHome size={18} />, label: 'Home', onClick: () => go('#home') },
     { icon: <VscArchive size={18} />, label: 'Archive', onClick: () => go('#work') },
@@ -238,7 +226,7 @@ function App() {
               <div className="hero-process"><span>IDEA</span><span>RESEARCH</span><span>DESIGN</span><span>PROTOTYPE</span><span>TEST</span><span>ITERATE</span><span>LAUNCH</span></div>
               <div className="hero-stats"><div><strong>2+</strong><span>Years<br />Experience</span></div><i></i><div><strong>4+</strong><span>Products<br />Designed</span></div></div>
             </div>
-            <a className="hero-scroll-cue hero-scroll-cue-link" href="#work" aria-label="Scroll to selected work" onClick={(event) => { event.preventDefault(); go("#work"); }}><span>Scroll to explore</span><b aria-hidden="true">↓</b></a>
+            <a className="hero-scroll-cue hero-scroll-cue-link" href="#work" aria-label="Scroll to selected work"><span>Scroll to explore</span><b aria-hidden="true">↓</b></a>
           </div>
         </div>
       </section>
