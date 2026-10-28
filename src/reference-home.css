@@ -550,3 +550,18 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
   z-index:60;
   position:absolute;
 }
+
+
+/* Keep the scroll link outside the pointer-disabled artwork layer. */
+.hero-scroll-cue-link{
+  z-index:80;
+  position:absolute;
+  left:50%;
+  bottom:12px;
+  pointer-events:auto;
+  color:#090909;
+  text-decoration:none;
+  transform:translateX(-50%);
+}
+.hero-scroll-cue-link:hover{transform:translate(-50%,-3px);opacity:.72}
+.hero-scroll-cue-link:focus-visible{outline:2px solid #3b5bdb;outline-offset:5px;border-radius:8px}
