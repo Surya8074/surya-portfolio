@@ -132,7 +132,8 @@ h1 {
 }
 .media-frame img {
   width: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
 }
 .media-frame figcaption,
 .media-caption {
@@ -143,9 +144,9 @@ h1 {
 }
 .hero-media { margin-top: 0; }
 .hero-media img {
-  aspect-ratio: 2.35 / 1;
-  object-fit: cover;
-  background: #f6f6f4;
+  aspect-ratio: auto;
+  object-fit: contain;
+  background: transparent;
 }
 
 .project-facts {
@@ -251,7 +252,7 @@ h3 {
   gap: 14px;
   margin-top: 25px;
 }
-.image-pair .media-frame img { aspect-ratio: 1.2 / 1; object-fit: contain; background: #f8f8f6; }
+.image-pair .media-frame img { aspect-ratio: auto; object-fit: contain; background: transparent; }
 
 .state-picker, .industrial-picker {
   min-width: 0;
@@ -384,9 +385,9 @@ h3 {
 .component-grid img {
   width: 100%;
   height: 145px;
-  padding: 12px;
+  padding: 0;
   object-fit: contain;
-  background: #f7f7f5;
+  background: transparent;
 }
 .component-grid figcaption { padding: 10px 11px 12px; font-size: 12px; line-height: 1.4; }
 .note-card {
@@ -448,7 +449,7 @@ h3 {
 }
 .reflection-list strong { color: var(--ink); font-weight: 600; }
 .reflection-image { margin-top: 24px !important; }
-.reflection-image img { aspect-ratio: 1.8 / 1; object-fit: cover; }
+.reflection-image img { aspect-ratio: auto; object-fit: contain; }
 
 .closing-demo { padding-top: 36px; border-top: 1px solid var(--line); }
 .closing-demo h2 { text-align: center; }
@@ -501,7 +502,7 @@ h3 {
   .dek { font-size: 16px; }
   .tag-list { margin: 19px 0 22px; gap: 6px; }
   .hero-media { width: 100%; transform: none; }
-  .hero-media img { aspect-ratio: 1.35 / 1; object-fit: cover; }
+  .hero-media img { aspect-ratio: auto; object-fit: contain; }
   .project-facts { grid-template-columns: 1fr; gap: 13px; padding-block: 15px; }
   .project-facts dd { font-size: 13px; }
   .section { margin-top: 67px; }
