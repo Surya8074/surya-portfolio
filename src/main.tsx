@@ -225,8 +225,8 @@ function App() {
               <svg className="hero-note-arrow" viewBox="0 0 120 120"><path d="M105 12 Q50 34 26 94 M26 94 l-2 -20 M26 94 l18 -10" /></svg>
               <div className="hero-process"><span>IDEA</span><span>RESEARCH</span><span>DESIGN</span><span>PROTOTYPE</span><span>TEST</span><span>ITERATE</span><span>LAUNCH</span></div>
               <div className="hero-stats"><div><strong>2+</strong><span>Years<br />Experience</span></div><i></i><div><strong>4+</strong><span>Products<br />Designed</span></div></div>
-              <button className="hero-scroll-cue" type="button" aria-label="Scroll to selected work" onClick={() => go('#work')}><span>Scroll to explore</span><b aria-hidden="true">↓</b></button>
             </div>
+            <a className="hero-scroll-cue hero-scroll-cue-link" href="#work" aria-label="Scroll to selected work"><span>Scroll to explore</span><b aria-hidden="true">↓</b></a>
           </div>
         </div>
       </section>
