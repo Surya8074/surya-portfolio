@@ -206,6 +206,7 @@
         </fieldset>
 
         <p><strong>Manufacturing iteration:</strong> The first three prints failed at the same internal corner where the LCD bezel met the body. PLA does not cooperate with sharp internal edges in long unsupported spans, and the layer would peel away from the bed mid-print. The fix was to fillet the offending edge to a 3mm radius and split the main body into four bolted parts, which let the printer lay each surface in its preferred orientation.</p>
+        <p><strong>Lesson:</strong> The lesson worth carrying forward: in industrial design, the printable form is the real form. A geometry that looks clean in CAD but cannot be manufactured without supports is a geometry that has not finished its design phase.</p>
         <figure class="media-frame">
           <img src="https://www.helloayushi.com/images/case-studies/shine/industrial-design-images.png" alt="Shi+ne enclosure iterations and manufacturing adjustments" loading="lazy" width="1200" height="800">
           <figcaption>Some failed attempts and the servo mechanics</figcaption>
@@ -240,16 +241,16 @@
         <h2 id="buildlog-heading">Build log (all the hurdles)</h2>
         <p>The work that produced this object did not happen as cleanly as the sections above suggest. Below are the ten moments that shaped the final design, ordered roughly as they appeared.</p>
         <div class="build-log">
-          <details><summary>The LCD refused to wake up</summary><p>A blank or blue display sent the team back to the panel datasheet and ESP32 pin map to trace the connection errors.</p></details>
-          <details><summary>The default driver library targeted the wrong board</summary><p>The display driver needed configuration for the specific ILI9486 panel and ESP32 pin names.</p></details>
-          <details><summary>The 5V backlight problem</summary><p>The display logic and backlight use different voltage rails. The backlight needs 5V rather than the 3.3V logic supply.</p></details>
-          <details><summary>Permanent soldering</summary><p>Moving from a test setup to soldered connections made every wire placement harder to reverse.</p></details>
-          <details><summary>Notion API onboarding</summary><p>The integration and task database must be configured and shared correctly before the device can read updates.</p></details>
-          <details><summary>The animation library failed on compile</summary><p>Library and board compatibility needed to be resolved before the expression work could be tested on-device.</p></details>
-          <details><summary>Black flash between frames</summary><p>Rendering to an off-screen buffer helped reduce the visible flash during face animation.</p></details>
-          <details><summary>Five failed 3D prints</summary><p>Print orientation, enclosure splits, and a rounded internal corner helped make the casing more reliable.</p></details>
-          <details><summary>The flower felt mechanical</summary><p>The movement timing needed to feel like a small celebration rather than a plain servo motion.</p></details>
-          <details><summary>The sound question</summary><p>The product stayed quiet so that its feedback would not compete with focused work.</p></details>
+          <details><summary>The LCD refused to wake up</summary><p>Twenty-six pins, none labeled meaningfully. The first wired-up build produced a uniform blue rectangle. Resolved by cross-referencing the ILI9486 datasheet against the ESP32 V2 pinout and rebuilding the wiring from scratch using the table now published above.</p></details>
+          <details><summary>The default driver library targeted the wrong board</summary></details>
+          <details><summary>The 5V backlight problem</summary></details>
+          <details><summary>Permanent soldering</summary></details>
+          <details><summary>Notion API onboarding</summary></details>
+          <details><summary>The animation library failed on compile</summary></details>
+          <details><summary>Black flash between frames</summary></details>
+          <details><summary>Five failed 3D prints</summary></details>
+          <details><summary>The flower felt mechanical</summary></details>
+          <details><summary>The sound question</summary></details>
         </div>
         <p class="repo-link">Link to GitHub repository: <a href="https://github.com/helloayushisharma/Shine_DeskBuddy" target="_blank" rel="noreferrer">Click here</a>.</p>
       </section>
