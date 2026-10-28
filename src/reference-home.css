@@ -480,3 +480,19 @@ main .other-reference .reference-card-link:focus-visible {
 .hero-copy-left{top:20%}
 @media(max-width:1023px){.hero-copy-left{top:17.5%}}
 @media(max-width:560px){.hero-copy-left{top:15.5%}}
+
+
+/* Separate the handwritten note from its arrow so the arrow starts below the final line. */
+.hero-note-arrow{
+  right:21%;
+  top:35.5%;
+  width:62px;
+  height:72px;
+  transform:rotate(8deg);
+}
+@media(max-width:1023px){
+  .hero-note-arrow{right:17%;top:36%;width:54px;height:64px}
+}
+@media(max-width:560px){
+  .hero-note-arrow{right:17%;top:44%;width:44px;height:52px}
+}
