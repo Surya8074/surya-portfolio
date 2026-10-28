@@ -304,8 +304,8 @@ h3 {
 #industrial-body:checked ~ .tab-list label[for="industrial-body"],
 #industrial-servo:checked ~ .tab-list label[for="industrial-servo"],
 #industrial-movement:checked ~ .tab-list label[for="industrial-movement"] {
-  border-color: var(--green);
-  background: #eaf4f0;
+  border-color: transparent transparent var(--green) transparent;
+  background: transparent;
   color: #075d47;
 }
 #state-idle:focus-visible ~ .tab-list label[for="state-idle"],
@@ -465,7 +465,7 @@ h3 {
   text-decoration: none;
   transition: background .18s ease, color .18s ease;
 }
-.button-link:hover { background: transparent; color: var(--ink) !important; }
+.button-link:hover { color: var(--green-dark) !important; }
 
 .attribution {
   margin-top: 60px;
@@ -513,7 +513,7 @@ h3 {
   .component-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
   .component-grid img { height: 120px; }
   .tab-list { gap: 6px; }
-  .tab-list label { min-height: 34px; padding: 6px 10px; font-size: 11px; }
+  .tab-list label { min-height: 34px; padding: 6px 8px; font-size: 11px; }
   .site-footer { align-items: flex-start; }
   .site-footer nav { width: 100%; }
 }
