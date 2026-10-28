@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Shi+ne is a productivity desk companion that celebrates every Notion task you finish.">
+  <meta name="description" content="Independent recreation of a product-design case study for Shi+ne, a quiet desk companion that celebrates completed tasks.">
   <meta name="theme-color" content="#fbfbfb">
   <title>Shi+ne — A productivity desk companion</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,8 +20,9 @@
 
   <main id="main" class="wrap">
     <section class="project-intro" aria-labelledby="page-title">
+      <p class="eyebrow">Independent case-study recreation</p>
       <h1 id="page-title">Shi+ne: A productivity desk companion</h1>
-      <p class="dek">Celebrates every Notion task you finish</p>
+      <p class="dek">A small physical witness for the little wins in focused work.</p>
       <ul class="tag-list" aria-label="Project disciplines">
         <li>Smart object</li>
         <li>Interaction design</li>
@@ -38,101 +39,105 @@
 
       <dl class="project-facts">
         <div><dt>Role</dt><dd>Concept, interaction design, visual design, firmware</dd></div>
-        <div><dt>Team</dt><dd>Ayushi Sharma + Neha Sedaye</dd></div>
-        <div><dt>Built with</dt><dd>ESP32V2, LCD, Servo Motor, Notion API, Fusion 360, 3D printer</dd></div>
+        <div><dt>Team</dt><dd>Ayushi Sharma and Neha Sedaye</dd></div>
+        <div><dt>Built with</dt><dd>ESP32 V2, LCD, servo motor, Notion API, Fusion 360, 3D printing</dd></div>
       </dl>
     </section>
 
     <section class="demo-section section" aria-labelledby="demo-heading">
       <div class="section-heading">
-        
+        <p class="eyebrow">In motion</p>
         <h2 id="demo-heading">Shi+ne demo</h2>
       </div>
       <video class="demo-video" controls preload="metadata" poster="https://www.helloayushi.com/videos/case-studies/shine/demo.jpg" aria-label="Shi+ne product demonstration video">
         <source src="https://www.helloayushi.com/videos/case-studies/shine/demo.mp4" type="video/mp4">
         Your browser does not support HTML video. <a href="https://www.helloayushi.com/videos/case-studies/shine/demo.mp4">Open the demo video</a>.
       </video>
-      <p class="media-caption">Shi+ne Demo · open fullscreen from the player</p>
+      <p class="media-caption">A short demonstration of Shi+ne responding to a task update.</p>
       <p class="repo-link">Explore the device firmware, wiring, and CAD files in the <a href="https://github.com/helloayushisharma/Shine_DeskBuddy" target="_blank" rel="noreferrer">public project repository ↗</a>.</p>
     </section>
 
     <article class="case-study">
       <section class="section story-section" aria-labelledby="context-heading">
-        <h2 id="context-heading">Context</h2>
-        <p>Shi+ne is a small connected object that lives on your desk and reads your Notion to-do list.</p>
-        <p>When you complete a task, it lifts a sunflower from its head, animates a celebration on its LCD face, and returns to a soft idle state. Tap it once and it acknowledges the touch with a tickled expression. Tap it five times and it gets visibly annoyed.</p>
+        <p class="eyebrow">01 / Context</p>
+        <h2 id="context-heading">A small connected object for a working desk</h2>
+        <p>Shi+ne checks a Notion task list. When a task is completed, a small mechanical sunflower rises while the screen face celebrates, then the object settles back into a quiet idle state.</p>
+        <p>The product is designed to acknowledge work already done—not to send reminders, coach the user, or compete with the task at hand.</p>
       </section>
 
       <section class="section story-section opportunity-section" aria-labelledby="opportunity-heading">
-        <h2 id="opportunity-heading">Opportunity</h2>
-        <blockquote>The small wins of focused work deserve a small physical witness.</blockquote>
-        <p>That framing did most of the work of narrowing the design space. Anything that competed for attention with the task itself was out. Anything that demanded interaction to function was out. What we wanted was a presence on the desk that registered effort, celebrated quietly, and otherwise let you work.</p>
+        <p class="eyebrow">02 / Opportunity</p>
+        <h2 id="opportunity-heading">Make the moment of completion visible</h2>
+        <blockquote>Focused work has small wins. A desk companion can give those moments a gentle physical signal.</blockquote>
+        <p>The design space narrowed around a presence that only becomes noticeable when something meaningful happens. It should not need attention to function.</p>
         <figure class="media-frame">
           <img src="https://www.helloayushi.com/images/case-studies/shine/opportunity-sketch.png"
                alt="Early Shi+ne concept sketches exploring the shape and flower-lifting gesture"
                loading="lazy" width="1200" height="600">
-          <figcaption>Some of our initial sketches for Shi+ne</figcaption>
+          <figcaption>Early sketches explored different forms for a low-distraction desk companion.</figcaption>
         </figure>
       </section>
 
       <section class="section story-section" aria-labelledby="research-heading">
-        <h2 id="research-heading">Research</h2>
-        <p>Three threads informed the design.</p>
-        <p><strong>Adjacent products:</strong> We mapped the existing landscape of desk companions and ambient productivity objects: Tamagotchi, Cozmo, Vector, the Pomodoro plant on Etsy, the various Pixar-lamp-style desk robots on Kickstarter. The gap we wanted to occupy sat between the two: a companion that did not need feeding, did not nag, and showed up only at meaningful moments.</p>
-        <p><strong>Self-observation:</strong> I tracked my own task-completion patterns for a week using Notion. The data was unscientific but consistent. We finished an average of 10 tasks per workday. The moment of completion produced a brief satisfaction that decayed within seconds. Nothing about our environment marked the transition.</p>
+        <p class="eyebrow">03 / Research</p>
+        <h2 id="research-heading">A companion that appears only when it matters</h2>
+        <p>Two kinds of inquiry shaped the direction: a review of existing desk companions and a week of observing task completion in Notion. The product opportunity sat between needy desk pets and passive productivity tools.</p>
+        <p>Task completion brought a short-lived sense of satisfaction, but the surrounding workspace did little to mark the transition from effort to progress.</p>
         <figure class="media-frame media-frame--narrow">
           <img src="https://www.helloayushi.com/images/case-studies/shine/research-sketches.png"
                alt="Research sketches comparing desk companions and ambient productivity objects"
                loading="lazy" width="1080" height="700">
-          
+          <figcaption>Research notes mapping neighboring product categories and the space between them.</figcaption>
         </figure>
       </section>
 
       <section class="section story-section" aria-labelledby="principles-heading">
-        <h2 id="principles-heading">Design principles</h2>
+        <p class="eyebrow">04 / Design principles</p>
+        <h2 id="principles-heading">Personality without interruption</h2>
         <div class="principle-grid">
           <article class="principle-card">
             <img src="https://www.helloayushi.com/images/case-studies/shine/principle-icon-1.png" alt="" loading="lazy" width="96" height="96">
             <h3>Witness, not assistant</h3>
-            <p>Reacts to what you have already done. It does not remind, suggest, or coach.</p>
+            <p>React to what is already done. Do not remind, suggest, or coach.</p>
           </article>
           <article class="principle-card">
             <img src="https://www.helloayushi.com/images/case-studies/shine/principle-icon-2.png" alt="" loading="lazy" width="96" height="96">
             <h3>Quiet by default</h3>
-            <p>No sound. No notifications. Subtle — you have to look directly at the screen to confirm it.</p>
+            <p>No sound or notifications. The celebration is subtle and local to the desk.</p>
           </article>
           <article class="principle-card">
             <img src="https://www.helloayushi.com/images/case-studies/shine/principle-icon-3.png" alt="" loading="lazy" width="96" height="96">
             <h3>Charm without infantilization</h3>
-            <p>Expression and personality, calibrated for an adult professional desk.</p>
+            <p>Give the object expression while keeping it at home on an adult’s desk.</p>
           </article>
           <article class="principle-card">
             <img src="https://www.helloayushi.com/images/case-studies/shine/principle-icon-4.png" alt="" loading="lazy" width="96" height="96">
             <h3>Honest hardware</h3>
-            <p>A face that is clearly a screen, a flower that is clearly mechanical. The poetry comes from the assembly, not from hiding it.</p>
+            <p>Let the display and mechanical flower be visible parts of the design.</p>
           </article>
         </div>
       </section>
 
       <section class="section story-section" aria-labelledby="concept-heading">
-        <h2 id="concept-heading">The final concept</h2>
-        <p>The flower-pot direction led us to the gesture that became the project’s signature: a sunflower that rises when you complete a task. The final concept committed to four behaviors:</p>
-        <ol><li>A screen-based face with an idle blink, a celebration animation, and a small set of reactive expressions.</li><li>A servo-driven flower that lifts on task completion and lowers slowly back down.</li><li>A live connection to a Notion to-do database, polled on an interval of 15 seconds.</li><li>A capacitive interaction layer via the screen’s resistive touch, with two Easter-egg states (single tap, five rapid taps).</li><li>A long tap would enable the game Flappy Bird (perfect gateway if you want to spend some off-time on your desk).</li></ol>
+        <p class="eyebrow">05 / Final concept</p>
+        <h2 id="concept-heading">A flower that rises with progress</h2>
+        <p>The signature gesture is a sunflower lifted by a servo when the task count changes. The screen face blinks, celebrates, and responds to occasional touch interactions.</p>
         <div class="image-pair">
           <figure class="media-frame">
             <img src="https://www.helloayushi.com/images/case-studies/shine/final-concept-1.png" alt="Final Shi+ne concept with the sunflower raised" loading="lazy" width="900" height="700">
-            
+            <figcaption>Final concept with the flower lifted.</figcaption>
           </figure>
           <figure class="media-frame">
             <img src="https://www.helloayushi.com/images/case-studies/shine/final-concept-2.png" alt="Exploded view of the Shi+ne enclosure and internal parts" loading="lazy" width="900" height="700">
-            
+            <figcaption>Exploded concept view.</figcaption>
           </figure>
         </div>
       </section>
 
       <section class="section story-section" aria-labelledby="interaction-heading">
-        <h2 id="interaction-heading">Interaction model</h2>
-        <p>The interaction surface is small on purpose. Most of Shi+ne’s behavior is observed rather than triggered.</p>
+        <p class="eyebrow">06 / Interaction model</p>
+        <h2 id="interaction-heading">Most of its behavior is observed, not triggered</h2>
+        <p>The screen provides a small set of expressions. The flower and face respond to meaningful changes, then return to an unobtrusive resting state.</p>
 
         <fieldset class="state-picker">
           <legend>Explore the interaction states</legend>
@@ -150,23 +155,23 @@
           </div>
           <div class="state-panels">
             <section class="state-panel panel-idle">
-              <div><h3>Idle</h3><p>A five-frame blink animation fires every 4–7 seconds on a slight random offset. Anything faster reads as nervous. Anything slower reads as broken.</p></div>
+              <div><h3>Idle</h3><p>A brief blink occurs on a randomized interval, keeping the screen lively without making it feel restless.</p></div>
               <img src="https://www.helloayushi.com/images/case-studies/shine/images-for-eyes.png" alt="Examples of Shi+ne screen expressions" loading="lazy" width="900" height="500">
             </section>
             <section class="state-panel panel-new">
-              <div><h3>New task</h3><p>When a new task is added, Shi+ne smiles and acknowledges it.</p></div>
+              <div><h3>New task</h3><p>A new item is acknowledged with a small change in the face, without turning into a reminder or notification.</p></div>
               <img src="https://www.helloayushi.com/images/case-studies/shine/images-for-eyes.png" alt="Shi+ne expression options" loading="lazy" width="900" height="500">
             </section>
             <section class="state-panel panel-done">
-              <div><h3>Task complete</h3><p>When the Notion polling loop detects an increase in completed-task count, Shi+ne triggers a sequence: eyes squint into a smile, a small particle animation plays across the screen, and the servo arm lifts the sunflower vertically through a slot in the top of the body. The flower stays raised for around three seconds, then descends slowly. Total event duration is about five seconds.</p></div>
+              <div><h3>Task complete</h3><p>A change in the Notion task list triggers a short celebration, then the flower lowers and the device returns to idle.</p></div>
               <video controls preload="metadata" poster="https://www.helloayushi.com/videos/case-studies/shine/demo.jpg" aria-label="Shi+ne task-completion demonstration"><source src="https://www.helloayushi.com/videos/case-studies/shine/demo.mp4" type="video/mp4">Your browser does not support video playback.</video>
             </section>
             <section class="state-panel panel-tap">
-              <div><h3>Single tap</h3><p>A tickled expression: eyes go wide and the mouth opens into a small laugh. Returns to idle after two seconds.</p></div>
+              <div><h3>Single tap</h3><p>A quick touch gets a tickled expression, which returns to idle after a moment.</p></div>
               <video controls preload="metadata" aria-label="Shi+ne expression exploration video"><source src="https://www.helloayushi.com/videos/case-studies/shine/eyes-1.mp4" type="video/mp4">Your browser does not support video playback.</video>
             </section>
             <section class="state-panel panel-many-taps">
-              <div><h3>Five rapid taps</h3><p>An annoyed state. The eyes narrow, the mouth flattens, and Shi+ne refuses further input for six seconds. This was the most-loved interaction in informal testing among our cohort, because it gave the object a small dignity. You could push it, and it would push back.</p></div>
+              <div><h3>Five rapid taps</h3><p>The face narrows its eyes and ignores further input briefly, giving the object a little character.</p></div>
               <video controls preload="metadata" aria-label="Shi+ne animated expression study"><source src="https://www.helloayushi.com/videos/case-studies/shine/eyes-2.mp4" type="video/mp4">Your browser does not support video playback.</video>
             </section>
           </div>
@@ -174,10 +179,9 @@
       </section>
 
       <section class="section story-section" aria-labelledby="industrial-heading">
-        <h2 id="industrial-heading">Industrial design</h2>
-        <p>The form was the slowest and most iterative part of the project, which felt right for an object meant to live on a desk for years.</p>
-        <p><strong>Form rationale.</strong> I started from a soft cube. Cubes read as honest objects. They have orientation, they sit predictably on a flat surface, and they hold a face well. The body is split horizontally about a third of the way up, which lets the screen recess slightly into the upper volume and gives the bottom a visual base.</p>
-        <p><strong>Base treatment.</strong> The deep-green base reads as a planter. Two small black feet at the front lift the body just enough to suggest a posture, almost a little bow toward the user. Materials: PLA for the prototype, printed in white and green filaments.</p>
+        <p class="eyebrow">07 / Industrial design</p>
+        <h2 id="industrial-heading">A soft cube with a grounded base</h2>
+        <p>The body gives the screen a clear orientation while the deep green lower section reads like a planter. The printed enclosure was iterated to make the LCD bezel and flower mechanism manufacturable.</p>
 
         <fieldset class="industrial-picker">
           <legend>View industrial-design media</legend>
@@ -205,18 +209,18 @@
           </div>
         </fieldset>
 
-        <p><strong>Manufacturing iteration:</strong> The first three prints failed at the same internal corner where the LCD bezel met the body. PLA does not cooperate with sharp internal edges in long unsupported spans, and the layer would peel away from the bed mid-print. The fix was to fillet the offending edge to a 3mm radius and split the main body into four bolted parts, which let the printer lay each surface in its preferred orientation.</p>
-        <p><strong>Lesson:</strong> The lesson worth carrying forward: in industrial design, the printable form is the real form. A geometry that looks clean in CAD but cannot be manufactured without supports is a geometry that has not finished its design phase.</p>
+        <p>The first prints exposed a sharp internal corner around the display bezel. Rounding the edge and splitting the enclosure into bolted parts helped the geometry print more reliably.</p>
         <figure class="media-frame">
           <img src="https://www.helloayushi.com/images/case-studies/shine/industrial-design-images.png" alt="Shi+ne enclosure iterations and manufacturing adjustments" loading="lazy" width="1200" height="800">
-          <figcaption>Some failed attempts and the servo mechanics</figcaption>
+          <figcaption>Manufacturing iterations from early failed prints to a refined enclosure.</figcaption>
         </figure>
         <video class="inline-video" controls preload="metadata" aria-label="Shi+ne industrial design iteration video"><source src="https://www.helloayushi.com/images/case-studies/shine/industrial-design-1.mp4" type="video/mp4">Your browser does not support video playback.</video>
       </section>
 
       <section class="section story-section" aria-labelledby="architecture-heading">
-        <h2 id="architecture-heading">Technical architecture</h2>
-        <p>Shi+ne is a single-board system. The Adafruit ESP32 V2 handles Wi-Fi, the display LCD (for Raspberry Pi) SPI bus, the touch input, the servo motor PWM signal, and the Notion HTTP polling loop. Power is delivered over USB-C from a wall adapter.</p>
+        <p class="eyebrow">08 / Technical architecture</p>
+        <h2 id="architecture-heading">One small board, several coordinated jobs</h2>
+        <p>The ESP32 V2 connects the display, touch input, servo and Wi-Fi task polling. The device uses a 3.5-inch ILI9486 SPI touch LCD, an SG90 micro servo and a USB-C power connection.</p>
         <div class="component-grid" aria-label="Shi+ne hardware components">
           <figure><img src="https://www.helloayushi.com/images/case-studies/shine/tech-esp32.png" alt="Adafruit ESP32 V2 Feather board" loading="lazy" width="360" height="280"><figcaption>ESP32 V2 Feather</figcaption></figure>
           <figure><img src="https://www.helloayushi.com/images/case-studies/shine/tech-lcd.png" alt="3.5 inch ILI9486 SPI touch LCD" loading="lazy" width="360" height="280"><figcaption>ILI9486 touch display</figcaption></figure>
@@ -225,89 +229,68 @@
           <figure><img src="https://www.helloayushi.com/images/case-studies/shine/tech-enclosure.png" alt="Custom 3D-printed PLA enclosure" loading="lazy" width="360" height="280"><figcaption>Custom PLA enclosure</figcaption></figure>
           <figure><img src="https://www.helloayushi.com/images/case-studies/shine/tech-printer.png" alt="Bambu A1 3D printer" loading="lazy" width="360" height="280"><figcaption>Bambu A1 printer</figcaption></figure>
         </div>
-        <div class="wiring-reference">
-          <h3>Wiring reference: ILI9486 LCD on ESP32 V2</h3>
-          <p>The display ships with documentation written for Raspberry Pi GPIO. Translating to the ESP32 V2's named breakout labels took the better part of a week, and is the single artifact I most want to publish for the next student doing this build. Two non-obvious things to know up front.</p>
-          <table>
-            <thead><tr><th>LCD Pin</th><th>LCD Function</th><th>ESP32 V2 Pin</th></tr></thead>
-            <tbody>
-              <tr><td>19</td><td>MOSI (SPI data out)</td><td>MO</td></tr>
-              <tr><td>21</td><td>MISO (SPI data in)</td><td>MI</td></tr>
-              <tr><td>23</td><td>SCK (SPI clock)</td><td>SCK</td></tr>
-              <tr><td>24</td><td>LCD_CS (display chip select)</td><td>15</td></tr>
-              <tr><td>18</td><td>DC (data / command select)</td><td>27</td></tr>
-              <tr><td>22</td><td>RST (display reset)</td><td>33</td></tr>
-              <tr><td>26</td><td>TP_CS (touch chip select)</td><td>14</td></tr>
-              <tr><td>1, 17</td><td>Logic power</td><td>3V</td></tr>
-              <tr><td>6</td><td>Ground</td><td>GND</td></tr>
-              <tr><td>Backlight</td><td>LED+ (5V rail)</td><td>USB / VBUS</td></tr>
-            </tbody>
-          </table>
-          <p>ESP32 V2 pins are highlighted in blue</p>
-        </div>
+        <aside class="note-card">
+          <h3>Wiring reference</h3>
+          <p>The display and touch controller share SPI data and clock lines but use separate chip-select pins. The LCD backlight uses the 5V rail; the logic uses 3.3V.</p>
+          <a href="https://github.com/helloayushisharma/Shine_DeskBuddy/blob/main/docs/WIRING.md" target="_blank" rel="noreferrer">Read the full wiring map ↗</a>
+        </aside>
         <figure class="media-frame">
           <img src="https://www.helloayushi.com/images/case-studies/shine/wiring-ref-image.png" alt="Wiring reference for the assembled Shi+ne board" loading="lazy" width="1200" height="700">
-          
+          <figcaption>Wiring reference for the assembled prototype.</figcaption>
         </figure>
         <video class="inline-video" controls preload="metadata" aria-label="Shi+ne wiring reference video"><source src="https://www.helloayushi.com/images/case-studies/shine/wiring-reference-video.mp4" type="video/mp4">Your browser does not support video playback.</video>
       </section>
 
       <section class="section story-section" aria-labelledby="buildlog-heading">
-        <h2 id="buildlog-heading">Build log (all the hurdles)</h2>
-        <p>The work that produced this object did not happen as cleanly as the sections above suggest. Below are the ten moments that shaped the final design, ordered roughly as they appeared.</p>
+        <p class="eyebrow">09 / Build log</p>
+        <h2 id="buildlog-heading">Ten hurdles shaped the final build</h2>
+        <p>Hardware iteration is physical: each mismatch asks for a new measurement, a wire adjustment, or another print.</p>
         <div class="build-log">
-          <details><summary>The LCD refused to wake up</summary><p>Twenty-six pins, none labeled meaningfully. The first wired-up build produced a uniform blue rectangle. Resolved by cross-referencing the ILI9486 datasheet against the ESP32 V2 pinout and rebuilding the wiring from scratch using the table now published above.</p></details>
-          <details><summary>The default driver library targeted the wrong board</summary></details>
-          <details><summary>The 5V backlight problem</summary></details>
-          <details><summary>Permanent soldering</summary></details>
-          <details><summary>Notion API onboarding</summary></details>
-          <details><summary>The animation library failed on compile</summary></details>
-          <details><summary>Black flash between frames</summary></details>
-          <details><summary>Five failed 3D prints</summary></details>
-          <details><summary>The flower felt mechanical</summary></details>
-          <details><summary>The sound question</summary></details>
+          <details><summary>The LCD refused to wake up</summary><p>A blank or blue display sent the team back to the panel datasheet and ESP32 pin map to trace the connection errors.</p></details>
+          <details><summary>The default driver library targeted the wrong board</summary><p>The display driver needed configuration for the specific ILI9486 panel and ESP32 pin names.</p></details>
+          <details><summary>The 5V backlight problem</summary><p>The display logic and backlight use different voltage rails. The backlight needs 5V rather than the 3.3V logic supply.</p></details>
+          <details><summary>Permanent soldering</summary><p>Moving from a test setup to soldered connections made every wire placement harder to reverse.</p></details>
+          <details><summary>Notion API onboarding</summary><p>The integration and task database must be configured and shared correctly before the device can read updates.</p></details>
+          <details><summary>The animation library failed on compile</summary><p>Library and board compatibility needed to be resolved before the expression work could be tested on-device.</p></details>
+          <details><summary>Black flash between frames</summary><p>Rendering to an off-screen buffer helped reduce the visible flash during face animation.</p></details>
+          <details><summary>Five failed 3D prints</summary><p>Print orientation, enclosure splits, and a rounded internal corner helped make the casing more reliable.</p></details>
+          <details><summary>The flower felt mechanical</summary><p>The movement timing needed to feel like a small celebration rather than a plain servo motion.</p></details>
+          <details><summary>The sound question</summary><p>The product stayed quiet so that its feedback would not compete with focused work.</p></details>
         </div>
-        <p class="repo-link">Link to GitHub repository: <a href="https://github.com/helloayushisharma/Shine_DeskBuddy" target="_blank" rel="noreferrer">Click here</a>.</p>
+        <p class="repo-link">For the firmware, printable CAD, full build guide, and exact wiring notes, visit the <a href="https://github.com/helloayushisharma/Shine_DeskBuddy" target="_blank" rel="noreferrer">Shi+ne DeskBuddy repository ↗</a>.</p>
       </section>
 
       <section class="section story-section reflection-section" aria-labelledby="reflection-heading">
-        <h2 id="reflection-heading">Reflections</h2>
+        <p class="eyebrow">10 / Reflection</p>
+        <h2 id="reflection-heading">What the project made clear</h2>
         <div class="reflection-list">
-          <p><strong>Hardware design is humbling in a way software is not.</strong> A misaligned wire on perfboard is desoldering, rerouting, and praying the trace survived. Every decision in hardware has a physical cost, which makes the design process slower and the decisions more committed. I will carry that pace back into my software work.</p>
-          <p><strong>Documentation is the artifact.</strong> Half our delays came from libraries written for adjacent boards, datasheets that assumed prior knowledge, and forum posts from 2017 referencing board revisions we did not own. The most useful contribution I can make to the next student building this is the wiring table above and the firmware on GitHub. Both are now public.</p>
-          <p><strong>Restraint outperformed addition.</strong> The strongest design decisions in this project were subtractions. No sound. No app. No notifications. No second screen. Shi+ne earned its place on the desk by being less than it could have been, which is a lesson I want to bring forward into product work at scale.</p>
-          <p><strong>Scope is a love letter to the next version.</strong> Three weeks forced a tight scope. We built a complete Flappy Bird mode on Shi+ne and cut it, alongside several other ideas the hardware clearly supports. The possibility space is much larger than the shipped version, and I want to keep exploring it.</p>
+          <p><strong>Hardware makes decisions tangible.</strong> A physical connection or fit issue costs time to undo, making iteration slower and more deliberate.</p>
+          <p><strong>Documentation is part of the artifact.</strong> Wiring maps and setup guidance can be as valuable to the next builder as the device itself.</p>
+          <p><strong>Restraint can be a feature.</strong> No sound, no notifications and no extra app helped the object stay present without demanding attention.</p>
+          <p><strong>Scope creates room to continue.</strong> The shipped prototype is one point in a larger space of possible interactions and physical forms.</p>
         </div>
         <figure class="media-frame reflection-image">
           <img src="https://www.helloayushi.com/images/case-studies/shine/reflections-image.png" alt="Shi+ne desk companion shown as a finished project" loading="lazy" width="1200" height="700">
-          
+          <figcaption>Shi+ne — a productivity desk companion.</figcaption>
         </figure>
       </section>
     </article>
 
     <section class="closing-demo section" aria-labelledby="closing-demo-heading">
-      <h2 id="closing-demo-heading">Shi+ne Demo</h2>
+      <p class="eyebrow">See the prototype</p>
+      <h2 id="closing-demo-heading">A small celebration for a completed task</h2>
       <video class="demo-video" controls preload="metadata" poster="https://www.helloayushi.com/videos/case-studies/shine/demo.jpg" aria-label="Shi+ne prototype demo"><source src="https://www.helloayushi.com/videos/case-studies/shine/demo.mp4" type="video/mp4">Your browser does not support video playback.</video>
-      <p class="repo-link">Link to GitHub repository: <a class="button-link" href="https://github.com/helloayushisharma/Shine_DeskBuddy" target="_blank" rel="noreferrer">Click here</a></p>
+      <p class="repo-link"><a class="button-link" href="https://github.com/helloayushisharma/Shine_DeskBuddy" target="_blank" rel="noreferrer">View the public project repository ↗</a></p>
     </section>
 
-    </main>
+  </main>
 
   <footer class="site-footer wrap">
     <nav aria-label="Footer">
-      <a href="https://www.helloayushi.com/work">Works</a>
-      <a href="https://www.helloayushi.com/fun">Fun</a>
-      <a href="https://www.helloayushi.com/art">Art</a>
-      <a href="https://www.helloayushi.com/about">About</a>
-      <a href="https://www.helloayushi.com/resume">Resume</a>
+      <a href="/work">Work</a>
+      <a href="https://github.com/helloayushisharma/Shine_DeskBuddy" target="_blank" rel="noreferrer">Project repository ↗</a>
+      <a href="#main">Back to top ↑</a>
     </nav>
-    <div class="footer-contact">
-      <a href="mailto:ayushi1717@gmail.com">ayushi1717@gmail.com</a>
-      <a href="https://www.linkedin.com/in/helloayushi">LinkedIn↗</a>
-      <a href="https://www.helloayushi.com/resume">Resume↗</a>
-      <a href="https://github.com/helloayushisharma">GitHub↗</a>
-    </div>
-    <p>Ayushi Sharma© 2026</p>
   </footer>
 </body>
 </html>
