@@ -535,3 +535,40 @@ h3 {
     transition-duration: .01ms !important;
   }
 }
+
+/* Wiring reference: simple editorial table, no decorative card treatment. */
+.wiring-reference {
+  margin: 28px 0;
+}
+.wiring-reference h3 {
+  margin-bottom: 10px;
+}
+.wiring-reference table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  line-height: 1.45;
+  text-align: left;
+}
+.wiring-reference th,
+.wiring-reference td {
+  padding: 9px 10px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.wiring-reference th {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 500;
+}
+.wiring-reference td:last-child {
+  color: #2766b0;
+}
+@media (max-width: 520px) {
+  .wiring-reference {
+    overflow-x: auto;
+  }
+  .wiring-reference table {
+    min-width: 440px;
+  }
+}
