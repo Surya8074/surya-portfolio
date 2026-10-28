@@ -111,6 +111,7 @@
       <section class="section story-section" aria-labelledby="concept-heading">
         <h2 id="concept-heading">The final concept</h2>
         <p>The flower-pot direction led us to the gesture that became the project's signature: a sunflower that rises when you complete a task. The final concept committed to four behaviors:</p>
+        <ol><li>A screen-based face with an idle blink, a celebration animation, and a small set of reactive expressions.</li><li>A servo-driven flower that lifts on task completion and lowers slowly back down.</li><li>A live connection to a Notion to-do database, polled on an interval of 15 seconds.</li><li>A capacitive interaction layer via the screen’s resistive touch, with two Easter-egg states (single tap, five rapid taps).</li><li>A long tap would enable the game Flappy Bird (perfect gateway if you want to spend some off-time on your desk).</li></ol>
         <div class="image-pair">
           <figure class="media-frame">
             <img src="https://www.helloayushi.com/images/case-studies/shine/final-concept-1.png" alt="Final Shi+ne concept with the sunflower raised" loading="lazy" width="900" height="700">
@@ -191,7 +192,8 @@
           </div>
         </fieldset>
 
-        <p>The first prints exposed a sharp internal corner around the display bezel. Rounding the edge and splitting the enclosure into bolted parts helped the geometry print more reliably.</p>
+        <p><strong>Form rationale.</strong> I started from a soft cube. Cubes read as honest objects. They have orientation, they sit predictably on a flat surface, and they hold a face well. The body is split horizontally about a third of the way up, which lets the screen recess slightly into the upper volume and gives the bottom a visual base.</p>
+        <p><strong>Base treatment.</strong> The deep-green base reads as a planter. Two small black feet at the front lift the body just enough to suggest a posture, almost a little bow toward the user. Materials: PLA for the prototype, printed in white and green filaments.</p>
         <figure class="media-frame">
           <img src="https://www.helloayushi.com/images/case-studies/shine/industrial-design-images.png" alt="Shi+ne enclosure iterations and manufacturing adjustments" loading="lazy" width="1200" height="800">
         </figure>
@@ -209,11 +211,26 @@
           <figure><img src="https://www.helloayushi.com/images/case-studies/shine/tech-enclosure.png" alt="Custom 3D-printed PLA enclosure" loading="lazy" width="360" height="280"><figcaption>Custom PLA enclosure</figcaption></figure>
           <figure><img src="https://www.helloayushi.com/images/case-studies/shine/tech-printer.png" alt="Bambu A1 3D printer" loading="lazy" width="360" height="280"><figcaption>Bambu A1 printer</figcaption></figure>
         </div>
-        <aside class="note-card">
-          <h3>Wiring reference</h3>
-          <p>The display and touch controller share SPI data and clock lines but use separate chip-select pins. The LCD backlight uses the 5V rail; the logic uses 3.3V.</p>
-          <a href="https://github.com/helloayushisharma/Shine_DeskBuddy/blob/main/docs/WIRING.md" target="_blank" rel="noreferrer">Read the full wiring map ↗</a>
-        </aside>
+        <div class="wiring-reference">
+          <h3>Wiring reference: ILI9486 LCD on ESP32 V2</h3>
+          <p>The display ships with documentation written for Raspberry Pi GPIO. Translating to the ESP32 V2's named breakout labels took the better part of a week, and is the single artifact I most want to publish for the next student doing this build. Two non-obvious things to know up front.</p>
+          <table>
+            <thead><tr><th>LCD Pin</th><th>LCD Function</th><th>ESP32 V2 Pin</th></tr></thead>
+            <tbody>
+              <tr><td>19</td><td>MOSI (SPI data out)</td><td>MO</td></tr>
+              <tr><td>21</td><td>MISO (SPI data in)</td><td>MI</td></tr>
+              <tr><td>23</td><td>SCK (SPI clock)</td><td>SCK</td></tr>
+              <tr><td>24</td><td>LCD_CS (display chip select)</td><td>15</td></tr>
+              <tr><td>18</td><td>DC (data / command select)</td><td>27</td></tr>
+              <tr><td>22</td><td>RST (display reset)</td><td>33</td></tr>
+              <tr><td>26</td><td>TP_CS (touch chip select)</td><td>14</td></tr>
+              <tr><td>1, 17</td><td>Logic power</td><td>3V</td></tr>
+              <tr><td>6</td><td>Ground</td><td>GND</td></tr>
+              <tr><td>Backlight</td><td>LED+ (5V rail)</td><td>USB / VBUS</td></tr>
+            </tbody>
+          </table>
+          <p>ESP32 V2 pins are highlighted in blue</p>
+        </div>
         <figure class="media-frame">
           <img src="https://www.helloayushi.com/images/case-studies/shine/wiring-ref-image.png" alt="Wiring reference for the assembled Shi+ne board" loading="lazy" width="1200" height="700">
         </figure>
@@ -225,15 +242,15 @@
         <p>The work that produced this object did not happen as cleanly as the sections above suggest. Below are the ten moments that shaped the final design, ordered roughly as they appeared.</p>
         <div class="build-log">
           <details><summary>The LCD refused to wake up</summary><p>A blank or blue display sent the team back to the panel datasheet and ESP32 pin map to trace the connection errors.</p></details>
-          <details><summary>The default driver library targeted the wrong board</summary><p>The display driver needed configuration for the specific ILI9486 panel and ESP32 pin names.</p></details>
-          <details><summary>The 5V backlight problem</summary><p>The display logic and backlight use different voltage rails. The backlight needs 5V rather than the 3.3V logic supply.</p></details>
-          <details><summary>Permanent soldering</summary><p>Moving from a test setup to soldered connections made every wire placement harder to reverse.</p></details>
-          <details><summary>Notion API onboarding</summary><p>The integration and task database must be configured and shared correctly before the device can read updates.</p></details>
-          <details><summary>The animation library failed on compile</summary><p>Library and board compatibility needed to be resolved before the expression work could be tested on-device.</p></details>
-          <details><summary>Black flash between frames</summary><p>Rendering to an off-screen buffer helped reduce the visible flash during face animation.</p></details>
-          <details><summary>Five failed 3D prints</summary><p>Print orientation, enclosure splits, and a rounded internal corner helped make the casing more reliable.</p></details>
-          <details><summary>The flower felt mechanical</summary><p>The movement timing needed to feel like a small celebration rather than a plain servo motion.</p></details>
-          <details><summary>The sound question</summary><p>The product stayed quiet so that its feedback would not compete with focused work.</p></details>
+          <details><summary>The default driver library targeted the wrong board</summary></details>
+          <details><summary>The 5V backlight problem</summary></details>
+          <details><summary>Permanent soldering</summary></details>
+          <details><summary>Notion API onboarding</summary></details>
+          <details><summary>The animation library failed on compile</summary></details>
+          <details><summary>Black flash between frames</summary></details>
+          <details><summary>Five failed 3D prints</summary></details>
+          <details><summary>The flower felt mechanical</summary></details>
+          <details><summary>The sound question</summary></details>
         </div>
         <p class="repo-link">For the firmware, printable CAD, full build guide, and exact wiring notes, visit the <a href="https://github.com/helloayushisharma/Shine_DeskBuddy" target="_blank" rel="noreferrer">Shi+ne DeskBuddy repository ↗</a>.</p>
       </section>
