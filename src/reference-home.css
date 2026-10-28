@@ -574,3 +574,52 @@ html{scroll-behavior:auto !important;scroll-padding-top:0}
 .hero-scroll-cue,.hero-scroll-cue-link{transition:none !important}
 .hero-scroll-cue:hover,.hero-scroll-cue-link:hover{transform:translateX(-50%);opacity:1}
 .reference-home-viewport::after{display:none}
+
+
+/* Refine the primary “See my work” CTA: lighter visual weight, same visual identity. */
+.hero-work-cta{
+  width:260px !important;
+  min-width:0 !important;
+  height:64px !important;
+  padding:0 10px 0 30px !important;
+  gap:18px !important;
+  font-size:17px !important;
+  line-height:1 !important;
+  box-sizing:border-box;
+}
+.hero-work-cta span{
+  width:42px !important;
+  height:42px !important;
+  flex:0 0 42px;
+  font-size:23px !important;
+}
+@media(max-width:1023px){
+  .hero-work-cta{
+    width:220px !important;
+    height:54px !important;
+    padding-left:24px !important;
+    gap:14px !important;
+    font-size:15px !important;
+  }
+  .hero-work-cta span{
+    width:36px !important;
+    height:36px !important;
+    flex-basis:36px;
+    font-size:21px !important;
+  }
+}
+@media(max-width:560px){
+  .hero-work-cta{
+    width:190px !important;
+    height:48px !important;
+    padding-left:20px !important;
+    gap:12px !important;
+    font-size:14px !important;
+  }
+  .hero-work-cta span{
+    width:32px !important;
+    height:32px !important;
+    flex-basis:32px;
+    font-size:19px !important;
+  }
+}
