@@ -565,3 +565,12 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
 }
 .hero-scroll-cue-link:hover{transform:translate(-50%,-3px);opacity:.72}
 .hero-scroll-cue-link:focus-visible{outline:2px solid #3b5bdb;outline-offset:5px;border-radius:8px}
+
+
+/* Disable custom scroll animations and restore normal browser scrolling. */
+html{scroll-behavior:auto !important;scroll-padding-top:0}
+#work{scroll-margin-top:0}
+.hero-scroll-cue b{animation:none !important}
+.hero-scroll-cue,.hero-scroll-cue-link{transition:none !important}
+.hero-scroll-cue:hover,.hero-scroll-cue-link:hover{transform:translateX(-50%);opacity:1}
+.reference-home-viewport::after{display:none}
