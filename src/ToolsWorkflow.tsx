@@ -9,6 +9,8 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import './tools-workflow.css';
+import './tools-workflow-scroll.css';
+import './tools-workflow-scroll.js';
 
 type ToolGroup = {
   number: string;
