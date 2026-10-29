@@ -1,0 +1,79 @@
+/* HOW I WORK — scroll-driven card fan-out */
+#tools-workflow .tw-workflow.tw-workflow-scroll-enhanced {
+  position: relative;
+  padding-bottom: 82vh;
+}
+
+#tools-workflow .tw-workflow-scroll-enhanced .tw-stages {
+  position: sticky;
+  top: var(--tw-stage-sticky-top, 34vh);
+  z-index: 4;
+  isolation: isolate;
+}
+
+#tools-workflow .tw-workflow-scroll-enhanced .tw-stage {
+  position: relative;
+  transform:
+    translate3d(var(--tw-stage-pile-x, 0px), var(--tw-stage-pile-y, 0px), 0)
+    rotate(var(--tw-stage-pile-r, 0deg))
+    scale(.84);
+  transform-origin: center center;
+  transform-style: preserve-3d;
+  transition:
+    transform 760ms cubic-bezier(.2, .85, .25, 1),
+    box-shadow 420ms ease,
+    border-color 420ms ease;
+  transition-delay: var(--tw-stage-delay, 0ms);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+#tools-workflow .tw-workflow-scroll-enhanced .tw-stage.is-popped {
+  transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+}
+
+#tools-workflow .tw-workflow-scroll-enhanced .tw-stage.is-popped:hover {
+  transform: translate3d(0, -4px, 0) rotate(0deg) scale(1);
+  border-color: #d5d9e0;
+  box-shadow: 0 8px 22px rgba(27, 35, 52, .075);
+}
+
+#tools-workflow .tw-workflow-scroll-enhanced .tw-stage-top {
+  transition: transform 420ms cubic-bezier(.2, .85, .25, 1);
+}
+
+#tools-workflow .tw-workflow-scroll-enhanced .tw-stage.is-popped .tw-stage-top {
+  transform: translateY(0);
+}
+
+@media (max-width: 1023px) {
+  #tools-workflow .tw-workflow-scroll-enhanced {
+    padding-bottom: 0;
+  }
+  #tools-workflow .tw-workflow-scroll-enhanced .tw-stages {
+    position: relative;
+    top: auto;
+  }
+  #tools-workflow .tw-workflow-scroll-enhanced .tw-stage,
+  #tools-workflow .tw-workflow-scroll-enhanced .tw-stage.is-popped {
+    transform: none !important;
+    transition: none;
+    will-change: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #tools-workflow .tw-workflow-scroll-enhanced {
+    padding-bottom: 0;
+  }
+  #tools-workflow .tw-workflow-scroll-enhanced .tw-stages {
+    position: relative;
+    top: auto;
+  }
+  #tools-workflow .tw-workflow-scroll-enhanced .tw-stage,
+  #tools-workflow .tw-workflow-scroll-enhanced .tw-stage.is-popped {
+    transform: none !important;
+    transition: none !important;
+    will-change: auto;
+  }
+}
