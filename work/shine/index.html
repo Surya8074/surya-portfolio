@@ -128,43 +128,58 @@
         <h2 id="interaction-heading">Interaction model</h2>
         <p>The screen provides a small set of expressions. The flower and face respond to meaningful changes, then return to an unobtrusive resting state.</p>
 
-        <fieldset class="state-picker">
-          <legend>Explore the interaction states</legend>
-          <input class="visually-hidden" type="radio" name="state" id="state-idle" checked>
-          <input class="visually-hidden" type="radio" name="state" id="state-new">
-          <input class="visually-hidden" type="radio" name="state" id="state-done">
-          <input class="visually-hidden" type="radio" name="state" id="state-tap">
-          <input class="visually-hidden" type="radio" name="state" id="state-many-taps">
-          <div class="tab-list">
-            <label for="state-idle">Idle</label>
-            <label for="state-new">New task</label>
-            <label for="state-done">Task complete</label>
-            <label for="state-tap">Single tap</label>
-            <label for="state-many-taps">Five taps</label>
-          </div>
-          <div class="state-panels">
-            <section class="state-panel panel-idle">
-              <div><h3>Idle</h3><p>A brief blink occurs on a randomized interval, keeping the screen lively without making it feel restless.</p></div>
-              <img src="https://www.helloayushi.com/images/case-studies/shine/images-for-eyes.png" alt="Examples of Shi+ne screen expressions" loading="lazy" width="900" height="500">
-            </section>
-            <section class="state-panel panel-new">
-              <div><h3>New task</h3><p>A new item is acknowledged with a small change in the face, without turning into a reminder or notification.</p></div>
-              <img src="https://www.helloayushi.com/images/case-studies/shine/images-for-eyes.png" alt="Shi+ne expression options" loading="lazy" width="900" height="500">
-            </section>
-            <section class="state-panel panel-done">
-              <div><h3>Task complete</h3><p>A change in the Notion task list triggers a short celebration, then the flower lowers and the device returns to idle.</p></div>
-              <video controls preload="metadata" poster="https://www.helloayushi.com/videos/case-studies/shine/demo.jpg" aria-label="Shi+ne task-completion demonstration"><source src="https://www.helloayushi.com/videos/case-studies/shine/demo.mp4" type="video/mp4">Your browser does not support video playback.</video>
-            </section>
-            <section class="state-panel panel-tap">
-              <div><h3>Single tap</h3><p>A quick touch gets a tickled expression, which returns to idle after a moment.</p></div>
-              <video controls preload="metadata" aria-label="Shi+ne expression exploration video"><source src="https://www.helloayushi.com/videos/case-studies/shine/eyes-1.mp4" type="video/mp4">Your browser does not support video playback.</video>
-            </section>
-            <section class="state-panel panel-many-taps">
-              <div><h3>Five rapid taps</h3><p>The face narrows its eyes and ignores further input briefly, giving the object a little character.</p></div>
-              <video controls preload="metadata" aria-label="Shi+ne animated expression study"><source src="https://www.helloayushi.com/videos/case-studies/shine/eyes-2.mp4" type="video/mp4">Your browser does not support video playback.</video>
-            </section>
-          </div>
-        </fieldset>
+        <div class="interaction-state-grid" aria-label="Shi+ne interaction states">
+          <figure class="interaction-state-card">
+            <svg class="interaction-face" viewBox="0 0 338 224" role="img" aria-label="Idle face expression">
+              <rect width="338" height="224" rx="26" fill="#090a0b"/>
+              <circle cx="113" cy="105" r="39" fill="#e5eef3"/><circle cx="225" cy="105" r="39" fill="#e5eef3"/>
+              <circle cx="113" cy="105" r="15" fill="#090a0b"/><circle cx="225" cy="105" r="15" fill="#090a0b"/>
+              <path d="M151 174 Q169 188 187 174" fill="none" stroke="#e5eef3" stroke-width="8" stroke-linecap="round"/>
+            </svg>
+            <figcaption>Idle State</figcaption>
+          </figure>
+          <figure class="interaction-state-card">
+            <svg class="interaction-face" viewBox="0 0 338 224" role="img" aria-label="New task face expression">
+              <rect width="338" height="224" rx="26" fill="#090a0b"/>
+              <circle cx="113" cy="105" r="39" fill="#e5eef3"/><circle cx="225" cy="105" r="39" fill="#e5eef3"/>
+              <circle cx="113" cy="105" r="15" fill="#090a0b"/><circle cx="225" cy="105" r="15" fill="#090a0b"/>
+              <path d="M151 174 Q169 193 187 174" fill="none" stroke="#e5eef3" stroke-width="8" stroke-linecap="round"/>
+            </svg>
+            <figcaption>Added new task</figcaption>
+          </figure>
+          <figure class="interaction-state-card">
+            <svg class="interaction-face" viewBox="0 0 338 224" role="img" aria-label="Task completion celebration expression">
+              <rect width="338" height="224" rx="26" fill="#090a0b"/>
+              <path d="M75 115 Q95 75 115 115 M192 115 Q212 75 232 115" fill="none" stroke="#e5eef3" stroke-width="12" stroke-linecap="round"/>
+              <circle cx="84" cy="163" r="8" fill="#c98c99"/><circle cx="254" cy="163" r="8" fill="#c98c99"/>
+              <path d="M143 171 Q169 198 195 171" fill="none" stroke="#e5eef3" stroke-width="9" stroke-linecap="round"/>
+              <rect x="42" y="52" width="13" height="7" rx="2" fill="#d5b34c" transform="rotate(48 48 55)"/>
+              <rect x="83" y="52" width="13" height="7" rx="2" fill="#00ad91" transform="rotate(-8 89 55)"/>
+              <rect x="133" y="28" width="13" height="7" rx="2" fill="#ed3d70" transform="rotate(-55 139 31)"/>
+              <rect x="176" y="20" width="13" height="7" rx="2" fill="#17657b" transform="rotate(-82 182 23)"/>
+              <rect x="258" y="128" width="13" height="7" rx="2" fill="#006e50" transform="rotate(-20 264 131)"/>
+              <rect x="220" y="166" width="13" height="7" rx="2" fill="#24221a" transform="rotate(64 226 169)"/>
+            </svg>
+            <figcaption>Completion state</figcaption>
+          </figure>
+          <figure class="interaction-state-card">
+            <svg class="interaction-face" viewBox="0 0 262 174" role="img" aria-label="Single tap happy expression">
+              <rect width="262" height="174" rx="24" fill="#090a0b"/>
+              <path d="M65 86 Q85 54 105 86 M157 86 Q177 54 197 86" fill="none" stroke="#e5eef3" stroke-width="10" stroke-linecap="round"/>
+              <circle cx="67" cy="121" r="9" fill="#c98c99"/><circle cx="195" cy="121" r="9" fill="#c98c99"/>
+              <path d="M118 137 Q131 146 144 137" fill="none" stroke="#e5eef3" stroke-width="7" stroke-linecap="round"/>
+            </svg>
+            <figcaption>Single tap</figcaption>
+          </figure>
+          <figure class="interaction-state-card">
+            <svg class="interaction-face" viewBox="0 0 262 174" role="img" aria-label="Five taps dizzy expression">
+              <rect width="262" height="174" rx="24" fill="#090a0b"/>
+              <path d="M67 59 L103 95 M103 59 L67 95 M159 59 L195 95 M195 59 L159 95" fill="none" stroke="#e5eef3" stroke-width="9" stroke-linecap="round"/>
+              <path d="M118 139 Q131 129 144 139" fill="none" stroke="#e5eef3" stroke-width="7" stroke-linecap="round"/>
+            </svg>
+            <figcaption>Five taps</figcaption>
+          </figure>
+        </div>
       </section>
 
       <section class="section story-section" aria-labelledby="industrial-heading">
