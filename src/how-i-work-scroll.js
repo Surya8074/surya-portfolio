@@ -6,7 +6,6 @@
   const REDUCED_QUERY = "(prefers-reduced-motion: reduce)";
   const POP_THRESHOLDS = [0.14, 0.37, 0.60, 0.83];
   const ROTATIONS = [-7, 5, -3, 6];
-  const RANGE = 680;
 
   let workflow;
   let stageList;
@@ -14,6 +13,7 @@
   let initialized = false;
   let frameQueued = false;
   let documentTop = 0;
+  let animationRange = 0;
 
   const desktop = window.matchMedia(DESKTOP_QUERY);
   const reducedMotion = window.matchMedia(REDUCED_QUERY);
@@ -80,6 +80,7 @@
     const stickyTop = Math.max(28, Math.round(window.innerHeight * 0.34));
     stageList.style.setProperty("--tw-stage-sticky-top", `${stickyTop}px`);
     documentTop = window.scrollY + stageList.getBoundingClientRect().top;
+    animationRange = Math.max(900, Math.round(window.innerHeight * 1.25));
     stageList.classList.remove("tw-stage-measuring");
   }
 
@@ -93,7 +94,7 @@
 
     const stickyTop = Math.max(28, Math.round(window.innerHeight * 0.34));
     const startScroll = documentTop - stickyTop;
-    const progress = Math.max(0, Math.min(1, (window.scrollY - startScroll) / RANGE));
+    const progress = Math.max(0, Math.min(1, (window.scrollY - startScroll) / animationRange));
 
     stages.forEach((stage, index) => {
       stage.classList.toggle("is-popped", progress >= POP_THRESHOLDS[index]);
