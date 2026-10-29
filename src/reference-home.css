@@ -733,3 +733,28 @@ html{scroll-behavior:auto !important;scroll-padding-top:0}
     padding-right:7px !important;
   }
 }
+
+
+/* Balance the CTA by sizing the pill to its contents, not leaving a blank right tail. */
+.hero-copy-left .hero-left-cta{
+  display:inline-flex !important;
+  width:fit-content !important;
+  min-width:0 !important;
+  max-width:none !important;
+  height:46px !important;
+  min-height:46px !important;
+  padding:0 10px 0 22px !important;
+  gap:10px !important;
+  justify-content:flex-start !important;
+  align-items:center !important;
+  box-sizing:border-box !important;
+}
+.hero-copy-left .hero-left-cta span{
+  display:grid !important;
+  width:32px !important;
+  height:32px !important;
+  min-width:32px !important;
+  max-width:32px !important;
+  flex:0 0 32px !important;
+  margin:0 !important;
+}
