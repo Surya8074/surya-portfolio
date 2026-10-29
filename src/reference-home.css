@@ -714,3 +714,22 @@ html{scroll-behavior:auto !important;scroll-padding-top:0}
     flex-basis:32px !important;
   }
 }
+
+
+/* Tighten spacing between the CTA label and arrow without changing button size. */
+.hero-copy-left .hero-left-cta{
+  justify-content:flex-start !important;
+  gap:10px !important;
+  padding-left:22px !important;
+  padding-right:8px !important;
+}
+.hero-copy-left .hero-left-cta span{
+  margin-left:0 !important;
+}
+@media(max-width:1023px){
+  .hero-copy-left .hero-left-cta{
+    gap:9px !important;
+    padding-left:19px !important;
+    padding-right:7px !important;
+  }
+}
