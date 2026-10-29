@@ -1,7 +1,7 @@
 /* HOW I WORK — scroll-driven card fan-out */
 #tools-workflow .tw-workflow.tw-workflow-scroll-enhanced {
   position: relative;
-  padding-bottom: 155vh;
+  padding-bottom: 240vh;
 }
 
 #tools-workflow .tw-workflow-scroll-enhanced .tw-stages {
@@ -9,6 +9,12 @@
   top: var(--tw-stage-sticky-top, 34vh);
   z-index: 4;
   isolation: isolate;
+}
+
+/* Keep measurements in the real four-column layout before piling cards. */
+#tools-workflow .tw-workflow-scroll-enhanced .tw-stages.tw-stage-measuring .tw-stage {
+  transform: none !important;
+  transition: none !important;
 }
 
 #tools-workflow .tw-workflow-scroll-enhanced .tw-stage {
