@@ -261,7 +261,7 @@ h3 {
 
 .final-concept-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 227px;
+  grid-template-columns: minmax(0, 1fr) 190px;
   align-items: start;
   column-gap: 48px;
 }
