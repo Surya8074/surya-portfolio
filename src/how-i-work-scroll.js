@@ -47,6 +47,7 @@
   function measure() {
     if (!stageList || !stages.length || !desktop.matches || reducedMotion.matches) {
       workflow?.style.removeProperty("--tw-stage-sticky-top");
+      workflow?.style.removeProperty("padding-bottom");
       stages.forEach((stage) => {
         stage.style.removeProperty("--tw-stage-pile-x");
         stage.style.removeProperty("--tw-stage-pile-y");
@@ -80,7 +81,9 @@
     const stickyTop = Math.max(28, Math.round(window.innerHeight * 0.34));
     stageList.style.setProperty("--tw-stage-sticky-top", `${stickyTop}px`);
     documentTop = window.scrollY + stageList.getBoundingClientRect().top;
-    animationRange = Math.max(900, Math.round(window.innerHeight * 1.25));
+    // Match the parent's runway to the full scroll-driven sequence.
+    workflow.style.paddingBottom = `${Math.ceil(animationRange / window.innerHeight * 100 + 45)}vh`;
+    animationRange = Math.max(1400, Math.round(window.innerHeight * 1.8));
     stageList.classList.remove("tw-stage-measuring");
   }
 
