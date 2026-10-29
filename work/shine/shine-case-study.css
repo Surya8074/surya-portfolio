@@ -246,11 +246,15 @@ h3 {
   background: #fff;
 }
 .principle-card img {
-  flex: 0 0 116px;
-  width: 116px;
-  height: 116px;
+  flex: 0 0 96px;
+  width: 96px;
+  height: 96px;
   margin: 0;
   object-fit: contain;
+}
+.principle-copy {
+  flex: 1;
+  min-width: 0;
 }
 .principle-card h3 { font-size: 16px; }
 .principle-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
