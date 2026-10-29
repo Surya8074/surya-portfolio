@@ -305,8 +305,8 @@ h3 {
   grid-template-columns: repeat(6, minmax(0, 1fr));
   column-gap: 30px;
   row-gap: 44px;
-  width: min(var(--wide-width), calc(100vw - 48px));
-  margin: 64px auto 0;
+  width: min(1000px, calc(100vw - 48px));
+  margin: 52px auto 0;
 }
 .interaction-state-card {
   grid-column: span 2;
@@ -325,7 +325,7 @@ h3 {
 }
 .interaction-state-card:nth-child(n+4) .interaction-face {
   aspect-ratio: 262 / 174;
-  width: min(100%, 262px);
+  width: min(100%, 236px);
   margin-inline: auto;
 }
 .interaction-state-card figcaption {
