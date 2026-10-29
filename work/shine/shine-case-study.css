@@ -677,3 +677,29 @@ h3 {
     min-width: 440px;
   }
 }
+
+
+/* Interaction model notes shown beneath the expression cards. */
+.interaction-caption {
+  width: min(var(--wide-width), calc(100vw - 48px));
+  margin: 0 auto 76px !important;
+  padding-top: 0;
+  color: var(--muted) !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  text-align: center;
+}
+.interaction-notes {
+  width: min(var(--wide-width), calc(100vw - 48px));
+  margin-inline: auto;
+}
+.interaction-notes p {
+  max-width: none !important;
+  margin: 0 0 32px !important;
+}
+.interaction-notes p:last-child { margin-bottom: 0 !important; }
+@media (max-width: 700px) {
+  .interaction-caption { width: 100%; margin-bottom: 44px !important; }
+  .interaction-notes { width: 100%; }
+  .interaction-notes p { margin-bottom: 24px !important; }
+}
