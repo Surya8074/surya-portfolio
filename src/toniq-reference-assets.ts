@@ -1,4 +1,4 @@
-const root = 'https://www.helloayushi.com/images/case-studies/toniq-ai/';
+const root = 'https://www.helloayushi.com/images/case-studies/toniq-ai/legacy/';
 
 export const toniqReferenceAssets = {
   jury: root + 'jury-presentation.png',
