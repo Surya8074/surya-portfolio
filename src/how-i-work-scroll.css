@@ -1,9 +1,6 @@
-/* HOW I WORK — pinned, one-by-one scroll reveal.
-   Cards stay in their original grid positions; scrolling only reveals them. */
-#tools-workflow .tw-workflow.tw-workflow-scroll-enhanced {
-  position: relative;
-  padding-bottom: 190vh;
-}
+/* HOW I WORK — short, pinned, sequential card reveal.
+   Cards remain in their original grid positions; scrolling reveals them one by one. */
+#tools-workflow .tw-workflow.tw-workflow-scroll-enhanced { position: relative; }
 #tools-workflow .tw-workflow-scroll-enhanced .tw-stages {
   position: sticky;
   top: 30vh;
@@ -11,23 +8,26 @@
 }
 #tools-workflow .tw-workflow-scroll-enhanced .tw-stage {
   position: relative;
-  opacity: .12;
-  transform: translate3d(0, 28px, 0);
-  transition: opacity 480ms ease, transform 560ms cubic-bezier(.2,.8,.2,1), box-shadow 420ms ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate3d(0, 12px, 0);
+  transition: opacity 180ms ease-out, transform 220ms cubic-bezier(.2,.8,.2,1), visibility 0s linear 220ms, box-shadow 180ms ease;
   will-change: opacity, transform;
 }
 #tools-workflow .tw-workflow-scroll-enhanced .tw-stage.is-visible {
   opacity: 1;
+  visibility: visible;
   transform: translate3d(0,0,0);
+  transition: opacity 180ms ease-out, transform 220ms cubic-bezier(.2,.8,.2,1), visibility 0s, box-shadow 180ms ease;
 }
 #tools-workflow .tw-workflow-scroll-enhanced .tw-stage.is-visible:hover {
-  transform: translate3d(0,-4px,0);
+  transform: translate3d(0,-3px,0);
   box-shadow: 0 8px 22px rgba(27,35,52,.075);
 }
 @media (max-width: 1023px), (prefers-reduced-motion: reduce) {
-  #tools-workflow .tw-workflow.tw-workflow-scroll-enhanced { padding-bottom: 0; }
+  #tools-workflow .tw-workflow.tw-workflow-scroll-enhanced { padding-bottom: 0 !important; }
   #tools-workflow .tw-workflow-scroll-enhanced .tw-stages { position: relative; top: auto; }
   #tools-workflow .tw-workflow-scroll-enhanced .tw-stage {
-    opacity: 1; transform: none; transition: none; will-change: auto;
+    opacity: 1; visibility: visible; transform: none; transition: none; will-change: auto;
   }
 }
