@@ -3,9 +3,10 @@
   const SECTION_SELECTOR = "#tools-workflow .tw-workflow";
   const DESKTOP_QUERY = "(min-width: 1024px)";
   const REDUCED_QUERY = "(prefers-reduced-motion: reduce)";
-  const REVEAL_POINTS = [0.08, 0.32, 0.56, 0.80];
+  const REVEAL_POINTS = [0.02, 0.26, 0.50, 0.74];
+  const SCROLL_DISTANCE = 560;
   let workflow, stageList, stages = [], initialized = false, frameQueued = false;
-  let documentTop = 0, animationRange = 0;
+  let documentTop = 0, stickyTop = 0, animationRange = SCROLL_DISTANCE;
   const desktop = window.matchMedia(DESKTOP_QUERY);
   const reducedMotion = window.matchMedia(REDUCED_QUERY);
 
@@ -34,13 +35,17 @@
       return;
     }
     stages.forEach(card => card.classList.remove("is-visible"));
-    const previous = stageList.style.position;
+    const oldPosition = stageList.style.position;
+    const oldTop = stageList.style.top;
     stageList.style.position = "relative";
+    stageList.style.top = "auto";
     documentTop = window.scrollY + stageList.getBoundingClientRect().top;
-    stageList.style.position = previous;
-    animationRange = Math.round(window.innerHeight * 1.45);
-    // Keep the sticky row pinned for the complete reveal sequence, then release it.
-    workflow.style.paddingBottom = "190vh";
+    stageList.style.position = oldPosition;
+    stageList.style.top = oldTop;
+    stickyTop = Math.round(window.innerHeight * 0.30);
+    animationRange = SCROLL_DISTANCE;
+    const runway = animationRange + stickyTop + stageList.offsetHeight + 100;
+    workflow.style.paddingBottom = runway + "px";
   }
 
   function update() {
@@ -49,7 +54,6 @@
       stages.forEach(card => card.classList.add("is-visible"));
       return;
     }
-    const stickyTop = Math.round(window.innerHeight * .30);
     const progress = Math.max(0, Math.min(1,
       (window.scrollY - (documentTop - stickyTop)) / animationRange
     ));
@@ -63,7 +67,7 @@
     frameQueued = true;
     window.requestAnimationFrame(() => { frameQueued = false; update(); });
   }
-  function onResize() { measure(); queueUpdate(); }
+  function onResize() { if (!initialized) return; measure(); queueUpdate(); }
   function start() {
     if (setup()) return;
     const observer = new MutationObserver(() => { if (setup()) observer.disconnect(); });
