@@ -379,3 +379,104 @@
     line-height: 1.5 !important;
   }
 }
+
+/* Research quote carousel — restore the source reference's full-width,
+   fixed-size cards. The previous 1100px wrapper and fractional grid tracks
+   compressed the viewport and stretched cards, clipping their content. */
+.ta-page .ta-research {
+  overflow: visible !important;
+}
+.ta-page .ta-quotes-window {
+  position: relative !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  box-sizing: border-box !important;
+  width: calc(100vw - 64px) !important;
+  max-width: none !important;
+  margin: 24px 0 0 !important;
+  padding: 0 !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scrollbar-width: none;
+}
+.ta-page .ta-quotes-window::-webkit-scrollbar {
+  display: none;
+}
+.ta-page .ta-quotes {
+  display: grid !important;
+  grid-auto-flow: column !important;
+  grid-auto-columns: 372px !important;
+  grid-template-columns: repeat(12, 372px) !important;
+  gap: 30px !important;
+  width: max-content !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.ta-page .ta-quotes article {
+  box-sizing: border-box !important;
+  width: 372px !important;
+  height: 465px !important;
+  min-height: 465px !important;
+  max-height: 465px !important;
+  padding: 38px 38px 38px !important;
+  border: 1px solid #e6e6e6 !important;
+  border-radius: 34px !important;
+  background: #fbfbfb !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+.ta-page .ta-quotes article h3 {
+  margin: 0 0 20px !important;
+  color: #777 !important;
+  font: 400 16px/1.4 "Instrument Sans", Arial, sans-serif !important;
+}
+.ta-page .ta-quotes article blockquote {
+  margin: 0 !important;
+  color: #3b3b3b !important;
+  font: 400 18px/1.5 "Instrument Sans", Arial, sans-serif !important;
+  letter-spacing: -.2px !important;
+}
+.ta-page .ta-quotes article > div {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  margin-top: auto !important;
+  padding-top: 24px !important;
+}
+.ta-page .ta-quotes article img {
+  flex: 0 0 76px !important;
+  width: 76px !important;
+  height: 76px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+}
+.ta-page .ta-quotes article b {
+  color: #272727 !important;
+  font: 600 16px/1.35 "Instrument Sans", Arial, sans-serif !important;
+}
+.ta-page .ta-quotes article small {
+  color: #666 !important;
+  font: 400 15px/1.4 "Instrument Sans", Arial, sans-serif !important;
+}
+@media (max-width: 767px) {
+  .ta-page .ta-quotes-window {
+    width: calc(100vw - 32px) !important;
+  }
+  .ta-page .ta-quotes {
+    grid-auto-columns: min(82vw, 372px) !important;
+    grid-template-columns: repeat(12, min(82vw, 372px)) !important;
+    gap: 18px !important;
+  }
+  .ta-page .ta-quotes article {
+    width: min(82vw, 372px) !important;
+    height: 420px !important;
+    min-height: 420px !important;
+    max-height: 420px !important;
+    padding: 28px !important;
+  }
+  .ta-page .ta-quotes article blockquote {
+    font-size: 16px !important;
+  }
+}
