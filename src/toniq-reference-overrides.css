@@ -332,3 +332,33 @@
     height: 40px !important;
   }
 }
+
+/* FINAL DESKTOP FIX — render the reference artwork once.
+   The page previously displayed the composite card artwork and the rebuilt
+   HTML card grid together, creating a second, oversized row of duplicate cards. */
+@media (min-width: 768px) {
+  .ta-page main > section.ta-section.ta-ai > .ta-ai-graphic {
+    display: block !important;
+    box-sizing: border-box !important;
+    width: min(927px, calc(100vw - 48px)) !important;
+    max-width: 927px !important;
+    height: auto !important;
+    aspect-ratio: 927 / 460 !important;
+    margin: 48px auto 0 !important;
+    overflow: visible !important;
+  }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-source-art {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-source-copy {
+    display: block !important;
+  }
+  .ta-page main > section.ta-section.ta-ai > .ta-ai-cards {
+    display: none !important;
+  }
+}
