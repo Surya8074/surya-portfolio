@@ -1,4 +1,4 @@
-const root = 'https://www.helloayushi.com/images/case-studies/toniq-ai/legacy/';
+const root = '/surya-portfolio/toniq/reference-assets/legacy/';
 
 export const toniqReferenceAssets = {
   jury: '/surya-portfolio/toniq/toniq-networking-hero.svg',
