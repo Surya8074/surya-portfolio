@@ -2317,3 +2317,39 @@
  .ta-page main>section.ta-section.ta-ai .ta-ai-card-copy h3{display:block!important;margin:0 0 12px!important;font:700 20px/1.25 "Instrument Sans",Arial,sans-serif!important;letter-spacing:-.35px!important;text-align:left!important}
  .ta-page main>section.ta-section.ta-ai .ta-ai-card-copy p{display:block!important;margin:0!important;font:400 16px/1.5 "Instrument Sans",Arial,sans-serif!important;letter-spacing:-.15px!important;text-align:left!important}
 }
+
+/* Use the exact composite section artwork from the supplied reference HTML.
+   The SVG already contains the three correctly sized cards, their illustrations,
+   typography, borders and spacing. Do not rebuild those elements in HTML. */
+@media (min-width: 768px) {
+  .ta-page main > section.ta-section.ta-ai {
+    width: 100% !important;
+    max-width: none !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+  .ta-page main > section.ta-section.ta-ai > .ta-ai-graphic {
+    display: block !important;
+    position: relative !important;
+    width: 927px !important;
+    max-width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 927 / 460 !important;
+    margin: 48px auto 0 !important;
+    overflow: visible !important;
+  }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-source-art {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-source-copy {
+    display: none !important;
+  }
+  .ta-page main > section.ta-section.ta-ai > .ta-ai-cards {
+    display: none !important;
+  }
+}
