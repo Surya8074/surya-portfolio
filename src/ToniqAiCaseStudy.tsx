@@ -53,7 +53,7 @@ function ToniqPage(){
    <section className="ta-section ta-thesis">
     <div className="ta-section-inner ta-thesis-inner">
      <div className="ta-thesis-copy"><K>The thesis</K><h2>Rebuild the room</h2><div className="ta-thesis-body"><p className="ta-lead">Rebuild the room (spatial proximity, ambient awareness, the option to drift) and let AI handle what the room can’t (context, recall, follow-through).</p><p className="ta-copy">The connection problem stops being a UX problem and becomes a system problem worth solving.</p></div></div>
-     <div className="ta-thesis-visual" aria-label="Spatial proximity translated into the Toniq canvas"><img src={base+'redesign/thesis-visual-1.png'} alt="People scattered at varying proximities in a real-world space" loading="lazy"/><img src={base+'redesign/thesis-visual-2.png'} alt="The same proximity replicated as avatar bubbles inside the Toniq spatial canvas" loading="lazy"/></div>
+     <div className="ta-thesis-visual" aria-label="Spatial proximity translated into the Toniq canvas"><img src={toniqReferenceAssets.thesisVisual1} alt="People scattered at varying proximities in a real-world space" loading="lazy"/><img src={toniqReferenceAssets.thesisVisual2} alt="The same proximity replicated as avatar bubbles inside the Toniq spatial canvas" loading="lazy"/></div>
     </div>
    </section>
    <section className="ta-section ta-research"><h2>We talked to 10+ people for our research</h2><p className="ta-lead">10 in-depth interviews across 6 sessions.</p><p className="ta-copy">Community organizers, event hosts, program emcees, repeat attendees, and graduate students raised on remote-first programs.</p>
