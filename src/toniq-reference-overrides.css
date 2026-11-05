@@ -473,3 +473,25 @@
   }
   .ta-page .ta-quotes article blockquote { font-size: 14px !important; }
 }
+
+
+/* Testing section: retain only the card-sorting visual and center it. */
+.ta-page .ta-testing .ta-testing-single-figure {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+  max-width: 912px !important;
+  margin: 40px auto 0 !important;
+}
+.ta-page .ta-testing .ta-testing-single-figure .ta-figure {
+  flex: 0 1 411px !important;
+  width: min(411px, 100%) !important;
+  max-width: 411px !important;
+  margin: 0 auto !important;
+}
+.ta-page .ta-testing .ta-testing-single-figure .ta-figure img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+}
