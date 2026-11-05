@@ -1,7 +1,7 @@
 const root = '/surya-portfolio/toniq/reference-assets/legacy/';
 
 export const toniqReferenceAssets = {
-  jury: '/surya-portfolio/toniq/toniq-networking-hero.svg',
+  jury: root + 'jury-presentation.png',
   thesisVisual1: root + 'redesign/thesis-visual-1.png',
   thesisVisual2: root + 'redesign/thesis-visual-2.png',
   quoteEleanor1: root + 'redesign/quote-avatar-eleanor.png',
@@ -14,21 +14,9 @@ export const toniqReferenceAssets = {
   journeyAttendee: root + 'redesign/journey-map-attendee.png',
   painPoints: root + 'two-users/merged-shape-pain.svg',
   needs: root + 'two-users/merged-shape-needs.svg',
-  sketches: [
-    root + 'redesign/sketches/sketch-1.png',
-    root + 'redesign/sketches/sketch-2.png',
-    root + 'redesign/sketches/sketch-3.png',
-    root + 'redesign/sketches/sketch-4.png',
-    root + 'redesign/sketches/sketch-5.png',
-    root + 'redesign/sketches/sketch-6.png',
-    root + 'redesign/sketches/sketch-7.png',
-  ],
+  sketches: Array.from({ length: 7 }, (_, index) => root + 'redesign/sketches/sketch-' + (index + 1) + '.png'),
   whyAi: root + 'redesign/why-ai-section.svg',
-  whyAiCards: [
-    root + 'redesign/why-ai-card-1.png',
-    root + 'redesign/why-ai-card-2.png',
-    root + 'redesign/why-ai-card-3.png',
-  ],
+  whyAiCards: [root + 'redesign/why-ai-card-1.png', root + 'redesign/why-ai-card-2.png', root + 'redesign/why-ai-card-3.png'],
   systemBeforeEvent: root + 'redesign/system-screen-before-event.png',
   testingSynthesis: root + 'redesign/testing-synthesis.png',
   testingCardSort: root + 'redesign/testing-card-sort.png',
