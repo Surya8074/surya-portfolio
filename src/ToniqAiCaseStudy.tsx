@@ -16,22 +16,22 @@ function ToniqPage(){
   <main>
    <section className="ta-hero" id="top">
     <div className="ta-hero-visual" aria-label="Toniq virtual networking space">
-     <div className="ta-float ta-float-anna" style={{left:'11.5%',top:'calc(14% + 5px)',width:88,animationDuration:'6.4s',animationDelay:'0s'}}><img className="ta-avatar" src={base+'redesign/hero-avatar-anna-marie.png'} alt="Attendee Anna Marie"/></div>
-     <div className="ta-float ta-float-marcus" style={{left:'86%',top:'5%',width:88,animationDuration:'7.1s',animationDelay:'.5s'}}><img className="ta-avatar" src={base+'redesign/hero-avatar-marcus.png'} alt="Attendee Marcus"/></div>
-     <div className="ta-float ta-float-maria" style={{left:'.5%',top:'47%',width:88,animationDuration:'7.6s',animationDelay:'.9s'}}><img className="ta-avatar" src={base+'redesign/hero-avatar-maria.png'} alt="Attendee Maria"/></div>
-     <div className="ta-float ta-float-pair" style={{left:'70%',top:'32%',width:320,animationDuration:'6.8s',animationDelay:'.2s'}}><img className="ta-avatar" src={base+'redesign/hero-avatar-pair-kristian-alexx.png'} alt="Attendees Kristian and Alexx, glad to meet you here"/></div>
-     <div className="ta-float ta-float-matt" style={{left:'5.5%',top:'69%',width:88,animationDuration:'6.1s',animationDelay:'.6s'}}><img className="ta-avatar" src={base+'redesign/hero-avatar-matt-d.png'} alt="Attendee Matt D"/></div>
-     <div className="ta-float ta-float-amy" style={{left:'23%',top:'80%',width:88,animationDuration:'7.3s',animationDelay:'1.1s'}}><img className="ta-avatar" src={base+'redesign/hero-avatar-amy-s.png'} alt="Attendee Amy S"/></div>
-     <div className="ta-float ta-float-you" style={{left:'66.5%',top:'73%',width:154,animationDuration:'6.6s',animationDelay:'.3s'}}><img className="ta-avatar" src={base+'redesign/hero-avatar-you.png'} alt="You"/></div>
-     <div className="ta-float ta-float-aria" style={{left:'91.5%',top:'80%',width:88,animationDuration:'7.5s',animationDelay:'.8s'}}><img className="ta-avatar" src={base+'redesign/hero-avatar-aria-l.png'} alt="Attendee Aria L"/></div>
+     <div className="ta-float ta-float-anna" style={{left:'11.5%',top:'calc(14% + 5px)',width:88,animationDuration:'6.4s',animationDelay:'0s'}}><img className="ta-avatar" src={'/surya-portfolio/toniq/hero-avatar-anna-marie.png'} alt="Attendee Anna Marie"/></div>
+     <div className="ta-float ta-float-marcus" style={{left:'86%',top:'5%',width:88,animationDuration:'7.1s',animationDelay:'.5s'}}><img className="ta-avatar" src={'/surya-portfolio/toniq/hero-avatar-marcus.png'} alt="Attendee Marcus"/></div>
+     <div className="ta-float ta-float-maria" style={{left:'.5%',top:'47%',width:88,animationDuration:'7.6s',animationDelay:'.9s'}}><img className="ta-avatar" src={'/surya-portfolio/toniq/hero-avatar-maria.png'} alt="Attendee Maria"/></div>
+     <div className="ta-float ta-float-pair" style={{left:'70%',top:'32%',width:320,animationDuration:'6.8s',animationDelay:'.2s'}}><img className="ta-avatar" src={'/surya-portfolio/toniq/hero-avatar-pair-kristian-alexx.png'} alt="Attendees Kristian and Alexx, glad to meet you here"/></div>
+     <div className="ta-float ta-float-matt" style={{left:'5.5%',top:'69%',width:88,animationDuration:'6.1s',animationDelay:'.6s'}}><img className="ta-avatar" src={'/surya-portfolio/toniq/hero-avatar-matt-d.png'} alt="Attendee Matt D"/></div>
+     <div className="ta-float ta-float-amy" style={{left:'23%',top:'80%',width:88,animationDuration:'7.3s',animationDelay:'1.1s'}}><img className="ta-avatar" src={'/surya-portfolio/toniq/hero-avatar-amy-s.png'} alt="Attendee Amy S"/></div>
+     <div className="ta-float ta-float-you" style={{left:'66.5%',top:'73%',width:154,animationDuration:'6.6s',animationDelay:'.3s'}}><img className="ta-avatar" src={'/surya-portfolio/toniq/hero-avatar-you.png'} alt="You"/></div>
+     <div className="ta-float ta-float-aria" style={{left:'91.5%',top:'80%',width:88,animationDuration:'7.5s',animationDelay:'.8s'}}><img className="ta-avatar" src={'/surya-portfolio/toniq/hero-avatar-aria-l.png'} alt="Attendee Aria L"/></div>
      <div className="ta-float" style={{left:'16.5%',top:'calc(22% + 16px)',animationDuration:'6.7s',animationDelay:'.2s'}}><span className="ta-hero-tag ta-tag-one" style={{background:'#649fa6',color:'#f9f9f9'}}>Anyone in SAAS?<i className="ta-tag-tail ta-tail-top"/></span></div>
      <div className="ta-float" style={{left:'calc(10.5% - 10px)',top:'66%',animationDuration:'6.3s',animationDelay:'.4s'}}><span className="ta-hero-tag ta-tag-two" style={{background:'#fdb201',color:'#f9f9f9'}}>You also love Tennis?<i className="ta-tag-tail ta-tail-bottom"/></span></div>
      <div className="ta-float" style={{left:'calc(13.5% + 28px)',top:'90.5%',animationDuration:'7s',animationDelay:'1s'}}><span className="ta-hero-tag ta-tag-three" style={{background:'#01c861',color:'#f9f9f9'}}>Yeah, Lets play?<i className="ta-tag-tail ta-tail-top ta-tail-right"/></span></div>
      <div className="ta-float" style={{left:'calc(72.5% + 15px)',top:'calc(72% - 45px)',animationDuration:'6.9s',animationDelay:'.5s'}}><span className="ta-hero-tag ta-tag-four" style={{background:'rgba(242,242,242,.9)',color:'#202a40',border:'1px solid #e2e2e2',padding:'9px 17px',fontSize:16}}>Open to collab<i className="ta-tag-tail ta-tail-circle"/></span></div>
-     <img className="ta-party-tag" style={{left:'calc(83% + 34px)',top:'calc(67.5% + 45px)',width:112,animationDuration:'7.4s',animationDelay:'.9s'}} src={base+'redesign/hero-tag-party.png'} alt=""/>
+     <img className="ta-party-tag" style={{left:'calc(83% + 34px)',top:'calc(67.5% + 45px)',width:112,animationDuration:'7.4s',animationDelay:'.9s'}} src={'/surya-portfolio/toniq/hero-tag-party.png'} alt=""/>
     </div>
     <div className="ta-hero-copy">
-     <div className="ta-hero-mark"><img src={base+'redesign/hero-cube.png'} alt="Toniq logo"/></div>
+     <div className="ta-hero-mark"><img src={'/surya-portfolio/toniq/hero-cube.png'} alt="Toniq logo"/></div>
      <h1>Reimagining online events worth exploring</h1>
      <p className="ta-subtitle">Toniq AI combines spatial navigation with AI-powered connection, so online events feel alive</p>
     </div>
