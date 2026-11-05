@@ -15,7 +15,7 @@ import GenesisMacBook from './GenesisMacBook';
 
 const portraitUrl = '/surya-portfolio/surya-portrait-clear-glasses.png';
 const genesisPath = '/surya-portfolio/work/genesis-v8/';
-const comskiPath = '/surya-portfolio/comski.html';
+const comskiPath = '/surya-portfolio/cv6.html';
 
 const cardReveal = {
   hidden: { opacity: 0, y: 22, scale: 0.992 },
@@ -134,7 +134,7 @@ function ComskiCard() {
       initial={shouldReduceMotion ? false : 'hidden'}
       whileInView={shouldReduceMotion ? undefined : 'visible'}
       viewport={{ once: true, amount: 0.2 }}
-      href="/surya-portfolio/comski.html" aria-label="View ComSki case study">
+      href={comskiPath} aria-label="View ComSki case study">
       <motion.div className="comski-showcase-copy" variants={revealCopy}>
         <motion.p className="comski-showcase-eyebrow" variants={revealItem}><span>01</span><i /> COMMUNICATION AI</motion.p>
         <motion.h3 variants={revealItem}><span>Com</span><span>Ski</span></motion.h3>
@@ -206,7 +206,7 @@ function App() {
 
   return (
     <main>
-      <header className="reference-nav"><div className="reference-nav-inner"><button className="reference-brand" onClick={() => go('#home')}><strong>Surya Kiran</strong><span className="reference-brand-divider" /><span>India</span></button><nav><button onClick={() => go('#art')}>Art</button><button onClick={() => go('#about')}>About Me</button><a className="resume-nav-link" href="/surya-portfolio/cv6.html">Resume</a></nav></div></header>
+      <header className="reference-nav"><div className="reference-nav-inner"><button className="reference-brand" onClick={() => go('#home')}><strong>Surya Kiran</strong><span className="reference-brand-divider" /><span>India</span></button><nav><button onClick={() => go('#art')}>Art</button><button onClick={() => go('#about')}>About Me</button><a className="resume-nav-link" href="/surya-portfolio/resume/">Resume</a></nav></div></header>
       <section id="home" className="reference-home">
         <div className="reference-home-viewport">
           <div className="reference-home-stage hero-exact-stage">
