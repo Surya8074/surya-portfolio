@@ -2,6 +2,8 @@ const root = 'https://www.helloayushi.com/images/case-studies/toniq-ai/legacy/';
 
 export const toniqReferenceAssets = {
   jury: '/surya-portfolio/toniq/toniq-networking-hero.svg',
+  thesisVisual1: root + 'redesign/thesis-visual-1.png',
+  thesisVisual2: root + 'redesign/thesis-visual-2.png',
   quoteEleanor1: root + 'redesign/quote-avatar-eleanor.png',
   quoteEleanor2: root + 'redesign/quote-avatar-eleanor3.png',
   quoteBhavneet: root + 'redesign/quote-avatar-bhavneet.png',
