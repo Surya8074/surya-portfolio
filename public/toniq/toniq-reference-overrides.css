@@ -145,3 +145,23 @@
     width: calc(50% - 6px) !important;
   }
 }
+
+/* Exact Tailwind breakpoints from the supplied reference HTML:
+   2 columns <640px, 3 columns 640–767px, 4 columns >=768px. */
+@media (min-width: 768px) {
+  .ta-page .ta-sketch-section { margin-top: 64px !important; }
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .ta-page .ta-sketch-gallery { gap: 12px !important; }
+  .ta-page .ta-sketch-zoom {
+    flex-basis: calc(33.333% - 8px) !important;
+    width: calc(33.333% - 8px) !important;
+  }
+}
+@media (min-width: 768px) {
+  .ta-page .ta-sketch-gallery { gap: 16px !important; }
+  .ta-page .ta-sketch-zoom {
+    flex-basis: calc(25% - 12px) !important;
+    width: calc(25% - 12px) !important;
+  }
+}
