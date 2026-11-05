@@ -1,41 +1,23 @@
 (() => {
   "use strict";
-
   const SECTION_SELECTOR = "#tools-workflow .tw-workflow";
   const DESKTOP_QUERY = "(min-width: 1024px)";
   const REDUCED_QUERY = "(prefers-reduced-motion: reduce)";
-  const POP_THRESHOLDS = [0.14, 0.37, 0.60, 0.83];
-  const ROTATIONS = [-7, 5, -3, 6];
-
-  let workflow;
-  let stageList;
-  let stages = [];
-  let initialized = false;
-  let frameQueued = false;
-  let documentTop = 0;
-  let animationRange = 0;
-
+  const REVEAL_POINTS = [0.08, 0.32, 0.56, 0.80];
+  let workflow, stageList, stages = [], initialized = false, frameQueued = false;
+  let documentTop = 0, animationRange = 0;
   const desktop = window.matchMedia(DESKTOP_QUERY);
   const reducedMotion = window.matchMedia(REDUCED_QUERY);
 
   function setup() {
     if (initialized) return true;
-
     workflow = document.querySelector(SECTION_SELECTOR);
     stageList = workflow && workflow.querySelector(".tw-stages");
     stages = stageList ? [...stageList.querySelectorAll(":scope > .tw-stage")] : [];
-
     if (!workflow || !stageList || stages.length !== 4) return false;
-
     initialized = true;
     workflow.classList.add("tw-workflow-scroll-enhanced");
-
-    if (desktop.matches && !reducedMotion.matches) {
-      measure();
-    } else {
-      stages.forEach((stage) => stage.classList.add("is-popped"));
-    }
-
+    measure();
     update();
     window.addEventListener("scroll", queueUpdate, { passive: true });
     window.addEventListener("resize", onResize, { passive: true });
@@ -45,91 +27,48 @@
   }
 
   function measure() {
-    if (!stageList || !stages.length || !desktop.matches || reducedMotion.matches) {
-      workflow?.style.removeProperty("--tw-stage-sticky-top");
-      workflow?.style.removeProperty("padding-bottom");
-      stages.forEach((stage) => {
-        stage.style.removeProperty("--tw-stage-pile-x");
-        stage.style.removeProperty("--tw-stage-pile-y");
-        stage.style.removeProperty("--tw-stage-pile-r");
-        stage.style.removeProperty("--tw-stage-delay");
-        stage.classList.add("is-popped");
-      });
+    if (!workflow || !stageList) return;
+    if (!desktop.matches || reducedMotion.matches) {
+      workflow.style.paddingBottom = "0";
+      stages.forEach(card => card.classList.add("is-visible"));
       return;
     }
-
-    stages.forEach((stage) => stage.classList.remove("is-popped"));
-    stageList.classList.add("tw-stage-measuring");
-    void stageList.offsetWidth;
-
-    const rect = stageList.getBoundingClientRect();
-    const centers = stages.map((stage) => {
-      const box = stage.getBoundingClientRect();
-      return { x: box.left + box.width / 2, y: box.top + box.height / 2 };
-    });
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-
-    stages.forEach((stage, index) => {
-      stage.style.setProperty("--tw-stage-pile-x", `${centerX - centers[index].x}px`);
-      stage.style.setProperty("--tw-stage-pile-y", `${centerY - centers[index].y}px`);
-      stage.style.setProperty("--tw-stage-pile-r", `${ROTATIONS[index]}deg`);
-      stage.style.setProperty("--tw-stage-delay", `${index * 35}ms`);
-      stage.style.zIndex = String(stages.length - index);
-    });
-
-    const stickyTop = Math.max(28, Math.round(window.innerHeight * 0.34));
-    stageList.style.setProperty("--tw-stage-sticky-top", `${stickyTop}px`);
+    stages.forEach(card => card.classList.remove("is-visible"));
+    const previous = stageList.style.position;
+    stageList.style.position = "relative";
     documentTop = window.scrollY + stageList.getBoundingClientRect().top;
-    // Match the parent's runway to the full scroll-driven sequence.
-    workflow.style.paddingBottom = `${Math.ceil(animationRange / window.innerHeight * 100 + 45)}vh`;
-    animationRange = Math.max(1400, Math.round(window.innerHeight * 1.8));
-    stageList.classList.remove("tw-stage-measuring");
+    stageList.style.position = previous;
+    animationRange = Math.round(window.innerHeight * 1.45);
+    // Keep the sticky row pinned for the complete reveal sequence, then release it.
+    workflow.style.paddingBottom = "190vh";
   }
 
   function update() {
     if (!initialized) return;
-
     if (!desktop.matches || reducedMotion.matches) {
-      stages.forEach((stage) => stage.classList.add("is-popped"));
+      stages.forEach(card => card.classList.add("is-visible"));
       return;
     }
-
-    const stickyTop = Math.max(28, Math.round(window.innerHeight * 0.34));
-    const startScroll = documentTop - stickyTop;
-    const progress = Math.max(0, Math.min(1, (window.scrollY - startScroll) / animationRange));
-
-    stages.forEach((stage, index) => {
-      stage.classList.toggle("is-popped", progress >= POP_THRESHOLDS[index]);
+    const stickyTop = Math.round(window.innerHeight * .30);
+    const progress = Math.max(0, Math.min(1,
+      (window.scrollY - (documentTop - stickyTop)) / animationRange
+    ));
+    stages.forEach((card, index) => {
+      card.classList.toggle("is-visible", progress >= REVEAL_POINTS[index]);
     });
   }
 
   function queueUpdate() {
     if (frameQueued) return;
     frameQueued = true;
-    window.requestAnimationFrame(() => {
-      frameQueued = false;
-      update();
-    });
+    window.requestAnimationFrame(() => { frameQueued = false; update(); });
   }
-
-  function onResize() {
-    if (!initialized) return;
-    measure();
-    queueUpdate();
-  }
-
+  function onResize() { measure(); queueUpdate(); }
   function start() {
     if (setup()) return;
-    const observer = new MutationObserver(() => {
-      if (setup()) observer.disconnect();
-    });
+    const observer = new MutationObserver(() => { if (setup()) observer.disconnect(); });
     observer.observe(document.documentElement, { childList: true, subtree: true });
   }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", start, { once: true });
-  } else {
-    start();
-  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start, { once: true });
+  else start();
 })();
