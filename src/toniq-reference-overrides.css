@@ -225,15 +225,24 @@
   justify-content: center !important;
 }
 .ta-page main > section.ta-section.ta-ai .ta-ai-card {
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
   width: 100% !important;
   min-width: 0 !important;
   height: 460px !important;
   min-height: 460px !important;
   max-height: 460px !important;
   padding: 10px !important;
+  overflow: hidden !important;
+  border: 1px solid #dedede !important;
+  border-radius: 27px !important;
+  background: #fbfbfb !important;
   text-align: left !important;
 }
 .ta-page main > section.ta-section.ta-ai .ta-ai-card > img {
+  display: block !important;
+  box-sizing: border-box !important;
   width: 100% !important;
   height: 188px !important;
   min-height: 188px !important;
