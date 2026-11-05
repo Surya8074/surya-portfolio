@@ -7,7 +7,20 @@ import { toniqReferenceAssets } from './toniq-reference-assets';
 import H1 from './components/H1';
 
 const base = '/surya-portfolio/toniq/reference-assets/legacy/';
-const A = ({src,alt,caption}:{src:string;alt:string;caption?:string}) => <figure className="ta-figure"><img src={base+src} alt={alt} loading="lazy"/>{caption&&<figcaption>{caption}</figcaption>}</figure>;
+const handleToniqImageError = (event: React.SyntheticEvent<HTMLImageElement>) => {
+ const image = event.currentTarget;
+ if (image.dataset.fallbackAttempted === 'true') return;
+ image.dataset.fallbackAttempted = 'true';
+ const localRoot = '/surya-portfolio/toniq/reference-assets/legacy/';
+ if (image.src.includes(localRoot)) {
+  const assetPath = image.src.split(localRoot)[1];
+  image.src = 'https://www.helloayushi.com/images/case-studies/toniq-ai/legacy/' + assetPath;
+  return;
+ }
+ image.dataset.imageFailed = 'true';
+};
+
+const A = ({src,alt,caption}:{src:string;alt:string;caption?:string}) => <figure className="ta-figure"><img onError={handleToniqImageError} src={base+src} alt={alt} loading="eager" decoding="async"/>{caption&&<figcaption>{caption}</figcaption>}</figure>;
 const K = ({children}:{children:React.ReactNode}) => <p className="ta-kicker">{children}</p>;
 function ToniqPage(){
  const [activeSketch, setActiveSketch] = React.useState<number | null>(null);
