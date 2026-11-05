@@ -1,6 +1,19 @@
 import React from 'react';
 import './H1.css';
 
+const handleImageError = (event: React.SyntheticEvent<HTMLImageElement>) => {
+  const image = event.currentTarget;
+  if (image.dataset.fallbackAttempted === 'true') return;
+  image.dataset.fallbackAttempted = 'true';
+  const localRoot = '/surya-portfolio/toniq/reference-assets/legacy/';
+  if (image.src.includes(localRoot)) {
+    const assetPath = image.src.split(localRoot)[1];
+    image.src = 'https://www.helloayushi.com/images/case-studies/toniq-ai/legacy/' + assetPath;
+  } else {
+    image.dataset.imageFailed = 'true';
+  }
+};
+
 export type H1Props = {
   eyebrow?: string;
   title?: string;
@@ -43,7 +56,7 @@ export default function H1({
           </div>
         </div>
         <figure className="h1-section__visual">
-          <img src={imageSrc} alt={imageAlt} loading="lazy" />
+          <img src={imageSrc} alt={imageAlt} loading="eager" decoding="async" onError={handleImageError} />
           {imageCaption && <figcaption>{imageCaption}</figcaption>}
         </figure>
       </div>
