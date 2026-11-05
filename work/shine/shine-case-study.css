@@ -690,7 +690,7 @@ h3 {
   text-align: center;
 }
 .interaction-notes {
-  width: min(var(--wide-width), calc(100vw - 48px));
+  width: min(1016px, calc(100vw - 48px));
   margin-inline: auto;
 }
 .interaction-notes p {
