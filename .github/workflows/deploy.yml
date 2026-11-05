@@ -1,5 +1,4 @@
 name: Deploy to GitHub Pages
-# Force Pages rebuild after CV4 and CV6 updates
 # CV6 is intentionally a separate Vite entry and must ship with the same Pages build.
 
 on:
@@ -28,10 +27,14 @@ jobs:
           node-version: 22
       - name: Install dependencies
         run: npm install
+      - name: Download Toniq reference images and fonts
+        run: npm run prebuild
       - name: Build
-        # Vite performs the production transpile; skip the repo-wide tsc gate so a
-        # duplicated experimental case-study page cannot block GitHub Pages.
+        # Keep the repo-wide TypeScript gate disabled for GitHub Pages, but run
+        # the same asset download and verification steps as the package scripts.
         run: npx vite build
+      - name: Verify every Toniq image and font is present in the deployment
+        run: npm run postbuild
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
