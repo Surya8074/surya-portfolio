@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="1260" viewBox="0 0 1100 1260" fill="none">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1100" y2="1260" gradientUnits="userSpaceOnUse"><stop stop-color="#F0ECFF"/><stop offset=".52" stop-color="#F8F3F0"/><stop offset="1" stop-color="#E7E4F8"/></linearGradient>
+ <linearGradient id="desk" x1="550" y1="820" x2="550" y2="1260" gradientUnits="userSpaceOnUse"><stop stop-color="#E7CDBB"/><stop offset="1" stop-color="#B98D78"/></linearGradient>
+ <linearGradient id="screen" x1="340" y1="270" x2="820" y2="790" gradientUnits="userSpaceOnUse"><stop stop-color="#26243D"/><stop offset="1" stop-color="#111827"/></linearGradient>
+ <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9B83FF"/><stop offset="1" stop-color="#6849D8"/></linearGradient>
+ <filter id="shadow" x="80" y="130" width="950" height="1030" filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation="28"/></filter>
+ <clipPath id="screenClip"><rect x="264" y="288" width="610" height="470" rx="24"/></clipPath>
+</defs>
+<rect width="1100" height="1260" rx="30" fill="url(#bg)"/>
+<circle cx="1000" cy="130" r="170" fill="#D7CCFF" opacity=".45"/><circle cx="80" cy="720" r="210" fill="#F5D6D2" opacity=".45"/>
+<!-- soft plant and window -->
+<rect x="0" y="0" width="1100" height="650" fill="#FFF" opacity=".14"/>
+<path d="M75 450C44 340 82 236 164 181C192 285 164 384 75 450Z" fill="#6E9877" opacity=".7"/>
+<path d="M112 505C104 370 180 280 278 256C271 370 218 457 112 505Z" fill="#87A987" opacity=".65"/>
+<path d="M48 520C-5 425 9 337 75 279C118 377 107 460 48 520Z" fill="#A6B88D" opacity=".75"/>
+<path d="M165 550V390" stroke="#758D70" stroke-width="12" stroke-linecap="round"/>
+<rect x="20" y="520" width="210" height="150" rx="30" fill="#D7B6A1"/><rect x="35" y="532" width="180" height="122" rx="22" fill="#E8C9B3"/>
+<!-- table -->
+<path d="M0 870C270 820 760 820 1100 885V1260H0V870Z" fill="url(#desk)"/>
+<path d="M0 890C320 842 765 845 1100 904" stroke="#F4E3D6" stroke-width="8" opacity=".7"/>
+<!-- laptop shadow -->
+<ellipse cx="566" cy="865" rx="455" ry="75" fill="#493A3B" opacity=".22" filter="url(#shadow)"/>
+<!-- laptop body -->
+<path d="M205 770L915 770L1035 927C1044 941 1033 956 1015 958H90C72 958 61 940 72 925L205 770Z" fill="#B9C0CD"/>
+<path d="M205 770H915L1005 894H111L205 770Z" fill="#DCE1E9"/>
+<path d="M111 894H1005L1032 927C1042 940 1030 952 1014 952H92C75 952 65 939 75 926L111 894Z" fill="#8D96A6"/>
+<path d="M420 900H680L660 919H440L420 900Z" fill="#747E90"/>
+<!-- display shell -->
+<rect x="210" y="180" width="720" height="630" rx="38" fill="#303345"/>
+<rect x="224" y="194" width="692" height="600" rx="27" fill="#0F1424"/>
+<rect x="264" y="288" width="610" height="470" rx="24" fill="url(#screen)"/>
+<g clip-path="url(#screenClip)">
+ <rect x="264" y="288" width="610" height="470" fill="url(#screen)"/>
+ <rect x="264" y="288" width="610" height="58" fill="#211F35"/>
+ <circle cx="296" cy="317" r="16" fill="url(#purple)"/><path d="M290 317L296 308L302 317L296 326Z" fill="#FFF"/>
+ <text x="322" y="324" fill="#FFF" font-family="Arial,sans-serif" font-size="23" font-weight="700">Toniq</text>
+ <rect x="750" y="304" width="98" height="28" rx="14" fill="#E75B65"/><circle cx="766" cy="318" r="5" fill="#FFF"/><text x="779" y="324" fill="#FFF" font-family="Arial,sans-serif" font-size="13" font-weight="700">LIVE</text>
+ <!-- video tiles -->
+ <rect x="284" y="365" width="264" height="160" rx="16" fill="#D9C6C0"/>
+ <rect x="559" y="365" width="134" height="160" rx="16" fill="#B9C9C5"/>
+ <rect x="704" y="365" width="150" height="160" rx="16" fill="#D9C6C0"/>
+ <rect x="284" y="538" width="180" height="135" rx="16" fill="#C6D0D0"/>
+ <rect x="475" y="538" width="218" height="135" rx="16" fill="#E4C7B9"/>
+ <!-- stylized people -->
+ <circle cx="416" cy="424" r="37" fill="#6A463C"/><path d="M367 502C373 454 395 451 416 451C441 451 461 462 468 502Z" fill="#E5B49A"/><ellipse cx="416" cy="428" rx="27" ry="33" fill="#B9775E"/>
+ <circle cx="625" cy="422" r="30" fill="#49352F"/><path d="M583 505C587 461 607 455 625 455C646 455 664 467 668 505Z" fill="#6D87A5"/><ellipse cx="625" cy="425" rx="22" ry="28" fill="#D79D7C"/>
+ <circle cx="777" cy="421" r="30" fill="#4C342B"/><path d="M730 505C735 461 756 455 777 455C799 455 817 467 823 505Z" fill="#B18CCB"/><ellipse cx="777" cy="425" rx="23" ry="28" fill="#DDA98E"/>
+ <circle cx="374" cy="580" r="26" fill="#54372E"/><path d="M330 654C335 614 351 608 374 608C396 608 415 620 420 654Z" fill="#6E9D93"/><ellipse cx="374" cy="582" rx="20" ry="25" fill="#C78D70"/>
+ <circle cx="584" cy="580" r="26" fill="#392D2B"/><path d="M540 654C545 614 561 608 584 608C606 608 625 620 630 654Z" fill="#D5A05D"/><ellipse cx="584" cy="582" rx="20" ry="25" fill="#D59A78"/>
+ <!-- AI match panel -->
+ <rect x="704" y="538" width="150" height="135" rx="14" fill="#F7F5FF"/>
+ <text x="718" y="563" fill="#24213B" font-family="Arial,sans-serif" font-size="15" font-weight="700">AI matches</text>
+ <rect x="716" y="574" width="126" height="36" rx="10" fill="#ECE8FF"/><circle cx="733" cy="592" r="10" fill="#9A7EC7"/><text x="750" y="590" fill="#30284C" font-family="Arial,sans-serif" font-size="10" font-weight="700">Design</text><text x="750" y="602" fill="#6B5A9D" font-family="Arial,sans-serif" font-size="8">92% match</text>
+ <rect x="716" y="617" width="126" height="36" rx="10" fill="#ECE8FF"/><circle cx="733" cy="635" r="10" fill="#D49A7C"/><text x="750" y="633" fill="#30284C" font-family="Arial,sans-serif" font-size="10" font-weight="700">Product</text><text x="750" y="645" fill="#6B5A9D" font-family="Arial,sans-serif" font-size="8">87% match</text>
+ <!-- call controls -->
+ <circle cx="457" cy="716" r="18" fill="#3A4056"/><circle cx="502" cy="716" r="18" fill="#3A4056"/><circle cx="547" cy="716" r="18" fill="#3A4056"/><circle cx="592" cy="716" r="18" fill="#E65361"/>
+ <path d="M450 710V722M445 716H462M495 710L509 722M509 710L495 722M540 710L554 722" stroke="#FFF" stroke-width="3" stroke-linecap="round"/>
+ <path d="M585 712L600 720L585 728Z" fill="#FFF"/>
+</g>
+<circle cx="570" cy="204" r="5" fill="#667085"/>
+<!-- desk mug -->
+<rect x="28" y="812" width="170" height="178" rx="24" fill="#F9F7F3"/><path d="M194 849H215C248 849 247 923 215 923H194" stroke="#F9F7F3" stroke-width="18" fill="none"/>
+<circle cx="82" cy="876" r="18" fill="url(#purple)"/><path d="M75 876L82 865L89 876L82 887Z" fill="#FFF"/><text x="108" y="883" fill="#27233E" font-family="Arial,sans-serif" font-size="25" font-weight="700">Toniq</text>
+<!-- notebook -->
+<g transform="rotate(-5 820 1080)"><rect x="620" y="1010" width="410" height="210" rx="18" fill="#F5F0E8"/><rect x="636" y="1026" width="378" height="178" rx="10" fill="#FFFCF7"/><text x="670" y="1070" fill="#302B43" font-family="Arial,sans-serif" font-size="22" font-weight="700">Make room for connection</text><path d="M670 1100H965M670 1140H965M670 1180H930" stroke="#D8D0C7" stroke-width="3"/></g>
+<!-- subtle ambient highlights -->
+<circle cx="1020" cy="102" r="8" fill="#FFF" opacity=".8"/><circle cx="980" cy="148" r="4" fill="#FFF" opacity=".8"/>
+</svg>
