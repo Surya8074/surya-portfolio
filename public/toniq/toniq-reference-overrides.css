@@ -79,3 +79,8 @@
 .ta-page .h1-section__visual img{width:100%;height:320px;aspect-ratio:auto;object-fit:cover;border-radius:16px}
 .ta-page .h1-section__visual figcaption{font-size:9px;color:#73777a}
 @media(max-width:767px){.ta-page .h1-section__inner{display:flex;gap:28px}.ta-page .h1-section__visual{max-width:100%}.ta-page .h1-section__visual img{height:auto;aspect-ratio:1.4}.ta-page .h1-section__title{font-size:28px}}
+
+/* Restore the networking image collage: the reference hero depends on this visual layer. */
+.ta-page .ta-hero-visual{display:block!important;}
+.ta-page .ta-hero-visual img{display:block;max-width:none;}
+.ta-page img{image-rendering:auto;}
