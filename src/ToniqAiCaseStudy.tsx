@@ -6,7 +6,7 @@ import './toniq-ai-page.css';
 import { toniqReferenceAssets } from './toniq-reference-assets';
 import H1 from './components/H1';
 
-const base = 'https://www.helloayushi.com/images/case-studies/toniq-ai/legacy/';
+const base = '/surya-portfolio/toniq/reference-assets/legacy/';
 const A = ({src,alt,caption}:{src:string;alt:string;caption?:string}) => <figure className="ta-figure"><img src={base+src} alt={alt} loading="lazy"/>{caption&&<figcaption>{caption}</figcaption>}</figure>;
 const K = ({children}:{children:React.ReactNode}) => <p className="ta-kicker">{children}</p>;
 function ToniqPage(){
