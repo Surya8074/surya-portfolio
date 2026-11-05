@@ -362,3 +362,20 @@
     display: none !important;
   }
 }
+
+/* FINAL card-copy alignment: bring each text block directly beneath its image.
+   Keep all three columns on the same baseline and preserve the reference card width. */
+@media (min-width: 768px) {
+  .ta-page main > section.ta-section.ta-ai .ta-ai-source-copy-one,
+  .ta-page main > section.ta-section.ta-ai .ta-ai-source-copy-two,
+  .ta-page main > section.ta-section.ta-ai .ta-ai-source-copy-three {
+    top: 46% !important;
+  }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-source-copy h3 {
+    margin-bottom: 10px !important;
+    line-height: 1.25 !important;
+  }
+  .ta-page main > section.ta-section.ta-ai .ta-ai-source-copy p {
+    line-height: 1.5 !important;
+  }
+}
