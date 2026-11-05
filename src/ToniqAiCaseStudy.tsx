@@ -37,7 +37,7 @@ function ToniqPage(){
       "Online events solved attendance. What they never solved: the moment two strangers find each other, recognize a reason to talk, and walk away with something worth keeping.",
       "Toniq is an argument that the problem isn’t the video call. It’s the absence of a design."
      ]}
-     imageSrc={toniqReferenceAssets.jury}
+     imageSrc="/surya-portfolio/toniq/h1.jpg"
      imageAlt="Toniq virtual networking interface showing live event participants and AI-powered attendee matches"
      imageCaption="A more connected virtual event experience"
      className="ta-hero-h1"
