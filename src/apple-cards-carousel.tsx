@@ -88,7 +88,6 @@ export function Carousel({ items, initialScroll = 0 }: { items: React.ReactNode[
           <div className="apple-carousel-edge apple-carousel-edge-right" />
         </div>
         <div className="apple-carousel-controls">
-          <span className="apple-carousel-position">{String(currentIndex + 1).padStart(2, '0')} <i>/</i> {String(items.length).padStart(2, '0')}</span>
           <button type="button" aria-label="Previous project" onClick={() => select(currentIndex - 1)} ><ArrowLeft size={19}/></button>
           <button type="button" aria-label="Next project" onClick={() => select(currentIndex + 1)} ><ArrowRight size={19}/></button>
         </div>
