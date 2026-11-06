@@ -136,3 +136,10 @@
 .apple-spatial-hud a{cursor:pointer}
 .apple-carousel-stage:has(.apple-spatial-hud) .apple-carousel-item:not(.is-active){filter:saturate(.9) brightness(.96)}
 .apple-carousel-stage:has(.apple-spatial-hud) .apple-carousel-item:not(.is-active) .apple-project-card{cursor:pointer}
+
+
+/* Use the project artwork cleanly: remove the extra dark film and duplicate overlay labels. */
+.apple-project-card-shade,
+.apple-project-card-copy{
+  display:none !important;
+}
