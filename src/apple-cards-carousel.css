@@ -143,3 +143,24 @@
 .apple-project-card-copy{
   display:none !important;
 }
+
+
+/* Place carousel navigation directly above the active project card */
+.apple-carousel{position:relative}
+.apple-carousel-controls{
+  position:absolute;z-index:110;top:14px;left:50%;transform:translateX(-50%);
+  display:flex;align-items:center;justify-content:center;gap:9px;width:max-content;
+  margin:0;padding:7px 9px 7px 15px;border:1px solid rgba(143,183,207,.38);
+  border-radius:999px;background:rgba(255,255,255,.76);
+  box-shadow:0 8px 28px rgba(55,91,119,.10),inset 0 1px 0 rgba(255,255,255,.9);
+  backdrop-filter:blur(18px) saturate(1.35);-webkit-backdrop-filter:blur(18px) saturate(1.35);
+}
+.apple-carousel-controls .apple-carousel-position{margin-right:5px;color:#668197;font-size:11px;font-weight:650;letter-spacing:.08em;white-space:nowrap}
+.apple-carousel-controls .apple-carousel-position i{margin:0 4px;color:#a5b7c3;font-style:normal}
+.apple-carousel-controls button{width:38px;height:38px;border:1px solid rgba(106,151,179,.2);background:rgba(255,255,255,.82);color:#31566e}
+.apple-carousel-controls button:hover:not(:disabled){background:#eaf7fd;transform:translateY(-1px) scale(1.04)}
+@media(max-width:767px){
+ .apple-carousel-controls{top:10px;gap:6px;padding:6px 7px 6px 12px}
+ .apple-carousel-controls button{width:34px;height:34px}
+ .apple-carousel-controls .apple-carousel-position{font-size:10px}
+}
