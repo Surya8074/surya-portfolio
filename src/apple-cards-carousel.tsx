@@ -5,11 +5,12 @@ import { useOutsideClick } from './useOutsideClick';
 import './apple-cards-carousel.css';
 
 export type AppleProjectCardData = { src: string; title: string; category: string; content: React.ReactNode };
-type CarouselContextValue = { onCardClose: (index: number) => void; onCardSelect: (index: number) => void; currentIndex: number };
-export const CarouselContext = createContext<CarouselContextValue>({ onCardClose: () => {}, onCardSelect: () => {}, currentIndex: 0 });
+type CarouselContextValue = { onCardClose: (index: number) => void; onCardSelect: (index: number) => void; currentIndex: number; setCenterHovered: (hovered: boolean) => void; centerHovered: boolean };
+export const CarouselContext = createContext<CarouselContextValue>({ onCardClose: () => {}, onCardSelect: () => {}, currentIndex: 0, setCenterHovered: () => {}, centerHovered: false });
 
 export function Carousel({ items, initialScroll = 0 }: { items: React.ReactNode[]; initialScroll?: number }) {
   const [currentIndex, setCurrentIndex] = useState(Math.min(Math.max(0, initialScroll), items.length - 1));
+  const [centerHovered, setCenterHovered] = useState(false);
   const pointerStart = useRef<{ x: number; index: number } | null>(null);
   const wheelLock = useRef(false);
   const select = useCallback((index: number) => {
@@ -43,7 +44,7 @@ export function Carousel({ items, initialScroll = 0 }: { items: React.ReactNode[
     pointerStart.current = null;
   };
   return (
-    <CarouselContext.Provider value={{ currentIndex, onCardSelect: select, onCardClose: select }}>
+    <CarouselContext.Provider value={{ currentIndex, onCardSelect: select, onCardClose: select, centerHovered, setCenterHovered }}>
       <div className="apple-carousel">
         <div className="apple-carousel-stage" onWheel={handleWheel} onPointerDown={handlePointerDown} onPointerUp={handlePointerUp} onPointerCancel={() => { pointerStart.current = null; }}>
           <div className="apple-carousel-arc" aria-label="Other projects carousel">
@@ -53,7 +54,7 @@ export function Carousel({ items, initialScroll = 0 }: { items: React.ReactNode[
               const visible = distance <= 4;
               return <motion.div key={'project-card-' + index} className={'apple-carousel-item ' + (offset === 0 ? 'is-active' : '')}
                 initial={false}
-                animate={{ x: offset * 244, y: Math.min(distance * 17, 68), scale: Math.max(0.48, 1 - distance * 0.145), rotateY: offset * -17, z: -distance * 115, opacity: visible ? Math.max(0.18, 1 - distance * 0.19) : 0 }}
+                animate={{ x: offset * 244 + (centerHovered && offset !== 0 ? Math.sign(offset) * 82 : 0), y: Math.min(distance * 17, 68) + (centerHovered && offset === 0 ? 30 : 0), scale: Math.max(0.48, 1 - distance * 0.145) * (centerHovered && offset === 0 ? 0.97 : 1), rotateY: offset * -17, rotateX: centerHovered && offset === 0 ? 15 : 0, z: -distance * 115, opacity: visible ? Math.max(0.18, 1 - distance * 0.19) : 0 }}
                 transition={{ type: 'spring', stiffness: 115, damping: 19, mass: 0.8 }}
                 style={{ zIndex: 20 - distance, pointerEvents: visible ? 'auto' : 'none' }}
                 onClick={() => { if (offset !== 0) select(index); }}>{item}</motion.div>;
@@ -76,7 +77,8 @@ export function Card({ card, index, layout = false }: { card: AppleProjectCardDa
   const [open, setOpen] = useState(false);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
-  const { onCardClose, onCardSelect, currentIndex } = useContext(CarouselContext);
+  const { onCardClose, onCardSelect, currentIndex, setCenterHovered } = useContext(CarouselContext);
+  const [hovered, setHovered] = useState(false);
   const isActive = currentIndex === index;
   const handleClose = useCallback(() => { setOpen(false); onCardClose(index); }, [index, onCardClose]);
   useOutsideClick(containerRef, handleClose);
@@ -106,9 +108,10 @@ export function Card({ card, index, layout = false }: { card: AppleProjectCardDa
         </motion.div>
       </div>}
     </AnimatePresence>
+    <AnimatePresence>{isActive && hovered && <motion.div className="apple-project-hover-panel" initial={{ opacity: 0, y: 18, scale: 0.94, filter: 'blur(8px)' }} animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }} exit={{ opacity: 0, y: 12, scale: 0.96, filter: 'blur(6px)' }} transition={{ type: 'spring', stiffness: 180, damping: 20 }}><span className="apple-project-panel-kicker">PROJECT OVERVIEW</span><strong>{card.title}</strong><span className="apple-project-panel-category">{card.category}</span><span className="apple-project-panel-description">{card.title === 'Toniq AI' ? 'A spatial networking platform with an AI layer that gives attendees context before conversations begin.' : 'A connected desk companion that celebrates completed tasks through a physical, expressive interaction.'}</span><span className="apple-project-panel-cta">Explore project <b>↗</b></span></motion.div>}</AnimatePresence>
     <motion.button type="button" layoutId={layout ? 'card-' + card.title : undefined}
       onClick={() => { if (!isActive) onCardSelect(index); else setOpen(true); }}
-      onPointerMove={handlePointerMove} onPointerLeave={() => setTilt({ x: 0, y: 0 })}
+      onPointerMove={handlePointerMove} onPointerEnter={() => { if (isActive) { setHovered(true); setCenterHovered(true); } }} onPointerLeave={() => { setTilt({ x: 0, y: 0 }); setHovered(false); setCenterHovered(false); }}
       className={'apple-project-card ' + (isActive ? 'apple-project-card-active' : 'apple-project-card-side')}
       style={{ '--tilt-x': tilt.x + 'deg', '--tilt-y': tilt.y + 'deg' } as React.CSSProperties}
       aria-label={isActive ? 'Open ' + card.title + ' project details' : 'Bring ' + card.title + ' to centre'}>
