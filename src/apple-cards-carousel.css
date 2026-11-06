@@ -125,3 +125,6 @@
   .apple-hud-main{padding:12px 0 10px}
   .apple-hud-copy p{font-size:10px}
 }
+
+/* Project screenshots already contain their own typography; avoid doubled labels on side cards. */
+.apple-project-card-side .apple-project-card-copy{opacity:0}
