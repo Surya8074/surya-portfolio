@@ -128,3 +128,11 @@
 
 /* Project screenshots already contain their own typography; avoid doubled labels on side cards. */
 .apple-project-card-side .apple-project-card-copy{opacity:0}
+
+/* Softer return path and clearer hit targets during project exploration */
+.apple-carousel-item{transition:filter .3s ease}
+.apple-project-card{transition:box-shadow .42s cubic-bezier(.2,.8,.2,1),filter .42s ease}
+.apple-spatial-hud{cursor:default}
+.apple-spatial-hud a{cursor:pointer}
+.apple-carousel-stage:has(.apple-spatial-hud) .apple-carousel-item:not(.is-active){filter:saturate(.9) brightness(.96)}
+.apple-carousel-stage:has(.apple-spatial-hud) .apple-carousel-item:not(.is-active) .apple-project-card{cursor:pointer}
