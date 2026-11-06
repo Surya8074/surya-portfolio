@@ -10,6 +10,20 @@ export const CarouselContext = createContext<CarouselContextValue>({ onCardClose
 
 export function Carousel({ items, initialScroll = 0 }: { items: React.ReactNode[]; initialScroll?: number }) {
   const [currentIndex, setCurrentIndex] = useState(Math.min(Math.max(0, initialScroll), items.length - 1));
+  const [hasEntered, setHasEntered] = useState(false);
+  const stageRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const stage = stageRef.current;
+    if (!stage || hasEntered) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setHasEntered(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+    observer.observe(stage);
+    return () => observer.disconnect();
+  }, [hasEntered]);
   const [activeProject, setActiveProject] = useState<AppleProjectCardData | null>(null);
   const centerHovered = Boolean(activeProject);
   const pointerStart = useRef<{ x: number; index: number } | null>(null);
@@ -59,7 +73,7 @@ export function Carousel({ items, initialScroll = 0 }: { items: React.ReactNode[
   return (
     <CarouselContext.Provider value={{ currentIndex, onCardSelect: select, onCardClose: select, centerHovered, activeProject, setCenterHovered: setActiveProject, scheduleProjectionClose, cancelProjectionClose }}>
       <div className="apple-carousel">
-        <div className="apple-carousel-stage" onPointerLeave={() => { cancelProjectionClose(); setActiveProject(null); }} onWheel={handleWheel} onPointerDown={handlePointerDown} onPointerUp={handlePointerUp} onPointerCancel={() => { pointerStart.current = null; }}>
+        <div ref={stageRef} className={"apple-carousel-stage " + (hasEntered ? "has-entered" : "")} onPointerLeave={() => { cancelProjectionClose(); setActiveProject(null); }} onWheel={handleWheel} onPointerDown={handlePointerDown} onPointerUp={handlePointerUp} onPointerCancel={() => { pointerStart.current = null; }}>
           <div className="apple-carousel-arc" aria-label="Other projects carousel">
             {items.map((item, index) => {
               const offset = index - currentIndex;
@@ -67,8 +81,8 @@ export function Carousel({ items, initialScroll = 0 }: { items: React.ReactNode[
               const visible = distance <= 4;
               return <motion.div key={'project-card-' + index} className={'apple-carousel-item ' + (offset === 0 ? 'is-active' : '')}
                 initial={false}
-                animate={{ x: offset * 244 + (centerHovered && offset !== 0 ? Math.sign(offset) * 82 : 0), y: Math.min(distance * 17, 68) + (centerHovered && offset === 0 ? 30 : 0), scale: Math.max(0.48, 1 - distance * 0.145) * (centerHovered && offset === 0 ? 0.82 : 1), rotateY: offset * -17, rotateX: centerHovered && offset === 0 ? 58 : 0, z: -distance * 115, opacity: visible ? Math.max(0.18, 1 - distance * 0.19) : 0 }}
-                transition={{ type: 'spring', stiffness: 115, damping: 19, mass: 0.8 }}
+                animate={{ x: offset * 244 + (centerHovered && offset !== 0 ? Math.sign(offset) * 82 : 0), y: Math.min(distance * 17, 68) + (centerHovered && offset === 0 ? 30 : 0) + (hasEntered ? 0 : 92), scale: Math.max(0.48, 1 - distance * 0.145) * (centerHovered && offset === 0 ? 0.82 : 1) * (hasEntered ? 1 : 0.82), rotateY: offset * -17, rotateX: centerHovered && offset === 0 ? 58 : 0, z: -distance * 115, opacity: hasEntered && visible ? Math.max(0.18, 1 - distance * 0.19) : 0 }}
+                transition={{ type: 'spring', stiffness: 105, damping: 20, mass: 0.85, delay: hasEntered ? 0 : Math.min(distance * 0.055, 0.24) }}
                 style={{ zIndex: 20 - distance, pointerEvents: visible ? 'auto' : 'none' }}
                 onClick={() => { if (offset !== 0) select(index); }}>{item}</motion.div>;
             })}
@@ -87,7 +101,7 @@ export function Carousel({ items, initialScroll = 0 }: { items: React.ReactNode[
           <div className="apple-carousel-edge apple-carousel-edge-left" />
           <div className="apple-carousel-edge apple-carousel-edge-right" />
         </div>
-        <div className="apple-carousel-controls">
+        <motion.div className="apple-carousel-controls" initial={{ opacity: 0, y: 16 }} animate={{ opacity: hasEntered ? 1 : 0, y: hasEntered ? 0 : 16 }} transition={{ duration: 0.55, delay: 0.18, ease: "easeOut" }}>
           <button type="button" aria-label="Previous project" onClick={() => select(currentIndex - 1)} ><ArrowLeft size={19}/></button>
           <button type="button" aria-label="Next project" onClick={() => select(currentIndex + 1)} ><ArrowRight size={19}/></button>
         </div>
