@@ -758,3 +758,61 @@ html{scroll-behavior:auto !important;scroll-padding-top:0}
   flex:0 0 32px !important;
   margin:0 !important;
 }
+
+
+/* Apple-inspired horizontal carousel for Other Projects */
+main .other-reference .other-reference-carousel {
+  display: flex;
+  align-items: stretch;
+  gap: 22px;
+  width: min(760px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 8px 4px 28px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 4px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+main .other-reference .other-reference-carousel::-webkit-scrollbar { display: none; }
+main .other-reference .other-project-slide {
+  flex: 0 0 280px;
+  width: 280px;
+  scroll-snap-align: center;
+  border-radius: 30px;
+  overflow: hidden;
+  background: #f5f5f7;
+  box-shadow: 0 8px 28px rgba(20, 24, 35, .08);
+  transition: transform 420ms cubic-bezier(.2,.8,.2,1), box-shadow 420ms ease;
+}
+main .other-reference .other-project-slide:hover,
+main .other-reference .other-project-slide:focus-visible {
+  transform: translateY(-7px) scale(1.012);
+  box-shadow: 0 18px 42px rgba(20, 24, 35, .14);
+}
+main .other-reference .other-artwork-card,
+main .other-reference .reference-artwork-card {
+  border: 0;
+  border-radius: 0;
+  aspect-ratio: 344 / 547;
+  background: transparent;
+}
+main .other-reference .reference-artwork-card img {
+  object-fit: cover;
+  object-position: center top;
+}
+@media (max-width: 1023px) {
+  main .other-reference .other-reference-carousel {
+    width: calc(100% - 28px);
+    gap: 16px;
+    padding-inline: 2px;
+  }
+  main .other-reference .other-project-slide {
+    flex-basis: min(78vw, 280px);
+    width: min(78vw, 280px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  main .other-reference .other-project-slide { transition: none; }
+}
