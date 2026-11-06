@@ -260,7 +260,7 @@ function App() {
       <section id="work" className="reference-work-section"><div className="work-intro"><p>SELECTED WORK</p></div><GenesisCard /><ComskiCard /><LaundroMartCard /></section>
       <section className="other-reference" aria-label="Other Projects">
         <h2 className="other-reference-heading">Other Projects</h2>
-        <Carousel items={otherProjectCards.map((card, index) => <Card key={card.title} card={card} index={index} />)} />
+        <Carousel items={Array.from({ length: 7 }, (_, cycle) => otherProjectCards.map((card, index) => <Card key={cycle + "-" + card.title} card={card} index={cycle * otherProjectCards.length + index} />)).flat()} initialScroll={otherProjectCards.length * 3} />
       </section>
       <ToolsWorkflow />
       <footer className="reference-footer"><h2>Every pixel here was a decision.</h2><p>Every word, a choice. Thanks for seeing it.</p><div className="footer-icons"><Linkedin/><FileText/><Github/></div><div className="footer-line" /><div className="footer-mark">≈≈≈</div><strong>Surya Kiran © 2026</strong></footer>
