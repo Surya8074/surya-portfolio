@@ -1,20 +1,30 @@
-
-.apple-carousel{position:relative;width:100%;font-family:inherit}
-.apple-carousel-track{width:100%;overflow-x:auto;overscroll-behavior-x:contain;scroll-behavior:smooth;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:32px max(24px,calc((100vw - 1120px)/2)) 34px;box-sizing:border-box}
-.apple-carousel-track::-webkit-scrollbar{display:none}
-.apple-carousel-items{display:flex;flex-direction:row;justify-content:flex-start;gap:22px;width:max-content;min-width:100%;margin:0 auto}
-.apple-carousel-item{flex:0 0 auto;border-radius:30px;overflow:hidden}
-.apple-project-card{position:relative;display:block;width:280px;height:420px;padding:0;overflow:hidden;border:0;border-radius:30px;background:#f5f5f7;color:#fff;text-align:left;cursor:pointer;box-shadow:0 8px 30px rgba(15,20,30,.10);isolation:isolate;transform:translateZ(0)}
-.apple-project-card>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;z-index:-2;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
-.apple-project-card:hover>img{transform:scale(1.035)}
-.apple-project-card-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.46) 0%,rgba(0,0,0,.08) 38%,transparent 62%);z-index:-1}
-.apple-project-card-copy{position:absolute;top:25px;left:25px;right:20px;display:flex;flex-direction:column;gap:8px}
-.apple-project-category{font-size:12px;font-weight:600;letter-spacing:.02em;color:rgba(255,255,255,.88)}
-.apple-project-title{font-size:26px;line-height:1.05;letter-spacing:-.045em;font-weight:700;color:#fff}
-.apple-carousel-controls{display:flex;justify-content:flex-end;gap:10px;width:min(1120px,calc(100% - 48px));margin:0 auto}
-.apple-carousel-controls button{width:42px;height:42px;border:0;border-radius:50%;display:grid;place-items:center;background:#f0f0f0;color:#525252;cursor:pointer;transition:background .2s,transform .2s}
-.apple-carousel-controls button:hover:not(:disabled){background:#e3e3e3;transform:scale(1.04)}
-.apple-carousel-controls button:disabled{opacity:.35;cursor:default}
+.apple-carousel{position:relative;width:100%;font-family:inherit;overflow:hidden}
+.apple-carousel-stage{position:relative;height:clamp(390px,46vw,590px);width:100%;overflow:hidden;perspective:1500px;perspective-origin:50% 43%;touch-action:pan-y;cursor:grab}
+.apple-carousel-stage:active{cursor:grabbing}
+.apple-carousel-arc{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transform-style:preserve-3d}
+.apple-carousel-item{position:absolute;top:50%;left:50%;width:clamp(230px,27vw,350px);height:clamp(320px,37vw,450px);margin-left:calc(clamp(230px,27vw,350px)/-2);margin-top:calc(clamp(320px,37vw,450px)/-2);border-radius:28px;overflow:visible;transform-style:preserve-3d;will-change:transform,opacity}
+.apple-project-card{position:relative;display:block;width:100%;height:100%;padding:0;overflow:hidden;border:1px solid rgba(255,255,255,.55);border-radius:28px;background:#f5f5f7;color:#fff;text-align:left;cursor:pointer;box-shadow:0 28px 75px rgba(15,20,30,.2);isolation:isolate;transform:perspective(1000px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));transform-style:preserve-3d;transition:transform .24s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.apple-project-card-active{box-shadow:0 38px 100px rgba(15,20,30,.28),0 0 0 1px rgba(255,255,255,.42)}
+.apple-project-card-side{filter:saturate(.8) brightness(.82)}
+.apple-project-card>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;z-index:-2;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.apple-project-card-active:hover>img{transform:scale(1.055)}
+.apple-project-card-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.54) 0%,rgba(0,0,0,.08) 42%,transparent 68%);z-index:-1}
+.apple-project-card-copy{position:absolute;top:25px;left:25px;right:20px;display:flex;flex-direction:column;gap:8px;transform:translateZ(34px);pointer-events:none}
+.apple-project-category{font-size:11px;font-weight:650;letter-spacing:.09em;color:rgba(255,255,255,.86)}
+.apple-project-title{font-size:clamp(23px,2.2vw,31px);line-height:1.05;letter-spacing:-.045em;font-weight:720;color:#fff}
+.apple-project-hint{display:inline-flex;align-items:center;gap:9px;margin-top:12px;font-size:12px;font-weight:600;letter-spacing:.015em;color:rgba(255,255,255,.94);opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s}
+.apple-project-card-active:hover .apple-project-hint{opacity:1;transform:translateY(0)}
+.apple-project-hint b{font-size:16px}
+.apple-project-card-glare{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 35%,rgba(255,255,255,.22),transparent 55%);mix-blend-mode:screen;opacity:.65;transform:translateZ(55px)}
+.apple-carousel-edge{position:absolute;z-index:30;top:0;bottom:0;width:clamp(30px,8vw,150px);pointer-events:none}
+.apple-carousel-edge-left{left:0;background:linear-gradient(90deg,var(--page-bg,#fff) 0%,transparent 100%)}
+.apple-carousel-edge-right{right:0;background:linear-gradient(270deg,var(--page-bg,#fff) 0%,transparent 100%)}
+.apple-carousel-controls{position:relative;display:flex;align-items:center;justify-content:flex-end;gap:10px;width:min(1120px,calc(100% - 48px));margin:-3px auto 0}
+.apple-carousel-position{margin-right:auto;color:#777;font-size:12px;font-variant-numeric:tabular-nums;letter-spacing:.08em}
+.apple-carousel-position i{font-style:normal;margin:0 6px;color:#aaa}
+.apple-carousel-controls button{width:42px;height:42px;border:1px solid rgba(0,0,0,.08);border-radius:50%;display:grid;place-items:center;background:#f0f0f0;color:#303030;cursor:pointer;transition:background .2s,transform .2s,opacity .2s}
+.apple-carousel-controls button:hover:not(:disabled){background:#e3e3e3;transform:scale(1.05)}
+.apple-carousel-controls button:disabled{opacity:.3;cursor:default}
 .apple-card-modal{position:fixed;inset:0;z-index:1000;overflow:auto;padding:32px 18px;display:flex;align-items:flex-start;justify-content:center}
 .apple-card-backdrop{position:fixed;inset:0;width:100%;height:100%;border:0;background:rgba(0,0,0,.72);backdrop-filter:blur(12px);cursor:default}
 .apple-card-modal-panel{position:relative;z-index:1;width:min(900px,100%);min-height:300px;margin:20px auto;padding:42px;border-radius:28px;background:#fff;color:#171717;box-shadow:0 30px 100px rgba(0,0,0,.24)}
@@ -24,5 +34,5 @@
 .apple-card-modal-content{clear:both;padding-top:8px;color:#555;font-size:16px;line-height:1.6}
 .apple-card-modal-content p{margin:0 0 22px}
 .apple-card-modal-content a{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:999px;background:#111;color:white;text-decoration:none;font-size:14px;font-weight:600}
-@media(max-width:767px){.apple-carousel-track{padding:24px 18px 28px}.apple-carousel-items{gap:14px}.apple-project-card{width:min(76vw,280px);height:min(116vw,420px);border-radius:25px}.apple-project-card-copy{top:20px;left:20px}.apple-project-title{font-size:23px}.apple-carousel-controls{width:calc(100% - 36px)}.apple-card-modal{padding:14px}.apple-card-modal-panel{padding:28px 22px;border-radius:22px}}
-@media(prefers-reduced-motion:reduce){.apple-project-card>img,.apple-carousel-controls button{transition:none}.apple-carousel-track{scroll-behavior:auto}}
+@media(max-width:767px){.apple-carousel-stage{height:430px;perspective:1100px}.apple-carousel-item{width:250px;height:350px;margin-left:-125px;margin-top:-175px}.apple-carousel-controls{width:calc(100% - 36px)}.apple-carousel-edge{width:34px}.apple-card-modal{padding:14px}.apple-card-modal-panel{padding:28px 22px;border-radius:22px}}
+@media(prefers-reduced-motion:reduce){.apple-project-card,.apple-project-card>img,.apple-carousel-controls button{transition:none}}
