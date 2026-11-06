@@ -816,3 +816,9 @@ main .other-reference .reference-artwork-card img {
 @media (prefers-reduced-motion: reduce) {
   main .other-reference .other-project-slide { transition: none; }
 }
+
+
+/* Other Projects carousel: reserve space for the hover panel and keep the cards clear of fixed UI. */
+main .other-reference{padding-top:120px;padding-bottom:190px}
+main .other-reference .apple-carousel-stage{margin-top:8px}
+@media(max-width:767px){main .other-reference{padding-top:100px;padding-bottom:160px}}
