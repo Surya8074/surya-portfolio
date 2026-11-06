@@ -97,3 +97,31 @@
 }
 @media(prefers-reduced-motion:reduce){.apple-hud-scanline{animation:none}}
 @media(hover:none){.apple-spatial-hud{display:block}}
+
+/* Final composition correction: HUD stays in the readable viewport band */
+.apple-spatial-hud{
+  top:170px;
+  width:min(620px,calc(100% - 64px));
+  min-height:0;
+  padding:15px 22px 12px;
+  border-radius:22px;
+  z-index:90;
+}
+.apple-hud-main{padding:13px 0 12px;gap:22px}
+.apple-hud-copy h3{font-size:clamp(24px,2.6vw,31px);margin-bottom:6px}
+.apple-hud-copy p{font-size:11px;line-height:1.45}
+.apple-hud-data{gap:9px}
+.apple-hud-bottom{padding-top:10px}
+.apple-carousel-stage:has(.apple-spatial-hud) .apple-project-card-active .apple-project-card-copy,
+.apple-carousel-stage:has(.apple-spatial-hud) .apple-project-card-active .apple-project-card-shade,
+.apple-carousel-stage:has(.apple-spatial-hud) .apple-project-card-active .apple-project-card-glare{
+  opacity:0;
+  transition:opacity .24s ease;
+}
+.apple-carousel-stage:has(.apple-spatial-hud) .apple-project-card-active>img{filter:saturate(.9) brightness(1.04)}
+.apple-carousel-stage:has(.apple-spatial-hud) .apple-project-card-active{box-shadow:0 32px 75px rgba(63,130,172,.18),0 0 34px rgba(91,190,239,.2)}
+@media(max-width:767px){
+  .apple-spatial-hud{top:105px;width:calc(100% - 28px);padding:13px 15px 11px}
+  .apple-hud-main{padding:12px 0 10px}
+  .apple-hud-copy p{font-size:10px}
+}
