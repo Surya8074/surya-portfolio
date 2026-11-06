@@ -54,8 +54,8 @@
 @media(hover:none){.apple-project-hover-panel{display:none}}
 
 /* Spatial Vision-style projection stage */
-.apple-carousel-stage{height:680px;perspective:1800px;perspective-origin:50% 48%;overflow:visible}
-.apple-carousel-arc{transform:translateY(100px)}
+.apple-carousel-stage{height:500px;perspective:1800px;perspective-origin:50% 48%;overflow:visible}
+.apple-carousel-arc{transform:translateY(34px)}
 .apple-carousel-item{width:clamp(230px,24vw,310px);height:clamp(320px,31vw,400px);margin-left:calc(clamp(230px,24vw,310px)/-2);margin-top:calc(clamp(320px,31vw,400px)/-2)}
 .apple-project-card{transform-style:preserve-3d;backface-visibility:hidden;transition:box-shadow .45s ease,filter .45s ease}
 .apple-project-card-active{box-shadow:0 24px 65px rgba(29,54,83,.16),0 0 0 1px rgba(255,255,255,.8)}
@@ -83,8 +83,8 @@
 @keyframes appleHudScan{0%,100%{transform:translateY(-20%);opacity:0}35%,65%{opacity:1}80%{transform:translateY(470%);opacity:0}}
 .apple-carousel-controls{margin-top:8px}
 @media(max-width:767px){
- .apple-carousel-stage{height:620px;perspective:1200px}
- .apple-carousel-arc{transform:translateY(160px)}
+ .apple-carousel-stage{height:520px;perspective:1200px}
+ .apple-carousel-arc{transform:translateY(112px)}
  .apple-carousel-item{width:230px;height:320px;margin-left:-115px;margin-top:-160px}
  .apple-spatial-hud{top:14px;width:calc(100% - 24px);min-height:0;padding:15px 16px 13px;border-radius:19px}
  .apple-hud-topline{font-size:7px;letter-spacing:.08em}
