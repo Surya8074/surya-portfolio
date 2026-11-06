@@ -12,7 +12,16 @@ export function Carousel({ items, initialScroll = 0 }: { items: React.ReactNode[
   const [currentIndex, setCurrentIndex] = useState(Math.min(Math.max(0, initialScroll), items.length - 1));
   const pointerStart = useRef<{ x: number; index: number } | null>(null);
   const wheelLock = useRef(false);
-  const select = useCallback((index: number) => setCurrentIndex(Math.min(items.length - 1, Math.max(0, index))), [items.length]);
+  const select = useCallback((index: number) => {
+    const cycleSize = Math.max(1, Math.floor(items.length / 7));
+    const center = cycleSize * 3;
+    if (index < cycleSize * 2 || index >= cycleSize * 5) {
+      const equivalent = ((index % cycleSize) + cycleSize) % cycleSize;
+      setCurrentIndex(center + equivalent);
+      return;
+    }
+    setCurrentIndex(index);
+  }, [items.length]);
   const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
     if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
       event.preventDefault();
@@ -55,8 +64,8 @@ export function Carousel({ items, initialScroll = 0 }: { items: React.ReactNode[
         </div>
         <div className="apple-carousel-controls">
           <span className="apple-carousel-position">{String(currentIndex + 1).padStart(2, '0')} <i>/</i> {String(items.length).padStart(2, '0')}</span>
-          <button type="button" aria-label="Previous project" onClick={() => select(currentIndex - 1)} disabled={currentIndex === 0}><ArrowLeft size={19}/></button>
-          <button type="button" aria-label="Next project" onClick={() => select(currentIndex + 1)} disabled={currentIndex === items.length - 1}><ArrowRight size={19}/></button>
+          <button type="button" aria-label="Previous project" onClick={() => select(currentIndex - 1)} ><ArrowLeft size={19}/></button>
+          <button type="button" aria-label="Next project" onClick={() => select(currentIndex + 1)} ><ArrowRight size={19}/></button>
         </div>
       </div>
     </CarouselContext.Provider>
