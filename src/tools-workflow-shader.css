@@ -1,0 +1,8 @@
+.tw-shader-layer{position:absolute;z-index:0;inset:0;overflow:hidden;border-radius:inherit;pointer-events:none;background:transparent}
+.tw-shader-layer canvas{display:block;width:100%;height:100%;opacity:.95}
+.tw-group>*:not(.tw-shader-layer){position:relative;z-index:1}
+.tw-group{isolation:isolate}
+.tw-group:hover{border-color:#d5d9e0;box-shadow:0 12px 32px rgba(27,35,52,.10),0 0 26px rgba(100,120,255,.08)}
+.tw-group .tw-group-icon{transition:transform .35s cubic-bezier(.2,.8,.2,1),background .35s ease}
+.tw-group:hover .tw-group-icon{transform:translateY(-2px) scale(1.06)}
+@media(prefers-reduced-motion:reduce){.tw-group .tw-group-icon{transition:none}}
