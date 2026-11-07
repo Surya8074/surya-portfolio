@@ -1,0 +1,43 @@
+/* Scroll-entry motion only: no sticky positioning or added section height. */
+#tools-workflow .tw-heading,
+#tools-workflow .tw-group,
+#tools-workflow .tw-workflow-heading,
+#tools-workflow .tw-stage {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0);
+  transition:
+    opacity 680ms cubic-bezier(.22, 1, .36, 1),
+    transform 760ms cubic-bezier(.22, 1, .36, 1);
+  transition-delay: var(--tw-entry-delay, 0ms);
+}
+
+#tools-workflow.tw-entry-visible .tw-heading,
+#tools-workflow.tw-entry-visible .tw-group,
+#tools-workflow.tw-entry-visible .tw-workflow-heading,
+#tools-workflow.tw-entry-visible .tw-stage {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+#tools-workflow .tw-group:nth-child(1) { --tw-entry-delay: 60ms; }
+#tools-workflow .tw-group:nth-child(2) { --tw-entry-delay: 130ms; }
+#tools-workflow .tw-group:nth-child(3) { --tw-entry-delay: 200ms; }
+#tools-workflow .tw-group:nth-child(4) { --tw-entry-delay: 270ms; }
+#tools-workflow .tw-group:nth-child(5) { --tw-entry-delay: 340ms; }
+#tools-workflow .tw-group:nth-child(6) { --tw-entry-delay: 410ms; }
+#tools-workflow .tw-workflow-heading { --tw-entry-delay: 80ms; }
+#tools-workflow .tw-stage:nth-child(1) { --tw-entry-delay: 120ms; }
+#tools-workflow .tw-stage:nth-child(2) { --tw-entry-delay: 200ms; }
+#tools-workflow .tw-stage:nth-child(3) { --tw-entry-delay: 280ms; }
+#tools-workflow .tw-stage:nth-child(4) { --tw-entry-delay: 360ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  #tools-workflow .tw-heading,
+  #tools-workflow .tw-group,
+  #tools-workflow .tw-workflow-heading,
+  #tools-workflow .tw-stage {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
