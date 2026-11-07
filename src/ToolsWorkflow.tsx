@@ -1,5 +1,4 @@
-import React, { useMemo, useState } from 'react';
-import { ShaderFloodLayer } from './ShaderFlood';
+import React from 'react';
 import {
   BrainCircuit,
   Clapperboard,
@@ -87,21 +86,9 @@ const stages = [
   },
 ];
 
-const floodPalettes: [string, string, string][] = [
-  ['#0756b8','#3b9df5','#b9e5ff'],
-  ['#4c168c','#a855f7','#f0abfc'],
-  ['#087c75','#35c9b5','#c2fff0'],
-  ['#0d4d87','#268bd2','#b9e4ff'],
-  ['#1744a0','#537cf5','#c9d5ff'],
-  ['#a33b19','#f28b45','#ffe0a8'],
-];
-
 function ToolGroupItem({ group }: { group: ToolGroup }) {
-  const [active, setActive] = useState(false);
-  const colors = useMemo(() => floodPalettes[Number(group.number) - 1] ?? floodPalettes[0], [group.number]);
   return (
-    <article className="tw-group" onPointerEnter={() => setActive(true)} onPointerLeave={() => setActive(false)} onFocus={() => setActive(true)} onBlur={() => setActive(false)}>
-      <ShaderFloodLayer active={active} colors={colors} />
+    <article className="tw-group">
       <div className="tw-group-top">
         <span className="tw-group-icon">{group.icon}</span>
         <span className="tw-group-number">{group.number}</span>
