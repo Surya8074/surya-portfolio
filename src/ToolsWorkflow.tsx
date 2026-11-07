@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ShaderFloodLayer } from './ShaderFlood';
 import {
   BrainCircuit,
@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import './tools-workflow.css';
 import './tools-workflow-shader.css';
+import './tools-workflow-entry.css';
 
 type ToolGroup = {
   number: string;
@@ -130,8 +131,27 @@ function ToolGroupItem({ group }: { group: ToolGroup }) {
 }
 
 export default function ToolsWorkflow() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+      section.classList.add('tw-entry-visible');
+      return;
+    }
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        section.classList.add('tw-entry-visible');
+        observer.disconnect();
+      }
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="tools-workflow" id="tools-workflow" aria-labelledby="tools-workflow-title">
+    <section ref={sectionRef} className="tools-workflow" id="tools-workflow" aria-labelledby="tools-workflow-title">
       <div className="tw-inner">
         <header className="tw-heading">
           <p className="tw-eyebrow">TOOLS &amp; WORKFLOW</p>
