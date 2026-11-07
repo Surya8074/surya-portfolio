@@ -87,7 +87,7 @@ export function ShaderFloodLayer({ active, colors }: Props) {
       gl.viewport(0,0,canvas.width,canvas.height); gl.uniform2f(resolution,canvas.width,canvas.height);
     };
     const observer=new ResizeObserver(resize); observer.observe(canvas); resize();
-    let frame=0, eased=0, start=performance.now(), running=true;
+    let frame=0, eased=0, start=performance.now();
     const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const draw=(now:number)=>{
       const target=activeRef.current?1:0;
@@ -95,15 +95,11 @@ export function ShaderFloodLayer({ active, colors }: Props) {
       gl.clearColor(0,0,0,0); gl.clear(gl.COLOR_BUFFER_BIT);
       gl.uniform1f(time,reduce?0:(now-start)/1000); gl.uniform1f(activeLoc,eased);
       gl.uniform2f(pointerLoc,pointer.current[0],pointer.current[1]); gl.drawArrays(gl.TRIANGLES,0,6);
-      if(activeRef.current||eased>.008){ frame=requestAnimationFrame(draw); }
-      else { running=false; }
+      frame=requestAnimationFrame(draw);
     };
-    const wake=()=>{ if(!running){running=true;frame=requestAnimationFrame(draw);} };
     frame=requestAnimationFrame(draw);
-    const onWake=()=>wake();
-    canvas.addEventListener('pointermove',onWake);
     return ()=>{
-      cancelAnimationFrame(frame); observer.disconnect(); canvas.removeEventListener('pointermove',onWake);
+      cancelAnimationFrame(frame); observer.disconnect();
       if(buffer) gl.deleteBuffer(buffer); gl.deleteProgram(program); gl.deleteShader(vs); gl.deleteShader(fs);
       gl.getExtension('WEBGL_lose_context')?.loseContext();
     };
