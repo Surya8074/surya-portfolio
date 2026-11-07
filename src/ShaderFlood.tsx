@@ -81,6 +81,13 @@ export function ShaderFloodLayer({ active, colors }: Props) {
     const c1=u('uColor1'),c2=u('uColor2'),c3=u('uColor3');
     const parsed=colors.map(rgb);
     gl.uniform3fv(c1,parsed[0]); gl.uniform3fv(c2,parsed[1]); gl.uniform3fv(c3,parsed[2]);
+    const trackPointer=(event:PointerEvent)=>{
+      const rect=canvas.getBoundingClientRect();
+      if(event.clientX>=rect.left&&event.clientX<=rect.right&&event.clientY>=rect.top&&event.clientY<=rect.bottom){
+        pointer.current=[(event.clientX-rect.left)/rect.width,1-(event.clientY-rect.top)/rect.height];
+      }
+    };
+    window.addEventListener('pointermove',trackPointer,{passive:true});
     const resize=()=>{
       const rect=canvas.getBoundingClientRect(), dpr=Math.min(devicePixelRatio||1,1.5);
       canvas.width=Math.max(1,Math.round(rect.width*dpr)); canvas.height=Math.max(1,Math.round(rect.height*dpr));
@@ -99,7 +106,7 @@ export function ShaderFloodLayer({ active, colors }: Props) {
     };
     frame=requestAnimationFrame(draw);
     return ()=>{
-      cancelAnimationFrame(frame); observer.disconnect();
+      cancelAnimationFrame(frame); observer.disconnect(); window.removeEventListener('pointermove',trackPointer);
       if(buffer) gl.deleteBuffer(buffer); gl.deleteProgram(program); gl.deleteShader(vs); gl.deleteShader(fs);
       gl.getExtension('WEBGL_lose_context')?.loseContext();
     };
