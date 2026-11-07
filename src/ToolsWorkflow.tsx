@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ShaderFloodLayer } from './ShaderFlood';
 import {
   BrainCircuit,
   Clapperboard,
@@ -9,8 +10,6 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import './tools-workflow.css';
-import './tools-workflow-scroll.css';
-import './tools-workflow-scroll.js';
 
 type ToolGroup = {
   number: string;
@@ -88,9 +87,21 @@ const stages = [
   },
 ];
 
+const shaderPalettes: [string, string, string][] = [
+  ['#1767d2', '#59b8ff', '#d9f4ff'],
+  ['#7135c8', '#c16aff', '#ffe0ff'],
+  ['#087e79', '#39d5c1', '#d4fff6'],
+  ['#2357a8', '#55a0ee', '#d8edff'],
+  ['#3155c8', '#8497ff', '#e2e7ff'],
+  ['#b34a23', '#ff9b55', '#ffe8c9'],
+];
+
 function ToolGroupItem({ group }: { group: ToolGroup }) {
+  const [hovered, setHovered] = useState(false);
+  const palette = shaderPalettes[Number(group.number) - 1] ?? shaderPalettes[0];
   return (
-    <article className="tw-group">
+    <article className="tw-group" onPointerEnter={() => setHovered(true)} onPointerLeave={() => setHovered(false)} onFocus={() => setHovered(true)} onBlur={() => setHovered(false)}>
+      <ShaderFloodLayer active={hovered} colors={palette} />
       <div className="tw-group-top">
         <span className="tw-group-icon">{group.icon}</span>
         <span className="tw-group-number">{group.number}</span>
