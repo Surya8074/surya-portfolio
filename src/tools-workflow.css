@@ -54,9 +54,13 @@
   transition: transform .24s ease, box-shadow .24s ease, border-color .24s ease;
 }
 .tw-group:hover {
-  transform: translateY(-4px);
+  transform: translateY(-7px) rotate(-.35deg) scale(1.012);
+  transform-origin: center center;
   border-color: #d5d9e0;
-  box-shadow: 0 8px 20px rgba(27, 35, 52, .07);
+  box-shadow:
+    0 3px 0 rgba(27, 35, 52, .035),
+    0 7px 0 rgba(27, 35, 52, .025),
+    0 15px 28px rgba(27, 35, 52, .09);
 }
 .tw-group-top {
   display: flex;
