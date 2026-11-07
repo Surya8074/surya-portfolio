@@ -12,6 +12,8 @@ import {
 import './tools-workflow.css';
 import './tools-workflow-shader.css';
 import './tools-workflow-entry.css';
+import './tools-workflow-scroll.css';
+import './tools-workflow-scroll.js';
 
 type ToolGroup = {
   number: string;
