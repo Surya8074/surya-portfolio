@@ -104,7 +104,7 @@ export function Carousel({ items, initialScroll = 0 }: { items: React.ReactNode[
         <motion.div className="apple-carousel-controls" initial={{ opacity: 0, y: 16 }} animate={{ opacity: hasEntered ? 1 : 0, y: hasEntered ? 0 : 16 }} transition={{ duration: 0.55, delay: 0.18, ease: "easeOut" }}>
           <button type="button" aria-label="Previous project" onClick={() => select(currentIndex - 1)} ><ArrowLeft size={19}/></button>
           <button type="button" aria-label="Next project" onClick={() => select(currentIndex + 1)} ><ArrowRight size={19}/></button>
-        </div>
+        </motion.div>
       </div>
     </CarouselContext.Provider>
   );
