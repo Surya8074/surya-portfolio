@@ -1,0 +1,7 @@
+/* A clipped visual overlay: it never contributes to card or section dimensions. */
+.tw-group{isolation:isolate;}
+.tw-group .tw-shader-layer{position:absolute;inset:0;z-index:0;overflow:hidden;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity 180ms ease;}
+.tw-group:hover .tw-shader-layer,.tw-group:focus-within .tw-shader-layer{opacity:1;}
+.tw-group .tw-shader-layer canvas{display:block;width:100%;height:100%;}
+.tw-group>:not(.tw-shader-layer){position:relative;z-index:1;}
+@media(prefers-reduced-motion:reduce){.tw-group .tw-shader-layer{transition:none;}}
