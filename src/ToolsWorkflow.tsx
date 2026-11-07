@@ -10,6 +10,7 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import './tools-workflow.css';
+import './tools-workflow-shader.css';
 
 type ToolGroup = {
   number: string;
