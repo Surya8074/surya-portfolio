@@ -308,3 +308,23 @@
     border-top:1px solid rgba(25,35,48,.10);
   }
 }
+
+
+/* Keep the arrow control group centered over the carousel's card axis.
+   Motion applies its own translateY inline, so use auto side margins rather
+   than translateX(-50%) for horizontal centering. */
+.apple-carousel-controls{
+  left:0;
+  right:0;
+  width:max-content;
+  margin:0 auto;
+  transform:none;
+}
+@media(max-width:767px){
+  .apple-carousel-controls{
+    left:0;
+    right:0;
+    width:max-content;
+    margin:0 auto;
+  }
+}
