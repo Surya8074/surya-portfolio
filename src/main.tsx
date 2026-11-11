@@ -11,6 +11,7 @@ import './genesis-card.css';
 import './laundromart-card.css';
 import './comski-showcase.css';
 import ToolsWorkflow from './ToolsWorkflow';
+import CtaFooter from './CtaFooter';
 import GenesisMacBook from './GenesisMacBook';
 import { Carousel, Card, type AppleProjectCardData } from './apple-cards-carousel';
 
@@ -263,7 +264,7 @@ function App() {
         <Carousel items={Array.from({ length: 7 }, (_, cycle) => otherProjectCards.map((card, index) => <Card key={cycle + "-" + card.title} card={card} index={cycle * otherProjectCards.length + index} />)).flat()} initialScroll={otherProjectCards.length * 3} />
       </section>
       <ToolsWorkflow />
-      <footer id="contact" className="reference-footer"><h2>Every pixel here was a decision.</h2><p>Every word, a choice. Thanks for seeing it.</p><div className="footer-icons"><Linkedin/><FileText/><Github/></div><div className="footer-line" /><div className="footer-mark">≈≈≈</div><strong>Surya Kiran © 2026</strong></footer>
+      <CtaFooter />
       <div className="portfolio-dock"><Dock items={items} panelHeight={70} baseItemSize={50} magnification={70} /></div><button className="to-top" onClick={() => go('#home')} aria-label="Back to top"><ArrowUp size={19}/></button>
     </main>
   );
