@@ -624,3 +624,28 @@
 @media(prefers-reduced-motion:reduce){
   #work > .work-intro > h2{will-change:auto}
 }
+
+
+/* The project surface must be opaque so the sticky heading is physically
+   occluded as the card scrolls over it (rather than showing through). */
+#work > .genesis-project-card{
+  isolation:isolate;
+  z-index:3;
+  background:transparent;
+}
+#work > .genesis-project-card::before{
+  content:"";
+  position:absolute;
+  z-index:0;
+  inset:-22px -24px;
+  border-radius:28px;
+  background:#fffefb;
+  pointer-events:none;
+}
+#work > .genesis-project-card > *{
+  position:relative;
+  z-index:1;
+}
+#work > .genesis-project-card .genesis-project-copy{
+  z-index:2;
+}
