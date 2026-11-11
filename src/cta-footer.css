@@ -37,3 +37,33 @@
 @media(max-width:700px){.cta-footer__callout{min-height:390px;padding:68px 22px 72px}.cta-footer__heading{font-size:clamp(40px,10vw,58px)}.cta-footer__description{font-size:13px}.cta-footer__panel{padding:34px 22px 18px;border-radius:21px 21px 0 0}.cta-footer__footer-top{grid-template-columns:1fr;gap:34px;padding-bottom:30px}.cta-footer__identity{max-width:100%}.cta-footer__columns{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.cta-footer__bottom{align-items:flex-start;flex-direction:column;gap:9px}}
 @media(max-width:420px){.cta-footer__columns{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:26px}}
 @media(prefers-reduced-motion:reduce){.cta-footer *,.cta-footer *::before,.cta-footer *::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
+
+/* Apple-inspired liquid glass: warm white canvas, translucent footer panel and soft moving light. */
+.cta-footer{--cta-bg:#f5f7fb;--cta-foreground:#171a23;--cta-muted:#6e7482;--cta-border:rgba(255,255,255,.78);color:#171a23;background:radial-gradient(ellipse at 12% 18%,rgba(190,211,255,.62),transparent 34%),radial-gradient(ellipse at 88% 46%,rgba(211,224,255,.72),transparent 36%),linear-gradient(180deg,#f8f9fc,#eef2fa)}
+.cta-footer__glow{z-index:0;inset:-10% -8% 4%;opacity:.8;background:radial-gradient(ellipse at 20% 30%,rgba(119,157,255,.26),transparent 34%),radial-gradient(ellipse at 78% 48%,rgba(143,211,230,.25),transparent 32%),radial-gradient(ellipse at 52% 88%,rgba(218,204,255,.34),transparent 38%);filter:blur(48px);animation:cta-liquid-drift 18s ease-in-out infinite alternate}
+.cta-footer__callout{z-index:1;min-height:400px;padding:88px 24px 78px}
+.cta-footer__eyebrow{color:#526caa;letter-spacing:.13em}
+.cta-footer__heading{color:#171a23;font-weight:650;letter-spacing:-.072em}
+.cta-footer__heading span{color:#858c9b}
+.cta-footer__description{color:#697181}
+.cta-footer__button{color:#202635;border-radius:999px;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.cta-footer__button--primary{color:#fff;background:linear-gradient(135deg,#3975f6,#2456d8);box-shadow:0 8px 24px rgba(56,104,218,.2),inset 0 1px 1px rgba(255,255,255,.55)}
+.cta-footer__button--primary:hover{background:linear-gradient(135deg,#4c85ff,#3266e6)}
+.cta-footer__button--secondary{border:1px solid rgba(255,255,255,.9);background:rgba(255,255,255,.52);box-shadow:0 4px 18px rgba(41,65,112,.055),inset 0 1px 0 #fff}
+.cta-footer__button--secondary:hover{background:rgba(255,255,255,.82)}
+.cta-footer__panel{z-index:1;margin:0 clamp(16px,3vw,42px);padding:42px clamp(24px,5vw,72px) 20px;border:1px solid rgba(255,255,255,.92);border-bottom:0;border-radius:30px 30px 0 0;color:#222735;background:linear-gradient(135deg,rgba(255,255,255,.72),rgba(245,248,255,.54) 52%,rgba(236,246,250,.68));box-shadow:0 -10px 55px rgba(72,98,151,.075),inset 0 1px 0 rgba(255,255,255,.98);backdrop-filter:blur(34px) saturate(155%);-webkit-backdrop-filter:blur(34px) saturate(155%)}
+.cta-footer__footer-top{padding-bottom:36px}
+.cta-footer__brand{color:#1b2230}
+.cta-footer__monogram{border:1px solid rgba(255,255,255,.9);background:linear-gradient(145deg,#dce8ff,#c8e7ee 58%,#e7ddff);color:#24477e;box-shadow:0 3px 12px rgba(58,93,157,.1),inset 0 1px 0 #fff}
+.cta-footer__newsletter-title{color:#202635}
+.cta-footer__newsletter-copy{color:#737b89}
+.cta-footer__availability{color:#637083}
+.cta-footer__availability i{background:#31b77c;box-shadow:0 0 0 4px rgba(49,183,124,.11)}
+.cta-footer__column h3{color:#8a92a1}
+.cta-footer__column a{color:#4e5869}
+.cta-footer__column a:hover,.cta-footer__bottom a:hover{color:#1c58c9}
+.cta-footer__bottom{border-top:1px solid rgba(105,123,155,.16);color:#8a92a1}
+.cta-footer__bottom a{color:#586477}
+@keyframes cta-liquid-drift{0%{transform:translate3d(-1.5%,0,0) scale(1)}50%{transform:translate3d(1%,1.5%,0) scale(1.04)}100%{transform:translate3d(2%,-1%,0) scale(1.015)}}
+@media(max-width:700px){.cta-footer__panel{margin:0 10px;padding:32px 22px 18px;border-radius:24px 24px 0 0}}
+@media(prefers-reduced-motion:reduce){.cta-footer__glow{animation:none}}
