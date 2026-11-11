@@ -263,22 +263,6 @@ function App() {
         <Carousel items={Array.from({ length: 7 }, (_, cycle) => otherProjectCards.map((card, index) => <Card key={cycle + "-" + card.title} card={card} index={cycle * otherProjectCards.length + index} />)).flat()} initialScroll={otherProjectCards.length * 3} />
       </section>
       <ToolsWorkflow />
-      <section className="portfolio-contact-cta" aria-labelledby="portfolio-contact-title">
-        <div className="portfolio-contact-inner">
-          <p className="portfolio-contact-eyebrow">HAVE SOMETHING IN MIND?</p>
-          <div className="portfolio-contact-layout">
-            <div className="portfolio-contact-copy">
-              <h2 id="portfolio-contact-title">Have a product idea?<br /><span>Let’s make it work beautifully.</span></h2>
-              <p>From understanding the problem to crafting meaningful digital experiences, I’m always open to ambitious ideas and thoughtful collaborations.</p>
-            </div>
-            <div className="portfolio-contact-actions">
-              <a className="portfolio-contact-primary" href="#contact">Let’s connect <span aria-hidden="true">↗</span></a>
-              <a className="portfolio-contact-secondary" href="/surya-portfolio/resume/">View resume <span aria-hidden="true">→</span></a>
-            </div>
-          </div>
-          <div className="portfolio-contact-footnote"><span>OPEN TO PRODUCT DESIGN OPPORTUNITIES</span><span>INDIA · AVAILABLE FOR GLOBAL COLLABORATION</span></div>
-        </div>
-      </section>
       <footer id="contact" className="reference-footer"><h2>Every pixel here was a decision.</h2><p>Every word, a choice. Thanks for seeing it.</p><div className="footer-icons"><Linkedin/><FileText/><Github/></div><div className="footer-line" /><div className="footer-mark">≈≈≈</div><strong>Surya Kiran © 2026</strong></footer>
       <div className="portfolio-dock"><Dock items={items} panelHeight={70} baseItemSize={50} magnification={70} /></div><button className="to-top" onClick={() => go('#home')} aria-label="Back to top"><ArrowUp size={19}/></button>
     </main>
