@@ -1025,3 +1025,37 @@ main .other-reference .other-reference-heading{
   }
   main .other-reference .other-reference-heading{margin-bottom:34px}
 }
+
+
+/* Ensure the Selected Work title is visibly rendered above the first project. */
+#work > .work-intro{
+  display:block !important;
+  width:100%;
+  min-height:1px;
+  margin:0 0 clamp(38px,5vw,68px) !important;
+  text-align:center;
+  visibility:visible !important;
+  opacity:1 !important;
+}
+#work > .work-intro > h2{
+  display:block !important;
+  position:relative;
+  margin:0 auto !important;
+  padding:0;
+  color:#151619 !important;
+  font-size:clamp(64px,8.6vw,116px) !important;
+  line-height:.92 !important;
+  font-weight:750 !important;
+  letter-spacing:-.078em !important;
+  text-align:center;
+  visibility:visible !important;
+  opacity:1 !important;
+}
+@media(max-width:767px){
+  #work > .work-intro{margin-bottom:32px !important}
+  #work > .work-intro > h2{
+    font-size:clamp(48px,13vw,68px) !important;
+    line-height:.96 !important;
+    letter-spacing:-.07em !important;
+  }
+}
