@@ -257,7 +257,7 @@ function App() {
           </div>
         </div>
       </section>
-      <section id="work" className="reference-work-section"><div className="work-intro"><p>SELECTED WORK</p></div><GenesisCard /><ComskiCard /><LaundroMartCard /></section>
+      <section id="work" className="reference-work-section"><div className="work-intro"><h2>Selected Work</h2></div><GenesisCard /><ComskiCard /><LaundroMartCard /></section>
       <section className="other-reference" aria-label="Other Projects">
         <h2 className="other-reference-heading">Other Projects</h2>
         <Carousel items={Array.from({ length: 7 }, (_, cycle) => otherProjectCards.map((card, index) => <Card key={cycle + "-" + card.title} card={card} index={cycle * otherProjectCards.length + index} />)).flat()} initialScroll={otherProjectCards.length * 3} />
