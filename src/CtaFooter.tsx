@@ -16,7 +16,7 @@ export default function CtaFooter() {
         <h2 className="cta-footer__heading">Have a product idea?<br /><span>Let’s make it meaningful.</span></h2>
         <p className="cta-footer__description">I’m always interested in thoughtful problems, ambitious products and opportunities to create useful digital experiences.</p>
         <div className="cta-footer__actions">
-          <a className="cta-footer__button cta-footer__button--primary" href="https://github.com/Surya8074">Explore my work <span aria-hidden="true">↗</span></a>
+          <a className="cta-footer__button cta-footer__button--primary" href="#work">Explore my work <span aria-hidden="true">↗</span></a>
           <a className="cta-footer__button cta-footer__button--secondary" href="/surya-portfolio/resume/">View resume</a>
         </div>
       </div>
