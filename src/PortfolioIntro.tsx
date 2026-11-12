@@ -43,10 +43,15 @@ export default function PortfolioIntro() {
   useEffect(() => {
     if (!visible || !rootRef.current) return;
     const root = rootRef.current;
+    let hasFinished = false;
     const finish = () => {
+      if (hasFinished) return;
+      hasFinished = true;
       try { window.sessionStorage.setItem('surya-portfolio-intro-seen', '1'); } catch { /* storage may be unavailable */ }
       setVisible(false);
     };
+    // A safety exit prevents a stalled animation from ever trapping the visitor.
+    const safetyTimer = window.setTimeout(finish, 12000);
     document.body.classList.add('portfolio-intro-active');
     const onKeyDown = (event: KeyboardEvent) => { if (event.key === 'Escape') finish(); };
     window.addEventListener('keydown', onKeyDown);
@@ -101,6 +106,7 @@ export default function PortfolioIntro() {
     return () => {
       context.revert();
       window.removeEventListener('keydown', onKeyDown);
+      window.clearTimeout(safetyTimer);
       document.body.classList.remove('portfolio-intro-active');
     };
   }, [visible]);
