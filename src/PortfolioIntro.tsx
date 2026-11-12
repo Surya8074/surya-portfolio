@@ -52,42 +52,50 @@ export default function PortfolioIntro() {
     window.addEventListener('keydown', onKeyDown);
 
     const context = gsap.context(() => {
-      const timeline = gsap.timeline({ delay: 0.18, onComplete: finish });
+      const timeline = gsap.timeline({ delay: 0.08, onComplete: finish });
       timeline
         .fromTo('.portfolio-intro__hello',
-          { autoAlpha: 0, clipPath: 'inset(0 100% 0 0)', x: -22, filter: 'blur(12px)' },
-          { autoAlpha: 1, clipPath: 'inset(0 0% 0 0)', x: 0, filter: 'blur(0px)', duration: 1.18, ease: 'expo.out' }
+          { autoAlpha: 0, clipPath: 'inset(0 100% 0 0)', x: -16, filter: 'blur(8px)' },
+          { autoAlpha: 1, clipPath: 'inset(0 0% 0 0)', x: 0, filter: 'blur(0px)', duration: 0.82, ease: 'power3.out' }
         )
-        .fromTo('.portfolio-intro__hello-dot', { scale: 0, transformOrigin: 'center' }, { scale: 1, duration: 0.42, ease: 'back.out(2.4)' }, '-=0.28')
+        .fromTo('.portfolio-intro__hello-dot',
+          { scale: 0, transformOrigin: 'center' },
+          { scale: 1, duration: 0.3, ease: 'back.out(1.8)' }, '-=0.22'
+        )
         .fromTo('.portfolio-intro__hello-mark',
-          { scaleX: 0, transformOrigin: 'left center' },
-          { scaleX: 1, duration: 0.62, ease: 'power3.inOut' }, '-=0.34'
+          { scaleX: 0, transformOrigin: 'center' },
+          { scaleX: 1, duration: 0.42, ease: 'power2.out' }, '-=0.22'
         )
-        .to('.portfolio-intro__hello-group', { y: -58, scale: 0.96, autoAlpha: 0, filter: 'blur(5px)', duration: 0.62, ease: 'power3.inOut' }, '+=0.38')
+        .to('.portfolio-intro__hello-group',
+          { y: -34, scale: 0.98, autoAlpha: 0, filter: 'blur(3px)', duration: 0.42, ease: 'power2.inOut' }, '+=0.16'
+        )
         .fromTo('.portfolio-intro__identity',
-          { autoAlpha: 0, y: 26, filter: 'blur(8px)' },
-          { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.76, ease: 'power3.out' }, '-=0.16'
+          { autoAlpha: 0, y: 18, filter: 'blur(5px)' },
+          { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.58, ease: 'power3.out' }, '-=0.12'
         )
         .fromTo('.portfolio-intro__identity-rule',
-          { scaleX: 0, transformOrigin: 'left center' },
-          { scaleX: 1, duration: 0.6, ease: 'power3.inOut' }, '-=0.34'
+          { scaleX: 0, transformOrigin: 'center' },
+          { scaleX: 1, duration: 0.38, ease: 'power2.out' }, '-=0.24'
         )
-        .to('.portfolio-intro__identity', { y: -42, autoAlpha: 0, filter: 'blur(5px)', duration: 0.52, ease: 'power2.inOut' }, '+=0.34')
+        .to('.portfolio-intro__identity',
+          { y: -28, autoAlpha: 0, filter: 'blur(3px)', duration: 0.38, ease: 'power2.inOut' }, '+=0.18'
+        )
         .fromTo('.portfolio-intro__project-heading',
-          { autoAlpha: 0, y: 18, letterSpacing: '0.24em' },
-          { autoAlpha: 1, y: 0, letterSpacing: '0.14em', duration: 0.55, ease: 'power3.out' }, '-=0.1'
+          { autoAlpha: 0, y: 12 },
+          { autoAlpha: 1, y: 0, duration: 0.42, ease: 'power3.out' }, '-=0.08'
         )
         .fromTo('.portfolio-intro__project',
-          { autoAlpha: 0, y: 74, rotateX: 18, rotateY: 0, scale: 0.88, filter: 'blur(8px)' },
-          { autoAlpha: 1, y: 0, rotateX: 0, scale: 1, filter: 'blur(0px)', duration: 1.12, stagger: 0.16, ease: 'expo.out' }, '-=0.12'
+          { autoAlpha: 0, y: 48, rotateX: 10, scale: 0.94, filter: 'blur(5px)' },
+          { autoAlpha: 1, y: 0, rotateX: 0, scale: 1, filter: 'blur(0px)', duration: 0.78, stagger: 0.1, ease: 'power3.out' }, '-=0.08'
         )
-        .to('.portfolio-intro__project--genesis', { y: -12, rotateZ: -2.5, duration: 0.62, ease: 'power3.inOut' }, '+=0.16')
-        .to('.portfolio-intro__project--comski', { y: -22, rotateZ: 0, duration: 0.62, ease: 'power3.inOut' }, '<')
-        .to('.portfolio-intro__project--laundromart', { y: -12, rotateZ: 2.5, duration: 0.62, ease: 'power3.inOut' }, '<')
-        .to('.portfolio-intro__project', { y: -14, scale: 1.025, duration: 0.5, stagger: 0.04, ease: 'power2.in' }, '+=0.28')
-        .to('.portfolio-intro__project', { autoAlpha: 0, scale: 1.075, y: -42, filter: 'blur(7px)', duration: 0.56, stagger: 0.045, ease: 'power3.in' }, '+=0.08')
-        .to('.portfolio-intro__project-heading', { autoAlpha: 0, y: -12, duration: 0.28 }, '<')
-        .to(root, { clipPath: 'inset(0 0 100% 0 round 0px)', duration: 0.88, ease: 'power4.inOut' }, '-=0.08');
+        .to('.portfolio-intro__project--genesis', { y: -8, rotateZ: -2.5, duration: 0.38, ease: 'power2.inOut' }, '+=0.12')
+        .to('.portfolio-intro__project--comski', { y: -16, rotateZ: 0, duration: 0.38, ease: 'power2.inOut' }, '<')
+        .to('.portfolio-intro__project--laundromart', { y: -8, rotateZ: 2.5, duration: 0.38, ease: 'power2.inOut' }, '<')
+        .to('.portfolio-intro__project',
+          { autoAlpha: 0, scale: 1.035, y: -24, filter: 'blur(4px)', duration: 0.42, stagger: 0.025, ease: 'power2.in' }, '+=0.34'
+        )
+        .to('.portfolio-intro__project-heading', { autoAlpha: 0, y: -8, duration: 0.2 }, '<')
+        .to(root, { clipPath: 'inset(0 0 100% 0 round 0px)', duration: 0.62, ease: 'power3.inOut' }, '-=0.04');
     }, root);
 
     return () => {
@@ -142,7 +150,7 @@ export default function PortfolioIntro() {
             {projects.map((project) => (
               <article className={`portfolio-intro__project portfolio-intro__project--${project.className}`} key={project.number}>
                 <div className="portfolio-intro__project-image">
-                  <img src={project.image} alt="" />
+                  <img src={project.image} alt="" loading="eager" decoding="async" fetchPriority="high" />
                   <span className="portfolio-intro__project-index">{project.number}</span>
                 </div>
                 <div className="portfolio-intro__project-meta">
