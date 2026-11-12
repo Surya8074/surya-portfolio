@@ -274,3 +274,83 @@ body.portfolio-intro-active{overflow:hidden}
   .portfolio-intro__topline,.portfolio-intro__bottomline {font-size:8px;letter-spacing:.08em}
   .portfolio-intro__project-meta span {font-size:8px;letter-spacing:.055em}
 }
+
+
+/* Final polish: protect the greeting's descenders and add quiet editorial framing. */
+.portfolio-intro__hello {
+  line-height:1.08;
+  padding:.08em .12em .2em .02em;
+  overflow:visible;
+  letter-spacing:-.075em;
+}
+.portfolio-intro__hello-group {
+  gap:9px;
+}
+.portfolio-intro__hello-mark {
+  margin-top:2px;
+}
+.portfolio-intro__center {
+  isolation:isolate;
+}
+.portfolio-intro__center::before {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  width:min(58vw,620px);
+  aspect-ratio:1;
+  border:1px solid rgba(59,91,219,.055);
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.3) 0 38%,transparent 69%);
+  pointer-events:none;
+}
+.portfolio-intro__center::after {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:clamp(12px,3vw,34px) 0;
+  pointer-events:none;
+  opacity:.48;
+  background:
+    linear-gradient(var(--intro-blue),var(--intro-blue)) left top / 22px 1px no-repeat,
+    linear-gradient(var(--intro-blue),var(--intro-blue)) left top / 1px 22px no-repeat,
+    linear-gradient(var(--intro-blue),var(--intro-blue)) right top / 22px 1px no-repeat,
+    linear-gradient(var(--intro-blue),var(--intro-blue)) right top / 1px 22px no-repeat,
+    linear-gradient(var(--intro-blue),var(--intro-blue)) left bottom / 22px 1px no-repeat,
+    linear-gradient(var(--intro-blue),var(--intro-blue)) left bottom / 1px 22px no-repeat,
+    linear-gradient(var(--intro-blue),var(--intro-blue)) right bottom / 22px 1px no-repeat,
+    linear-gradient(var(--intro-blue),var(--intro-blue)) right bottom / 1px 22px no-repeat;
+  opacity:.12;
+}
+.portfolio-intro__project {
+  box-shadow:0 28px 70px rgba(29,43,76,.085),0 2px 8px rgba(29,43,76,.035);
+  backdrop-filter:blur(18px);
+}
+.portfolio-intro__project-meta {
+  min-height:54px;
+}
+.portfolio-intro__project::after {
+  height:1px;
+  opacity:.55;
+}
+.portfolio-intro__identity-rule {
+  width:88px;
+  background:linear-gradient(90deg,transparent,var(--intro-blue),transparent);
+}
+@media(max-width:640px) {
+  .portfolio-intro__hello {
+    font-size:clamp(104px,29vw,150px);
+    line-height:1.12;
+    padding:.08em .12em .22em .02em;
+  }
+  .portfolio-intro__center::after {
+    inset:8px 0;
+    opacity:.07;
+  }
+  .portfolio-intro__project-meta {min-height:0}
+}
+@media(max-height:620px) {
+  .portfolio-intro__hello {
+    font-size:clamp(100px,14vw,170px);
+    line-height:1.1;
+  }
+}
