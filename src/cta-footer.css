@@ -89,3 +89,51 @@
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
  .cta-footer__button--secondary,.cta-footer__bottom a{background:#f1f4fa}
 }
+
+
+/* A softer hand-off from the page into the footer. */
+.cta-footer{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+}
+.cta-footer::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  top:0;
+  left:50%;
+  width:min(760px,88vw);
+  height:190px;
+  transform:translateX(-50%);
+  pointer-events:none;
+  background:radial-gradient(ellipse at 50% 0%,rgba(76,112,226,.085) 0%,rgba(76,112,226,.035) 34%,rgba(255,254,251,0) 72%);
+}
+.cta-footer__callout{
+  position:relative;
+  border-top:0;
+}
+.cta-footer__callout::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:1px;
+  background:linear-gradient(90deg,rgba(20,25,35,0),rgba(20,25,35,.08) 12%,rgba(59,91,219,.24) 50%,rgba(20,25,35,.08) 88%,rgba(20,25,35,0));
+}
+.cta-footer__callout::after{
+  content:"";
+  position:absolute;
+  top:-1px;
+  left:50%;
+  width:42px;
+  height:2px;
+  transform:translateX(-50%);
+  border-radius:99px;
+  background:linear-gradient(90deg,rgba(59,91,219,0),rgba(59,91,219,.58),rgba(59,91,219,0));
+  filter:blur(.25px);
+}
+@media(max-width:767px){
+  .cta-footer::before{height:140px;width:100vw}
+}
