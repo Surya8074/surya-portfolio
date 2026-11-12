@@ -34,3 +34,58 @@
 @media(max-width:767px){.cta-footer__inner{width:calc(100% - 36px);padding-top:30px}.cta-footer__callout{grid-template-columns:1fr;gap:20px;padding:22px 0 24px}.cta-footer__eyebrow{margin-bottom:17px}.cta-footer__heading{font-size:clamp(32px,8.8vw,43px);line-height:1.04}.cta-footer__description{margin-top:10px;font-size:12px}.cta-footer__actions{flex-direction:row;flex-wrap:wrap}.cta-footer__button{min-width:136px;min-height:39px;padding:0 12px}.cta-footer__panel{padding-top:25px}.cta-footer__footer-top{grid-template-columns:1fr;gap:28px;padding-bottom:25px}.cta-footer__columns{gap:18px}}
 @media(max-width:420px){.cta-footer__columns{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:22px}.cta-footer__bottom{align-items:flex-start;flex-direction:column;gap:7px}}
 @media(prefers-reduced-motion:reduce){.cta-footer__button,.cta-footer__column a,.cta-footer__bottom a{transition:none}}
+
+/* Restrained Liquid Glass controls: material belongs to actions, not the content surface. */
+.cta-footer__actions{position:relative;isolation:isolate;gap:10px}
+.cta-footer__button{
+  position:relative;isolation:isolate;overflow:hidden;min-height:46px;padding:0 17px;
+  border-radius:999px;backdrop-filter:blur(22px) saturate(165%);
+  -webkit-backdrop-filter:blur(22px) saturate(165%);
+  box-shadow:0 5px 16px rgba(36,55,98,.07),inset 0 1px 0 rgba(255,255,255,.82);
+  transition:transform .28s cubic-bezier(.2,.75,.25,1),box-shadow .28s ease,border-color .28s ease,background .28s ease;
+}
+.cta-footer__button::before{
+  content:"";position:absolute;inset:1px 1px auto;height:48%;border-radius:inherit;
+  background:linear-gradient(180deg,rgba(255,255,255,.48),rgba(255,255,255,0));
+  opacity:.78;pointer-events:none;z-index:-1;
+}
+.cta-footer__button::after{
+  content:"";position:absolute;top:-65%;left:-45%;width:38%;height:230%;
+  transform:translateX(-160%) rotate(18deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.42),transparent);
+  transition:transform .7s cubic-bezier(.2,.7,.2,1);pointer-events:none;
+}
+.cta-footer__button:hover{transform:translateY(-2px);box-shadow:0 9px 22px rgba(36,55,98,.12),inset 0 1px 0 rgba(255,255,255,.9)}
+.cta-footer__button:hover::after{transform:translateX(470%) rotate(18deg)}
+.cta-footer__button--primary{
+  color:#fff;border:1px solid rgba(255,255,255,.52);
+  background:linear-gradient(145deg,rgba(68,119,246,.96),rgba(24,62,190,.96));
+  box-shadow:0 7px 20px rgba(36,78,190,.2),inset 0 1px 0 rgba(255,255,255,.52),inset 0 -1px 0 rgba(10,34,120,.2);
+}
+.cta-footer__button--primary::before{background:linear-gradient(180deg,rgba(255,255,255,.3),transparent)}
+.cta-footer__button--primary:hover{background:linear-gradient(145deg,#5688ff,#2855d4)}
+.cta-footer__button--secondary{
+  color:#25314a;border:1px solid rgba(255,255,255,.92);
+  background:linear-gradient(145deg,rgba(255,255,255,.76),rgba(239,244,255,.52));
+  box-shadow:0 5px 18px rgba(40,58,96,.07),inset 0 1px 0 #fff,inset 0 -1px 0 rgba(115,139,183,.08);
+}
+.cta-footer__button--secondary:hover{border-color:#fff;background:rgba(255,255,255,.9)}
+.cta-footer__button span{position:relative;z-index:1}
+.cta-footer__bottom a{
+  min-height:32px;padding:0 12px;border:1px solid rgba(255,255,255,.86);border-radius:999px;
+  background:rgba(255,255,255,.56);backdrop-filter:blur(16px) saturate(150%);
+  -webkit-backdrop-filter:blur(16px) saturate(150%);
+  box-shadow:inset 0 1px 0 #fff,0 3px 10px rgba(40,58,96,.045);
+}
+.cta-footer__bottom a:hover{color:#1034c2;border-color:#fff;background:rgba(255,255,255,.84)}
+@media(max-width:767px){
+ .cta-footer__actions{gap:9px}
+ .cta-footer__button{min-height:43px;padding:0 15px}
+}
+@media(prefers-reduced-motion:reduce){
+ .cta-footer__button::after{display:none}
+ .cta-footer__button:hover{transform:none}
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+ .cta-footer__button--secondary,.cta-footer__bottom a{background:#f1f4fa}
+}
