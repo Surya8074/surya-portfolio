@@ -5,6 +5,7 @@ import { createRoot } from 'react-dom/client';
 import Lenis from '@studio-freight/lenis';
 import { VscAccount, VscArchive, VscHome, VscSettingsGear } from 'react-icons/vsc';
 import Dock from './Dock';
+import PortfolioIntro from './PortfolioIntro';
 import './styles.css';
 import './reference-home.css';
 import './genesis-card.css';
@@ -234,6 +235,7 @@ function App() {
 
   return (
     <main>
+      <PortfolioIntro />
       <header className="reference-nav"><div className="reference-nav-inner"><button className="reference-brand" onClick={() => go('#home')}><strong>Surya Kiran</strong><span className="reference-brand-divider" /><span>India</span></button><nav><button onClick={() => go('#art')}>Art</button><button onClick={() => go('#about')}>About Me</button><a className="resume-nav-link" href="/surya-portfolio/resume/">Resume</a></nav></div></header>
       <section id="home" className="reference-home">
         <div className="reference-home-viewport">
